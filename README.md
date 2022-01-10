@@ -1,6 +1,7 @@
 # Front-end-Component-Library
 
 ## Atomic Design
+```
 ╔ components
 ║ ╠═══ component
 ║ ║ ╠═══ dist
@@ -16,4 +17,5 @@
 ║ ║ ║ ╠═══ helpers
 ║ ║ ║ ╠═══ index.jsx
 ║ ║ ╚═══ readme.md
+```
       
