@@ -1,8 +1,11 @@
 import { series, parallel } from 'gulp';
-import { cssTranspile } from './tasks/cssTranspile';
-import { jsTranspile } from './tasks/jsTranspile';
+import { libraryCssTranspile, coreCssTranspile } from './tasks/cssTranspile';
+import { libraryJsTranspile, coreJsTranspile } from './tasks/jsTranspile';
 
-const styleTasks = series( cssTranspile );
-const jsTasks = series( jsTranspile );
+const styleTranspile = series( 
+  parallel(coreCssTranspile, libraryCssTranspile));
 
-export const build = series( parallel( styleTasks, jsTasks) )
+const jsTranspile = series( 
+  parallel(coreJsTranspile, libraryJsTranspile));
+
+export const build = series( parallel( styleTranspile, jsTranspile ) )
