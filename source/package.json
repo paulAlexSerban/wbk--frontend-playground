@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon core/app.js",
     "build:dev": "gulp build --require @babel/register --gulpfile build"
   },
   "author": "",
@@ -17,8 +18,14 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.1.0",
+    "nodemon": "^2.0.15",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.67.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
   }
 }

@@ -6,3 +6,6 @@ install-npm-dependencies:
 
 build-dev:
 	cd source && npm run build:dev
+
+start-dev-server:
+	cd source && npm start
