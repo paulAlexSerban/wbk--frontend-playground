@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon core/app.js",
-    "build:dev": "gulp build --require @babel/register --gulpfile build"
+    "build:dev": "gulp build --require @babel/register --gulpfile build",
+    "build:library:timeline:vertical": "gulp build --require @babel/register --gulpfile library/timeline/verticalTimeline/build"
   },
   "author": "",
   "license": "ISC",
