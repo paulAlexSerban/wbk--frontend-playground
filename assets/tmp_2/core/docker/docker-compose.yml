@@ -1,0 +1,20 @@
+version: "3"
+
+networks: 
+  nodejs:
+    driver: bridge
+
+services:
+  ### NODEJS
+  nodejs:
+    build: 
+      context: ./dockerfiles/server
+      dockerfile: Dockerfile
+    image: nodejs:${NODEJS_VERSION:-latest}
+    container_name: ${COMPOSE_PROJECT_NAME:-nodejs}
+    volumes: 
+      - ../app:/usr/src/server
+    ports: 
+      - ${NODE_LOCAL_PORT}:${NODE_DOCKER_PORT}
+    networks: 
+      - nodejs

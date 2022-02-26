@@ -1,0 +1,25 @@
+{
+  "name": "fecl--root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:npm": "gulp npmInstall --require @babel/register --gulpfile gulpfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulAlexSerban/Frontend-Component-Library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulAlexSerban/Frontend-Component-Library/issues"
+  },
+  "homepage": "https://github.com/paulAlexSerban/Frontend-Component-Library#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.0",
+    "gulp": "^4.0.2"
+  }
+}
