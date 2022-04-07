@@ -1,0 +1,20 @@
+version: "3"
+
+networks: 
+  feComponentLibrary:
+    driver: bridge
+
+services:
+  # nginx web proxy
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "80:80" # expose 80 on host and sent to 80 in container
+    container_name: static-nginx
+    networks:
+      - feComponentLibrary
+    restart: always
+    volumes:
+      - ./app:/usr/share/nginx/html
