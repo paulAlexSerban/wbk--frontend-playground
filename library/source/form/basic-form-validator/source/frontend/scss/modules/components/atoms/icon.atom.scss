@@ -1,0 +1,11 @@
+$type: "a";
+$block: "#{$type}-icon";
+
+/* critical:start */
+svg.#{$block} {
+  @include e("liquorCom") {
+    width: convert-rem(100px);
+  }
+}
+
+/* critical:end */

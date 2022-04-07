@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles/index.page.min.css" />
+  <link rel="shortcut icon" href="../../../assets/icons/favicon-32x32.png" type="image/x-icon" />
+  <title>Basic Form Validator</title>
+</head>
+
+<body class="p-index">
+  <div class="form__base" data-js-component="Form">
+    <form class="form__container">
+      <h2 class="form__heading">Register With Us</h2>
+      <div class="form__control">
+        <label class="form__label" for="username">Username</label>
+        <input class="form__input" type="text" id="username" placeholder="Enter username" />
+        <span class="form__error-message">Error message</span>
+      </div>
+      <div class="form__control">
+        <label class="form__label" for="email">Email</label>
+        <input class="form__input" type="text" id="email" placeholder="Enter email" />
+        <span class="form__error-message">Error message</span>
+      </div>
+      <div class="form__control">
+        <label class="form__label" for="password">Password</label>
+        <input class="form__input" type="password" id="password" placeholder="Enter password" />
+        <span class="form__error-message">Error message</span>
+      </div>
+      <div class="form__control">
+        <label class="form__label" for="confirmPassword">Confirm Password</label>
+        <input class="form__input" type="password" id="confirmPassword" placeholder="Enter password again" />
+        <span class="form__error-message">Error message</span>
+      </div>
+      <button class="form__button" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="javascript/index.page.js" async defer></script>
+</body>
+
+</html>

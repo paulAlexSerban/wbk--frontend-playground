@@ -1,0 +1,17 @@
+$type: "a";
+$block: "#{$type}-image";
+
+/* critical:start */
+.#{$block} {
+  // @include e("base") {
+  // }
+
+  // @include e("container") {
+  // }
+
+  @include e("image") {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* critical:end */

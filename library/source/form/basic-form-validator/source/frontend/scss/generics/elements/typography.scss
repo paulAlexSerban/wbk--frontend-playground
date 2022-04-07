@@ -1,0 +1,53 @@
+/* stylelint-disable selector-no-qualifying-type */
+
+/* critical:start */
+body {
+  color: var(--color-text);
+  font-family: $text-font-stack;
+  font-weight: 700;
+}
+
+h1,
+h1.t-pageHeading {
+  @include font($page-heading);
+}
+
+h2,
+h2.t-articleHeading {
+  @include font($articleHeading)
+}
+
+h3,
+h3.t-sectionHeading {
+  @include font($sectionHeading)
+}
+
+label,
+label.t-label {
+  @include font($label);
+}
+
+a,
+a.t-link {
+  @include font($link);
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p,span
+p.t-body {
+  @include font($body);
+}
+
+a.t-button,
+button.t-button,
+.t-button {
+  @include font($button);
+}
+
+
+/* critical:end */
+/* stylelint-enable selector-no-qualifying-type */

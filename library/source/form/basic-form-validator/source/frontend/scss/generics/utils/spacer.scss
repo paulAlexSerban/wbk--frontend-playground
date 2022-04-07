@@ -1,0 +1,28 @@
+@import "../../abstracts/abstracts.scss";
+
+/* critical:start */
+.spacer-baseline {
+  @include e("s") {
+    margin-top: $baseline;
+  }
+
+  @include e("m") {
+    margin-top: $baseline * 2;
+  }
+  @include e("l") {
+    margin-top: $baseline * 3;
+  }
+
+  @include e("xl") {
+    margin-top: $baseline * 4;
+  }
+}
+
+.spacer-gutter {
+  @include e("s") {
+    padding-left: $grid-gutter / 4;
+    padding-right: $grid-gutter / 4;
+  }
+}
+
+/* critical:end */

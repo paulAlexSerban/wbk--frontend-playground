@@ -1,0 +1,15 @@
+@import "../../../abstracts/abstracts.scss";
+
+/* critical:start */
+:root {
+  --color-text: #{$c-eerie-black};
+  --color-button-label: #{$c-white};
+  --color-background-main: #{$c-cultured};
+  --color-link: #{$c-indigo-blue};
+  --color-success: #{$c-emerald};
+  --color-danger: #{$c-cinnabar};
+  --color-button-primary: #{$c-carolina-blue};
+  --container-shadow: #{$container-shadow};
+}
+
+/* critical:end */
