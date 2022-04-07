@@ -5,5 +5,6 @@ export const regexValidator = (value) => {
 };
 
 export const getFieldName = (input) => {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+  const name = input.dataset.name ? input.dataset.name : input.id;
+  return `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
 };

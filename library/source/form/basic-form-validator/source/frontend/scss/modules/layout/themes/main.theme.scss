@@ -10,6 +10,8 @@
   --color-danger: #{$c-cinnabar};
   --color-button-primary: #{$c-carolina-blue};
   --container-shadow: #{$container-shadow};
+  --text-regular: #{$openSans}; /* regular font family */
+  --text-code: #{$courierNew-monospace}; /* code family */
 }
 
 /* critical:end */

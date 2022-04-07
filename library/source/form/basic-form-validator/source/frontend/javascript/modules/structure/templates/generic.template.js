@@ -1,4 +1,4 @@
-import { form } from '../../components/organisms/form.organims';
+import { form } from '../../components/organisms/form.organism';
 
 export const genericTemplate = () => {
 

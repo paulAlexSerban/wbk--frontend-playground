@@ -1,0 +1,17 @@
+$type: "a";
+$block: "#{$type}-button";
+
+.#{$block} {
+  @include e("base") {
+    @include font($button);
+
+    display: block;
+    width: 100%;
+    padding: ($baseline * 2) $gutter;
+    margin-top: $baseline * 3;
+    cursor: pointer;
+    background-color: var(--color-button-primary);
+    border: convert-rem(2px) solid var(--color-button-primary);
+    border-radius: convert-rem(4px);
+  }
+}

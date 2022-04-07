@@ -1,5 +1,6 @@
 import { regexValidator, getFieldName } from "./form.utils";
-import { findOne } from "../../../abstracts/dom/find";
+import { findOne } from "../../../abstracts/dom/traversing";
+import { addClass, removeClass } from "../../../abstracts/dom/manipulation";
 
 const config = {
   selectors: {
@@ -7,11 +8,11 @@ const config = {
     email: "#email",
     password: "#password",
     confirmPassword: "#confirmPassword",
-    errorMessage: ".form__error-message"
+    errorMessage: ".a-validation-message__base"
   },
   classes: {
-    formControlError: "form__control error",
-    formControlSuccess: "form__control success"
+    formControlError: "error",
+    formControlSuccess: "success"
   }
 };
 
@@ -24,18 +25,21 @@ export const form = (el) => {
 
   const showError = (input, message) => {
     const formControl = input.parentElement;
-    formControl.className = config.classes.formControlError;
+    addClass(config.classes.formControlError, input);
+    addClass(config.classes.formControlError, formControl);
     const errorMessage = findOne(config.selectors.errorMessage, formControl);
     errorMessage.innerText = message;
   };
 
   const showSuccess = (input) => {
     const formControl = input.parentElement;
-    formControl.className = config.classes.formControlSuccess;
+    addClass(config.classes.formControlSuccess, input);
+    removeClass(config.classes.formControlError, input);
+    addClass(config.classes.formControlSuccess, formControl);
+    removeClass(config.classes.formControlError, formControl);
   };
 
   const checkRequired = (inputArr) => {
-    console.log(inputArr);
     inputArr.forEach((input) => {
       if (input.value.trim() === "") {
         showError(input, `${getFieldName(input)} is required`);
@@ -54,7 +58,6 @@ export const form = (el) => {
   };
 
   const checkLength = (input, min, max) => {
-    console.log(input);
     if (input.value.length < min) {
       showError(
         input,

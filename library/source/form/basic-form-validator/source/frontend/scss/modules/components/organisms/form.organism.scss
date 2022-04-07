@@ -1,8 +1,10 @@
-$molecule: "form";
+$type: "o";
+$block: "#{$type}-form";
 
-.#{$molecule} {
+.#{$block} {
   @include e("base") {
-    width: convert-rem(40px);
+    min-width: convert-rem(400px);
+    max-width: $max-width / 2;
     background-color: var(--color-background-main);
     border-radius: convert-rem(5px);
     box-shadow: var(--container-shadow);
@@ -10,68 +12,5 @@ $molecule: "form";
 
   @include e("container") {
     padding: ($baseline * 4) ($gutter * 3);
-  }
-
-  @include e("heading") {
-    margin: 0 0 ($baseline * 3);
-    text-align: center;
-  }
-
-  @include e("control") {
-    position: relative;
-    padding-bottom: $baseline * 3;
-    margin-bottom: $baseline * 2;
-
-    &.success {
-      border-color: var(--color-success);
-    }
-    &.error {
-      border-color: var(--color-danger);
-    }
-  }
-
-  @include e("label", "input", "button") {
-    display: block;
-  }
-
-  @include e("label") {
-    margin-bottom: $baseline;
-    color: $c-sonic-silver;
-  }
-
-  @include e("input") {
-    width: 100%;
-    padding: ($baseline * 2) $gutter;
-    font-size: 1.4rem;
-    border: 2px solid $c-battleship-grey;
-    border-radius: 4px;
-
-    &:focus {
-      border-color: $c-rhythm;
-      outline: 0;
-      box-shadow: $container-shadow;
-    }
-  }
-
-  @include e("error-message") {
-    @include absolute($left: 0, $bottom: 0);
-
-    color: var(--color-danger);
-    visibility: hidden;
-
-    .error & {
-      visibility: visible;
-    }
-  }
-
-  @include e("button") {
-    @include font($button);
-    width: 100%;
-    padding: ($baseline * 2) $gutter;
-    margin-top: $baseline * 3;
-    cursor: pointer;
-    background-color: var(--color-button-primary);
-    border: 2px solid var(--color-button-primary);
-    border-radius: 4px;
   }
 }

@@ -1,0 +1,11 @@
+$type: "m";
+$block: "#{$type}-fieldset";
+
+.#{$block} {
+  @include e("base") {
+    @include relative();
+
+    padding-bottom: $baseline * 3;
+    margin-bottom: $baseline * 2;
+  }
+}

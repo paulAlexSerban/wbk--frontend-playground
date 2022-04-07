@@ -1,11 +1,6 @@
 /* stylelint-disable selector-no-qualifying-type */
 
 /* critical:start */
-body {
-  color: var(--color-text);
-  font-family: $text-font-stack;
-  font-weight: 700;
-}
 
 h1,
 h1.t-pageHeading {
@@ -13,8 +8,14 @@ h1.t-pageHeading {
 }
 
 h2,
-h2.t-articleHeading {
-  @include font($articleHeading)
+h2.t-articleHeading,
+h2.t-formHeading {
+  @include font($articleHeading);
+  margin: 0 0 ($baseline * 3);
+}
+
+h2.t-formHeading {
+  text-align: center; /* font override */
 }
 
 h3,
@@ -47,7 +48,6 @@ button.t-button,
 .t-button {
   @include font($button);
 }
-
 
 /* critical:end */
 /* stylelint-enable selector-no-qualifying-type */

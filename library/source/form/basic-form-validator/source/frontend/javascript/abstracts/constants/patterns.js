@@ -25,7 +25,7 @@ export const patterns = {
     [
       "ios",
       /CPU like Mac OS X/,
-      (e) => {
+      () => {
         return 0;
       },
     ],

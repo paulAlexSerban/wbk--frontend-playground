@@ -1,0 +1,10 @@
+$type: "a";
+$block: "#{$type}-input-label";
+
+.#{$block} {
+  @include e("base") {
+    display: block;
+    margin-bottom: $baseline;
+    color: $c-sonic-silver;
+  }
+}

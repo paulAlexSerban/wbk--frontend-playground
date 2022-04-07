@@ -1,18 +1,9 @@
 @import "../../tools/functions/functions.scss";
 @import "./sizes.scss";
 
-/// Regular font family
-/// @type List
-$text-font-stack: "Open Sans", sans-serif !default;
-
-/// Code (monospace) font family
-/// @type List
-$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
-  "Monaco", monospace !default;
-
 $page-heading: (
   default: (
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(30px),
     line-height: convert-rem(34px),
     font-weight: 300,
@@ -24,7 +15,7 @@ $page-heading: (
 
 $articleHeading: (
   default: (
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(24px),
     line-height: convert-rem(28px),
     font-weight: 300,
@@ -36,7 +27,7 @@ $articleHeading: (
 
 $sectionHeading: (
   default: (
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(20px),
     line-height: convert-rem(24px),
     font-weight: normal,
@@ -49,7 +40,7 @@ $sectionHeading: (
 $body: (
   default: (
     color: var(--color-text),
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(16px),
     line-height: convert-rem(18px),
     font-weight: normal,
@@ -61,7 +52,7 @@ $body: (
 $button: (
   default: (
     color: var(--color-button-label),
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(16px),
     line-height: convert-rem(18px),
     font-weight: 500,
@@ -74,7 +65,7 @@ $button: (
 $link: (
   default: (
     color: var(--color-link),
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(16px),
     line-height: convert-rem(18px),
     font-weight: normal,
@@ -86,10 +77,34 @@ $link: (
 $label: (
   default: (
     color: var(--color-text),
-    font-family: $text-font-stack,
+    font-family: var(--text-regular),
     font-size: convert-rem(16px),
     line-height: convert-rem(18px),
-    font-weight: normal,
+    font-weight: 400,
+    text-align: left,
+    letter-spacing: convert-rem(.5px),
+  )
+);
+
+$input: (
+  default: (
+    color: var(--color-text),
+    font-family: var(--text-regular),
+    font-size: convert-rem(16px),
+    line-height: convert-rem(18px),
+    font-weight: 400,
+    text-align: left,
+    letter-spacing: convert-rem(.5px),
+  )
+);
+
+$input-message: (
+  default: (
+    color: var(--color-text),
+    font-family: var(--text-regular),
+    font-size: convert-rem(14px),
+    line-height: convert-rem(16px),
+    font-weight: 300,
     text-align: left,
     letter-spacing: convert-rem(.5px),
   )
