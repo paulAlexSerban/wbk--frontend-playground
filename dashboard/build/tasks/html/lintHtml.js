@@ -1,10 +1,10 @@
-import { src, lastRun } from "gulp";
+import { src } from "gulp";
 import lint from "gulp-htmllint";
 import {red, cyan, white} from "ansi-colors";
 import plumber from "gulp-plumber";
 
 export const lintHtml = () => {
-  return src('./dashboard/source/index.html')
+  return src('./dashboard/source/app/html/*.html')
     .pipe(plumber())
     .pipe(lint({}, htmlLintReporter));
 };

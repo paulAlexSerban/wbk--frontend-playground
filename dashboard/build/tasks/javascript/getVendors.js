@@ -2,11 +2,11 @@ import { src, dest } from "gulp";
 import plumber from "gulp-plumber";
 import size from "gulp-size";
 
-const assetsEntries = ["./dashboard/dist/*", "./dashboard/dist/*/*"];
-const coreDist = "./core/dist/app";
+const vendorEntries = ["./dashboard/source/frontend/javascript/modules/vendors/*.js"];
+const distDir = "./dashboard/dist/javascript";
 
-export const deployDashboard = () => {
-  return src(assetsEntries)
+export const getVendors = () => {
+  return src(vendorEntries)
     .pipe(plumber())
     .pipe(
       size({
@@ -15,5 +15,5 @@ export const deployDashboard = () => {
         showTotal: true,
       })
     )
-    .pipe(dest(coreDist));
+    .pipe(dest(distDir));
 };
