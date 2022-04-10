@@ -1,0 +1,58 @@
+.specificity-graph__base {
+  width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+.specificity-graph__container {
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+.specificity-graph__graph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  width: 100%;
+  height: 100%;
+}
+.specificity-graph__graph path {
+  fill: none;
+  stroke: #4682b4;
+  stroke-width: 4px;
+}
+.specificity-graph__graph .axis {
+  opacity: 0.6;
+}
+.specificity-graph__graph .axis--show-ticks .tick {
+  display: block;
+}
+.specificity-graph__graph .domain-label {
+  font-size: 0.9em;
+  fill: steelblue;
+}
+.specificity-graph__graph .overlay {
+  fill: none;
+  pointer-events: all;
+}
+.specificity-graph__graph .focus {
+  position: relative;
+}
+.specificity-graph__graph .focus-text-background {
+  fill: #333;
+}
+.specificity-graph__graph .focus-text {
+  font-size: 0.9em;
+  fill: #eee;
+}
+.specificity-graph__graph .focus circle {
+  fill: none;
+  stroke-width: 2.5px;
+  stroke: #0c0;
+}
