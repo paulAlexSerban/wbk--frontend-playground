@@ -7,6 +7,7 @@
     "package": "gulp package --require @babel/register",
     "develop": "gulp develop --require @babel/register",
     "deploy": "gulp deploy --require @babel/register",
+    "deploy:dashboard": "gulp deploy:dashboard --require @babel/register",
     "site": "gulp site --require @babel/register",
     "watch:basicFormValidator": "gulp watch:basicFormValidator --require @babel/register"
   },
@@ -44,6 +45,7 @@
     "gulp-size": "^4.0.1",
     "gulp-strip-css-comments": "^2.0.0",
     "gulp-svgmin": "^4.1.0",
+    "jquery": "^3.6.0",
     "postcss": "^8.4.8",
     "postcss-critical-split": "^2.5.3",
     "stylelint": "^14.5.3",
