@@ -1,11 +1,19 @@
 // Atoms
-@import "../../components/atoms/input-label.atom.scss";
-@import "../../components/atoms/input-field.atom.scss";
-@import "../../components/atoms/validation-message.atom.scss";
-@import "../../components/atoms/button.atom.scss";
+@import "../../components/atoms/input-label/input-label.atom.scss";
+@import "../../components/atoms/input-field/input-field.atom.scss";
+@import "../../components/atoms/validation-message/validation-message.atom.scss";
+@import "../../components/atoms/button/button.atom.scss";
 
 // Molecule
-@import "../../components/molecules/fieldset.molecule.scss";
+@import "../../components/molecules/fieldset/fieldset.molecule.scss";
 
 // Organisms
-@import "../../components/organisms/form.organism.scss";
+@import "../../components/organisms/form/form.organism.scss";
+
+// TYPES (Normal Emphasized Informative Warning Alert Error Success)
+@import "../../components/atoms/input-field/input_field.types.scss";
+@import "../../components/atoms/validation-message/validation-message.types.scss";
+
+// STATUSES
+// ::selection, :hover, -webkit-tap-highlight-color, :focus, :focus-within, :active, :link, :visited
+@import "../../components/atoms/input-field//input-field.statuses.scss";

@@ -10,18 +10,5 @@ $block: "#{$type}-input-field";
     padding: ($baseline * 2) $gutter;
     border: 2px solid $c-battleship-grey;
     border-radius: 4px;
-
-    &:focus {
-      border-color: $c-rhythm;
-      outline: 0;
-      box-shadow: $container-shadow;
-    }
-
-    &.success {
-      border-color: var(--color-success);
-    }
-    &.error {
-      border-color: var(--color-danger);
-    }
   }
 }

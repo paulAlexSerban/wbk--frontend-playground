@@ -11,8 +11,8 @@ const config = {
     errorMessage: ".a-validation-message__base"
   },
   classes: {
-    formControlError: "error",
-    formControlSuccess: "success"
+    formControlError: "t-error",
+    formControlSuccess: "t-success"
   }
 };
 

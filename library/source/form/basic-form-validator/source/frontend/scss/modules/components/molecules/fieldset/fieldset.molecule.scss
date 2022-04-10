@@ -6,6 +6,6 @@ $block: "#{$type}-fieldset";
     @include relative();
 
     padding-bottom: $baseline * 3;
-    margin-bottom: $baseline * 2;
+    margin-top: $baseline * 3;
   }
 }

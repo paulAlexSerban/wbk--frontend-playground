@@ -1,0 +1,10 @@
+$type: "a";
+$block: "#{$type}-validation-message";
+
+.#{$block} {
+  &__base {
+    .t-error & {
+      visibility: visible;
+    }
+  }
+}

@@ -2,51 +2,28 @@
 
 /* critical:start */
 
-h1,
-h1.t-pageHeading {
-  @include font($page-heading);
-}
+// h1 {
+//   @include font($page-heading);
+// }
 
-h2,
-h2.t-articleHeading,
-h2.t-formHeading {
+h2 {
   @include font($articleHeading);
-  margin: 0 0 ($baseline * 3);
 }
 
-h2.t-formHeading {
-  text-align: center; /* font override */
-}
+// h3 {
+//   @include font($sectionHeading)
+// }
 
-h3,
-h3.t-sectionHeading {
-  @include font($sectionHeading)
-}
-
-label,
-label.t-label {
+label {
   @include font($label);
 }
 
-a,
-a.t-link {
-  @include font($link);
+// a {
+//   @include font($link);
+// }
 
-  &,
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-p,span
-p.t-body {
+p,span {
   @include font($body);
-}
-
-a.t-button,
-button.t-button,
-.t-button {
-  @include font($button);
 }
 
 /* critical:end */

@@ -8,9 +8,5 @@ $block: "#{$type}-validation-message";
 
     color: var(--color-danger);
     visibility: hidden;
-
-    .error & {
-      visibility: visible;
-    }
   }
 }

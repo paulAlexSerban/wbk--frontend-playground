@@ -1,0 +1,12 @@
+$type: "a";
+$block: "#{$type}-input-field";
+
+.#{$block} {
+  &__base {
+    &:focus {
+      border-color: $c-rhythm;
+      outline: 0;
+      box-shadow: $container-shadow;
+    }
+  }
+}
