@@ -35,7 +35,7 @@
 }
 .specificity-graph__graph .domain-label {
   font-size: 0.9em;
-  fill: steelblue;
+  fill: #4682b4;
 }
 .specificity-graph__graph .overlay {
   fill: none;
