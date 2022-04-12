@@ -19,7 +19,7 @@
   "line-end-style": false,
   "line-max-len": 150,
   "line-max-len-ignore-regex": "href",
-  "spec-char-escape": true,
+  "spec-char-escape": false,
   "tag-bans": ["acronym", "big", "blink", "br", "center", "font", "frame", "frameset", "hr", "iframe", "style"],
   "tag-close": true,
   "tag-name-lowercase": true,
