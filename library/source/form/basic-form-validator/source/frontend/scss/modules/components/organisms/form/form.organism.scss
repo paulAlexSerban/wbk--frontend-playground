@@ -5,9 +5,9 @@ $block: "#{$type}-form";
   @include e("base") {
     min-width: convert-rem(400px);
     max-width: $max-width / 2;
-    background-color: var(--color-background-main);
+    background-color: var(--color-container-background);
     border-radius: convert-rem(5px);
-    box-shadow: var(--container-shadow);
+    box-shadow: var( --shadow-container);
   }
 
   @include e("container") {

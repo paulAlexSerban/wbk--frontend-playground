@@ -6,7 +6,7 @@ $block: "#{$type}-input-field";
     &:focus {
       border-color: $c-rhythm;
       outline: 0;
-      box-shadow: $container-shadow;
+      box-shadow: $shadow-container;
     }
   }
 }
