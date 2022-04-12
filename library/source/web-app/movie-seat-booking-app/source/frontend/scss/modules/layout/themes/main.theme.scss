@@ -1,0 +1,29 @@
+@import "../../../abstracts/abstracts.scss";
+
+/* critical:start */
+:root {
+  --color-text: #{$c-eerie-black};
+  --color-page-background: #{$c-white};
+  --color-button-label: #{$c-white};
+  --color-select-background: #{$c-white};
+  --color-container-background: #{$c-cultured};
+  --color-link: #{$c-indigo-blue};
+  --color-success: #{$c-emerald};
+  --color-danger: #{$c-cinnabar};
+  --color-button-primary: #{$c-carolina-blue};
+  --shadow-container: #{$shadow-container};
+  --text-regular: #{$openSans}; /* regular font family */
+  --text-code: #{$courierNew-monospace}; /* code family */
+
+  // project specific
+  --color-empty-seat: #{$c-dark-liver};
+  --color-screen: #{$c-white};
+  --color-showcase-item: #{$c-black-10};
+  --color-showcase-text: #{$c-sonic-silver};
+  --color-counter-text: #{$c-carolina-blue};
+  --color-seat-selected: #{$c-french-sky-blue};
+  --color-seat-occupied: #{$c-cultured};
+  --screen-shadow: #{$shadow-screen};
+}
+
+/* critical:end */
