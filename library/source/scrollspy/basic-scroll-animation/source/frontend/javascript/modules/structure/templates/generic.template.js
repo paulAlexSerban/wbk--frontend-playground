@@ -1,0 +1,27 @@
+import { blank } from "../../components/organisms/blank.organism";
+
+export const genericTemplate = () => {
+  document.querySelectorAll('[data-js-component="Blank"]').forEach((el) => {
+    blank(el);
+  });
+};
+
+const boxes = document.querySelectorAll(".box");
+
+window.addEventListener("scroll", checkBoxes);
+
+function checkBoxes() {
+  const triggerBottom = (window.innerHeight / 5) * 4;
+
+  boxes.forEach((box) => {
+    const boxTop = box.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      box.classList.add("show");
+    } else {
+      box.classList.remove("show");
+    }
+  });
+}
+
+checkBoxes();

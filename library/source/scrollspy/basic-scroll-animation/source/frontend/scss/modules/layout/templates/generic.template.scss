@@ -1,0 +1,64 @@
+// ATOMS
+
+// MOLECULES
+
+// ORGANISMS
+@import "../../components/organisms/blank/blank.organism.scss";
+
+// TYPES (Normal Emphasized Informative Warning Alert Error Success)
+@import "../../components/organisms/blank/blank.types.scss";
+
+// STATES (states of interactive elements)
+// :default, ::placeholder, :placeholder-shown, :blank, :indeterminate, :checked, :optional,
+// :required, :disabled, :enabled, :read-write, :read-only, :valid, :invalid, :in-range, :out-of-range
+@import "../../components/organisms/blank/blank.states.scss";
+
+// STATUSES
+// ::selection, :hover, -webkit-tap-highlight-color, :focus, :focus-within, :active, :link, :visited
+@import "../../components/organisms/blank/blank.statuses.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  font-family: #{$fontFam-roboto};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  background-color: #4682b4;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 30%);
+  transform: translateX(400%);
+  transition: transform .4s ease;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
+}
