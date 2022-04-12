@@ -1,6 +1,7 @@
 import { ajax } from 'jquery';
 
 (() => {
+  const trigger = document.querySelector(".specificity-graph-trigger");
   const loadStandaloneGraph = () => {
     const bodyEl = document.querySelector('body');
     const specificityGraphScript = document.createElement('script');
@@ -15,7 +16,7 @@ import { ajax } from 'jquery';
     };
     
     ajax({
-      url: "./library/form/basic-form-validator/styles/index.page.min.css",
+      url: "./library/web-app/movie-seat-booking-app/styles/index.page.min.css",
       dataType: "text",
       success: function(cssText) {
         window.specificityGraph.create(cssText, options);
@@ -24,7 +25,6 @@ import { ajax } from 'jquery';
   };
   
   const setupEvents = () => {
-    const trigger = document.querySelector(".specificity-graph-trigger");
     trigger.addEventListener("click", () => createGraph());
   };
   loadStandaloneGraph();
