@@ -12,8 +12,8 @@
   --color-danger: #{$c-cinnabar};
   --color-button-primary: #{$c-carolina-blue};
   --shadow-container: #{$shadow-container};
-  --text-regular: #{$openSans}; /* regular font family */
-  --text-code: #{$courierNew-monospace}; /* code family */
+  --text-regular: #{$fontFam-lato}; /* regular font family */
+  --text-code: #{$fontFam-courierPrime}; /* code family */
 
   // project specific
   --color-empty-seat: #{$c-dark-liver};
