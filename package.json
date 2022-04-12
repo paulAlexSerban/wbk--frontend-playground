@@ -9,7 +9,8 @@
     "deploy": "gulp deploy --require @babel/register",
     "deploy:dashboard": "gulp deploy:dashboard --require @babel/register",
     "site": "gulp site --require @babel/register",
-    "watch:basicFormValidator": "gulp watch:basicFormValidator --require @babel/register"
+    "watch:basicFormValidator": "gulp watch:basicFormValidator --require @babel/register",
+    "watch:movieSeatBookingApp": "gulp watch:movieSeatBookingApp --require @babel/register"
   },
   "license": "ISC",
   "devDependencies": {
