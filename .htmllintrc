@@ -1,5 +1,5 @@
 {
-  "attr-bans": ["align", "background", "bgcolor", "border", "frameborder", "longdesc", "marginwidth", "marginheight", "scrolling", "style", "width", "height", "onclick"],
+  "attr-bans": ["align", "background", "bgcolor", "border", "frameborder", "longdesc", "marginwidth", "marginheight", "scrolling", "width", "height", "onclick"],
   "attr-no-dup": true,
   "class-no-dup": true,
   "doctype-first": true,
@@ -17,7 +17,7 @@
   "input-req-label": true,
   "label-req-for": true,
   "line-end-style": false,
-  "line-max-len": 150,
+  "line-max-len": 180,
   "line-max-len-ignore-regex": "href",
   "spec-char-escape": false,
   "tag-bans": ["acronym", "big", "blink", "br", "center", "font", "frame", "frameset", "hr", "iframe", "style"],
