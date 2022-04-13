@@ -14,7 +14,7 @@ $layers: (
   "flyout",
   "dropdown",
   "base"
-) !default;
+) ;
 
 @function layer-index($layer, $adjust: 0) {
   @if not index($layers, $layer) {
