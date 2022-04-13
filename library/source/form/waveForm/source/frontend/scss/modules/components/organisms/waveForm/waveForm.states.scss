@@ -1,0 +1,10 @@
+$type: "o";
+$block: "#{$type}-waveForm";
+
+.#{$block} {
+  @include e("base") {
+    &:disabled {
+      color: #ff0000;
+    }
+  }
+}
