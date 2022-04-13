@@ -1,7 +1,7 @@
 /// Default font size
 /// @type Number
 /// @access public
-$default-font-size: 16px !default;
+$default-font-size: 16px ;
 
 /// Project's design system sizes
 /// @type Number
@@ -12,4 +12,4 @@ $gutter: convert-rem(16px);
 
 /// Container's maximum width
 /// @type Length
-$max-width: convert-rem(1440px) !default;
+$max-width: convert-rem(1440px) ;
