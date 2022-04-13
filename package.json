@@ -11,6 +11,7 @@
     "site": "gulp site --require @babel/register",
     "watch:blank": "gulp watch:blank --require @babel/register",
     "watch:expandingCards":"gulp watch:expandingCards --require @babel/register",
+    "watch:progressSteps": "gulp watch:progressSteps --require @babel/register",
     "watch:basicScrollAnimation":"gulp watch:basicScrollAnimation --require @babel/register",
     "watch:basicFormValidator": "gulp watch:basicFormValidator --require @babel/register",
     "watch:movieSeatBookingApp": "gulp watch:movieSeatBookingApp --require @babel/register",
