@@ -1,0 +1,10 @@
+$type: "o";
+$block: "#{$type}-hiddenSearch";
+
+.#{$block} {
+  @include e("base") {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
