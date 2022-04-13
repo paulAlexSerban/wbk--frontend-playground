@@ -1,4 +1,4 @@
-# [Front-end Component Library]()
+# Front-end Component Library [Demo](https://paulalexserban.github.io/frontend-component-library/)
 
 ## How to start development
 - `make install-core-static` - to install Docker nginx container and start the instance
