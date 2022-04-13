@@ -1,11 +1,11 @@
-const config = {
-  selectors: {
-    container: ".o-blank__base",
-  },
-  classes: {
-    bookingSeat: ".selected"
-  }
-};
+// const config = {
+//   selectors: {
+//     container: ".o-blank__base",
+//   },
+//   classes: {
+//     bookingSeat: ".selected"
+//   }
+// };
 
 export const blank = (el) => {
   const blankEl = el;
