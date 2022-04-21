@@ -25,7 +25,8 @@
     "watch:waveForm": "gulp watch:waveForm --require @babel/register",
     "watch:basicFormValidator": "gulp watch:basicFormValidator --require @babel/register",
     "watch:movieSeatBookingApp": "gulp watch:movieSeatBookingApp --require @babel/register",
-    "watch:basicCustomPlayer": "gulp watch:basicCustomPlayer --require @babel/register"
+    "watch:basicCustomPlayer": "gulp watch:basicCustomPlayer --require @babel/register",
+    "watch:coinGame":"gulp watch:coinGame --require @babel/register"
   },
   "license": "ISC",
   "devDependencies": {
