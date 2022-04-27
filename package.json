@@ -27,7 +27,10 @@
     "watch:movieSeatBookingApp": "gulp watch:movieSeatBookingApp --require @babel/register",
     "watch:basicCustomPlayer": "gulp watch:basicCustomPlayer --require @babel/register",
     "watch:coinGame": "gulp watch:coinGame --require @babel/register",
-    "watch:activityLauncherApp": "gulp watch:activityLauncherApp --require @babel/register"
+    "watch:activityLauncherApp": "gulp watch:activityLauncherApp --require @babel/register",
+    "/":"DOCKER",
+    "start:compose": "docker-compose --env-file .env up -d --build",
+    "stop:compose": "docker-compose down --volumes --rmi all"
   },
   "license": "ISC",
   "devDependencies": {
