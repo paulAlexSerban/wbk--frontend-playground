@@ -11,3 +11,15 @@ services:
     restart: always
     volumes:
       - ../backend/proxy/config/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - dashboard
+
+  dashboard:
+    build: 
+      context: ../backend/apis/dashboard
+      dockerfile: express.Dockerfile
+    container_name: express-dashboard
+    restart: always
+    volumes:
+      - ../backend/apis/dashboard:/usr/src/app
+      - /usr/src/app/node_modules
