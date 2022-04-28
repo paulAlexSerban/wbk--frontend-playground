@@ -43,8 +43,8 @@ const imgRenditionConf = {
   ]
 };
 
-const originalImageEntries = "./assets/source/images/*";
-const renditionsDir = "./assets/dist/images";
+const originalImageEntries = "./source/images/*";
+const renditionsDir = "./dist/images";
 
 export const createImageRenditions = () => {
   return src(originalImageEntries)
