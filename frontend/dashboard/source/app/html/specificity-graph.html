@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specificity Graph - Front-end Component Library</title>
+  <link rel="stylesheet" href="./styles/specificity-graph.page.css" />
+</head>
+
+<body>
+  <h1><a href="/">Dashboard</a></h1>
+  <aside>
+    <ul>
+      <li>
+        <h2>Library</h2>
+        <ul>
+          <li>
+            <a href="./library/form/basicFormValidator/index.html">Form - Basic Form Validator</a>
+          </li>
+          <li>
+            <a href="./library/web-app/movie-seat-booking-app/index.html">Web-App - Movie Seat Booking App</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2>Tools</h2>
+        <ul>
+          <li>
+            <a href="./specificity-graph.html">Specificity Graph</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <main>
+    <div class="specificity-graph__base">
+      <p class="specificity-graph-trigger">load specificity graph</p>
+      <div class="specificity-graph__container">
+        <svg class="specificity-graph__graph js-graph"></svg>
+      </div>
+    </div>
+  </main>
+  <script src="./javascript/specificity-graph.page.js" async defer></script>
+</body>
+
+</html>
