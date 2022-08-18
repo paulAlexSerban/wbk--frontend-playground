@@ -19,9 +19,10 @@ export const jsTranspileProd = () => {
     .pipe(plumber())
     .pipe(debug({ title: "jsTranspile : ", minimal: false }))
     .pipe(through(function(file) {
-      const relative = path.relative('.', file.path);
-      file.named = relative;
-      this.queue(file);
+        const relative = path.relative(".", file.path).split(".");
+        relative.pop();
+        file.named = relative.join(".");
+        this.queue(file);
     }))
     .pipe(gulpWebpack( webpackProdConfig, webpack))
     .pipe(rename((file) => {

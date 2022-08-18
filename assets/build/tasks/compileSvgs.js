@@ -2,8 +2,8 @@ import { src, dest } from "gulp";
 import plumber from "gulp-plumber";
 import svgmin from 'gulp-svgmin';
 
-const svgEntries = "./assets/source/svgs/*";
-const svgDistDir = "./assets/dist/svgs";
+const svgEntries = "./source/svgs/*";
+const svgDistDir = "./dist/svgs";
 
 export const compileSvgs = () => {
   return src(svgEntries)

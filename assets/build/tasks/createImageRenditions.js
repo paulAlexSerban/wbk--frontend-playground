@@ -5,13 +5,6 @@ import plumber from "gulp-plumber";
 const imgRenditionConf = {
   "*": [
     {
-      width: 320,
-      rename: {
-        suffix: "-320px",
-        extname: ".webp",
-      },
-    },
-    {
       width: 480,
       rename: { 
         suffix: "-480px", 
@@ -30,12 +23,6 @@ const imgRenditionConf = {
         extname: ".webp" },
     },
     {
-      width: 1920,
-      rename: { 
-        suffix: "-1920px", 
-        extname: ".webp" },
-    },
-    {
       rename: { 
         suffix: "-original", 
         extname: ".webp" },
@@ -43,8 +30,8 @@ const imgRenditionConf = {
   ]
 };
 
-const originalImageEntries = "./assets/source/images/*";
-const renditionsDir = "./assets/dist/images";
+const originalImageEntries = "./source/images/*";
+const renditionsDir = "./dist/images";
 
 export const createImageRenditions = () => {
   return src(originalImageEntries)

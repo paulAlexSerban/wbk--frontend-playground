@@ -2,7 +2,6 @@ import { task, series, parallel } from "gulp";
 import { cleanDashboard } from "./tasks/cleanDashboard";
 import { lintHtml } from "./tasks/html/lintHtml";
 import { compileHtml } from "./tasks/html/compileHtml";
-import { deployDashboard } from "./tasks/deployDashboard";
 import { lintJs } from "./tasks/javascript/lintJs";
 import { jsTranspileProd } from "./tasks/javascript/jsTranspile";
 import { getVendors } from "./tasks/javascript/getVendors";
@@ -24,9 +23,3 @@ task("build", parallel("build:markup", "build:styles", "build:scripts:prod"));
 task("get:vendors", getVendors);
 
 task("compile", series("clean", "lint", "build", "get:vendors"));
-
-task("deploy:dashboard", series("compile", deployDashboard));
-
-task("deploy", series("deploy:dashboard"));
-
-task("site", series("compile", deployDashboard));
