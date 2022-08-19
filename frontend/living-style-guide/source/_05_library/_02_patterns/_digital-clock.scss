@@ -1,11 +1,13 @@
 /* ------------------------------------ *\
- * LINK LIST
+ * DIGITAL-CLOCK
 \* ------------------------------------ */
 
-$block: "pat-link-list";
+$block: "pat-digital-clock";
 
 .#{$block} {
   @include e("base") {
-    @extend %display-block;
+    @extend %size-fill-horizontal;
+
+    @include flex();
   }
 }

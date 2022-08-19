@@ -17,7 +17,7 @@ export const transpileJavaScript = () => {
     `Executing TRANSPILE:JAVASCRIPT on '${paths.src.scripts.javaScriptLayers}' in MODE: ${nodeEnv}`
   );
   return new Promise((resolve, reject) => {
-    return src(paths.src.scripts.javaScriptLayers, { since: lastRun(transpileJavaScript) })
+    return src([...paths.src.scripts.javaScriptLayers, ...paths.src.scripts.javaScriptLibrary], { since: lastRun(transpileJavaScript) })
     .pipe(debug({title: 'transpileJavaScript :'}))
     .pipe(
       plumber({
