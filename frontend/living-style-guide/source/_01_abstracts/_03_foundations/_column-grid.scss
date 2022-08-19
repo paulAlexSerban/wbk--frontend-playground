@@ -11,25 +11,25 @@ $column-grid-16: (
   smartphone: (
     columns: 4,
     margin: 0,
-    width: convert-rem($mobile),
+    width: $mobile,
     touch: true,
   ),
   tablet: (
     columns: 16,
-    margin: convert-rem(16px),
-    width: convert-rem($tablet),
+    margin: 16px,
+    width: $tablet,
     touch: true,
   ),
   desktop: (
     columns: 16,
-    margin: convert-rem(16px),
-    width: convert-rem($desktop),
+    margin: 16px,
+    width: $desktop,
     touch: false,
   ),
   ultra-wide: (
     columns: 16,
-    margin: convert-rem(16px),
-    width: convert-rem($ultra-wide),
+    margin: 16px,
+    width: $ultra-wide,
     touch: false,
   ),
 );

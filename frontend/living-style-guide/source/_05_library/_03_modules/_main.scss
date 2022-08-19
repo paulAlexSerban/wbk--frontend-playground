@@ -2,7 +2,8 @@
  * #MAIN
 \* ------------------------------------ */
 
-$block: "mod-main";
+$type: "mod";
+$block: "#{$type}-main";
 
 .#{$block} {
   @extend %display-block;

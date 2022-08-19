@@ -2,7 +2,8 @@
  * #ICON
 \* ------------------------------------ */
 
-$block: "cmp-icon";
+$type: "cmp";
+$block: "#{$type}-icon";
 
 .#{$block} {
   @extend %display-block;

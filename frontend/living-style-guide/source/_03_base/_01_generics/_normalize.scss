@@ -41,7 +41,6 @@ body {
   @extend %flex-col;
 
   background-color: get-color($c-light, light);
-  overflow-x: hidden;
   min-height: 100vh;
 
   > * {
@@ -83,7 +82,6 @@ h1 {
 figcaption,
 figure,
 main {
-  /* 1 */
   display: block;
 }
 
@@ -92,7 +90,7 @@ main {
  */
 
 figure {
-  margin: 1em 40px;
+  @extend %margin-reset;
 }
 
 /**

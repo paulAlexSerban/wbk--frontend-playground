@@ -2,8 +2,11 @@
  * #IMAGE
 \* ------------------------------------ */
 
-$block: "cmp-image";
+$type: "cmp";
+$block: "#{$type}-image";
 
 .#{$block} {
-  @extend %display-block;
+  @include e("base") {
+    height: 100%;
+  }
 }

@@ -5,10 +5,10 @@
 \* ------------------------------------ */
 
 a {
-  color: var(--brand-color);
+  color: var(--color-link);
 
   &:hover {
-    color: var(--color-link);
+    color: var(--color-link-hover);
   }
 
   &,

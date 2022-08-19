@@ -1,0 +1,15 @@
+$type: "cmp";
+$block: "#{$type}-checkbox";
+
+.#{$block} {
+  @include e("label") {
+    @include font($label);
+    @extend %margin-bottom-8;
+    @extend %display-inline-block;
+  }
+
+  @include e("input") {
+    @extend %margin-right-8;
+    @extend %display-inline-block;
+  }
+}
