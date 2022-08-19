@@ -1,0 +1,19 @@
+$type: "cmp";
+$block: "#{$type}-select";
+
+.#{$block} {
+  @include e("input") {
+    @extend %padding-16;
+    @extend %border-radius-3;
+    @extend %margin-bottom-16;
+    @extend %size-fill-horizontal;
+
+    border: 1px solid get-color($c-gray, sonic-silver);
+  }
+
+  @include e("label") {
+    @include font($label);
+    @extend %margin-bottom-8;
+    @extend %display-inline-block;
+  }
+}

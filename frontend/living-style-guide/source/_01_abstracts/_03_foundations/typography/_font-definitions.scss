@@ -1,0 +1,378 @@
+/* ------------------------------------ *\
+  #FONT-DEFINITIONS
+\* ------------------------------------ */
+
+$body: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(17px),
+    line-height: convert-rem(23px),
+    font-weight: font-weight(regular),
+    letter-spacing: convert-rem(0.5px),
+  ),
+  $desktop: (
+    font-size: convert-rem(19px),
+    line-height: convert-rem(27px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(20px),
+    line-height: convert-rem(28px),
+  ),
+);
+
+$code: (
+  default: (
+    font-family: var(--text-code),
+    font-size: convert-rem(15px),
+    line-height: convert-rem(20px),
+    font-weight: font-weight(thin),
+    letter-spacing: convert-rem(0.5px),
+  ),
+  $desktop: (
+    font-size: convert-rem(17px),
+    line-height: convert-rem(24px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(20px),
+    line-height: convert-rem(25px),
+  ),
+);
+
+$button: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(17px),
+    line-height: convert-rem(18px),
+    font-weight: font-weight(regular),
+    letter-spacing: convert-rem(1.25px),
+  ),
+  $desktop: (
+    font-size: convert-rem(19px),
+    line-height: convert-rem(19px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(21px),
+    line-height: convert-rem(21px),
+  ),
+);
+
+$page-title: (
+  default: (
+    --page-title-font-size: convert-rem(48px),
+    --page-title-line-height: convert-rem(58px),
+    font-family: var(--text-regular),
+    font-weight: var(--font-weight--page-title),
+    font-size: var(--page-title-font-size),
+    line-height: var(--page-title-line-height),
+    letter-spacing: convert-rem(-1.5px),
+  ),
+  $desktop: (
+    --page-title-font-size: convert-rem(72px),
+    --page-title-line-height: convert-rem(72px),
+  ),
+  $ultra-wide: (
+    --page-title-font-size: convert-rem(81px),
+    --page-title-line-height: convert-rem(81px),
+    letter-spacing: -0.01em,
+  ),
+);
+
+$heading-100: (
+  default: (
+    --heading-font-size: convert-rem(48px),
+    --heading-line-height: convert-rem(58px),
+    font-family: var(--text-regular),
+    font-size: var(--heading-font-size),
+    line-height: var(--heading-line-height),
+    font-weight: var(--font-weight--heading),
+    letter-spacing: convert-rem(-1.5px),
+  ),
+  $desktop: (
+    --heading-font-size: convert-rem(72px),
+    --heading-line-height: convert-rem(72px),
+  ),
+  $ultra-wide: (
+    --heading-font-size: convert-rem(81px),
+    --heading-line-height: convert-rem(81px),
+    letter-spacing: convert-rem(-0.01px),
+  ),
+);
+
+$heading-200: (
+  default: (
+    --heading-font-size: convert-rem(34px),
+    --heading-line-height: convert-rem(38px),
+    font-family: var(--text-regular),
+    font-size: var(--heading-font-size),
+    line-height: var(--heading-line-height),
+    font-weight: var(--font-weight--heading),
+    letter-spacing: convert-rem(-0.5px),
+  ),
+  $desktop: (
+    --heading-font-size: convert-rem(45px),
+    --heading-line-height: convert-rem(52px),
+  ),
+  $ultra-wide: (
+    --heading-font-size: convert-rem(54px),
+    --heading-line-height: convert-rem(63px),
+    letter-spacing: convert-rem(-0.75px),
+  ),
+);
+
+$heading-300: (
+  default: (
+    --heading-font-size: convert-rem(27px),
+    --heading-line-height: convert-rem(33px),
+    font-family: var(--text-regular),
+    font-size: var(--heading-font-size),
+    line-height: var(--heading-line-height),
+    font-weight: var(--font-weight--heading),
+    letter-spacing: 0,
+  ),
+  $desktop: (
+    --heading-font-size: convert-rem(33px),
+    --heading-line-height: convert-rem(39px),
+    line-height: 54px,
+    letter-spacing: convert-rem(0.75px),
+  ),
+  $ultra-wide: (
+    --heading-font-size: convert-rem(39px),
+    --heading-line-height: convert-rem(45px),
+    line-height: 58px,
+    letter-spacing: convert-rem(-0.75px),
+  ),
+);
+
+$heading-400: (
+  default: (
+    --heading-font-size: convert-rem(20px),
+    --heading-line-height: convert-rem(26px),
+    font-family: var(--text-regular),
+    font-size: var(--heading-font-size),
+    line-height: var(--heading-line-height),
+    font-weight: var(--font-weight--heading),
+  ),
+  $desktop: (
+    --heading-font-size: convert-rem(26px),
+    --heading-line-height: convert-rem(32px),
+    font-size: var(--heading-font-size),
+    line-height: var(--heading-line-height),
+    letter-spacing: convert-rem(0.5px),
+  ),
+  $ultra-wide: (
+    --heading-font-size: convert-rem(30px),
+    --heading-line-height: convert-rem(36px),
+    font-size: var(--heading-font-size),
+    line-height: var(--heading-line-height),
+    letter-spacing: convert-rem(-0.5px),
+  ),
+);
+
+$body-bold: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(17px),
+    line-height: convert-rem(23px),
+    font-weight: 700,
+  ),
+  $desktop: (
+    font-size: convert-rem(19px),
+    line-height: convert-rem(27px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(20px),
+    line-height: convert-rem(28px),
+  ),
+);
+
+$body-small: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(14px),
+    font-weight: 400,
+    line-height: convert-rem(22px),
+    letter-spacing: 0.005em,
+  ),
+  $desktop: (
+    font-size: convert-rem(16px),
+    line-height: convert-rem(22px),
+    letter-spacing: 0.008em,
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(18px),
+    line-height: convert-rem(24px),
+    letter-spacing: 0.005em,
+  ),
+);
+
+$body-large: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(19px),
+    font-weight: 400,
+    line-height: convert-rem(27px),
+    letter-spacing: 0.005em,
+  ),
+  $desktop: (
+    font-size: convert-rem(23px),
+    line-height: convert-rem(30px),
+    letter-spacing: 0.008em,
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(25px),
+    line-height: convert-rem(32px),
+    letter-spacing: 0.005em,
+  ),
+);
+
+$button-large: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(20px),
+    line-height: convert-rem(21px),
+    font-weight: var(--font-weight--button),
+    letter-spacing: convert-rem(1.25px),
+  ),
+  $desktop: (
+    font-size: convert-rem(22px),
+    line-height: convert-rem(23px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(24px),
+    line-height: convert-rem(25px),
+  ),
+);
+
+$button-small: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(12px),
+    line-height: convert-rem(13px),
+    font-weight: var(--font-weight--button),
+    letter-spacing: convert-rem(1.25px),
+  ),
+  $desktop: (
+    font-size: convert-rem(14px),
+    line-height: convert-rem(15px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(16px),
+    line-height: convert-rem(17px),
+  ),
+);
+
+$link: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(16px),
+    line-height: convert-rem(18px),
+    font-weight: normal,
+    letter-spacing: convert-rem(0.5px),
+    text-decoration: none,
+  ),
+  $desktop: (
+    font-size: convert-rem(19px),
+    line-height: 27px,
+  ),
+  $ultra-wide: (
+    font-size: 20px,
+    line-height: 28px,
+  ),
+);
+
+$label: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(15px),
+    line-height: convert-rem(20px),
+    font-weight: 400,
+    letter-spacing: convert-rem(0.5px),
+  ),
+  $desktop: (
+    font-size: convert-rem(17px),
+    line-height: convert-rem(22px),
+  ),
+);
+
+$label-bold: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(15px),
+    font-weight: 700,
+    line-height: convert-rem(20px),
+  ),
+  $desktop: (
+    font-size: convert-rem(17px),
+    line-height: convert-rem(22px),
+  ),
+);
+
+$input: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(16px),
+    line-height: convert-rem(18px),
+    font-weight: 400,
+    letter-spacing: convert-rem(0.5px),
+  ),
+);
+
+$input-message: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(14px),
+    line-height: convert-rem(16px),
+    font-weight: 300,
+    letter-spacing: convert-rem(0.5px),
+  ),
+);
+
+$select: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(14px),
+    line-height: convert-rem(16px),
+    font-weight: 400,
+    letter-spacing: convert-rem(0.5px),
+  ),
+);
+
+$blockquote: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(27px),
+    font-weight: 400,
+    line-height: convert-rem(40px)
+  ),
+  $desktop: (
+    font-size: convert-rem(38px),
+    line-height: convert-rem(58px),
+    letter-spacing: 0.01em,
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(40px),
+    line-height: convert-rem(60px),
+    letter-spacing: 0,
+  ),
+);
+
+$overline: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(8px),
+    line-height: convert-rem(10px),
+    font-weight: 700,
+    letter-spacing: convert-rem(1.5px),
+    text-transform: uppercase
+  ),
+  $desktop: (
+    font-size: convert-rem(10px),
+    line-height: convert-rem(14px),
+    letter-spacing: 0.01em,
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(12px),
+    line-height: convert-rem(16px),
+    letter-spacing: 0,
+  ),
+);

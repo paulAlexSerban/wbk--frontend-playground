@@ -1,0 +1,20 @@
+@use "true" as *;
+@include report;
+
+@include describe("get-color($c-light, light)") {
+  @include it("Should return color: #fff") {
+    @include assert {
+      @include output {
+        .light-color {
+          color: get-color($c-light, light);
+        }
+      }
+
+      @include expect {
+        .light-color {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
