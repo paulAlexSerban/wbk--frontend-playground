@@ -4,27 +4,12 @@ $block: "#{$type}-list-unordered";
 .#{$block} {
   @include e("base") {
     @include font($body);
+    @extend %margin-bottom-32;
 
     color: var(--text-color);
-    margin-bottom: $baseline * 2;
+  }
 
-    @include m("row") {
-      @include flex($direction: row);
-
-      gap: $gutter;
-
-      .pat-reference-list__base & {
-        justify-content: end;
-      }
-
-      .mod-navigation-bar__base & {
-        justify-content: start;
-      }
-    }
-
-    @include m("bulleted") {
-      list-style: circle;
-      list-style-position: inside;
-    }
+  @include e("item") {
+    @extend %margin-bottom-8;
   }
 }

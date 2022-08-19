@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Boilerplate Page</title>
+    <title>Digital Clock - FE Cmp. Collection</title>
     <meta name="description" content="boilerplate page used to create new html pages" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="openGraph boilerplate title" />
-    <meta property="og:type" content="openGraph component title" />
+    <meta property="og:title" content="Digital Clock - FE Cmp. Collection" />
+    <meta property="og:type" content="Digital Clock" />
     <meta property="og:url" content="openGraph page url" />
     <meta property="og:image" content="openGraph component screenshot image" />
 
@@ -17,8 +17,7 @@
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 
     <!-- Critical Stylesheets - START -->
-    <link rel="stylesheet" href="./css/page/base.page.layer.css" />
-    <link rel="stylesheet" href="./css/template/generic.template.layer.css" />
+    <link rel="stylesheet" href="../css/page/base.page.layer.css" />
     <!-- Critical Stylesheets - END -->
 
     <link rel="manifest" href="site.webmanifest" />
@@ -32,22 +31,28 @@
     <header class="mod-header__base row">
       <div class="mod-header__content col-smartphone-12">
         <h1 class="cmp-heading__base cmp-heading__base--page-title cmp-heading__base--is-center-aligned">
-          <span class="cmp-heading__main">Boilerplate Pager</span>
+          <span class="cmp-heading__main">Digital Clock</span>
         </h1>
       </div>
     </header>
 
     <main class="mod-main__base row">
-      <p class="cmp-paragraph__base">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam at nisi quia consectetur sunt eum
-        ut suscipit eaque labore, autem ad itaque. Quidem, incidunt nam. Pariatur doloremque nobis perferendis.
-      </p>
+
+      <!-- START: Digital Clock (Pattern) -->
+      <link rel="stylesheet" href="../css/template/digital-clock.template.layer.css" />
+
+      <div class="pat-digital-clock__base" data-js-pat="DigitalClock">
+        <time class="cmp-time__base js-digital-clock__time" datetime="">-</time>
+      </div>
+
+      <script src="../javascript/pat/DigitalClock.pat.js" async defer></script>
+      <!-- END: Digital Clock (Pattern) -->
+
     </main>
 
-
     <footer class="mod-footer__base row">
-      <script src="./javascript/page/index.page.layer.js" async defer></script>
-      <script src="./javascript/template/generic.template.layer.js" async defer></script>
+      <script src="../javascript/page/index.page.layer.js" async defer></script>
+      <script src="../javascript/template/generic.template.layer.js" async defer></script>
     </footer>
   </body>
 </html>

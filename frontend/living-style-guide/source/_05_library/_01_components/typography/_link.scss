@@ -12,9 +12,5 @@ $block:  "#{$type}-link";
     }
 
     color: get-color($c-blue, rhythm);
-
-    @include m("navigation") {
-      color: get-color($c-gray, davys-grey);
-    }
   }
 }
