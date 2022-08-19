@@ -60,4 +60,4 @@ jobs:
 
       - name: "🧪 Test Nginx Static Website container"
         if: steps.changed-nginx-docker.outputs.any_changed == 'true'
-        run: bash scripts/docker-static-website-test.bash
+        run: bash scripts/docker-frontend-component-collection-test.bash

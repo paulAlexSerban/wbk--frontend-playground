@@ -27,21 +27,21 @@ jobs:
 
       - name: "🔍  Verify Changed Frontend Static Website Files"
         uses: tj-actions/changed-files@v23.1
-        id: changed-frontend-static-website-files
+        id: changed-frontend-frontend-component-collection-files
         with:
           files: |
-              frontend/static-website/**/*
+              frontend/frontend-component-collection/**/*
               frontend/living-style-guide/**/*.scss
               frontend/js-component-library/**/*.js
 
       - name: List all changed files
         run: |
-          for file in ${{ steps.changed-frontend-static-website-files.outputs.all_changed_files }}; do
+          for file in ${{ steps.changed-frontend-frontend-component-collection-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
 
       - name: "🔄  Cache node_modules"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         uses: actions/cache@v2
         with:
           path: |
@@ -51,37 +51,37 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: "🔧  Setup NodeJS 14.19.1"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 14.19.1
 
       - name: "🔧  Install npm@latest"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         run: npm i -g npm@latest
 
       - name: "📦  Install Frontend Static Website Development dependencies"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         run: |
-          bash scripts/frontend-static-website-install.bash
+          bash scripts/frontend-frontend-component-collection-install.bash
           bash scripts/frontend-living-style-guide-install.bash
           bash scripts/frontend-js-component-library-install.bash
           bash scripts/assets-install.bash
 
       - name: "🔍  Lint Frontend Static Website"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
-        run: bash scripts/frontend-static-website-lint.bash
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
+        run: bash scripts/frontend-frontend-component-collection-lint.bash
 
       - name: '🧪  Test Frontend Living Style Guide'
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
         run: bash scripts/frontend-living-style-guide-test.bash
 
       - name: '🧪  Test Frontend JavaScript Component Library'
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'push'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
         run: bash scripts/frontend-js-component-library-test.bash
 
       - name: "🏗️  Build Frontend Static Website"
-        if: steps.changed-frontend-static-website-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
+        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
         run: |
           bash scripts/assets-process.bash
-          bash scripts/frontend-static-website-build.bash production
+          bash scripts/frontend-frontend-component-collection-build.bash production

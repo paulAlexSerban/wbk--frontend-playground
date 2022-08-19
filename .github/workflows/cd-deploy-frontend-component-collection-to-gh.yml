@@ -35,21 +35,21 @@ jobs:
 
       - name: "📦  Install Static Website Development dependencies"
         run: |
-          bash scripts/frontend-static-website-install.bash
+          bash scripts/frontend-frontend-component-collection-install.bash
 
       - name: "🏗️  Build Frontend Static Website"
         run: |
           bash scripts/assets-process.bash
-          bash scripts/frontend-static-website-build.bash production
+          bash scripts/frontend-frontend-component-collection-build.bash production
 
       - name: "🚚  Package Static Website"
         run: |
           bash scripts/package-clean.bash
-          bash scripts/package-static-website.bash
+          bash scripts/package-frontend-component-collection.bash
 
       - name: "🚀 Deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          branch: gh-pages-static-website
-          folder: package/static-website
+          branch: gh-pages-frontend-component-collection
+          folder: package/frontend-component-collection
 
