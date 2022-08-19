@@ -1,4 +1,4 @@
 import { config } from "./config";
 
-console.log("hello BASE PAGE");
+console.log("hello INDEX PAGE");
 console.log(config.pageName);
