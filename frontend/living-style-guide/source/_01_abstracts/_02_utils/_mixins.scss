@@ -1,0 +1,242 @@
+@use "sass:map";
+
+/* ------------------------------------ *\
+  * #BEM
+  * .block {
+  *   @include e('element') {
+  *       CSS declarations for `.block__element`
+  *   }
+
+  *   @include m('modifier') {
+  *       @include e('element') {
+  *           CSS declarations for `.block--modifier__element` *
+  *       }
+  *   }
+  * }
+\* ------------------------------------ */
+
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/// @alias element
+@mixin e($elements...) {
+  @each $element in $elements {
+    @include element($element) {
+      @content;
+    }
+  }
+}
+
+/// @alias modifier
+@mixin m($modifiers...) {
+  @each $modifier in $modifiers {
+    @include modifier($modifier) {
+      @content;
+    }
+  }
+}
+
+/* ------------------------------------ *\
+  #ITERATE-OBJECT
+\* ------------------------------------ */
+
+/// Iterate SASS object (maps, lists)
+/// @access public
+/// @param {String} $list - Lists's name
+@mixin iterateObject($list) {
+  @each $key, $value in $list {
+    #{$key}: $value;
+  }
+}
+
+/* ------------------------------------ *\
+  #FONT
+\* ------------------------------------ */
+
+@mixin font($font-definition) {
+  @each $viewport, $rules in $font-definition {
+    $map: map.get($font-definition, $viewport);
+    @if $viewport == "default" {
+      @include iterateObject($map);
+    } @else {
+      @include breakpoint($viewport) {
+        @include iterateObject($map);
+      }
+    }
+  }
+}
+
+/* ------------------------------------ *\
+  #GENERATE-PLACEHOLDER
+\* ------------------------------------ */
+
+@mixin generate-placeholder($property, $from: 0, $to: 0, $unit: px) {
+  @for $i from $from through $to {
+    %#{$property}-#{$i} {
+      #{$property}: #{$i}#{$unit};
+    }
+  }
+}
+
+/* ------------------------------------ *\
+  #BREAKPOINT-UP
+\* ------------------------------------ */
+
+/// Generate a media query from the width of the given breakpoint to infinity
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
+  @if type-of($name) == "number" {
+    @media only screen and (min-width: $name) {
+      @content;
+    }
+  } @else if map-has-key($breakpoints, $name) {
+    $breakpoint: map.get($breakpoints, $name);
+    $width: map.get($breakpoint, width);
+
+    @if is-smallest-breakpoint($name, $breakpoints) {
+      @content;
+    } @else {
+      @media only screen and (min-width: $width) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})";
+  }
+}
+
+/* ------------------------------------ *\
+  #BREAKPOINT
+\* ------------------------------------ */
+
+/// Generate a media query for a given breakpoint
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin breakpoint($name, $breakpoints: $breakpoints) {
+  @include breakpoint-up($name, $breakpoints) {
+    @content;
+  }
+}
+
+/* ------------------------------------ *\
+  #BORDER
+\* ------------------------------------ */
+
+@mixin border($top: none, $right: none, $bottom: none, $left: none) {
+  border-top: $top;
+  @if $right == none {
+    border-right: $top;
+  } @else {
+    border-right: $right;
+  }
+  @if $bottom == none {
+    border-bottom: $top;
+  } @else {
+    border-bottom: $bottom;
+  }
+  @if $left == none {
+    border-left: $top;
+  } @else {
+    border-left: $left;
+  }
+}
+
+/* ------------------------------------ *\
+  #USE-EXTENDS
+\* ------------------------------------ */
+
+@mixin use-extends($collection: ()) {
+  @each $el in $collection {
+    @extend %#{$el};
+  }
+}
+
+/* ------------------------------------ *\
+  #TRANSITION
+\* ------------------------------------ */
+
+@mixin transition(
+  $transition-property: all,
+  $transition-time: 1000ms,
+  $method: ease-out
+) {
+  transition: $transition-property $transition-time $method;
+}
+
+/* ------------------------------------ *\
+  #SIZE
+\* ------------------------------------ */
+
+@mixin width($value: auto) {
+  width: $value;
+}
+
+@mixin height($value: auto) {
+  height: $value;
+}
+
+@mixin size($wValue: auto, $hValue: auto) {
+  width: $wValue;
+  height: $hValue;
+}
+
+/* ------------------------------------ *\
+  #ON-EVENT
+\* ------------------------------------ */
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/* ------------------------------------ *\
+  #FLEX-BOX
+\* ------------------------------------ */
+
+/// Shorthand mixin for flex box - can be used to center content by default
+/// @param {String} $main - justify-content properties
+/// @param {String} $cross - align-item properties
+/// @param {String} $direction - flex-direction properties
+
+@mixin flex($main: center, $cross: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $main;
+  align-items: $cross;
+}

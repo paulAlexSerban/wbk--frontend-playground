@@ -1,0 +1,16 @@
+@use "true" as *;
+@include report;
+
+@include describe("@include width();") {
+  @include it("Should return 'width: auto'") {
+    @include assert {
+      @include output {
+        @include width();
+      }
+
+      @include expect {
+        width: auto;
+      }
+    }
+  }
+}

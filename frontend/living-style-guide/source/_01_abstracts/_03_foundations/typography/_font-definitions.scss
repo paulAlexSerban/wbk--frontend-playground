@@ -1,0 +1,57 @@
+/* ------------------------------------ *\
+  #FONT-DEFINITIONS
+\* ------------------------------------ */
+
+$body: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(17px),
+    line-height: convert-rem(23px),
+    font-weight: font-weight(regular),
+    letter-spacing: convert-rem(0.5px),
+  ),
+  $desktop: (
+    font-size: convert-rem(19px),
+    line-height: convert-rem(27px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(20px),
+    line-height: convert-rem(28px),
+  ),
+);
+
+$code: (
+  default: (
+    font-family: var(--text-code),
+    font-size: convert-rem(15px),
+    line-height: convert-rem(20px),
+    font-weight: font-weight(thin),
+    letter-spacing: convert-rem(0.5px),
+  ),
+  $desktop: (
+    font-size: convert-rem(17px),
+    line-height: convert-rem(24px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(20px),
+    line-height: convert-rem(25px),
+  ),
+);
+
+$button: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(17px),
+    line-height: convert-rem(18px),
+    font-weight: font-weight(regular),
+    letter-spacing: convert-rem(1.25px),
+  ),
+  $desktop: (
+    font-size: convert-rem(19px),
+    line-height: convert-rem(19px),
+  ),
+  $ultra-wide: (
+    font-size: convert-rem(21px),
+    line-height: convert-rem(21px),
+  ),
+);

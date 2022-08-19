@@ -1,0 +1,13 @@
+/* ------------------------------------ *\
+  #THEMES
+\* ------------------------------------ */
+
+:root {
+  --text-color: #{get-color($c-dark, eerie-black)};
+  --brand-color: #{get-color($c-red, ua-red)};
+  --color-link: #{get-color($c-gray, davys-grey)};
+  --color-link-hover: #{get-color($c-gray, davys-grey)};
+  --background-color: #{get-color($c-light, light)};
+  --text-regular: #{$font-family-openSans};
+  --text-code: #{$font-family-courierPrime};
+}
