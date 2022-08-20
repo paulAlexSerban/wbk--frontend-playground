@@ -16,7 +16,7 @@ export const buildHtml = () => {
       .pipe(
         embedSvg({
           selectors: ".inline-svg",
-          root: "./assets/dist/svgs",
+          root:  "../assets/dist/svgs",
           xmlMode: false,
         })
       )

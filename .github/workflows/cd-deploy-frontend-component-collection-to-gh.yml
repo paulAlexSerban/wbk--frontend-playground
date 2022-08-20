@@ -1,0 +1,55 @@
+name: Deploy Front-end Component Collection to Github Pages
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Front-end Component Collection
+    runs-on: ubuntu-latest
+    steps:
+      - name: "📥 checkout repository"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: "🔄  Cache node_modules"
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: "🔧 Setup NodeJS 14.19.1"
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.19.1
+
+      - name: "🔧 Install npm@latest"
+        run: npm i -g npm@latest
+
+      - name: "📦  Install Assets dependencies"
+        run: |
+          bash scripts/assets-install.bash
+
+      - name: "📦  Install Front-end Component Collection Development dependencies"
+        run: |
+          bash scripts/frontend-frontend-component-collection-install.bash
+
+      - name: "🏗️  Build Frontend Front-end Component Collection"
+        run: |
+          bash scripts/assets-process.bash
+          bash scripts/frontend-frontend-component-collection-build.bash production
+
+      - name: "🚚  Package Front-end Component Collection"
+        run: |
+          bash scripts/package-clean.bash
+          bash scripts/package-frontend-component-collection.bash
+
+      - name: "🚀 Deploy to GitHub Pages"
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages-frontend-component-collection
+          folder: package/frontend-component-collection
+

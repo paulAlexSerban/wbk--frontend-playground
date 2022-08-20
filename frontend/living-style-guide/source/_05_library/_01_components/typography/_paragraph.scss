@@ -1,0 +1,14 @@
+/* ------------------------------------ *\
+ * #PARAGRAPH
+\* ------------------------------------ */
+$type: "cmp";
+$block: "#{$type}-paragraph";
+
+.#{$block} {
+  @include e("base") {
+    @include font($body);
+
+    color: var(--text-color);
+    margin-bottom: $baseline * 2;
+  }
+}

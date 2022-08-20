@@ -1,0 +1,39 @@
+/* ------------------------------------ *\
+ * #HEADER
+\* ------------------------------------ */
+
+$type: "mod";
+$block: "#{$type}-header";
+
+.#{$block} {
+  @include e("base") {
+    @include flex($main: space-between);
+
+    @extend %margin-bottom-32;
+
+    body > & {
+      @extend %padding-top-32;
+      @extend %padding-bottom-32;
+      @extend %margin-bottom-64;
+      @extend %border-bottom-solid-silver;
+    }
+  }
+}
+
+// should be changed to the logo atom
+svg {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// buttons group - to be moved to button-group molecule
+button + button {
+  margin-left: 10px;
+}
+
+// should use the paragraph atom
+.welcome {
+  color: #333;
+  font-size: 14px;
+  margin-right: 10px;
+}

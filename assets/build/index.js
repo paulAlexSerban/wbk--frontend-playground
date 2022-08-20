@@ -1,17 +1,19 @@
-import { task, parallel, series } from "gulp";
-import { compileIcons } from "./tasks/compileIcons";
+import { task, parallel, series} from "gulp";
+import { clean } from "./tasks/clean";
+import { processIcons } from "./tasks/processIcons";
+import { processSvgs } from "./tasks/processSvgs";
 import { createImageRenditions } from "./tasks/createImageRenditions";
-import { compileSvgs } from "./tasks/compileSvgs";
-import { deployAssets } from "./tasks/deployAssets";
-import { cleanAssets } from "./tasks/cleanAssets";
-import { loadVideos } from "./tasks/loadVideos";
+import { processVideos } from "./tasks/processVideos";
+import { processAudio } from "./tasks/processAudio";
 
-task("clean", cleanAssets);
+// ---------------------------------------------------------------------
+// | Helper tasks                                                      |
+// ---------------------------------------------------------------------
+
+// ---------------------------------------------------------------------
+// | Main tasks                                                        |
+// ---------------------------------------------------------------------
 task(
-  "compile",
-  series("clean", parallel(compileIcons, createImageRenditions, compileSvgs, loadVideos))
+  "process",
+  series(clean, parallel( processIcons, processSvgs, createImageRenditions,  processVideos, processAudio))
 );
-
-task("deploy", series("compile", deployAssets));
-
-task("site", series("compile", deployAssets));
