@@ -1,5 +1,5 @@
 ---
-name: Develop Frontend Static Website
+name: Develop Frontend Front-end Component Collection
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-frontend:
-    name: Build Frontend Static Website
+    name: Build Frontend Front-end Component Collection
     runs-on: ubuntu-latest
     steps:
       - run: echo 'event name is:' ${{ github.event_name }} 
@@ -25,7 +25,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "🔍  Verify Changed Frontend Static Website Files"
+      - name: "🔍  Verify Changed Frontend Front-end Component Collection Files"
         uses: tj-actions/changed-files@v23.1
         id: changed-frontend-frontend-component-collection-files
         with:
@@ -60,7 +60,7 @@ jobs:
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         run: npm i -g npm@latest
 
-      - name: "📦  Install Frontend Static Website Development dependencies"
+      - name: "📦  Install Frontend Front-end Component Collection Development dependencies"
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         run: |
           bash scripts/frontend-frontend-component-collection-install.bash
@@ -68,7 +68,7 @@ jobs:
           bash scripts/frontend-js-component-library-install.bash
           bash scripts/assets-install.bash
 
-      - name: "🔍  Lint Frontend Static Website"
+      - name: "🔍  Lint Frontend Front-end Component Collection"
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
         run: bash scripts/frontend-frontend-component-collection-lint.bash
 
@@ -80,7 +80,7 @@ jobs:
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
         run: bash scripts/frontend-js-component-library-test.bash
 
-      - name: "🏗️  Build Frontend Static Website"
+      - name: "🏗️  Build Frontend Front-end Component Collection"
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
         run: |
           bash scripts/assets-process.bash

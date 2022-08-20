@@ -1,10 +1,10 @@
-name: Deploy Static Website to Github Pages
+name: Deploy Front-end Component Collection to Github Pages
 on:
   workflow_dispatch:
 
 jobs:
   deploy:
-    name: Deploy Static Website
+    name: Deploy Front-end Component Collection
     runs-on: ubuntu-latest
     steps:
       - name: "📥 checkout repository"
@@ -33,16 +33,16 @@ jobs:
         run: |
           bash scripts/assets-install.bash
 
-      - name: "📦  Install Static Website Development dependencies"
+      - name: "📦  Install Front-end Component Collection Development dependencies"
         run: |
           bash scripts/frontend-frontend-component-collection-install.bash
 
-      - name: "🏗️  Build Frontend Static Website"
+      - name: "🏗️  Build Frontend Front-end Component Collection"
         run: |
           bash scripts/assets-process.bash
           bash scripts/frontend-frontend-component-collection-build.bash production
 
-      - name: "🚚  Package Static Website"
+      - name: "🚚  Package Front-end Component Collection"
         run: |
           bash scripts/package-clean.bash
           bash scripts/package-frontend-component-collection.bash

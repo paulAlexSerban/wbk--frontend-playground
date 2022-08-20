@@ -58,6 +58,6 @@ jobs:
         if: steps.changed-traefik-proxy-docker.outputs.any_changed == 'true'
         run: bash scripts/docker-traefik-proxy-test.bash
 
-      - name: "🧪 Test Nginx Static Website container"
+      - name: "🧪 Test Nginx Front-end Component Collection container"
         if: steps.changed-nginx-docker.outputs.any_changed == 'true'
         run: bash scripts/docker-frontend-component-collection-test.bash
