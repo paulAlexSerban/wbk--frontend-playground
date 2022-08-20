@@ -1,6 +1,6 @@
 module.exports = {
   branches: "release",
-  repositoryUrl: "https://github.com/paulAlexSerban/tpl--frontend-component-collection",
+  repositoryUrl: "https://github.com/paulAlexSerban/prj--frontend-component-collection",
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
