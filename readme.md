@@ -1,25 +1,16 @@
-# Front-end Component Library [Demo](https://paulalexserban.github.io/frontend-component-library/)
+# Front-end Component Library
 
-## How to start development
-- `make install-core-static` - to install Docker nginx container and start the instance
-- `npm run deploy` - to compile and deploy the entire project with all modules and submodules
-- `npm run site` and then `make release-site` - to update ./docs and deploy to Github pages 
+## Tech-stack
 
-## Components
+[![Traefik](https://img.shields.io/badge/Traefik-v2-green)](https://traefik.io/)
+[![NodeJS](https://img.shields.io/badge/NodeJS-14.19.1-green)](https://nodejs.org/docs/latest-v14.x/api/)
+[![Docker](https://img.shields.io/badge/Docker-20-blue)](https://docs.docker.com/release-notes/)
+[![Nginx](https://img.shields.io/badge/Nginx-1.21.6-green)](https://www.nginx.com/)
+[![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Semantic Versioning](https://img.shields.io/badge/Semantic%20Versioning-2.0.0-green)](https://semver.org/spec/v2.0.0.html)
 
-## Micro-kernel Architecture (main architecture pattern)
 
-- sometimes referred to as the plug-in architecture is a natural pattern for implementing product-based applications
-- consists of two types of architecture components: core system and plug-in modules
-- application logic is divided between independent plug-in models and the basic core system, providing extensibility, flexibility, and isolation of application features and custom logic
+## Useful Local Development URLs
 
-### Core System
-
-- based on MVC (model-view-control)
-- the core system of the micro-kernel architecture pattern traditionally contains only the minimal functionality required to make the system operational
-
-### Plug-in Modules
-
-- using BEM as a naming convention
-- based on Atomic Design Pattern, ITCSS, SMACSS and 7-in-1
-- the plug-in modules are stand-alone, independent components that contain specialized processing, additional features, and custom code that is meant to enhance or extend the core system to produce additional business capabilities
+- [traefik dashboard](http://localhost:8080/dashboard)
+- [frontend-component-collection-service](https://nginx-frontend-component-collection-server.localhost/)

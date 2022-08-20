@@ -1,0 +1,60 @@
+/* ---------------------------------------------------------------------------------------------------------------- *\
+  * Remove browser margin and padding
+\* ---------------------------------------------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  @extend %margin-reset;
+  @extend %padding-reset;
+}
+
+fieldset {
+  @extend %padding-reset;
+  @extend %no-border;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- *\
+  * IMAGES
+  * 1. Remove the border on images inside links in IE 10.
+  * 2. Make images fluid
+\* ---------------------------------------------------------------------------------------------------------------- */
+
+img {
+  @extend %no-border;
+  @extend %display-block;
+  max-width: 100%;
+  @include height();
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- *\
+  * Render the `main` element consistently in IE.
+\* ---------------------------------------------------------------------------------------------------------------- */
+
+main {
+  @extend %display-block;
+}
+
+::selection {
+  background-color: get-color($c-dark, eerie-black);
+  color: get-color($c-light, cultured);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- *\
+  * Remove default table spacing.
+\* ---------------------------------------------------------------------------------------------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  white-space: revert;
+}
+
+ul,
+ol {
+  @extend %margin-reset;
+  list-style: none;
+}

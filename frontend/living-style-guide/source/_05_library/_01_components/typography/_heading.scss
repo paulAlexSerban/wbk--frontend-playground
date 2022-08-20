@@ -1,0 +1,69 @@
+/*
+title: h1
+  span.main text
+  span.subtitle text
+headings: h2 -> h6
+  span.main
+  span.subheading
+*/
+$type: "cmp";
+$block: "#{$type}-heading";
+
+.#{$block} {
+  @include e("base") {
+    @extend %margin-centered;
+    margin-bottom: $baseline * 2;
+    color: var(--text-color);
+
+    .mod-article__base > & {
+      @extend %margin-bottom-64;
+    }
+
+    @include m("page-title") {
+      @include font($page-title);
+    }
+
+    @include m("heading-100") {
+      @include font($heading-100);
+    }
+
+    @include m("heading-200") {
+      @include font($heading-200);
+    }
+
+    @include m("heading-300") {
+      @include font($heading-300);
+    }
+
+    @include m("heading-400") {
+      @include font($heading-400);
+    }
+
+    @include m("is-center-aligned") {
+      @extend %center-text;
+    }
+
+    @include m("is-right-aligned") {
+      @extend %right-text;
+    }
+  }
+
+  @include e("main", "subheading") {
+    @extend %display-block;
+  }
+
+  @include e("subheading") {
+    .cmp-heading__base--heading-100 &,
+    .cmp-heading__base--heading-200 &,
+    .cmp-heading__base--heading-300 &,
+    .cmp-heading__base--heading-400 {
+      font-size: calc(var(--heading-font-size) * 0.7);
+      line-height: calc(var(--heading-line-height) * 0.75);
+    }
+
+    .cmp-heading__base--page-title & {
+      font-size: calc(var(--page-title-font-size) * 0.7);
+      line-height: calc(var(--page-title-line-height) * 0.75);
+    }
+  }
+}

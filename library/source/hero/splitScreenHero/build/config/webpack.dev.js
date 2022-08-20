@@ -6,6 +6,7 @@ const plugins = [new webpack.ProgressPlugin()];
 
 export const webpackDevConfig = {
   mode: "development",
+  devtool: false,
   cache: true,
   module: {
     rules: [es5jsLoader],

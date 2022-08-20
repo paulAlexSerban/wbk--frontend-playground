@@ -15,19 +15,16 @@ export const jsTranspileDev = () => {
     .pipe(debug({title: 'jsTranspile :'}))
     .pipe(plumber())
     .pipe(through(function(file) {
-      const relative = path.relative('.', file.path);
-      file.named = relative;
-      this.queue(file);
+        const relative = path.relative(".", file.path).split(".");
+        relative.pop();
+        file.named = relative.join(".");
+        this.queue(file);
     }))
     .pipe(gulpWebpack( webpackDevConfig, webpack))
     .pipe(rename((file) => {
-      const themeDir = file.dirname.split('/')[2];
-      const projectDir = file.dirname.split('/')[3];
-      console.log(file.dirname)
-      file.dirname = `${themeDir}/${projectDir}/javascript`;
-      const filename = file.basename.split('.');
-      filename.pop();
-      file.basename = filename.join('.');
+        const themeDir = file.dirname.split("/")[1];
+        const projectDir = file.dirname.split("/")[2];
+        file.dirname = `${themeDir}/${projectDir}/javascript`;
     }))
     .pipe(dest(paths.dist.distDir));
 };
@@ -36,19 +33,16 @@ export const jsTranspileProd = () => {
   return src(paths.src.js.jsEntries)
     .pipe(plumber())
     .pipe(through(function(file) {
-      const relative = path.relative('.', file.path);
-      file.named = relative;
-      this.queue(file);
+        const relative = path.relative(".", file.path).split(".");
+        relative.pop();
+        file.named = relative.join(".");
+        this.queue(file);
     }))
     .pipe(gulpWebpack( webpackProdConfig, webpack))
     .pipe(rename((file) => {
-      const themeDir = file.dirname.split('/')[2];
-      const projectDir = file.dirname.split('/')[3];
-      console.log(file.dirname)
-      file.dirname = `${themeDir}/${projectDir}/javascript`;
-      const filename = file.basename.split('.');
-      filename.pop();
-      file.basename = filename.join('.');
+        const themeDir = file.dirname.split("/")[1];
+        const projectDir = file.dirname.split("/")[2];
+        file.dirname = `${themeDir}/${projectDir}/javascript`;
     }))
     .pipe(dest(paths.dist.distDir));
 };

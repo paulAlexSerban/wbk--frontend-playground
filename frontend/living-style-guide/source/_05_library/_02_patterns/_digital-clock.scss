@@ -1,0 +1,13 @@
+/* ------------------------------------ *\
+ * DIGITAL-CLOCK
+\* ------------------------------------ */
+
+$block: "pat-digital-clock";
+
+.#{$block} {
+  @include e("base") {
+    @extend %size-fill-horizontal;
+
+    @include flex();
+  }
+}
