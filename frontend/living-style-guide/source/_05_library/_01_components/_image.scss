@@ -9,4 +9,9 @@ $block: "#{$type}-image";
   @include e("base") {
     height: 100%;
   }
+
+  @include e("icon") {
+    height: 64px;
+    width: 64px;
+  }
 }

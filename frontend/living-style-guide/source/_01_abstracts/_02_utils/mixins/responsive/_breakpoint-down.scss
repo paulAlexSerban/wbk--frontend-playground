@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 /// Generate a media query for the maximum width of the given styles
 /// @param {String | Number} $name
 /// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
