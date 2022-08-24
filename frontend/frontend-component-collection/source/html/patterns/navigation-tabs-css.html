@@ -1,33 +1,9 @@
-<!--
-# Cards
-## Usage
-Cards are surfaces that display content and actions on a single topic.
-They should be easy to scan for relevant and actionable information. Elements, like text and images,
-should be placed on them in a way that clearly indicates hierarchy.
-The Card component consists of the card itself, the card body and an optional card title.
-### About
-A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of
-content, contextual background colors, and powerful display options.
-### Content types
-Cards support a wide variety of content, including images, text, list groups, links, and more.
-Mix and match multiple content types to create the card you need, or throw everything in there.
-### Sizing
-Cards assume no specific width to start, so they’ll be 100% wide unless otherwise stated.
-## Resources
-https://material.io/components/cards
-https://v4.mui.com/components/cards/
-https://semantic-ui.com/views/card.html
-https://bulma.io/documentation/components/card/
-https://getuikit.com/docs/card
-https://getbootstrap.com/docs/5.1/components/card/
--->
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Navigation Tabs</title>
+    <title>Navigation Tabs CSS</title>
     <meta name="description" content="boilerplate page used to create new html pages" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -49,35 +25,34 @@ https://getbootstrap.com/docs/5.1/components/card/
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mohave:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"/>
   </head>
   <body class="container" data-page="index" data-template="generic">
     <header class="mod-header__base row">
       <div class="mod-header__content col-smartphone-12">
         <h1 class="cmp-heading__base cmp-heading__base--page-title cmp-heading__base--is-center-aligned">
-          <span class="cmp-heading__main">Navigation Tabs</span>
+          <span class="cmp-heading__main">Navigation Tabs CSS</span>
         </h1>
       </div>
     </header>
 
     <main class="mod-main__base row">
-      <!-- START: Navigation Tabs -->
-      <link rel="stylesheet" href="../css/template/navigation-tabs.template.layer.css" />
+      <!-- START: Navigation Tabs CSS -->
 
-      <div class="pat-navigation-tabs__base">
-        <input class="pat-navigation-tabs__radio pat-navigation-tabs__radio--one" id="one" name="group" type="radio" checked />
-        <input class="pat-navigation-tabs__radio pat-navigation-tabs__radio--two" id="two" name="group" type="radio" />
-        <input class="pat-navigation-tabs__radio pat-navigation-tabs__radio--three" id="three" name="group" type="radio" />
-        <ul class="pat-navigation-tabs__tabs-list">
-          <li><label class="pat-navigation-tabs__tab" id="one-tab" for="one">CSS</label></li>
-          <li><label class="pat-navigation-tabs__tab" id="two-tab" for="two">Skills</label></li>
-          <li><label class="pat-navigation-tabs__tab" id="three-tab" for="three">Prerequisites</label></li>
+      <link rel="stylesheet" href="../css/template/navigation-tabs-css.template.layer.css" />
+
+      <div class="pat-navigation-tabs-css__base">
+        <input class="pat-navigation-tabs-css__radio pat-navigation-tabs-css__radio--one" id="one" name="group" type="radio" checked />
+        <input class="pat-navigation-tabs-css__radio pat-navigation-tabs-css__radio--two" id="two" name="group" type="radio" />
+        <input class="pat-navigation-tabs-css__radio pat-navigation-tabs-css__radio--three" id="three" name="group" type="radio" />
+        <ul class="pat-navigation-tabs-css__tabs-list">
+          <li><label class="pat-navigation-tabs-css__tab pat-navigation-tabs-css__tab--one" id="one-tab" for="one">CSS</label></li>
+          <li><label class="pat-navigation-tabs-css__tab pat-navigation-tabs-css__tab--two" id="two-tab" for="two">Skills</label></li>
+          <li><label class="pat-navigation-tabs-css__tab pat-navigation-tabs-css__tab--three" id="three-tab" for="three">Prerequisites</label></li>
         </ul>
-        <div class="pat-navigation-tabs__panels-list">
-          <div class="pat-navigation-tabs__panel pat-navigation-tabs__panel--one" >
+        <div class="pat-navigation-tabs-css__panels-list">
+          <div class="pat-navigation-tabs-css__panel pat-navigation-tabs-css__panel--one" >
             <h3 class="cmp-heading__base cmp-heading__base--heading-300">Why Learn CSS?</h3>
             <p class="cmp-paragraph__base">
               Without CSS, every web page would be drab plain text and images that flowed straight down the page. With
@@ -85,7 +60,7 @@ https://getbootstrap.com/docs/5.1/components/card/
               like works of art!
             </p>
           </div>
-          <div class="pat-navigation-tabs__panel pat-navigation-tabs__panel--two">
+          <div class="pat-navigation-tabs-css__panel pat-navigation-tabs-css__panel--two">
             <h3 class="cmp-heading__base cmp-heading__base--heading-300">Take-Away Skills</h3>
             <p class="cmp-paragraph__base">
               You will learn many aspects of styling web pages! You’ll be able to set up the correct file structure,
@@ -93,7 +68,7 @@ https://getbootstrap.com/docs/5.1/components/card/
               appearance of your web pages to suit your every need!
             </p>
           </div>
-          <div class="pat-navigation-tabs__panel pat-navigation-tabs__panel--three">
+          <div class="pat-navigation-tabs-css__panel pat-navigation-tabs-css__panel--three">
             <h3 class="cmp-heading__base cmp-heading__base--heading-300">Note on Prerequisites</h3>
             <p class="cmp-paragraph__base">We recommend that you complete Learn HTML before learning CSS.</p>
           </div>
@@ -101,7 +76,7 @@ https://getbootstrap.com/docs/5.1/components/card/
       </div>
 
       <!-- <script src="../javascript/pat/ExpandingCards.pat.js" async defer></script> -->
-      <!-- END: Navigation Tabs-->
+      <!-- END: Navigation Tabs CSS-->
     </main>
 
     <footer class="mod-footer__base row">
