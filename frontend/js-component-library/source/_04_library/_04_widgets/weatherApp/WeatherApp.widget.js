@@ -3,33 +3,38 @@ import { getApiUrl } from "./WeatherApp.utils";
 import { findOne } from "../../../_01_abstracts/dom/traversing";
 
 (() => {
-  
-  class WeatherApp {
-    constructor() {
-      this.init();
-    }
+  const WeatherApp = () => {
+    const global = { state: {}, elements: {}, data: {} };
 
-    getUserGeolocation() {
+    const init = () => {
+      setupDomReferences();
+      getUserGeolocation();
+      setupEvents();
+
+      console.log("weather app");
+    };
+
+    const getUserGeolocation = () => {
       fetch("https://ipapi.co/json/") // Call the fetch function passing the url of the API as a parameter
         .then((data) => data.json())
         .then((data) => {
           console.log(data);
           // Code for handling the data you get from the API
-          this.latData = data.latitude;
-          this.lonData = data.longitude;
+          global.data.latData = data.latitude;
+          global.data.lonData = data.longitude;
 
-          this.latitudeEl.append(this.latData);
-          this.longitudeEl.append(this.lonData);
+          global.elements.latitudeEl.append(`Lat: ${global.data.latData}`);
+          global.elements.longitudeEl.append(`Lon: ${global.data.lonData}`);
 
-          this.getWeather();
+          getWeather();
         })
         .catch((error) => {
           console.error(error);
         });
-    }
+    };
 
-    getWeather() {
-      fetch(getApiUrl(this.latData, this.lonData))
+    const getWeather = () => {
+      fetch(getApiUrl(global.data.latData, global.data.lonData))
         .then((weatherData) => weatherData.json())
         .then((weatherData) => {
           console.log(weatherData);
@@ -42,101 +47,100 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
           const iconImage = `${weatherDescription} image`;
           const cityName = weatherData.name;
 
-          this.weatherImageEl.setAttribute("src", icon);
-          this.weatherImageEl.setAttribute("alt", iconImage);
+          global.elements.weatherImage.setAttribute("src", icon);
+          global.elements.weatherImage.setAttribute("alt", iconImage);
 
-          this.weatherDescriptionEl.append(weatherDescription);
-          this.cityName.append(cityName);
+          global.elements.weatherDescription.append(weatherDescription);
+          global.elements.cityName.append(cityName);
 
-          findOne(".js-weather-app-windSpeed").append(weatherData.wind.speed + "km/h");
-          findOne(".js-weather-app-pressure").append(weatherData.main.pressure + "º");
-          findOne(".js-weather-app-humidity").append(weatherData.main.humidity + "%");
+          global.elements.windSpeed.append(`Winds: ${weatherData.wind.speed} km/h`);
+          global.elements.pressure.append(`Pressure: ${weatherData.main.pressure} º`);
+          global.elements.humidity.append(`Humidity: ${weatherData.main.humidity} %`);
 
-          this.minF = Math.floor((weatherData.main.temp_min * 9) / 5 - 459.67);
-          this.maxF = Math.floor((weatherData.main.temp_max * 9) / 5 - 459.67);
+          global.data.minFahrenheit = Math.floor((weatherData.main.temp_min * 9) / 5 - 459.67);
+          global.data.maxFahrenheit = Math.floor((weatherData.main.temp_max * 9) / 5 - 459.67);
 
           // translate Kelvin to Celsius
-          this.celsius = Math.floor(weatherTemp - 273.15);
+          global.data.celsius = Math.floor(weatherTemp - 273.15);
 
-          this.minCelsius = Math.floor(weatherData.main.temp_min - 273.15);
-          this.maxCelsius = Math.floor(weatherData.main.temp_max - 273.15);
-          // translate Kelvin to Farenhait T(K) × 9/5 - 459.67
-          this.fahrenheit = Math.floor((weatherTemp * 9) / 5 - 459.67);
+          global.data.minCelsius = Math.floor(weatherData.main.temp_min - 273.15);
+          global.data.maxCelsius = Math.floor(weatherData.main.temp_max - 273.15);
+          // translate Kelvin to Fahrenheit T(K) × 9/5 - 459.67
+          global.data.fahrenheit = Math.floor((weatherTemp * 9) / 5 - 459.67);
 
           // display celsius by default
-          findOne(".js-weather-app-celsius").append(this.celsius + "ºC");
-          findOne(".js-weather-app-min").append(`Min: ${this.minCelsius} ºC`);
-          findOne(".js-weather-app-max").append(`Max: ${this.maxCelsius} ºC`);
+          global.elements.tempInfoCelsius.append(`${global.data.celsius} ºC`);
+          global.elements.tempInfoMinTemp.append(`Min: ${global.data.minCelsius} ºC`);
+          global.elements.tempInfoMaxTemp.append(`Max: ${global.data.maxCelsius} ºC`);
         })
         .catch((error) => {
           console.error(error);
         });
-    }
+    };
 
-    switchCelsius() {
-      this.switchBtnFahrenheit.classList.remove("active-case");
-      this.switchBtnCelsius.classList.add("active-case");
+    const switchCelsius = () => {
+      global.elements.switchBtnFahrenheit.classList.remove(config.states.active);
+      global.elements.switchBtnCelsius.classList.add(config.states.active);
 
-      // this.tempInfoFahrenheit.empty();
-      // findOne("#min").empty();
-      // findOne("#max").empty();
-      // findOne(".js-weather-app-celsius").append(this.celsius + "ºC");
-      // findOne("#min").append(this.minCelsius + "ºC");
-      // findOne("#max").append(this.maxCelsius + "ºC");
-    }
+      global.elements.tempInfoFahrenheit.innerHTML = "";
+      global.elements.tempInfoCelsius.innerHTML = "";
+      global.elements.tempInfoMinTemp.innerHTML = "";
+      global.elements.tempInfoMaxTemp.innerHTML = "";
+      global.elements.tempInfoCelsius.append(`${global.data.celsius} ºC`);
+      global.elements.tempInfoMinTemp.append(`${global.data.minCelsius} ºC`);
+      global.elements.tempInfoMaxTemp.append(`${global.data.maxCelsius} ºC`);
+    };
 
-    switchFahrenheit() {
-      this.switchBtnFahrenheit.classList.add("active-case");
-      this.switchBtnCelsius.classList.remove("active-case");
+    const switchFahrenheit = () => {
+      global.elements.switchBtnFahrenheit.classList.add(config.states.active);
+      global.elements.switchBtnCelsius.classList.remove(config.states.active);
 
-      // $(".js-weather-app-celsius").empty();
-      // $("#min").empty();
-      // $("#max").empty();
-      // $(".js-weather-app-fahrenheit").append(fahrenheit + "ºF");
-      // $("#min").append(this.minF + "ºF");
-      // $("#max").append(this.maxF + "ºF");
-    }
+      global.elements.tempInfoCelsius.innerHTML = "";
+      global.elements.tempInfoFahrenheit.innerHTML = "";
+      global.elements.tempInfoMinTemp.innerHTML = "";
+      global.elements.tempInfoMaxTemp.innerHTML = "";
+      global.elements.tempInfoFahrenheit.append(`${global.data.fahrenheit} ºF`);
+      global.elements.tempInfoMinTemp.append(`${global.data.minFahrenheit} ºF`);
+      global.elements.tempInfoMaxTemp.append(`${global.data.maxFahrenheit} ºF`);
+    };
 
-    setupDomReferences() {
-      this.latitudeEl = findOne(`.${config.selectors.latitude}`);
-      this.longitudeEl = findOne(`.${config.selectors.longitude}`);
-      this.tempInfoCelsius = findOne(".js-weather-app-celsius");
-      this.tempInfoFahrenheit = findOne(".js-weather-app-fahrenheit");
-      this.weatherImageEl = findOne(".js-weather-app-image");
-      this.weatherDescriptionEl = findOne(".js-weather-app-description");
-      this.cityName = findOne(".js-weather-app-city");
-      this.switchButton = findOne(".switch-button");
-      this.switchBtnFahrenheit = findOne(".js-weather-app-button-fahrenheit");
-      this.switchBtnCelsius = findOne(".js-weather-app-button-celsius");
-    }
+    const setupDomReferences = () => {
+      global.elements.latitudeEl = findOne(config.selectors.latitude);
+      global.elements.longitudeEl = findOne(config.selectors.longitude);
+      global.elements.tempInfoCelsius = findOne(config.selectors.tempInfoCelsius);
+      global.elements.tempInfoFahrenheit = findOne(config.selectors.tempInfoFahrenheit);
+      global.elements.weatherImage = findOne(config.selectors.weatherImage);
+      global.elements.weatherDescription = findOne(config.selectors.weatherDescription);
+      global.elements.cityName = findOne(config.selectors.cityName);
+      global.elements.switchBtnFahrenheit = findOne(config.selectors.switchBtnFahrenheit);
+      global.elements.switchBtnCelsius = findOne(config.selectors.switchBtnCelsius);
+      global.elements.tempInfoMinTemp = findOne(config.selectors.tempInfoMinTemp);
+      global.elements.tempInfoMaxTemp = findOne(config.selectors.tempInfoMaxTemp);
+      global.elements.windSpeed = findOne(config.selectors.windSpeed);
+      global.elements.pressure = findOne(config.selectors.pressure);
+      global.elements.humidity = findOne(config.selectors.humidity);
+    };
 
-    setupEvents() {
-      this.switchBtnCelsius.addEventListener(
+    const setupEvents = () => {
+      global.elements.switchBtnCelsius.addEventListener(
         "click",
         () => {
-          this.switchCelsius();
+          switchCelsius();
         },
         false
       );
 
-
-      this.switchBtnFahrenheit.addEventListener(
+      global.elements.switchBtnFahrenheit.addEventListener(
         "click",
         () => {
-          this.switchFahrenheit();
+          switchFahrenheit();
         },
         false
       );
-    }
+    };
 
-    init() {
-      this.setupDomReferences();
-      this.getUserGeolocation();
-      this.setupEvents();
+    init();
+  };
 
-      console.log("weather app");
-    }
-  }
-
-  document.querySelectorAll('[data-js-widget="WeatherApp"]').forEach((el) => new WeatherApp(el));
+  document.querySelectorAll(`[data-js-${config.type}=${config.name}]`).forEach((el) => WeatherApp(el));
 })();

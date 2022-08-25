@@ -33,7 +33,7 @@ import { addClass, removeClass } from "../../../_01_abstracts/dom/manipulation";
     init();
   };
   
-  document.querySelectorAll(`[data-js-${config.type}="${config.name}"]`).forEach((el) => {
+  document.querySelectorAll(`[data-js-${config.type}=${config.name}]`).forEach((el) => {
     ExpandingCards(el);
   });
 })();
