@@ -16,9 +16,9 @@ $block: "widget-weather-app";
     @include flex($direction: column);
     @extend %margin-bottom-16;
     @extend %padding-16;
-    background: #efefef;
+    background: get-color($c-light, cultured);
     width: 75%;
-    border-radius: $f-radius--small;
+
   }
 
   @include e("details") {
@@ -37,10 +37,8 @@ $block: "widget-weather-app";
 
   @include e("temp-info") {
     @extend %margin-bottom-8;
-    font-family: "Open Sans", Helvetica, sans-serif;
-    font-size: 65px;
-    color: #c95e67;
-    font-weight: 600;
+    @include font($page-title);
+    color: get-color($c-red, fuzzy-wuzzy);
   }
 
   @include e("buttons-group") {
@@ -51,60 +49,4 @@ $block: "widget-weather-app";
       width: 75%;
     }
   }
-}
-
-.switch-button {
-  grid-column: 1 1 1;
-  border-radius: 4px;
-  margin: 0 auto;
-  height: 40px;
-  text-align: center;
-  position: relative;
-  will-change: transform;
-  z-index: 197 !important;
-  cursor: pointer;
-  transition: 0.3s ease all;
-
-  display: inline-block;
-}
-
-.switch-button-case {
-  display: inline-block;
-  background: none;
-  height: 100%;
-  color: #efefef;
-  position: relative;
-  border: none;
-  transition: 0.3s ease all;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  padding-bottom: 1px;
-}
-
-.switch-button-case:hover {
-  color: #151515;
-  cursor: pointer;
-}
-
-.switch-button-case:focus {
-  outline: none;
-}
-
-.switch-button .active-case {
-  color: #151515;
-}
-
-.signature {
-  position: fixed;
-  font-family: sans-serif;
-  font-weight: 100;
-  bottom: 10px;
-  left: 0;
-  letter-spacing: 4px;
-  font-size: 10px;
-  width: 100vw;
-  text-align: center;
-  color: #efefef;
-  text-transform: uppercase;
-  text-decoration: none;
 }

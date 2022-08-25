@@ -31,16 +31,12 @@ $block: "pat-navigation-tabs-css";
     color: get-color($c-light, cultured);
     cursor: pointer;
     border-radius: 3px 3px 0 0;
-    box-shadow: 0 0.5rem 0.8rem get-color($c-dark, eerie-black);
   }
 
   @include e("panels-list") {
     @extend %padding-32;
-    background: get-color($c-light, cultured);
-    box-shadow: 0 2rem 2rem get-color($c-dark, eerie-black);
     min-height: 200px;
     width: 100%;
-    max-width: 50%;
     border-radius: 3px;
     overflow: hidden;
   }
@@ -62,9 +58,10 @@ $block: "pat-navigation-tabs-css";
     &--one:checked ~ .#{$block}__tabs-list .#{$block}__tab--one,
     &--two:checked ~ .#{$block}__tabs-list .#{$block}__tab--two,
     &--three:checked ~ .#{$block}__tabs-list .#{$block}__tab--three {
-      background: #fffffff6;
-      color: #000;
-      border-top: 3px solid #000;
+      background: get-color($c-light, cultured);
+      color: get-color($c-dark, eerie-black);
+      border-top: 3px solid get-color($c-dark, eerie-black);
+      border-bottom: 1px solid get-color($c-dark, eerie-black);
     }
   }
 }
