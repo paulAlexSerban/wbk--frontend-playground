@@ -3,13 +3,13 @@ import { getApiUrl } from "./WeatherApp.utils";
 import { findOne } from "../../../_01_abstracts/dom/traversing";
 
 (() => {
-  const WeatherApp = () => {
+  const WeatherApp = (el) => {
     const global = { state: {}, elements: {}, data: {} };
 
     const init = () => {
       setupDomReferences();
       getUserGeolocation();
-      setupEvents();
+      setupEventListeners();
 
       console.log("weather app");
     };
@@ -105,23 +105,23 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
     };
 
     const setupDomReferences = () => {
-      global.elements.latitudeEl = findOne(config.selectors.latitude);
-      global.elements.longitudeEl = findOne(config.selectors.longitude);
-      global.elements.tempInfoCelsius = findOne(config.selectors.tempInfoCelsius);
-      global.elements.tempInfoFahrenheit = findOne(config.selectors.tempInfoFahrenheit);
-      global.elements.weatherImage = findOne(config.selectors.weatherImage);
-      global.elements.weatherDescription = findOne(config.selectors.weatherDescription);
-      global.elements.cityName = findOne(config.selectors.cityName);
-      global.elements.switchBtnFahrenheit = findOne(config.selectors.switchBtnFahrenheit);
-      global.elements.switchBtnCelsius = findOne(config.selectors.switchBtnCelsius);
-      global.elements.tempInfoMinTemp = findOne(config.selectors.tempInfoMinTemp);
-      global.elements.tempInfoMaxTemp = findOne(config.selectors.tempInfoMaxTemp);
-      global.elements.windSpeed = findOne(config.selectors.windSpeed);
-      global.elements.pressure = findOne(config.selectors.pressure);
-      global.elements.humidity = findOne(config.selectors.humidity);
+      global.elements.latitudeEl = findOne(config.selectors.latitude, el);
+      global.elements.longitudeEl = findOne(config.selectors.longitude, el);
+      global.elements.tempInfoCelsius = findOne(config.selectors.tempInfoCelsius, el);
+      global.elements.tempInfoFahrenheit = findOne(config.selectors.tempInfoFahrenheit, el);
+      global.elements.weatherImage = findOne(config.selectors.weatherImage, el);
+      global.elements.weatherDescription = findOne(config.selectors.weatherDescription, el);
+      global.elements.cityName = findOne(config.selectors.cityName, el);
+      global.elements.switchBtnFahrenheit = findOne(config.selectors.switchBtnFahrenheit, el);
+      global.elements.switchBtnCelsius = findOne(config.selectors.switchBtnCelsius, el);
+      global.elements.tempInfoMinTemp = findOne(config.selectors.tempInfoMinTemp, el);
+      global.elements.tempInfoMaxTemp = findOne(config.selectors.tempInfoMaxTemp, el);
+      global.elements.windSpeed = findOne(config.selectors.windSpeed, el);
+      global.elements.pressure = findOne(config.selectors.pressure, el);
+      global.elements.humidity = findOne(config.selectors.humidity, el);
     };
 
-    const setupEvents = () => {
+    const setupEventListeners = () => {
       global.elements.switchBtnCelsius.addEventListener(
         "click",
         () => {
