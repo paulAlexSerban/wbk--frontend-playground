@@ -17,11 +17,7 @@ $block: "#{$type}-button";
     }
 
     &:focus {
-      outline: 0;
-    }
-
-    &:not(:first-child) {
-      margin-left: calc(#{$gutter} / 2);
+      outline: 2px solid #00f;
     }
 
     @include m("isAnimated") {

@@ -1,5 +1,5 @@
 /* ------------------------------------ *\
-  * NAVIGATION-TABS-CSS
+  * NAVIGATION-TABS-JS
 \* ------------------------------------ */
 
 @import "../../_01_abstracts/abstracts.scss";
@@ -8,8 +8,9 @@
 
 @import "../../_05_library/_01_components/typography/paragraph.scss";
 @import "../../_05_library/_01_components/typography/heading.scss";
+@import "../../_05_library/_01_components/button.scss";
 
-@import "../../_05_library/_02_patterns/navigation-tabs-css.scss";
+@import "../../_05_library/_02_patterns/navigation-tabs-js.scss";
 
 @import "../../_05_library/_03_modules/header.scss";
 @import "../../_05_library/_03_modules/main.scss";
