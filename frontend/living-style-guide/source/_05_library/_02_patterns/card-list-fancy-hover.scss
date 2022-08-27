@@ -1,9 +1,9 @@
 $type: "pat";
-$block: "#{$type}-fancyHoverCardList";
+$block: "#{$type}-card-list-fancy-hover";
 
 .#{$block} {
   &__list {
-    display: flex;
+    @include flex();
   }
 
   &__listItem {
