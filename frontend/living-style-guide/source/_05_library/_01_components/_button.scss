@@ -16,10 +16,6 @@ $block: "#{$type}-button";
       background-color: get-color($c-light, gainsboro-white);
     }
 
-    &:focus {
-      outline: 2px solid #00f;
-    }
-
     @include m("isAnimated") {
       @include transition(
         $transition-property: transform,
