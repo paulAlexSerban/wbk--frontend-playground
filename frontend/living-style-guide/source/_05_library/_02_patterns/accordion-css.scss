@@ -1,5 +1,7 @@
+@use "sass:color";
+
 $type: "pat";
-$block: "#{$type}-pureCssAccordion";
+$block: "#{$type}-accordion-css";
 
 .#{$block} {
   &__base {
