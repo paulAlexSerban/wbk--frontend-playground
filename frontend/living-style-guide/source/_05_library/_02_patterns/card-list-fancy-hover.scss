@@ -8,7 +8,7 @@ $block: "#{$type}-card-list-fancy-hover";
 
   &__listItem {
     margin: 10px;
-    padding: 0.5em;
+    padding: 0.2em;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.6);
@@ -36,17 +36,6 @@ $block: "#{$type}-card-list-fancy-hover";
 
     &:nth-child(3) {
       background: #74b9ff;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    p {
-      margin: 0.5em;
-      text-align: center;
-      color: #fff;
     }
   }
 }
