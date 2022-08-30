@@ -1,1 +1,1 @@
-export const test = 'test string variabless';
+export const test = 'test string variables';
