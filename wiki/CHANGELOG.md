@@ -1,3 +1,32 @@
+# [1.3.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.2.0...v1.3.0) (2022-10-25)
+
+
+### Bug Fixes
+
+* **fe build:** adjusted incremental build workflow ([e473587](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/e473587664b46a4116eb869543e2d3b4574eb06f))
+
+
+### Features
+
+* **accordion-css:** add accordion css ([2d1712c](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/2d1712c7f8e8abc039c5d1860307d45154433b4a))
+* **blurry-loader:** add blurry-loader component ([86deb3c](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/86deb3c5d6950e202154e72fe78f215106f0b90e))
+* **blurry-loader:** remove old code ([0dc3cf3](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/0dc3cf363467c65de381f280455c4138f71efdb7))
+* **card-list:** add card list with fancy hover effect ([0ec76ef](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/0ec76ef1fc570c335574bc0aa16632119315f913))
+* **expanding cards:** add expanding cards source code ([58795ab](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/58795abea8bc553541da7144a8796803f711c9bd))
+* **expanding cards:** remove expanding cards leftovers from library ([5479e29](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/5479e29ebf9c66ec74ae890e880518ccbee08705))
+* **jscl:** add jquery ([19e60a8](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/19e60a88c266b26ec1c206bcf7ff029a02bd58c2))
+* **navigation roatating:** add rotating navigation ([6e1b8bc](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/6e1b8bcfdf7599f9fc50ca1c11955ce6bf90f627))
+* **navigation-tabs:** add navigation tabs ([3439ea8](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/3439ea8aa07bb488fb8d6a5acf9bc1951c272386))
+* **navigation-tabs:** add navigation tabs ([2950f50](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/2950f50271ee18d56f25360f4dea813d833cf841))
+* **navigation-tabs:** adjust naming for navigaiton tabs css ([5869b97](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/5869b9731eb0bfb06d699089971230bb6f586487))
+* **progress-steps:** add progress-steps ([d384a89](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/d384a89a3d276e00b13131af4de6c71f2a98c6b4))
+* **progress-steps:** remove old progress steps code ([400ce3b](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/400ce3b95c7681bd07779175a17ad40fd1e54797))
+* **refactor:** remove form validator ([9aed855](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/9aed855e058cff2ba62533e60a5c3c5dee3d7887))
+* **restructure:** restructuring - not working ([723cdb4](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/723cdb48927c5526e8707944968b2310cbb8ad17))
+* **search:** add search hidden code ([7faf138](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/7faf13822f5d80fb70c0123b14863b2eab3f1028))
+* **search:** remove old code ([b8f95eb](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/b8f95ebab284711806c0136133a3c8d9150aba80))
+* **weather-app:** add weather app ([340b04c](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/340b04c7e24fe597c7222edc510ef07d6fb2bc37))
+
 # [1.2.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.1.0...v1.2.0) (2022-08-20)
 
 
