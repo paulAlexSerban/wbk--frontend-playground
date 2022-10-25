@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Blurry Loader</title>
+    <meta name="description" content="boilerplate page used to create new html pages" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="openGraph boilerplate title" />
+    <meta property="og:type" content="openGraph component title" />
+    <meta property="og:url" content="openGraph page url" />
+    <meta property="og:image" content="openGraph component screenshot image" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="../assets/svgs/hammer.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+
+    <!-- Critical Stylesheets - START -->
+    <link rel="stylesheet" href="../css/page/base.page.layer.css" />
+    <!-- Critical Stylesheets - END -->
+
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mohave:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container" data-page="index" data-template="generic">
+    <header class="mod-header__base row">
+      <div class="mod-header__content col-smartphone-12">
+        <h1 class="cmp-heading__base cmp-heading__base--page-title cmp-heading__base--is-center-aligned">
+          <span class="cmp-heading__main">Blurry Loader</span>
+        </h1>
+      </div>
+    </header>
+
+    <main class="mod-main__base row">
+      <!-- START: Blurry Loader -->
+      <link rel="stylesheet" href="../css/template/blurry-loader.template.layer.css" />
+
+
+      <div class="cmp-blurry-loader__base" data-js-cmp="BlurryLoader">
+        <img
+        class="cmp-image__base cmp-blurry-loader__background-image js-blurry-loader-background"
+        loading="lazy"
+        srcset="
+          ../assets/images/worker-480px.webp   480w,
+          ../assets/images/worker-960px.webp   960w,
+          ../assets/images/worker-1440px.webp 1440w"
+        sizes="(max-width: 479px) 480px,
+                (max-width: 959px) 960px,
+                1440px"
+        src="../assets/images/worker-original.webp"
+        alt="worker"/>
+
+        <p class="cmp-paragraph__base cmp-blurry-loader__loading-text js-blurry-loader-loading-text">0%</p>
+      </div>
+
+      <script src="../javascript/cmp/BlurryLoader.cmp.js" async defer></script>
+      <!-- END: Blurry Loader-->
+    </main>
+
+    <footer class="mod-footer__base row">
+      <script src="../javascript/page/index.page.layer.js" async defer></script>
+      <script src="../javascript/template/generic.template.layer.js" async defer></script>
+    </footer>
+  </body>
+</html>
