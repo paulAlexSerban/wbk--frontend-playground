@@ -8,13 +8,6 @@ import { onError } from "../utils/onError";
 const imgRenditionConf = {
   "*": [
     {
-      width: 320,
-      rename: {
-        suffix: "-320px",
-        extname: ".webp",
-      },
-    },
-    {
       width: 480,
       rename: {
         suffix: "-480px",
@@ -32,13 +25,6 @@ const imgRenditionConf = {
       width: 1440,
       rename: {
         suffix: "-1440px",
-        extname: ".webp",
-      },
-    },
-    {
-      width: 1920,
-      rename: {
-        suffix: "-1920px",
         extname: ".webp",
       },
     },

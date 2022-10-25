@@ -6,20 +6,14 @@ import { paths } from "../config/paths";
 import { onError } from  "../utils/onError";
 
 export const lintScss = () => {
-  return new Promise((resolve, reject) => {
-    return src(paths.src.styles.scssFiles, { since: lastRun(lintScss) })
-      .pipe(plumber({
-        errorHandler: onError,
-      }))
-      .pipe(debug({ title: "lintScss : " }))
-      .pipe(
-        gulpStylelint({
-          failAfterError: true,
-          reporters: [{ formatter: "string", console: true }],
-          debug: true,
-        })
-      )
-      .on("error", reject)
-      .on("end", resolve);
-  });
+  return src(paths.src.styles.scssFiles, { since: lastRun(lintScss) })
+  .pipe(plumber())
+  .pipe(debug({ title: "lintScss : " }))
+  .pipe(
+    gulpStylelint({
+      failAfterError: true,
+      reporters: [{ formatter: "string", console: true }],
+      debug: true,
+    })
+  )
 };

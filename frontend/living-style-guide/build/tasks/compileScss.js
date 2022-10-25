@@ -1,4 +1,4 @@
-import { src, dest } from "gulp";
+import { src, dest, lastRun } from "gulp";
 import { paths } from "../config/paths";
 import dartSass from "dart-sass";
 import gulpSass from "gulp-sass";
@@ -27,7 +27,7 @@ export const compileScss = () => {
   );
   return new Promise((resolve, reject) => {
     return (
-      src([...paths.src.styles.scssPages, ...paths.src.styles.scssLayers])
+      src([...paths.src.styles.scssPages, ...paths.src.styles.scssLayers], { since: lastRun(compileScss) })
         .pipe(
           plumber({
             errorHandler: onError,

@@ -1,0 +1,69 @@
+@use "sass:color";
+
+$type: "pat";
+$block: "#{$type}-accordion-css";
+
+.#{$block} {
+  &__base {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  }
+
+  &__item {
+    width: 100%;
+    color: get-color($c-light, cultured);
+    overflow: hidden;
+  }
+
+  &__inputToggle {
+    @include absolute();
+
+    opacity: 0;
+    z-index: -1;
+
+    &:checked {
+      + .#{$block}__itemLabel {
+        background: color.adjust(get-color($c-blue, charcoal), $lightness: -10%);
+
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+
+      ~ .#{$block}__content {
+        max-height: 100vh;
+        padding: 1em;
+      }
+    }
+  }
+
+  &__itemLabel {
+    @include flex($main: space-between);
+    @include font($label);
+
+    padding: $baseline $gutter;
+    background: get-color($c-blue, charcoal);
+    cursor: pointer;
+
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all 0.35s;
+    }
+
+    &:hover {
+      background: color.adjust(get-color($c-blue, charcoal), $lightness: -10%);
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    padding: 0 1em;
+    color: get-color($c-blue, charcoal);
+    background: get-color($c-light, cultured);
+    transition: all 0.35s ease-in-out;
+  }
+}

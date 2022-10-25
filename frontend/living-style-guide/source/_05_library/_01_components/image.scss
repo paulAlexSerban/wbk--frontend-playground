@@ -1,0 +1,17 @@
+/* ------------------------------------ *\
+ * #IMAGE
+\* ------------------------------------ */
+
+$type: "cmp";
+$block: "#{$type}-image";
+
+.#{$block} {
+  @include e("base") {
+    height: 100%;
+  }
+
+  @include e("icon") {
+    height: 64px;
+    width: 64px;
+  }
+}
