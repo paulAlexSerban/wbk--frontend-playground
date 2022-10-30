@@ -8,7 +8,7 @@ import plumber from "gulp-plumber";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import stripCssComments from "gulp-strip-css-comments";
-
+import newer from "gulp-newer";
 import prettier from "gulp-prettier";
 import wait from "gulp-wait";
 import { onError } from "../utils/onError";
@@ -16,24 +16,26 @@ import gulpif from "gulp-if";
 import minifyCss from "gulp-minify-css";
 import cleanCss from "gulp-clean-css";
 import size from "gulp-size";
+import remember from "gulp-remember";
+import cached from "gulp-cached";
 
 const sass = gulpSass(dartSass);
 const plugins = [autoprefixer()];
 const nodeEnv = process.env.NODE_ENV || "development";
 
 export const compileScss = () => {
-  console.log(
-    `Executing Compile SCSS on '${paths.src.styles.scssPages}' AND '${paths.src.styles.scssLayers}'`
-  );
   return new Promise((resolve, reject) => {
     return (
-      src([...paths.src.styles.scssPages, ...paths.src.styles.scssLayers], { since: lastRun(compileScss) })
+      src([...paths.src.styles.scssPages, ...paths.src.styles.scssLayers, ...paths.src.styles.scssObjects], {
+        since: lastRun(compileScss),
+      })
+        .pipe(newer(paths.dist.dir))
+        .pipe(cached("compileScss"))
         .pipe(
           plumber({
             errorHandler: onError,
           })
         )
-        .pipe(wait(200))
         .pipe(sass.sync().on("error", sass.logError))
         .pipe(postcss(plugins))
         .pipe(
@@ -54,7 +56,6 @@ export const compileScss = () => {
         )
         // .pipe(debug({ title: "@debug compileScss : " }))
         .pipe(stripCssComments())
-        .pipe(prettier())
         .pipe(gulpif(nodeEnv !== "development", minifyCss()))
         .pipe(
           size({
@@ -63,6 +64,7 @@ export const compileScss = () => {
             showTotal: true,
           })
         )
+        .pipe(remember("compileScss"))
         .pipe(dest(paths.dist.dir))
         .on("error", reject)
         .on("end", resolve)
