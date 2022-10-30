@@ -5,3 +5,7 @@ export const find = (selector, context = document) => {
 export const findOne = (selector, context = document) => {
   return context.querySelector(selector);
 };
+
+export const hasClass = (el, className) => {
+  return el?.classList?.contains(className);
+};
