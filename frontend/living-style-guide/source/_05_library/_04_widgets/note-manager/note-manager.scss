@@ -1,0 +1,129 @@
+/* ------------------------------------ *\
+ * NOTE MANAGER STYLES
+\* ------------------------------------ */
+
+$block: "widget-note-manager";
+
+.#{$block} {
+  @include e("base") {
+    .changeBg {
+      background-color: #ff0;
+    }
+
+    .changeFt {
+      font-style: italic;
+      font-size: 40px;
+    }
+  }
+
+  &__wrapper {
+    width: 90%;
+    max-width: 760px;
+    margin: 20px auto;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    border: 1px solid #d3d3d3;
+  }
+
+  &__search-input {
+    color: #777;
+    outline: none;
+    border: 1px solid #777;
+    padding: 5px 2px;
+    width: 200px;
+    border-radius: 2px;
+    margin: 10px 0 40px;
+
+    &:focus {
+      border: 1px solid #008000;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    background: #efefef;
+
+    h2 {
+      padding: 40px 0 20px;
+      color: #555;
+    }
+  }
+
+  &__note-list {
+    list-style: none;
+    padding: 40px;
+  }
+
+  &__note-item {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-bottom: 0.1px solid #ccc;
+    border-left: 5px solid #efefef;
+  }
+
+  &__controls {
+    text-align: right;
+
+    .fa-pencil-square-o,
+    .fa-times {
+      cursor: pointer;
+      margin-left: 5px;
+      height: 15px;
+      width: 15px;
+      display: inline;
+    }
+  }
+
+  &__edit-note {
+    display: none;
+    padding: 5px 0;
+    width: 70%;
+    margin: 5px auto 0;
+  }
+
+  &__add-notes {
+    padding: 60px 0;
+  }
+
+  &__hide-list {
+    margin: 20px;
+  }
+
+  &__hide-list-label {
+    padding: 5px 10px;
+    margin: 10px;
+    border-bottom: 1px solid #777;
+    user-select: none;
+
+    label:hover {
+      background: #efefef;
+    }
+  }
+
+  &__hide-list-checkbox {
+    display: none;
+  }
+
+  &__add-notes-form {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &__add-notes-item,
+  &__add-notes-submit {
+    border-radius: 2px;
+  }
+
+  &__add-notes-item {
+    padding: 5px 0 5px 2px;
+    width: 250px;
+  }
+
+  &__add-notes-submit {
+    padding: 5px 0;
+    width: 70px;
+    color: #fff;
+  }
+}
