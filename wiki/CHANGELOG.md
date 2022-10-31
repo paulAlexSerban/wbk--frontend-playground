@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.3.0...v1.4.0) (2022-10-31)
+
+
+### Features
+
+* initial reafactoring to use next js ([358e291](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/358e291b9bc4aa9777f1a55599daf84160df2318))
+
 # [1.3.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.2.0...v1.3.0) (2022-10-25)
 
 
