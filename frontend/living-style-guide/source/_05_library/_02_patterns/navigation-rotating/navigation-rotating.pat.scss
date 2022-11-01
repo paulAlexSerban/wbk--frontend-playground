@@ -1,15 +1,15 @@
 /* ------------------------------------ *\
-  * WEATHER APP WIDGET
+  * NAVIGATION-TABS-CSS
 \* ------------------------------------ */
 
 @import "../../../_01_abstracts/abstracts.scss";
 
 @import "../../_01_components/typography/paragraph.scss";
 @import "../../_01_components/typography/heading.scss";
-@import "../../_01_components/icon.scss";
-@import "../../_01_components/button/button.scss";
 @import "../../_01_components/image.scss";
+@import "../../_01_components/typography/link.scss";
+@import "../../_01_components/typography/list-unordered.scss";
 
-@import "../../_02_patterns/navigation-tabs-css/navigation-tabs-css.scss";
+@import "../link-list.scss";
+@import "./navigation-rotating.scss";
 
-@import "./weather-app.scss";
