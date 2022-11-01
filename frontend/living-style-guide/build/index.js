@@ -8,7 +8,7 @@ import { compileScss } from "./tasks/compileScss";
 // ---------------------------------------------------------------------
 const watchSCSS = () => {
   const folder = paths.src.styles.scssFiles;
-  watch(folder, series(compileScss));
+  watch(folder, series(lintScss,compileScss));
 };
 
 // ---------------------------------------------------------------------
@@ -17,3 +17,4 @@ const watchSCSS = () => {
 task("lint", parallel(lintScss));
 task("compile", parallel(compileScss));
 task("watch", series(lintScss, compileScss, watchSCSS));
+ 
