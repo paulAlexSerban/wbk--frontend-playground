@@ -42,3 +42,5 @@ $shadow-container: box-shadow(
   $color: get-color($c-dark, dark-30),
   $inset: unset,
 );
+
+$shadow-screen: box-shadow($top: 0, $left: convert-rem(2px), $blur: convert-rem(10px), $color: get-color($c-brown, rose-taupe), $inset: unset);

@@ -9,8 +9,6 @@ import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import stripCssComments from "gulp-strip-css-comments";
 import newer from "gulp-newer";
-import prettier from "gulp-prettier";
-import wait from "gulp-wait";
 import { onError } from "../utils/onError";
 import gulpif from "gulp-if";
 import minifyCss from "gulp-minify-css";

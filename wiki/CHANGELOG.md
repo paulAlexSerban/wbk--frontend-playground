@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.4.0...v1.5.0) (2022-11-03)
+
+
+### Bug Fixes
+
+* **gh-actions:** scripts needed some fixes ([cd900ee](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/cd900ee5055ee0ef410088334afe89ecb091cdfa))
+
+
+### Features
+
+* **migrate:** migrate a few extra componenets ([30f4de3](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/30f4de3508ee79a69d0642ec693f9014121dafe3))
+* **migration:** migrate all components to new structure ([38a3acf](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/38a3acfdf3b8adb729b5d216f9f0e004ff8450b9))
+
 # [1.4.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.3.0...v1.4.0) (2022-10-31)
 
 

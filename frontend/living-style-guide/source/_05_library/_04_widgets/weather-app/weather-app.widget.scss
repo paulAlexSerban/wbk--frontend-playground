@@ -4,12 +4,12 @@
 
 @import "../../../_01_abstracts/abstracts.scss";
 
-@import "../../_01_components/typography/paragraph.scss";
-@import "../../_01_components/typography/heading.scss";
-@import "../../_01_components/icon.scss";
+@import "../../_01_components/typography/paragraph/paragraph.scss";
+@import "../../_01_components/typography/heading/heading.scss";
+@import "../../_01_components/icon/icon.scss";
 @import "../../_01_components/button/button.scss";
-@import "../../_01_components/image.scss";
+@import "../../_01_components/image/image.scss";
 
-@import "../../_02_patterns/navigation-tabs-css.scss";
+@import "../../_02_patterns/navigation-tabs-css/navigation-tabs-css.scss";
 
 @import "./weather-app.scss";

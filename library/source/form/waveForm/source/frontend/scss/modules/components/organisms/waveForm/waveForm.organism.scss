@@ -1,9 +1,0 @@
-$type: "o";
-$block: "#{$type}-waveForm";
-
-.#{$block} {
-  @include e("base") {
-    @include font($body);
-    width: auto;
-  }
-}
