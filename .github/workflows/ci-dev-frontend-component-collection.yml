@@ -18,8 +18,8 @@ jobs:
     name: Build Frontend Front-end Component Collection
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'event name is:' ${{ github.event_name }} 
-      - run: echo 'event type is:' ${{ github.event.action }} 
+      - run: echo 'event name is:' ${{ github.event_name }}
+      - run: echo 'event type is:' ${{ github.event.action }}
       - name: "📥  checkout repository"
         uses: actions/checkout@v3
         with:
@@ -30,7 +30,6 @@ jobs:
         id: changed-frontend-frontend-component-collection-files
         with:
           files: |
-              frontend/frontend-component-collection/**/*
               frontend/living-style-guide/**/*.scss
               frontend/js-component-library/**/*.js
 
@@ -63,14 +62,9 @@ jobs:
       - name: "📦  Install Frontend Front-end Component Collection Development dependencies"
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true'
         run: |
-          bash scripts/frontend-frontend-component-collection-install.bash
           bash scripts/frontend-living-style-guide-install.bash
           bash scripts/frontend-js-component-library-install.bash
           bash scripts/assets-install.bash
-
-      - name: "🔍  Lint Frontend Front-end Component Collection"
-        if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
-        run: bash scripts/frontend-frontend-component-collection-lint.bash
 
       - name: '🧪  Test Frontend Living Style Guide'
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'push'
@@ -84,4 +78,3 @@ jobs:
         if: steps.changed-frontend-frontend-component-collection-files.outputs.any_changed == 'true' && github.event_name == 'pull_request'
         run: |
           bash scripts/assets-process.bash
-          bash scripts/frontend-frontend-component-collection-build.bash production
