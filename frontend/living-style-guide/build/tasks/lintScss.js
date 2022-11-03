@@ -3,7 +3,7 @@ import gulpStylelint from "@ronilaukkarinen/gulp-stylelint";
 import debug from "gulp-debug";
 import plumber from "gulp-plumber";
 import { paths } from "../config/paths";
-import { onError } from  "../utils/onError";
+import { onError } from "../utils/onError";
 
 export const lintScss = () => {
   return new Promise((resolve, reject) => {
@@ -14,7 +14,7 @@ export const lintScss = () => {
       .pipe(debug({ title: "lintScss : " }))
       .pipe(
         gulpStylelint({
-          failAfterError: true,
+          failAfterError: false,
           reporters: [{ formatter: "string", console: true }],
           debug: true,
         })

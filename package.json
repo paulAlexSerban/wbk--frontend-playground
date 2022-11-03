@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "bash scripts/frontend-living-style-guide-test.bash",
-    "lint": "shellcheck ./**/*.bash && bash scripts/frontend-frontend-component-collection-lint.bash",
+    "lint": "shellcheck ./**/*.bash",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
     "prepare": "husky install"
