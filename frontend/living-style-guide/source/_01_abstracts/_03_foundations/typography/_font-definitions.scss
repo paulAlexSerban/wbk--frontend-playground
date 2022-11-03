@@ -376,3 +376,15 @@ $overline: (
     letter-spacing: 0,
   ),
 );
+
+$showcase: (
+  default: (
+    color: var(--color-showcase-text),
+    font-family: var(--text-regular),
+    font-size: convert-rem(14px),
+    line-height: convert-rem(16px),
+    font-weight: 200,
+    text-align: left,
+    letter-spacing: convert-rem(0.5px),
+  )
+);

@@ -6,10 +6,10 @@
 
 @import "../../_04_layouts/grid/minimalist/minimalist.scss";
 
-@import "../../_05_library/_01_components/typography/heading.scss";
-@import "../../_05_library/_01_components/typography/link.scss";
+@import "../../_05_library/_01_components/typography/heading/heading.scss";
+@import "../../_05_library/_01_components/typography/link/link.scss";
 
-@import "../../_05_library/_02_patterns/link-list.scss";
-@import "../../_05_library/_01_components/typography/list-unordered.scss";
+@import "../../_05_library/_02_patterns/link-list/link-list.pat.scss";
+@import "../../_05_library/_01_components/typography/list-unordered/list-unordered.scss";
 
-@import "../../_05_library/_03_modules/main.scss";
+@import "../../_05_library/_03_modules/main/main.scss";
