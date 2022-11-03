@@ -1,0 +1,17 @@
+form {
+  width: 200px;
+  margin: 40px auto;
+  background: #d3d3d3;
+  padding: 10px;
+}
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 4px;
+}
+.success {
+  border: 2px solid #32cd32;
+}
+.error {
+  border: 2px solid #dc143c;
+}
