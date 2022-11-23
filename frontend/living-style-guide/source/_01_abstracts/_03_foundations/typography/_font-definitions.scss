@@ -342,7 +342,7 @@ $blockquote: (
     font-family: var(--text-regular),
     font-size: convert-rem(27px),
     font-weight: 400,
-    line-height: convert-rem(40px)
+    line-height: convert-rem(40px),
   ),
   $desktop: (
     font-size: convert-rem(38px),
@@ -363,7 +363,7 @@ $overline: (
     line-height: convert-rem(10px),
     font-weight: 700,
     letter-spacing: convert-rem(1.5px),
-    text-transform: uppercase
+    text-transform: uppercase,
   ),
   $desktop: (
     font-size: convert-rem(10px),
@@ -379,12 +379,20 @@ $overline: (
 
 $showcase: (
   default: (
-    color: var(--color-showcase-text),
     font-family: var(--text-regular),
     font-size: convert-rem(14px),
     line-height: convert-rem(16px),
     font-weight: 200,
     text-align: left,
     letter-spacing: convert-rem(0.5px),
-  )
+  ),
+);
+
+$alert-title: (
+  default: (
+    font-family: var(--text-regular),
+    font-size: convert-rem(22px),
+    line-height: convert-rem(32px),
+    letter-spacing: 0,
+  ),
 );
