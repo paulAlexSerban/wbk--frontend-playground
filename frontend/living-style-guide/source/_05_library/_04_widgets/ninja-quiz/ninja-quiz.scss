@@ -1,0 +1,11 @@
+/* ------------------------------------ *\
+ * NINJA QUIZ WIDGET
+\* ------------------------------------ */
+
+$block: "widget-ninja-quiz";
+
+.#{$block} {
+  @include e("base") {
+    display: block;
+  }
+}
