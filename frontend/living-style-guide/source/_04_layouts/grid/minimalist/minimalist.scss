@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:meta";
 @import "../common/no-gutter.scss";
 //amount of columns
 $columns: 12;
@@ -32,7 +34,12 @@ $margin-left: 1%;
 
 //smartphone
 @for $i from 1 to $columns + 1 {
-  $grid: ($i / $columns) * 100% - $margin-left;
+  $grid: "";
+  @if meta.function-exists("div", "math") {
+    $grid: math.div($i, $columns) * 100% - $margin-left;
+  } @else {
+    $grid: ($i / $columns) * 100% - $margin-left;
+  }
   .col-smartphone-#{$i} {
     width: $grid;
   }
@@ -41,7 +48,12 @@ $margin-left: 1%;
 //tablet
 @media (min-width: $tablet) {
   @for $i from 1 to $columns + 1 {
-    $grid: ($i / $columns) * 100% - $margin-left;
+    $grid: "";
+    @if meta.function-exists("div", "math") {
+      $grid: math.div($i, $columns) * 100% - $margin-left;
+    } @else {
+      $grid: ($i / $columns) * 100% - $margin-left;
+    }
     .col-tablet-#{$i} {
       width: $grid;
     }
@@ -51,7 +63,12 @@ $margin-left: 1%;
 //desktop
 @media (min-width: $desktop) {
   @for $i from 1 to $columns + 1 {
-    $grid: ($i / $columns) * 100% - $margin-left;
+    $grid: "";
+    @if meta.function-exists("div", "math") {
+      $grid: math.div($i, $columns) * 100% - $margin-left;
+    } @else {
+      $grid: ($i / $columns) * 100% - $margin-left;
+    }
     .col-desktop-#{$i} {
       width: $grid;
     }
@@ -78,7 +95,12 @@ $margin-left: 1%;
 //offset
 @media (min-width: $mobile) {
   @for $i from 1 to $columns + 1 {
-    $grid: ($i / $columns) * 100% + $margin-left;
+    $grid: "";
+    @if meta.function-exists("div", "math") {
+      $grid: math.div($i, $columns) * 100% + $margin-left;
+    } @else {
+      $grid: ($i / $columns) * 100% + $margin-left;
+    }
     .offset-#{$i} {
       margin-left: $grid;
     }
