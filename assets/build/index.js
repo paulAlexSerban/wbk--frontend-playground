@@ -5,6 +5,7 @@ import { processSvgs } from "./tasks/processSvgs";
 import { createImageRenditions } from "./tasks/createImageRenditions";
 import { processVideos } from "./tasks/processVideos";
 import { processAudio } from "./tasks/processAudio";
+import { processGifs } from "./tasks/processGifs";
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -15,5 +16,5 @@ import { processAudio } from "./tasks/processAudio";
 // ---------------------------------------------------------------------
 task(
   "process",
-  series(clean, parallel( processIcons, processSvgs, createImageRenditions,  processVideos, processAudio))
+  series(clean, parallel( processIcons, processSvgs, createImageRenditions,  processVideos, processAudio, processGifs))
 );
