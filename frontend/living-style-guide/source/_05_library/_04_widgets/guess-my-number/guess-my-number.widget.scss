@@ -8,7 +8,7 @@ $block: "widget-guess-my-number";
 
 .#{$block} {
   @include e("base") {
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: "Press Start 2P", sans-serif;
     color: #eee;
     background-color: #222;
   }
@@ -61,7 +61,7 @@ $block: "widget-guess-my-number";
     transform: translate(-50%, 50%);
   }
 
-  @include e("between"){
+  @include e("between") {
     font-size: 1.4rem;
     position: absolute;
     top: 2rem;
