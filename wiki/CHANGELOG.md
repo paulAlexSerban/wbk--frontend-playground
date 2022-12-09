@@ -1,3 +1,19 @@
+# [1.6.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.5.0...v1.6.0) (2022-12-09)
+
+
+### Bug Fixes
+
+* **scss:** trubledshoot undefined function on math.div ([63666bf](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/63666bf9d2a149bc56ae74f85ca23b30e1115e3d))
+
+
+### Features
+
+* **alert:** add alert component ([c7d06c4](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/c7d06c49d8681ce1c6e57fa9c8422d622ad959b3))
+* **guess-my-number:** add guess my number widget ([58c4b7c](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/58c4b7cfee5c5f49a5c0b772959b629bdfe50ce0))
+* **math-game:** added math game quiz ([cc352a9](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/cc352a93910b9d521bdb212f1e3d4738ef092630))
+* **modal-window:** add the complete js course > modal window ([1ba689e](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/1ba689ef4b31a5d588a3f2bdf17824bcb79c1deb))
+* **pig-game:** add complete-js-course-2023 > pig game ([99bb3a0](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/99bb3a05e01482c9e0257afa52120689124c1532))
+
 # [1.5.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.4.0...v1.5.0) (2022-11-03)
 
 

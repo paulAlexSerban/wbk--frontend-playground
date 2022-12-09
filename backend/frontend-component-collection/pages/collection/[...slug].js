@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import attrs from "markdown-it-attrs";
+import markdownItMermaid from 'markdown-it-mermaid';
 import highlight from "markdown-it-highlightjs";
 import GenericTemplate from "@/templates/GenericTemplate";
 import ComponentContainer from "@/components/ComponentContainer";
@@ -13,10 +14,11 @@ export default function ComponentPage({ frontmatter, content, cmpStyles, stylesh
   const marked = new MarkdownIt({
     html: true,
   });
+  marked.use(markdownItMermaid)
   marked.use(highlight, {});
+
   marked.use(attrs);
 
-  console.log();
 
   return (
     <GenericTemplate title={frontmatter.title} stylesheets={stylesheets}>
