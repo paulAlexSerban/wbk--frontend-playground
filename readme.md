@@ -16,9 +16,7 @@
 - [frontend-component-collection-service](https://nginx-frontend-component-collection-server.localhost/)
 
 ## Start Development
-- install pm2 globally and run `pm2 start ecosystem.config.js && pm2 monit` - to start development
-  - to stop run `pm2 stop ecosystem.config.js`
-  - to delete leftover process in pm2 run `pm2 delete all`
-
-- in separate terminal tab run `bash scripts/frontend-js-component-library-watch.bash`
-- in separate terminal tab run `bash scripts/frontend-living-style-guide-watch.bash`
+- new terminal - `bash scripts/backend/fe-cl/dev.bash`
+- new terminal - `bash scripts/backend/fe-cl/watch-public.bash`
+- new terminal - `bash scripts/frontend-js-component-library-watch.bash`
+- new terminal - `bash scripts/frontend-living-style-guide-watch.bash`
