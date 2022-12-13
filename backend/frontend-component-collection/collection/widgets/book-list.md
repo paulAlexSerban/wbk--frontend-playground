@@ -6,7 +6,7 @@ assets: { main-js: "BookList.widget.js", main-css: "book-list.widget.css" }
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
 
 <div class="widget-book-list__base container js-container" data-js-widget="BookList">
-  <h1>Add Book</h1>
+  <h3>Add Book</h3>
   <form id="book-form">
     <div>
       <label for="title">Title</label>
