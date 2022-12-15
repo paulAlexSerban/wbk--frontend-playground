@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const markdownWithMeta = fs.readFileSync(path.join("collection", slug.join("/") + ".md"), "utf-8");
   const { data: frontmatter, content } = matter(markdownWithMeta);
-  const cmpStyles = fs.readFileSync(path.join("public/css", frontmatter.type, frontmatter.assets["main-css"]), "utf-8");
+  const cmpStyles = frontmatter.assets["main-css"] ? fs.readFileSync(path.join("public/css", frontmatter.type, frontmatter.assets["main-css"]), "utf-8") : null;
   return {
     props: {
       frontmatter,
