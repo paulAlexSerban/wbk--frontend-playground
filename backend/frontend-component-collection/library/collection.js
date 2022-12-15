@@ -11,19 +11,23 @@ collectionDir.forEach((directory) => {
 });
 
 export const getCollection = () => {
-  const collection = [];
+  const collection = {};
   components.map((dirname) => {
     for (let dir in dirname) {
+
+      collection[dir] = [];
+
       dirname[dir].map((file) => {
         const slug = file.replace(".md", "");
         const markdownWithMeta = fs.readFileSync(path.join("collection", dir, file), "utf-8");
         const { data: frontmatter } = matter(markdownWithMeta);
-        collection.push({
+        collection[dir].push({
           directory: dir,
           slug,
           frontmatter,
         });
       });
+
     }
   });
   return collection;
