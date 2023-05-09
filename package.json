@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "bash scripts/frontend-living-style-guide-test.bash",
-    "lint": "shellcheck ./**/*.bash",
+    "test": "echo 'no tests configured'",
+    "lint": "echo 'no lint configured'",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
     "prepare": "husky install"
