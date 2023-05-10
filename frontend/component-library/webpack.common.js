@@ -44,7 +44,7 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
     return hbsEntries.reduce((accumulator, hbsEntry) => {
         const componentName = hbsEntry.split("/").slice(-3)[0];
         const variationName = hbsEntry.split("/").slice(-1)[0].split(".")[0];
-        const metaFile = hbsEntry.split("/").slice(0, -2).join("/") + "/data" + "/meta.json";
+        const metaFile = hbsEntry.split("/").slice(0, -2).join("/") + "/meta.json";
         accumulator[variationName] = new HtmlWebpackPlugin({
             title: require(metaFile)[variationName].name,
             template: hbsEntry,
@@ -55,10 +55,12 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
     }, {});
 };
 
+const globPatterns = "{atoms,molecules,organisms,templates}";
+
 const getEntries = () => {
-    const jsEntries = glob.sync(path.join(constants.SRC_DIR, "*", "*", "js", "main.js"));
-    const scssEntries = glob.sync(path.join(constants.SRC_DIR, "*", "*", "scss", "main.scss"));
-    const hbsEntries = glob.sync(path.join(constants.SRC_DIR, "*", "*", "markup", "*.hbs"));
+    const jsEntries = glob.sync(path.join(constants.SRC_DIR, globPatterns, "*", "js", "main.entry.js"));
+    const scssEntries = glob.sync(path.join(constants.SRC_DIR, globPatterns, "*", "scss", "main.entry.scss"));
+    const hbsEntries = glob.sync(path.join(constants.SRC_DIR, globPatterns, "*", "markup", "*.entry.hbs"));
 
     const jsEntriesObj = jsEntries.reduce((accumulator, jsEntry) => {
         const componentName = jsEntry.split("/").slice(-3)[0];
@@ -72,13 +74,13 @@ const getEntries = () => {
         return accumulator;
     }, {});
 
-    const readmeEntries = glob.sync(path.join(constants.SRC_DIR, "*", "*", "readme.mdx")).reduce((accumulator, readmeEntry) => {
-        const componentName = readmeEntry.split("/").slice(-2)[0];
-        accumulator.push({from: readmeEntry, to: componentName});
-        return accumulator;
-    }, []);
-
-    log(readmeEntries)
+    const readmeEntries = glob
+        .sync(path.join(constants.SRC_DIR, "*", "*", "readme.mdx"))
+        .reduce((accumulator, readmeEntry) => {
+            const componentName = readmeEntry.split("/").slice(-2)[0];
+            accumulator.push({ from: readmeEntry, to: componentName });
+            return accumulator;
+        }, []);
 
     return {
         jsEntries,
@@ -91,13 +93,18 @@ const getEntries = () => {
     };
 };
 
-const { readmeEntries, jsEntriesObj,  scssEntriesObj, htmlWebpackPluginPages } = getEntries();
+const { readmeEntries, jsEntriesObj, scssEntriesObj, htmlWebpackPluginPages } = getEntries();
 
 // export webpack configuration
 module.exports = {
     entry: {
         ...jsEntriesObj,
         ...scssEntriesObj,
+    },
+    resolve: {
+        alias: {
+          Utils: path.resolve(__dirname, 'src/utils/'),
+        },
     },
     output: {
         filename: "[name]/script.js",
@@ -157,8 +164,8 @@ module.exports = {
             },
         }),
         new CopyWebpackPlugin({
-			patterns: readmeEntries,
-		}),
+            patterns: readmeEntries,
+        }),
         // clean the output directory before building
         new CleanWebpackPlugin(),
         // show progress during build process
