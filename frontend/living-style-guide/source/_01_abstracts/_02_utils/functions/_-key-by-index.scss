@@ -6,6 +6,6 @@
 /// @return {String} Desired value
 
 @function -key-by-index($map, $index) {
-  $keys: map.keys($map);
-  @return nth($keys, $index);
+    $keys: map.keys($map);
+    @return nth($keys, $index);
 }

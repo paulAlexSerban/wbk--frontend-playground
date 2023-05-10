@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "SoundBoard",
+    type: "pat",
+    name: "SoundBoard",
 };

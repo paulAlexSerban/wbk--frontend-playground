@@ -2,14 +2,14 @@ $type: "cmp";
 $block: "#{$type}-list-unordered";
 
 .#{$block} {
-  @include e("base") {
-    @include font($body);
-    @extend %margin-bottom-32;
+    @include e("base") {
+        @include font($body);
+        @extend %margin-bottom-32;
 
-    color: var(--text-color);
-  }
+        color: var(--text-color);
+    }
 
-  @include e("item") {
-    @extend %margin-bottom-8;
-  }
+    @include e("item") {
+        @extend %margin-bottom-8;
+    }
 }

@@ -1,5 +1,5 @@
 ---
-title: 'Card List - Fancy Hover'
+title: "Card List - Fancy Hover"
 type: "pat"
 assets: { main-css: "card-list-fancy-hover.pat.css" }
 ---

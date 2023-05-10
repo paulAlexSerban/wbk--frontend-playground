@@ -5,5 +5,5 @@
 $block: "cmp-title";
 
 .#{$block} {
-  @extend %display-block;
+    @extend %display-block;
 }

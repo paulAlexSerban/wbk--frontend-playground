@@ -1,5 +1,5 @@
 ---
-title: 'Accordion (CSS Only)'
+title: "Accordion (CSS Only)"
 type: "pat"
 assets: { main-css: "accordion-css.pat.css" }
 ---

@@ -6,18 +6,18 @@ $type: "mod";
 $block: "#{$type}-footer";
 
 .#{$block} {
-  @include e("base") {
-    @extend %border-top-solid-silver;
-    @extend %padding-top-32;
-    @extend %padding-bottom-32;
-  }
+    @include e("base") {
+        @extend %border-top-solid-silver;
+        @extend %padding-top-32;
+        @extend %padding-bottom-32;
+    }
 
-  @include e("container") {
-    @extend %margin-bottom-32;
-  }
+    @include e("container") {
+        @extend %margin-bottom-32;
+    }
 
-  @include e("copyright") {
-    @include font($body-small);
-    color: get-color($c-gray, battleship-grey);
-  }
+    @include e("copyright") {
+        @include font($body-small);
+        color: get-color($c-gray, battleship-grey);
+    }
 }

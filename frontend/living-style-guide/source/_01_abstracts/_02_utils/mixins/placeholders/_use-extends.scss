@@ -3,7 +3,7 @@
 \* ------------------------------------ */
 
 @mixin use-extends($collection: ()) {
-  @each $el in $collection {
-    @extend %#{$el};
-  }
+    @each $el in $collection {
+        @extend %#{$el};
+    }
 }

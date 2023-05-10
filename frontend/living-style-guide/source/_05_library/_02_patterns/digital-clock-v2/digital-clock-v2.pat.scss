@@ -7,17 +7,17 @@
 $block: "pat-digital-clock";
 
 .#{$block} {
-  @include e("base") {
-    @include flex();
-    background: #333;
-    font-size: 4em;
-    text-align: center;
-    margin: 200px auto;
-    color: #ff0;
+    @include e("base") {
+        @include flex();
+        background: #333;
+        font-size: 4em;
+        text-align: center;
+        margin: 200px auto;
+        color: #ff0;
 
-    span {
-      padding: 20px;
-      background: #444;
+        span {
+            padding: 20px;
+            background: #444;
+        }
     }
-  }
 }

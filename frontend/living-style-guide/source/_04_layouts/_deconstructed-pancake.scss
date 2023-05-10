@@ -3,17 +3,17 @@
 // TODO: adjust according to standards
 
 .parent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .box {
-  /*  Stretching: */
-  flex: 1 1 150px;
-  margin: 5px;
-  background: #f00;
-  gap: 1rem;
+    /*  Stretching: */
+    flex: 1 1 150px;
+    margin: 5px;
+    background: #f00;
+    gap: 1rem;
 }
 
 /*

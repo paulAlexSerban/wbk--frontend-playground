@@ -5,7 +5,7 @@
 $block: "pat-form";
 
 .#{$block} {
-  @include e("base") {
-    @extend %display-block;
-  }
+    @include e("base") {
+        @extend %display-block;
+    }
 }

@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "CoinGame",
+    type: "widget",
+    name: "CoinGame",
 };

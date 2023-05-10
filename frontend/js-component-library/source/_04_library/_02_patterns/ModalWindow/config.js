@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "ModalWindow",
+    type: "pat",
+    name: "ModalWindow",
 };

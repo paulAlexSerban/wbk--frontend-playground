@@ -5,7 +5,7 @@
 $block: "widget-ninja-quiz";
 
 .#{$block} {
-  @include e("base") {
-    display: block;
-  }
+    @include e("base") {
+        display: block;
+    }
 }

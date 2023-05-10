@@ -1,41 +1,41 @@
 import UI from "./UI";
 
 export default class Store {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem("books") === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem("books"));
+    static getBooks() {
+        let books;
+        if (localStorage.getItem("books") === null) {
+            books = [];
+        } else {
+            books = JSON.parse(localStorage.getItem("books"));
+        }
+        return books;
     }
-    return books;
-  }
 
-  static displayBooks() {
-    console.log("Display")
-    const books = Store.getBooks();
-    console.log(books);
-    books.forEach(function (book) {
-      const ui = new UI();
-      ui.addBookToList(book);
-    });
-  }
+    static displayBooks() {
+        console.log("Display");
+        const books = Store.getBooks();
+        console.log(books);
+        books.forEach(function (book) {
+            const ui = new UI();
+            ui.addBookToList(book);
+        });
+    }
 
-  static addBook(book) {
-    const books = Store.getBooks();
-    books.push(book);
-    localStorage.setItem("books", JSON.stringify(books));
-  }
+    static addBook(book) {
+        const books = Store.getBooks();
+        books.push(book);
+        localStorage.setItem("books", JSON.stringify(books));
+    }
 
-  static removeBook(isbn) {
-    const books = Store.getBooks();
+    static removeBook(isbn) {
+        const books = Store.getBooks();
 
-    books.forEach(function (book, index) {
-      if (book.isbn === isbn) {
-        books.splice(index, 1);
-      }
-    });
+        books.forEach(function (book, index) {
+            if (book.isbn === isbn) {
+                books.splice(index, 1);
+            }
+        });
 
-    localStorage.setItem("books", JSON.stringify(books));
-  }
+        localStorage.setItem("books", JSON.stringify(books));
+    }
 }

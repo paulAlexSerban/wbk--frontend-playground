@@ -5,38 +5,37 @@
 $block: "pat-table";
 
 .#{$block} {
-  @include e("base") {
+    @include e("base") {
+        border-collapse: collapse;
+        text-align: left;
 
-    border-collapse: collapse;
-    text-align: left;
-
-    &:not(:last-child) {
-      @extend %margin-bottom-64;
+        &:not(:last-child) {
+            @extend %margin-bottom-64;
+        }
     }
-  }
 
-  @include e("head") {
-    @include font($body-bold);
-  }
-
-  @include e("body") {
-    @include font($body);
-  }
-
-  @include e("header", "data") {
-    @extend %border-bottom-solid-silver;
-
-    padding: $baseline $gutter;
-  }
-
-  @include e("header") {
-    background-color: var(--text-color);
-    color: var(--background-color);
-  }
-
-  @include e("row") {
-    &:nth-of-type(odd) {
-      background: get-color($c-light, cultured);
+    @include e("head") {
+        @include font($body-bold);
     }
-  }
+
+    @include e("body") {
+        @include font($body);
+    }
+
+    @include e("header", "data") {
+        @extend %border-bottom-solid-silver;
+
+        padding: $baseline $gutter;
+    }
+
+    @include e("header") {
+        background-color: var(--text-color);
+        color: var(--background-color);
+    }
+
+    @include e("row") {
+        &:nth-of-type(odd) {
+            background: get-color($c-light, cultured);
+        }
+    }
 }

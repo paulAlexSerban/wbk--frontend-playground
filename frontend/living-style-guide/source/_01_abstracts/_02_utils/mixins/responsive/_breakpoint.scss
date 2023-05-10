@@ -8,7 +8,7 @@
 /// @content
 /// @access public
 @mixin breakpoint($name, $breakpoints: $breakpoints) {
-  @include breakpoint-up($name, $breakpoints) {
-    @content;
-  }
+    @include breakpoint-up($name, $breakpoints) {
+        @content;
+    }
 }

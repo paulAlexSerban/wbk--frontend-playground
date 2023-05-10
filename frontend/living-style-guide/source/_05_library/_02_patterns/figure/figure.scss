@@ -6,30 +6,30 @@ $type: "pat";
 $block: "#{$type}-figure";
 
 .#{$block} {
-  @include e("base") {
-    @extend %margin-centered;
-    @extend %margin-bottom-32;
+    @include e("base") {
+        @extend %margin-centered;
+        @extend %margin-bottom-32;
 
-    display: block;
-    padding: $baseline ($gutter / 2);
-  }
+        display: block;
+        padding: $baseline ($gutter / 2);
+    }
 
-  @include e("container") {
-    @include flex($direction: column);
-  }
+    @include e("container") {
+        @include flex($direction: column);
+    }
 
-  @include e("caption") {
-    @include font($label);
-  }
+    @include e("caption") {
+        @include font($label);
+    }
 
-  @include e("picture") {
-    @include aspect-ratio(16, 9, "pat-figure__image");
-  }
+    @include e("picture") {
+        @include aspect-ratio(16, 9, "pat-figure__image");
+    }
 
-  @include e("image") {
-    @extend %size-fill-horizontal;
-    @extend %size-fill-vertical;
+    @include e("image") {
+        @extend %size-fill-horizontal;
+        @extend %size-fill-vertical;
 
-    object-fit: cover;
-  }
+        object-fit: cover;
+    }
 }

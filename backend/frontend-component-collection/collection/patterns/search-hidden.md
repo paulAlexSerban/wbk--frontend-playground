@@ -4,7 +4,6 @@ type: "pat"
 assets: { main-js: "SearchHidden.pat.js", main-css: "search-hidden.pat.css" }
 ---
 
-
 <div class="pat-search-hidden__base" data-js-pat="SearchHidden">
   <div class="pat-search-hidden__container js-search">
     <label class="pat-search-hidden__label" for="search"></label>

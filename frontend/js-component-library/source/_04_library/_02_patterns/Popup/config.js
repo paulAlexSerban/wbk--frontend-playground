@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "Popup",
+    type: "pat",
+    name: "Popup",
 };

@@ -3,7 +3,7 @@
 /// @content
 /// @access public
 @mixin largest-breakpoint($breakpoints: $breakpoints) {
-  @include breakpoint(largest-breakpoint-name()) {
-    @content;
-  }
+    @include breakpoint(largest-breakpoint-name()) {
+        @content;
+    }
 }

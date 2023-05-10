@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "Scrollspy",
+    type: "pat",
+    name: "Scrollspy",
 };

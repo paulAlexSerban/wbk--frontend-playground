@@ -11,7 +11,7 @@
 /// @access public
 
 @function breakpoint-infix($name) {
-  @return "-#{$name}";
+    @return "-#{$name}";
 }
 
 /// Get the value of the next breakpoint, or null for the last breakpoint
@@ -21,16 +21,12 @@
 /// @return {String}
 /// @access public
 
-@function breakpoint-next(
-  $name,
-  $breakpoints: $breakpoints,
-  $breakpoint-names: map.keys($breakpoints)
-) {
-  $n: list.index($breakpoint-names, $name);
-  @if $n != null and $n < list.length($breakpoint-names) {
-    @return list.nth($breakpoint-names, $n + 1);
-  }
-  @return null;
+@function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
+    $n: list.index($breakpoint-names, $name);
+    @if $n != null and $n < list.length($breakpoint-names) {
+        @return list.nth($breakpoint-names, $n + 1);
+    }
+    @return null;
 }
 
 /// Get the value of the previous breakpoint, or null for the first breakpoint
@@ -39,16 +35,12 @@
 /// @param {List} $breakpoint-names [map-keys($breakpoints)] - A list of names from the `$breakpoints` map
 /// @return {String}
 /// @access public
-@function breakpoint-prev(
-  $name,
-  $breakpoints: $breakpoints,
-  $breakpoint-names: map.keys($breakpoints)
-) {
-  $n: list.index($breakpoint-names, $name);
-  @if $n != null and $n > 1 {
-    @return list.nth($breakpoint-names, $n - 1);
-  }
-  @return null;
+@function breakpoint-prev($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
+    $n: list.index($breakpoint-names, $name);
+    @if $n != null and $n > 1 {
+        @return list.nth($breakpoint-names, $n - 1);
+    }
+    @return null;
 }
 
 /// Check to see if the given breakpoint name
@@ -57,5 +49,5 @@
 /// @return {Bool}
 /// @access public
 @function is-smallest-breakpoint($name, $breakpoints: $breakpoints) {
-  @return index(map-keys($breakpoints), $name) == 1;
+    @return index(map-keys($breakpoints), $name) == 1;
 }

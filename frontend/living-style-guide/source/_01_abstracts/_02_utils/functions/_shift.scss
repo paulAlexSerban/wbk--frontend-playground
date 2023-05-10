@@ -2,9 +2,9 @@
 
 // ****** removes the first element of a list and returns it
 @function shift($list) {
-  $newList: ();
-  @for $i from 2 through list.length($list) {
-    $newList: list.append($newList, list.nth($list, $i));
-  }
-  @return $newList;
+    $newList: ();
+    @for $i from 2 through list.length($list) {
+        $newList: list.append($newList, list.nth($list, $i));
+    }
+    @return $newList;
 }

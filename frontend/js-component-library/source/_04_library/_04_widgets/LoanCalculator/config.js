@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "LoanCalculator"
+    type: "widget",
+    name: "LoanCalculator",
 };

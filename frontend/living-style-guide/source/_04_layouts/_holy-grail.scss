@@ -6,25 +6,25 @@
 $layout: "l-holy-grail";
 
 .#{$layout} {
-  &__parent {
-    display: grid;
-    grid-template: auto 1fr auto / auto 1fr auto;
-  }
+    &__parent {
+        display: grid;
+        grid-template: auto 1fr auto / auto 1fr auto;
+    }
 
-  &__header {
-    padding: 2rem;
-    grid-column: 1 / 4;
-  }
+    &__header {
+        padding: 2rem;
+        grid-column: 1 / 4;
+    }
 
-  &__left-side {
-    grid-column: 1 / 2;
-  }
+    &__left-side {
+        grid-column: 1 / 2;
+    }
 
-  &__main {
-    grid-column: 2 / 3;
-  }
+    &__main {
+        grid-column: 2 / 3;
+    }
 
-  &__right-side {
-    grid-column: 3 / 4;
-  }
+    &__right-side {
+        grid-column: 3 / 4;
+    }
 }

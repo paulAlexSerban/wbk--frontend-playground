@@ -6,14 +6,14 @@ $type: "cmp";
 $block: "#{$type}-video";
 
 .#{$block} {
-  @include e("base") {
-    @include aspect-ratio(16, 9, "cmp-video__video");
-  }
+    @include e("base") {
+        @include aspect-ratio(16, 9, "cmp-video__video");
+    }
 
-  @include e("video") {
-    @extend %size-fill-horizontal;
-    @extend %size-fill-vertical;
+    @include e("video") {
+        @extend %size-fill-horizontal;
+        @extend %size-fill-vertical;
 
-    object-fit: cover;
-  }
+        object-fit: cover;
+    }
 }

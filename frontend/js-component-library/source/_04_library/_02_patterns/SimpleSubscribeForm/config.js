@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "SimpleSubscribeForm",
+    type: "pat",
+    name: "SimpleSubscribeForm",
 };

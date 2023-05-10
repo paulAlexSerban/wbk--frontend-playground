@@ -4,7 +4,6 @@ type: "pat"
 assets: { main-js: "NavigationRotating.pat.js", main-css: "navigation-rotating.pat.css" }
 ---
 
-
 <div class="pat-navigation-rotating__base" data-js-pat="NavigationRotating">
   <div class="pat-navigation-rotating__container js-nav-rotating-container">
     <div class="pat-navigation-rotating__circle-container">

@@ -5,5 +5,5 @@
 $block: "pat-richtext";
 
 .#{$block} {
-  @extend %display-block;
+    @extend %display-block;
 }

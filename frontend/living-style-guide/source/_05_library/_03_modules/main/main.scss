@@ -6,5 +6,5 @@ $type: "mod";
 $block: "#{$type}-main";
 
 .#{$block} {
-  @extend %display-block;
+    @extend %display-block;
 }

@@ -5,36 +5,36 @@
 $block: "pat-navigation-tabs-js";
 
 .#{$block} {
-  @include e("base") {
-    @include flex($direction: column);
-  }
+    @include e("base") {
+        @include flex($direction: column);
+    }
 
-  @include e("tab-list") {
-    @include flex();
-    @extend %margin-bottom-16;
+    @include e("tab-list") {
+        @include flex();
+        @extend %margin-bottom-16;
 
-    column-gap: $gutter;
-  }
+        column-gap: $gutter;
+    }
 
-  @include e("panel") {
-    display: none;
-  }
+    @include e("panel") {
+        display: none;
+    }
 }
 
 /* stylelint-disable */
 .tab-menu ul li a.active-a {
-  background-color: #588d7d;
-  color: #ffffff;
+    background-color: #588d7d;
+    color: #ffffff;
 }
 
 .tab h2 {
-  color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .tab p {
-  color: rgba(0, 0, 0, 0.6);
-  text-align: justify;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: justify;
 }
 .active {
-  display: block;
+    display: block;
 }
 /* stylelint-enable */

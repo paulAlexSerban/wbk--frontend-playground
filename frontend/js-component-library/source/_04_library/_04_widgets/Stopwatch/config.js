@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "Stopwatch",
+    type: "widget",
+    name: "Stopwatch",
 };

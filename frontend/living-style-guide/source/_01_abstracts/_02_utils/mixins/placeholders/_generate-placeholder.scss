@@ -3,9 +3,9 @@
 \* ------------------------------------ */
 
 @mixin generate-placeholder($property, $from: 0, $to: 0, $unit: px) {
-  @for $i from $from through $to {
-    %#{$property}-#{$i} {
-      #{$property}: #{$i}#{$unit};
+    @for $i from $from through $to {
+        %#{$property}-#{$i} {
+            #{$property}: #{$i}#{$unit};
+        }
     }
-  }
 }

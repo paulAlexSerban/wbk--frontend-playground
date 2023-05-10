@@ -2,17 +2,17 @@ $type: "cmp";
 $block: "#{$type}-list-definition";
 
 .#{$block} {
-  @include e("base") {
-    color: var(--text-color);
-    margin-bottom: $baseline * 2;
-  }
+    @include e("base") {
+        color: var(--text-color);
+        margin-bottom: $baseline * 2;
+    }
 
-  @include e("term") {
-    @include font($body-bold);
-  }
+    @include e("term") {
+        @include font($body-bold);
+    }
 
-  @include e("explanation") {
-    @include font($body);
-    padding-left: $gutter * 4;
-  }
+    @include e("explanation") {
+        @include font($body);
+        padding-left: $gutter * 4;
+    }
 }

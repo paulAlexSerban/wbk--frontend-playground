@@ -2,8 +2,8 @@ $type: "cmp";
 $cmp: "#{$type}-time";
 
 .#{$cmp} {
-  @include e("base") {
-    @include font($body);
-    color: get-color($c-gray, battleship-grey);
-  }
+    @include e("base") {
+        @include font($body);
+        color: get-color($c-gray, battleship-grey);
+    }
 }

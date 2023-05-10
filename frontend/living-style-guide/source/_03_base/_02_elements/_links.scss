@@ -5,14 +5,14 @@
 \* ------------------------------------ */
 
 a {
-  color: var(--color-link);
+    color: var(--color-link);
 
-  &:hover {
-    color: var(--color-link-hover);
-  }
+    &:hover {
+        color: var(--color-link-hover);
+    }
 
-  &,
-  &:hover {
-    text-decoration: none;
-  }
+    &,
+    &:hover {
+        text-decoration: none;
+    }
 }

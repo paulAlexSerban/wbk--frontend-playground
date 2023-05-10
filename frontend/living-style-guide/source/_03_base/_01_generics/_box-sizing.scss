@@ -12,13 +12,13 @@
 \* ---------------------------------------------------------------------------------------------------------------- */
 
 html {
-  @extend %box-sizing;
+    @extend %box-sizing;
 }
 
 * {
-  &,
-  &::before,
-  &::after {
-    box-sizing: inherit;
-  }
+    &,
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
 }

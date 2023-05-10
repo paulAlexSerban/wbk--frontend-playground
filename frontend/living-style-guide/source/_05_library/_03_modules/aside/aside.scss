@@ -2,7 +2,7 @@ $type: "mod";
 $block: "#{$type}-aside";
 
 .#{$block} {
-  @include e("base") {
-    align-self: flex-start;
-  }
+    @include e("base") {
+        align-self: flex-start;
+    }
 }

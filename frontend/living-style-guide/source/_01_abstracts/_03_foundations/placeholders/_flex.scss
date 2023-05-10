@@ -3,5 +3,5 @@
 \* ------------------------------------ */
 
 %flex-col {
-  @include flex($direction: column, $main: flex-start);
+    @include flex($direction: column, $main: flex-start);
 }

@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "TaskList",
+    type: "widget",
+    name: "TaskList",
 };

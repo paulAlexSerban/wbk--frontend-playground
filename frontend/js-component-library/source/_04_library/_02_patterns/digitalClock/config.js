@@ -1,5 +1,5 @@
 export const config = {
-  selectors: {
-    digitalClock: ".js-digital-clock__time",
-  },
+    selectors: {
+        digitalClock: ".js-digital-clock__time",
+    },
 };

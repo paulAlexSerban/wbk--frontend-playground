@@ -3,6 +3,7 @@ title: "Book List"
 type: "widget"
 assets: { main-js: "BookList.widget.js", main-css: "book-list.widget.css" }
 ---
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
 
 <div class="widget-book-list__base container js-container" data-js-widget="BookList">

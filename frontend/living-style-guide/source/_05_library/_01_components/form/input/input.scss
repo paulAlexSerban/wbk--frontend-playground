@@ -2,32 +2,32 @@ $type: "cmp";
 $block: "#{$type}-input";
 
 .#{$block} {
-  @include e("input") {
-    @extend %padding-16;
-    @extend %border-radius-3;
-    @extend %margin-bottom-16;
-    @extend %size-fill-horizontal;
+    @include e("input") {
+        @extend %padding-16;
+        @extend %border-radius-3;
+        @extend %margin-bottom-16;
+        @extend %size-fill-horizontal;
 
-    border: 1px solid get-color($c-gray, sonic-silver);
+        border: 1px solid get-color($c-gray, sonic-silver);
 
-    &:focus {
-      border-color: get-color($c-blue, rhythm);
-      outline: 0;
-      box-shadow: 0 convert-rem(2px) convert-rem(10px) get-color($c-dark, dark-30);
+        &:focus {
+            border-color: get-color($c-blue, rhythm);
+            outline: 0;
+            box-shadow: 0 convert-rem(2px) convert-rem(10px) get-color($c-dark, dark-30);
+        }
+
+        &.success {
+            border-color: get-color($c-traffic-lights, success);
+        }
+
+        &.error {
+            border-color: get-color($c-traffic-lights, danger);
+        }
     }
 
-    &.success {
-      border-color: get-color($c-traffic-lights, success);
+    @include e("label") {
+        @include font($label);
+        @extend %margin-bottom-8;
+        @extend %display-inline-block;
     }
-
-    &.error {
-      border-color: get-color($c-traffic-lights, danger);
-    }
-  }
-
-  @include e("label") {
-    @include font($label);
-    @extend %margin-bottom-8;
-    @extend %display-inline-block;
-  }
 }

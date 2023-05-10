@@ -6,14 +6,14 @@ $type: "cmp";
 $block: "#{$type}-iframe";
 
 .#{$block} {
-  @include e("base") {
-    @include aspect-ratio(16, 9, "cmp-iframe__iframe");
-  }
+    @include e("base") {
+        @include aspect-ratio(16, 9, "cmp-iframe__iframe");
+    }
 
-  @include e("iframe") {
-    @extend %size-fill-horizontal;
-    @extend %size-fill-vertical;
+    @include e("iframe") {
+        @extend %size-fill-horizontal;
+        @extend %size-fill-vertical;
 
-    object-fit: cover;
-  }
+        object-fit: cover;
+    }
 }

@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "ToDoListAppV1",
+    type: "widget",
+    name: "ToDoListAppV1",
 };

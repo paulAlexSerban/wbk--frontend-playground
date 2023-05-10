@@ -5,12 +5,12 @@
 $block: "pat-fieldset";
 
 .#{$block} {
-  @include e("base") {
-    @extend %margin-bottom-32;
-    @include relative();
-  }
+    @include e("base") {
+        @extend %margin-bottom-32;
+        @include relative();
+    }
 
-  @include e("legend") {
-    @include font($body-large);
-  }
+    @include e("legend") {
+        @include font($body-large);
+    }
 }

@@ -5,5 +5,5 @@
 $block: "pat-navigation";
 
 .#{$block} {
-  @extend %display-block;
+    @extend %display-block;
 }

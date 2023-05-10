@@ -2,146 +2,146 @@ $type: "pat";
 $block: "#{$type}-custom-player";
 
 .#{$block} {
-  @include e("base") {
-    @include flex($direction: column);
-  }
-
-  @include e("heading") {
-    color: #fff;
-  }
-
-  @include e("screen", "controls") {
-    width: 90%;
-  }
-
-  @include e("screen") {
-    width: 60%;
-    cursor: pointer;
-    background-color: #000 !important;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  @include e("controls") {
-    @include flex();
-    width: 60%;
-    padding: 10px;
-    color: #fff;
-    background: #333;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-
-    .fa-play {
-      color: #28a745;
+    @include e("base") {
+        @include flex($direction: column);
     }
 
-    .fa-stop {
-      color: #dc3545;
+    @include e("heading") {
+        color: #fff;
     }
 
-    .fa-pause {
-      color: #fff;
-    }
-  }
-
-  $progress-bar-box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
-  $progress-bar-box-border-range: 0.2px solid #010101;
-  $progress-bar-box-border-thumb: 1px solid #000;
-  $progress-bar-slider-color: #367ebd;
-  $progress-bar-track-color: #3071a9;
-
-  @include e("progress") {
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome */
-    margin-left: 10px;
-
-    &:focus {
-      outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-
-      &::-webkit-slider-runnable-track,
-      &::-ms-fill-upper {
-        background: $progress-bar-slider-color;
-      }
-
-      &::-ms-fill-lower {
-        background: $progress-bar-track-color;
-      }
+    @include e("screen", "controls") {
+        width: 90%;
     }
 
-    &::-ms-track {
-      width: 100%;
-      height: 8.4px;
-      color: transparent;
-      cursor: pointer;
-
-      /* Hides the slider so custom styles can be added */
-      background: transparent;
-      border-color: transparent;
-      border-width: 16px 0;
+    @include e("screen") {
+        width: 60%;
+        cursor: pointer;
+        background-color: #000 !important;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
-    &::-webkit-slider-thumb,
-    &::-moz-range-thumb,
-    &::-ms-thumb,
-    &::-webkit-slider-runnable-track,
-    &::-moz-range-track,
-    &::-ms-fill-lower,
-    &::-ms-fill-upper {
-      border: $progress-bar-box-border-thumb;
-      box-shadow: $progress-bar-box-shadow; /* Add cool effects to your sliders! */
+    @include e("controls") {
+        @include flex();
+        width: 60%;
+        padding: 10px;
+        color: #fff;
+        background: #333;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        .fa-play {
+            color: #28a745;
+        }
+
+        .fa-stop {
+            color: #dc3545;
+        }
+
+        .fa-pause {
+            color: #fff;
+        }
     }
 
-    &::-webkit-slider-thumb,
-    &::-moz-range-thumb,
-    &::-ms-thumb {
-      width: 16px;
-      height: 36px;
-      margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-      cursor: pointer;
-      background: #fff;
-      border-radius: 3px;
+    $progress-bar-box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+    $progress-bar-box-border-range: 0.2px solid #010101;
+    $progress-bar-box-border-thumb: 1px solid #000;
+    $progress-bar-slider-color: #367ebd;
+    $progress-bar-track-color: #3071a9;
+
+    @include e("progress") {
+        width: 100%; /* Specific width is required for Firefox. */
+        background: transparent; /* Otherwise white in Chrome */
+        margin-left: 10px;
+
+        &:focus {
+            outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+
+            &::-webkit-slider-runnable-track,
+            &::-ms-fill-upper {
+                background: $progress-bar-slider-color;
+            }
+
+            &::-ms-fill-lower {
+                background: $progress-bar-track-color;
+            }
+        }
+
+        &::-ms-track {
+            width: 100%;
+            height: 8.4px;
+            color: transparent;
+            cursor: pointer;
+
+            /* Hides the slider so custom styles can be added */
+            background: transparent;
+            border-color: transparent;
+            border-width: 16px 0;
+        }
+
+        &::-webkit-slider-thumb,
+        &::-moz-range-thumb,
+        &::-ms-thumb,
+        &::-webkit-slider-runnable-track,
+        &::-moz-range-track,
+        &::-ms-fill-lower,
+        &::-ms-fill-upper {
+            border: $progress-bar-box-border-thumb;
+            box-shadow: $progress-bar-box-shadow; /* Add cool effects to your sliders! */
+        }
+
+        &::-webkit-slider-thumb,
+        &::-moz-range-thumb,
+        &::-ms-thumb {
+            width: 16px;
+            height: 36px;
+            margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+            cursor: pointer;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        &::-webkit-slider-runnable-track,
+        &::-moz-range-track {
+            width: 100%;
+            height: 8.4px;
+            cursor: pointer;
+            background: $progress-bar-track-color;
+            border-radius: 1.3px;
+        }
+
+        &::-ms-fill-lower,
+        &::-ms-fill-upper {
+            border-radius: 2.6px;
+        }
+
+        &::-ms-fill-lower {
+            background: #2a6495;
+        }
+
+        &::-ms-fill-upper {
+            background: $progress-bar-track-color;
+        }
     }
 
-    &::-webkit-slider-runnable-track,
-    &::-moz-range-track {
-      width: 100%;
-      height: 8.4px;
-      cursor: pointer;
-      background: $progress-bar-track-color;
-      border-radius: 1.3px;
+    @include e("button") {
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+
+        &:focus {
+            outline: 0;
+        }
+
+        img {
+            height: 20px;
+        }
     }
 
-    &::-ms-fill-lower,
-    &::-ms-fill-upper {
-      border-radius: 2.6px;
+    @include e("timestamp") {
+        margin-left: 10px;
+        font-weight: 700;
+        color: #fff;
     }
-
-    &::-ms-fill-lower {
-      background: #2a6495;
-    }
-
-    &::-ms-fill-upper {
-      background: $progress-bar-track-color;
-    }
-  }
-
-  @include e("button") {
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-
-    &:focus {
-      outline: 0;
-    }
-
-    img {
-      height: 20px;
-    }
-  }
-
-  @include e("timestamp") {
-    margin-left: 10px;
-    font-weight: 700;
-    color: #fff;
-  }
 }

@@ -3,6 +3,7 @@ title: "Activity Launcher"
 type: "widget"
 assets: { main-js: "ActivityLauncher.widget.js", main-css: "activity-launcher.widget.css" }
 ---
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <div class="widget-activity-launcher__base" data-js-widget="ActivityLauncher">
   <ul>

@@ -1,3 +1,3 @@
 export const config = {
-  pageName: "BASE"
+    pageName: "BASE",
 };

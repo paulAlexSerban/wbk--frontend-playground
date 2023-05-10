@@ -2,7 +2,7 @@ $type: "mod";
 $block: "#{$type}-navigation-bar";
 
 .#{$block} {
-  @include e("base") {
-    @extend %padding-top-16;
-  }
+    @include e("base") {
+        @extend %padding-top-16;
+    }
 }

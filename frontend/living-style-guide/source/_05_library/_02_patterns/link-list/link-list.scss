@@ -5,7 +5,7 @@
 $block: "pat-link-list";
 
 .#{$block} {
-  @include e("base") {
-    @extend %display-block;
-  }
+    @include e("base") {
+        @extend %display-block;
+    }
 }

@@ -1,9 +1,9 @@
 @mixin z-index($layer, $adjust: 0, $position: relative) {
-  position: $position;
+    position: $position;
 
-  @if $layer {
-    z-index: layer-index($layer, $adjust);
-  }
+    @if $layer {
+        z-index: layer-index($layer, $adjust);
+    }
 }
 
 // .o-base {

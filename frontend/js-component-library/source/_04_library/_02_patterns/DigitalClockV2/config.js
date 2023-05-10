@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "DigitalClockV2",
+    type: "pat",
+    name: "DigitalClockV2",
 };

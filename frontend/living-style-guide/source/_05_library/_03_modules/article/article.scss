@@ -2,15 +2,15 @@ $type: "mod";
 $block: "#{$type}-article";
 
 .#{$block} {
-  @include e("base") {
-    @extend %margin-bottom-64;
+    @include e("base") {
+        @extend %margin-bottom-64;
 
-    &:not(:last-of-type) {
-      @extend %border-bottom-solid-silver;
+        &:not(:last-of-type) {
+            @extend %border-bottom-solid-silver;
+        }
     }
-  }
 
-  @include e("content") {
-    align-items: stretch;
-  }
+    @include e("content") {
+        align-items: stretch;
+    }
 }

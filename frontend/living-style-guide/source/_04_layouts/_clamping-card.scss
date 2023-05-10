@@ -3,20 +3,20 @@
 // TODO: adjust according to standards
 
 .parent {
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
 }
 
 .card {
-  width: clamp(23ch, 60%, 46ch);
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+    width: clamp(23ch, 60%, 46ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
 .visual {
-  height: 125px;
-  width: 100%;
+    height: 125px;
+    width: 100%;
 }
 
 /*

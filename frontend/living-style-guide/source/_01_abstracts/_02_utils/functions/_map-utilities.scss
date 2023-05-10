@@ -8,10 +8,10 @@
 /// @param {Arglist} $keys - Key chain
 /// @return {*} Desired value
 @function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map.get($map, $key);
-  }
-  @return $map;
+    @each $key in $keys {
+        $map: map.get($map, $key);
+    }
+    @return $map;
 }
 
 /// Provide a map and index, and get back the relevant key value
@@ -20,8 +20,8 @@
 /// @param {Integer} $index - Key chain
 /// @return {String} Desired value
 @function key-by-index($map, $index) {
-  $keys: map.keys($map);
-  @return nth($keys, $index);
+    $keys: map.keys($map);
+    @return nth($keys, $index);
 }
 
 /// Pass in a map, and get the last one in the list back
@@ -29,6 +29,6 @@
 /// @param {Map} $map - Map
 /// @return {*} Desired value
 @function last-map-item($map) {
-  $total-length: list.length($map);
-  @return map-get($map, key-by-index($map, $total-length));
+    $total-length: list.length($map);
+    @return map-get($map, key-by-index($map, $total-length));
 }

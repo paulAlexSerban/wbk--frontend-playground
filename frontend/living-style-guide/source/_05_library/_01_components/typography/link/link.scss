@@ -1,16 +1,16 @@
 $type: "cmp";
-$block:  "#{$type}-link";
+$block: "#{$type}-link";
 
 .#{$block} {
-  @include e("base"){
-    @include font($link);
-    @include on-event() {
-      color: get-color($c-gray, sonic-silver);
-      text-decoration: none;
-      box-shadow: 0 1px 0 0 get-color($c-gray, sonic-silver);
-      transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
+    @include e("base") {
+        @include font($link);
+        @include on-event() {
+            color: get-color($c-gray, sonic-silver);
+            text-decoration: none;
+            box-shadow: 0 1px 0 0 get-color($c-gray, sonic-silver);
+            transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
 
-    color: get-color($c-blue, rhythm);
-  }
+        color: get-color($c-blue, rhythm);
+    }
 }

@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "GuessMyNumber",
+    type: "widget",
+    name: "GuessMyNumber",
 };

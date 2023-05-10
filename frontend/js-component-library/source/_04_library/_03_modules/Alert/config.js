@@ -1,7 +1,7 @@
 export const config = {
-  type: "mod",
-  name: "Alert",
-  selectors: {
-    close: `.js-alert-close`
-  }
+    type: "mod",
+    name: "Alert",
+    selectors: {
+        close: `.js-alert-close`,
+    },
 };

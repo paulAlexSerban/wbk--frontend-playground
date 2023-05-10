@@ -6,10 +6,10 @@
 
 // margin
 %margin-reset {
-  margin: 0;
+    margin: 0;
 }
 %margin-centered {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 @include generate-placeholder("margin", 0, 100);
 @include generate-placeholder("margin-top", 0, 100);
@@ -19,7 +19,7 @@
 
 // padding
 %padding-reset {
-  padding: 0;
+    padding: 0;
 }
 @include generate-placeholder("padding", 0, 100);
 @include generate-placeholder("padding-top", 0, 100);
@@ -29,27 +29,27 @@
 
 // border
 %no-border {
-  border: none;
+    border: none;
 }
 
 %border-top-solid-silver {
-  border-top: 1px solid get-color($c-gray, sonic-silver);
+    border-top: 1px solid get-color($c-gray, sonic-silver);
 }
 
 %border-bottom-solid-silver {
-  @include border($bottom: 1px solid get-color($c-gray, sonic-silver));
+    @include border($bottom: 1px solid get-color($c-gray, sonic-silver));
 }
 
 %border-right-solid-silver {
-  @include border($right: 1px solid get-color($c-gray, sonic-silver));
+    @include border($right: 1px solid get-color($c-gray, sonic-silver));
 }
 
 // border-radius
 %no-border-radius {
-  border-radius: none;
+    border-radius: none;
 }
 %full-border-radius {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 @include generate-placeholder("border-radius", 0, 100);
 @include generate-placeholder("border-top-left-radius", 0, 100);
@@ -58,5 +58,5 @@
 @include generate-placeholder("border-bottom-right-radius", 0, 100);
 
 %box-sizing {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }

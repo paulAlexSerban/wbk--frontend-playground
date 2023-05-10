@@ -2,7 +2,7 @@ $type: "pat";
 $block: "#{$type}-reference-list";
 
 .#{$block} {
-  @include e("base") {
-    @extend %display-block;
-  }
+    @include e("base") {
+        @extend %display-block;
+    }
 }

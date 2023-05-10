@@ -1,4 +1,4 @@
 export const config = {
-  type: "widget",
-  name: "NoteManager",
+    type: "widget",
+    name: "NoteManager",
 };

@@ -5,9 +5,9 @@
 $block: "pat-digital-clock";
 
 .#{$block} {
-  @include e("base") {
-    @extend %size-fill-horizontal;
+    @include e("base") {
+        @extend %size-fill-horizontal;
 
-    @include flex();
-  }
+        @include flex();
+    }
 }

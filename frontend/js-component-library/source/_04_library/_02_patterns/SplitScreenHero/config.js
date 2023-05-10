@@ -1,4 +1,4 @@
 export const config = {
-  type: "pat",
-  name: "SplitScreenHero",
+    type: "pat",
+    name: "SplitScreenHero",
 };

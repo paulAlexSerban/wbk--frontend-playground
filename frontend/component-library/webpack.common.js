@@ -103,7 +103,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-          Utils: path.resolve(__dirname, 'src/utils/'),
+            Utils: path.resolve(__dirname, "src/utils/"),
         },
     },
     output: {

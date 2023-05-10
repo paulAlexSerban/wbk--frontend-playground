@@ -5,13 +5,13 @@
 *,
 *::before,
 *::after {
-  @extend %margin-reset;
-  @extend %padding-reset;
+    @extend %margin-reset;
+    @extend %padding-reset;
 }
 
 fieldset {
-  @extend %padding-reset;
-  @extend %no-border;
+    @extend %padding-reset;
+    @extend %no-border;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- *\
@@ -21,11 +21,11 @@ fieldset {
 \* ---------------------------------------------------------------------------------------------------------------- */
 
 img {
-  @extend %no-border;
-  @extend %display-block;
-  max-width: 100%;
-  @include height();
-  object-fit: cover;
+    @extend %no-border;
+    @extend %display-block;
+    max-width: 100%;
+    @include height();
+    object-fit: cover;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- *\
@@ -33,28 +33,28 @@ img {
 \* ---------------------------------------------------------------------------------------------------------------- */
 
 main {
-  @extend %display-block;
+    @extend %display-block;
 }
 
 ::selection {
-  background-color: get-color($c-dark, eerie-black);
-  color: get-color($c-light, cultured);
+    background-color: get-color($c-dark, eerie-black);
+    color: get-color($c-light, cultured);
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- *\
   * Remove default table spacing.
 \* ---------------------------------------------------------------------------------------------------------------- */
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 textarea {
-  white-space: revert;
+    white-space: revert;
 }
 
 ul,
 ol {
-  @extend %margin-reset;
-  list-style: none;
+    @extend %margin-reset;
+    list-style: none;
 }

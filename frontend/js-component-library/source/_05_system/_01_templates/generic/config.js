@@ -1,3 +1,3 @@
 export const config = {
-  templateName: "GENERIC"
+    templateName: "GENERIC",
 };

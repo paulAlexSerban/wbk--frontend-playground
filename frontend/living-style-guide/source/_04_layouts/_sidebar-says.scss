@@ -8,18 +8,18 @@
 $layout: "lyt-sidebar-says";
 
 .#{$layout} {
-  @include e("base") {
-    display: grid;
-    column-gap: $gutter;
-  }
+    @include e("base") {
+        display: grid;
+        column-gap: $gutter;
+    }
 
-  @include e("sidebar") {
-    grid-column: 1;
-  }
+    @include e("sidebar") {
+        grid-column: 1;
+    }
 
-  @include e("content") {
-    grid-column: 2;
-  }
+    @include e("content") {
+        grid-column: 2;
+    }
 }
 
 /**

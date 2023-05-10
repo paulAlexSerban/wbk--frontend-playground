@@ -2,40 +2,40 @@ $type: "pat";
 $block: "#{$type}-card-list-fancy-hover";
 
 .#{$block} {
-  &__list {
-    @include flex();
-  }
-
-  &__listItem {
-    margin: 10px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-
-    .#{$block}__list:hover & {
-      transform: scale(0.9);
-      box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
-
-      &:hover {
-        transform: scale(1.1);
-        box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.5);
-      }
+    &__list {
+        @include flex();
     }
 
-    &:first-child {
-      background: #55efc4;
-    }
+    &__listItem {
+        margin: 10px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.6);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
 
-    &:nth-child(2) {
-      background: #81ecec;
-    }
+        .#{$block}__list:hover & {
+            transform: scale(0.9);
+            box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
 
-    &:nth-child(3) {
-      background: #74b9ff;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &:first-child {
+            background: #55efc4;
+        }
+
+        &:nth-child(2) {
+            background: #81ecec;
+        }
+
+        &:nth-child(3) {
+            background: #74b9ff;
+        }
     }
-  }
 }

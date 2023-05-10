@@ -1,8 +1,8 @@
 $type: "cmp";
-$block:  "#{$type}-code";
+$block: "#{$type}-code";
 
 .#{$block} {
-  @include e("base"){
-    @include font($code);
-  }
+    @include e("base") {
+        @include font($code);
+    }
 }

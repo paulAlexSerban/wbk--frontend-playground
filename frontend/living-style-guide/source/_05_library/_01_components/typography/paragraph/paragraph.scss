@@ -5,10 +5,10 @@ $type: "cmp";
 $block: "#{$type}-paragraph";
 
 .#{$block} {
-  @include e("base") {
-    @include font($body);
+    @include e("base") {
+        @include font($body);
 
-    color: var(--text-color);
-    margin-bottom: $baseline * 2;
-  }
+        color: var(--text-color);
+        margin-bottom: $baseline * 2;
+    }
 }
