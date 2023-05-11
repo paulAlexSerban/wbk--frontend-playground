@@ -2,10 +2,10 @@
     "media-object": {
         "name": "Media Object"
     },
-    "media-object-inverse": {
+    "media-object--inverse": {
         "name": "Media Object | Inverse"
     },
-    "media-object-dark": {
+    "media-object--dark": {
         "name": "Media Object | Dark"
     }
 }

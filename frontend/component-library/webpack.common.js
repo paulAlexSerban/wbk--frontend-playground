@@ -9,35 +9,46 @@ const constants = require("./paths");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const glob = require("glob");
 const fs = require("fs");
-
-const { log } = console;
-
 class DeleteScssPrefixedDirectoriesPlugin {
-    apply(compiler) {
-        compiler.hooks.afterEmit.tap("DeleteScssPrefixedDirectoriesPlugin", (compilation) => {
-            const outputPath = compiler.options.output.path;
+  apply(compiler) {
+    compiler.hooks.afterEmit.tap('DeleteScssPrefixedDirectoriesPlugin', (compilation) => {
+      const outputPath = compiler.options.output.path;
 
-            fs.readdir(outputPath, (err, files) => {
-                if (err) {
-                    console.error(err);
-                    return;
+      fs.readdir(outputPath, (err, files) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        files.forEach((file) => {
+          if (file.startsWith('scss-')) {
+            const dirPath = path.join(outputPath, file);
+            fs.stat(dirPath, (err, stats) => {
+              if (err) {
+                if (err.code === 'ENOENT') {
+                  // Ignore the error if the file or directory doesn't exist
+                  return;
+                } else {
+                  console.error(err);
+                  return;
                 }
+              }
 
-                files.forEach((file) => {
-                    if (file.startsWith("scss-")) {
-                        const dirPath = path.join(outputPath, file);
-                        fs.rmdir(dirPath, { recursive: true }, (err) => {
-                            if (err) {
-                                console.error(err);
-                            } else {
-                                // console.log(`Removed: ${dirPath}`);
-                            }
-                        });
-                    }
+              if (stats.isDirectory()) {
+                fs.rm(dirPath, { recursive: true }, (err) => {
+                  if (err) {
+                    console.error(err);
+                  } else {
+                    // console.log(`Removed: ${dirPath}`);
+                  }
                 });
+              }
             });
+          }
         });
-    }
+      });
+    });
+  }
 }
 
 const generateHTMLWebpackPluginPages = (hbsEntries) => {
