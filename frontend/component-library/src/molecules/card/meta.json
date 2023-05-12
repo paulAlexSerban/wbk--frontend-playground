@@ -1,5 +1,5 @@
 {
-    "card": {
-        "name": "Card"
-    }
+    "category": "molecules",
+    "componentName": "card",
+    "variations": [{ "slug": "card", "name": "Card" }]
 }

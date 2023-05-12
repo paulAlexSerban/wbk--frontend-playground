@@ -12,13 +12,19 @@ export default function ComponentPage({ slug, htmlContent, styles, scripts, comp
         <div>
             <Head>
                 <title>{componentName}</title>
+                <style>{styles}</style>
+                <script async defer dangerouslySetInnerHTML={{ __html: scripts }} />
             </Head>
-            <style>{styles}</style>
+
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <div className="Makrup">
+            <h2>Markup</h2>
             <pre>
             {htmlContent}
             </pre>
-            <script async defer dangerouslySetInnerHTML={{ __html: scripts }} />
+            </div>
+
+
         </div>
     );
 }

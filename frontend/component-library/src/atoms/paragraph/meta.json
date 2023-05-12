@@ -1,0 +1,10 @@
+{
+    "category": "atoms",
+    "componentName": "paragraph",
+    "variations": [
+        {
+            "slug": "paragraph",
+            "name": "Paragraph"
+        }
+    ]
+}

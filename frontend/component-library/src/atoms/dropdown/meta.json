@@ -1,5 +1,5 @@
 {
-    "dropdown": {
-        "name": "Dropdown"
-    }
+    "category": "atoms",
+    "componentName": "dropdown",
+    "variations": [{ "slug": "dropdown", "name": "Dropdown" }]
 }

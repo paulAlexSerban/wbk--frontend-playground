@@ -7,7 +7,6 @@ const constants = require("./paths");
 module.exports = (env) =>
     merge(common, {
         mode: constants.NODE_ENV,
-        devtool: "source-map",
         devServer: {
             port: 9000,
             compress: true,

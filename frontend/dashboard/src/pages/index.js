@@ -1,77 +1,56 @@
-import getAllSlugs from "@/utils/getAllSlugs";
+import getComponentLibrary from "@/utils/getComponentLibrary";
 import formatString from "@/core/utils/formatStrings";
 
 function ComponentList({ title, list }) {
     return (
-      <>
-        <h2>{title}</h2>
-        <ul>
-          {list.map((item) => (
-            <li key={item.slug}>
-              <a href={`/components/${item.slug}`}>{item.formattedName}</a>
-            </li>
-          ))}
-        </ul>
-      </>
+        <>
+            <h2>{title}</h2>
+            <ul>
+                {list.map((item, index) =>
+                    item.variations.map((variation, index) => (
+                        <li key={index}>
+                            <a href={`http://localhost:9000/${item.componentName}/${variation.slug}.html`}>
+                                {formatString(variation.name)}
+                            </a>
+                        </li>
+                    ))
+                )}
+            </ul>
+        </>
     );
-  }
+}
 
-export default function Index({ componentList }) {
+export default function Index({ atoms, molecules, organisms, templates }) {
     return (
         <main>
-        <h1>Component Library</h1>
-        <ComponentList title="Atoms" list={componentList.atoms} />
-        <ComponentList title="Molecules" list={componentList.molecules} />
-        <ComponentList title="Organisms" list={componentList.organisms} />
-        <ComponentList title="Templates" list={componentList.templates} />
-      </main>
+            <h1>Component Library</h1>
+            {atoms.length && <ComponentList title="Atoms" list={atoms} />}
+            {molecules.length && <ComponentList title="Molecules" list={molecules} />}
+            {organisms.length && <ComponentList title="Organisms" list={organisms} />}
+            {templates.length && <ComponentList title="Templates" list={templates} />}
+            <iframe
+                id="inlineFrameExample"
+                title="Inline Frame Example"
+                width="1200"
+                height="900"
+                src="http://localhost:9000/button/button--primary.html"
+            ></iframe>
+        </main>
     );
 }
 
 export async function getStaticProps({}) {
+    const getAtoms = getComponentLibrary().atoms.map((item) => item);
+    const getMolecules = getComponentLibrary().molecules.map((item) => item);
+    const getOrganisms = getComponentLibrary().organisms.map((item) => item);
+    const getTemplates = getComponentLibrary().templates.map((item) => item);
+
     return {
         props: {
-            componentList: getComponentList(),
+            atoms: getAtoms,
+            molecules: getMolecules,
+            organisms: getOrganisms,
+            templates: getTemplates,
         },
     };
 }
-
-const getComponentList = () => {
-    const slugs = getAllSlugs();
-    const componentList = { atoms: [], molecules: [], organisms: [], templates: [] };
-    slugs.forEach((item) => {
-        if (item.params.slug.includes("a.")) {
-            const { slug } = item.params;
-            componentList.atoms.push({
-                slug: slug,
-                cmpName: slug.replace("a.", ""),
-                formattedName: formatString(slug.replace("a.", "")),
-            });
-        }
-        if (item.params.slug.includes("m.")) {
-            const { slug } = item.params;
-            componentList.molecules.push({
-                slug: slug,
-                cmpName: slug.replace("m.", ""),
-                formattedName: formatString(slug.replace("m.", "")),
-            });
-        }
-        if (item.params.slug.includes("o.")) {
-            const { slug } = item.params;
-            componentList.organisms.push({
-                slug: slug,
-                cmpName: slug.replace("o.", ""),
-                formattedName: formatString(slug.replace("o.", "")),
-            });
-        }
-        if (item.params.slug.includes("t.")) {
-            const { slug } = item.params;
-            componentList.templates.push({
-                slug: slug,
-                cmpName: slug.replace("t.", ""),
-                formattedName: formatString(slug.replace("t.", "")),
-            });
-        }
-    });
-    return componentList;
-};

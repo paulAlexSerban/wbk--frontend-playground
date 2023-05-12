@@ -9,6 +9,7 @@ const constants = require("./paths");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const glob = require("glob");
 const fs = require("fs");
+
 class DeleteScssPrefixedDirectoriesPlugin {
   apply(compiler) {
     compiler.hooks.afterEmit.tap('DeleteScssPrefixedDirectoriesPlugin', (compilation) => {
@@ -57,7 +58,6 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
         const variationName = hbsEntry.split("/").slice(-1)[0].split(".")[0];
         const metaFile = hbsEntry.split("/").slice(0, -2).join("/") + "/meta.json";
         accumulator[variationName] = new HtmlWebpackPlugin({
-            title: require(metaFile)[variationName].name,
             template: hbsEntry,
             filename: path.join(constants.DIST_DIR, `${componentName}`, `${variationName}.html`),
             inject: false,
@@ -93,6 +93,13 @@ const getEntries = () => {
             return accumulator;
         }, []);
 
+    const metaEntries = glob.sync(path.join(constants.SRC_DIR, "*", "*", "meta.json"))
+        .reduce((accumulator, metaEntry) => {
+            const componentName = metaEntry.split("/").slice(-2)[0];
+            accumulator.push({ from: metaEntry, to: componentName });
+            return accumulator;
+        }, []);
+
     return {
         jsEntries,
         scssEntries,
@@ -100,11 +107,12 @@ const getEntries = () => {
         jsEntriesObj,
         scssEntriesObj,
         readmeEntries,
+        metaEntries,
         htmlWebpackPluginPages: generateHTMLWebpackPluginPages(hbsEntries),
     };
 };
 
-const { readmeEntries, jsEntriesObj, scssEntriesObj, htmlWebpackPluginPages } = getEntries();
+const { jsEntriesObj, scssEntriesObj, htmlWebpackPluginPages, metaEntries, readmeEntries } = getEntries();
 
 // export webpack configuration
 module.exports = {
@@ -175,7 +183,7 @@ module.exports = {
             },
         }),
         new CopyWebpackPlugin({
-            patterns: readmeEntries,
+            patterns: [...readmeEntries, ...metaEntries],
         }),
         // clean the output directory before building
         new CleanWebpackPlugin(),
@@ -183,6 +191,6 @@ module.exports = {
         new webpack.ProgressPlugin(),
         // generate HTML file using *.hbs files as source
         ...Object.values(htmlWebpackPluginPages),
-        new DeleteScssPrefixedDirectoriesPlugin(),
+        new DeleteScssPrefixedDirectoriesPlugin()
     ],
 };

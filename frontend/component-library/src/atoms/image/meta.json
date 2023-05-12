@@ -1,0 +1,10 @@
+{
+    "category": "atoms",
+    "componentName": "image",
+    "variations": [
+        {
+            "slug": "image",
+            "name": "Image"
+        }
+    ]
+}

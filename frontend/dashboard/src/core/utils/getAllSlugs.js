@@ -4,7 +4,8 @@ import fs from "fs";
 export default function getAllSlugs() {
     const filenames = [];
     const categoriesPaths = path.resolve("..", "component-library", "src");
-    const categories = fs.readdirSync(categoriesPaths);
+
+    const categories = fs.readdirSync(categoriesPaths).filter((item) => !item.includes("_commons"));
 
     for (const category of categories) {
         const components = fs.readdirSync(path.resolve(categoriesPaths, category));
