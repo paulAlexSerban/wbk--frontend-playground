@@ -1,0 +1,10 @@
+{
+    "category": "pages",
+    "componentName": "basepage",
+    "variations": [
+        {
+            "slug": "basepage",
+            "name": "Basepage"
+        }
+    ]
+}
