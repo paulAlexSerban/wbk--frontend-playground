@@ -1,0 +1,108 @@
+@use "sass:color";
+@use "sass:map";
+
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+@import "../../../_commons/scss/_02_themes/base.theme.scss";
+@import "../../../_commons/scss/_03_base/base.scss";
+
+/* ------------------------------------ *\
+ * ALERT MODULE
+\* ------------------------------------ */
+
+$block: "alert";
+
+$alert-colors: (
+    "grey": (
+        "background": get-color($c-gray, spanish-gray),
+        "link": get-color($c-blue, french-blue),
+    ),
+    "white": (
+        "background": get-color($c-light, light),
+        "link": get-color($c-blue, french-blue),
+    ),
+    "blue": (
+        "background": get-color($c-blue, colombia-blue),
+        "link": get-color($c-blue, french-blue),
+    ),
+    "coral": (
+        "background": get-color($c-brown, misty-rose),
+        "link": color.adjust(get-color($c-brown, misty-rose), $lightness: -25%),
+    ),
+    "gold": (
+        "background": get-color($c-yellow, wheat),
+        "link": color.adjust(get-color($c-yellow, wheat), $lightness: -25%),
+    ),
+    "green": (
+        "background": get-color($c-green, honeydew),
+        "link": color.adjust(get-color($c-green, honeydew), $lightness: -25%),
+    ),
+);
+
+.#{$block} {
+    &__base {
+        padding: ($gutter * 2);
+        position: relative;
+    }
+
+    &__title {
+        @include font($alert-title);
+
+        margin-bottom: 0;
+    }
+
+    &__text {
+        @include font($body);
+
+        margin-top: $baseline;
+        margin-bottom: 0;
+    }
+
+    &__linkWrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-top: ($baseline * 2);
+    }
+
+    &__link {
+        @include font($link);
+    }
+
+    &__button {
+        @include font($button-large);
+
+        display: inline-block;
+        max-width: 100%;
+        min-width: convert-rem(76px);
+        padding: ($baseline * 2) ($gutter * 2);
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    &__closeIcon {
+        position: absolute;
+        display: inline-block;
+        width: convert-rem(24px);
+        height: convert-rem(24px);
+        font-size: convert-rem(20px);
+        text-align: center;
+        color: $c-black;
+        top: $baseline;
+        right: $baseline;
+        cursor: pointer;
+    }
+
+    @each $name, $color in $alert-colors {
+        &--#{$name} {
+            background: map.get($color, "background");
+
+            .#{$block}__button {
+                background: map.get($color, "link");
+            }
+
+            .#{$block}__link {
+                color: map.get($color, "link");
+            }
+        }
+    }
+}

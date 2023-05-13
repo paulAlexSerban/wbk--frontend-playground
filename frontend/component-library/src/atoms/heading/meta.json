@@ -1,0 +1,10 @@
+{
+    "category": "atoms",
+    "componentName": "heading",
+    "variations": [
+        {
+            "slug": "heading",
+            "name": "Heading"
+        }
+    ]
+}

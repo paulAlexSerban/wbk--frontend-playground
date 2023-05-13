@@ -1,0 +1,21 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "main";
+
+/* ------------------------------------ *\
+ * MAIN
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("base") {
+        max-width: $max-width;
+        margin: 0 auto;
+        height: calc(100vh - var(--footer-height) - var(--header-height));
+    }
+
+    @include e("sideBar") {
+        height: 100%;
+        overflow-x: scroll;
+    }
+}

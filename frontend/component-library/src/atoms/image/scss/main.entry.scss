@@ -1,4 +1,6 @@
-@import "../../../_commons/scss/abstracts.scss";
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+@import "../../../_commons/scss/_02_themes/base.theme.scss";
+@import "../../../_commons/scss/_03_base/base.scss";
 
 /* ------------------------------------ *\
  * #IMAGE
@@ -8,7 +10,8 @@ $block: "image";
 
 .#{$block} {
     @include e("base") {
-        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     @include e("icon") {

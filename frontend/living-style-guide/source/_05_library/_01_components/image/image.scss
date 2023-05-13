@@ -7,7 +7,7 @@ $block: "#{$type}-image";
 
 .#{$block} {
     @include e("base") {
-        height: 100%;
+        width: 100%;
     }
 
     @include e("icon") {

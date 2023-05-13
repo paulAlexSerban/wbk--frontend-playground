@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "watch": "export NODE_ENV=development && webpack serve --config webpack.dev.js --hot --progress",
+        "getAssets":"rm -rfv ./dist/assets && mkdir ./dist/assets && cp -rfv ../../assets/dist/* ./dist/assets",
+        "watch": "npm run getAssets && export NODE_ENV=development && webpack serve --config webpack.dev.js --hot --progress",
         "dev": "export NODE_ENV=development && webpack --config webpack.dev.js",
         "build": "export NODE_ENV=production && webpack --config webpack.prod.js"
     },

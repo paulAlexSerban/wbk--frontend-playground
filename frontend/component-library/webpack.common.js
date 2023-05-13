@@ -66,7 +66,7 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
     }, {});
 };
 
-const globPatterns = "{atoms,molecules,organisms,templates}";
+const globPatterns = "{atoms,molecules,organisms,templates,pages}";
 
 const getEntries = () => {
     const jsEntries = glob.sync(path.join(constants.SRC_DIR, globPatterns, "*", "js", "main.entry.js"));
@@ -186,7 +186,9 @@ module.exports = {
             patterns: [...readmeEntries, ...metaEntries],
         }),
         // clean the output directory before building
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['**/*', '!assets*', '!assets/**/*']
+        }),
         // show progress during build process
         new webpack.ProgressPlugin(),
         // generate HTML file using *.hbs files as source

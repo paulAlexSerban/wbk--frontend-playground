@@ -1,41 +1,48 @@
 import getComponentLibrary from "@/utils/getComponentLibrary";
-import formatString from "@/core/utils/formatStrings";
-
-function ComponentList({ title, list }) {
-    return (
-        <>
-            <h2>{title}</h2>
-            <ul>
-                {list.map((item, index) =>
-                    item.variations.map((variation, index) => (
-                        <li key={index}>
-                            <a href={`http://localhost:9000/${item.componentName}/${variation.slug}.html`}>
-                                {formatString(variation.name)}
-                            </a>
-                        </li>
-                    ))
-                )}
-            </ul>
-        </>
-    );
-}
+import { useState } from "react";
+import templateStyles from "../styles/_05_system/_01_templates/generic.module.scss";
+import mainStyles from "../styles/_04_library/_04_layouts/main.module.scss";
+import Header from "@/core/components/Header/Header";
+import Footer from "@/core/components/Footer/Footer";
+import { Roboto } from "next/font/google";
+import ComponentList from "@/core/components/ComponentList/ComponentList";
+import ComponentViewer from "@/core/components/ComponentView/ComponentView";
+const roboto = Roboto({
+    display: "swap",
+    subsets: ["latin"],
+    weight: ["400", "700", "900"],
+    style: ["normal"],
+    variable: "--text-regular",
+});
 
 export default function Index({ atoms, molecules, organisms, templates }) {
+    const [component, setComponent] = useState(null);
+    const componentClickHandler = (e) => {
+        e.preventDefault();
+        setComponent({ src: e.target.href,
+        title: e.target.dataset.componentName });
+    };
     return (
-        <main>
-            <h1>Component Library</h1>
-            {atoms.length && <ComponentList title="Atoms" list={atoms} />}
-            {molecules.length && <ComponentList title="Molecules" list={molecules} />}
-            {organisms.length && <ComponentList title="Organisms" list={organisms} />}
-            {templates.length && <ComponentList title="Templates" list={templates} />}
-            <iframe
-                id="inlineFrameExample"
-                title="Inline Frame Example"
-                width="1200"
-                height="900"
-                src="http://localhost:9000/button/button--primary.html"
-            ></iframe>
-        </main>
+        <>
+            <Header />
+            <main className={[templateStyles.main, mainStyles.base, roboto.className].join(" ")}>
+                <div className={mainStyles.sideBar}>
+                    {atoms.length !== 0 && <ComponentList title="Atoms" list={atoms} onClick={componentClickHandler} />}
+                    {molecules.length !== 0 && (
+                        <ComponentList title="Molecules" list={molecules} onClick={componentClickHandler} />
+                    )}
+                    {organisms.length !== 0 && (
+                        <ComponentList title="Organisms" list={organisms} onClick={componentClickHandler} />
+                    )}
+                    {templates.length !== 0 && (
+                        <ComponentList title="Templates" list={templates} onClick={componentClickHandler} />
+                    )}
+                </div>
+
+                {component && <ComponentViewer src={component.src} title={component.title} />}
+            </main>
+            <Footer />
+        </>
     );
 }
 

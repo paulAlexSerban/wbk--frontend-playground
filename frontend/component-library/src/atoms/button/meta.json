@@ -1,8 +1,0 @@
-{
-    "category": "atoms",
-    "componentName": "button",
-    "variations": [
-        { "slug": "button--primary", "name": "Button Primary" },
-        { "slug": "button--secondary", "name": "Button Secondary" }
-    ]
-}
