@@ -1,6 +1,9 @@
-import { config } from "./config.js";
-
 (() => {
+    const config = {
+        type: "pat",
+        name: "Popup",
+    };
+
     const Popup = (el) => {
         const global = { state: {}, elements: {} };
 
@@ -10,9 +13,10 @@ import { config } from "./config.js";
         };
 
         const setupDomReferences = () => {
-            global.elements.button = el.querySelector("button");
-            global.elements.popup = el.querySelector(".popup-wrapper");
-            global.elements.close = el.querySelector(".popup-close");
+            global.elements.button = el.querySelector(".js-btn-open-popup");
+            global.elements.popup = el.querySelector(".js-popup-wrapper");
+            global.elements.close = el.querySelector(".js-popup-close");
+            global.elements.action = el.querySelector(".js-popup-action");
         };
 
         const setupEventListeners = () => {
@@ -24,8 +28,12 @@ import { config } from "./config.js";
                 global.elements.popup.style.display = "none";
             });
 
+            global.elements.action.addEventListener("click", () => {
+              global.elements.popup.style.display = "none";
+          });
+
             global.elements.popup.addEventListener("click", (e) => {
-                if (e.target.className === "popup-wrapper") {
+                if (e.target.className === "js-popup-wrapper") {
                     global.elements.popup.style.display = "none";
                 }
             });

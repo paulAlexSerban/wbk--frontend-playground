@@ -1,17 +1,32 @@
-/*
-title: h1
-  span.main text
-  span.subtitle text
-headings: h2 -> h6
-  span.main
-  span.subheading
-*/
-
 @import "../../../_commons/scss/_01_abstracts/abstracts.scss";
 
-$block: "heading";
+/* ------------------------------------ *\
+ * #PARAGRAPH
+\* ------------------------------------ */
 
-.#{$block} {
+$block-p: "paragraph";
+
+.#{$block-p} {
+    @include e("base") {
+        @include font($body);
+
+        color: var(--text-color);
+
+        &.blurry-loader__loading-text {
+            color: get-color($c-light, light);
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+ * #HEADING
+\* ------------------------------------ */
+
+
+$block-h: "heading";
+
+.#{$block-h} {
     @include e("base") {
         @include m("heading-100") {
             @include font($heading-100);
@@ -54,5 +69,18 @@ $block: "heading";
             font-size: calc(var(--page-title-font-size) * 0.7);
             line-height: calc(var(--page-title-line-height) * 0.75);
         }
+    }
+}
+
+/* ------------------------------------ *\
+ * #TIME-TEXT
+\* ------------------------------------ */
+
+$block-time: "time-text";
+
+.#{$block-time} {
+    @include e("base") {
+        @include font($body);
+        color: get-color($c-gray, battleship-grey);
     }
 }

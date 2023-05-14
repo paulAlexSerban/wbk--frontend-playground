@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "popup",
+  "componentName": "Popup",
+  "variations": [
+      {
+          "slug": "popup",
+          "name": "Popup"
+      }
+  ]
+}
