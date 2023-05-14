@@ -8,10 +8,11 @@ $block-fancy: "card-list-fancy-hover";
 .#{$block-fancy} {
     &__list {
         @include flex();
+        column-gap: $gutter;
+        padding-top: $baseline * 3;
     }
 
     &__listItem {
-        margin: 10px;
         padding: 10px;
         background: #fff;
         border-radius: 8px;
