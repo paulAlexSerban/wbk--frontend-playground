@@ -1,9 +1,5 @@
 @import "../../../_commons/scss/_01_abstracts/abstracts.scss";
 
-/* Dependencies */
-@import "../../../atoms/image/scss/main.entry.scss";
-@import "../../../atoms/paragraph/scss/main.entry.scss";
-
 /* ------------------------------------ *\
  * BLURRY-LOADER
 \* ------------------------------------ */
@@ -13,7 +9,6 @@ $block: "blurry-loader";
 .#{$block} {
     @include e("base") {
         @include relative();
-        color: #ff1;
     }
 
     @include e("background-image") {
@@ -22,6 +17,7 @@ $block: "blurry-loader";
 
     @include e("loading-text") {
         @include absolute($top: 50%, $left: 50%);
+
         color: get-color($c-light, light);
     }
 }

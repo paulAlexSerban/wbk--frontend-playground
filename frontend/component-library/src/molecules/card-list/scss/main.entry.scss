@@ -1,8 +1,11 @@
-$block: "card-list-fancy-hover";
-
 @import "../../../_commons/scss/_01_abstracts/abstracts.scss";
 
-.#{$block} {
+/* ------------------------------------ *\
+ * #CARD-LIST
+\* ------------------------------------ */
+
+$block-fancy: "card-list-fancy-hover";
+.card-list-fancy-hover {
     &__list {
         @include flex();
     }
@@ -17,7 +20,7 @@ $block: "card-list-fancy-hover";
         cursor: pointer;
         overflow: hidden;
 
-        .#{$block}__list:hover & {
+        .#{$block-fancy}__list:hover & {
             transform: scale(0.9);
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
 

@@ -1,6 +1,9 @@
-import { config } from "./config";
-
 (() => {
+    const config = {
+        selectors: {
+            digitalClock: ".js-digital-clock__time",
+        },
+    };
     class DigitalClock {
         constructor(el) {
             this.el = el;
@@ -41,5 +44,37 @@ import { config } from "./config";
         }
     }
 
-    document.querySelectorAll('[data-js-pat="DigitalClock"]').forEach((el) => new DigitalClock(el));
+    document.querySelectorAll(".js-digital-clock").forEach((el) => new DigitalClock(el));
+})();
+
+(() => {
+    const DigitalClockV2 = (el) => {
+        const init = () => {
+            setInterval(() => {
+                tick();
+            }, 1000);
+        };
+
+        const tick = () => {
+            const now = new Date();
+
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const s = now.getSeconds();
+
+            const html = `
+      <span>${h}</span> :
+      <span>${m}</span> :
+      <span>${s}</span>
+    `;
+
+            el.innerHTML = html;
+        };
+
+        init();
+    };
+
+    document.querySelectorAll(`.js-digital-clock-v2`).forEach((el) => {
+        DigitalClockV2(el);
+    });
 })();

@@ -1,14 +1,25 @@
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
 /* ------------------------------------ *\
-  * DIGITAL CLOCK
+ * DIGITAL-CLOCK
 \* ------------------------------------ */
 
-@import "../../../_01_abstracts/abstracts.scss";
+.digital-clock {
+    @include e("base") {
+        @extend %size-fill-horizontal;
 
-$block: "pat-digital-clock";
+        @include flex();
+    }
+}
 
-.#{$block} {
+/* ------------------------------------ *\
+ * DIGITAL-CLOCK-V2
+\* ------------------------------------ */
+
+.digital-clock-v2 {
     @include e("base") {
         @include flex();
+
         background: #333;
         font-size: 4em;
         text-align: center;

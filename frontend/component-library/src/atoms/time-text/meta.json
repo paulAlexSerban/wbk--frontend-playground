@@ -1,0 +1,10 @@
+{
+  "category": "atoms",
+  "componentName": "time-text",
+  "variations": [
+      {
+          "slug": "time-text",
+          "name": "Time Text"
+      }
+  ]
+}
