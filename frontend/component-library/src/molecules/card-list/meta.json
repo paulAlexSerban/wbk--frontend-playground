@@ -1,0 +1,10 @@
+{
+    "category": "molecules",
+    "componentName": "card-list",
+    "variations": [
+        {
+            "slug": "card-list-fancy-hover",
+            "name": "Card List (Fancy Hover)"
+        }
+    ]
+}

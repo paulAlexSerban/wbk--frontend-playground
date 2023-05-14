@@ -40,6 +40,20 @@ $alert-colors: (
     &__base {
         padding: ($gutter * 2);
         position: relative;
+
+            @each $name, $color in $alert-colors {
+        &--#{$name} {
+            background: map.get($color, "background");
+
+            .#{$block}__button {
+                background: map.get($color, "link");
+            }
+
+            .#{$block}__link {
+                color: map.get($color, "link");
+            }
+        }
+    }
     }
 
     &__title {
@@ -90,17 +104,5 @@ $alert-colors: (
         cursor: pointer;
     }
 
-    @each $name, $color in $alert-colors {
-        &--#{$name} {
-            background: map.get($color, "background");
 
-            .#{$block}__button {
-                background: map.get($color, "link");
-            }
-
-            .#{$block}__link {
-                color: map.get($color, "link");
-            }
-        }
-    }
 }

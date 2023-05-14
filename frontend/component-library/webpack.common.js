@@ -187,7 +187,7 @@ module.exports = {
         }),
         // clean the output directory before building
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ['**/*', '!assets*', '!assets/**/*']
+            cleanOnceBeforeBuildPatterns: ['**/*', '!assets*', '!assets/**/*', '!*.mdx', '!*.json']
         }),
         // show progress during build process
         new webpack.ProgressPlugin(),
