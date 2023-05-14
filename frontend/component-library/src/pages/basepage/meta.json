@@ -1,6 +1,7 @@
 {
     "category": "pages",
-    "componentName": "basepage",
+    "componentSlug": "basepage",
+    "componentName": "Basepage",
     "variations": [
         {
             "slug": "basepage",

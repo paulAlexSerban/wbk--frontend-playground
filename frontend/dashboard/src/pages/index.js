@@ -20,7 +20,7 @@ export default function Index({ atoms, molecules, organisms, templates }) {
     const componentClickHandler = (e) => {
         e.preventDefault();
         setComponent({ src: e.target.href,
-        title: e.target.dataset.componentName });
+        title: e.target.dataset.componentSlug });
     };
     return (
         <>

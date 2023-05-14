@@ -54,12 +54,12 @@ class DeleteScssPrefixedDirectoriesPlugin {
 
 const generateHTMLWebpackPluginPages = (hbsEntries) => {
     return hbsEntries.reduce((accumulator, hbsEntry) => {
-        const componentName = hbsEntry.split("/").slice(-3)[0];
+        const componentSlug = hbsEntry.split("/").slice(-3)[0];
         const variationName = hbsEntry.split("/").slice(-1)[0].split(".")[0];
         const metaFile = hbsEntry.split("/").slice(0, -2).join("/") + "/meta.json";
         accumulator[variationName] = new HtmlWebpackPlugin({
             template: hbsEntry,
-            filename: path.join(constants.DIST_DIR, `${componentName}`, `${variationName}.html`),
+            filename: path.join(constants.DIST_DIR, `${componentSlug}`, `${variationName}.html`),
             inject: false,
         });
         return accumulator;
@@ -74,29 +74,29 @@ const getEntries = () => {
     const hbsEntries = glob.sync(path.join(constants.SRC_DIR, globPatterns, "*", "markup", "*.entry.hbs"));
 
     const jsEntriesObj = jsEntries.reduce((accumulator, jsEntry) => {
-        const componentName = jsEntry.split("/").slice(-3)[0];
-        accumulator[componentName] = jsEntry;
+        const componentSlug = jsEntry.split("/").slice(-3)[0];
+        accumulator[componentSlug] = jsEntry;
         return accumulator;
     }, {});
 
     const scssEntriesObj = scssEntries.reduce((accumulator, scssEntry) => {
-        const componentName = scssEntry.split("/").slice(-3)[0];
-        accumulator[`scss-${componentName}`] = scssEntry;
+        const componentSlug = scssEntry.split("/").slice(-3)[0];
+        accumulator[`scss-${componentSlug}`] = scssEntry;
         return accumulator;
     }, {});
 
     const readmeEntries = glob
         .sync(path.join(constants.SRC_DIR, "*", "*", "readme.mdx"))
         .reduce((accumulator, readmeEntry) => {
-            const componentName = readmeEntry.split("/").slice(-2)[0];
-            accumulator.push({ from: readmeEntry, to: componentName });
+            const componentSlug = readmeEntry.split("/").slice(-2)[0];
+            accumulator.push({ from: readmeEntry, to: componentSlug });
             return accumulator;
         }, []);
 
     const metaEntries = glob.sync(path.join(constants.SRC_DIR, "*", "*", "meta.json"))
         .reduce((accumulator, metaEntry) => {
-            const componentName = metaEntry.split("/").slice(-2)[0];
-            accumulator.push({ from: metaEntry, to: componentName });
+            const componentSlug = metaEntry.split("/").slice(-2)[0];
+            accumulator.push({ from: metaEntry, to: componentSlug });
             return accumulator;
         }, []);
 

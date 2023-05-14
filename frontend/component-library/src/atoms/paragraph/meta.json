@@ -1,6 +1,7 @@
 {
     "category": "atoms",
-    "componentName": "paragraph",
+    "componentSlug": "paragraph",
+    "componentName": "Paragraph",
     "variations": [
         {
             "slug": "paragraph",

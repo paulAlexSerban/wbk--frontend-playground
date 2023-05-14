@@ -1,6 +1,7 @@
 {
   "category": "atoms",
-  "componentName": "button",
+  "componentSlug": "button",
+  "componentName": "Button",
   "variations": [
       {
           "slug": "button-primary",

@@ -7,11 +7,11 @@ const readFile = promisify(fs.readFile);
 import formatString from "@/core/utils/formatStrings";
 import Head from 'next/head';
 
-export default function ComponentPage({ slug, htmlContent, styles, scripts, componentName}) {
+export default function ComponentPage({ slug, htmlContent, styles, scripts, componentSlug}) {
     return (
         <div>
             <Head>
-                <title>{componentName}</title>
+                <title>{componentSlug}</title>
                 <style>{styles}</style>
                 <script async defer dangerouslySetInnerHTML={{ __html: scripts }} />
             </Head>
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const slug = params.slug;
     const component = params.slug.split(".")[1].split("--")[0];
-    const componentName = formatString(component.replace(/(a.)|(m.)|(o.)|(t.)/, ""));
+    const componentSlug = formatString(component.replace(/(a.)|(m.)|(o.)|(t.)/, ""));
     const cmpSlug = slug.replace(/(a.)|(m.)|(o.)|(t.)/, "");
     const filePath = path.resolve("..", "component-library", "dist", component, `${cmpSlug}.html`);
     const stylesPath = path.resolve("..", "component-library", "dist", component, `style.css`);
@@ -55,7 +55,7 @@ export async function getStaticProps({ params }) {
             htmlContent,
             styles,
             scripts,
-            componentName
+            componentSlug
         },
     };
 }

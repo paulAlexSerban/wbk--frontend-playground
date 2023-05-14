@@ -1,6 +1,7 @@
 {
     "category": "molecules",
-    "componentName": "loader",
+    "componentSlug": "loader",
+    "componentName": "Loader",
     "variations": [
         {
             "slug": "blurry-loader",

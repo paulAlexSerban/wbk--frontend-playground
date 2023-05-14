@@ -1,6 +1,7 @@
 {
     "category": "atoms",
-    "componentName": "heading",
+    "componentSlug": "heading",
+    "componentName": "Heading",
     "variations": [
         {
             "slug": "heading",

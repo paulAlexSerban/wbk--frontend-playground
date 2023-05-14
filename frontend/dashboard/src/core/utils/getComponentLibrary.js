@@ -19,8 +19,8 @@ export default function getComponentLibrary() {
     componentsDistList.forEach((item) => {
         const meta = fs.readFileSync(path.resolve(componentsDistPath, item, "meta.json"), "utf8");
         const metaObj = JSON.parse(meta);
-        const { category, variations, componentName } = metaObj;
-        componentLibrary[category].push({ category, componentName, variations });
+        const { category, variations, componentSlug, componentName } = metaObj;
+        componentLibrary[category].push({ category, componentSlug, componentName, variations });
     });
 
     return componentLibrary;

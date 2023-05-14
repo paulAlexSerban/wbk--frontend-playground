@@ -1,6 +1,7 @@
 {
     "category": "molecules",
-    "componentName": "card-list",
+    "componentSlug": "card-list",
+    "componentName": "Card List",
     "variations": [
         {
             "slug": "card-list-fancy-hover",

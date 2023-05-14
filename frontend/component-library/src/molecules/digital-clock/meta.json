@@ -1,6 +1,7 @@
 {
   "category": "molecules",
-  "componentName": "digital-clock",
+  "componentSlug": "digital-clock",
+  "componentName": "Digital Clock",
   "variations": [
       {
           "slug": "digital-clock",

@@ -1,6 +1,7 @@
 {
   "category": "atoms",
-  "componentName": "time-text",
+  "componentSlug": "time-text",
+  "componentName": "Time Text",
   "variations": [
       {
           "slug": "time-text",
