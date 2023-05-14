@@ -48,21 +48,4 @@ $block: "progress-steps";
         transition: width 0.4s ease;
         z-index: 1;
     }
-
-    &__pill {
-        @include flex();
-
-        background-color: get-color($c-light, light);
-        color: get-color($c-gray, battleship-grey);
-        border-radius: 50%;
-        height: 30px;
-        width: 30px;
-        border: 3px solid get-color($c-light, gainsboro-white);
-        transition: 0.4s ease;
-        z-index: 2;
-    }
-
-    &__pill.active {
-        border-color: get-color($c-blue, carolina-blue);
-    }
 }
