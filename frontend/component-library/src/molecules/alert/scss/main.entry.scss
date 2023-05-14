@@ -13,32 +13,26 @@ $alert-colors: (
     "grey": (
         "background": get-color($c-gray, spanish-gray),
         "link": get-color($c-blue, french-blue),
-        "buttonColor": get-color($c-gray, spanish-gray),
     ),
     "white": (
         "background": get-color($c-light, light),
         "link": get-color($c-blue, french-blue),
-        "buttonColor": get-color($c-light, light),
     ),
     "blue": (
         "background": get-color($c-blue, colombia-blue),
         "link": get-color($c-blue, french-blue),
-        "buttonColor": get-color($c-blue, colombia-blue),
     ),
     "coral": (
         "background": get-color($c-brown, misty-rose),
         "link": color.adjust(get-color($c-brown, misty-rose), $lightness: -25%),
-        "buttonColor": get-color($c-brown, misty-rose),
     ),
     "gold": (
         "background": get-color($c-yellow, wheat),
         "link": color.adjust(get-color($c-yellow, wheat), $lightness: -25%),
-        "buttonColor": get-color($c-yellow, wheat),
     ),
     "green": (
         "background": get-color($c-green, honeydew),
         "link": color.adjust(get-color($c-green, honeydew), $lightness: -25%),
-        "buttonColor": get-color($c-green, honeydew),
     ),
 );
 
@@ -47,20 +41,15 @@ $alert-colors: (
         padding: ($gutter * 2);
         position: relative;
 
-            @each $name, $color in $alert-colors {
-        &--#{$name} {
-            background: map.get($color, "background");
+        @each $name, $color in $alert-colors {
+            &--#{$name} {
+                background: map.get($color, "background");
 
-            .#{$block}__button {
-                background: map.get($color, "link");
-                color: map.get($color, "buttonColor");
-            }
-
-            .#{$block}__link {
-                color: map.get($color, "link");
+                .#{$block}__link {
+                    color: map.get($color, "link");
+                }
             }
         }
-    }
     }
 
     &__title {
@@ -110,6 +99,4 @@ $alert-colors: (
         right: $baseline;
         cursor: pointer;
     }
-
-
 }

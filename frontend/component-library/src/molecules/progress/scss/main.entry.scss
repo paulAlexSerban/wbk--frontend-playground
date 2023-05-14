@@ -1,0 +1,68 @@
+@use "sass:math";
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
+/* ------------------------------------ *\
+ * PROGRESS-STEPS PATTERN
+\* ------------------------------------ */
+
+$block: "progress-steps";
+
+.#{$block} {
+    &__container {
+        @include flex($direction: column);
+
+        text-align: center;
+    }
+
+    &__progress-wrapper {
+        @include flex($main: space-between);
+        @include relative();
+
+        margin-bottom: $baseline * 3;
+        min-width: convert-rem(350px);
+        z-index: 1;
+
+        &::before {
+            @include absolute($top: 50%, $left: 0);
+
+            content: "";
+            background-color: get-color($c-light, gainsboro-white);
+            transform: translateY(-50%);
+            height: calc(#{$baseline} / 2);
+            width: 100%;
+            z-index: 1;
+        }
+    }
+
+    &__button-container {
+        @include flex();
+    }
+
+    &__progress-bar {
+        @include absolute($top: 50%, $left: 0);
+
+        background-color: get-color($c-blue, carolina-blue);
+        transform: translateY(-50%);
+        height: calc(#{$baseline} / 2);
+        width: 0%;
+        transition: width 0.4s ease;
+        z-index: 1;
+    }
+
+    &__pill {
+        @include flex();
+
+        background-color: get-color($c-light, light);
+        color: get-color($c-gray, battleship-grey);
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        border: 3px solid get-color($c-light, gainsboro-white);
+        transition: 0.4s ease;
+        z-index: 2;
+    }
+
+    &__pill.active {
+        border-color: get-color($c-blue, carolina-blue);
+    }
+}

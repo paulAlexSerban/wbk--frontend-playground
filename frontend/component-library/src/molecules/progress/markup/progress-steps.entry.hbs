@@ -1,4 +1,6 @@
 {{#> ../../../pages/basepage/markup/basepage.page hasJS=true}}
+<link rel="stylesheet" href="../button/style.css">
+
   <div class="progress-steps__base row" data-js-pat="ProgressSteps">
     <div class="progress-steps__container">
       <div class="progress-steps__progress-wrapper">
@@ -9,9 +11,12 @@
         <div class="progress-steps__pill js-pill">4</div>
       </div>
       <div class="progress-steps__buttons-container">
-        <button class="button__base button__base--primary js-btn-prev" disabled>Prev</button>
-        <button class="button__base button__base--primary js-btn-next">Next</button>
+        {{> ../../../atoms/button/markup/button.atom
+            type="primary" label="Prev" disabled="disabled" classNames="js-btn-prev"}}
+        {{> ../../../atoms/button/markup/button.atom
+            type="primary" label="Next" classNames="js-btn-next"}}
       </div>
     </div>
   </div>
+
   {{/ ../../../pages/basepage/markup/basepage.page}}

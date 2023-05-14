@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:map";
+
 @import "../../../_commons/scss/_01_abstracts/abstracts.scss";
 
 /* ------------------------------------ *\
@@ -5,6 +8,29 @@
 \* ------------------------------------ */
 
 $block: "button";
+
+$color-patterns: (
+    "primary": (
+        "background-color": "%bkg-color-primary",
+        "text-color": "%txt-color-white",
+    ),
+    "secondary": (
+        "background-color": "%bkg-color-secondary",
+        "text-color": " %txt-color-jet-black",
+    ),
+    "success": (
+        "background-color": "%bkg-color-success",
+        "text-color": "%txt-color-white",
+    ),
+    "danger": (
+        "background-color": "%bkg-color-danger",
+        "text-color": "%txt-color-white",
+    ),
+    "warning": (
+        "background-color": "%bkg-color-warning",
+        "text-color": "%txt-color-jet-black",
+    ),
+);
 
 .#{$block} {
     @include element("base") {
@@ -16,6 +42,13 @@ $block: "button";
             @extend %cursor-not-allowed;
 
             background-color: get-color($c-light, gainsboro-white);
+        }
+
+        @each $name, $color in $color-patterns {
+            @include m($name) {
+                @extend #{map.get($color, "background-color")};
+                @extend #{map.get($color, "text-color")};
+            }
         }
 
         @include m("isAnimated") {
@@ -31,37 +64,13 @@ $block: "button";
         }
 
         @include m("success") {
-            @extend %bkg-color-success;
-
             &:active {
                 box-shadow: 0 0 0 convert-rem(3px) rgba(get-color($c-green, green-cyan), 0.5);
             }
         }
 
-        @include m("primary", "success", "danger") {
-            @extend %txt-color-white;
-        }
-
-        @include m("secondary", "warning") {
-            @extend %txt-color-jet-black;
-        }
-
-        @include m("primary") {
-            @extend %bkg-color-primary;
-        }
-
         @include m("secondary") {
-            @extend %bkg-color-secondary;
-
             box-shadow: get-color($c-dark, dark-15) 0 0 0 convert-rem(1px) inset;
-        }
-
-        @include m("danger") {
-            @extend %bkg-color-danger;
-        }
-
-        @include m("warning") {
-            @extend %bkg-color-warning;
         }
 
         @include m("rounded") {

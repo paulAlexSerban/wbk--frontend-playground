@@ -5,6 +5,22 @@
       {
           "slug": "button-primary",
           "name": "Button (Primary)"
+      },
+      {
+        "slug": "button-secondary",
+        "name": "Button (Secondary)"
+      },
+      {
+        "slug": "button-danger",
+        "name": "Button (Danger)"
+      },
+      {
+        "slug": "button-success",
+        "name": "Button (Success)"
+      },
+      {
+        "slug": "button-warning",
+        "name": "Button (Warning)"
       }
   ]
 }
