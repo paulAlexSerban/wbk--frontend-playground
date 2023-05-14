@@ -1,21 +1,19 @@
-const config = {
-  type: "cmp",
-  name: "BlurryLoader",
-  selectors: {
-      loadingText: ".js-blurry-loader-loading-text",
-      backgroundImage: ".js-blurry-loader-background",
-  },
-};
-
-const scale = (num, in_min, in_max, out_min, out_max) => {
-  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
-};
-
-const findOne = (selector, context = document) => {
-  return context.querySelector(selector);
-};
+import { findOne } from "../../../_commons/js/dom/traversing";
 
 (() => {
+    const config = {
+        type: "cmp",
+        name: "BlurryLoader",
+        selectors: {
+            loadingText: ".js-blurry-loader-loading-text",
+            backgroundImage: ".js-blurry-loader-background",
+        },
+    };
+
+    const scale = (num, in_min, in_max, out_min, out_max) => {
+        return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+    };
+
     const BlurryLoader = (el) => {
         const global = {
             state: {

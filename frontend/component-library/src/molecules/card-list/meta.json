@@ -5,6 +5,10 @@
         {
             "slug": "card-list-fancy-hover",
             "name": "Card List (Fancy Hover)"
+        },
+        {
+            "slug": "expanding-cards",
+            "name": "Expanding Cards"
         }
     ]
 }

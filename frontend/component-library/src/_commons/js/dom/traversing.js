@@ -7,5 +7,5 @@ export const findOne = (selector, context = document) => {
 };
 
 export const hasClass = (el, className) => {
-    return el?.classList?.contains(className);
+    return el.classList.contains(className);
 };

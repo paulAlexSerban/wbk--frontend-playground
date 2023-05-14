@@ -1,21 +1,12 @@
-{{#> ../../../pages/basepage/markup/basepage hasJS=true}}
+{{#> ../../../pages/basepage/markup/basepage.page hasJS=true}}
 
-<link rel="stylesheet" href="../paragraph/style.css">
-<link rel="stylesheet" href="../image/style.css">
 
-<div class="blurry-loader__base" data-js-cmp="BlurryLoader">
-  <img
-  class="image__base blurry-loader__background-image js-blurry-loader-background"
-  loading="lazy"
-  srcset="
-    /assets/images/worker-480_854.webp 480w,
-    /assets/images/worker-960_640.webp 960w,
-    /assets/images/worker-1280_960.webp 1440w"
-  sizes="(max-width: 479px) 480_854,
-          (max-width: 959px) 960_640,
-          1280_960"
-  src="/assets/images/worker-original.webp"
-  alt="worker"/>
-  <p class="paragraph__base blurry-loader__loading-text js-blurry-loader-loading-text">0%</p>
-</div>
-{{/ ../../../pages/basepage/markup/basepage}}
+  <link rel="stylesheet" href="../paragraph/style.css">
+  <link rel="stylesheet" href="../image/style.css">
+
+  <div class="blurry-loader__base row" data-js-cmp="BlurryLoader">
+    {{> ../../../atoms/image/markup/image.atom imgName="worker" altText="worker" classNames="blurry-loader__background-image js-blurry-loader-background"}}
+    <p class="paragraph__base blurry-loader__loading-text js-blurry-loader-loading-text">0%</p>
+  </div>
+
+{{/ ../../../pages/basepage/markup/basepage.page}}

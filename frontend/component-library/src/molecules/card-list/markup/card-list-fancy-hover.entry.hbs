@@ -1,43 +1,26 @@
-{{#> ../../../pages/basepage/markup/basepage }}
+{{#> ../../../pages/basepage/markup/basepage.page }}
 
-<link rel="stylesheet" href="../paragraph/style.css">
-<link rel="stylesheet" href="../heading/style.css">
-<link rel="stylesheet" href="../image/style.css">
 
-  <ul class="card-list-fancy-hover__list col">
-    <li class="card-list-fancy-hover__listItem">
-      <img class="image__base" loading="lazy" 
-      srcset="/assets/images/explore-the-world-480_854.webp 480w,
-              /assets/images/explore-the-world-960_1707.webp 960w,
-              /assets/images/explore-the-world-1280_960.webp 1440w" 
-      sizes="(max-width: 479px) 480px,
-            (max-width: 959px) 960px,
-            1280px"
-       src="/assets/images/explore-the-world-original.webp" 
-       alt="explore-the-world" />
+  <link rel="stylesheet" href="../paragraph/style.css">
+  <link rel="stylesheet" href="../image/style.css">
+
+  <ul class="card-list-fancy-hover__list row">
+
+    <li class="card-list-fancy-hover__listItem col">
+      {{> ../../../atoms/image/markup/image.atom imgName="explore-the-world" altText="explore-the-world"}}
       <p class="paragraph__base">CSS Fancy</p>
     </li>
-    <li class="card-list-fancy-hover__listItem">
-      <img class="image__base" loading="lazy" 
-      srcset="/assets/images/wild-forest-480_854.webp 480w,
-              /assets/images/wild-forest-960_1707.webp 960w,
-              /assets/images/wild-forest-1280_960.webp 1440w" 
-      sizes="(max-width: 479px) 480px,
-             (max-width: 959px) 960px,
-             1280px" src="/assets/images/wild-forest-original.webp" alt="wild-forest" />
+
+    <li class="card-list-fancy-hover__listItem col">
+      {{> ../../../atoms/image/markup/image.atom imgName="wild-forest" altText="wild-forest"}}
       <p class="paragraph__base">:hover</p>
     </li>
-    <li class="card-list-fancy-hover__listItem">
-      <img class="image__base" loading="lazy" 
-      srcset="/assets/images/sunny-beach-480_854.webp 480w,
-              /assets/images/sunny-beach-960_1707.webp   960w,
-              /assets/images/sunny-beach-1280_960.webp 1440w" 
-      sizes="(max-width: 479px) 480px,
-             (max-width: 959px) 960px,
-             1280px" 
-      src="/assets/images/sunny-beach-original.webp" 
-      alt="sunny-beach" />
+
+    <li class="card-list-fancy-hover__listItem col">
+      {{> ../../../atoms/image/markup/image.atom imgName="sunny-beach" altText="sunny-beach"}}
       <p class="paragraph__base">effect</p>
     </li>
+
   </ul>
-  {{/ ../../../pages/basepage/markup/basepage}}
+
+  {{/ ../../../pages/basepage/markup/basepage.page}}

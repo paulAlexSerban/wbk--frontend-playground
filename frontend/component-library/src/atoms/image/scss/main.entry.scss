@@ -8,8 +8,13 @@ $block: "image";
 
 .#{$block} {
     @include e("base") {
-        width: 100%;
+
         object-fit: cover;
+        width: 100%;
+
+        .expanding-cards__panel & {
+            height: 100%;
+        }
     }
 
     @include e("icon") {

@@ -2,7 +2,9 @@
   <link rel="stylesheet" href="../basepage/style.css">
   <link rel="stylesheet" href="style.css">
   {{#if hasJS}}
-  <script async defer src="script.js"></script>
+    <script async defer src="script.js"></script>
   {{/if}}
-  {{> @partial-block}}
+  <div class="col">
+    {{> @partial-block}}
+  </div>
 </body>

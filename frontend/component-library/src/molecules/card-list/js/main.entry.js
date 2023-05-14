@@ -1,8 +1,18 @@
-import { config } from "./config";
-import { find } from "../../../_01_abstracts/dom/traversing";
-import { addClass, removeClass } from "../../../_01_abstracts/dom/manipulation";
+import { find } from "../../../_commons/js/dom/traversing";
+import { addClass, removeClass } from "../../../_commons/js/dom/manipulation";
 
 (() => {
+    const config = {
+        type: "pat",
+        name: "ExpandingCards",
+        selectors: {
+            cardPanel: ".js-expanding-cards-panel",
+        },
+        states: {
+            panelActive: "active",
+        },
+    };
+
     const ExpandingCards = (el) => {
         const global = { state: {}, elements: {} };
 
