@@ -1,8 +1,10 @@
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
 /* ------------------------------------ *\
  * BUTTON
 \* ------------------------------------ */
-$type: "cmp";
-$block: "#{$type}-button";
+
+$block: "button";
 
 .#{$block} {
     @include element("base") {
