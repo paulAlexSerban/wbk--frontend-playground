@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "audio",
+  "componentName": "Audio",
+  "variations": [
+      {
+          "slug": "sound-board",
+          "name": "Sound Board"
+      }
+  ]
+}

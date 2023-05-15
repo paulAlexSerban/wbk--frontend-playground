@@ -1,10 +1,10 @@
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
 /* ------------------------------------ *\
  * SOUND BOARD
 \* ------------------------------------ */
 
-@import "../../../_01_abstracts/abstracts.scss";
-
-$block: "pat-sound-board";
+$block: "sound-board";
 
 .#{$block} {
     &__base {

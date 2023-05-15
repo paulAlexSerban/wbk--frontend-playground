@@ -1,10 +1,12 @@
-import { config } from "./config.js";
 
 (() => {
-    const SoundBoard = (el) => {
-        console.log({ soundBoard: el });
+    const config = {
+        type: "pat",
+        name: "SoundBoard",
+    };
+    
+    const SoundBoard = () => {
         const SOUNDS = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
-        const global = { state: {}, elements: {} };
 
         const init = () => {
             setupButtons();
