@@ -1,8 +1,11 @@
+
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
 /* ------------------------------------ *\
  * MODAL WINDOW
 \* ------------------------------------ */
 
-$block: "pat-modal-window";
+$block: "modal-window";
 
 .#{$block} {
     &__base {
@@ -10,7 +13,6 @@ $block: "pat-modal-window";
         font-family: sans-serif;
         color: #333;
         line-height: 1.5;
-        position: relative;
         display: flex;
         align-items: flex-start;
         justify-content: center;
