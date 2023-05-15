@@ -1,7 +1,10 @@
-import { config } from "./config";
-
 (() => {
-    const Scrollspy = (el) => {
+    const config = {
+        type: "pat",
+        name: "Scrollspy",
+    };
+
+    const Scrollspy = () => {
         const global = { state: {}, elements: {} };
 
         const init = () => {
