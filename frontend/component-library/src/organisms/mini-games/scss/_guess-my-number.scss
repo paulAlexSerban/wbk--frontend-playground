@@ -1,10 +1,10 @@
-@import "../../../_01_abstracts/abstracts.scss";
+
 
 /* ------------------------------------ *\
-  * GUESS MY NUMBER WIDGET
+  * GUESS MY NUMBER
 \* ------------------------------------ */
 
-$block: "widget-guess-my-number";
+$block: "guess-my-number";
 
 .#{$block} {
     @include e("base") {

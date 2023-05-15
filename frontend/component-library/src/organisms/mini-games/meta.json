@@ -1,11 +1,19 @@
 {
-  "category": "organisms",
-  "componentSlug": "mini-games",
-  "componentName": "Mini Games",
-  "variations": [
-      {
-          "slug": "coin-game",
-          "name": "Coin Game"
-      }
-  ]
+    "category": "organisms",
+    "componentSlug": "mini-games",
+    "componentName": "Mini Games",
+    "variations": [
+        {
+            "slug": "coin-game",
+            "name": "Coin Game"
+        },
+        {
+            "slug": "guess-my-number",
+            "name": "Guess My Number"
+        },
+        {
+            "slug": "number-gusser",
+            "name": "Number Guesser"
+        }
+    ]
 }
