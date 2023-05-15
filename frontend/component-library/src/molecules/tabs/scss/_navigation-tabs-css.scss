@@ -1,3 +1,4 @@
+@use "sass:math";
 /* ------------------------------------ *\
  * NAVIGATION-TABS-JS
 \* ------------------------------------ */
@@ -11,7 +12,7 @@
     }
 }
 
-$block: "pat-navigation-tabs-css";
+$block: "navigation-tabs-css";
 
 .#{$block} {
     @include e("base") {
@@ -20,7 +21,7 @@ $block: "pat-navigation-tabs-css";
 
     @include e("tabs-list") {
         @include flex();
-        column-gap: $gutter / 2;
+        column-gap: math.div($gutter, 2);
     }
 
     @include e("tab") {

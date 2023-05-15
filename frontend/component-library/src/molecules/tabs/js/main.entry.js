@@ -1,8 +1,20 @@
-import { config } from "./config";
-import { find, findOne } from "../../../_01_abstracts/dom/traversing";
-import { addClass, removeClass } from "../../../_01_abstracts/dom/manipulation";
+
+import { find, findOne } from "../../../_commons/js/dom/traversing";
+import { addClass, removeClass } from "../../../_commons/js/dom/manipulation";
 
 (() => {
+    const config = {
+        type: "pat",
+        name: "NavigationTabsJs",
+        selectors: {
+            tabButton: ".js-tab-button",
+            tabPanel: ".js-tab-panel",
+        },
+        states: {
+            active: "active",
+        },
+    };
+
     const NavigationTabsJs = (el) => {
         const global = { state: {}, elements: {} };
 

@@ -13,7 +13,7 @@
         };
 
         const setupDomReferences = () => {
-            global.elements.boxes = document.querySelectorAll(".box");
+            global.elements.boxes = document.querySelectorAll(".js-box");
         };
 
         const setupEventListeners = () => {

@@ -1,28 +1,35 @@
 @import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+$cmp: "scrollspy";
+.#{$cmp} {
+    &__base {
+        overflow: hidden;
+            .#{$cmp}__box {
+        background-color: #4682b4;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 400px;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+        transform: translateX(400%);
+        transition: transform 0.8s ease-in-out;
+    }
 
-.box {
-    background-color: #4682b4;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 400px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-    transform: translateX(400%);
-    transition: transform 0.8s ease-in-out;
-}
+    .#{$cmp}__box:nth-of-type(even) {
+        transform: translateX(-400%);
+    }
 
-.box:nth-of-type(even) {
-    transform: translateX(-400%);
-}
+    .#{$cmp}__box.show {
+        transform: translateX(0);
+    }
 
-.box.show {
-    transform: translateX(0);
-}
+    .#{$cmp}__box h2 {
+        font-size: 45px;
+    }
+    }
 
-.box h2 {
-    font-size: 45px;
+
 }
