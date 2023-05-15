@@ -1,7 +1,10 @@
-import { config } from "./config";
-
 (() => {
-    const SplitScreenHero = (el) => {
+    const config = {
+        type: "pat",
+        name: "SplitScreenHero",
+    };
+
+    const SplitScreenHero = () => {
         const global = { state: {}, elements: {} };
 
         const init = () => {

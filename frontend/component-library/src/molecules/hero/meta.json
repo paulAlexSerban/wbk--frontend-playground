@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "hero",
+  "componentName": "Hero",
+  "variations": [
+      {
+          "slug": "split-screen-hero",
+          "name": "Sprit Screen Hero"
+      }
+  ]
+}

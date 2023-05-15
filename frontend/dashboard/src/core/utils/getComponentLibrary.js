@@ -8,7 +8,8 @@ export default function getComponentLibrary() {
     const componentsDistList = fs
         .readdirSync(componentsDistPath)
         .filter((item) => !item.includes("assets"))
-        .filter((item) => !item.includes("hot-update.js"));
+        .filter((item) => !item.includes("hot-update.js"))
+        .filter((item) => !item.includes(".webp"));
     const componentsSrcCategoriesList = fs
         .readdirSync(componentsSrcCategoriesPath)
         .filter((item) => !item.includes("_commons"));

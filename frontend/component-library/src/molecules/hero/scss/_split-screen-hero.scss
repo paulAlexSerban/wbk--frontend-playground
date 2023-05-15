@@ -45,7 +45,7 @@
 
 .split.left {
     left: 0;
-    background: url("/images/ps-original.webp");
+    background: url("../../../../dist/assets/images/ps-original.webp");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -60,7 +60,7 @@
 
 .split.right {
     right: 0;
-    background: url("/images/xbox-original.webp");
+    background: url("../../../../dist/assets/images/xbox-original.webp");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -108,7 +108,7 @@
     }
 }
 
-.pat-split-screen-hero {
+.split-screen-hero {
     &__base {
         display: flex;
         min-height: 70vh;
