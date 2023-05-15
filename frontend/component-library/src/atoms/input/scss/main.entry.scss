@@ -1,5 +1,10 @@
-$type: "pat";
-$block: "#{$type}-search-hidden";
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
+/* ------------------------------------ *\
+ * SEARCH-HIDDEN
+\* ------------------------------------ */
+
+$block: "search-hidden";
 
 .#{$block} {
     @include e("base") {

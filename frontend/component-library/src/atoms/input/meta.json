@@ -1,0 +1,11 @@
+{
+    "category": "atoms",
+    "componentSlug": "input",
+    "componentName": "Input",
+    "variations": [
+        {
+            "slug": "search-hidden",
+            "name": "Search (Hidden)"
+        }
+    ]
+}

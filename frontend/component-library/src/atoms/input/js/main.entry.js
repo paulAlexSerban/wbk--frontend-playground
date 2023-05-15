@@ -1,9 +1,21 @@
-import { config } from "./config";
-import { findOne } from "../../../_01_abstracts/dom/traversing";
-import { toggleClass } from "../../../_01_abstracts/dom/manipulation";
+import { findOne } from "../../../_commons/js/dom/traversing";
+import { toggleClass } from "../../../_commons/js/dom/manipulation";
 
 (() => {
-    const SearchHidden = (el) => {
+    const config = {
+        type: "pat",
+        name: "SearchHidden",
+        selectors: {
+            search: ".js-search",
+            button: ".js-search-btn",
+            input: ".js-search-input",
+        },
+        states: {
+            active: "active",
+        },
+    };
+
+    const SearchHidden = () => {
         const global = { state: {}, elements: {} };
 
         const init = () => {
