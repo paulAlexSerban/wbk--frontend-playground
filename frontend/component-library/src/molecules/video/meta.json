@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "video",
+  "componentName": "Video",
+  "variations": [
+      {
+          "slug": "custom-video-player",
+          "name": "Custom Video Player"
+      }
+  ]
+}

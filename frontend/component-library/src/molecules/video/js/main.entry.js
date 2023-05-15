@@ -1,7 +1,22 @@
-import { config } from "./config";
-import { findOne } from "../../../_01_abstracts/dom/traversing";
+
+import { findOne } from "../../../_commons/js/dom/traversing";
 
 (() => {
+    const config = {
+        type: "pat",
+        name: "VideoPlayer",
+        selectors: {
+            videoEl: "#video",
+            playBtn: "#play",
+            stopBtn: "#stop",
+            progressBar: "#progress",
+            timeStamp: "#timestamp",
+        },
+        classes: {
+            bookingSeat: "selected",
+        },
+    };
+    
     const VideoPlayer = (el) => {
         const global = { state: {}, elements: {} };
 
@@ -53,9 +68,9 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
 
         const updatePlayIcon = () => {
             if (global.elements.video.paused) {
-                global.elements.play.innerHTML = '<img class="fa-play" src="/svgs/fa-play.svg"/>';
+                global.elements.play.innerHTML = '<img class="fa-play" src="/assets/svgs/fa-play.svg"/>';
             } else {
-                global.elements.play.innerHTML = '<img class="fa-stop" src="/svgs/fa-stop.svg"/>';
+                global.elements.play.innerHTML = '<img class="fa-stop" src="/assets/svgs/fa-stop.svg"/>';
             }
         };
 

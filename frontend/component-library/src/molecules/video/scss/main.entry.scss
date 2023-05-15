@@ -1,5 +1,7 @@
-$type: "pat";
-$block: "#{$type}-custom-player";
+
+@import "../../../_commons/scss/_01_abstracts/abstracts.scss";
+
+$block: "custom-player";
 
 .#{$block} {
     @include e("base") {
