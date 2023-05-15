@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "mini-games",
+  "componentName": "Mini Games",
+  "variations": [
+      {
+          "slug": "coin-game",
+          "name": "Coin Game"
+      }
+  ]
+}

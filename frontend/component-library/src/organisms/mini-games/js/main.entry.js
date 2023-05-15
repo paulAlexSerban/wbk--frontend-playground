@@ -1,7 +1,9 @@
-import { config } from "./config";
+const config = {
+    type: "widget",
+    name: "CoinGame",
+};
 
-const CoinGame = (el) => {
-    console.log(el);
+const CoinGame = () => {
     const avatar = document.querySelector("#player");
     const coin = document.querySelector("#coin");
 
@@ -27,7 +29,9 @@ const CoinGame = (el) => {
     };
 
     const extractPos = (pos) => {
-        if (!pos) return 100;
+        if (!pos) {
+            return 100;
+        }
         return parseInt(pos.slice(0, -2));
     };
 
@@ -52,7 +56,9 @@ const CoinGame = (el) => {
                 moveHorizontal(avatar, -50);
                 avatar.style.transform = "scale(-1,1)";
             }
-            if (isTouching(avatar, coin)) moveCoin();
+            if (isTouching(avatar, coin)) {
+                moveCoin();
+            }
         });
     };
 
