@@ -12,9 +12,7 @@ export default class Store {
     }
 
     static displayBooks() {
-        console.log("Display");
         const books = Store.getBooks();
-        console.log(books);
         books.forEach(function (book) {
             const ui = new UI();
             ui.addBookToList(book);
