@@ -4,8 +4,8 @@
   <link rel="stylesheet" href="../typography/style.css">
 
   <div class="popup__base" data-js-pat="Popup">
-        {{> ../../../atoms/button/markup/button.atom
-          type="primary" label="Open Popup" classNames="js-btn-open-popup"}}
+        {{> ../../../molecules/button/templates/button.atom
+          style="primary" type="button" label="Open Popup" classNames="js-btn-open-popup"}}
 
     <div class="popup__wrapper js-popup-wrapper">
       <div class="popup__modal">
@@ -13,8 +13,8 @@
         <div class="popup__content">
           <h2 class="heading__base heading__base--heading-200">NINJA SALE!!</h2>
           <p class="paragraph__base">50% off all ninja clothing. don't miss out!</p>
-          {{> ../../../atoms/button/markup/button.atom
-            type="primary" label="View Clothing" classNames="js-popup-action"}}
+          {{> ../../../molecules/button/templates/button.atom
+            style="primary" type="button" label="View Clothing" classNames="js-popup-action"}}
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ $block-p: "paragraph";
         @include font($body);
 
         color: var(--text-color);
+        margin-top: $baseline;
 
         &.blurry-loader__loading-text {
             color: get-color($c-light, light);

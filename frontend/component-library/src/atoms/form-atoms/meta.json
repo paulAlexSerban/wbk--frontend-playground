@@ -1,0 +1,15 @@
+{
+    "category": "atoms",
+    "componentSlug": "form-atoms",
+    "componentName": "Form",
+    "variations": [
+        {
+            "slug": "text-input",
+            "name": "Text Input"
+        },
+        {
+            "slug": "search-hidden",
+            "name": "Search (Hidden)"
+        }
+    ]
+}

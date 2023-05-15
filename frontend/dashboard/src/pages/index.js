@@ -51,7 +51,6 @@ export async function getStaticProps({}) {
     const getMolecules = getComponentLibrary().molecules.map((item) => item);
     const getOrganisms = getComponentLibrary().organisms.map((item) => item);
     const getTemplates = getComponentLibrary().templates.map((item) => item);
-
     return {
         props: {
             atoms: getAtoms,

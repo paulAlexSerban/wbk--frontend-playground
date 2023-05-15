@@ -1,0 +1,59 @@
+/* ------------------------------------ *\
+ * SEARCH-HIDDEN
+\* ------------------------------------ */
+
+$block: "search-hidden";
+
+.#{$block} {
+    @include e("base") {
+        @include font($body);
+        @include flex();
+        @include use-extends((margin-centered, padding-16));
+
+        width: 75%;
+    }
+
+    @include e("container") {
+        position: relative;
+        height: 50px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    @include e("input", "btn") {
+        outline: none;
+    }
+
+    @include e("input") {
+        @include font($input);
+
+        background-color: get-color($c-light, cultured);
+        border: 0;
+        padding: 15px;
+        height: 50px;
+        width: 50px;
+        transition: width 0.3s ease;
+
+        .active & {
+            width: 200px;
+        }
+    }
+
+    @include e("btn") {
+        @include absolute($top: 0, $left: 0);
+        @include font($button-large);
+        background-color: get-color($c-light, cultured);
+        border: 0;
+        cursor: pointer;
+
+        height: 50px;
+        width: 50px;
+        transition: transform 0.3s ease;
+
+        .active & {
+            transform: translateX(198px);
+        }
+    }
+}
