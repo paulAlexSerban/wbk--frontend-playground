@@ -1,6 +1,19 @@
-import { config } from "./config";
-import { findOne } from "../../../_01_abstracts/dom/traversing";
-import { addClass, removeClass } from "../../../_01_abstracts/dom/manipulation";
+import { findOne } from "../../../_commons/js/dom/traversing";
+import { addClass, removeClass } from "../../../_commons/js/dom/manipulation";
+
+export const config = {
+    type: "pat",
+    name: "NavigationRotating",
+    selectors: {
+        container: ".js-nav-rotating-container",
+        btnOpen: ".js-nav-rotating-btn-open",
+        btnClose: ".js-nav-rotating-btn-close",
+    },
+    states: {
+        showNavigation: "navigationVisible",
+    },
+};
+
 
 (() => {
     const NavigationRotating = (el) => {

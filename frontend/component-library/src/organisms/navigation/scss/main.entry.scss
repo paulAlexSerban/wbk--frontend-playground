@@ -1,8 +1,16 @@
+@import "~ScssAbstracts";
 /* ------------------------------------ *\
  * ROTATING NAVIGATION
 \* ------------------------------------ */
 
-$block: "pat-navigation-rotating";
+/* @TODO
+DEPENDENCIES to implement and add using html not scss imports
+@import "../../_01_components/typography/link/link.scss";
+@import "../../_01_components/typography/list-unordered/list-unordered.scss";
+@import "../link-list/link-list.pat.scss";
+*/
+
+$block: "navigation-rotating";
 
 .#{$block} {
     @include e("base") {
