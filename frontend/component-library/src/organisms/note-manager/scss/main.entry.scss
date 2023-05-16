@@ -1,8 +1,10 @@
+@import "~ScssAbstracts";
+
 /* ------------------------------------ *\
  * NOTE MANAGER STYLES
 \* ------------------------------------ */
 
-$block: "widget-note-manager";
+$block: "note-manager";
 
 .#{$block} {
     @include e("base") {

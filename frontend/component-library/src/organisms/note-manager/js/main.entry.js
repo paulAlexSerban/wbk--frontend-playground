@@ -1,5 +1,9 @@
-import { findOne, hasClass } from "../../../_01_abstracts/dom/traversing";
-import { config } from "./config";
+import { findOne, hasClass } from "../../../_commons/js/dom/traversing";
+export const config = {
+    type: "widget",
+    name: "NoteManager",
+};
+
 
 (() => {
     const NoteManager = (el) => {
@@ -22,7 +26,6 @@ import { config } from "./config";
         const setupEventListeners = () => {
             global.elements.addButton.addEventListener("click", (e) => {
                 e.preventDefault();
-                console.log("event listener on button works");
                 addItem();
             });
 
@@ -53,13 +56,13 @@ import { config } from "./config";
                     input = document.createElement("input");
 
                 firstIcon.className = "fa-pencil-square-o";
-                firstIcon.src = "/svgs/fa-pen-to-square.svg";
+                firstIcon.src = "/assets/svgs/fa-pen-to-square.svg";
                 secondIcon.className = "fa-times";
-                secondIcon.src = "/svgs/fa-times.svg";
-                input.className = "widget-note-manager__edit-note";
+                secondIcon.src = "/assets/svgs/fa-times.svg";
+                input.className = "note-manager__edit-note";
                 input.setAttribute("type", "text");
-                li.className = "widget-note-manager__note-item";
-                secondPar.className = "widget-note-manager__controls";
+                li.className = "note-manager__note-item";
+                secondPar.className = "note-manager__controls";
 
                 firstPar.textContent = global.elements.addInput.value;
 

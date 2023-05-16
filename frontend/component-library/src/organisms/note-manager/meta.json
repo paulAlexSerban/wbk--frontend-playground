@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "note-manager",
+  "componentName": "Note Manager",
+  "variations": [
+      {
+          "slug": "note-manager",
+          "name": "Note Manager"
+      }
+  ]
+}
