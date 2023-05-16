@@ -109,8 +109,6 @@ export const QuizController = () => {
                         opts[x].previousElementSibling.checked = false;
                     }
 
-                    console.log(questionLocalStorage.getQuestionCollection());
-
                     return true;
                 } else {
                     alert("You missed to check correct answer, or you checked answer without value");
@@ -158,7 +156,6 @@ export const QuizController = () => {
         let personData = personLocalStorage.getPersonData();
         personData.push(newPerson);
         personLocalStorage.setPersonData(personData);
-        console.log(newPerson);
     };
 
     return {

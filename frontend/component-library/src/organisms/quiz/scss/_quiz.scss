@@ -1,3 +1,7 @@
+/* ------------------------------------ *\
+  * QUIZ WIDGET
+\* ------------------------------------ */
+
 @keyframes fade {
     0% {
         opacity: 0;
@@ -17,7 +21,7 @@
 
     &__landing-wrapper {
         background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-            url("/images/landing-bg-original.webp") no-repeat center;
+            url("../../../../dist/assets/images/landing-bg-original.webp") no-repeat center;
         font-family: Raleway, sans-serif;
         height: 90vh;
         width: 95%;
@@ -108,7 +112,7 @@
         margin: 5vh 2.5%;
         position: relative;
         background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
-            url("/images/admin-bg-original.webp") no-repeat center;
+            url("../../../../dist/assets/images/admin-bg-original.webp") no-repeat center;
         box-shadow: 15px 15px 35px #999;
         background-size: cover;
         overflow: hidden;
@@ -490,7 +494,7 @@ section.quiz-container {
     margin: 5vh 2.5%;
     position: relative;
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
-        url("/images/quiz-bg-original.webp") no-repeat center;
+        url("../../../../dist/assets/images/quiz-bg-original.webp") no-repeat center;
     box-shadow: 0px 10px 25px #aaa;
     background-size: cover;
     overflow: hidden;
@@ -762,7 +766,7 @@ section.final-result-container {
     position: relative;
     box-shadow: 0px 10px 25px #aaa;
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
-        url("/images/final-bg-original.webp") no-repeat center;
+        url("../../../../dist/assets/images/final-bg-original.webp") no-repeat center;
     background-size: cover;
     border-radius: 3px;
     animation: fade 0.8s;

@@ -2,7 +2,7 @@
  * NINJA QUIZ WIDGET
 \* ------------------------------------ */
 
-$block: "widget-ninja-quiz";
+$block: "ninja-quiz";
 
 .#{$block} {
     @include e("base") {

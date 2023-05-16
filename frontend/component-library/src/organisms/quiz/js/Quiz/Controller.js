@@ -67,7 +67,7 @@ export const Controller = (quizCtrl, UICtrl) => {
                         domItems.nextQuestbtn.textContent = "Finish";
                     }
 
-                    let nextQuestion = function (questData, progress) {
+                    let nextQuestion = function () {
                         if (QUIZ_CTRL.isFinished()) {
                             QUIZ_CTRL.addPerson();
                             UI_CTRL.finalResult(QUIZ_CTRL.getCurrPersonData);

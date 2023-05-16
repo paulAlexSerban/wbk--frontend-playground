@@ -1,7 +1,6 @@
-import { findOne } from "../../../_01_abstracts/dom/traversing";
+import { findOne } from "../../../../_commons/js/dom/traversing";
 
 export const UIController = (el) => {
-    console.log("ui controller called");
     const global = { state: {}, elements: {}, data: {} };
 
     const init = () => {
@@ -52,7 +51,6 @@ export const UIController = (el) => {
                     currPerson.fullName.push(global.elements.lastNameInput.value);
                     global.elements.landPageSection.style.display = "none";
                     global.elements.quizSection.style.display = "block";
-                    console.log(currPerson);
                 } else {
                     alert("Quiz is not ready, please contact to administrator");
                 }
@@ -179,7 +177,9 @@ export const UIController = (el) => {
                         } else {
                             alert("You missed to check correct answer, or you checked answer without value");
                         }
-                    } else alert("You must insert at least two options");
+                    } else {
+                        alert("You must insert at least two options");
+                    }
                 } else {
                     alert("Please, insert question");
                 }
