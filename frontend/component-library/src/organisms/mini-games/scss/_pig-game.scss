@@ -1,10 +1,8 @@
-@import "../../../_01_abstracts/abstracts.scss";
-
 /* ------------------------------------ *\
   * PIG GAME WIDGET
 \* ------------------------------------ */
 
-$block: "widget-pig-game";
+$block: "pig-game";
 
 .#{$block} {
     &__base {

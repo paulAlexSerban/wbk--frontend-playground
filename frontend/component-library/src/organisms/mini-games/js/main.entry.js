@@ -2,7 +2,7 @@ import { GuessMyNumber, config as GMNConfig } from './_GuessMyNumber.js';
 import { NumberGuesser, config as NGConfig } from './_NumberGuesser.js';
 import { CoinGame, config as CGConfig } from './_CoinGame.js';
 import { MathGame, config as MConfig } from './_MathGame.js';
-
+import { PigGame, config as PGConfig } from './_PigGame.js';
 
 (() => {
     document.querySelectorAll(`[data-js-${GMNConfig.type}=${GMNConfig.name}]`).forEach((el) => {
@@ -19,6 +19,10 @@ import { MathGame, config as MConfig } from './_MathGame.js';
 
     document.querySelectorAll(`[data-js-${MConfig.type}=${MConfig.name}]`).forEach((el) => {
         MathGame(el);
+    });
+
+    document.querySelectorAll(`[data-js-${PGConfig.type}=${PGConfig.name}]`).forEach((el) => {
+        PigGame(el);
     });
 })();
 

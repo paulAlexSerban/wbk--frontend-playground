@@ -18,6 +18,10 @@
         {
             "slug": "math-game",
             "name": "Math Game"
+        },
+        {
+            "slug": "pig-game",
+            "name": "Pig Game"
         }
     ]
 }
