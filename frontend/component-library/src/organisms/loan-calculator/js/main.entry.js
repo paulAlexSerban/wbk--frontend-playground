@@ -1,7 +1,10 @@
-import { config } from "./config";
+export const config = {
+    type: "widget",
+    name: "LoanCalculator",
+};
 
 (() => {
-    const LoanCalculator = (el) => {
+    const LoanCalculator = () => {
         const global = { state: {}, elements: {} };
 
         const init = () => {
@@ -26,18 +29,17 @@ import { config } from "./config";
 
         const setupEventListeners = () => {
             global.elements.loanForm.addEventListener("submit", (e) => {
+                e.preventDefault();
                 global.elements.results.style.display = "none";
                 global.elements.loading.style.display = "block";
                 setTimeout(() => {
                     calculateResults();
-                }, 2000);
-                e.preventDefault();
+                }, 200);
             });
         };
 
         // Calculate Results
         const calculateResults = () => {
-            console.log("Calculating...");
             // UI Vars
             const principal = parseFloat(global.elements.amount.value);
             const calculatedInterest = parseFloat(global.elements.interest.value) / 100 / 12;

@@ -5,6 +5,7 @@ import { processSvgs } from "./tasks/processSvgs";
 import { createImageRenditions } from "./tasks/createImageRenditions";
 import { processVideos } from "./tasks/processVideos";
 import { processAudio } from "./tasks/processAudio";
+import { processGifs } from "./tasks/processGifs";
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -22,7 +23,8 @@ task(
       processSvgs,
       createImageRenditions,
       processVideos,
-      processAudio
+      processAudio,
+      processGifs
     )
   )
 );
