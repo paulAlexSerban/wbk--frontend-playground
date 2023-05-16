@@ -6,6 +6,10 @@
       {
           "slug": "counter",
           "name": "Counter"
-      }
+      },
+      {
+        "slug": "score-keeper-app",
+        "name": "Score Keeper App"
+    }
   ]
 }
