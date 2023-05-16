@@ -2,12 +2,15 @@
   MIXINS
 \* ------------------------------------ */
 
+@import "./absCenter.scss";
 @import "./aspect-ratio.scss";
 @import "./bem.scss";
 @import "./border.scss";
+@import "./clearfix.scss";
 @import "./flex.scss";
 @import "./get-font.scss";
 @import "./grid-aspect-ratio.scss";
+@import "./inputPlaceholder.scss";
 @import "./on-event.scss";
 @import "./position.scss";
 @import "./size.scss";

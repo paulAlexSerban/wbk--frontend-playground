@@ -1,0 +1,44 @@
+/* ------------------------------------ *\
+ * #CARD-LIST
+\* ------------------------------------ */
+
+$block-fancy: "card-list-fancy-hover";
+.#{$block-fancy} {
+    &__list {
+        @include flex();
+        column-gap: $gutter;
+        padding-top: $baseline * 3;
+    }
+
+    &__listItem {
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.6);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+
+        .#{$block-fancy}__list:hover & {
+            transform: scale(0.9);
+            box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
+
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &:first-child {
+            background: #55efc4;
+        }
+
+        &:nth-child(2) {
+            background: #81ecec;
+        }
+
+        &:nth-child(3) {
+            background: #74b9ff;
+        }
+    }
+}
