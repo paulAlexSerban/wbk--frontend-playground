@@ -1,6 +1,34 @@
-import { config } from "./config";
-import { getApiUrl } from "./WeatherApp.utils";
-import { findOne } from "../../../_01_abstracts/dom/traversing";
+import { findOne } from "../../../_commons/js/dom/traversing";
+
+export const config = {
+    type: "widget",
+    name: "WeatherApp",
+    selectors: {
+        longitude: ".js-weather-app-longitude",
+        latitude: ".js-weather-app-latitude",
+        tempInfoCelsius: ".js-weather-app-celsius",
+        tempInfoFahrenheit: ".js-weather-app-fahrenheit",
+        weatherImage: ".js-weather-app-image",
+        weatherDescription: ".js-weather-app-description",
+        cityName: ".js-weather-app-city",
+        switchBtnFahrenheit: ".js-weather-app-button-fahrenheit",
+        switchBtnCelsius: ".js-weather-app-button-celsius",
+        tempInfoMinTemp: ".js-weather-app-min",
+        tempInfoMaxTemp: ".js-weather-app-max",
+        windSpeed: ".js-weather-app-windSpeed",
+        pressure: ".js-weather-app-pressure",
+        humidity: ".js-weather-app-humidity",
+    },
+    states: {
+        active: "active",
+    },
+};
+
+
+export const getApiUrl = (lat, lon) => {
+    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=059dcee9c15c93a942eb1f38b72876be`;
+};
+
 
 (() => {
     const WeatherApp = (el) => {
@@ -10,15 +38,12 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
             setupDomReferences();
             getUserGeolocation();
             setupEventListeners();
-
-            console.log("weather app");
         };
 
         const getUserGeolocation = () => {
             fetch("https://ipapi.co/json/") // Call the fetch function passing the url of the API as a parameter
                 .then((data) => data.json())
                 .then((data) => {
-                    console.log(data);
                     // Code for handling the data you get from the API
                     global.data.latData = data.latitude;
                     global.data.lonData = data.longitude;
@@ -28,8 +53,7 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
 
                     getWeather();
                 })
-                .catch((error) => {
-                    console.error(error);
+                .catch(() => {
                 });
         };
 
@@ -37,7 +61,6 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
             fetch(getApiUrl(global.data.latData, global.data.lonData))
                 .then((weatherData) => weatherData.json())
                 .then((weatherData) => {
-                    console.log(weatherData);
                     // Code for handling the data you get from the API
                     // fetch image and display weather and icon down below
                     const weatherTemp = weatherData.main.temp;
@@ -73,8 +96,7 @@ import { findOne } from "../../../_01_abstracts/dom/traversing";
                     global.elements.tempInfoMinTemp.append(`Min: ${global.data.minCelsius} ºC`);
                     global.elements.tempInfoMaxTemp.append(`Max: ${global.data.maxCelsius} ºC`);
                 })
-                .catch((error) => {
-                    console.error(error);
+                .catch(() => {
                 });
         };
 

@@ -1,8 +1,9 @@
+@import "~ScssAbstracts";
 /* ------------------------------------ *\
  * WEATHER-APP STYLES
 \* ------------------------------------ */
 
-$block: "widget-weather-app";
+$block: "weather-app";
 
 .#{$block} {
     @include e("base") {

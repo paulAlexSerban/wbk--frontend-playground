@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "weather-app",
+  "componentName": "Weather App",
+  "variations": [
+      {
+          "slug": "weather-app",
+          "name": "Weather App"
+      }
+  ]
+}
