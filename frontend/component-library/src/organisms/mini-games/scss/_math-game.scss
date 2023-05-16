@@ -1,10 +1,8 @@
-@import "../../../_01_abstracts/abstracts.scss";
-
 /* ------------------------------------ *\
   * MATH GAME WIDGET
 \* ------------------------------------ */
 
-$block: "widget-math-game";
+$block: "math-game";
 
 .#{$block} {
     @include e("container") {

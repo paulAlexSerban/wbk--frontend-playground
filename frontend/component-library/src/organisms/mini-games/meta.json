@@ -14,6 +14,10 @@
         {
             "slug": "number-guesser",
             "name": "Number Guesser"
+        },
+        {
+            "slug": "math-game",
+            "name": "Math Game"
         }
     ]
 }
