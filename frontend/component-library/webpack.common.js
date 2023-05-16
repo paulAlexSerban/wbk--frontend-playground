@@ -114,6 +114,8 @@ const getEntries = () => {
 
 const { jsEntriesObj, scssEntriesObj, htmlWebpackPluginPages, metaEntries, readmeEntries } = getEntries();
 
+const cwd = process.cwd();
+
 // export webpack configuration
 module.exports = {
     entry: {
@@ -121,8 +123,9 @@ module.exports = {
         ...scssEntriesObj,
     },
     resolve: {
+        modules: [path.join(__dirname, './node_modules')],
         alias: {
-            Utils: path.resolve(__dirname, "src/utils/"),
+            ScssAbstracts: path.join(cwd, "src","_commons", "scss", "_01_abstracts", "abstracts.scss"),
         },
     },
     output: {

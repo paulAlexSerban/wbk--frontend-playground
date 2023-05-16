@@ -1,5 +1,10 @@
-$type: "widget";
-$block: "#{$type}-movie-seat-booking";
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+ *  MOVIE SEAT BOOKING
+\* ------------------------------------ */
+
+$block: "movie-seat-booking";
 
 .#{$block} {
     // --color-page-background: #{get-color($c-light, light)};

@@ -1,6 +1,31 @@
-import { findOne, find } from "../../../_01_abstracts/dom/traversing";
-import { addClass, hasClass, toggleClass } from "../../../_01_abstracts/dom/manipulation";
-import { config } from "./config";
+
+import { find, findOne } from "../../../_commons/js/dom/traversing";
+import { addClass, hasClass, toggleClass } from "../../../_commons/js/dom/manipulation";
+
+
+const config = {
+    type: "widget",
+    name: "MovieSeatBooking",
+    selectors: {
+        container: ".movie-seat-booking__container",
+        seats: ".movie-seat-booking__row .movie-seat-booking__seat:not(.movie-seat-booking__seat--occupied)",
+        selectedSeats:
+            ".movie-seat-booking__row .movie-seat-booking__seat.movie-seat-booking__seat--selected",
+        count: "#count",
+        total: "#total",
+        movieSelect: "#movie",
+    },
+    classes: {
+        bookingSeat: "movie-seat-booking__seat",
+        occupied: "movie-seat-booking__seat--occupied",
+        selected: "movie-seat-booking__seat--selected",
+    },
+    localStorageKeys: {
+        selectedSeats: "selectedSeats",
+        selectedMovieIndex: "selectedMovieIndex",
+        selectedMoviePrice: "selectedMoviePrice",
+    },
+};
 
 (() => {
     const MovieSeatBooking = (el) => {
@@ -33,7 +58,6 @@ import { config } from "./config";
 
             global.elements.movieSelect.addEventListener("change", (e) => {
                 global.data.ticketPrice = +e.target.value;
-                console.log(global.data.ticketPrice);
                 setMovieData(e.target.selectedIndex, e.target.value);
                 updateSelectedCount();
             });
@@ -43,7 +67,6 @@ import { config } from "./config";
             const selectedSeats = find(config.selectors.selectedSeats, bookingApp);
             const seatsIndex = [...selectedSeats].map((seat) => [...global.elements.seats].indexOf(seat));
             localStorage.setItem(config.localStorageKeys.selectedSeats, JSON.stringify(seatsIndex));
-            console.log(global.data.ticketPrice);
 
             const selectedSeatsCount = selectedSeats.length;
             global.elements.count.innerText = selectedSeatsCount;
