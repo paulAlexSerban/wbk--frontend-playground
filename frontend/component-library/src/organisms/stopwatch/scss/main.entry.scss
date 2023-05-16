@@ -1,10 +1,10 @@
-@import "../../../_01_abstracts/abstracts.scss";
+@import "~ScssAbstracts";
 
 /* ------------------------------------ *\
   * STOPWATCH WIDGET
 \* ------------------------------------ */
 
-$block: "widget-stopwatch";
+$block: "stopwatch";
 
 .#{$block} {
     &__base {

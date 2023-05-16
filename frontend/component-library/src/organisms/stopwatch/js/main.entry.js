@@ -1,4 +1,7 @@
-import { config } from "./config";
+export const config = {
+    type: "widget",
+    name: "Stopwatch",
+};
 
 (() => {
     const Stopwatch = (el) => {
@@ -128,17 +131,16 @@ import { config } from "./config";
         const addLap = () => {
             global.state.lapNumber++;
 
-            const myLapDetails = `<div class="widget-stopwatch__lap-time">
-  <div class="widget-stopwatch__laptimetitle">
+            const myLapDetails = `<div class="stopwatch__lap-time">
+  <div class="stopwatch__laptimetitle">
     Lap ${global.state.lapNumber}
   </div>
-  <div class="widget-stopwatch__laptime">
+  <div class="stopwatch__laptime">
     <span>${format(global.state.lapMinutes)}</span>:
     <span>${format(global.state.lapSeconds)}</span>:
     <span>${format(global.state.lapCentiseconds)}</span>
   </div>
 </div>`;
-            console.log(myLapDetails + global.elements.laps.innerHTML);
             global.elements.laps.innerHTML = myLapDetails + global.elements.laps.innerHTML;
         };
 
