@@ -1,8 +1,10 @@
-import { config } from "./config";
+export const config = {
+    type: "widget",
+    name: "TaskList",
+};
 
-(() => {
-    const TaskList = (el) => {
-        console.log(el);
+
+    export const TaskList = () => {
         const global = { state: {}, elements: {} };
 
         const init = () => {
@@ -149,7 +151,5 @@ import { config } from "./config";
         init();
     };
 
-    document.querySelectorAll(`[data-js-${config.type}=${config.name}]`).forEach((el) => {
-        TaskList(el);
-    });
-})();
+
+

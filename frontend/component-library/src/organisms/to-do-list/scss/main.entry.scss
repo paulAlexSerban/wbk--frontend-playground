@@ -1,8 +1,10 @@
+@import "~ScssAbstracts";
+
 /* ------------------------------------ *\
  * TO DO LOST APP V1
 \* ------------------------------------ */
 
-$block: "widget-to-do-list-app";
+$block: "to-do-list-app";
 
 .#{$block} {
     &__base {
