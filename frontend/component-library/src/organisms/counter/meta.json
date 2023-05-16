@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "counter",
+  "componentName": "Counter",
+  "variations": [
+      {
+          "slug": "counter",
+          "name": "Counter"
+      }
+  ]
+}
