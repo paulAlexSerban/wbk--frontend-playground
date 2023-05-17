@@ -60,7 +60,8 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
         accumulator[variationName] = new HtmlWebpackPlugin({
             template: hbsEntry,
             filename: path.join(constants.DIST_DIR, `${componentSlug}`, `${variationName}.html`),
-            inject: false,
+            inject: true,
+            chunks: ["runtime", "vendors", componentSlug],
         });
         return accumulator;
     }, {});
@@ -170,9 +171,10 @@ module.exports = {
             },
             {
                 // use asset modules to handle text assets
-                test: /\.(txt)$/,
-                type: "asset/source",
+                test: /\.(txt|png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
+
         ],
     },
     // configure plugins
@@ -190,7 +192,8 @@ module.exports = {
         }),
         // clean the output directory before building
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ['**/*', '!assets*', '!assets/**/*', '!*.mdx', '!*.json']
+            cleanOnceBeforeBuildPatterns: ['**/*', '!assets*', '!assets/**/*', '!*.mdx', '!*.json'],
+            verbose: true,
         }),
         // show progress during build process
         new webpack.ProgressPlugin(),

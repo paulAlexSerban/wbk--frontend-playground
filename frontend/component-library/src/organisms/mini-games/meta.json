@@ -22,6 +22,10 @@
         {
             "slug": "pig-game",
             "name": "Pig Game"
+        },
+        {
+            "slug": "cops-and-robbers-board-game",
+            "name": "Cops and Robbers (Board Game)"
         }
     ]
 }

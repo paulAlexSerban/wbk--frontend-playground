@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "getAssets": "rm -rfv ./dist/assets && mkdir ./dist/assets && cp -rfv ../../assets/dist/* ./dist/assets",
+        "getAssets": "rm -rfv ./dist/* && mkdir ./dist/assets && cp -rfv ../../assets/dist/* ./dist/assets",
         "watch": "npm run getAssets && export NODE_ENV=development && webpack serve --config webpack.dev.js --hot --progress",
         "dev": "export NODE_ENV=development && webpack --config webpack.dev.js",
         "build": "export NODE_ENV=production && webpack --config webpack.prod.js"
@@ -20,6 +20,7 @@
         "eslint-webpack-plugin": "^4.0.0",
         "handlebars-loader": "^1.7.3",
         "html-webpack-plugin": "^5.5.0",
+        "jquery": "^3.7.0",
         "mini-css-extract-plugin": "^2.7.2",
         "sass": "^1.58.1",
         "sass-loader": "^13.2.0",
