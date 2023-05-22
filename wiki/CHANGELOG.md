@@ -1,3 +1,22 @@
+# [1.7.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.6.0...v1.7.0) (2022-12-15)
+
+
+### Bug Fixes
+
+* add target design for pig-game ([d07ac1f](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/d07ac1fd66abe8df33ceca24833e891fc40f9118))
+
+
+### Features
+
+* add modern javascript > to do list app ([ff78209](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/ff782095209b11b79a2cb604d306b1784fe699dd))
+* aDD modern-js-from-the-beginning > task list ([df1b303](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/df1b3039751801f18739ec0b30b3f210db4926ac))
+* **book-list:** aDDEd modern-javascript-from-the-beginning > book-list ([7e51075](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/7e51075c42308092644bda267be7c98e044dcc92))
+* **digital clock v2:** aDDED modern javasript > diigtal clock ([70bcb2c](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/70bcb2c2827eafd3b62cf0303f857ba5b78e5572))
+* **loan-calculator:** aDDED modern-js-from-the-beginning > loan calculator ([f783636](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/f783636517f05d42dbdb3429f71cbf3bf16f173b))
+* **number guesser:** aDDED modern-js-from-the-beginning > number-guesser ([528c089](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/528c0899cac055ce89d741830575eb5b4a36f6b8))
+* **sound-board:** added sound board ([9b400e9](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/9b400e9eb5c473082e668aeaac61b52412a2e11d))
+* **stopwatch:** aDDED the complete 2022 web developemnt course > stopwatch ([2a04d09](https://github.com/paulAlexSerban/prj--frontend-component-collection/commit/2a04d09f4045d203622b9317ce5268cf1c92219b))
+
 # [1.6.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.5.0...v1.6.0) (2022-12-09)
 
 ### Bug Fixes
