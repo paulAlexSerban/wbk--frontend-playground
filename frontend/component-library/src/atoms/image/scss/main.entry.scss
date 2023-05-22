@@ -1,0 +1,24 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+ * #IMAGE
+\* ------------------------------------ */
+
+$block: "image";
+
+.#{$block} {
+    @include e("base") {
+
+        object-fit: cover;
+        width: 100%;
+
+        .expanding-cards__panel & {
+            height: 100%;
+        }
+    }
+
+    @include e("icon") {
+        height: 64px;
+        width: 64px;
+    }
+}

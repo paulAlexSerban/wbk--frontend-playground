@@ -2,7 +2,7 @@
 
 ## Inspiration
 
-- https://nvie.com/posts/a-successful-git-branching-model/
+-   https://nvie.com/posts/a-successful-git-branching-model/
 
 ## Branches
 
@@ -11,10 +11,10 @@
 At the core, the development model is greatly inspired by existing models out there.
 The central repo holds two main branches with an infinite lifetime:
 
-- `master` / `main`
-- `develop`
-  The master branch at origin should be familiar to every Git user.
-  Parallel to the master branch, another branch exists called develop.
+-   `master` / `main`
+-   `develop`
+    The master branch at origin should be familiar to every Git user.
+    Parallel to the master branch, another branch exists called develop.
 
 ### Supporting branches
 
@@ -38,8 +38,8 @@ RUN `$ git merge --no-ff myFeature`
 RUN `$ git branch -d myfeature` - Deleted branch myFeature.
 RUN `$ git push origin develop` - Push the new merged `develop` branch
 
-- The `--no-ff` flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward.
-  This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.
+-   The `--no-ff` flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward.
+    This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.
 
 #### Release branches
 

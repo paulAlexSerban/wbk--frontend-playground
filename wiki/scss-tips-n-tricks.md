@@ -6,8 +6,8 @@
 
 ```scss
 @if meta.function-exists("div", "math") {
-  @return math.div(20, 16px) * 1rem;
+    @return math.div(20, 16px) * 1rem;
 } @else {
-  @return ($px / 16px) * 1rem;
+    @return ($px / 16px) * 1rem;
 }
 ```

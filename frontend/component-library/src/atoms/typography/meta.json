@@ -1,0 +1,19 @@
+{
+    "category": "atoms",
+    "componentSlug": "typography",
+    "componentName": "Typography",
+    "variations": [
+        {
+            "slug": "paragraph",
+            "name": "Paragraph"
+        },
+        {
+            "slug": "heading",
+            "name": "Heading"
+        },
+        {
+          "slug": "time-text",
+          "name": "Time (Text)"
+      }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "dashboard",
+  "componentName": "Dashboard",
+  "variations": [
+      {
+          "slug": "activity-launcher",
+          "name": "Activity Launcher"
+      }
+  ]
+}

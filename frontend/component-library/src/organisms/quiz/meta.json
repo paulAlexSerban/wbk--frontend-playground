@@ -1,0 +1,15 @@
+{
+    "category": "organisms",
+    "componentSlug": "quiz",
+    "componentName": "Quiz",
+    "variations": [
+        {
+            "slug": "ninja-quiz",
+            "name": "Ninja Quiz"
+        },
+        {
+            "slug": "quiz",
+            "name": "Quiz"
+        }
+    ]
+}

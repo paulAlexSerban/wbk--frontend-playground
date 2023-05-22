@@ -1,0 +1,11 @@
+{
+    "category": "atoms",
+    "componentSlug": "Pill",
+    "componentName": "Pill",
+    "variations": [
+        {
+            "slug": "pill-round",
+            "name": "Pill (Round)"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "category": "molecules",
+  "componentSlug": "tabs",
+  "componentName": "Tabs",
+  "variations": [
+      {
+          "slug": "navigation-tabs-css",
+          "name": "Navigation Tabs (Only CSS)"
+      },
+      {
+        "slug": "navigation-tabs-js",
+        "name": "Navigation Tabs (with JS)"
+      }
+  ]
+}

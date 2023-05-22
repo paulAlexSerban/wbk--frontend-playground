@@ -1,0 +1,21 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+  * BOOK LIST
+\* ------------------------------------ */
+
+$block: "widget-book-list";
+
+.success {
+    background: #008000;
+}
+
+.error {
+    background: #f00;
+}
+.success,
+.error {
+    color: #fff;
+    padding: 5px;
+    margin: 5px 0 15px;
+}

@@ -1,0 +1,22 @@
+/* ------------------------------------ *\
+ * SIMPLE SUBSCRIBE FORM
+\* ------------------------------------ */
+
+@import "~ScssAbstracts";
+
+$block: "simple-subscribe-form";
+
+.#{$block} {
+    @include e("base") {
+        margin: 40px auto;
+        background: #d3d3d3;
+        padding: 10px;
+
+        .success {
+            border: 2px solid #32cd32;
+        }
+        .error {
+            border: 2px solid #dc143c;
+        }
+    }
+}

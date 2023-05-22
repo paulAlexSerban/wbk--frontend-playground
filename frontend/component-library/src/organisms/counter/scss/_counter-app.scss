@@ -1,0 +1,58 @@
+
+@use "sass:math";
+$molecule: "counter";
+.#{$molecule} {
+    @include e("base") {
+        --text-color: #{get-color($c-dark, eerie-black)};
+        --background-color: #{get-color($c-light, cultured)};
+        --border-color: #{get-color($c-dark, eerie-black)};
+        --shadow: 0 3px 6px rgba(0, 0, 0, 16%), 0 3px 6px rgba(0, 0, 0, 23%);
+
+        @include flex($direction: column, $cross: normal);
+
+        max-width: 25%;
+        margin: 0 auto;
+        background: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        box-shadow: var(--shadow);
+    }
+
+    @include e("title-heading") {
+        padding: math.div($gutter, 2) ($baseline * 2);
+        color: var(--background-color);
+        grid-area: top;
+        text-align: center;
+        background: var(--text-color);
+    }
+
+    @include e("container") {
+        @include flex($cross: space-between, $main: space-between);
+
+        padding: $gutter ($baseline * 2);
+        gap: $gutter;
+    }
+
+    @include e("output", "button") {
+        width: 45%;
+    }
+
+    @include e("output") {
+        @include flex();
+
+        padding: $baseline $gutter;
+        font-weight: 700;
+        border: 1px solid var(--text-color);
+    }
+
+    @include e("button") {
+        @include flex();
+
+        padding: $gutter ($baseline * 3);
+        color: var(--background-color);
+        letter-spacing: 0.05rem;
+        cursor: pointer;
+        background: var(--text-color);
+        border: none;
+    }
+}
