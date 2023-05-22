@@ -1,0 +1,23 @@
+/* ------------------------------------ *\
+  * FORM VALIDATION
+\* ------------------------------------ */
+
+@import "~ScssAbstracts";
+
+// @import "../fieldset/fieldset.pat.scss";
+
+$block: "form-validation";
+
+.#{$block} {
+    @include e("base") {
+        background-color: get-color($c-light, cultured);
+        border-radius: convert-rem(5px);
+        box-shadow: 0 convert-rem(2px) convert-rem(10px) get-color($c-dark, dark-30);
+        padding: ($baseline) ($gutter);
+    }
+
+    @include e("container") {
+        padding: ($baseline * 4) ($gutter * 3);
+        width: 100%;
+    }
+}

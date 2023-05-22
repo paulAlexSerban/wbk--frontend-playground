@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "book-list",
+  "componentName": "Book List",
+  "variations": [
+      {
+          "slug": "book-list",
+          "name": "Book List"
+      }
+  ]
+}

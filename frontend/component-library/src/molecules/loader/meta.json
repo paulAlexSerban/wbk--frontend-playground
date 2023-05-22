@@ -1,0 +1,11 @@
+{
+    "category": "molecules",
+    "componentSlug": "loader",
+    "componentName": "Loader",
+    "variations": [
+        {
+            "slug": "blurry-loader",
+            "name": "Blurry Loader"
+        }
+    ]
+}

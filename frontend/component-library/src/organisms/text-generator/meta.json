@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "text-generator",
+  "componentName": "Text Generator",
+  "variations": [
+      {
+          "slug": "quotation-generator",
+          "name": "Quotation Generator"
+      }
+  ]
+}

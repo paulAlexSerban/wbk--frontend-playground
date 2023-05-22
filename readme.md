@@ -9,14 +9,14 @@
 [![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Semantic Versioning](https://img.shields.io/badge/Semantic%20Versioning-2.0.0-green)](https://semver.org/spec/v2.0.0.html)
 
-
 ## Useful Local Development URLs
 
-- [traefik dashboard](http://localhost:8080/dashboard)
-- [frontend-component-collection-service](https://nginx-frontend-component-collection-server.localhost/)
+-   [traefik dashboard](http://localhost:8080/dashboard)
+-   [frontend-component-collection-service](https://nginx-frontend-component-collection-server.localhost/)
 
 ## Start Development
-- new terminal - `bash scripts/backend/fe-cl/dev.bash`
-- new terminal - `bash scripts/backend/fe-cl/watch-public.bash`
-- new terminal - `bash scripts/frontend-js-component-library-watch.bash`
-- new terminal - `bash scripts/frontend-living-style-guide-watch.bash`
+
+-   new terminal - `bash scripts/backend/fe-cl/dev.bash`
+-   new terminal - `bash scripts/backend/fe-cl/watch-public.bash`
+-   new terminal - `bash scripts/frontend-js-component-library-watch.bash`
+-   new terminal - `bash scripts/frontend-living-style-guide-watch.bash`

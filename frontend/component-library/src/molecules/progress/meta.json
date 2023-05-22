@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "progress",
+  "componentName": "Progress",
+  "variations": [
+      {
+          "slug": "progress-steps",
+          "name": "Progress Steps"
+      }
+  ]
+}

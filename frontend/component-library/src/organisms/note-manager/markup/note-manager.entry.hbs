@@ -1,0 +1,51 @@
+
+{{#> ../../../pages/basepage/markup/basepage.page hasJS=true}}
+<div class="note-manager__base" data-js-widget="NoteManager">
+  <div class="note-manager__wrapper">
+    <header class="note-manager__header">
+      <h2>Note Manager</h2>
+      <form id="search-note">
+        <input class="note-manager__search-input" type="text" placeholder="Search note...">
+      </form>
+    </header>
+    <div class="note-list">
+      <ul class="note-manager__note-list" id="list">
+        <li class="note-manager__note-item">
+          <p>First note</p>
+          <p class="note-manager__controls">
+            <img class="fa-pencil-square-o" src="/assets/svgs/fa-pen-to-square.svg"/>
+            <img class="fa-times" src="/assets/svgs/fa-times.svg" />
+          </p>
+          <input class="note-manager__edit-note" type="text">
+        </li>
+        <li class="note-manager__note-item">
+          <p>Second note</p>
+          <p class="note-manager__controls">
+            <img class="fa-pencil-square-o"src="/assets/svgs/fa-pen-to-square.svg"/>
+            <img class="fa-times" src="/assets/svgs/fa-times.svg" />
+          </p>
+          <input class="note-manager__edit-note" type="text">
+        </li>
+        <li class="note-manager__note-item">
+          <p>Third note</p>
+          <p class="note-manager__controls">
+            <img class="fa-pencil-square-o"src="/assets/svgs/fa-pen-to-square.svg"/>
+            <img class="fa-times" src="/assets/svgs/fa-times.svg" />
+          </p>
+          <input class="note-manager__edit-note" type="text">
+        </li>
+      </ul>
+    </div>
+    <div class="note-manager__hide-list" id="hide-list">
+        <label class="note-manager__hide-list-label" id="hide-toggle" for="hide">Hide notes</label>
+        <input class="note-manager__hide-list-checkbox" type="checkbox" id="hide">
+      </div>
+    <div class="note-manager__add-notes" id="add-notes">
+      <form class="note-manager__add-notes-form" id="add">
+        <input class="note-manager__add-notes-item" type="text" placeholder="Add a note.." id="add-input">
+        <input class="note-manager__add-notes-submit" type="submit"  value="Add" id="add-btn">
+      </form>
+    </div>
+  </div>
+</div>
+{{/ ../../../pages/basepage/markup/basepage.page}}

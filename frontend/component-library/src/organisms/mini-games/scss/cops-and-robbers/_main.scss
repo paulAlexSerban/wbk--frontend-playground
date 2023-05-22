@@ -1,0 +1,11 @@
+@import 'variables';
+
+.main {
+width: 100%;
+
+    &__base {
+        width: 99.99%;
+        margin: auto;
+        height: 99.99%;
+    }
+}

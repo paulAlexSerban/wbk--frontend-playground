@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "accordion",
+  "componentName": "Accordion",
+  "variations": [
+    { 
+      "slug": "accordion-css", 
+      "name": "Accordion (CSS Only)" 
+      }
+    ]
+}

@@ -1,0 +1,6 @@
+{{#> ../../../pages/basepage/markup/basepage.page hasJS=true}}
+  <link rel="stylesheet" href="../form-atoms/style.css">
+  {{#> ../templates/text-field.molecule errorMessage="Error message" }}
+    {{> ../../../atoms/form-atoms/templates/text-input.atom label="Email" id="email" type="email" placeholder="Enter email" classNames="js-validation-email"}}
+  {{/ ../templates/text-field.molecule}}
+{{/ ../../../pages/basepage/markup/basepage.page}}

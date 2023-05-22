@@ -1,0 +1,11 @@
+{
+  "category": "molecules",
+  "componentSlug": "modal",
+  "componentName": "Modal",
+  "variations": [
+      {
+          "slug": "modal-window",
+          "name": "Modal Window"
+      }
+  ]
+}

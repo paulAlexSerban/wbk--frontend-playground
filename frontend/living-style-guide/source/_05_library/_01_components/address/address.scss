@@ -1,8 +1,0 @@
-$type: "m";
-$block: "#{$type}-address";
-
-.#{$block} {
-  @include e("base") {
-    align-self: start;
-  }
-}

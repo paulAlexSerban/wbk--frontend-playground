@@ -1,0 +1,170 @@
+/* ------------------------------------ *\
+  * PIG GAME WIDGET
+\* ------------------------------------ */
+
+$block: "pig-game";
+
+.#{$block} {
+    &__base {
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        color: #333;
+        background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(200px);
+        filter: blur();
+        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+        border-radius: 9px;
+        overflow: hidden;
+        flex-direction: column;
+        padding: 10rem 5rem;
+    }
+
+    &__player {
+        flex: 50%;
+        padding: 10rem 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.75s;
+    }
+
+    /* ELEMENTS */
+    &__name {
+        position: relative;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    &__score {
+        font-size: 3rem;
+        font-weight: 300;
+        color: #c7365f;
+        margin-bottom: auto;
+    }
+
+    &__players {
+        display: flex;
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+
+    &__player--active {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    &__player--active &__name {
+        font-weight: 700;
+    }
+    &__player--active &__score {
+        font-weight: 400;
+    }
+
+    &__player--active &__current {
+        opacity: 1;
+    }
+
+    &__current {
+        background-color: #c7365f;
+        opacity: 0.8;
+        border-radius: 9px;
+        color: #fff;
+        width: 65%;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.75s;
+    }
+
+    &__current-label {
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        color: #ddd;
+    }
+
+    &__current-score {
+        font-size: 2rem;
+    }
+
+    &__button-container {
+        display: flex;
+        width: 100%;
+        margin-bottom: 3rem;
+        justify-content: center;
+    }
+
+    /* ABSOLUTE POSITIONED ELEMENTS */
+    &__btn {
+        color: #444;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 400;
+        transition: all 0.2s;
+
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+
+        padding: 0.7rem 2.5rem;
+        border-radius: 50rem;
+        box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__btn::first-letter {
+        font-size: 1.4rem;
+        display: inline-block;
+        margin-right: 0.7rem;
+    }
+
+    // &__btn--new {
+    //     // top: 5rem;
+    // }
+    // &__btn--roll {
+    //     // bottom: 7rem;
+    // }
+    // &__btn--hold {
+    //     // bottom: 2.5rem;
+    // }
+
+    &__btn:active {
+        transform: translate(-50%, 3px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    }
+
+    &__btn:focus {
+        outline: none;
+    }
+
+    &__dice {
+        height: 10rem;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+        margin-bottom: 5rem;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__player--winner {
+        background-color: #2f2f2f;
+    }
+
+    &__player--winner &__name {
+        font-weight: 700;
+        color: #c7365f;
+    }
+
+    &__hidden {
+        display: none;
+    }
+}
