@@ -11,7 +11,7 @@ $avatars: ("police", "thug");
         @include bkgImage("thug-avatar");
     }
 
-    &__base {
+    &__base { 
         display: flex;
         justify-content: space-between;
     }
