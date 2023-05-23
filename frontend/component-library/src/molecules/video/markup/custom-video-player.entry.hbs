@@ -1,0 +1,15 @@
+
+{{#> ../../../pages/basepage/markup/basepage.page hasJS=true}}
+
+<div class="custom-player__base" data-js-pat="VideoPlayer">
+  <h1 class="custom-player__heading">Basic Custom Player</h1>
+  <video src="/assets/videos/gone.mp4" id="video" class="custom-player__screen"></video>
+  <div class="custom-player__controls">
+    <button class="custom-player__button" id="play"></button>
+    <button class="custom-player__button" id="stop"></button>
+    <input type="range" id="progress" class="custom-player__progress" min="0" max="100" step="0.1" value="0" />
+    <span class="custom-player__timestamp" id="timestamp">00:00</span>
+  </div>
+</div>
+
+{{/ ../../../pages/basepage/markup/basepage.page}}

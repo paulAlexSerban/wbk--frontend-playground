@@ -1,0 +1,31 @@
+{
+  "category": "molecules",
+  "componentSlug": "form-molecules",
+  "componentName": "Form",
+  "variations": [
+      {
+          "slug": "checkbox-field",
+          "name": "Checkbox Field"
+      },
+      {
+        "slug": "inline-checkbox",
+        "name": "Inline Checkbox"
+      },
+      {
+          "slug": "radio-field",
+          "name": "Radio Field"
+      },
+      {
+          "slug": "select-field",
+          "name": "Select Field"
+      },
+      {
+          "slug": "text-field",
+          "name": "Text Field"
+      },
+      {
+          "slug": "textarea-field",
+          "name": "Textarea Field"
+      }
+  ]
+}

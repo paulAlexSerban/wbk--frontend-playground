@@ -1,0 +1,32 @@
+@import "../../_00_abstracts/abstracts.scss";
+$breakpoints: $column-grid-12;
+$useModules: true;
+$block: "generic";
+
+/* ------------------------------------ *\
+ * GENERIC TEMPLATE
+\* ------------------------------------ */
+
+.#{$block} {
+    @include e("header", "main", "footer") {
+        max-width: $max-width;
+        margin: 0 auto;
+        min-height: 100%;
+    }
+
+    @include e("main") {
+
+        max-width: $max-width;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: minmax(100px, 25%) 1fr;
+        column-gap: $gutter * 3;
+        margin-top: $baseline* 5;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

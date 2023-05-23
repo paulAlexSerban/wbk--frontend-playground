@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "stopwatch",
+  "componentName": "Stopwatch",
+  "variations": [
+      {
+          "slug": "stopwatch",
+          "name": "Stopwatch"
+      }
+  ]
+}

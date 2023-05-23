@@ -1,0 +1,6 @@
+{
+  "category": "molecules",
+  "componentSlug": "alert",
+  "componentName": "Alert",
+  "variations": [{ "slug": "alert", "name": "Alert" }]
+}

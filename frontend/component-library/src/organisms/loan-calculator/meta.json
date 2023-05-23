@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "loan-calculator",
+  "componentName": "Load Calculator",
+  "variations": [
+      {
+          "slug": "loan-calculator",
+          "name": "Load Calculator"
+      }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "category": "organisms",
+  "componentSlug": "movie-seat-booking",
+  "componentName": "Movie Seat Booking",
+  "variations": [
+      {
+          "slug": "movie-seat-booking",
+          "name": "Movie Seat Booking"
+      }
+  ]
+}

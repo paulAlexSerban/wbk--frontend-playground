@@ -1,0 +1,68 @@
+@use "sass:math";
+/* ------------------------------------ *\
+ * NAVIGATION-TABS-JS
+\* ------------------------------------ */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+$block: "navigation-tabs-css";
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column);
+    }
+
+    @include e("tabs-list") {
+        @include flex();
+        column-gap: math.div($gutter, 2);
+    }
+
+    @include e("tab") {
+        @extend %padding-16;
+        @extend %margin-bottom-8;
+        @extend %display-inline-block;
+        background: get-color($c-dark, eerie-black);
+        color: get-color($c-light, cultured);
+        cursor: pointer;
+        border-radius: 3px 3px 0 0;
+    }
+
+    @include e("panels-list") {
+        @extend %padding-32;
+        min-height: 200px;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    @include e("panel") {
+        display: none;
+        animation: fadein 0.8s;
+    }
+
+    @include e("radio") {
+        display: none;
+
+        &--one:checked ~ .#{$block}__panels-list .#{$block}__panel--one,
+        &--two:checked ~ .#{$block}__panels-list .#{$block}__panel--two,
+        &--three:checked ~ .#{$block}__panels-list .#{$block}__panel--three {
+            display: block;
+        }
+
+        &--one:checked ~ .#{$block}__tabs-list .#{$block}__tab--one,
+        &--two:checked ~ .#{$block}__tabs-list .#{$block}__tab--two,
+        &--three:checked ~ .#{$block}__tabs-list .#{$block}__tab--three {
+            background: get-color($c-light, cultured);
+            color: get-color($c-dark, eerie-black);
+            border-top: 3px solid get-color($c-dark, eerie-black);
+            border-bottom: 1px solid get-color($c-dark, eerie-black);
+        }
+    }
+}
