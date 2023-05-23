@@ -4,9 +4,9 @@
     "description": "",
     "scripts": {
         "getAssets": "rm -rfv ./dist/* && mkdir ./dist/assets && cp -rfv ../../assets/dist/* ./dist/assets",
-        "watch": "npm run getAssets && export NODE_ENV=development && webpack serve --config webpack.dev.js --hot --progress",
-        "dev": "export NODE_ENV=development && webpack --config webpack.dev.js",
-        "build": "export NODE_ENV=production && webpack --config webpack.prod.js"
+        "watch": "npm run getAssets && export NODE_ENV=development && webpack serve --config build/webpack.dev.js --hot --progress",
+        "dev": "export NODE_ENV=development && webpack --config build/webpack.dev.js",
+        "build": "export NODE_ENV=production && webpack --config build/webpack.prod.js"
     },
     "dependencies": {
         "@babel/plugin-proposal-class-properties": "^7.18.6",
