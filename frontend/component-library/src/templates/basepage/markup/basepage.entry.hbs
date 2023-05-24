@@ -1,4 +1,13 @@
 <body class='grid'>
   <link rel="stylesheet" href="../basepage/style.css">
-  basepage
+  <link rel="stylesheet" href="style.css">
+
+  {{#if hasJS}}
+    <script async defer src="script.js"></script>
+  {{/if}}
+
+  <div class="col">
+    {{> @partial-block}}
+  </div>
+  
 </body>
