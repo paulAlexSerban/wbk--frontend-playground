@@ -2,10 +2,10 @@ $block: "input";
 
 .#{$block} {
     @include e("input") {
-        @extend %padding-16;
-        @extend %border-radius-3;
-        @extend %margin-bottom-16;
-        @extend %size-fill-horizontal;
+        padding: 16px;
+        border-radius: 3px;
+        margin-bottom: 16px;
+        width: 100%;
 
         border: 1px solid get-color($c-gray, sonic-silver);
 
@@ -26,7 +26,7 @@ $block: "input";
 
     @include e("label") {
         @include font($label);
-        @extend %margin-bottom-8;
-        @extend %display-inline-block;
+        margin-bottom: 8px;
+        display: inline-block;
     }
 }

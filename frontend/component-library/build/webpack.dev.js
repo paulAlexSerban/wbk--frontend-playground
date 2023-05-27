@@ -1,7 +1,7 @@
 // import required dependencies
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
-const constants = require("./paths");
+const constants = require("./configs/paths");
 
 // export webpack configuration
 module.exports = (env) =>

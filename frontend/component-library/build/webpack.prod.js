@@ -2,12 +2,14 @@ const { merge } = require("webpack-merge");
 // import required dependencies
 const common = require("./webpack.common.js");
 const TerserPlugin = require("terser-webpack-plugin");
-const constants = require("./paths");
+const config = require("./configs");
+
+const { paths } = config;
 
 // export webpack configuration
 module.exports = (env) =>
     merge(common, {
-        mode: constants.NODE_ENV,
+        mode: paths.NODE_ENV,
         module: {
             rules: [
                 {

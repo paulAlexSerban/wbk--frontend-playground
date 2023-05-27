@@ -6,7 +6,7 @@ $block: "fieldset";
 
 .#{$block} {
     @include e("base") {
-        @extend %margin-top-32;
+        margin-top: 32px;
         @include relative();
     }
 

@@ -25,9 +25,9 @@ $block: "navigation-tabs-css";
     }
 
     @include e("tab") {
-        @extend %padding-16;
-        @extend %margin-bottom-8;
-        @extend %display-inline-block;
+        padding: 16px;
+        margin-bottom: 8px;
+        display: inline-block;
         background: get-color($c-dark, eerie-black);
         color: get-color($c-light, cultured);
         cursor: pointer;
@@ -35,7 +35,7 @@ $block: "navigation-tabs-css";
     }
 
     @include e("panels-list") {
-        @extend %padding-32;
+        padding: 32px;
         min-height: 200px;
         width: 100%;
         border-radius: 3px;

@@ -11,7 +11,7 @@ $block: "navigation-tabs-js";
 
     @include e("tab-list") {
         @include flex();
-        @extend %margin-bottom-16;
+        margin-bottom: 16px;
 
         column-gap: $gutter;
     }

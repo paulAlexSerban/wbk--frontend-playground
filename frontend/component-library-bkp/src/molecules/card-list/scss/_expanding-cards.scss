@@ -5,7 +5,7 @@ $block-expanding: "expanding-cards";
 
 .#{$block-expanding} {
     @include e("base") {
-        @extend %size-fill-horizontal;
+        width: 100%;
 
         @include flex();
     }

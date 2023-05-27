@@ -8,35 +8,35 @@ $block: "weather-app";
 .#{$block} {
     @include e("base") {
         @include flex($direction: column);
-        @extend %margin-bottom-16;
-        @extend %padding-16;
+        margin-bottom: 16px;
+        padding: 16px;
         background-color: get-color($c-red, fuzzy-wuzzy);
     }
 
     @include e("weather", "details-container") {
         @include flex($direction: column);
-        @extend %margin-bottom-16;
-        @extend %padding-16;
+        margin-bottom: 16px;
+        padding: 16px;
         background: get-color($c-light, cultured);
         width: 75%;
     }
 
     @include e("details") {
         @include flex();
-        @extend %margin-bottom-8;
+        margin-bottom: 8px;
         @include font($body);
         color: var(--text-color);
         column-gap: $gutter;
     }
 
     @include e("buttons") {
-        @extend %margin-bottom-16;
-        @extend %padding-16;
+        margin-bottom: 16px;
+        padding: 16px;
         width: 75%;
     }
 
     @include e("temp-info") {
-        @extend %margin-bottom-8;
+        margin-bottom: 8px;
         @include font($page-title);
         color: get-color($c-red, fuzzy-wuzzy);
     }

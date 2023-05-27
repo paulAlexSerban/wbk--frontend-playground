@@ -36,10 +36,10 @@ $color-patterns: (
     @include element("base") {
         @include font($button);
         @include use-extends((cursor-pointer, display-inline-block, no-border));
-        @extend %padding-16;
+        padding: 16px;
 
         &:disabled {
-            @extend %cursor-not-allowed;
+            cursor: not-allowed;
 
             background-color: get-color($c-light, gainsboro-white);
         }
@@ -74,7 +74,7 @@ $color-patterns: (
         }
 
         @include m("rounded") {
-            @extend %border-radius-6;
+            border-radius: 6px;
         }
     }
 }

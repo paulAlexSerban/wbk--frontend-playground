@@ -6,7 +6,7 @@
 
 .digital-clock {
     @include e("base") {
-        @extend %size-fill-horizontal;
+        width: 100%;
 
         @include flex();
     }

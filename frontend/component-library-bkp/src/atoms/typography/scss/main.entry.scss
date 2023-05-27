@@ -46,16 +46,16 @@ $block-h: "heading";
         }
 
         @include m("is-center-aligned") {
-            @extend %center-text;
+            text-align: center;
         }
 
         @include m("is-right-aligned") {
-            @extend %right-text;
+            text-align: right;
         }
     }
 
     @include e("main", "subheading") {
-        @extend %display-block;
+        display: block;
     }
 
     @include e("subheading") {
