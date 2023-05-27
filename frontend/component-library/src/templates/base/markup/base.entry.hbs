@@ -1,7 +1,8 @@
 {{#> ./partials/_base title='Base Page Template'}}
-  {{#> ../../../layouts/grid/markup/partials/_12-col-flexbox-grid  isBody=true}}
+  <link rel="stylesheet" href="/layouts/grid/12-col-flexbox-grid.css">
+  
+  <body class='grid'>
+    {{title}}
+  </body>
 
-      {{title}}
-
-  {{/ ../../../layouts/grid/markup/partials/_12-col-flexbox-grid}}
 {{/ ./partials/_base}}
