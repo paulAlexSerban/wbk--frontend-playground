@@ -30,7 +30,7 @@ $block: "pat-table";
 
     @include e("header") {
         background-color: var(--text-color);
-        color: var(--background-color);
+        color: var(--background-color-generic);
     }
 
     @include e("row") {

@@ -5,14 +5,11 @@
 \* ------------------------------------ */
 
 a {
-    color: var(--color-link);
+    color: var(--text-link-color);
+    text-decoration: none;
 
-    &:hover {
-        color: var(--color-link-hover);
-    }
-
-    &,
-    &:hover {
-        text-decoration: none;
+    @include on-event() {
+        color: var(--text-link-color-hover);
+        text-decoration: underline;
     }
 }

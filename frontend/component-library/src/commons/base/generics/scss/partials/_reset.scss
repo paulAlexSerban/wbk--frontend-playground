@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------------------------------------------- *\
-  * BOX-SIZING
-  *
+  * 1 - Box-sizing
+  * 
   * Make all elements from DOM inherit from parent box-sizing
   * Since `*` has a specificity of 0, it does not override the `html` value making all elements inheriting
   * from the root box-sizing value
@@ -9,44 +9,41 @@
   *
   * More sensible default box-sizing:
   * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+
+  * ----------------------------------------------------------------------------
+  * 2. Remove browser margin and padding
+
+  * ----------------------------------------------------------------------------
+  * 3. Images
+  * Remove the border on images inside links in IE 10.
+  * Make images fluid
 \* ---------------------------------------------------------------------------------------------------------------- */
 
 html {
-  box-sizing: border-box;
+    /* 1 */
+    box-sizing: border-box;
 }
 
 * {
   &,
   &::before,
   &::after {
+      /* 1 */
       box-sizing: inherit;
+      /* 2 */
+      margin: 0;
+      padding: 0;
   }
 }
 
-
-/* ---------------------------------------------------------------------------------------------------------------- *\
-  * Remove browser margin and padding
-\* ---------------------------------------------------------------------------------------------------------------- */
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-}
-
 fieldset {
+    /* 2 */
     padding: 0;
     border: none;
 }
 
-/* ---------------------------------------------------------------------------------------------------------------- *\
-  * IMAGES
-  * 1. Remove the border on images inside links in IE 10.
-  * 2. Make images fluid
-\* ---------------------------------------------------------------------------------------------------------------- */
-
 img {
+  /* 3 */
     height: auto;
     border: none;
     display: block;
@@ -60,13 +57,13 @@ img {
 \* ---------------------------------------------------------------------------------------------------------------- */
 
 main {
-  display: block;
-  box-sizing: border-box;
+    display: block;
+    box-sizing: border-box;
 }
 
 ::selection {
-    background-color: get-color($c-dark, eerie-black);
-    color: get-color($c-light, cultured);
+    background-color: var(--text-selection-background-color);
+    color: var(--text-selection-color);
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- *\

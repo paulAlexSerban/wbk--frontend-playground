@@ -22,10 +22,10 @@
 :root {
   --text-color: #{get-color($c-dark, eerie-black)};
   --brand-color: #{get-color($c-gray, davys-grey)};
-  --color-link: #{get-color($c-dark, eerie-black)};
-  --color-link-hover: #{get-color($c-gray, ebony)};
-  --background-color: #{get-color($c-light, ivory)};
-  --text-code: #{$font-family-ubuntu};
+  --text-link-color: #{get-color($c-dark, eerie-black)};
+  --text-link-color-hover: #{get-color($c-gray, ebony)};
+  --background-color-generic: #{get-color($c-light, ivory)};
+  --text-font-family-code: #{$font-family-ubuntu};
   --secondary-color: #{get-color($c-gray, timberwolf)};
 }
 

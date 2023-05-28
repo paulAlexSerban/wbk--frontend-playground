@@ -12,7 +12,7 @@ const roboto = Roboto({
     subsets: ["latin"],
     weight: ["400", "700", "900"],
     style: ["normal"],
-    variable: "--text-regular",
+    variable: "--text-font-family-regular",
 });
 
 export default function Index({ atoms, molecules, organisms, templates }) {

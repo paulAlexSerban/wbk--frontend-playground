@@ -15,33 +15,14 @@ html {
     font-size: convert-rem(16px);
 }
 
-/**
- * Basic styles for links
- * 1. Remove the gray background on active links in IE 10.
- */
-
-a {
-    color: var(--brand-color);
-    text-decoration: none;
-    background-color: transparent; /* 1 */
-
-    @include on-event() {
-        color: var(--text-color);
-        text-decoration: underline;
-    }
-}
-
 /* Sections
    ========================================================================== */
 
 body {
-    @include flex($direction: column, $main: flex-start);
 
-    padding: 0;
-    margin: 0;
     position: relative;
 
-    background-color: get-color($c-light, light);
+    background-color: var(--background-color-generic);
     min-height: 100vh;
 
     > * {

@@ -10,12 +10,12 @@ $block: "movie-seat-booking";
     // --color-page-background: #{get-color($c-light, light)};
     // --color-button-label: #{get-color($c-light, light)};
     // --color-container-background: #{get-color($c-light, cultured)};
-    // --color-link: #{get-color($c-blue, indigo-blue)};
+    // --text-link-color: #{get-color($c-blue, indigo-blue)};
     // --color-success: #{get-color($c-green, emerald)};
     // --color-danger: #{get-color($c-red, cinnabar)};
     // --color-button-primary: #{get-color($c-blue, carolina-blue)};
-    // --text-regular: #{$font-family-lato}; /* regular font family */
-    // --text-code: #{$font-family-courierPrime}; /* code family */
+    // --text-font-family-regular: #{$font-family-lato}; /* regular font family */
+    // --text-font-family-code: #{$font-family-courierPrime}; /* code family */
 
     @include e("base") {
         @include flex($direction: column);

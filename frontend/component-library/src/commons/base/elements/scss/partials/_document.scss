@@ -17,11 +17,9 @@
  */
 
 html {
-    font-family: var(--text-regular);
+    font-family: var(--text-font-family-regular);
     color: var(--text-color);
-    background-color: var(--background-color);
-    font-size: convert-rem(16px);
-    line-height: 1;
+    background-color: var(--background-color-generic);
     overflow-y: scroll;
     min-height: 100%;
 }

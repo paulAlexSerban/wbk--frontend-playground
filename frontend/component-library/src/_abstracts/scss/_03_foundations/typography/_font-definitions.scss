@@ -4,7 +4,7 @@
 
 $body: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(17px),
         line-height: convert-rem(23px),
         font-weight: font-weight(regular),
@@ -22,7 +22,7 @@ $body: (
 
 $code: (
     default: (
-        font-family: var(--text-code),
+        font-family: var(--text-font-family-code),
         font-size: convert-rem(15px),
         line-height: convert-rem(20px),
         font-weight: font-weight(thin),
@@ -40,7 +40,7 @@ $code: (
 
 $button: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(17px),
         line-height: convert-rem(18px),
         font-weight: font-weight(regular),
@@ -60,7 +60,7 @@ $page-title: (
     default: (
         --page-title-font-size: convert-rem(48px),
         --page-title-line-height: convert-rem(58px),
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-weight: var(--font-weight--page-title),
         font-size: var(--page-title-font-size),
         line-height: var(--page-title-line-height),
@@ -81,7 +81,7 @@ $heading-100: (
     default: (
         --heading-font-size: convert-rem(48px),
         --heading-line-height: convert-rem(58px),
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: var(--heading-font-size),
         line-height: var(--heading-line-height),
         font-weight: var(--font-weight--heading),
@@ -102,7 +102,7 @@ $heading-200: (
     default: (
         --heading-font-size: convert-rem(34px),
         --heading-line-height: convert-rem(38px),
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: var(--heading-font-size),
         line-height: var(--heading-line-height),
         font-weight: var(--font-weight--heading),
@@ -123,7 +123,7 @@ $heading-300: (
     default: (
         --heading-font-size: convert-rem(27px),
         --heading-line-height: convert-rem(33px),
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: var(--heading-font-size),
         line-height: var(--heading-line-height),
         font-weight: var(--font-weight--heading),
@@ -147,7 +147,7 @@ $heading-400: (
     default: (
         --heading-font-size: convert-rem(20px),
         --heading-line-height: convert-rem(26px),
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: var(--heading-font-size),
         line-height: var(--heading-line-height),
         font-weight: var(--font-weight--heading),
@@ -170,7 +170,7 @@ $heading-400: (
 
 $body-bold: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(17px),
         line-height: convert-rem(23px),
         font-weight: 700,
@@ -187,7 +187,7 @@ $body-bold: (
 
 $body-small: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(14px),
         font-weight: 400,
         line-height: convert-rem(22px),
@@ -207,7 +207,7 @@ $body-small: (
 
 $body-large: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(19px),
         font-weight: 400,
         line-height: convert-rem(27px),
@@ -227,7 +227,7 @@ $body-large: (
 
 $button-large: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(20px),
         line-height: convert-rem(21px),
         font-weight: var(--font-weight--button),
@@ -245,7 +245,7 @@ $button-large: (
 
 $button-small: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(12px),
         line-height: convert-rem(13px),
         font-weight: var(--font-weight--button),
@@ -263,7 +263,7 @@ $button-small: (
 
 $link: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(16px),
         line-height: convert-rem(18px),
         font-weight: normal,
@@ -282,7 +282,7 @@ $link: (
 
 $label: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(15px),
         line-height: convert-rem(20px),
         font-weight: 400,
@@ -296,7 +296,7 @@ $label: (
 
 $label-bold: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(15px),
         font-weight: 700,
         line-height: convert-rem(20px),
@@ -309,7 +309,7 @@ $label-bold: (
 
 $input: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(16px),
         line-height: convert-rem(18px),
         font-weight: 400,
@@ -319,7 +319,7 @@ $input: (
 
 $input-message: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(14px),
         line-height: convert-rem(16px),
         font-weight: 300,
@@ -329,7 +329,7 @@ $input-message: (
 
 $select: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(14px),
         line-height: convert-rem(16px),
         font-weight: 400,
@@ -339,7 +339,7 @@ $select: (
 
 $blockquote: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(27px),
         font-weight: 400,
         line-height: convert-rem(40px),
@@ -358,7 +358,7 @@ $blockquote: (
 
 $overline: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(8px),
         line-height: convert-rem(10px),
         font-weight: 700,
@@ -379,7 +379,7 @@ $overline: (
 
 $showcase: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(14px),
         line-height: convert-rem(16px),
         font-weight: 200,
@@ -390,7 +390,7 @@ $showcase: (
 
 $alert-title: (
     default: (
-        font-family: var(--text-regular),
+        font-family: var(--text-font-family-regular),
         font-size: convert-rem(22px),
         line-height: convert-rem(32px),
         letter-spacing: 0,
