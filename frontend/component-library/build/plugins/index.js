@@ -15,10 +15,11 @@ const plugins = [
     // extract CSS styles into separate files
     new MiniCssExtractPlugin({
         filename: (all) => {
-            const categorySlug = all.chunk.name.split(".")[0];
-            const componentSlug = all.chunk.name.split(".")[1];
-            const variantSlug = all.chunk.name.split(".")[2].split('-').splice(1).join('-');
-            return `${categorySlug}/${componentSlug}/${variantSlug}.css`;
+            const groupSlug = all.chunk.name.split(".")[0];
+            const categorySlug = all.chunk.name.split(".")[1];
+            const componentSlug = all.chunk.name.split(".")[2];
+            const variantSlug = all.chunk.name.split(".")[3].split('-').splice(1).join('-');
+            return `${groupSlug}/${categorySlug}/${componentSlug}/${variantSlug}.css`;
         },
     }),
     new CopyWebpackPlugin({

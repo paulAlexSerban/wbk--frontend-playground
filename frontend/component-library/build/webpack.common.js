@@ -18,20 +18,20 @@ module.exports = {
     resolve: {
         modules: [path.join(__dirname, "../node_modules")],
         alias: {
-            ScssAbstracts: path.join(cwd, "src", "_commons", "scss", "_01_abstracts", "abstracts.scss"),
-        }
+            ScssAbstracts: path.join(cwd, "src", "_abstracts", "scss", "abstracts.scss"),
+        },
     },
     output: {
         filename: ({ chunk }) => {
-                const categorySlug = chunk.name.split(".")[0];
-                const componentSlug = chunk.name.split(".")[1];
-                const variantSlug = chunk.name.split(".")[2];
-                if(variantSlug.includes('miniCssExtract')) {
-                    return `.miniCssExtract/${variantSlug}.js`;
-                } else {
-                    return `${categorySlug}/${componentSlug}/${variantSlug}.js`;
-                }
-
+            const groupSlug = chunk.name.split(".")[0];
+            const categorySlug = chunk.name.split(".")[1];
+            const componentSlug = chunk.name.split(".")[2];
+            const variantSlug = chunk.name.split(".")[3];
+            if (variantSlug.includes("miniCssExtract")) {
+                return `.miniCssExtract/${variantSlug}.js`;
+            } else {
+                return `${groupSlug}/${categorySlug}/${componentSlug}/${variantSlug}.js`;
+            }
         },
         path: paths.DIST_DIR,
         publicPath: process.env.PUBLIC_PATH || "/",
