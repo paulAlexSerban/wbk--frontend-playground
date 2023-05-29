@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.9.0...v1.9.1) (2023-05-29)
+
+
+### Bug Fixes
+
+* gh-pages ([71be52d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/71be52d542b45bed6695ad2fa1c5163add957973))
+
 # [1.9.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.8.0...v1.9.0) (2023-05-29)
 
 
