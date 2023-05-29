@@ -1,0 +1,23 @@
+/* ------------------------------------ *\
+ * #FOOTER
+\* ------------------------------------ */
+
+$type: "mod";
+$block: "#{$type}-footer";
+
+.#{$block} {
+    @include e("base") {
+        border-top: 1px solid get-color($c-gray, sonic-silver);
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    @include e("container") {
+        margin-bottom: 32px;
+    }
+
+    @include e("copyright") {
+        @include font($body-small);
+        color: get-color($c-gray, battleship-grey);
+    }
+}

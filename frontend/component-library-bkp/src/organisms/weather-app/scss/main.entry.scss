@@ -1,0 +1,52 @@
+@import "~ScssAbstracts";
+/* ------------------------------------ *\
+ * WEATHER-APP STYLES
+\* ------------------------------------ */
+
+$block: "weather-app";
+
+.#{$block} {
+    @include e("base") {
+        @include flex($direction: column);
+        margin-bottom: 16px;
+        padding: 16px;
+        background-color: get-color($c-red, fuzzy-wuzzy);
+    }
+
+    @include e("weather", "details-container") {
+        @include flex($direction: column);
+        margin-bottom: 16px;
+        padding: 16px;
+        background: get-color($c-light, cultured);
+        width: 75%;
+    }
+
+    @include e("details") {
+        @include flex();
+        margin-bottom: 8px;
+        @include font($body);
+        color: var(--text-color);
+        column-gap: $gutter;
+    }
+
+    @include e("buttons") {
+        margin-bottom: 16px;
+        padding: 16px;
+        width: 75%;
+    }
+
+    @include e("temp-info") {
+        margin-bottom: 8px;
+        @include font($page-title);
+        color: get-color($c-red, fuzzy-wuzzy);
+    }
+
+    @include e("buttons-group") {
+        @include flex();
+
+        &,
+        * {
+            width: 75%;
+        }
+    }
+}

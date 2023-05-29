@@ -1,6 +1,7 @@
 {
-    "name": "prj--frontend-component-collection",
-    "version": "1.8.0",
+    "name": "prj--js-component-lib",
+    "version": "1.3.0",
+
     "description": "",
     "main": "index.js",
     "scripts": {

@@ -1,9 +1,0 @@
-$type: "mod";
-$block: "#{$type}-section";
-
-.#{$block} {
-    @include e("base") {
-        @include flex($direction: column, $main: flex-start, $cross: flex-start);
-        @extend %margin-bottom-64;
-    }
-}
