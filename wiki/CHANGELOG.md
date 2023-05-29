@@ -1,3 +1,27 @@
+# [1.9.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.8.0...v1.9.0) (2023-05-29)
+
+
+### Bug Fixes
+
+* **modulize:** update modulize ([7cb16ae](https://github.com/paulAlexSerban/prj--js-component-lib/commit/7cb16ae04f870b44bf224d491388cd75e36df5ff))
+
+
+### Features
+
+* adjustments ([2409dfa](https://github.com/paulAlexSerban/prj--js-component-lib/commit/2409dfa68d7fcb7716b9942fa944094c4a7e1bd3))
+* **assets:** added modulize scripts in assets ([e379fa4](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e379fa4a9e131a5c4eee03f998bd813b5be4377f))
+* **component library:** added nginx ([d1f4869](https://github.com/paulAlexSerban/prj--js-component-lib/commit/d1f48693bde8739fcaf680b1a81ac8ef0b55b03b))
+* **geenrics to reset:** refined ([a2ad2d3](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a2ad2d36273cafa2d1c1e47d3cc034564877ce3e))
+* removed layout markup as only the css is needed ([e1ecea2](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e1ecea27730f37bffd62d00559a779a5e8cd5bfd))
+* removed webpack dev server and did some css experiemntrs ([7a82420](https://github.com/paulAlexSerban/prj--js-component-lib/commit/7a82420ceccb185d024271c0c76cb209ae874ac2))
+* restructured build and hbs templates ([47b61d6](https://github.com/paulAlexSerban/prj--js-component-lib/commit/47b61d64b12a1d9860766d05ffd34b5c39a02ab7))
+* **structure:** adjusted structure ([85c2570](https://github.com/paulAlexSerban/prj--js-component-lib/commit/85c2570404eec163003f3fe6c704e52caaff650f))
+
+
+### Performance Improvements
+
+* **prep:** prepare cmp lib for new structure ([392d261](https://github.com/paulAlexSerban/prj--js-component-lib/commit/392d26199b1234544385ef297c70c71b851aa82a))
+
 # [1.8.0](https://github.com/paulAlexSerban/prj--frontend-component-collection/compare/v1.7.0...v1.8.0) (2023-05-22)
 
 
