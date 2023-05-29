@@ -1,5 +1,7 @@
-{{#> ./partials/_base title='Base Page Template'}}
-  <link rel="stylesheet" href="/commons/layouts/grid/12-col-flexbox-grid.css">
+{{#> ./partials/_base-boilerplate title='Base Page Template'}}
+  <link rel="stylesheet" href="/commons/themes/base/base-auto.css">
+  <link rel="stylesheet" href="/system/templates/base/base.css">
+  <link rel="stylesheet" href="/commons/base/elements/typography--mixins.css">
 
   <body class='grid'>
     <header>
@@ -14,6 +16,21 @@
           <h4>Heading 4</h4>
           <h5>Heading 5</h5>
           <h6>Heading 6</h6>
+        </article>
+
+        <article>
+          <h1>
+            <span>Heading 1 Main</span>
+            <span>Heading 1 Subheading</span>
+          </h1>
+          <h2>
+            <span>Heading 2 Main</span>
+            <span>Heading 2 Subheading</span>
+          </h2>
+          <h3>
+            <span>Heading 3 Main</span>
+            <span>Heading 3 Subheading</span>
+          </h3>
         </article>
 
         <article>
@@ -76,6 +93,12 @@
           </ul>
         </article>
       </section>
+
+      <article>
+        <code>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsam vero expedita nulla, harum sunt maiores ea ducimus autem, sapiente dolor ratione nam quas! Cum hic necessitatibus soluta fuga deleniti!
+        </code>
+      </article>
     </main>
 
 
@@ -84,4 +107,4 @@
 
   </body>
 
-  {{/ ./partials/_base}}
+  {{/ ./partials/_base-boilerplate}}

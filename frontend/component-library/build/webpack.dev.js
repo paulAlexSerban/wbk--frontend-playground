@@ -7,20 +7,19 @@ const constants = require("./configs/paths");
 module.exports = (env) =>
     merge(common, {
         mode: constants.NODE_ENV,
-        devServer: {
-            port: 9000,
-            compress: true,
-            static: {
-                directory: constants.DIST_DIR,
-            },
-            devMiddleware: {
-                index: "index.html",
-                writeToDisk: true,
-            },
-            client: {
-                overlay: true,
-            },
-        },
+        watch: true,
+        watchOptions: {
+            ignored: /node_modules/,
+          },
+          stats: {
+            assets: true,
+            cachedModules: false,
+            cachedAssets: false,
+            chunks: false,
+            colors: true,
+            depth: true,
+            entrypoints: false,
+          },
         module: {
             rules: [
                 {
