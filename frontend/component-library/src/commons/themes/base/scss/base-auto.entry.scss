@@ -1,0 +1,21 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+  #THEMES
+\* ------------------------------------ */
+
+:root {
+    --text-color: #{get-color($c-dark, eerie-black)};
+    --text-selection-color: #{get-color($c-light, cultured)};
+    --text-selection-background-color: #{get-color($c-dark, eerie-black)};
+
+    --text-link-color: #{get-color($c-gray, davys-grey)};
+    --text-link-color-hover: #{get-color($c-blue, dark-liver)};
+
+    --brand-color: #{get-color($c-red, ua-red)};
+
+    --background-color-generic: #{get-color($c-light, light)};
+
+    --text-font-family-regular: #{$font-family-openSans};
+    --text-font-family-code: #{$font-family-courierPrime};
+}
