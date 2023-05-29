@@ -22,4 +22,25 @@ html {
     background-color: var(--background-color-generic);
     overflow-y: scroll;
     min-height: 100%;
+    line-height: 1.15;
+    font-size: convert-rem(16px);
+    position: relative;
+
+    > * {
+        width: 100%;
+    }
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main,
+details,
+menu {
+    display: block;
 }
