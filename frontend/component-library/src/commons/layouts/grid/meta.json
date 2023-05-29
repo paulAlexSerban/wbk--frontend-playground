@@ -1,0 +1,29 @@
+{
+  "category": "layouts",
+  "componentSlug": "grid",
+  "name": "Grid",
+  "version": "1.0.0",
+  "description": "Grid layout",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["layout", "grid", "responsive", "flexbox"],
+  "variations": [
+      {
+          "slug": "12-col-flexbox-grid",
+          "name": "12 Col. Flexbox Grid",
+          "description": "12 Col. Flexbox Grid layout"
+      },
+      {
+        "slug": "12-span-grid",
+        "name": "12 Span Grid",
+        "description": "12 Span Grid layout with CSS Grid"
+      },
+      {
+        "slug": "minimalist-grid",
+        "name": "Minimalist Grid",
+        "description": "Minimalist Grid layout"
+      }
+  ]
+}

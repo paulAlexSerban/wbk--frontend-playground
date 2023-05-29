@@ -1,0 +1,18 @@
+$type: "cmp";
+$block: "#{$type}-radio";
+
+.#{$block} {
+    @include e("input") {
+        border-radius: 3px;
+        margin-right: 16px;
+        display: inline-block;
+    }
+
+    @include e("label") {
+        @include font($label);
+
+        margin-bottom: 8px;
+        display: inline-block;
+        cursor: pointer;
+    }
+}

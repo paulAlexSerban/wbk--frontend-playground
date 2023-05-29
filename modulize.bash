@@ -23,10 +23,10 @@ print_error() {
 }
 
 usage() {
-  print_error "Usage: $(basename "$0") [-e|--env ENV] [-p|--phase PHASE] [-m|--module MODULE]"
-  print_error "   - mandatory: -p|--phase PHASE"
-  print_error "   - mandatory: -e|--env ENV"
-  print_error "   - optional:  -m|--module MODULE"
+  print_error "Usage: $(basename "$0") [-e ENV] [-p PHASE] [-m MODULE]"
+  print_error "   - mandatory: -p PHASE"
+  print_error "   - mandatory: -e ENV"
+  print_error "   - optional:  -m MODULE"
   exit 1
 }
 
@@ -40,26 +40,17 @@ print_header() {
 }
 
 # Parse command-line options
-while :; do
-  case $1 in
-  -m | --module)
-    shift
-    MODULE="$1"
-    shift
-    ;;
-  -p | --phase)
-    shift
-    PHASE="$1"
-    shift
-    ;;
-  -e | --env)
-    shift
-    ENV="$1"
-    shift
-    ;;
-  *) break ;;
+while getopts ":m:p:e:" opt; do
+  case $opt in
+  m) MODULE="$OPTARG" ;;
+  p) PHASE="$OPTARG" ;;
+  e) ENV="$OPTARG" ;;
+  *) usage ;;
   esac
 done
+
+# Shift the options and arguments so that $1 refers to the first non-option argument
+shift $((OPTIND - 1))
 
 print_header
 # Validate command-line options
@@ -90,15 +81,13 @@ init() {
     fi
   }
 
+  local PROJECT_MODULES=("${INSTALL_PROJECT_MODULES[@]}")
+
+  if [[ $PHASE == "clean" ]] || [[ $PHASE == "uninstall" ]]; then
+    PROJECT_MODULES=("${UNINSTALL_PROJECT_MODULES[@]}")
+  fi
+
   init_submodules() {
-
-    local MODULE_NAME=$1
-    local PROJECT_MODULES=("${INSTALL_PROJECT_MODULES[@]}")
-
-    if [[ $PHASE == "clean" ]] || [[ $PHASE == "uninstall" ]]; then
-      PROJECT_MODULES=("${UNINSTALL_PROJECT_MODULES[@]}")
-    fi
-
     for i in "${PROJECT_MODULES[@]}"; do
       local MODULE_DIR=./${i}
       # Find all submodules inside the module directory and save them to an array
@@ -128,6 +117,7 @@ init() {
       fi
     done
   }
+
   if [[ -n "${MODULE}" ]]; then
     # Loop through the PROJECT_MODULES array and check if the MODULE exists
     for i in "${PROJECT_MODULES[@]}"; do

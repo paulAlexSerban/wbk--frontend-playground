@@ -159,7 +159,7 @@
 /// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
 
 @mixin make-container($breakpoints: $breakpoints) {
-  @extend %margin-centered;
+  margin: 0 auto;
 
   @include set-max-width-by-largest-breakpoint();
 
@@ -228,18 +228,18 @@
 @mixin no-gutter() {
   .no-gutter,
   .row.no-gutter [class*="col"] {
-    @extend %padding-right-0;
-    @extend %padding-left-0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .no-gutter--start,
   .row.no-gutter--start [class*="col"] {
-    @extend %padding-left-0;
+    padding-left: 0;
   }
 
   .no-gutter--end,
   .row.no-gutter--end [class*="col"] {
-    @extend %padding-right-0;
+    padding-right: 0;
   }
 }
 

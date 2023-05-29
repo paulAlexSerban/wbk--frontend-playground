@@ -1,0 +1,15 @@
+$type: "cmp";
+$block: "#{$type}-blockquote";
+
+.#{$block} {
+    @include e("base") {
+        @include font($blockquote);
+
+        font-style: italic;
+        color: get-color($c-gray, sonic-silver);
+
+        .mod-header__base & {
+            text-align: right;
+        }
+    }
+}
