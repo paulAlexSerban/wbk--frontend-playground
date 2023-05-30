@@ -27,9 +27,10 @@ jobs:
           node-version: 16.19.0
 
       - name: "🔧 Install npm@latest"
-        run: npm i -g npm@latest
+        run: npm i -g npm@latest  
 
-      - name: "📦  Install Nginx Development dependencies"
+
+      - name: "📦  Install Component Library Build dependencies"
         run: bash modulize.bash -e production -m component-library -p install 
 
       - name: "🏗️  Build Frontend Component Library"
