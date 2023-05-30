@@ -7,6 +7,7 @@ const DeleteScssPrefixedDirectoriesPlugin = require("./DeleteScssPrefixedDirecto
 const utils = require("../utils");
 const { getEntries } = utils;
 const { htmlWebpackPluginPages, metaEntries, readmeEntries } = getEntries();
+const MergeJsonWebpackPlugin = require('./MergeJsonWebpackPlugin');
 
 
 const plugins = [
@@ -29,6 +30,10 @@ const plugins = [
     // generate HTML file using *.hbs files as source
     ...Object.values(htmlWebpackPluginPages),
     new DeleteScssPrefixedDirectoriesPlugin(),
+    new MergeJsonWebpackPlugin({
+        files: metaEntries, // specify the input files here
+        output: 'componentList.json' // specify the output file here
+      })
 ];
 
 module.exports = plugins;

@@ -4,11 +4,12 @@ const configs = require("./configs");
 const plugins = require("./plugins");
 const utils = require("./utils");
 const { getEntries } = utils;
-const { jsEntriesObj, scssEntriesObj } = getEntries();
+const { jsEntriesObj, scssEntriesObj, metaEntries } = getEntries();
 const { paths, tasks } = configs;
 
 const cwd = process.cwd();
 
+console.log("metaEntries", metaEntries);
 // export webpack configuration
 module.exports = {
     entry: {

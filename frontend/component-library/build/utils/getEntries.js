@@ -65,10 +65,10 @@ const getEntries = () => {
         return accumulator;
     }, []);
 
-    const metaEntries = glob.sync(path.join(paths.SRC_DIR, "*", "*", "meta.json")).reduce((accumulator, metaEntry) => {
+    const metaEntries = glob.sync(path.join(paths.SRC_DIR, globGroupPatterns, globPatterns, "**", "meta.json")).reduce((accumulator, metaEntry) => {
         const categorySlug = metaEntry.split("/").slice(-3)[0];
         const componentSlug = metaEntry.split("/").slice(-2)[0];
-        accumulator.push({ from: metaEntry, to: `${categorySlug}/${componentSlug}` });
+        accumulator.push(metaEntry);
         return accumulator;
     }, []);
 
