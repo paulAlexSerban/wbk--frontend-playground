@@ -1,0 +1,44 @@
+api:
+  debug: true
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    exposedByDefault: false
+    defaultRule: "Host(`{{ trimSuffix `-suffix` (trimPrefix `prefix-` .Name) }}.localhost`)"
+
+log:
+  level: DEBUG
+
+accessLog:
+  filePath: "/var/log/traefik/access.log"
+  format: json
+  filters:
+    statusCodes:
+      - "200"
+      - "300-302"
+      - "404"
+      - "500-550"
+    retryAttempts: true
+    minDuration: "10ms"
+
+ping: {}
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: ":443"
+
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: serban.paul.91@gmail.com
+      storage: acme.json
+      tlsChallenge: {}
