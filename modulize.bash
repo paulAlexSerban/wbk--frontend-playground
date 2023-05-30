@@ -83,7 +83,7 @@ init() {
 
   local PROJECT_MODULES=("${INSTALL_PROJECT_MODULES[@]}")
 
-  if [[ $PHASE == "clean" ]] || [[ $PHASE == "uninstall" ]]; then
+  if [[ $PHASE == "clean" ]] || [[ $PHASE == "uninstall" ]] || [[ $PHASE == "docker-stop" ]]; then
     PROJECT_MODULES=("${UNINSTALL_PROJECT_MODULES[@]}")
   fi
 
@@ -106,7 +106,13 @@ init() {
       if [[ -f "./${i}/config.env" ]]; then
         . "./${i}/config.env"
 
-        for j in "${INSTALL_MODULE_SUBPROJECTS[@]}"; do
+        local PROJECT_SUBMODULES=("${INSTALL_MODULE_SUBPROJECTS[@]}")
+
+        if [[ $PHASE == "clean" ]] || [[ $PHASE == "uninstall" ]] || [[ $PHASE == "docker-stop" ]]; then
+          PROJECT_SUBMODULES=("${UNINSTALL_MODULE_SUBPROJECTS[@]}")
+        fi
+
+        for j in "${PROJECT_SUBMODULES[@]}"; do
           phase ./${i}/${j} ${PHASE} ${j}
         done
       else
