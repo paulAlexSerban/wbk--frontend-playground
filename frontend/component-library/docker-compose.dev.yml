@@ -18,10 +18,12 @@ services:
     labels:
       - traefik.enable=true
       # Routers
-      - traefik.http.routers.nginx-component-library.rule=Host(`component-library.localhost`)
       - traefik.http.routers.nginx-component-library.entrypoints=web
       - traefik.http.routers.nginx-component-library.middlewares=test-redirectscheme
+
+      - traefik.http.routers.nginx-component-library.rule=Host(`component-library.localhost`)
       - traefik.http.routers.nginx-component-library-secure.rule=Host(`component-library.localhost`)
+
       - traefik.http.routers.nginx-component-library-secure.entrypoints=websecure
       - traefik.http.routers.nginx-component-library-secure.tls.certresolver=myresolver
       - traefik.http.routers.nginx-component-library-secure.tls=true
@@ -30,6 +32,9 @@ services:
       - traefik.http.services.nginx-component-library-secure.loadbalancer.server.port=80
       # Middlewares
       - traefik.http.middlewares.test-compress.compress=true
+      - traefik.http.middlewares.test-ratelimit.ratelimit.average=100
+      - traefik.http.middlewares.test-ratelimit.ratelimit.burst=100
+      - traefik.http.middlewares.test-ratelimit.ratelimit.period=1s
       - traefik.http.middlewares.test-redirectscheme.redirectscheme.scheme=https
       - traefik.http.middlewares.test-redirectscheme.redirectscheme.permanent=true
       - traefik.http.middlewares.test-redirectscheme.redirectscheme.port=443
