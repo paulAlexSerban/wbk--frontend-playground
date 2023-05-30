@@ -20,8 +20,8 @@ services:
       - traefik.http.routers.dashboard.entrypoints=web
       - traefik.http.routers.dashboard.middlewares=test-redirectscheme
 
-      - traefik.http.routers.dashboard.rule=Host(`dashboard.localhost`)
-      - traefik.http.routers.dashboard-secure.rule=Host(`dashboard.localhost`)
+      - traefik.http.routers.dashboard.rule=Host(`localhost`)
+      - traefik.http.routers.dashboard-secure.rule=Host(`localhost`)
 
       - traefik.http.routers.dashboard-secure.entrypoints=websecure
       - traefik.http.routers.dashboard-secure.tls=true
