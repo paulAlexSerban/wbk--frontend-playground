@@ -6,7 +6,7 @@ const webpack = require("webpack");
 const DeleteScssPrefixedDirectoriesPlugin = require("./DeleteScssPrefixedDirectoriesPlugin");
 const utils = require("../utils");
 const { getEntries } = utils;
-const { htmlWebpackPluginPages, metaEntries, readmeEntries,assetsEntries } = getEntries();
+const { htmlWebpackPluginPages, metaEntries, readmeEntries } = getEntries();
 
 
 const plugins = [
@@ -21,9 +21,6 @@ const plugins = [
             const variantSlug = all.chunk.name.split(".")[3].split('-').splice(1).join('-');
             return `${groupSlug}/${categorySlug}/${componentSlug}/${variantSlug}.css`;
         },
-    }),
-    new CopyWebpackPlugin({
-        patterns: [...readmeEntries, ...metaEntries, ...assetsEntries],
     }),
     // clean the output directory before building
     new CleanWebpackPlugin(),
