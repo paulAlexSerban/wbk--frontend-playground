@@ -4,7 +4,6 @@ const configs = require("../configs");
 const globGroupPatterns = "{commons,library,system}";
 const globPatterns = "{base,layouts,themes,devTools,vendors,components,patterns,modules,widgets,templates,products}";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { paths } = configs;
 
 const generateHTMLWebpackPluginPages = (hbsEntries) => {
     return hbsEntries.reduce((accumulator, hbsEntry) => {
@@ -15,7 +14,7 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
         const metaFile = hbsEntry.split("/").slice(0, -2).join("/") + "/meta.json";
         accumulator[variationName] = new HtmlWebpackPlugin({
             template: hbsEntry,
-            filename: path.join(paths.DIST_DIR, groupSlug, categorySlug, componentSlug, `${variationName}.html`),
+            filename: path.join(configs.DIST_DIR, groupSlug, categorySlug, componentSlug, `${variationName}.html`),
             inject: false,
             chunks: ["runtime", "vendors", componentSlug],
         });
@@ -24,12 +23,12 @@ const generateHTMLWebpackPluginPages = (hbsEntries) => {
 };
 
 const getEntries = () => {
-    const jsEntries = glob.sync(path.join(paths.SRC_DIR, globGroupPatterns, globPatterns, "*", "js", "*.entry.js"));
+    const jsEntries = glob.sync(path.join(configs.SRC_DIR, globGroupPatterns, globPatterns, "*", "js", "*.entry.js"));
     const scssEntries = glob.sync(
-        path.join(paths.SRC_DIR, globGroupPatterns, globPatterns, "**", "scss", "*.entry.scss")
+        path.join(configs.SRC_DIR, globGroupPatterns, globPatterns, "**", "scss", "*.entry.scss")
     );
     const hbsEntries = glob.sync(
-        path.join(paths.SRC_DIR, globGroupPatterns, globPatterns, "*", "markup", "*.entry.hbs")
+        path.join(configs.SRC_DIR, globGroupPatterns, globPatterns, "*", "markup", "*.entry.hbs")
     );
 
     const jsEntriesObj = jsEntries.reduce((accumulator, jsEntry) => {
@@ -51,7 +50,7 @@ const getEntries = () => {
     }, {});
 
     const readmeEntries = glob
-        .sync(path.join(paths.SRC_DIR, "*", "*", "readme.mdx"))
+        .sync(path.join(configs.SRC_DIR, "*", "*", "readme.mdx"))
         .reduce((accumulator, readmeEntry) => {
             const categorySlug = readmeEntry.split("/").slice(-3)[0];
             const componentSlug = readmeEntry.split("/").slice(-2)[0];
@@ -59,13 +58,13 @@ const getEntries = () => {
             return accumulator;
         }, []);
 
-    const assetsEntries = glob.sync(path.join(paths.ASSETS_DIR, "*")).reduce((accumulator, assetEntry) => {
+    const assetsEntries = glob.sync(path.join(configs.ASSETS_DIR, "*")).reduce((accumulator, assetEntry) => {
         const categorySlug = assetEntry.split("/").slice(-1)[0];
         accumulator.push({ from: assetEntry, to: `assets/${categorySlug}` });
         return accumulator;
     }, []);
 
-    const metaEntries = glob.sync(path.join(paths.SRC_DIR, globGroupPatterns, globPatterns, "**", "meta.json")).reduce((accumulator, metaEntry) => {
+    const metaEntries = glob.sync(path.join(configs.SRC_DIR, globGroupPatterns, globPatterns, "**", "meta.json")).reduce((accumulator, metaEntry) => {
         const categorySlug = metaEntry.split("/").slice(-3)[0];
         const componentSlug = metaEntry.split("/").slice(-2)[0];
         accumulator.push(metaEntry);

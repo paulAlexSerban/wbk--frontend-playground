@@ -1,11 +1,11 @@
 // import required dependencies
 const path = require("path");
-const configs = require("./configs");
+const paths = require("./configs");
+const loaders = require("./loaders");
 const plugins = require("./plugins");
 const utils = require("./utils");
 const { getEntries } = utils;
 const { jsEntriesObj, scssEntriesObj, metaEntries } = getEntries();
-const { paths, tasks } = configs;
 
 const cwd = process.cwd();
 
@@ -39,7 +39,7 @@ module.exports = {
         clean: true,
     },
     module: {
-        rules: tasks,
+        rules: loaders,
     },
     plugins,
 };
