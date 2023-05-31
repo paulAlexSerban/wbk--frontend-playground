@@ -2,7 +2,7 @@ const glob = require("glob");
 const path = require("path");
 const configs = require("../configs");
 const globGroupPatterns = "{commons,library,system}";
-const globPatterns = "{base,layouts,themes,devTools,components,patterns,modules,widgets,templates,products}";
+const globPatterns = "{base,layouts,themes,devTools,vendors,components,patterns,modules,widgets,templates,products}";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { paths } = configs;
 

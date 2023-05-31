@@ -14,11 +14,13 @@ export default class UI {
 
     addBookToList(book) {
         const row = document.createElement("tr");
+        row.className = "row";
         row.innerHTML = `
-      <td>${book.title}</td>
-      <td>${book.author}</td>
-      <td>${book.isbn}</td>
-      <td><a href="#" class="delete">X<a></td>
+      <td class='col'>${book.title}</td>
+      <td class='col'>${book.author}</td>
+      <td class='col'>${book.isbn}</td>
+      <td class='col'>
+      <a href="#" class="delete">X</a></td>
     `;
 
         this.list.appendChild(row);
@@ -26,13 +28,13 @@ export default class UI {
 
     showAlert(message, className) {
         const div = document.createElement("div");
-        div.className = `alert ${className}`;
+        div.className = `alert ${className} col`;
         div.appendChild(document.createTextNode(message));
         this.container.insertBefore(div, this.form);
 
         setTimeout(() => {
             document.querySelector(".alert").remove();
-        }, 3000);
+        }, 30000);
     }
 
     deleteBook(target) {
