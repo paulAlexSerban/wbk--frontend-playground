@@ -8,6 +8,7 @@ source ../config.env
 while getopts ":m:p:e:" opt; do
   case $opt in
   e) ENV="$OPTARG" ;;
+  p) PHASE="$OPTARG" ;;
   *) usage ;;
   esac
 done
@@ -22,10 +23,20 @@ fi
 
 if [[ $ENV == "dev" ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
+  export ENV_NAME="local-docker"
 elif [[ $ENV == "gh_pages" ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
 elif [[ $ENV == 'prod' ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
+fi
+
+if [[ -z $PHASE ]]; then
+  PHASE=dev
+fi
+
+if [[ $PHASE == "watch" ]]; then
+  echo "Builing ${MODULE_NAME} in $PHASE mode"
+  export ENV_NAME="local-docker"
 fi
 
 # function getAssets() {

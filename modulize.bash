@@ -74,7 +74,7 @@ init() {
 
     if [[ -f "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" ]]; then
       print_info "${PHASE_NAME}ing ${BLUE}${PHASE_DIR}${NC}"
-      bash "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" -e $ENV
+      bash "${PHASE_PATH}/scripts/${PHASE_NAME}.bash" -e $ENV -p $PHASE
 
       # Print a message indicating that the module has been installed and how long it took
       print_info "${PHASE_NAME}ed ${BLUE}${PHASE_DIR}${NC}"

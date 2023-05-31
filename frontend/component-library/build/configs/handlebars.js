@@ -1,22 +1,20 @@
-const handlebars =             {
-  // use handlebars to compile HTML templates
-  test: /\.hbs$/,
-  use: [
-      {
-          loader: "handlebars-loader",
-          options: {
-              // helperDirs: path.resolve(__dirname, "../src/helpers"),
-              // partialDirs: path.resolve(__dirname, "../src/partials"),
-              // precompileOptions: {
-              //     knownHelpersOnly: false,
-              // },
-              // runtime: path.resolve(__dirname, "../src/helpers/handlebars.js"),
-              // data: path.resolve(__dirname, "../src/data/data.json"),
-              // inlineRequires: "/images/",
-              // rootRelative: "../../src/",
-          }
-      },
-  ],
+const path = require("path");
+const handlebars = {
+    // use handlebars to compile HTML templates
+    test: /\.hbs$/,
+    use: [
+        {
+            loader: "handlebars-loader",
+            options: {
+                knownHelpersOnly: false,
+                helperDirs: path.resolve(__dirname, "../helpers"),
+                partialDirs: [
+                    path.resolve(__dirname, "../../src/library"),
+                    path.resolve(__dirname, "../../src/system"),
+                ],
+            },
+        },
+    ],
 };
 
 module.exports = handlebars;
