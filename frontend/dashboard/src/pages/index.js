@@ -36,7 +36,7 @@ function Component({ component, groupName, categoryName }) {
 function Category({ categoryName, categoryContent, groupName }) {
   return (
       <li>
-          <details>
+          <details open>
               <summary>{formatString(categoryName)}</summary>
               <ul>
                   {categoryContent.map((component, index) => (

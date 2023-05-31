@@ -1,3 +1,5 @@
+@import "~ScssAbstracts";
+
 /* ------------------------------------ *\
  * SEARCH-HIDDEN
 \* ------------------------------------ */
@@ -8,8 +10,9 @@ $block: "search-hidden";
     @include e("base") {
         @include font($body);
         @include flex();
-        @include use-extends((margin-centered, padding-16));
 
+        margin-inline: auto;
+        padding: 16px;
         width: 75%;
     }
 

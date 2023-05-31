@@ -1,5 +1,5 @@
-import { findOne } from "../../../_commons/js/dom/traversing";
-import { toggleClass } from "../../../_commons/js/dom/manipulation";
+import { findOne } from "../../../../_abstracts/js/dom/traversing";
+import { toggleClass } from "../../../../_abstracts/js/dom/manipulation";
 
 (() => {
     const config = {
