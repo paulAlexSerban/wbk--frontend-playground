@@ -1,0 +1,28 @@
+{{#> ../../../../system/templates/base/markup/partials/_base-demo-container title='Alert - Pattern'}}
+
+    <link rel="stylesheet" href="/library/components/button/button.css">
+    <link rel="stylesheet" href="/library/patterns/alert/alert.css">
+    <script src="/library/patterns/alert/alert.js" async defer></script>
+
+  <div class="row" data-js-mod='Alert'>
+    <section class="alert__base alert__base--blue js-alert col">
+      <h3 class="alert__title">
+        Alert Title
+      </h3>
+      <p class="alert__text">
+        Alert text : lorem ipsum dolor sit amet, consectet
+      </p>
+      <span class="alert__closeIcon">&times;</span>
+      <div class="alert__linkWrapper">
+        <a class="alert__link js-alert-close" href="#link-url">
+          Link text
+        </a>
+
+        {{> ../../../components/button/markup/partials/_button
+            style="primary" type="button" label="Alter Action" classNames="alert__button"}}
+
+      </div>
+    </section>
+  </div>
+
+  {{/ ../../../../system/templates/base/markup/partials/_base-demo-container}}

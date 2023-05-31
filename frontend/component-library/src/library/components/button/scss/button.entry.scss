@@ -11,31 +11,33 @@ $block: "button";
 
 $color-patterns: (
     "primary": (
-        "background-color": "%bkg-color-primary",
-        "text-color": "%txt-color-white",
+        "background-color": get-color($c-blue, carolina-blue),
+        "text-color": get-color($c-light, light),
     ),
     "secondary": (
-        "background-color": "%bkg-color-secondary",
-        "text-color": " %txt-color-jet-black",
+        "background-color": get-color($c-light, light),
+        "text-color": get-color($c-dark, jet),
     ),
     "success": (
-        "background-color": "%bkg-color-success",
-        "text-color": "%txt-color-white",
+        "background-color": get-color($c-traffic-lights, success),
+        "text-color": get-color($c-light, light),
     ),
     "danger": (
-        "background-color": "%bkg-color-danger",
-        "text-color": "%txt-color-white",
+        "background-color": get-color($c-traffic-lights, danger),
+        "text-color": get-color($c-light, light),
     ),
     "warning": (
-        "background-color": "%bkg-color-warning",
-        "text-color": "%txt-color-jet-black",
+        "background-color": get-color($c-traffic-lights, warning),
+        "text-color": get-color($c-dark, jet),
     ),
 );
 
 .#{$block} {
     @include element("base") {
         @include font($button);
-        @include use-extends((cursor-pointer, display-inline-block, no-border));
+        cursor: pointer;
+        display: inline-block;
+        border: none;
         padding: 16px;
 
         &:disabled {
@@ -46,8 +48,8 @@ $color-patterns: (
 
         @each $name, $color in $color-patterns {
             @include m($name) {
-                @extend #{map.get($color, "background-color")};
-                @extend #{map.get($color, "text-color")};
+                background-color: #{map.get($color, "background-color")};
+                color: #{map.get($color, "text-color")};
             }
         }
 
