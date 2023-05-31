@@ -27,6 +27,6 @@ services:
       # Copies the Let's Encrypt certificate locally for ease of backing up
       - ./dist/letsencrypt:/letsencrypt
       - ./dist/openssl:/openssl
-      - ./dynamic_conf.yaml:/dynamic_conf.yaml
+      - ./config/dynamic_conf.yaml:/dynamic_conf.yaml
       # Mounts the Traefik static configuration inside the Traefik container
-      - ./traefik-entrypoints.yml:/etc/traefik/traefik.yml
+      - ./config/traefik-entrypoints.yml:/etc/traefik/traefik.yml

@@ -58,4 +58,5 @@ fi
 #   echo "Assets copy completed."
 # }
 # getAssets
+echo "👀 👀 👀 👀"
 npm --prefix .. run watch

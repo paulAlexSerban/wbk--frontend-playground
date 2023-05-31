@@ -2,6 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
+bash generate-ssl-certs.bash
 echo "🟢  START 🐳  Traefik Proxy"
 docker-compose --env-file ../../../config.env \
   --file ../docker-compose.dev.yml \
