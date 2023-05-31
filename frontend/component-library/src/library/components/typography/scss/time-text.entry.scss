@@ -1,0 +1,14 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+ * #TIME-TEXT
+\* ------------------------------------ */
+
+$block-time: "time-text";
+
+.#{$block-time} {
+    @include e("base") {
+        @include font($body);
+        color: get-color($c-gray, battleship-grey);
+    }
+}
