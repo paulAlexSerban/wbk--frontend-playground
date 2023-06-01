@@ -37,6 +37,7 @@ fi
 if [[ $PHASE == "watch" ]]; then
   echo "Builing ${MODULE_NAME} in $PHASE mode"
   export ENV_NAME="local-docker"
+  export ASSETS_PATH="https://assets.localhost"
 fi
 
 # function getAssets() {
