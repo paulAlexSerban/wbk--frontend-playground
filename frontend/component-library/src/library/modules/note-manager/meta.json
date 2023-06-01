@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "note-manager",
+    "name": "Note Manager",
+    "version": "1.0.0",
+    "description": "Note Manager",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "counter", "score keeper app"],
+    "variations": [
+        {
+            "slug": "note-manager",
+            "name": "Note Manager",
+            "description": "Note Manager"
+        }
+    ]
+}
