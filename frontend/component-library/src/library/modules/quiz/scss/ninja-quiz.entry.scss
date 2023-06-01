@@ -1,0 +1,13 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+ * NINJA QUIZ WIDGET
+\* ------------------------------------ */
+
+$block: "ninja-quiz";
+
+.#{$block} {
+    @include e("base") {
+        display: block;
+    }
+}
