@@ -1,0 +1,19 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "modal",
+    "name": "Modal",
+    "version": "1.0.0",
+    "description": "Modal",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "modal"],
+    "variations": [
+        {
+            "slug": "modal-window",
+            "name": "Modal Window"
+        }
+    ]
+}
