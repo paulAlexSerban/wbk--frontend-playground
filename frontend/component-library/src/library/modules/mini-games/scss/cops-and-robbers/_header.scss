@@ -1,0 +1,26 @@
+@import "variables";
+
+.header {
+    &__base {
+        width: 100%;
+        background-color: $c-bkg-header;
+        color: $c-text-header;
+        text-align: center;
+        margin: 0 0 $baseline * 2;
+        padding-top: $baseline * 2;
+        z-index: 3;
+        position: relative;
+    }
+
+    &__title {
+        margin: 0 0 $baseline;
+        font-size: $baseline * 5;
+    }
+
+    &__text {
+        width: 49.99%;
+        margin: auto;
+        padding: $baseline 0;
+        font-size: $baseline * 2.5;
+    }
+}
