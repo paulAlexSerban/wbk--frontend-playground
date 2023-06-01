@@ -11,6 +11,7 @@ const scss = {
             options: {
               // Prefer `dart-sass`
               implementation: require("sass"),
+              additionalData: `$assetsPath: '${process.env.ASSETS_PATH}';`
             },
           },
     ],

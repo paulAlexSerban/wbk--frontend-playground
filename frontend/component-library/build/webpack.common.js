@@ -9,7 +9,6 @@ const { jsEntriesObj, scssEntriesObj, metaEntries } = getEntries();
 
 const cwd = process.cwd();
 
-console.log("metaEntries", metaEntries);
 // export webpack configuration
 module.exports = {
     entry: {

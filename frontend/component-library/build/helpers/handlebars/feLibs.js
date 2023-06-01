@@ -1,5 +1,7 @@
 module.exports = function (group, category, name, variation, type) {
-    const path = `/${group}/${category}/${name}/${variation}`;
+
+        let path = `/${group}/${category}/${name}/${variation}`;
+
 
     const feLibs = {
         css: `<link rel="stylesheet" href="${path}.css">`,
