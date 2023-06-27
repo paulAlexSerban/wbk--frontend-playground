@@ -1,0 +1,24 @@
+{{#> templates/base/markup/partials/_base-demo-container hasJS=true}}
+{{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
+{{{feLibs 'library' 'components' 'pill' 'pill' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'progress' 'progress-steps' 'all'}}}
+
+  <div class="progress-steps__base row" data-js-pat="ProgressSteps">
+    <div class="progress-steps__container">
+      <div class="progress-steps__progress-wrapper">
+        <div class="progress-steps__progress-bar js-progress-bar"></div>
+          {{> components/pill/markup/partials/_pill form="round" classNames="js-pill active" step="1"}}
+          {{> components/pill/markup/partials/_pill form="round" classNames="js-pill" step="2"}}
+          {{> components/pill/markup/partials/_pill form="round" classNames="js-pill" step="3"}}
+          {{> components/pill/markup/partials/_pill form="round" classNames="js-pill" step="4"}}
+      </div>
+      <div class="progress-steps__buttons-container">
+        {{> components/button/markup/partials/_button
+            style="primary" type="button" label="Prev" disabled="disabled" classNames="js-btn-prev"}}
+        {{> components/button/markup/partials/_button
+            style="primary" type="button" label="Next" classNames="js-btn-next"}}
+      </div>
+    </div>
+  </div>
+
+  {{/ templates/base/markup/partials/_base-demo-container}}

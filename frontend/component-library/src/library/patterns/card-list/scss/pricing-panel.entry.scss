@@ -1,0 +1,116 @@
+@import "~ScssAbstracts";
+$layout: 'panel';
+
+.#{$layout} {
+  &__base {
+    background-color: get-color($c-light, light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    max-width: 96rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint($tablet) {
+      flex-direction: row;
+    }
+  }
+}
+
+$cmp_card: 'card';
+
+.#{$cmp_card} {
+  &__base {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid get-color($c-blue, alice-blue);
+    justify-content: space-between;
+
+    @include breakpoint($tablet) {
+      border-bottom: none;
+      border-right: 2px solid get-color($c-blue, alice-blue);
+      padding: 2.5rem 5rem;
+    }
+
+    &:last-child {
+      border-bottom: none;
+
+      @include breakpoint($tablet) {
+        border-right: none;
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &__header,
+  &__features-item {
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  &__header {
+    color: get-color($c-gray, battleship-grey);
+    font-size: 2.4rem;
+  }
+
+  &__features-list {
+    margin: 5rem 0 2.5rem;
+    color: get-color($c-blue, blue-crayola);
+  }
+
+  &__features-item {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 1.5rem 0;
+
+    &, 
+    &:last-child {
+      border-bottom: 1px solid get-color($c-blue, alice-blue);
+    }
+  }
+
+  &__price {
+    color: get-color($c-blue, blue-crayola);
+    display: block;
+    font-weight: 600;
+    font-size: 3.2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+$cmp_button: 'button';
+
+.#{$cmp_button} {
+  &__base {
+    border: 1px solid get-color($c-blue, baby-blue-eyes);
+    border-radius: 10px;
+    color: get-color($c-blue, dodger-blue);
+    display: inline-block;
+    padding: 1.5rem 3.5rem;
+    transition: background-color .2s ease-in-out;
+    text-decoration: none;
+    justify-self: flex-end;
+
+    &:hover,
+    &:focus {
+      background-color: get-color($c-blue, alice-blue);
+    }
+
+    &--isFeatured {
+      background-color: get-color($c-blue, blue-jeans);
+      color: get-color($c-light, cultured);
+
+      &:hover,
+      &:active {
+        background-color: get-color($c-blue, blue-jeans);
+      }
+    }
+  }
+}

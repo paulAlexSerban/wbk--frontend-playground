@@ -1,3 +1,64 @@
+# [1.10.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.9.1...v1.10.0) (2023-06-27)
+
+
+### Features
+
+* added alert pattern ([dbbd16a](https://github.com/paulAlexSerban/prj--js-component-lib/commit/dbbd16aae41adaa9e254256465aa9d509baed110))
+* added audio component ([b60b176](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b60b17692cfe74c37249d82fcf76bcea5757c5fb))
+* added form components ([a33f7b9](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a33f7b9b63b3e5ed2dba0f3b817243f40af95138))
+* added typography components ([73a98e5](https://github.com/paulAlexSerban/prj--js-component-lib/commit/73a98e54d97ffe8c071202d185f5044c045d1c4d))
+* **alert:** adjusted alert component ([5670d04](https://github.com/paulAlexSerban/prj--js-component-lib/commit/5670d0416c9c922e17903d5d8cd6e476edded6c4))
+* ashboard to component library works ([4a2693f](https://github.com/paulAlexSerban/prj--js-component-lib/commit/4a2693fdfc5730c777e62de3cd4b144cc9eb124d))
+* **assets:** removed aws s3 sdk ([e81342e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e81342ede660ec7bd99f6a0dfa977cdba93253bc))
+* **aws /n new structure:** implemented assets s3 bucket and new stucture ([606130e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/606130e3f3d1416d4c61f83ab2c6865b0e9578bf))
+* **build:** adjustments ([5d5be68](https://github.com/paulAlexSerban/prj--js-component-lib/commit/5d5be689696c24ea3bf105461e3472d1a7850f29))
+* **build:** updated\ ([a6d40ef](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a6d40eff6c1d735118df62772cbd03173b8d5998))
+* **cleanup:** removed old files ([e47ace5](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e47ace5f39418eeb83ccefb782ccf3e5f1d44bff))
+* **commons:** added bulma ([2ca2103](https://github.com/paulAlexSerban/prj--js-component-lib/commit/2ca21034fafb00e1dd7b0235deb7985febf12ed2))
+* **counter:** added counter ([99e0151](https://github.com/paulAlexSerban/prj--js-component-lib/commit/99e0151f7aed7a4cdd4ef14f39c89571f3745d30))
+* **docker:** added docker compose for component library ([b661e3f](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b661e3f5765dcd86808be7a5536a501073add224))
+* **docker:** adjusted name ([3bac244](https://github.com/paulAlexSerban/prj--js-component-lib/commit/3bac244fc0b9f57e6a861d5a97873a1ff6ef9ec2))
+* **form-patterns:** added text-field ([64efba0](https://github.com/paulAlexSerban/prj--js-component-lib/commit/64efba09093adb40927ebe991294042c433f8e09))
+* **mdules:** added form modules ([976689a](https://github.com/paulAlexSerban/prj--js-component-lib/commit/976689a948bd820735f2124e37c1b22b39be4df6))
+* **model:** to do list ([4e43c4c](https://github.com/paulAlexSerban/prj--js-component-lib/commit/4e43c4cea9e09a95bf4810eb471742db7b3cba08))
+* **modules:** added loan calculator ([f1e72ee](https://github.com/paulAlexSerban/prj--js-component-lib/commit/f1e72eef771b1164b91c0faa8f59e862dd819f8a))
+* **modules:** booklist ([a54e6ba](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a54e6ba55216a806dd0496a72ba517ca5e7d133b))
+* **modules:** dashboard ([0a3843c](https://github.com/paulAlexSerban/prj--js-component-lib/commit/0a3843cdc2aa2015820e9eb214fbdea49993d949))
+* **modules:** minigames ([a7e8a03](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a7e8a034a27feb2962abd6e25f50532f52ce5818))
+* **modules:** movie seat booking ([4cff322](https://github.com/paulAlexSerban/prj--js-component-lib/commit/4cff3220998d4b57bafa76c50461a72d54d2acf7))
+* **modules:** navigation ([9dc8288](https://github.com/paulAlexSerban/prj--js-component-lib/commit/9dc8288df8bdc0df9c86386754aad372cd4f5ec8))
+* **modules:** note manager ([e1e726e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e1e726e3c2c659d4f7c113c1a37a4a2862c1d746))
+* **modules:** stopwatch and text-generator ([4d12615](https://github.com/paulAlexSerban/prj--js-component-lib/commit/4d12615dcc67aa6dfdb8db757358417d25eb505c))
+* **modules:** weather app ([e986ffa](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e986ffaa13dfbd87ea0a458965a9d10c702aca12))
+* **modulize:** custom update i modulize script ([b18e97e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b18e97e4a99fb0cc09f076cd972c77cf665f7b38))
+* **nginx:** added traefik proxy ([e983a8b](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e983a8b7768777e76fbb6a604002a9efbb7e9962))
+* **package:** adjusted script ([0645504](https://github.com/paulAlexSerban/prj--js-component-lib/commit/0645504701273edfcc6b469d7ca44c55f4bddba8))
+* **patterns:** added accordion css only ([b612d8f](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b612d8f58f50e746e7e3bc88b30517dbae1d40f7))
+* **patterns:** added hero ([1dddd6b](https://github.com/paulAlexSerban/prj--js-component-lib/commit/1dddd6b41aa21a27e6f0b5561ce2c28cc992be94))
+* **patterns:** added loader ([70e4cb0](https://github.com/paulAlexSerban/prj--js-component-lib/commit/70e4cb05b91bdc9a0b568b9f85afb7e1cca75f76))
+* **patterns:** card-list ([e0278ea](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e0278eaf7eb8590bdf5336bcd05418fb3844bb18))
+* **patterns:** digital-clock ([9c431f7](https://github.com/paulAlexSerban/prj--js-component-lib/commit/9c431f7a35bc2b3073a5a28ec003da415d83fbe9))
+* **patterns:** modal ([797f6eb](https://github.com/paulAlexSerban/prj--js-component-lib/commit/797f6ebed71f91f1a1d19ff2630e0193b4cfc0d2))
+* **patterns:** popup ([8d7a150](https://github.com/paulAlexSerban/prj--js-component-lib/commit/8d7a150688447317628fb3340a1980111e91a15a))
+* **patterns:** progress steps ([3ade4e9](https://github.com/paulAlexSerban/prj--js-component-lib/commit/3ade4e9dce941065edda19c59fce72dd54517019))
+* **patterns:** scrollspy ([19fb06c](https://github.com/paulAlexSerban/prj--js-component-lib/commit/19fb06c078decb0666dabb90de335e97d4bf75c2))
+* **patterns:** tabs ([adcdbbd](https://github.com/paulAlexSerban/prj--js-component-lib/commit/adcdbbd7d1f363e2c6dfcc8dba08d03e4b3c16b9))
+* **patterns:** video ([16bd38e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/16bd38e8a8fc07279968455a88269f0235a94a9c))
+* **proxy:** adjusted proxy configs ([dadef00](https://github.com/paulAlexSerban/prj--js-component-lib/commit/dadef00a00872cb74a6c205ae58996bdc454028d))
+* **quiz:** added quiz modules ([9ec7ec6](https://github.com/paulAlexSerban/prj--js-component-lib/commit/9ec7ec63dab5c37ba5e29a99504b2b5e1aaa2561))
+* **weboack:** created plugin that generates componentList.json ([6e7441f](https://github.com/paulAlexSerban/prj--js-component-lib/commit/6e7441faeef032981d1454307f88f8e8e445701b))
+* wip ([2c73720](https://github.com/paulAlexSerban/prj--js-component-lib/commit/2c73720a93f3dfdbab79777f8e1dfe0277d7678d))
+* wip ([8b7864f](https://github.com/paulAlexSerban/prj--js-component-lib/commit/8b7864f08ed88a4c5e708c0af835699908cf43a1))
+* wip ([c7c8196](https://github.com/paulAlexSerban/prj--js-component-lib/commit/c7c8196a1492049dbc3336fc0b268850847054e1))
+* wip ([b1179c0](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b1179c0c311f64b2f4082282ab5a5fce0ed6f41f))
+
+## [1.9.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.9.0...v1.9.1) (2023-05-29)
+
+
+### Bug Fixes
+
+* gh-pages ([71be52d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/71be52d542b45bed6695ad2fa1c5163add957973))
+
 # [1.9.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.8.0...v1.9.0) (2023-05-29)
 
 

@@ -1,0 +1,38 @@
+{{#> templates/base/markup/partials/_base-demo-container title="To Do List"}}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+{{{feLibs 'library' 'modules' 'to-do-list' 'to-do-list' 'all'}}}
+
+<article class="to-do-list-app__base" data-js-widget="ToDoListApp">
+  <header class="text-center text-light my-4">
+    <h1 class="mb-4">Todo List</h1>
+    <form class="js-search">
+      <input class="to-do-list-app__input form-control m-auto" type="text" name="search" placeholder="search todos" />
+    </form>
+  </header>
+
+  <ul class="list-group to-do-list-app__todos js-todos mx-auto text-light">
+    <li class="to-do-list-app__todo justify-content-between align-items-center">
+      <span>play mariokart</span>
+      <i class="far fa-trash-alt to-do-list-app__delete js-delete"></i>
+    </li>
+    <li class="to-do-list-app__todo justify-content-between align-items-center">
+      <span>defeat ganon in zelda</span>
+      <i class="far fa-trash-alt to-do-list-app__delete js-delete"></i>
+    </li>
+    <li class="to-do-list-app__todo justify-content-between align-items-center">
+      <span>make a veggie pie</span>
+      <i class="far fa-trash-alt to-do-list-app__delete js-delete"></i>
+    </li>
+  </ul>
+
+  <form class="js-add text-center my-4">
+    <label class="text-light">Add a new todo...</label>
+    <input class="to-do-list-app__input form-control m-auto" type="text" name="add" />
+  </form>
+</article>
+
+{{/ templates/base/markup/partials/_base-demo-container}}

@@ -1,0 +1,36 @@
+{{#> templates/base/markup/partials/_base-demo-container title='Book List Module'}}
+    {{{feLibs 'commons' 'vendors' 'skeleton' 'skeleton' 'css'}}}
+    {{{feLibs 'library' 'modules' 'book-list' 'book-list' 'all'}}}
+  <div class="widget-book-list__base js-container col" data-js-widget="BookList">
+    <h3>Add Book</h3>
+    <form id="book-form" class='row'>
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" class="u-full-width">
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <input type="text" id="author" class="u-full-width">
+      </div>
+      <div>
+        <label for="isbn">ISBN#</label>
+        <input type="text" id="isbn" class="u-full-width">
+      </div>
+      <div>
+        <input type="submit" value="Submit" class="u-full-width">
+      </div>
+    </form>
+    <table class="row">
+      <thead class='col-smartphone-4'>
+        <tr class='row'>
+          <th class='col'>Title</th>
+          <th class='col'>Author</th>
+          <th class='col'>ISBN</th>
+          <th class='col'></th>
+        </tr>
+      </thead>
+      <tbody id="book-list" class='col-smartphone-4'></tbody>
+    </table>
+  </div>
+
+{{/ templates/base/markup/partials/_base-demo-container}}

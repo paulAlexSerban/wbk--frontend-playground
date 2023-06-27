@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "dashboard",
+    "name": "Dashboard",
+    "version": "1.0.0",
+    "description": "Dashboard",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "dashboard"],
+    "variations": [
+        {
+            "slug": "activity-launcher",
+            "name": "Activity Launcher",
+            "description": "Activity Launcher"
+        }
+    ]
+}

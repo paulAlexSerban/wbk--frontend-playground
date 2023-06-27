@@ -3,7 +3,7 @@
 cd "$(dirname "$0")" || exit
 
 echo " 🛑  STOP ALL 🐳  Docker and clean containers"
-docker compose --env-file ../config.env \
+docker compose --env-file ../.env.development \
   --file ../docker/docker-compose.traefik-proxy.yml \
   --file ../docker/docker-compose.frontend-component-collection.yml \
   down --volumes --rmi all

@@ -1,0 +1,30 @@
+{
+    "group": "library",
+    "category": "components",
+    "component": "typography",
+    "name": "Typography",
+    "version": "1.0.0",
+    "description": "Typography components",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "components", "typography"],
+    "variations": [
+        {
+            "slug": "paragraph",
+            "name": "Paragraph",
+            "description": "Paragraph text"
+        },
+        {
+            "slug": "heading",
+            "name": "Heading",
+            "description": "Heading text"
+        },
+        {
+            "slug": "time-text",
+            "name": "Time (Text)",
+            "description": "Time text"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "loader",
+    "name": "Blurry Loader",
+    "version": "1.0.0",
+    "description": "Blurry Loa",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "loader", "blurry"],
+    "variations": [
+        {
+            "slug": "blurry-loader",
+            "name": "Blurry Loader",
+            "description": "Blurry Loader"
+        }
+    ]
+  }
+  

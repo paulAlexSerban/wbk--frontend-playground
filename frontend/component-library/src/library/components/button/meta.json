@@ -1,0 +1,40 @@
+{
+    "group": "library",
+    "category": "components",
+    "component": "button",
+    "name": "Button",
+    "version": "1.0.0",
+    "description": "Button",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "components", "button"],
+    "variations": [
+        {
+            "slug": "button-primary",
+            "name": "Button (Primary)",
+            "description": "The primary button is used for the principle call to action on a page. It should be used sparingly, to draw attention to the most important actions on a page."
+        },
+        {
+            "slug": "button-secondary",
+            "name": "Button (Secondary)",
+            "description": "The secondary button is used for secondary actions on each page. It should be used for actions that are less important than the primary action on a page."
+        },
+        {
+            "slug": "button-danger",
+            "name": "Button (Danger)",
+            "description": "The danger button is used for actions that are destructive. It should be used for actions that are irreversible, such as deleting a user or a page."
+        },
+        {
+            "slug": "button-success",
+            "name": "Button (Success)",
+            "description": "The success button is used for actions that are successful. It should be used for actions that are reversible, such as saving a user or a page."
+        },
+        {
+            "slug": "button-warning",
+            "name": "Button (Warning)",
+            "description": "The warning button is used for actions that are warning. It should be used for actions that are reversible, such as saving a user or a page."
+        }
+    ]
+}

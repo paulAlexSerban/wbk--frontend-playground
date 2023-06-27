@@ -1,0 +1,30 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "form-modules",
+    "name": "Form Modules",
+    "version": "1.0.0",
+    "description": "Form Modules",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "form", "modules"],
+    "variations": [
+        {
+            "slug": "form-validation",
+            "name": "Form (Validation)",
+            "description": "Form with validation"
+        },
+        {
+            "slug": "form-wave",
+            "name": "Form (Wave)",
+            "description": "Form with wave effect"
+        },
+        {
+            "slug": "simple-subscribe-form",
+            "name": "Simple Subscribe Form",
+            "description": "Simple Subscribe Form"
+        }
+    ]
+}

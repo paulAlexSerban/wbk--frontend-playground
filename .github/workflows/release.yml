@@ -1,14 +1,15 @@
 ---
-name: Release
+name: CD - Release
 on:
     push:
         branches:
             - release
-
 jobs:
     release:
         name: Release
         runs-on: ubuntu-latest
+        env:
+            NODE_VERSION: 16.19.0
         steps:
             - name: "📥 checkout repository"
               uses: actions/checkout@v3
@@ -16,18 +17,16 @@ jobs:
                   fetch-depth: 0
 
             - name: "🔄  Cache node_modules"
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
-                  path: |
-                      ~/.npm
+                  path: ~/.npm
                   key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
+                  restore-keys: ${{ runner.os }}-node-
 
-            - name: "🔧 Setup NodeJS 14.19.1"
-              uses: actions/setup-node@v1
+            - name: "🔧  Setup NodeJS ${{ env.NODE_VERSION }}"
+              uses: actions/setup-node@v3
               with:
-                  node-version: 14.19.1
+                  node-version: ${{ env.NODE_VERSION }}
 
             - name: "🔧 Install npm@latest"
               run: npm i -g npm@latest
