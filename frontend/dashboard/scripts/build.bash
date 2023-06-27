@@ -25,7 +25,7 @@ if [[ $ENV == "dev" ]]; then
   export ENV_NAME="dev"
 elif [[ $ENV == "gh_pages" ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
-  export ENV_BASE_PATH="gh_pages"
+  export ENV_NAME="gh_pages"
 elif [[ $ENV == 'prod' ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
   export ENV_NAME="prod"

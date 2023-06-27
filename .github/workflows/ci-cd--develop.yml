@@ -60,16 +60,16 @@ jobs:
           mkdir -p package/dist/component-library
           cp -r frontend/component-library/dist/* package/dist/component-library
 
-      # - name: "📦  Install Dashboard Build dependencies"
-      #   run: bash modulize.bash -e gh_pages -m dashboard -p install
+      - name: "📦  Install Dashboard Build dependencies"
+        run: bash modulize.bash -e gh_pages -m dashboard -p install
 
-      # - name: "🏗️  Build Frontend Dashboard"
-      #   run: bash modulize.bash -e gh_pages -m dashboard -p build
+      - name: "🏗️  Build Frontend Dashboard"
+        run: bash modulize.bash -e gh_pages -m dashboard -p build
 
-      # - name: "🚚  Package Dashboard"
-      #   run: |
-      #     mkdir -p package/dashboard
-      #     cp -r frontend/dashboard/dist package/dashboard
+      - name: "🚚  Package Dashboard"
+        run: |
+          mkdir -p package/dist
+          cp -r frontend/dashboard/out/* package/dashboard
 
       - name: "🚀 Deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@4.1.1

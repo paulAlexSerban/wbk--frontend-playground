@@ -1,12 +1,18 @@
 import formatString from "@/core/utils/formatStrings";
 
-console.log({ENV_NAME : process.env.ENV_NAME})
+const envName = process.env.ENV_NAME;
+console.log("env_namepv", process.env.ENV_NAME)
+const baseUrl = {
+    development: "https://component-library.localhost",
+    gh_pages: `${process.env.BASE_URL}/component-library`
+}
+
 
 function Variation({ variation, groupName, categoryName, componentName }) {
   return (
       <li>
           <a
-              href={`https://component-library.localhost/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
+              href={`${baseUrl[envName]}/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
               alt={variation.description}
           >
               {variation.name}
@@ -107,7 +113,9 @@ export async function getStaticProps({}) {
         }
     };
 
-    const componentListRaw = await fetchFile("http://component-library/componentList.json");
+    const gh_pagesComponentList = `${baseUrl[envName]}/componentList.json`
+
+    const componentListRaw = await fetchFile(gh_pagesComponentList);
 
     function transformArray(arr) {
       // Create a result object instead of an array
