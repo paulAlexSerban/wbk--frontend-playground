@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.10.1...v1.10.2) (2023-06-27)
+
+
+### Bug Fixes
+
+* cops and robbers ([7b00c33](https://github.com/paulAlexSerban/prj--js-component-lib/commit/7b00c33ab9df14af577941b6575ec2b10bb681b8))
+
 ## [1.10.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.10.0...v1.10.1) (2023-06-27)
 
 
