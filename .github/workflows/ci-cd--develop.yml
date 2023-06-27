@@ -73,7 +73,7 @@ jobs:
           cp -r frontend/dashboard/out/* package/dist
           touch package/dist/.nojekyll
           touch package/dist/CNAME
-          echo ${{ env.BASE_URL }} > ../../../package/dist/CNAME
+          echo ${{ env.BASE_URL }} > package/dist/CNAME
 
       - name: "🚀 Deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@4.1.1
