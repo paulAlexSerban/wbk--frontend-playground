@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.10.0...v1.10.1) (2023-06-27)
+
+
+### Bug Fixes
+
+* adusio assets ([c2552e4](https://github.com/paulAlexSerban/prj--js-component-lib/commit/c2552e4d0aa930fd3f766411e3f411858832041a))
+
 # [1.10.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.9.1...v1.10.0) (2023-06-27)
 
 
