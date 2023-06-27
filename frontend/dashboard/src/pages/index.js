@@ -1,4 +1,7 @@
 import formatString from "@/core/utils/formatStrings";
+
+console.log({ENV_NAME : process.env.ENV_NAME})
+
 function Variation({ variation, groupName, categoryName, componentName }) {
   return (
       <li>
