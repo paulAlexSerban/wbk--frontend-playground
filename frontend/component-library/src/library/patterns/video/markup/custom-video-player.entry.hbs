@@ -1,0 +1,17 @@
+
+{{#> templates/base/markup/partials/_base-demo-container title='Custom Video Player - Pattern'}}
+
+  {{{feLibs 'library' 'patterns' 'video' 'custom-video-player' 'all'}}}
+
+<div class="custom-player__base" data-js-pat="VideoPlayer" data-assets-play-src="{{assetsUrl 'svgs' 'fa-play.svg'}}" data-assets-stop-src="{{assetsUrl 'svgs' 'fa-stop.svg'}}">
+  <h1 class="custom-player__heading">Basic Custom Player</h1>
+  <video src="{{assetsUrl 'videos' 'gone.mp4'}}" id="video" class="custom-player__screen"></video>
+  <div class="custom-player__controls">
+    <button class="custom-player__button" id="play"></button>
+    <button class="custom-player__button" id="stop"></button>
+    <input type="range" id="progress" class="custom-player__progress" min="0" max="100" step="0.1" value="0" />
+    <span class="custom-player__timestamp" id="timestamp">00:00</span>
+  </div>
+</div>
+
+{{/ templates/base/markup/partials/_base-demo-container}}

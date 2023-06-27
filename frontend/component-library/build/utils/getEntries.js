@@ -2,10 +2,9 @@ const glob = require("glob");
 const path = require("path");
 const configs = require("../configs");
 const globGroupPatterns = "{commons,library,system}";
-const globPatterns = "{base,layouts,themes,devTools,components,patterns,modules,widgets,templates,products}";
+const globPatterns = "{base,layouts,themes,devTools,vendors,components,patterns,modules,widgets,templates,products}";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { paths } = configs;
-
 const generateHTMLWebpackPluginPages = (hbsEntries) => {
     return hbsEntries.reduce((accumulator, hbsEntry) => {
         const groupSlug = hbsEntry.split("/").slice(-5)[0];
@@ -65,12 +64,14 @@ const getEntries = () => {
         return accumulator;
     }, []);
 
-    const metaEntries = glob.sync(path.join(paths.SRC_DIR, "*", "*", "meta.json")).reduce((accumulator, metaEntry) => {
-        const categorySlug = metaEntry.split("/").slice(-3)[0];
-        const componentSlug = metaEntry.split("/").slice(-2)[0];
-        accumulator.push({ from: metaEntry, to: `${categorySlug}/${componentSlug}` });
-        return accumulator;
-    }, []);
+    const metaEntries = glob
+        .sync(path.join(paths.SRC_DIR, globGroupPatterns, globPatterns, "**", "meta.json"))
+        .reduce((accumulator, metaEntry) => {
+            const categorySlug = metaEntry.split("/").slice(-3)[0];
+            const componentSlug = metaEntry.split("/").slice(-2)[0];
+            accumulator.push(metaEntry);
+            return accumulator;
+        }, []);
 
     return {
         jsEntries,

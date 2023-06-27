@@ -1,0 +1,34 @@
+{{#> templates/base/markup/partials/_base-demo-container title='Pig Game'}}
+
+{{{feLibs 'library' 'modules' 'mini-games' 'pig-game' 'all'}}}
+
+<article class="pig-game__base" data-js-widget="PigGame">
+  <div class="pig-game__button-container">
+    <button class="pig-game__btn pig-game__btn--new js-btn--new">🔄 New game</button>
+  </div>
+  <div class="pig-game__players">
+    <section class="pig-game__player js-player--0 pig-game__player--active">
+      <h2 class="pig-game__name" id="name--0">Player 1</h2>
+      <p class="pig-game__score" id="score--0">43</p>
+      <div class="pig-game__current">
+        <p class="pig-game__current-label">Current</p>
+        <p class="pig-game__current-score" id="current--0">0</p>
+      </div>
+    </section>
+    <section class="pig-game__player js-player--1">
+      <h2 class="pig-game__name" id="name--1">Player 2</h2>
+      <p class="pig-game__score" id="score--1">24</p>
+      <div class="pig-game__current">
+        <p class="pig-game__current-label">Current</p>
+        <p class="pig-game__current-score" id="current--1">0</p>
+      </div>
+    </section>
+  </div>
+  <img src="{{assetsUrl 'images' 'dice-5-original.webp'}}" alt="Playing dice" class="pig-game__dice js-dice" />
+  <div class="pig-game__button-container">
+    <button class="pig-game__btn pig-game__btn--roll js-btn--roll">🎲 Roll dice</button>
+    <button class="pig-game__btn pig-game__btn--hold js-btn--hold">📥 Hold</button>
+  </div>
+</article>
+
+{{/ templates/base/markup/partials/_base-demo-container}}

@@ -1,0 +1,20 @@
+{
+  "group": "system",
+  "category": "products",
+  "component": "resume",
+  "name": "Resume",
+  "version": "1.0.0",
+  "description": "Resume",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["page", "product", "resume"],
+  "variations": [
+      {
+          "slug": "resume-timeline",
+          "name": "Resume page w/ Timeline",
+          "description": "Resume page w/ Timeline"
+      }
+  ]
+}

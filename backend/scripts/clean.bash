@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-echo " 🛑  STOP ALL 🐳  Docker and clean containers"
+echo " 🛑  CLEAN 🐳  Docker and clean containers"
 docker container prune -f
 docker volume prune -f
 docker image prune -af

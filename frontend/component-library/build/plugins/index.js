@@ -6,7 +6,8 @@ const webpack = require("webpack");
 const DeleteScssPrefixedDirectoriesPlugin = require("./DeleteScssPrefixedDirectoriesPlugin");
 const utils = require("../utils");
 const { getEntries } = utils;
-const { htmlWebpackPluginPages, metaEntries, readmeEntries,assetsEntries } = getEntries();
+const { htmlWebpackPluginPages, metaEntries, readmeEntries } = getEntries();
+const MergeJsonWebpackPlugin = require('./MergeJsonWebpackPlugin');
 
 
 const plugins = [
@@ -22,9 +23,6 @@ const plugins = [
             return `${groupSlug}/${categorySlug}/${componentSlug}/${variantSlug}.css`;
         },
     }),
-    new CopyWebpackPlugin({
-        patterns: [...readmeEntries, ...metaEntries, ...assetsEntries],
-    }),
     // clean the output directory before building
     new CleanWebpackPlugin(),
     // show progress during build process
@@ -32,6 +30,10 @@ const plugins = [
     // generate HTML file using *.hbs files as source
     ...Object.values(htmlWebpackPluginPages),
     new DeleteScssPrefixedDirectoriesPlugin(),
+    new MergeJsonWebpackPlugin({
+        files: metaEntries, // specify the input files here
+        output: 'componentList.json' // specify the output file here
+      })
 ];
 
 module.exports = plugins;

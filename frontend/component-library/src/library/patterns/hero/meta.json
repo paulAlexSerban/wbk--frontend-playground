@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "patterns",
+  "component": "hero",
+  "name": "Hero",
+  "version": "1.0.0",
+  "description": "Hero",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "patterns", "hero"],
+  "variations": [
+    {
+      "slug": "split-screen-hero",
+      "name": "Sprit Screen Hero",
+      "description": "A split screen hero with a background image and a text overlay."
+  }
+  ]
+}

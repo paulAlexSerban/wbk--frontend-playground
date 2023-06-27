@@ -1,0 +1,25 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "counter",
+    "name": "Counter",
+    "version": "1.0.0",
+    "description": "Counter",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "counter", "score keeper app"],
+    "variations": [
+        {
+            "slug": "counter",
+            "name": "Counter",
+            "description": "Counter"
+        },
+        {
+            "slug": "score-keeper-app",
+            "name": "Score Keeper App",
+            "description": "Score Keeper App"
+        }
+    ]
+}
