@@ -10,6 +10,7 @@ env:
     NODE_VERSION: 16.19.0
     FE_COMPONENT_LIBRARY: frontend/component-library
     FE_DASHBOARD: frontend/dashboard
+    BASE_URL: ${{ secrets.BASE_URL }}
 
 jobs:
   deploy:
