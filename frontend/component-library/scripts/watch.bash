@@ -30,10 +30,6 @@ elif [[ $ENV == 'prod' ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
 fi
 
-if [[ -z $PHASE ]]; then
-  PHASE=dev
-fi
-
 export ASSETS_PATH="https://s3.eu-central-1.amazonaws.com/assets.prj--js-component-lib"
 
 # function getAssets() {

@@ -1,7 +1,10 @@
+const process = require("process");
+
 module.exports = function (group, category, name, variation, type) {
-
-        let path = `/${group}/${category}/${name}/${variation}`;
-
+    let path =
+        process.env.BASE_URL.length === 0
+            ? `/${group}/${category}/${name}/${variation}`
+            : `${process.env.BASE_URL}/${group}/${category}/${name}/${variation}`;
 
     const feLibs = {
         css: `<link rel="stylesheet" href="${path}.css">`,
