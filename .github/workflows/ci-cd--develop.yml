@@ -55,10 +55,10 @@ jobs:
       - name: "🏗️  Build Frontend Component Library"
         run: bash modulize.bash -e gh_pages -m component-library -p build
 
-      # - name: "🚚  Package Component Library"
-      #   run: |
-      #     mkdir -p package/component-library
-      #     cp -r frontend/component-library/dist package/component-library
+      - name: "🚚  Package Component Library"
+        run: |
+          mkdir -p package/component-library
+          cp -r frontend/component-library/dist package/component-library
 
       # - name: "📦  Install Dashboard Build dependencies"
       #   run: bash modulize.bash -e gh_pages -m dashboard -p install
@@ -71,8 +71,8 @@ jobs:
       #     mkdir -p package/dashboard
       #     cp -r frontend/dashboard/dist package/dashboard
 
-      # - name: "🚀 Deploy to GitHub Pages"
-      #   uses: JamesIves/github-pages-deploy-action@4.1.1
-      #   with:
-      #     branch: gh-pages
-      #     folder: package/nginx
+      - name: "🚀 Deploy to GitHub Pages"
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: package
