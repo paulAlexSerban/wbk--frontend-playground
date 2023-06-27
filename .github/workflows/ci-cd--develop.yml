@@ -70,7 +70,7 @@ jobs:
       - name: "🚚  Package Dashboard"
         run: |
           mkdir -p package/dist
-          cp -r frontend/dashboard/out/* package/dashboard
+          cp -r frontend/dashboard/out/* package
 
       - name: "🚀 Deploy to GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@4.1.1
