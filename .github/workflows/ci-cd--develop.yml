@@ -11,6 +11,7 @@ env:
     FE_COMPONENT_LIBRARY: frontend/component-library
     FE_DASHBOARD: frontend/dashboard
     BASE_URL: ${{ secrets.BASE_URL }}
+    BASE_PATH: ${{ secrets.BASE_PATH }}
 
 jobs:
   deploy:
