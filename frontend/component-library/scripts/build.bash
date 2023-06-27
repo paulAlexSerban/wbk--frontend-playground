@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../config.env
+source ../.env.development
 
 # Parse command-line options
 while getopts ":m:p:e:" opt; do
@@ -20,12 +20,6 @@ if [[ -z $ENV ]]; then
   ENV=dev
 fi
 
-if [[ $ENV == "dev" ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
-elif [[ $ENV == "gh_pages" ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
-elif [[ $ENV == 'prod' ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
-fi
+echo "Builing ${MODULE_NAME} in $ENV mode"
 
-npm --prefix .. run build
+export ASSETS_PATH="https://s3.eu-central-1.amazonaws.com/assets.prj--js-component-lib" && npm --prefix .. run build

@@ -1,0 +1,9 @@
+{{#> templates/base/markup/partials/_base-demo-container title='Text Field - Pattern'}}
+
+  {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
+
+  {{#> ./partials/_text-field errorMessage="Error message" }}
+    {{> components/form-components/markup/partials/_text-input label="Email" id="email" type="email" placeholder="Enter email" classNames="js-validation-email"}}
+  {{/ ./partials/_text-field}}
+{{/ templates/base/markup/partials/_base-demo-container}}

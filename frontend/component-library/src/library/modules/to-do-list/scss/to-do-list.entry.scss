@@ -1,0 +1,56 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+ * TO DO LOST APP V1
+\* ------------------------------------ */
+
+$block: "to-do-list-app";
+
+.#{$block} {
+    &__base {
+        background: #352f5b;
+        width: 100%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input[type="text"],
+    &__input[type="text"]:focus {
+        color: #fff;
+        border: none;
+        background: rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+    }
+    &__todos {
+        width: 70%;
+    }
+
+    &__todo {
+        display: flex;
+        background: #423a6f;
+        margin-bottom: 1rem;
+        position: relative;
+        padding: 0.75rem 1.25rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+
+        &:first-child {
+            border-top-right-radius: 0.25rem;
+            border-top-left-radius: 0.25rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+        }
+    }
+
+    &__delete {
+        cursor: pointer;
+    }
+
+    &__filtered {
+        display: none !important;
+    }
+}

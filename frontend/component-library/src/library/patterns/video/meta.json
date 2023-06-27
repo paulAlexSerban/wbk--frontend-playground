@@ -1,0 +1,21 @@
+
+{
+  "group": "library",
+  "category": "patterns",
+  "component": "video",
+  "name": "Video",
+  "version": "1.0.0",
+  "description": "Video",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "patterns", "video", "player"],
+  "variations": [
+    {
+      "slug": "custom-video-player",
+      "name": "Custom Video Player",
+      "description": "Custom Video Player"
+  }
+  ]
+}

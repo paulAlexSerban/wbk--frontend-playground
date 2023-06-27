@@ -1,19 +1,20 @@
 {
-  "category": "pages",
-  "componentSlug": "landing",
-  "name": "landing Page Template",
-  "version": "1.0.0",
-  "description": "Landing page template with a hero section, features section, testimonials section and a footer.",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["page", "template", "landing"],
-  "variations": [
-      {
-          "slug": "landing",
-          "name": "Landing Page Template",
-          "description": "Landing page template with a hero section, features section, testimonials section and a footer."
-      }
-  ]
+    "group": "system",
+    "category": "templates",
+    "component": "landing",
+    "name": "landing Page Template",
+    "version": "1.0.0",
+    "description": "Landing page template with a hero section, features section, testimonials section and a footer.",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "landing"],
+    "variations": [
+        {
+            "slug": "landing",
+            "name": "Landing Page Template",
+            "description": "Landing page template with a hero section, features section, testimonials section and a footer."
+        }
+    ]
 }

@@ -197,6 +197,7 @@
     $condensed-gutter: $grid-gutter--condensed
 ) {
     .grid {
+        @include flex($direction: column);
         @include make-container($breakpoints);
 
         @include largest-breakpoint($breakpoints) {

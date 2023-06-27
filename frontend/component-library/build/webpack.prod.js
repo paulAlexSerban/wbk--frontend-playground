@@ -2,9 +2,9 @@ const { merge } = require("webpack-merge");
 // import required dependencies
 const common = require("./webpack.common.js");
 const TerserPlugin = require("terser-webpack-plugin");
-const config = require("./configs");
+const configs = require("./configs");
 
-const { paths } = config;
+const { paths } = configs;
 
 // export webpack configuration
 module.exports = (env) =>
@@ -23,20 +23,6 @@ module.exports = (env) =>
                     generator: {
                         filename: "./images/[name][contenthash:12][ext]",
                     },
-                    use: [
-                        {
-                            loader: "image-webpack-loader",
-                            options: {
-                                mozjpeg: {
-                                    quality: 40,
-                                },
-                                pngquant: {
-                                    quality: [0.65, 0.9],
-                                    speed: 4,
-                                },
-                            },
-                        },
-                    ],
                 },
             ],
         },

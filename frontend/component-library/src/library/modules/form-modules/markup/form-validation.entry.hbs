@@ -1,0 +1,38 @@
+{{#> templates/base/markup/partials/_base-demo-container hasJS=true}}
+
+{{{feLibs 'library' 'components' 'typography' 'heading' 'css'}}}
+{{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
+  {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
+{{{feLibs 'library' 'modules' 'form-modules' 'form-validation' 'all'}}}
+
+  <div class="form-validation__base row" data-js-pat="FormValidation">
+    <form class="form-validation__container">
+      <h2 class="heading__base heading__base--heading-200">Register With Us</h2>
+   
+      {{#> patterns/form-patterns/markup/partials/_text-field errorMessage="Error message" }}
+        {{> components/form-components/markup/partials/_text-input label="Username" 
+            id="username" type="text" placeholder="Enter username" classNames="js-validation-username"}}
+      {{/ patterns/form-patterns/markup/partials/_text-field}}
+ 
+      {{#> patterns/form-patterns/markup/partials/_text-field errorMessage="Error message" }}
+        {{> components/form-components/markup/partials/_text-input label="Email" 
+            id="email" type="email" placeholder="Enter email" classNames="js-validation-email"}}
+      {{/ patterns/form-patterns/markup/partials/_text-field}}
+   
+      {{#> patterns/form-patterns/markup/partials/_text-field errorMessage="Error message" }}
+        {{> components/form-components/markup/partials/_text-input label="Password" 
+            id="password" type="password" placeholder="Enter password" classNames="js-validation-password"}}
+      {{/ patterns/form-patterns/markup/partials/_text-field}}
+
+      {{#> patterns/form-patterns/markup/partials/_text-field errorMessage="Error message" }}
+        {{> components/form-components/markup/partials/_text-input label="Confirm Password" 
+            id="confirmPassword" type="password" placeholder="Enter password again" classNames="js-validation-confirm-password"}}
+      {{/ patterns/form-patterns/markup/partials/_text-field}}
+
+      {{> components/button/markup/partials/_button
+            style="primary" type="submit" label="Submit" classNames="js-btn-submit"}}
+
+    </form>
+  </div>
+  {{/ templates/base/markup/partials/_base-demo-container}}

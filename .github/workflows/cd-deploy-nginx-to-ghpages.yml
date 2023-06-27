@@ -21,27 +21,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       
-      - name: "🔧 Setup NodeJS 14.19.1"
+      - name: "🔧 Setup NodeJS 16.19.0"
         uses: actions/setup-node@v1
         with:
           node-version: 16.19.0
 
       - name: "🔧 Install npm@latest"
-        run: npm i -g npm@latest
+        run: npm i -g npm@latest  
 
-      - name: "📦  Install Nginx Development dependencies"
+
+      - name: "📦  Install Component Library Build dependencies"
         run: bash modulize.bash -e gh_pages -m component-library -p install 
 
-      - name: "🏗️  Build Frontend Nginx"
+      - name: "🏗️  Build Frontend Component Library"
         run: bash modulize.bash -e gh_pages -m component-library -p build
 
-      - name: "🚚  Package Nginx"
-        run: |
-          bash modulize.bash -e gh_pages -m package -p clean
-          bash modulize.bash -e gh_pages -m package -p build
+      # - name: "🚚  Package Nginx"
+      #   run: |
+      #     bash modulize.bash -e production -m package -p clean
+      #     bash modulize.bash -e production -m package -p build
 
-      - name: "🚀 Deploy to GitHub Pages"
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: package/nginx
+      # - name: "🚀 Deploy to GitHub Pages"
+      #   uses: JamesIves/github-pages-deploy-action@4.1.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: package/nginx

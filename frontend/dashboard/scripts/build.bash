@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../config.env
+source ../.env.development
 
 # Parse command-line options
 while getopts ":m:p:e:" opt; do
@@ -22,10 +22,13 @@ fi
 
 if [[ $ENV == "dev" ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
+  export ENV_NAME="dev"
 elif [[ $ENV == "gh_pages" ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
+  export ENV_BASE_PATH="gh_pages"
 elif [[ $ENV == 'prod' ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
+  export ENV_NAME="prod"
 fi
 
 npm --prefix .. run build

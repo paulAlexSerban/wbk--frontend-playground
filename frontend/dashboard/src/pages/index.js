@@ -1,62 +1,147 @@
-import getComponentLibrary from "@/utils/getComponentLibrary";
-import { useState } from "react";
-import templateStyles from "../styles/_05_system/_01_templates/generic.module.scss";
-import mainStyles from "../styles/_04_library/_04_layouts/main.module.scss";
-import Header from "@/core/components/Header/Header";
-import Footer from "@/core/components/Footer/Footer";
-import { Roboto } from "next/font/google";
-import ComponentList from "@/core/components/ComponentList/ComponentList";
-import ComponentViewer from "@/core/components/ComponentView/ComponentView";
-const roboto = Roboto({
-    display: "swap",
-    subsets: ["latin"],
-    weight: ["400", "700", "900"],
-    style: ["normal"],
-    variable: "--text-font-family-regular",
-});
+import formatString from "@/core/utils/formatStrings";
 
-export default function Index({ atoms, molecules, organisms, templates }) {
-    const [component, setComponent] = useState(null);
-    const componentClickHandler = (e) => {
-        e.preventDefault();
-        setComponent({ src: e.target.href,
-        title: e.target.dataset.componentSlug });
-    };
-    return (
-        <>
-            <Header />
-            <main className={[templateStyles.main, mainStyles.base, roboto.className].join(" ")}>
-                <div className={mainStyles.sideBar}>
-                    {atoms.length !== 0 && <ComponentList title="Atoms" list={atoms} onClick={componentClickHandler} />}
-                    {molecules.length !== 0 && (
-                        <ComponentList title="Molecules" list={molecules} onClick={componentClickHandler} />
-                    )}
-                    {organisms.length !== 0 && (
-                        <ComponentList title="Organisms" list={organisms} onClick={componentClickHandler} />
-                    )}
-                    {templates.length !== 0 && (
-                        <ComponentList title="Templates" list={templates} onClick={componentClickHandler} />
-                    )}
-                </div>
+console.log({ENV_NAME : process.env.ENV_NAME})
 
-                {component && <ComponentViewer src={component.src} title={component.title} />}
-            </main>
-            <Footer />
-        </>
-    );
+function Variation({ variation, groupName, categoryName, componentName }) {
+  return (
+      <li>
+          <a
+              href={`https://component-library.localhost/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
+              alt={variation.description}
+          >
+              {variation.name}
+          </a>
+      </li>
+  );
 }
 
+function Component({ component, groupName, categoryName }) {
+  return (
+      <li>
+          <details>
+              <summary>{formatString(component.component)} {component.version !== '1.0.0' && <small>(v{component.version})</small>}</summary>
+              <ul>
+                  {component.variations.map((variation, index) => (
+                      <Variation
+                          key={index}
+                          variation={variation}
+                          groupName={groupName}
+                          categoryName={categoryName}
+                          componentName={component.component}
+                      />
+                  ))}
+              </ul>
+          </details>
+      </li>
+  );
+}
+
+function Category({ categoryName, categoryContent, groupName }) {
+  return (
+      <li>
+          <details open>
+              <summary>{formatString(categoryName)}</summary>
+              <ul>
+                  {categoryContent.map((component, index) => (
+                      <Component
+                          key={index}
+                          component={component}
+                          groupName={groupName}
+                          categoryName={categoryName}
+                      />
+                  ))}
+              </ul>
+          </details>
+      </li>
+  );
+}
+
+function Group({ groupName, groupContent }) {
+  return (
+      <li>
+              <h2>{formatString(groupName)}</h2>
+              <ul>
+              {Object.entries(groupContent).map(([categoryName, categoryContent], index) => (
+                  <Category
+                      key={index}
+                      categoryName={categoryName}
+                      categoryContent={categoryContent}
+                      groupName={groupName}
+                  />
+              ))}
+              </ul>
+      </li>
+  );
+}
+
+export default function Index({ data }) {
+  return (
+      <main className="index">
+          <ul>
+              {Object.entries(data).map(([groupName, groupContent], index) => (
+                  <Group key={index} groupName={groupName} groupContent={groupContent} />
+              ))}
+          </ul>
+      </main>
+  );
+}
+
+
+
 export async function getStaticProps({}) {
-    const getAtoms = getComponentLibrary().atoms.map((item) => item);
-    const getMolecules = getComponentLibrary().molecules.map((item) => item);
-    const getOrganisms = getComponentLibrary().organisms.map((item) => item);
-    const getTemplates = getComponentLibrary().templates.map((item) => item);
+    const fetchFile = async (url) => {
+        try {
+            const response = await fetch(url);
+
+            // Check if the request was successful
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            // If you're fetching a JSON file, you can convert the response to JSON like so
+            const data = await response.json();
+
+            return data;
+        } catch (error) {
+            console.error("There has been a problem with your fetch operation:", error);
+        }
+    };
+
+    const componentListRaw = await fetchFile("http://component-library/componentList.json");
+
+    function transformArray(arr) {
+      // Create a result object instead of an array
+      let result = {};
+  
+      // Iterate over the input array
+      arr.forEach((item) => {
+          // Find or create the group in the result object
+          if (!result[item.group]) {
+              result[item.group] = {};
+          }
+  
+          // Find or create the category in the group
+          if (!result[item.group][item.category]) {
+              result[item.group][item.category] = [];
+          }
+  
+          // Add the component to the category
+          result[item.group][item.category].push({
+              component: item.component,
+              variations: item.variations,
+              version: item.version,
+          });
+      });
+  
+      return result;
+  }
+  
+
+    const componentList = transformArray(componentListRaw);
+
     return {
         props: {
-            atoms: getAtoms,
-            molecules: getMolecules,
-            organisms: getOrganisms,
-            templates: getTemplates,
+            data: componentList,
         },
     };
 }

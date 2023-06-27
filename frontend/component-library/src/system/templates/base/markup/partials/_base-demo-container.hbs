@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/commons/base/reset/reset.css">
+  <link rel="stylesheet" href="/commons/base/elements/elements.css">
+  <link rel="stylesheet" href="/commons/themes/base/base-auto.css">
+  <link rel="stylesheet" href="/system/templates/base/base.css">
+  <link rel="stylesheet" href="/commons/layouts/grid/12-col-flexbox-grid.css">
+
+  <script async defer src="/system/templates/base/base.js"></script>
+</head>
+
+<body class='grid'>
+  <div id="navigation-widget"></div>
+  <main class="row">
+    {{> @partial-block}}
+  </main>
+</body>
+
+</html>
