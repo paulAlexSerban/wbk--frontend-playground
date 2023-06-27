@@ -6,7 +6,7 @@ PORJECT_AUTHOR=$(node -p "require('./package.json').author")
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-. ./config.env
+. ./.env.development
 
 # Colors for printing messages
 NC='\033[0m' # No Color
@@ -98,13 +98,13 @@ init() {
         if [[ "$DIR" == "scripts" ]]; then
           phase ./${i} ${PHASE} ${i}
         fi
-        if [[ ! -f "./${i}/config.env" ]]; then
+        if [[ ! -f "./${i}/.env" ]]; then
           phase ./${i}/${DIR} ${PHASE} ${DIR}
         fi
       done
 
-      if [[ -f "./${i}/config.env" ]]; then
-        . "./${i}/config.env"
+      if [[ -f "./${i}/.env" ]]; then
+        . "./${i}/.env"
 
         local PROJECT_SUBMODULES=("${INSTALL_MODULE_SUBPROJECTS[@]}")
 

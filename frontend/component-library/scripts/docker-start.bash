@@ -3,6 +3,6 @@
 cd "$(dirname "$0")" || exit
 
 echo "🟢  START 🐳  Nginx Component Library "
-docker-compose --env-file ../../../config.env \
+docker-compose --env-file ../../../.env.development \
   --file ../docker-compose.dev.yml \
   up --detach --build

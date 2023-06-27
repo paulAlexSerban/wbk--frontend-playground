@@ -4,5 +4,5 @@ cd "$(dirname "$0")" || exit
 
 source ../.env.development
 
-rm -rfv ../node_modules
-npm --prefix .. install
+echo "🔧  Publisjing assets to AWS S3"
+node ../aws/push-assets.js

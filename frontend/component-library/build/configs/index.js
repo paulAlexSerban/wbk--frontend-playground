@@ -1,3 +1,3 @@
 const paths = require("./paths");
 
-module.exports = paths;
+module.exports = { paths };

@@ -3,16 +3,6 @@ const transforms = [
   {
     options: {
       width: 480,
-      height: 854,
-      fit: "cover",
-      quality: 100,
-      effort: 6,
-    },
-  },
-  {
-    options: {
-      width: 960,
-      height: 1707,
       fit: "cover",
       quality: 100,
       effort: 6,

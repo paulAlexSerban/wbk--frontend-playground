@@ -1,12 +1,12 @@
 // import required dependencies
 const path = require("path");
-const paths = require("./configs");
+const configs = require("./configs");
 const loaders = require("./loaders");
 const plugins = require("./plugins");
 const utils = require("./utils");
 const { getEntries } = utils;
 const { jsEntriesObj, scssEntriesObj, metaEntries } = getEntries();
-
+const { paths } = configs;
 const cwd = process.cwd();
 
 // export webpack configuration

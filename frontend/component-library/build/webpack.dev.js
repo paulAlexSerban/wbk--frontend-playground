@@ -1,7 +1,8 @@
 // import required dependencies
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
-const paths = require("./configs");
+const configs = require("./configs");
+const { paths } = configs;
 
 // export webpack configuration
 module.exports = (env) =>
@@ -10,8 +11,8 @@ module.exports = (env) =>
         watch: true,
         watchOptions: {
             ignored: /node_modules/,
-          },
-          stats: {
+        },
+        stats: {
             assets: true,
             cachedModules: false,
             cachedAssets: false,
@@ -19,7 +20,7 @@ module.exports = (env) =>
             colors: true,
             depth: true,
             entrypoints: false,
-          },
+        },
         module: {
             rules: [
                 {

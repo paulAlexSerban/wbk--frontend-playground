@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-source ../config.env
+source ../.env.development
 
 # Parse command-line options
 while getopts ":m:p:e:" opt; do
@@ -34,11 +34,7 @@ if [[ -z $PHASE ]]; then
   PHASE=dev
 fi
 
-if [[ $PHASE == "watch" ]]; then
-  echo "Builing ${MODULE_NAME} in $PHASE mode"
-  export ENV_NAME="local-docker"
-  export ASSETS_PATH="https://assets.localhost"
-fi
+export ASSETS_PATH="https://s3.eu-central-1.amazonaws.com/assets.prj--js-component-lib"
 
 # function getAssets() {
 #   # Define source and destination directories.

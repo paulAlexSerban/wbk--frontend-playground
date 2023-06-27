@@ -43,16 +43,22 @@ export const createImageRenditions = (done) => {
         .resize(transform.options)
         .webp({ effort: 6, lossless: true })
         .toFile(
+          transform.options.height ? 
           `${paths.dist.dir}/images/${filename}-${transform.options.width}_${transform.options.height}.webp`
+          : `${paths.dist.dir}/images/${filename}-${transform.options.width}.webp`
         )
         .then(() => {
           logger.info(
+            transform.options.height ?
             `Transformed image: ${filename}-${transform.options.width}_${transform.options.height}.webp`
+            : `Transformed image: ${filename}-${transform.options.width}.webp`
           );
         })
         .catch((err) => {
           logger.error(
+            transform.options.height ?
             `Error transforming image: ${filename}-${transform.options.width}_${transform.options.height}.webp - ${err}`
+            : `Error transforming image: ${filename}-${transform.options.width}.webp - ${err}`
           );
         });
       renditionsManifest.push({
