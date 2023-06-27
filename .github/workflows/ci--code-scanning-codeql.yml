@@ -11,7 +11,7 @@ on:
             - opened
             - synchronize
         branches:
-            - "main"
+            - main
 
 jobs:
     code-scanning:
