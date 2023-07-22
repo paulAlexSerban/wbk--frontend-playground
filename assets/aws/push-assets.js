@@ -59,7 +59,9 @@ async function uploadDirectory(directory, prefix, s3FilePaths) {
 
 async function deleteNonexistentS3Objects(localFilePaths) {
     const s3Objects = await s3.send(new ListObjectsV2Command({ Bucket: BUCKET_NAME }));
-
+    if(!s3Objects.Contents) {
+        return [];
+    }
     for (const s3Object of s3Objects.Contents) {
         if (!localFilePaths.includes(s3Object.Key)) {
             await s3.send(new DeleteObjectCommand({ Bucket: BUCKET_NAME, Key: s3Object.Key }));

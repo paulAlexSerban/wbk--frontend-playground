@@ -21,6 +21,9 @@ module.exports = {
             ScssAbstracts: path.join(cwd, "src", "_abstracts", "scss", "abstracts.scss"),
         },
     },
+    stats: {
+        children: true,
+      },
     output: {
         filename: ({ chunk }) => {
             const groupSlug = chunk.name.split(".")[0];
