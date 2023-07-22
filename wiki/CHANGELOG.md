@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.10.2...v1.11.0) (2023-07-22)
+
+
+### Features
+
+* **paths:** imrpved paths implementation in dashboard ([6f26659](https://github.com/paulAlexSerban/prj--js-component-lib/commit/6f26659793700b4e7bf128b8603854491d60a5f9))
+* **responsive-image and qr-code-card:** implemented responsive image helper and qr-code-card ([33d7588](https://github.com/paulAlexSerban/prj--js-component-lib/commit/33d7588047888fb2f87de2959ab77974d7b355e7))
+
 ## [1.10.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.10.1...v1.10.2) (2023-06-27)
 
 
