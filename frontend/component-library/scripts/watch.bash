@@ -21,16 +21,10 @@ if [[ -z $ENV ]]; then
   ENV=dev
 fi
 
-if [[ $ENV == "dev" ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
-  export ENV_NAME="local-docker"
-elif [[ $ENV == "gh_pages" ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
-elif [[ $ENV == 'prod' ]]; then
-  echo "Builing ${MODULE_NAME} in $ENV mode"
-fi
+echo "Builing ${MODULE_NAME} in $ENV mode"
 
-export ASSETS_PATH="https://s3.eu-central-1.amazonaws.com/assets.prj--js-component-lib"
+export BASE_URL=$BASE_URL
+export ASSETS_PATH=$ASSETS_PATH
 
 # function getAssets() {
 #   # Define source and destination directories.

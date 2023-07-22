@@ -3,11 +3,17 @@
 -   A collection of reusable components for JavaScript projects.
 -   Scss only components, JavaScript only components, and full components with both JavaScript and Scss.
 
-## Some Useful Development Commands
+## Install Project Dependencies
 - `bash modulize.bash -e dev -p install` - Install all dependencies for all modules.
-- `bash modulize.bash -e dev -m component-library -p build` - Build the component library.
-- `bash modulize.bash -e dev -m dashboard -p start` - Start the dashboard for local development.
 
-### For local development
-1. start docker compose setup - `bash modulize.bash -e production -p docker-start`
-2. start component library watcher - `bash modulize.bash -e production -p watch`
+## Start Local Development Dcoker-Compose Setup
+2. `bash modulize.bash -e production -p docker-start` - start docker compose setup
+3. `bash modulize.bash -e production -p watch` - start component library watcher
+
+## Process and Publish assets to AWS S3
+- `bash modulize.bash -e dev -m assets -p process` - Process assets before publishing to AWS.
+- `bash modulize.bash -e dev -m assets -p publish` - Publish assets to AWS.
+
+## Component Library Development
+1. `bash modulize.bash -e dev -m component-library -p build` - Build the component library to make sure it is up to date and building correctly.
+2. `bash modulize.bash -e dev -m component-library -p watch` - Watch the component library for changes and rebuild when changes are detected.
