@@ -26,6 +26,16 @@ $margin-left: 1%;
     margin-left: -$margin-left;
 }
 
+.row--center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col--center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container::after,
 .row::after {
     content: "";

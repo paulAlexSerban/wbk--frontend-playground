@@ -1,0 +1,20 @@
+{
+    "group": "system",
+    "category": "templates",
+    "component": "frontend-mentor",
+    "name": "Frontend Mentor Base Page Template",
+    "version": "1.0.0",
+    "description": "Frontend Mentor Base Page Template",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "frontend-mentor",
+            "name": "Frontend Mentor Base Page Template",
+            "description": "Frontend Mentor Base Page Template"
+        }
+    ]
+}
