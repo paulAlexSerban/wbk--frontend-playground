@@ -1,5 +1,6 @@
-require("dotenv").config();
-const { env } = require("process");
+const process = require("process");
+const { env } = process;
+
 module.exports = function (group, category, name, variation, type) {
     const path = `${env.BASE_URL}${
         env.BASE_URL.length !== 0 ? "/component-library" : ""
