@@ -25,6 +25,5 @@ echo "Builing ${MODULE_NAME} in $ENV mode"
 
 echo "Builing ${MODULE_NAME} in $ENV mode"
 
-export BASE_URL=$BASE_URL
 export ASSETS_PATH=$ASSETS_PATH
 npm --prefix .. run build
