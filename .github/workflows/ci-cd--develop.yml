@@ -54,10 +54,10 @@ jobs:
 
 
       - name: "📦  Install Component Library Build dependencies"
-        run: bash modulize.bash -e gh_pages -m component-library -p install 
+        run: bash modulize.bash -e production -m component-library -p install 
 
       - name: "🏗️  Build Frontend Component Library"
-        run: bash modulize.bash -e gh_pages -m component-library -p build
+        run: bash modulize.bash -e production -m component-library -p build
 
       - name: "🚚  Package Component Library"
         run: |
@@ -65,10 +65,10 @@ jobs:
           cp -r frontend/component-library/dist/* package/dist/component-library
 
       - name: "📦  Install Dashboard Build dependencies"
-        run: bash modulize.bash -e gh_pages -m dashboard -p install
+        run: bash modulize.bash -e production -m dashboard -p install
 
       - name: "🏗️  Build Frontend Dashboard"
-        run: bash modulize.bash -e gh_pages -m dashboard -p build
+        run: bash modulize.bash -e production -m dashboard -p build
 
       - name: "🚚  Package Dashboard"
         run: |
