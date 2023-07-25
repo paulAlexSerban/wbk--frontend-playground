@@ -23,7 +23,6 @@ fi
 
 echo "Builing ${MODULE_NAME} in $ENV mode"
 
-export BASE_URL=$BASE_URL
 export ASSETS_PATH=$ASSETS_PATH
 
 # function getAssets() {

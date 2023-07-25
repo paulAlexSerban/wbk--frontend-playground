@@ -1,4 +1,5 @@
-// import required dependencies
+const dotenv = require("dotenv");
+dotenv.config();
 const path = require("path");
 const configs = require("./configs");
 const loaders = require("./loaders");
@@ -23,7 +24,7 @@ module.exports = {
     },
     stats: {
         children: true,
-      },
+    },
     output: {
         filename: ({ chunk }) => {
             const groupSlug = chunk.name.split(".")[0];

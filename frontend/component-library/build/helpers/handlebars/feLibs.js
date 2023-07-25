@@ -1,8 +1,9 @@
 const process = require("process");
+const { env } = process;
 
 module.exports = function (group, category, name, variation, type) {
-    const path = `${process.env.BASE_URL}${
-        process.env.BASE_URL.length !== 0 ? "/component-library" : ""
+    const path = `${env.BASE_URL}${
+        env.BASE_URL.length !== 0 ? "/component-library" : ""
     }/${group}/${category}/${name}/${variation}`;
 
     const feLibs = {
