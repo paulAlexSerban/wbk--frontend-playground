@@ -12,6 +12,8 @@ env:
     FE_DASHBOARD: frontend/dashboard
     BASE_URL: ${{ secrets.BASE_URL }}
     BASE_PATH: ${{ secrets.BASE_PATH }}
+    INTERNAL_COMPONENT_LIBRARY_URL: ${{ secrets.INTERNAL_COMPONENT_LIBRARY_URL }}
+    USER_COMPONENT_LIBRARY_URL: ${{ secrets.USER_COMPONENT_LIBRARY_URL }}
 
 jobs:
   deploy:
@@ -52,10 +54,10 @@ jobs:
 
 
       - name: "📦  Install Component Library Build dependencies"
-        run: bash modulize.bash -e gh_pages -m component-library -p install 
+        run: bash modulize.bash -e production -m component-library -p install 
 
       - name: "🏗️  Build Frontend Component Library"
-        run: bash modulize.bash -e gh_pages -m component-library -p build
+        run: bash modulize.bash -e production -m component-library -p build
 
       - name: "🚚  Package Component Library"
         run: |
@@ -63,10 +65,10 @@ jobs:
           cp -r frontend/component-library/dist/* package/dist/component-library
 
       - name: "📦  Install Dashboard Build dependencies"
-        run: bash modulize.bash -e gh_pages -m dashboard -p install
+        run: bash modulize.bash -e production -m dashboard -p install
 
       - name: "🏗️  Build Frontend Dashboard"
-        run: bash modulize.bash -e gh_pages -m dashboard -p build
+        run: bash modulize.bash -e production -m dashboard -p build
 
       - name: "🚚  Package Dashboard"
         run: |
