@@ -1,87 +1,145 @@
-# Frontend Mentor - QR code component
+# QR Code Component (Frontend Mentor - Solution)
 
-![Design preview for the QR code component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [QR Code Component (Frontend Mentor - Solution)](#qr-code-component-frontend-mentor---solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### Screenshot
 
-## The challenge
+![](./screenshot.jpg)
 
-Your challenge is to build out this QR code component and get it looking as close to the design as possible.
+### Links
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+-   Solution URL: [Add solution URL here](https://your-solution-url.com)
+-   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+## My process
 
-## Where to find everything
+### Built with
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+-   Semantic HTML5 markup
+-   Handlebars for HTML templating
+-   SCSS for easier to read CSS and structure
+-   CSS Flexbox
+-   Mobile-first Development workflow
+-   BEM as a naming convention for CSS classes
+-   Atomic Design for structuring the project and its components
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### What I learned
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+How to use the "lobotomized owl selector":
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+```scss
+.container {
+    * + * {
+        margin-top: 1.5rem;
+    }
+}
+```
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+Custom CSS properties:
 
-## Building your project
+```scss
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-grayish-blue: hsl(219, 15%, 55%);
+    --color-light-gray: hsl(212, 45%, 89%);
+    --color-dark-blue: hsl(218, 44%, 22%);
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+    --container-background-color: var(--color-white);
+    --text-description-color: var(--color-grayish-blue);
+    --title-color: var(--color-dark-blue);
+    --container-shadow-color: var(--color-light-gray);
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+    --container-border-radius: 20px;
+    --container-box-shadow: 0px 20px 35px 0px var(--container-shadow-color);
+}
+```
 
-## Deploying your project
+Flex Scss `@mixin`:
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+```scss
+@mixin flex($main: center, $cross: center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $main;
+    align-items: $cross;
+}
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+.container {
+    @include flex($direction: column);
+}
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+Convert-rem Scss `@function`:
 
-## Create a custom `README.md`
+```scss
+@function convert-rem($px) {
+    @if unit($px) != "px" {
+        @warn "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
+    }
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+    @if meta.function-exists("div", "math") {
+        @return math.div($px, $default-font-size) * 1rem;
+    } @else {
+        @return ($px / $default-font-size) * 1rem;
+    }
+}
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+.container {
+    padding-block: convert-rem(16px);
+}
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### Continued development
 
-## Submitting your solution
+**Improve Accessibility**: Focus on improving the accessibility of the project by adding more comprehensive ARIA labels or exploring other accessibility features.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+**Enhance Interactivity**: Consider adding more interactivity to the QR code card, such as a hover effect, a click event, or animations.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+**Dynamic QR Code Generation**: Work on a feature that allows dynamic QR code generation, enabling users to create their own QR codes.
 
-## Sharing your solution
+**Dark Mode**: Develop a dark mode feature for the project. This is an increasingly common feature and good for practice.
 
-There are multiple places you can share your solution:
+**Responsive Design**: Ensure the project is fully responsive and adapts to all screen sizes, including tablets and mobile devices.
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+**Unit Tests**: To ensure the stability of the project, you could write unit tests for your components and any utility functions you've created.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+**Integration with a Backend**: Could build a backend for this project or integrate it with an existing one. This could include features like storing generated QR codes or saving user preferences.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+**Localization**: You can make your project available in multiple languages. This could involve setting up a way to translate the text in your project, and would make it more accessible to people from different language backgrounds.
 
-## Got feedback for us?
+### Useful resources
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+-   [A List Apart - Axiomatic CSS and Lobotomized Owls](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/) - Helped reduce bloat, speed up development, and help automate the styling of arbitrary, dynamic content.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+## Author
 
-**Have fun building!** 🚀
+-   Website - [Paul Serban](https://paulserban.eu)
+-   Frontend Mentor - [@paulAlexSerban](https://www.frontendmentor.io/profile/paulAlexSerban)
+-   Github - [paulAlexSerban](https://github.com/paulAlexSerban)
+
+## Acknowledgments
+
+I would like to express my gratitude towards a few resources that significantly contributed to the completion of this project.
+
+Firstly, [FreeCodeCamp](https://www.freecodecamp.org/) has been instrumental in providing comprehensive and accessible coding tutorials and challenges. It has been an indispensable resource in my journey towards understanding and applying various web technologies.
+
+Secondly, I would like to acknowledge the wealth of knowledge provided by Jon Duckett's books, specifically "HTML & CSS: Design and Build Websites" and "JavaScript & JQuery: Interactive Front-End Web Development". These books have been my go-to resources for understanding the basics and the intricacies of HTML, CSS, and JavaScript.
+
+All these resources have enriched my understanding of web development and aided me in effectively tackling the challenges posed by this project. I highly recommend them to anyone embarking on their coding journey.

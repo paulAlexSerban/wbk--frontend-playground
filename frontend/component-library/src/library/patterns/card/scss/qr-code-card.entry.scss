@@ -22,18 +22,18 @@ body {
     background-color: var(--color-light-gray);
     min-height: 100vh;
     font-size: convert-rem(16px);
-    
+
     * + * {
-      margin-top: convert-rem(40px);
-  }
+        margin-top: convert-rem(40px);
+    }
 }
 
 .qr-code-card {
     &__base {
         background-color: var(--container-background-color);
         border-radius: var(--container-border-radius);
-        padding-inline: convert-rem(10px);
-        padding-block: convert-rem(10px) convert-rem(25px);
+        padding-inline: convert-rem(16px);
+        padding-block: convert-rem(16px) convert-rem(24px);
         max-width: convert-rem(320px);
         box-shadow: var(--container-box-shadow);
 
@@ -51,13 +51,15 @@ body {
     }
 
     &__content {
-      * + * {
-        margin-top: convert-rem(16px);
-    }
+        padding-inline: convert-rem(10px);
+
+        * + * {
+            margin-top: convert-rem(16px);
+        }
     }
 
     &__title {
-        font-size: convert-rem(20px);
+        font-size: convert-rem(22px);
         text-align: center;
         font-weight: 700;
         color: var(--title-color);

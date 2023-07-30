@@ -9,6 +9,8 @@ $block: "fieldset";
 .#{$block} {
     @include e("base") {
         margin-top: 32px;
+        width: 100%;
+
         @include relative();
     }
 
