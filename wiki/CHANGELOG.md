@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.11.0...v1.12.0) (2023-07-30)
+
+
+### Features
+
+* added readme to qr code ([fad044c](https://github.com/paulAlexSerban/prj--js-component-lib/commit/fad044c5453c0e1566a23b444a49254b744eb068))
+
 # [1.11.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.10.2...v1.11.0) (2023-07-22)
 
 
