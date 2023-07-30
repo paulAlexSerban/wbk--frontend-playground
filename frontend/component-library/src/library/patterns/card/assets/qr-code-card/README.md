@@ -21,12 +21,14 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/component-library/src/library/patterns/card/assets/qr-code-card/screenshots/Screen%20Shot%202023-07-30%20at%2020.31.46.png?raw=true)
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Solution URL: 
+    -   [Markup](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/component-library/src/library/patterns/card/markup/qr-code-card.entry.hbs)
+    -   [Styles](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/component-library/src/library/patterns/card/scss/qr-code-card.entry.scss)
+-   Live Site URL: [QR Code Card](https://paulalexserban.github.io/prj--js-component-lib/component-library/library/patterns/card/qr-code-card.html)
 
 ## My process
 
