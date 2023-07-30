@@ -1,0 +1,41 @@
+{{#> templates/base/markup/partials/_base-demo-container hasJS=true title="Image Comparison Slider"}}
+  {{{feLibs 'library' 'modules' 'image-comparison-slider' 'image-comparison-slider' 'all'}}}
+  {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
+
+
+
+  <div class='img-comparison__base col' data-js-cmp="ImageComparisonSlider">
+    <div class="img-comparison__container row" style='--img-comp-slider-height:1000px;--img-comp-slider-width:1440px;'>
+      <div class="img-comparison__img-wrapper">
+        {{> components/image/markup/partials/_image
+              imgName="wild-forest" 
+              altText="Wild forest image." 
+              classNames="img-comparison__image js-image-for-compare"
+        }}
+
+      </div>
+      <div class="img-comparison__img-wrapper img-comparison__overlay">
+        {{> components/image/markup/partials/_image
+              imgName="explore-the-world" 
+              altText="Explore the world image." 
+              classNames="img-comparison__image js-image-to-compare"
+        }}
+      </div>
+    </div>
+
+    <div class='row'>
+      {{#> patterns/form-patterns/markup/partials/_text-field }}
+        {{> components/form-components/markup/partials/_text-input label="Image for Compare" 
+          id="image-one" type="text" placeholder="Enter path to image for compare" classNames="col-smartphone-4 col-tablet-6 js-image-path-for-compare"}}
+        {{> components/form-components/markup/partials/_text-input label="Image to Compare" 
+          id="image-two" type="text" placeholder="Enter path to image to compare" classNames="col-smartphone-4 col-tablet-6 js-image-path-to-compare"}}
+
+        {{> components/form-components/markup/partials/_text-input label="Comparison Frame Width"
+          id="image-width" type="text" placeholder="Enter image width" classNames="col-smartphone-2 col-tablet-6 js-image-width"}}
+        {{/ patterns/form-patterns/markup/partials/_text-field}}
+    </div>
+  </div>
+
+  {{/ templates/base/markup/partials/_base-demo-container}}
+  

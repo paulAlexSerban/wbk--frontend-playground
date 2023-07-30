@@ -14,7 +14,8 @@
         {
             "slug": "qr-code-card",
             "name": "QR Code Card",
-            "description": "QR Code Card"
+            "description": "QR Code Card",
+            "tags": ["fe-mentor"]
         }
     ]
   }
