@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.1...v1.13.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **ci:** split workflow in multiple jobs ([d5fe86d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/d5fe86da3cd3f161fbf69b600a14f9070b39e29f))
+
 ## [1.13.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.0...v1.13.1) (2023-07-31)
 
 
