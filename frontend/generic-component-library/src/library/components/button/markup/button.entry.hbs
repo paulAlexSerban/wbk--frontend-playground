@@ -1,0 +1,23 @@
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Button - Base'}}
+  {{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
+
+  <div class='col col-smartphone-2 col-tablet-3'>
+    {{> ./partials/_button style="primary" label="Button Primary"}}
+  </div>
+  <div class='col col-smartphone-2 col-tablet-3'>
+    {{> ./partials/_button style="secondary" label="Button Secondary"}}
+  </div>
+
+  <div class='col col-smartphone-2 col-tablet-3'>
+    {{> ./partials/_button style="success" label="Button Success"}}
+  </div>
+
+  <div class='col col-smartphone-2 col-tablet-3'>
+    {{> ./partials/_button style="danger" label="Button Danger"}}
+  </div>
+
+  <div class='col col-smartphone-2 col-tablet-3'>
+    {{> ./partials/_button style="warning" label="Button Warning"}}
+  </div>
+
+{{/ templates/base/markup/partials/_base-demo-container }}

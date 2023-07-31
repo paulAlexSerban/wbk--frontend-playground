@@ -1,5 +1,9 @@
-{{#> templates/base/markup/partials/_base-demo-container title='Time Text - Typography Component'}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Time Text - Typography Component'}}
   {{{feLibs 'library' 'components' 'typography' 'time-text' 'css' }}}
-  <time class="time-text__base" datetime="">Sun 13:13:52</time>
+
+  <div class='col-smartphone-4 col-tablet-8 offset-tablet-2'>
+    <time class="time-text__base" datetime="">Sun 13:13:52</time>
+  </div>
+
 
   {{/ templates/base/markup/partials/_base-demo-container}}

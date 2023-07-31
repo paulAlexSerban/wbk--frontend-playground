@@ -10,7 +10,10 @@
   {{{feLibs 'commons' 'base' 'elements' 'elements' 'css'}}}
   {{{feLibs 'commons' 'themes' 'base' 'base-auto' 'css'}}}
   {{{feLibs 'system' 'templates' 'base' 'base' 'css'}}}
-  {{{feLibs 'commons' 'layouts' 'grid' '12-col-flexbox-grid' 'css'}}}
+  {{#if use12ColGrid}}
+    {{{feLibs 'commons' 'layouts' 'grid' '12-col-flexbox-grid' 'css'}}}
+  {{/if}}
+
   {{{feLibs 'system' 'templates' 'base' 'base' 'js'}}}
 </head>
 
