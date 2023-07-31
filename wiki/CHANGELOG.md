@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.1...v1.12.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* **base_url:** issue with overriding ([22a4adc](https://github.com/paulAlexSerban/prj--js-component-lib/commit/22a4adc0a6dcd26fd0faaaa6b3ee6e5991adee19))
+
 ## [1.12.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.0...v1.12.1) (2023-07-31)
 
 
