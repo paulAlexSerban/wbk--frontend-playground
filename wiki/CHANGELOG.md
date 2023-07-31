@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.0...v1.12.1) (2023-07-31)
+
+
+### Bug Fixes
+
+* **qr-code-card:** updated qr code card readme ([0679b1b](https://github.com/paulAlexSerban/prj--js-component-lib/commit/0679b1b65068b2354fdcff1615ce760d605268b4))
+
 # [1.12.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.11.0...v1.12.0) (2023-07-30)
 
 
