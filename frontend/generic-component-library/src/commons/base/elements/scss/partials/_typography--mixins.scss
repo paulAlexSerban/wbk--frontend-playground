@@ -1,0 +1,101 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0;
+}
+
+h1 {
+    @include font($heading-100);
+
+    body > header > & {
+        @include font($page-title);
+    }
+
+    & > span {
+        @include font($heading-100);
+
+        display: block;
+
+        & + span {
+            @include font($subheading);
+
+            display: block;
+        }
+    }
+}
+
+h2 {
+    @include font($heading-200);
+
+    & > span {
+        @include font($heading-200);
+
+        display: block;
+
+        & + span {
+            @include font($subheading);
+
+            display: block;
+        }
+    }
+}
+
+h3 {
+    @include font($heading-300);
+
+    & > span {
+        @include font($heading-300);
+
+        display: block;
+
+        & + span {
+            @include font($subheading);
+
+            display: block;
+        }
+    }
+}
+
+h4 {
+    @include font($heading-400);
+}
+
+h5 {
+    @include font($heading-500);
+}
+
+h6 {
+    @include font($heading-600);
+}
+
+p,
+a {
+    @include font($body);
+
+    strong {
+        @include font($body-bold);
+    }
+
+    small {
+        @include font($body-small);
+    }
+    font: inherit;
+}
+
+a {
+  text-decoration: none;
+  
+  @include on-event() {
+      color: var(--text-link-color-hover);
+      text-decoration: none;
+  }
+}
+
+
+code {
+    @include font($code);
+}
+

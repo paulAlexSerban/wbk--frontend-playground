@@ -1,0 +1,90 @@
+{{#> templates/base/markup/partials/_base-demo-container title='Cops & Robbers'}}
+{{{feLibs 'library' 'modules' 'mini-games' 'cops-and-robbers' 'all'}}}
+
+  <div class="row" data-js-widget="CopsAndRobbers">
+    <header class="header__base">
+      <h1 class="header__title">Cops & Robbers</h1>
+      <p class="header__text">A JavaScript board game</p>
+    </header>
+    <div class="main"
+      style="--police-avatar:url('{{assetsUrl 'icons' 'police__avatar-image.png'}}');--thug-avatar:url('{{assetsUrl 'icons' 'thug__avatar-image.png'}}');--multitool-knife:url('{{assetsUrl 'icons' 'multitool-knife.png'}}');--baton:url('{{assetsUrl 'icons' 'baton.png'}}');--gun:url('{{assetsUrl 'icons' 'gun.png'}}');--rifle:url('{{assetsUrl 'icons' 'rifle.png'}}');">
+      <div class="main__base">
+        <article class="article__base">
+          <section class="section__base player__select-base start-screen">
+            <div class="player__select-container">
+              <div class="player__select-police">
+                <img class="player__select-image" src="{{assetsUrl 'icons' 'police__avatar-image.png'}}" alt="police avatar">
+                <div class="player__select-info">
+                  <p class="player__select-text">POLICE</p>
+                  <input class="player__name-input--one" type="text" name="police" id="#" placeholder="Nickname">
+                </div>
+              </div>
+              <div class="player__select-thug">
+                <img class="player__select-image" src="{{assetsUrl 'icons' 'thug__avatar-image.png'}}" alt="thug avatar">
+                <div class="player__select-info">
+                  <p class="player__select-text">THUG</p>
+                  <input class="player__name-input--two" type="text" name="thug" id="#" placeholder="Nickname">
+                </div>
+              </div>
+            </div>
+            <button class="button__base player__select-button">Start Game</button>
+          </section>
+          <section class="section__base scoreboard">
+            <article class="article__base player__base">
+              <div class="player__stats-container player__stats-container--left">
+                <div class="player__stats police-stats">
+                  <p class="player__stats-text">Name: <span class="police-name"></span></p>
+                  <p class="player__stats-text">Health: <span class="police-health"></span></p>
+                  <p class="player__stats-text">Strength: <span class="police-strength"></span></p>
+                </div>
+                <div class="player__container">
+                  <figure class="player__avatar">
+                    <img class="player__image" src="{{assetsUrl 'icons' 'police__avatar-image.png'}}" alt="police avatar">
+                  </figure>
+                </div>
+              </div>
+              <div class="player__stats-container player__stats-container--right">
+                <div class="player__container">
+                  <figure class="player__avatar">
+                    <img class="player__image" src="{{assetsUrl 'icons' 'thug__avatar-image.png'}}" alt="thug avatar">
+                  </figure>
+                </div>
+                <div class="player__stats thug-stats">
+                  <p class="player__stats-text">Name: <span class="thug-name"></span></p>
+                  <p class="player__stats-text">Health: <span class="thug-health"></span></p>
+                  <p class="player__stats-text ">Strength: <span class="thug-strength"></span></p>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="section__base grid playground">
+            <article class="grid__base">
+              <div class="grid__container">
+              </div>
+            </article>
+          </section>
+          <div class="modal__base">
+            <div class="modal__overlay"></div>
+            <div class="modal__container">
+              <div class="modal__wrapper"></div>
+              <div class="modal__switch">
+                <div class="switch__base">
+                  <label class="switch__label">
+                    <p class="switch__label--left">Defend</p>
+                    <input class="switch__input" type="checkbox" checked>
+                    <spam class="switch__slider"></spam>
+                    <p class="switch__label--right">Attack</p>
+                  </label>
+                </div>
+              </div>
+              <div class="modal__button">
+                <button class="button__base modal__button-continue"></button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  {{/ templates/base/markup/partials/_base-demo-container}}

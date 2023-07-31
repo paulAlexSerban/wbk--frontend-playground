@@ -1,0 +1,16 @@
+/* ------------------------------------ *\
+ * FIELDSET
+\* ------------------------------------ */
+
+$block: "pat-fieldset";
+
+.#{$block} {
+    @include e("base") {
+        margin-bottom: 32px;
+        @include relative();
+    }
+
+    @include e("legend") {
+        @include font($body-large);
+    }
+}

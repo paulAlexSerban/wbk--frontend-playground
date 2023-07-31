@@ -1,0 +1,36 @@
+.img-comparison {
+    &__base {
+        height: 100%;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__overlay {
+        position: absolute;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        top: 0;
+    }
+
+    &__image {
+        display: block;
+        vertical-align: middle;
+        width: var(--img-comp-slider-width);
+        max-inline-size: none;
+    }
+
+    &__slider {
+        position: absolute;
+        z-index: 9;
+        cursor: ew-resize;
+        /*set the appearance of the slider:*/
+        width: 40px;
+        height: 40px;
+        background-color: #2196f3;
+        opacity: 0.7;
+        border-radius: 50%;
+    }
+}

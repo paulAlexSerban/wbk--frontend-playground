@@ -1,0 +1,22 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "card",
+    "name": "Cardt",
+    "version": "1.0.0",
+    "description": "Card",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "card"],
+    "variations": [
+        {
+            "slug": "qr-code-card",
+            "name": "QR Code Card",
+            "description": "QR Code Card",
+            "tags": ["fe-mentor"]
+        }
+    ]
+  }
+  

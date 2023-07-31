@@ -1,0 +1,17 @@
+@import "~ScssAbstracts";
+
+$type: "cmp";
+$block: "#{$type}-list-unordered";
+
+.#{$block} {
+    @include e("base") {
+        @include font($body);
+        margin-bottom: 32px;
+
+        color: var(--text-color);
+    }
+
+    @include e("item") {
+        margin-bottom: 8px;
+    }
+}

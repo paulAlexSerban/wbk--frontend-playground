@@ -1,0 +1,9 @@
+/* ------------------------------------ *\
+  * BASE PAGE LAYER
+  * should be used on all pages
+  * if there are no specific changes
+\* ------------------------------------ */
+
+@import "../../../_01_abstracts/abstracts.scss";
+@import "../../../_02_themes/base.theme.scss";
+@import "../../../_03_base/base.scss";

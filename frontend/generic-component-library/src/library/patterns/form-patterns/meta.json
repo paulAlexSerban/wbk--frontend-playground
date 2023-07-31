@@ -1,0 +1,46 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "form-patterns",
+    "name": "Form Patterns",
+    "version": "1.0.0",
+    "description": "Form Patterns",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "form-patterns"],
+    "variations": [
+        {
+            "slug": "checkbox-field",
+            "name": "Checkbox Field",
+            "description": "Checkbox Field"
+        },
+        {
+          "slug": "inline-checkbox",
+          "name": "Inline Checkbox",
+            "description": "Inline Checkbox"
+        },
+        {
+            "slug": "radio-field",
+            "name": "Radio Field",
+            "description": "Radio Field"
+        },
+        {
+            "slug": "select-field",
+            "name": "Select Field",
+            "description": "Select Field"
+        },
+        {
+            "slug": "text-field",
+            "name": "Text Field",
+            "description": "Text Field"
+        },
+        {
+            "slug": "textarea-field",
+            "name": "Textarea Field",
+            "description": "Textarea Field"
+        }
+    ]
+  }
+  

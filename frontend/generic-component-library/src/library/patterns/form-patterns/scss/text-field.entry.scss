@@ -1,0 +1,33 @@
+@import "~ScssAbstracts";
+
+/* ------------------------------------ *\
+ * FIELDSET
+\* ------------------------------------ */
+
+$block: "fieldset";
+
+.#{$block} {
+    @include e("base") {
+        margin-top: 32px;
+        width: 100%;
+
+        @include relative();
+    }
+
+    @include e("legend") {
+        @include font($body-large);
+    }
+
+    @include e("message") {
+      @include absolute($left: 0, $bottom: 0);
+      @include font($body);
+
+      transform: translateY(50%);
+      color: get-color($c-traffic-lights, danger);
+      visibility: hidden;
+
+      .error & {
+          visibility: visible;
+      }
+  }
+}

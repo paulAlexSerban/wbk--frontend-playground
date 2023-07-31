@@ -1,0 +1,32 @@
+{{#> templates/base/markup/partials/_base-demo-container hasJS=true}}
+{{{feLibs 'library' 'components' 'typography' 'heading' 'css'}}}
+{{{feLibs 'library' 'components' 'typography' 'paragraph' 'css'}}}
+{{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
+{{{feLibs 'library' 'modules' 'form-modules' 'form-wave' 'all'}}}
+  <div class="form-wave__base" data-js-pat="FormWave">
+    <div class="form-wave__container">
+      <h3 class="heading__base heading__base--heading-400">Please Login</h3>
+      <form>
+        <div class="form-wave__form-control js-form-control">
+          <input class="form-wave__input" type="email" required id="email" placeholder="" />
+          <label class="form-wave__label" for="email">Email</label>
+          <!-- <label>
+          <span style="transition-delay: 0ms">E</span>
+            <span style="transition-delay: 50ms">m</span>
+            <span style="transition-delay: 100ms">a</span>
+            <span style="transition-delay: 150ms">i</span>
+            <span style="transition-delay: 200ms">l</span>
+      </label> -->
+        </div>
+        <div class="form-wave__form-control js-form-control">
+          <input class="form-wave__input" type="password" required id="password" />
+          <label class="form-wave__label" for="password">Password</label>
+        </div>
+
+        {{> components/button/markup/partials/_button
+            style="primary" type="submit" label="Login" classNames="js-btn-submit"}}
+        <p class="paragraph__base">Don't have an account? <a class="link__base" href="#">Register</a></p>
+      </form>
+    </div>
+  </div>
+  {{/ templates/base/markup/partials/_base-demo-container}}
