@@ -1,20 +1,25 @@
 {
     "group": "library",
     "category": "modules",
-    "component": "loan-calculator",
-    "name": "Loan Calculator",
+    "component": "calculator",
+    "name": "Calculator",
     "version": "1.0.0",
-    "description": "Loan Calculator",
+    "description": "Calculator",
     "author": {
         "name": "Paul Serban",
         "email": "paul.alex.serban@gmail.com"
     },
-    "keywords": ["library", "modules", "loan-calculator"],
+    "keywords": ["library", "modules", "calculator"],
     "variations": [
         {
             "slug": "loan-calculator",
             "name": "Load Calculator",
             "description": "Loan Calculator"
+        },
+        {
+            "slug": "exchangerate-calculator",
+            "name": "Exchange Rate Calculator",
+            "description": "Exchange Rate Calculator"
         }
     ]
 }

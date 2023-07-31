@@ -23,7 +23,6 @@ class ImageComparisonSlider {
     fetchImage(path) {
         return new Promise((resolve, reject) => {
             const img = new Image();
-            console.log({img})
             img.onload = () => resolve(img);
             img.onerror = reject;
             img.src = path;
