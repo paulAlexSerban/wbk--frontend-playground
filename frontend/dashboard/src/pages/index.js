@@ -4,6 +4,9 @@ import fetchFile from "@/core/utils/fetchFile";
 import Group from "@/core/components/Group";
 import { base, library, libraryList } from "./index.module.scss";
 
+import path from 'path';
+import fs from 'fs/promises';
+
 export default function Index({ data }) {
     const { genericComponentListObj, frontendMentorChallengesObj } = data;
     return (
@@ -34,12 +37,27 @@ export default function Index({ data }) {
 }
 
 export async function getStaticProps({}) {
+    let genericComponentListArray;
+    let frontendMentorChallengesArray;
+
     const genericComponentListJson = `${paths.internalComponentLibraryUrl}/componentList.json`;
-    const genericComponentListArray = await fetchFile(genericComponentListJson);
+    if (paths.internalComponentLibraryUrl.includes("http")) {
+        genericComponentListArray = await fetchFile(genericComponentListJson);
+    } else {
+        const jsonFilePath = path.join(process.cwd(), 'public', genericComponentListJson);
+        const jsonData = await fs.readFile(jsonFilePath, 'utf8');
+        genericComponentListArray = JSON.parse(jsonData);
+    }
     const genericComponentListObj = transformArrayToObj(genericComponentListArray);
 
     const frontendMentorChallengesJson = `${paths.internalFrontendMentorLibrary}/componentList.json`;
-    const frontendMentorChallengesArray = await fetchFile(frontendMentorChallengesJson);
+    if (paths.internalFrontendMentorLibrary.includes("http")) {
+        frontendMentorChallengesArray = await fetchFile(frontendMentorChallengesJson);
+    } else {
+        const jsonFilePath = path.join(process.cwd(), 'public', frontendMentorChallengesJson);
+        const jsonData = await fs.readFile(jsonFilePath, 'utf8');
+        frontendMentorChallengesArray = JSON.parse(jsonData);
+    }
     const frontendMentorChallengesObj = transformArrayToObj(frontendMentorChallengesArray);
 
     return {
