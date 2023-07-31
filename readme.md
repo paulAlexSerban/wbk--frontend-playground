@@ -15,5 +15,5 @@
 - `bash modulize.bash -e dev -m assets -p publish` - Publish assets to AWS.
 
 ## Component Library Development
-1. `bash modulize.bash -e dev -m component-library -p build` - Build the component library to make sure it is up to date and building correctly.
-2. `bash modulize.bash -e dev -m component-library -p watch` - Watch the component library for changes and rebuild when changes are detected.
+1. `bash modulize.bash -e dev -m generic-component-library -p build` - Build the component library to make sure it is up to date and building correctly.
+2. `bash modulize.bash -e dev -m generic-component-library -p watch` - Watch the component library for changes and rebuild when changes are detected.
