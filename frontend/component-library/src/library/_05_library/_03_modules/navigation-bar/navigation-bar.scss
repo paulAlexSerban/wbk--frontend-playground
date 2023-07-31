@@ -1,8 +1,0 @@
-$type: "mod";
-$block: "#{$type}-navigation-bar";
-
-.#{$block} {
-    @include e("base") {
-        padding-top: 16px;
-    }
-}
