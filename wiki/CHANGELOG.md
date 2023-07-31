@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.2...v1.13.3) (2023-07-31)
+
+
+### Bug Fixes
+
+* **ci:** issues ([95832ce](https://github.com/paulAlexSerban/prj--js-component-lib/commit/95832ceaa8fcfff13ae9b7d067003bdcd88c2451))
+
 ## [1.13.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.1...v1.13.2) (2023-07-31)
 
 
