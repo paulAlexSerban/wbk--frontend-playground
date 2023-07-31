@@ -1,0 +1,40 @@
+---
+version: "3.7"
+services:
+
+  # ---------------------------------------------------------------------
+  # | Frontend Mentor Library - Nginx-Service                           |
+  # ---------------------------------------------------------------------
+  frontend-mentor-library:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    container_name: frontend-mentor-library
+    restart: unless-stopped
+    volumes:
+      # Mounts the nginx configuration file
+      # the section after collon is the path inside the container, do not chenge it if you don't know what you are doing
+      - ./dist:/usr/share/nginx/html
+    labels:
+      - traefik.enable=true
+      # Routers
+      - traefik.http.routers.nginx-frontend-mentor-library.entrypoints=web
+      - traefik.http.routers.nginx-frontend-mentor-library.middlewares=test-redirectscheme
+
+      - traefik.http.routers.nginx-frontend-mentor-library.rule=Host(`frontend-mentor-library.localhost`)
+      - traefik.http.routers.nginx-frontend-mentor-library-secure.rule=Host(`frontend-mentor-library.localhost`)
+
+      - traefik.http.routers.nginx-frontend-mentor-library-secure.entrypoints=websecure
+      - traefik.http.routers.nginx-frontend-mentor-library-secure.tls.certresolver=myresolver
+      - traefik.http.routers.nginx-frontend-mentor-library-secure.tls=true
+      - traefik.http.routers.nginx-frontend-mentor-library-secure.middlewares=test-compress,test-redirectscheme
+      # Services
+      - traefik.http.services.nginx-frontend-mentor-library-secure.loadbalancer.server.port=80
+      # Middlewares
+      - traefik.http.middlewares.test-compress.compress=true
+      - traefik.http.middlewares.test-ratelimit.ratelimit.average=100
+      - traefik.http.middlewares.test-ratelimit.ratelimit.burst=100
+      - traefik.http.middlewares.test-ratelimit.ratelimit.period=1s
+      - traefik.http.middlewares.test-redirectscheme.redirectscheme.scheme=https
+      - traefik.http.middlewares.test-redirectscheme.redirectscheme.permanent=true
+      - traefik.http.middlewares.test-redirectscheme.redirectscheme.port=443

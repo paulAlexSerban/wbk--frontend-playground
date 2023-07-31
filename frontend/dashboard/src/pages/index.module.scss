@@ -1,0 +1,15 @@
+.base {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.library {
+  min-width: calc(100% / 3);
+}
+
+.libraryList {
+  
+}

@@ -1,3 +1,17 @@
+## [1.13.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.0...v1.13.1) (2023-07-31)
+
+
+### Bug Fixes
+
+* **ci:** issues ([c624dfe](https://github.com/paulAlexSerban/prj--js-component-lib/commit/c624dfef320f567b5ee31966c411b2a2209f2973))
+
+# [1.13.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.2...v1.13.0) (2023-07-31)
+
+
+### Features
+
+* **frontend:** add frontend mentor library ([caeddc1](https://github.com/paulAlexSerban/prj--js-component-lib/commit/caeddc1514b3187722185ee60fb02060005475b6))
+
 ## [1.12.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.1...v1.12.2) (2023-07-31)
 
 
