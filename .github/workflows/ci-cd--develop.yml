@@ -93,9 +93,6 @@ jobs:
       - name: "📦  Install Dashboard Build dependencies"
         run: bash modulize.bash -e production -m dashboard -p install
 
-      - name: "🏗️  Build Frontend Dashboard"
-        run: bash modulize.bash -e production -m dashboard -p build
-
       - name: "Create package/dist"
         run: mkdir -p package/dist
 
@@ -103,6 +100,14 @@ jobs:
         with:
           name: component-libraries
           path: package/dist
+
+      - name: "🏗️  Build Frontend Dashboard"
+        run: |
+          mkdir frontend/dashboard/public/generic-component-library
+          mkdir frontend/dashboard/public/frontend-mentor-library
+          cp package/dist/generic-component-library/componentList.json frontend/dashboard/public/generic-component-library/componentList.json
+          cp package/dist/frontend-mentor-library/componentList.json frontend/dashboard/public/frontend-mentor-library/componentList.json
+          bash modulize.bash -e production -m dashboard -p build
 
       - name: "🚚  Package Dashboard"
         run: |
