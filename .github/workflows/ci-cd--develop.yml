@@ -14,6 +14,8 @@ env:
     BASE_PATH: ${{ secrets.BASE_PATH }}
     INTERNAL_COMPONENT_LIBRARY_URL: ${{ secrets.INTERNAL_COMPONENT_LIBRARY_URL }}
     USER_COMPONENT_LIBRARY_URL: ${{ secrets.USER_COMPONENT_LIBRARY_URL }}
+    INTERNAL_FRONTEND_MENTOR_LIBRARY_URL: ${{ secrets.INTERNAL_FRONTEND_MENTOR_LIBRARY_URL }}
+    USER_FRONTEND_MENTOR_LIBRARY_URL: ${{ secrets.USER_FRONTEND_MENTOR_LIBRARY_URL }}
 
 jobs:
   deploy:
@@ -60,7 +62,9 @@ jobs:
       - name: "🚚  Package Component Library"
         run: |
           mkdir -p package/dist/generic-component-library
+          mkdir -p package/dist/frontend-mentor-library
           cp -r frontend/generic-component-library/dist/* package/dist/generic-component-library
+          cp -r frontend/frontend-mentor-library/dist/* package/dist/frontend-mentor-library
 
       - name: "📦  Install Dashboard Build dependencies"
         run: bash modulize.bash -e production -m dashboard -p install
