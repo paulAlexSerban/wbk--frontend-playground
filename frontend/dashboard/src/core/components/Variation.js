@@ -1,10 +1,18 @@
 import paths from "@/core/commons/paths";
-
-export default function Variation({ variation, groupName, categoryName, componentName }) {
+import { base } from "./variation.module.scss";
+export default function Variation({ variation, groupName, categoryName, componentName, library }) {
+    let basePath = "";
+    if (library === "generic") {
+        basePath = paths.userComponentLibraryUrl;
+    } else if (library === "frontend-mentor") {
+        basePath = paths.userFrontendMentorLibrary;
+    }
     return (
-        <li>
-            <a href={`${paths.userComponentLibraryUrl}/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
-               alt={variation.description}>
+        <li className={base}>
+            <a
+                href={`${basePath}/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
+                alt={variation.description}
+            >
                 {variation.name}
             </a>
         </li>
