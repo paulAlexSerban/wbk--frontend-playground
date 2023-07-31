@@ -60,11 +60,11 @@ jobs:
           cp -r frontend/generic-component-library/dist/* package/dist/generic-component-library
           cp -r frontend/frontend-mentor-library/dist/* package/dist/frontend-mentor-library
 
-      - name: "🚀 Deploy to GitHub Pages"
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - uses: actions/upload-artifact@v3
         with:
-          branch: gh-pages
-          folder: package/dist
+          name: component-libraries
+          path: package/dist/
+
   deploy-dashboard:
     name: Deploy Dashboard to Github Pages
     runs-on: ubuntu-latest
@@ -96,9 +96,16 @@ jobs:
       - name: "🏗️  Build Frontend Dashboard"
         run: bash modulize.bash -e production -m dashboard -p build
 
+      - name: "Create package/dist"
+        run: mkdir -p package/dist
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: component-libraries
+          path: package/dist
+
       - name: "🚚  Package Dashboard"
         run: |
-          mkdir -p package/dist
           cp -r frontend/dashboard/out/* package/dist
           touch package/dist/.nojekyll
           touch package/dist/CNAME
