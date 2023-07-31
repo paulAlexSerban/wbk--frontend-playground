@@ -28,7 +28,7 @@ body {
     &__base {
         background-color: var(--container-background-color);
         border-radius: var(--container-border-radius);
-        padding-inline: convert-rem(16px);
+        padding-inline: convert-rem(18px);
         padding-block: convert-rem(16px) convert-rem(40px);
         max-width: convert-rem(320px);
         box-shadow: var(--container-box-shadow);
