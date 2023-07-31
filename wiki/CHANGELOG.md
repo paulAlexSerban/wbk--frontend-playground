@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.2...v1.13.0) (2023-07-31)
+
+
+### Features
+
+* **frontend:** add frontend mentor library ([caeddc1](https://github.com/paulAlexSerban/prj--js-component-lib/commit/caeddc1514b3187722185ee60fb02060005475b6))
+
 ## [1.12.2](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.12.1...v1.12.2) (2023-07-31)
 
 
