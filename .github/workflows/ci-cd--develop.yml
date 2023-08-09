@@ -16,6 +16,10 @@ env:
     USER_COMPONENT_LIBRARY_URL: ${{ secrets.USER_COMPONENT_LIBRARY_URL }}
     INTERNAL_FRONTEND_MENTOR_LIBRARY_URL: ${{ secrets.INTERNAL_FRONTEND_MENTOR_LIBRARY_URL }}
     USER_FRONTEND_MENTOR_LIBRARY_URL: ${{ secrets.USER_FRONTEND_MENTOR_LIBRARY_URL }}
+    INTERNAL_DEV_DAYS_MATRIX_LIBRARY_URL: ${{ secrets.INTERNAL_DEV_DAYS_MATRIX_LIBRARY_URL }}
+    USER_DEV_DAYS_MATRIX_LIBRARY_URL: ${{ secrets.USER_DEV_DAYS_MATRIX_LIBRARY_URL }}
+    INTERNAL_BIG_FRONTEND_LIBRARY_URL: ${{ secrets.INTERNAL_BIG_FRONTEND_LIBRARY_URL }}
+    USER_BIG_FRONTEND_LIBRARY_URL: ${{ secrets.USER_BIG_FRONTEND_LIBRARY_URL }}
 
 jobs:
   deploy-cmp-libraries:
@@ -47,18 +51,26 @@ jobs:
         run: |
           bash modulize.bash -e production -m generic-component-library -p install
           bash modulize.bash -e production -m frontend-mentor-library -p install
+          bash modulize.bash -e production -m dev-days-matrix-library -p install
+          bash modulize.bash -e production -m big-frontend-dev-library -p install
 
       - name: "🏗️  Build Frontend Component Library"
         run: |
           bash modulize.bash -e production -m generic-component-library -p build
           bash modulize.bash -e production -m frontend-mentor-library -p build
+          bash modulize.bash -e production -m dev-days-matrix-library -p build
+          bash modulize.bash -e production -m big-frontend-dev-library -p build
 
       - name: "🚚  Package Component Library"
         run: |
           mkdir -p package/dist/generic-component-library
           mkdir -p package/dist/frontend-mentor-library
+          mkdir -p package/dist/dev-days-matrix-library
+          mkdir -p package/dist/big-frontend-dev-library
           cp -r frontend/generic-component-library/dist/* package/dist/generic-component-library
           cp -r frontend/frontend-mentor-library/dist/* package/dist/frontend-mentor-library
+          cp -r frontend/dev-days-matrix-library/dist/* package/dist/dev-days-matrix-library
+          cp -r frontend/big-frontend-dev-library/dist/* package/dist/big-frontend-dev-library
 
       - uses: actions/upload-artifact@v3
         with:
@@ -105,8 +117,12 @@ jobs:
         run: |
           mkdir frontend/dashboard/public/generic-component-library
           mkdir frontend/dashboard/public/frontend-mentor-library
+          mkdir frontend/dashboard/public/dev-days-matrix-library
+          mkdir frontend/dashboard/public/big-frontend-dev-library
           cp package/dist/generic-component-library/componentList.json frontend/dashboard/public/generic-component-library/componentList.json
           cp package/dist/frontend-mentor-library/componentList.json frontend/dashboard/public/frontend-mentor-library/componentList.json
+          cp package/dist/dev-days-matrix-library/componentList.json frontend/dashboard/public/dev-days-matrix-library/componentList.json
+          cp package/dist/big-frontend-dev-library/componentList.json frontend/dashboard/public/big-frontend-dev-library/componentList.json
           bash modulize.bash -e production -m dashboard -p build
 
       - name: "🚚  Package Dashboard"

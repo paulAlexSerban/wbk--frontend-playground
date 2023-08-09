@@ -1,4 +1,4 @@
-{{#> templates/base/markup/partials/_base-demo-container hasJS=true}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true hasJS=true}}
 
 {{{feLibs 'library' 'components' 'typography' 'heading' 'css'}}}
 {{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
@@ -6,7 +6,8 @@
   {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
 {{{feLibs 'library' 'modules' 'form-modules' 'form-validation' 'all'}}}
 
-  <div class="form-validation__base row" data-js-pat="FormValidation">
+<div class='col-smartphone-4 col-tablet-8 offset-tablet-2'>
+    <div class="form-validation__base" data-js-pat="FormValidation">
     <form class="form-validation__container">
       <h2 class="heading__base heading__base--heading-200">Register With Us</h2>
    
@@ -35,4 +36,6 @@
 
     </form>
   </div>
+</div>
+
   {{/ templates/base/markup/partials/_base-demo-container}}

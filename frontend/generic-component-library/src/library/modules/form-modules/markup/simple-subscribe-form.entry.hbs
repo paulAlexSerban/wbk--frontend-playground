@@ -1,18 +1,19 @@
-{{#> templates/base/markup/partials/_base-demo-container title='Simple Subscribe Form - Module'}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Simple Subscribe Form - Module'}}
 
-  {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
-  {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
-  {{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
-  {{{feLibs 'library' 'modules' 'form-modules' 'simple-subscribe-form' 'all'}}}
+      {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
+      {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
+      {{{feLibs 'library' 'components' 'button' 'button' 'css'}}}
+      {{{feLibs 'library' 'modules' 'form-modules' 'simple-subscribe-form' 'all'}}}
 
-  <form class="simple-subscribe-form__base js-signup-form" data-js-pat="SimpleSubscribeForm">
-    {{#> patterns/form-patterns/markup/partials/_text-field errorMessage="Error message" }}
-      {{> components/form-components/markup/partials/_text-input label="Username" 
-            id="username" type="text" placeholder="Enter username" classNames="js-validation-email"}}
-      {{/ patterns/form-patterns/markup/partials/_text-field}}
+      <div class='col-smartphone-4 col-tablet-4 offset-tablet-4'>
+            <form class="simple-subscribe-form__base js-signup-form" data-js-pat="SimpleSubscribeForm">
+                  {{#> patterns/form-patterns/markup/partials/_text-field errorMessage="Error message" }}
+                        {{> components/form-components/markup/partials/_text-input label="Username" id="username" type="text" placeholder="Enter username" classNames="js-validation-username"}}
+                  {{/ patterns/form-patterns/markup/partials/_text-field}}
 
-      {{> components/button/markup/partials/_button
-            style="primary" type="submit" label="Submit" classNames="js-btn-submit"}}
-      <div class="js-signup-feedback"></span>
-  </form>
-  {{/ templates/base/markup/partials/_base-demo-container}}
+                  {{> components/button/markup/partials/_button style="primary" type="submit" label="Submit" classNames="js-btn-submit"}}
+                  <div class="js-signup-feedback"></span>
+            </form>
+      </div>
+
+      {{/ templates/base/markup/partials/_base-demo-container}}

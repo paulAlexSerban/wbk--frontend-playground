@@ -1,5 +1,9 @@
-{{#> templates/base/markup/partials/_base-demo-container title='Text Input - Form Component'}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Text Input - Form Component'}}
   {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
-  {{> partials/_text-input label="Username" id="username" type="text" placeholder="Enter username" classNames="js-validation-username"}}
+
+   <div class='col-smartphone-2 col-tablet-6'>
+      {{> partials/_text-input label="Username" id="username" type="text" placeholder="Enter username" classNames="js-validation-username"}}
+  </div>
+
   
 {{/ templates/base/markup/partials/_base-demo-container}}

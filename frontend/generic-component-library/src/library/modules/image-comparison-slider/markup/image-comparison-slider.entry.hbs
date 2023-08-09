@@ -1,11 +1,10 @@
-{{#> templates/base/markup/partials/_base-demo-container hasJS=true title="Image Comparison Slider"}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true hasJS=true title="Image Comparison Slider"}}
   {{{feLibs 'library' 'modules' 'image-comparison-slider' 'image-comparison-slider' 'all'}}}
   {{{feLibs 'library' 'components' 'form-components' 'text-input' 'css'}}}
   {{{feLibs 'library' 'patterns' 'form-patterns' 'text-field' 'css'}}}
 
-
-
-  <div class='img-comparison__base col' data-js-cmp="ImageComparisonSlider">
+<div class='col-smartphone-4 col-tablet-12'>
+    <div class='img-comparison__base' data-js-cmp="ImageComparisonSlider">
     <div class="img-comparison__container row" style='--img-comp-slider-height:1000px;--img-comp-slider-width:1440px;'>
       <div class="img-comparison__img-wrapper">
         {{> components/image/markup/partials/_image
@@ -36,6 +35,9 @@
         {{/ patterns/form-patterns/markup/partials/_text-field}}
     </div>
   </div>
+</div>
+
+
 
   {{/ templates/base/markup/partials/_base-demo-container}}
   

@@ -1,0 +1,20 @@
+{
+    "group": "system",
+    "category": "templates",
+    "component": "dev-days-matrix",
+    "name": "Dev Days Matrix Base Page Template",
+    "version": "1.0.0",
+    "description": "Dev Days Matrix Base Page Template",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "dev-days-matrix",
+            "name": "Dev Days Matrix Base Page Template",
+            "description": "Dev Days Matrix Base Page Template"
+        }
+    ]
+}

@@ -6,6 +6,10 @@ export default function Variation({ variation, groupName, categoryName, componen
         basePath = paths.userComponentLibraryUrl;
     } else if (library === "frontend-mentor") {
         basePath = paths.userFrontendMentorLibrary;
+    } else if (library === "big-frontend") {
+        basePath = paths.userBigFrontendLibrary;
+    } else if (library === "dev-days-matrix") {
+        basePath = paths.userDevDaysMatrix;
     }
     return (
         <li className={base}>

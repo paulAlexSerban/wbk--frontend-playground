@@ -1,8 +1,9 @@
-{{#> templates/base/markup/partials/_base-demo-container title='Search Hidden'}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Search Hidden'}}
 
   {{{feLibs 'library' 'components' 'form-components' 'search-hidden' 'all'}}}
 
-  <div class="search-hidden__base row" data-js-pat="SearchHidden">
+   <div class='col-smartphone-2 col-tablet-6'>
+      <div class="search-hidden__base" data-js-pat="SearchHidden">
     <div class="search-hidden__container js-search">
       <label class="search-hidden__label" for="search"></label>
       <input type="text" class="search-hidden__input js-search-input" placeholder="Search..." id="search" />
@@ -11,5 +12,7 @@
       </button>
     </div>
   </div>
+   </div>
+
 
 {{/ templates/base/markup/partials/_base-demo-container}}
