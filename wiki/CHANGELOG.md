@@ -1,3 +1,23 @@
+# [1.14.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.4...v1.14.0) (2023-08-09)
+
+
+### Bug Fixes
+
+* **styles:** adjustments ([7eb4452](https://github.com/paulAlexSerban/prj--js-component-lib/commit/7eb4452299c7bcfb695cb26388abc50b4b45b34e))
+* **styles:** adjustments ([bf21de5](https://github.com/paulAlexSerban/prj--js-component-lib/commit/bf21de534604ef6fed53647c0c3372286d71c5c2))
+* **styles:** adjustments ([45af4e3](https://github.com/paulAlexSerban/prj--js-component-lib/commit/45af4e3f54ad656078516acd1d4782865e29c589))
+
+
+### Features
+
+* **calculator:** added exchange rate calcualtor ([cb75dcb](https://github.com/paulAlexSerban/prj--js-component-lib/commit/cb75dcb99ce420c38e9f59b86f1cf037b69db40d))
+* ci ([2a26b82](https://github.com/paulAlexSerban/prj--js-component-lib/commit/2a26b82085b0b76f99db32bb6802c96cca19b0ed))
+* **ci:** adjust ([2607133](https://github.com/paulAlexSerban/prj--js-component-lib/commit/260713358ebd6ade3ea594a6f7f9c5882d16dbbf))
+* **cleanup:** removed old files ([b3782b2](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b3782b2898522c0bacfb332581e31510c60d0c16))
+* **modules:** added new modules ([ecf46c5](https://github.com/paulAlexSerban/prj--js-component-lib/commit/ecf46c57d317b0b96a81a2753ad9ecc4d38fcaf5))
+* **new modules:** added several new modules ([06ef27e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/06ef27e54c8366863b927deab86b8df2e9d0c6ba))
+* **styles:** adjustments ([e92332c](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e92332c7e31113f780caf5b1b22103d9081b00b1))
+
 ## [1.13.4](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.13.3...v1.13.4) (2023-07-31)
 
 
