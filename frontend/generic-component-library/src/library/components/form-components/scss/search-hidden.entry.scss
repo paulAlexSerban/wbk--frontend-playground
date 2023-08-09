@@ -47,6 +47,7 @@ $block: "search-hidden";
     @include e("btn") {
         @include absolute($top: 0, $left: 0);
         @include font($button-large);
+        @include flex();
         background-color: get-color($c-light, cultured);
         border: 0;
         cursor: pointer;
@@ -58,5 +59,9 @@ $block: "search-hidden";
         .active & {
             transform: translateX(198px);
         }
+    }
+
+    @include e('magnifying-icon') {
+        width: 50%;
     }
 }

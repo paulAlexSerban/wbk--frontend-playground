@@ -17,3 +17,8 @@
 ## Component Library Development
 1. `bash modulize.bash -e dev -m generic-component-library -p build` - Build the component library to make sure it is up to date and building correctly.
 2. `bash modulize.bash -e dev -m generic-component-library -p watch` - Watch the component library for changes and rebuild when changes are detected.
+
+## How to add new module
+1. `bash modulize.bash -e dev -m <module-name> -p fe-generate` - will generate new FE module
+   @TODO: copy template
+   @TODO: find and replace template-module-name-library with module-name

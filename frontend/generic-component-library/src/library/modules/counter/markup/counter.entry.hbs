@@ -1,18 +1,15 @@
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true}}
 
-{{#> templates/base/markup/partials/_base-demo-container}}
+  {{{feLibs 'library' 'modules' 'counter' 'counter' 'all'}}}
 
-    {{{feLibs 'library' 'modules' 'counter' 'counter' 'all'}}}
-
-<div data-js-page="Counter">
-  <section data-js-component="Counter" id="counter">
-    <section class="counter__base" >
+  <div class='col-smartphone-4 col-tablet-8 offset-tablet-2'>
+    <section class="counter__base" data-js-component="Counter" id="counter">
       <h2 class="counter__title-heading">Counter</h2>
       <div class="counter__container" id="body">
         <output class="counter__output">0</output>
         <button class="counter__button" type="button">Bump Count!</button>
       </div>
     </section>
-  </section>
-</div>
+  </div>
 
 {{/ templates/base/markup/partials/_base-demo-container}}

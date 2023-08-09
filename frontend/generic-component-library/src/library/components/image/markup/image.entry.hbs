@@ -1,7 +1,11 @@
-{{#> templates/base/markup/partials/_base-demo-container title='Image Component'}}
+{{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Image Component'}}
       {{{feLibs 'library' 'components' 'image' 'image' 'css'}}}
+
+   <div class='col-smartphone-4 col-tablet-8 offset-tablet-2'>
       {{> ./partials/_image-v2 
             imgName="worker" 
             altText="worker image"
-            classNames="col"}}
+            classNames=""}}
+   </div>
+
 {{/ templates/base/markup/partials/_base-demo-container}}
