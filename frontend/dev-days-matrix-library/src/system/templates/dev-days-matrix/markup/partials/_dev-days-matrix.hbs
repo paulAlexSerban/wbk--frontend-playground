@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{{assetsUrl 'icons' 'favicon-32x32.png'}}">
+
+  {{!-- <title>Frontend Mentor | QR code component</title> --}}
+  <title>{{title}}</title>
+  {{{feLibs 'system' 'templates' 'dev-days-matrix' 'dev-days-matrix' 'css'}}}
+  {{{feLibs 'commons' 'layouts' 'grid' '12-col-flexbox-grid' 'css'}}}
+
+
+</head>
+
+<body class='grid'>
+  {{> @partial-block}}
+</body>
+</html>
