@@ -58,7 +58,7 @@ export default function Index({ data }) {
 export async function getStaticProps({}) {
     const fetchOrReadFile = async (url) => {
         let dataArray;
-        if (url.includes("http")) {
+        if (url.includes("http://")) {
             dataArray = await fetchFile(url);
         } else {
             const jsonFilePath = path.join(process.cwd(), "public", url);
@@ -71,9 +71,7 @@ export async function getStaticProps({}) {
     const bigFrontendLibraryObj = await fetchOrReadFile(`${paths.internalBigFrontendLibrary}/componentList.json`);
     const devDaysMatrixObj = await fetchOrReadFile(`${paths.internalDevDaysMatrix}/componentList.json`);
     const genericComponentListObj = await fetchOrReadFile(`${paths.internalComponentLibraryUrl}/componentList.json`);
-    const frontendMentorChallengesObj = await fetchOrReadFile(
-        `${paths.internalFrontendMentorLibrary}/componentList.json`
-    );
+    const frontendMentorChallengesObj = await fetchOrReadFile(`${paths.internalFrontendMentorLibrary}/componentList.json`);
 
     return {
         props: {

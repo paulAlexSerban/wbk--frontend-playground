@@ -103,5 +103,4 @@ dist
 # TernJS port file
 .tern-port
 /package/component-library
-**/public/frontend-mentor-library
-**/public/generic-component-library
+**/public/*/*
