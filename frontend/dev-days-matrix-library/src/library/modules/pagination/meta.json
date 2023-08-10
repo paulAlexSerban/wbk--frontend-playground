@@ -1,0 +1,26 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "pagination",
+    "name": "Pagination",
+    "version": "1.0.0",
+    "description": "Pagination",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "pagination", "infinite"],
+    "variations": [
+        {
+            "slug": "infinite-scroll-posts",
+            "name": "Infinite Scroll Posts",
+            "description": "Display blog posts from https://jsonplaceholder.typicode.com and add infinite scroll to fetch posts and also add filter box",
+            "specs": [
+                "Create UI & custom CSS loader animation",
+                "Fetch initial posts from API and display",
+                "Scroll down, show loader and fetch next set of posts",
+                "Add filtering for fetched posts"
+            ]
+        }
+    ]
+}
