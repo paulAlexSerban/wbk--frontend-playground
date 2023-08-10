@@ -24,17 +24,17 @@ echo "Cleaning ./public/*"
 rm -rfv ../public/*
 
 ecoh "Creating ./public/* for each module"
-mkdir ../public
-mkdir ../public/generic-component-library
-mkdir ../public/frontend-mentor-library
-mkdir ../public/dev-days-matrix-library
-mkdir ../public/big-frontend-dev-library
+mkdir -v ../public
+mkdir -v ../public/generic-component-library
+mkdir -v ../public/frontend-mentor-library
+mkdir -v ../public/dev-days-matrix-library
+mkdir -v ../public/big-frontend-dev-library
 
 if [[ $ENV == 'production' ]]; then
-  cp -rfv ../../package/dist/generic-component-library/componentList.json ../public/generic-component-library/componentList.json
-  cp -rfv ../../package/dist/frontend-mentor-library/componentList.json ../public/frontend-mentor-library/componentList.json
-  cp -rfv ../../package/dist/dev-days-matrix-library/componentList.json ../public/dev-days-matrix-library/componentList.json
-  cp -rfv ../../package/dist/big-frontend-dev-library/componentList.json ../public/big-frontend-dev-library/componentList.json
+  cp -rfv ../../../package/dist/generic-component-library/componentList.json ../public/generic-component-library/componentList.json
+  cp -rfv ../../../package/dist/frontend-mentor-library/componentList.json ../public/frontend-mentor-library/componentList.json
+  cp -rfv ../../../package/dist/dev-days-matrix-library/componentList.json ../public/dev-days-matrix-library/componentList.json
+  cp -rfv ../../../package/dist/big-frontend-dev-library/componentList.json ../public/big-frontend-dev-library/componentList.json
 else
   cp -rfv ../../generic-component-library/dist/componentList.json ../public/generic-component-library/componentList.json
   cp -rfv ../../frontend-mentor-library/dist/componentList.json ../public/frontend-mentor-library/componentList.json
