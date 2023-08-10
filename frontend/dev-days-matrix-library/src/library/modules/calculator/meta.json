@@ -1,20 +1,40 @@
 {
-  "group": "library",
-  "category": "modules",
-  "component": "calculator",
-  "name": "Calculator",
-  "version": "1.0.0",
-  "description": "Calculator",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "modules", "calculator"],
-  "variations": [
-      {
-          "slug": "exchangerate-calculator",
-          "name": "Exchange Rate Calculator",
-          "description": "Exchange Rate Calculator"
-      }
-  ]
+    "group": "library",
+    "category": "modules",
+    "component": "calculator",
+    "name": "Calculator",
+    "version": "1.0.0",
+    "description": "Calculator",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "calculator"],
+    "variations": [
+        {
+            "slug": "exchangerate-calculator",
+            "name": "Exchange Rate Calculator",
+            "description": "Select countries to get the exchange rate for a specific amount",
+            "specs": [
+                "Display UI with 2 select lists for countries and 2 inputs for amounts",
+                "Fetch exchange rates from API (https://api.exchangerate-api.com)",
+                "Display the values for both countries",
+                "Update values on amount change",
+                "Swap country rates"
+            ]
+        },
+        {
+            "slug": "fortune-calculator",
+            "name": "Fortune  Calculator",
+            "description": "Project to teach high order array methods and DOM manipulation",
+            "specs": [
+                "Fetch random users from the https://randomuser.me API",
+                "Use forEach() to loop and output user/wealth",
+                "Use map() to double wealth",
+                "Use filter() to filter only millionaires",
+                "Use sort() to sort by wealth",
+                "Use reduce() to add all wealth"
+            ]
+        }
+    ]
 }
