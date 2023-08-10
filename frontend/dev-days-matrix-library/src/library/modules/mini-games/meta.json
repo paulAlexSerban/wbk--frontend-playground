@@ -1,0 +1,29 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "mini-games",
+    "name": "Mini Games",
+    "version": "1.0.0",
+    "description": "Mini Games",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "mini-games"],
+    "variations": [
+        {
+            "slug": "hangman",
+            "name": "Hangman",
+            "description": "Select a letter to figure out a hidden word in a set amount of chances",
+            "specs": [
+                "Display hangman pole and figure using SVG",
+                "Generate a random word",
+                "Display word in UI with correct letters",
+                "Display wrong letters",
+                "Show notification when select a letter twice",
+                "Show popup on win or lose",
+                "Play again button to reset game"
+            ]
+        }
+    ]
+}
