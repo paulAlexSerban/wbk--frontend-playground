@@ -5,7 +5,7 @@ const nextConfig = {
   output: 'export'
 };
 
-if (process.env.ENV_NAME === 'gh_pages') {
+if (process.env.ENV_NAME === 'production') {
   nextConfig.basePath = process.env.BASE_PATH;
 }
 

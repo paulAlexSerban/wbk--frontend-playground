@@ -50,9 +50,9 @@ if [[ $ENV == "dev" ]]; then
 elif [[ $ENV == "gh_pages" ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
   export ENV_NAME="gh_pages"
-elif [[ $ENV == 'prod' ]]; then
+elif [[ $ENV == 'production' ]]; then
   echo "Builing ${MODULE_NAME} in $ENV mode"
-  export ENV_NAME="prod"
+  export ENV_NAME="production"
 fi
 
 npm --prefix .. run build
