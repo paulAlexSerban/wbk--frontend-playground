@@ -1,0 +1,28 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "quiz",
+    "name": "Quiz",
+    "version": "1.0.0",
+    "description": "Quiz",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "quiz"],
+    "variations": [
+        {
+            "slug": "memory-cards",
+            "name": "Memory Cards",
+            "description": "Flash card app for learning. Display, add and remove memory cards with questions and answers",
+            "stats": [
+                "Create flip cards using CSS",
+                "Create 'Add new card' overlay with form",
+                "Display question cards and flip for answer",
+                "View prev and next cards",
+                "Add new cards to local storage",
+                "Clear all cards from local storage"
+            ]
+        }
+    ]
+}
