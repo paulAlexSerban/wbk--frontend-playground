@@ -24,6 +24,7 @@ echo "Cleaning ./public/*"
 rm -rfv ../public/*
 
 ecoh "Creating ./public/* for each module"
+mkdir ../public
 mkdir ../public/generic-component-library
 mkdir ../public/frontend-mentor-library
 mkdir ../public/dev-days-matrix-library
