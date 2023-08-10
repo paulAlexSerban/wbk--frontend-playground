@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "modules",
+  "component": "calculator",
+  "name": "Calculator",
+  "version": "1.0.0",
+  "description": "Calculator",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "modules", "calculator"],
+  "variations": [
+      {
+          "slug": "exchangerate-calculator",
+          "name": "Exchange Rate Calculator",
+          "description": "Exchange Rate Calculator"
+      }
+  ]
+}
