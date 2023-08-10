@@ -21,6 +21,17 @@
                 "Scroll down, show loader and fetch next set of posts",
                 "Add filtering for fetched posts"
             ]
+        },
+        {
+            "slug": "lyrics-search",
+            "name": "Lyrics Search",
+            "description": "Find songs, artists and lyrics using the https://lyrics.ovh API",
+            "specs": [
+                "Display UI with song/artist input",
+                "Fetch songs/artists and put in DOM",
+                "Add pagination",
+                "Add get lyrics functionality and display in DOM"
+            ]
         }
     ]
 }
