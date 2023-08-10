@@ -1,0 +1,27 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "search",
+    "name": "Search",
+    "version": "1.0.0",
+    "description": "Search",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "search"],
+    "variations": [
+        {
+            "slug": "meal-finder",
+            "name": "Meal Finder",
+            "description": "Search and generate random meals from the www.themealdb.com API",
+            "specs": [
+                "Display UI with form to search and button to generate",
+                "Connect to API and get meals",
+                "Display meals in DOM with image and hover effect",
+                "Click on meal and see the details",
+                "Click on generate button and fetch & display a random meal"
+            ]
+        }
+    ]
+}
