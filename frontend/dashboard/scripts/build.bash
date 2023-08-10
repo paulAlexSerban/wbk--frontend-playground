@@ -2,10 +2,6 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-if [[ -z $ENV ]]; then
-  source ../.env.development
-fi
-
 # Parse command-line options
 while getopts ":m:p:e:" opt; do
   case $opt in
@@ -20,6 +16,10 @@ shift $((OPTIND - 1))
 # set some default values
 if [[ -z $ENV ]]; then
   ENV=dev
+fi
+
+if [[ $ENV == 'dev'  ]]; then
+  source ../.env.development
 fi
 
 echo "Cleaning ./public/*"
