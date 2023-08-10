@@ -57,9 +57,9 @@ export default function Index({ data }) {
 
 export async function getStaticProps({}) {
     const fetchOrReadFile = async (url) => {
+        console.log('test',{url})
         let dataArray;
-        if (url.includes("http://")) {
-            console.log({url})
+        if (url.includes("http")) {
             dataArray = await fetchFile(url);
         } else {
             const jsonFilePath = path.join(process.cwd(), "public", url);

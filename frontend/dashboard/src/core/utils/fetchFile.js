@@ -9,7 +9,7 @@ const fetchFile = async (url) => {
 
       // If you're fetching a JSON file, you can convert the response to JSON like so
       const data = await response.json();
-
+      console.log({data})
       return data;
   } catch (error) {
       console.error("There has been a problem with your fetch operation:", error);
