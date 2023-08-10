@@ -1,0 +1,28 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "form-modules",
+    "name": "Form Modules",
+    "version": "1.0.0",
+    "description": "Form Modules",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "form", "modules"],
+    "variations": [
+        {
+            "slug": "form-validation",
+            "name": "Form (Validation)",
+            "description": "Simple client side form validation. Check requird, length, email and password match",
+            "specs": [
+                "Create form UI",
+                "Show error messages under specific inputs",
+                "checkRequired() to accept array of inputs",
+                "checkLength() to check min and max length",
+                "checkEmail() to validate email with regex",
+                "checkPasswordsMatch() to match confirm password]"
+            ]
+        }
+    ]
+}
