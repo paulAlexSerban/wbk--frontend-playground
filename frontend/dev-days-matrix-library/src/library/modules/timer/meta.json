@@ -1,0 +1,27 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "timer",
+    "name": "Timer",
+    "version": "1.0.0",
+    "description": "Timer",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "timer"],
+    "variations": [
+        {
+            "slug": "new-year-countdown",
+            "name": "New York Countdown",
+            "description": "Landing page that counts down from the current date to the next new year",
+            "specs": [
+                "Create landing page with HTML/CSS",
+                "Calculate the days, hours, mins and seconds to the new year",
+                "Insert values into the DOM",
+                "Show a spinner right before loading the countdown",
+                "Show the coming year in the background"
+            ]
+        }
+    ]
+}

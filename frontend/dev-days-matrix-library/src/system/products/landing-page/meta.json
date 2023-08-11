@@ -1,0 +1,26 @@
+{
+    "group": "system",
+    "category": "products",
+    "component": "landing-page",
+    "name": "Menu Slide Landing Page",
+    "version": "1.0.0",
+    "description": "Dev Days Matrix Base Page Template",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "menu-slide-landing-page",
+            "name": "Menu Slide & Modal Landing Page",
+            "description": "Simple landing page with sliding menu and modal",
+            "specs": [
+                "Create and style landing page",
+                "Style side nav and modal",
+                "Add functionality to make menu open/close on button click",
+                "Add functionality to make modal open/close on button click"
+            ]
+        }
+    ]
+}

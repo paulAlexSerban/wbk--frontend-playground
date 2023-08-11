@@ -1,0 +1,40 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "quiz",
+    "name": "Quiz",
+    "version": "1.0.0",
+    "description": "Quiz",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "quiz"],
+    "variations": [
+        {
+            "slug": "memory-cards",
+            "name": "Memory Cards",
+            "description": "Flash card app for learning. Display, add and remove memory cards with questions and answers",
+            "stats": [
+                "Create flip cards using CSS",
+                "Create 'Add new card' overlay with form",
+                "Display question cards and flip for answer",
+                "View prev and next cards",
+                "Add new cards to local storage",
+                "Clear all cards from local storage"
+            ]
+        },
+        {
+            "slug": "richest-people",
+            "name": "Richest People",
+            "description": "Display a scrambled list that can be sorted with drag and drop",
+            "stats": [
+                "Create an ordered list (Top 10 richest people)",
+                "Scramble list items randomly",
+                "Allow user to drag and drop an item to a different position",
+                "Button to check if items are in correct order",
+                "Show green for correct order and red for wrong order"
+            ]
+        }
+    ]
+}
