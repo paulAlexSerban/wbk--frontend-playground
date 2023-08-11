@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.16.0...v1.16.1) (2023-08-11)
+
+
+### Bug Fixes
+
+* fix libs path ([04f91ba](https://github.com/paulAlexSerban/prj--js-component-lib/commit/04f91bab9032394620e5cd8075e5a9884a80d8c0))
+
 # [1.16.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.15.0...v1.16.0) (2023-08-11)
 
 
