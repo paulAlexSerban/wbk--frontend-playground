@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
-console.log({ "process.env.BASE_URL": process.env.BASE_URL });
+
 const path = require("path");
 const configs = require("./configs");
 const loaders = require("./loaders");

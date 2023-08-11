@@ -12,7 +12,7 @@
     "keywords": ["page", "template", "base"],
     "variations": [
         {
-            "slug": "dev-days-matrix",
+            "slug": "dev-days-matrix-base",
             "name": "Dev Days Matrix Base Page Template",
             "description": "Dev Days Matrix Base Page Template"
         }

@@ -1,0 +1,28 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "video-player",
+    "name": "Video Player",
+    "version": "1.0.0",
+    "description": "Video Player",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "video", "player"],
+    "variations": [
+        {
+            "slug": "custom-video-player",
+            "name": "Custom Video Player",
+            "description": "Custom video player using the HTML5 video element and it's JavaScript API with a custom design",
+            "specs": [
+                "Display custom video player styled with CSS",
+                "Play/pause",
+                "Stop",
+                "Video progress bar",
+                "Set progress bar time",
+                "Display time in mins and seconds"
+            ]
+        }
+    ]
+}
