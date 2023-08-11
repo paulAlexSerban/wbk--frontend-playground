@@ -1,3 +1,39 @@
+# [1.16.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.15.0...v1.16.0) (2023-08-11)
+
+
+### Bug Fixes
+
+* adjustments ([b649a70](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b649a70ab7e38dd7e83bfeef96abed827c3bfe15))
+
+
+### Features
+
+* **audio-player:** added custom audio player ([3e3878b](https://github.com/paulAlexSerban/prj--js-component-lib/commit/3e3878b79aa5ac845eec379474aa96a2e5abbc8f))
+* **base-template:** adjustments ([fa17d32](https://github.com/paulAlexSerban/prj--js-component-lib/commit/fa17d32526f7b431bd4feb004d28e5a24de65fda))
+* **boking:** movie seat boking app ([9c8da43](https://github.com/paulAlexSerban/prj--js-component-lib/commit/9c8da43447ec4ffef98048f7872f09f3a881e740))
+* **calculator:** added exchange rate calculator ([183f0c2](https://github.com/paulAlexSerban/prj--js-component-lib/commit/183f0c233a1e3d3e7b84ab9fc505fa8ed9324385))
+* **calculator:** added fortune calculator ([24c640d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/24c640da1cdf0f8a19585501a150eb5f2c1f7d69))
+* **calculator:** expense tracker ([16dae59](https://github.com/paulAlexSerban/prj--js-component-lib/commit/16dae59013ec058c1dff6333cdecae25700200ef))
+* **form:** added form validation initial code ([55ae773](https://github.com/paulAlexSerban/prj--js-component-lib/commit/55ae77306aad848d745285f2d03b2cb5571faef6))
+* **landing-page:** added menu-slide-landing-page ([e79fa2a](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e79fa2a7fd877ed2776401212eb1820c183bbfcb))
+* **loader:** relaxer ([a50b541](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a50b5415846d712f3182a860a892d0f805bb10bf))
+* **mini-game:** breakout ([52b17d9](https://github.com/paulAlexSerban/prj--js-component-lib/commit/52b17d98b7929d0a23a88b8ef911423d8ec6782d))
+* **mini-game:** js fix ([47b3d8a](https://github.com/paulAlexSerban/prj--js-component-lib/commit/47b3d8a1a903c8eda42620c5f0cb2e7d93b9c743))
+* **mini-games:** added hangman mini game ([b70ea83](https://github.com/paulAlexSerban/prj--js-component-lib/commit/b70ea835f84dd17f3f2521d074de8618c4d0ed66))
+* **mini-games:** speak number guessing ([f3ee99c](https://github.com/paulAlexSerban/prj--js-component-lib/commit/f3ee99cd6a05ac738f8e7ca8ee68bf0be275af50))
+* **mini-games:** speed-typer ([269327d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/269327de404962a88a726d2821e8905eba836dbb))
+* **pagination:** added infinite scrolling ([a17dbe2](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a17dbe225b7b3b7290ce3f10f21a9fc647e9c285))
+* **pagination:** lyrics search ([f824da4](https://github.com/paulAlexSerban/prj--js-component-lib/commit/f824da48690ed007b5b42ea4409b6403638e6570))
+* **quiz:** memory cards ([7e86f4e](https://github.com/paulAlexSerban/prj--js-component-lib/commit/7e86f4e36bc682a542dc3091786512ff611457d7))
+* **quiz:** memory cards ([3245dfb](https://github.com/paulAlexSerban/prj--js-component-lib/commit/3245dfbfe5e44e2cce38378df152ab5b79e7f678))
+* **quiz:** richest people ([ee9ff38](https://github.com/paulAlexSerban/prj--js-component-lib/commit/ee9ff38d2fd50eb0ad7a4d37e74e1309a8fdc031))
+* **search:** meal finder ([ca97e6d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/ca97e6dacd9a1d002cd6a91059867d1261587df1))
+* **text-generator:** added quote generator ([e2b57e0](https://github.com/paulAlexSerban/prj--js-component-lib/commit/e2b57e0711ba7a69fbb9978d3abd11b143da5484))
+* **text-reader:** added speech text reader ([99d816f](https://github.com/paulAlexSerban/prj--js-component-lib/commit/99d816f718c5420017b388f7c8393f46c1644c1f))
+* **timer:** new year countdown ([9e2ed8d](https://github.com/paulAlexSerban/prj--js-component-lib/commit/9e2ed8d391fbd1b300d20976cf4f9c726b7dfee7))
+* updated quote generator json api ([a727967](https://github.com/paulAlexSerban/prj--js-component-lib/commit/a727967ab48f96dd914a58cb7a36ed38cc8e1571))
+* **video player:** added custom video player ([8c16bf6](https://github.com/paulAlexSerban/prj--js-component-lib/commit/8c16bf6fea3d8f25da12218565c770edee82661d))
+
 # [1.15.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.14.0...v1.15.0) (2023-08-10)
 
 
