@@ -3,7 +3,7 @@ const { env } = process;
 
 module.exports = function (group, category, name, variation, type) {
     const path = `${env.BASE_URL}${
-        env.BASE_URL.length !== 0 ? "/frontend-mentor-library" : ""
+        env.BASE_URL.length !== 0 ? "/dev-days-matrix-library" : ""
     }/${group}/${category}/${name}/${variation}`;
 
     const feLibs = {
