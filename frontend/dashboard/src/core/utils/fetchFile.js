@@ -8,12 +8,12 @@ const fetchFile = async (url) => {
       }
 
       // If you're fetching a JSON file, you can convert the response to JSON like so
-      const data = await response.json();
-      console.log({data})
-      return data;
+      return await response.json();
   } catch (error) {
       console.error("There has been a problem with your fetch operation:", error);
   }
 };
 
+/* `const data = await response.json();` is converting the response from the fetch request into a
+JSON object. */
 export default fetchFile;
