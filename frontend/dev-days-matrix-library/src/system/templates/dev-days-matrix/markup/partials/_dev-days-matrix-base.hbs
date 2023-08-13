@@ -12,7 +12,11 @@
 
 <body class='grid' 
   {{#if backgroundImage}} 
-    style="--background-image: url('{{assetsUrl 'images' backgroundImage}}');" 
+    style="--background-image: url('{{assetsUrl 'images' backgroundImage}}');--background-gif: url('{{assetsUrl 'gifs' backgroundGif}}')" 
+  {{/if}}
+
+  {{#if backgroundGif}} 
+    style="--background-gif: url('{{assetsUrl 'gifs' backgroundGif}}')" 
   {{/if}}>
 
   {{> @partial-block}}

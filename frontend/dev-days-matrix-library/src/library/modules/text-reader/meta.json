@@ -22,6 +22,11 @@
                 "Speaks the text typed in",
                 "Change voices and accents"
             ]
+        },
+        {
+            "slug": "joke-teller",
+            "name": "Joke Teller",
+            "description": "Joke Teller app using Joke API and Text to Speech API"
         }
     ]
 }
