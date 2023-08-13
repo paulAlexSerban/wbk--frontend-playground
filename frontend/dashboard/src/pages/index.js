@@ -59,7 +59,6 @@ export async function getStaticProps({}) {
     const fetchOrReadFile = async (url) => {
         let dataArray;
         if (url.includes("http://")) {
-            console.log("fetching", url);
             dataArray = await fetchFile(url);
         } else {
             const jsonFilePath = path.join(process.cwd(), "public", url);
