@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.16.1...v1.17.0) (2023-08-13)
+
+
+### Features
+
+* **js:** adjustments and added extra vendor libraries ([6648c83](https://github.com/paulAlexSerban/prj--js-component-lib/commit/6648c834c25db528c8daa389012a3be50a065c53))
+
 ## [1.16.1](https://github.com/paulAlexSerban/prj--js-component-lib/compare/v1.16.0...v1.16.1) (2023-08-11)
 
 
