@@ -1,0 +1,18 @@
+// @import "./_simplefolio/vendors/bootstrap.scss";
+
+@import "./_simplefolio/abstracts/mixins";
+@import "./_simplefolio/abstracts/variables";
+@import "./_simplefolio/abstracts/helpers";
+
+@import "./_simplefolio/base/base";
+@import "./_simplefolio/base/typography";
+
+@import "./_simplefolio/components/buttons";
+
+@import "./_simplefolio/layout/footer";
+@import "./_simplefolio/layout/sections";
+
+@import "./_simplefolio/sections/about";
+@import "./_simplefolio/sections/contact";
+@import "./_simplefolio/sections/hero";
+@import "./_simplefolio/sections/projects";

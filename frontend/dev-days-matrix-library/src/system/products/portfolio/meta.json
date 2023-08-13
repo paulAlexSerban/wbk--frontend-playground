@@ -1,0 +1,20 @@
+{
+  "group": "system",
+  "category": "products",
+  "component": "portfolio",
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["page", "template", "base"],
+  "variations": [
+      {
+          "slug": "simplefolio",
+          "name": "Simplefolio",
+          "description": "Simple portfolio"
+      }
+  ]
+}
