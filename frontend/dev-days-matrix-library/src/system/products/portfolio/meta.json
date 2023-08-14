@@ -15,6 +15,11 @@
           "slug": "simplefolio",
           "name": "Simplefolio",
           "description": "Simple portfolio"
-      }
+      },
+      {
+        "slug": "light-dark-mode",
+        "name": "Light Dark Mode Portfolio",
+        "description": "Light Dark Mode Portfolio with a simple switch"
+    }
   ]
 }
