@@ -21,6 +21,11 @@
                 "Switch songs",
                 "Progress bar"
             ]
+        },
+        {
+            "slug": "custom-music-player",
+            "name": "Custom Music Player",
+            "description": "Custom music player"
         }
     ]
 }
