@@ -1,0 +1,37 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Burger Slidein Navigation'
+      attributionFromHref='https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/' 
+      attributionFromLabel='JavaScript Web Projects: 20 Projects to Build Your Portfolio'}}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+
+
+  {{{feLibs 'library' 'modules' 'navigation' 'burger-slidein-navigation' 'all'}}}
+
+    <!-- Menu Overlay -->
+  <div class="overlay overlay-slide-left" id="overlay">
+    <!-- Menu Items -->
+    <nav>
+      <ul>
+        <li id="nav-1" class="slide-out-1"><a href="#">Home</a></li>
+        <li id="nav-2" class="slide-out-2"><a href="#about">About</a></li>
+        <li id="nav-3" class="slide-out-3"><a href="#skills">Skills</a></li>
+        <li id="nav-4" class="slide-out-4"><a href="#projects">Projects</a></li>
+        <li id="nav-5" class="slide-out-5"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Menu Bars -->
+  <div class="menu-bars" id="menu-bars">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <!-- Sections -->
+  <section id="home"><a href="https://paulserban.eu" target="_blank">Paul Serban</a></section>
+  <section id="about"><h1>Learn More About Me</h1></section>
+  <section id="skills"><h1>These Are My Strengths</h1></section>
+  <section id="projects"><h1>These Are My Results</h1></section>
+  <section id="contact"><h1>Available Anytime</h1></section>
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base }}

@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "navigation",
+    "name": "Navigation",
+    "version": "1.0.0",
+    "description": "Navigation",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "navigation"],
+    "variations": [
+        {
+            "slug": "burger-slidein-navigation",
+            "name": "Burger Slidein Navigation",
+            "description": "Burger Slidein Navigation"
+        }
+    ]
+}
