@@ -10,7 +10,7 @@
   {{{feLibs 'system' 'templates' 'dev-days-matrix' 'dev-days-matrix-base' 'css'}}}
 </head>
 
-<body class='grid' 
+<body class='grid {{ bodyClassList }}' 
   {{#if backgroundImage}} 
     style="--background-image: url('{{assetsUrl 'images' backgroundImage}}');--background-gif: url('{{assetsUrl 'gifs' backgroundGif}}')" 
   {{/if}}
