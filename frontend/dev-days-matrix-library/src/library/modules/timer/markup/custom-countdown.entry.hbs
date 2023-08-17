@@ -1,0 +1,46 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Custom Countdown'
+      attributionFromHref='https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/' 
+      attributionFromLabel='JavaScript Web Projects: 20 Projects to Build Your Portfolio'}}
+
+
+  {{{feLibs 'library' 'modules' 'timer' 'custom-countdown' 'all'}}}
+
+    <!-- Video Background -->
+    <video class="video-background" id="video-background" loop muted autoplay>
+        <source src="{{assetsUrl 'videos' 'time.mp4'}}"></source>
+    </video>
+    <div class="video-overlay"></div>
+    <!-- Container -->
+    <div class="container">
+        <!-- Input -->
+        <div class="input-container" id="input-container">
+            <h1>Create a Custom Countdown!</h1>       
+            <form class="form" id="countdownForm">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="What are you counting down to?">
+                <label for="date-picker">Select a Date</label>
+                <input type="date" id="date-picker">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <!-- Countdown -->
+        <div class="countdown" id="countdown" hidden>
+            <h1 id="countdown-title"></h1>
+            <ul>
+                <li><span></span>Days</li>
+                <li><span></span>Hours</li>
+                <li><span></span>Minutes</li>
+                <li><span></span>Seconds</li>
+            </ul>
+            <button id="countdown-button">RESET</button>
+        </div>
+        <!-- Complete -->
+        <div class="complete" id="complete" hidden>
+            <h1 class="complete-title">Countdown Complete!</h1>
+            <h1 id="complete-info"></h1>
+            <button id="complete-button">NEW COUNTDOWN</button>
+        </div>
+    </div>
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base }}
