@@ -15,6 +15,11 @@
           "slug": "nasa-apod",
           "name": "NASA Astronomy Picture of the Day",
           "description": "NASA Astronomy Picture of the Day"
-      }
+      },
+      {
+        "slug": "movie-app",
+        "name": "Movie App",
+        "description": "Movie App"
+    }
   ]
 }
