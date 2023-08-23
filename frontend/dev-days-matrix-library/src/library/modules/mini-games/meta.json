@@ -86,6 +86,11 @@
             "slug": "pong",
             "name": "Pong",
             "description": "Pong"
+        },
+        {
+            "slug": "random-choice-picker",
+            "name": "Random Choice Picker",
+            "description": "Random Choice Picker"
         }
     ]
 }
