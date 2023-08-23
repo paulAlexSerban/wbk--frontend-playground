@@ -71,6 +71,12 @@
             "slug": "rock-paper-scissors-lizard-spock",
             "name": "Rock Paper Scissors Lizard Spock",
             "description": "Game where you control a paddle with the arrow keys to bounce a ball up to break bricks. This app uses the HTML5 canvas element and API"
+        },
+        {
+            "slug": "math-sprint-game",
+            "name": "Math Sprint Game",
+            "description": "Math Sprint Game"
         }
+
     ]
 }
