@@ -81,7 +81,11 @@
             "slug": "paint-clone",
             "name": "Paint Clone",
             "description": "Paint Clone"
+        },
+        {
+            "slug": "pong",
+            "name": "Pong",
+            "description": "Pong"
         }
-
     ]
 }

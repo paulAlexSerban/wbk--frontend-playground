@@ -677,10 +677,8 @@ if (!window.jscolor) {
             },
 
             dispatchChange: function (thisObj) {
-                if (thisObj.valueElement) {
-                    if (jsc.isElementType(thisObj.valueElement, "input")) {
-                        jsc.fireEvent(thisObj.valueElement, "change");
-                    }
+                if (thisObj.valueElement && jsc.isElementType(thisObj.valueElement, "input")) {
+                      jsc.fireEvent(thisObj.valueElement, "change");
                 }
             },
 
