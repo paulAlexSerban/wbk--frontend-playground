@@ -15,6 +15,11 @@
             "slug": "kanban-board",
             "name": "Kanban Board",
             "description": "Kanban Board"
+        },
+        {
+            "slug": "drink-water",
+            "name": "Drink Water",
+            "description": "Drink Water"
         }
     ]
 }
