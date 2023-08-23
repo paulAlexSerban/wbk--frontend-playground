@@ -26,6 +26,11 @@
             "slug": "animated-tailwind-template",
             "name": "Animated Tailwind Landing Page Template",
             "description": "Animated Tailwind Landing Page Template"
+        },
+        {
+            "slug": "splash-clone",
+            "name": "Splash Clone",
+            "description": "Splash Clone"
         }
     ]
 }

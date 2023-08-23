@@ -6,7 +6,7 @@ import { createImageRenditions } from "./tasks/createImageRenditions";
 import { processVideos } from "./tasks/processVideos";
 import { processAudio } from "./tasks/processAudio";
 import { processGifs } from "./tasks/processGifs";
-
+import { processPngs } from "./tasks/processPngs";
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
@@ -17,14 +17,15 @@ import { processGifs } from "./tasks/processGifs";
 task(
   "process",
   series(
-    clean,
+    // clean,
     parallel(
       processIcons,
       processSvgs,
       createImageRenditions,
       processVideos,
       processAudio,
-      processGifs
+      processGifs,
+      processPngs
     )
   )
 );
