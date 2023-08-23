@@ -23,6 +23,11 @@
                 "checkEmail() to validate email with regex",
                 "checkPasswordsMatch() to match confirm password]"
             ]
+        },
+        {
+            "slug": "signup-form-validation",
+            "name": "Signup Form (Validation)",
+            "description": "Simple client side form validation. Check requird, length, email and password match"
         }
     ]
 }
