@@ -76,6 +76,11 @@
             "slug": "math-sprint-game",
             "name": "Math Sprint Game",
             "description": "Math Sprint Game"
+        },
+        {
+            "slug": "paint-clone",
+            "name": "Paint Clone",
+            "description": "Paint Clone"
         }
 
     ]

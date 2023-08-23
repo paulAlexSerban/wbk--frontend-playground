@@ -125,7 +125,7 @@ function scoresToDOM() {
 
 // Stop Timer, Process Results, go to Score Page
 function checkTime() {
-    console.log(timePlayed);
+    // console.log(timePlayed);
     if (playerGuessArray.length == questionAmount) {
         clearInterval(timer);
         // Check for wrong guess, add penaltyTime
@@ -138,7 +138,7 @@ function checkTime() {
             }
         });
         finalTime = timePlayed + penaltyTime;
-        console.log("time:", timePlayed, "penalty:", penaltyTime, "final:", finalTime);
+        // console.log("time:", timePlayed, "penalty:", penaltyTime, "final:", finalTime);
         scoresToDOM();
     }
 }
@@ -203,10 +203,10 @@ function shuffle(array) {
 function createEquations() {
     // Randomly choose how many correct equations there should be
     const correctEquations = getRandomInt(questionAmount);
-    console.log("correct equations:", correctEquations);
+    // console.log("correct equations:", correctEquations);
     // Set amount of wrong equations
     const wrongEquations = questionAmount - correctEquations;
-    console.log("wrong equations:", wrongEquations);
+    // console.log("wrong equations:", wrongEquations);
     // Loop through for each correct equation, multiply random numbers up to 9, push to array
     for (let i = 0; i < correctEquations; i++) {
         firstNumber = getRandomInt(9);
@@ -280,7 +280,7 @@ function countdownStart() {
             countdown.textContent = "GO!";
         } else if (count === -1) {
             showGamePage();
-            clearInterval(timeCountDown)
+            clearInterval(timeCountDown);
         } else {
             countdown.textContent = count;
         }
@@ -310,7 +310,7 @@ function getRadioValue() {
 function selectQuestionAmount(e) {
     e.preventDefault();
     questionAmount = getRadioValue();
-    console.log("question amount:", questionAmount);
+    // console.log("question amount:", questionAmount);
     if (questionAmount) {
         showCountdown();
     }
@@ -340,7 +340,6 @@ buttonSelectWrong.addEventListener("click", () => {
 buttonSelectRight.addEventListener("click", () => {
     select(true);
 });
-
 
 // On Load
 getSavedBestScores();
