@@ -15,6 +15,11 @@
             "slug": "burger-slidein-navigation",
             "name": "Burger Slidein Navigation",
             "description": "Burger Slidein Navigation"
+        },
+        {
+            "slug": "expanding-navigation-bar",
+            "name": "Expanding Navigation Bar",
+            "description": "Expanding Navigation Bar"
         }
     ]
 }
