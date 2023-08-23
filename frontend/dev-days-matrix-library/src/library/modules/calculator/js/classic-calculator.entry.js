@@ -20,7 +20,9 @@ function sendNumberValue(number) {
 
 function addDecimal() {
     // If operator pressed, don't add decimal
-    if (awaitingNextValue) return;
+    if (awaitingNextValue) {
+      return;
+    }
     // If no decimal, add one
     if (!calculatorDisplay.textContent.includes(".")) {
         calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
@@ -30,13 +32,9 @@ function addDecimal() {
 // Calculate first and second values depending on operator
 const calculate = {
     "/": (firstNumber, secondNumber) => firstNumber / secondNumber,
-
     "*": (firstNumber, secondNumber) => firstNumber * secondNumber,
-
     "+": (firstNumber, secondNumber) => firstNumber + secondNumber,
-
     "-": (firstNumber, secondNumber) => firstNumber - secondNumber,
-
     "=": (firstNumber, secondNumber) => secondNumber,
 };
 
