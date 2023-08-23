@@ -31,11 +31,8 @@ if (!window.jscolor) {
                 var matchClass = new RegExp("(^|\\s)(" + className + ")(\\s*(\\{[^}]*\\})|\\s|$)", "i");
 
                 for (var i = 0; i < elms.length; i += 1) {
-                    if (elms[i].type !== undefined && elms[i].type.toLowerCase() == "color") {
-                        if (jsc.isColorAttrSupported) {
-                            // skip inputs of type 'color' if supported by the browser
-                            continue;
-                        }
+                    if (elms[i].type !== undefined && elms[i].type.toLowerCase() == "color" && jsc.isColorAttrSupported) {
+                          continue;
                     }
                     var m;
                     if (!elms[i].jscolor && elms[i].className && (m = elms[i].className.match(matchClass))) {
@@ -559,11 +556,11 @@ if (!window.jscolor) {
                 }
             },
 
-            onWindowResize: function (e) {
+            onWindowResize: function () {
                 jsc.redrawPosition();
             },
 
-            onParentScroll: function (e) {
+            onParentScroll: function () {
                 // hide the picker when one of the parent elements is scrolled
                 if (jsc.picker && jsc.picker.owner) {
                     jsc.picker.owner.hide();
@@ -669,7 +666,7 @@ if (!window.jscolor) {
 
             onDocumentPointerEnd: function (e, target, controlName, pointerType) {
                 return function (e) {
-                    var thisObj = target._jscInstance;
+                    let thisObj = target._jscInstance;
                     jsc.detachGroupEvents("drag");
                     jsc.releaseTarget();
                     // Always dispatch changes after detaching outstanding mouse handlers,
