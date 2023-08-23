@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "components",
+  "component": "keyboard-keys",
+  "name": "Keyboard Keys",
+  "version": "1.0.0",
+  "description": "Keyboard event key codes",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "modules", "keyboards"],
+  "variations": [
+      {
+          "slug": "event-key-codes",
+          "name": "Event Key Codes",
+          "description": "Event Key Codes"
+      }
+  ]
+}
