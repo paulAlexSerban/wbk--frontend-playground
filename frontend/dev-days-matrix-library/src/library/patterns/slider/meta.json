@@ -9,12 +9,17 @@
       "name": "Paul Serban",
       "email": "paul.alex.serban@gmail.com"
   },
-  "keywords": ["library", "modules", "slider"],
+  "keywords": ["library", "patterns", "slider"],
   "variations": [
       {
           "slug": "background-image-slider",
           "name": "Background Image Slider",
           "description": "Background Image Slider"
-      }
+      },
+      {
+        "slug": "double-vertical-slider",
+        "name": "Double Vertical Slider",
+        "description": "Double Vertical Slider"
+    }
   ]
 }
