@@ -20,6 +20,11 @@
             "slug": "expanding-navigation-bar",
             "name": "Expanding Navigation Bar",
             "description": "Expanding Navigation Bar"
+        },
+        {
+            "slug": "sticky-navigation-bar",
+            "name": "Sticky Navigation Bar",
+            "description": "Sticky Navigation Bar"
         }
     ]
 }
