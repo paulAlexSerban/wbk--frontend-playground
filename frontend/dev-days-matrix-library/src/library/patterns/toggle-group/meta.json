@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "patterns",
+  "component": "toggle-group",
+  "name": "Toggle Group",
+  "version": "1.0.0",
+  "description": "Toggle Group",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "toggle-group", "toggle", "group", "patterns"],
+  "variations": [
+      {
+          "slug": "auto-toggle",
+          "name": "Auto Toggle",
+          "description": "Auto Toggle"
+      }
+  ]
+}
