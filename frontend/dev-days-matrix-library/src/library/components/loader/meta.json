@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "components",
+  "component": "loader",
+  "name": "Loader",
+  "version": "1.0.0",
+  "description": "Loader component",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "components", "loader"],
+  "variations": [
+      {
+          "slug": "kinetic-loader",
+          "name": "Kinetic Loader",
+          "description": "Kinetic loader component"
+      }
+    ]
+}
