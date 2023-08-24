@@ -21,6 +21,11 @@
             "slug": "dad-jokes",
             "name": "Dad Jokes",
             "description": "Dad Jokes"
+        },
+        {
+            "slug": "password-generator",
+            "name": "Password Generator",
+            "description": "Password Generator"
         }
     ]
 }
