@@ -1,25 +1,30 @@
 {
-  "group": "library",
-  "category": "patterns",
-  "component": "slider",
-  "name": "Slider",
-  "version": "1.0.0",
-  "description": "Slider",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "patterns", "slider"],
-  "variations": [
-      {
-          "slug": "background-image-slider",
-          "name": "Background Image Slider",
-          "description": "Background Image Slider"
-      },
-      {
-        "slug": "double-vertical-slider",
-        "name": "Double Vertical Slider",
-        "description": "Double Vertical Slider"
-    }
-  ]
+    "group": "library",
+    "category": "patterns",
+    "component": "slider",
+    "name": "Slider",
+    "version": "1.0.0",
+    "description": "Slider",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "slider"],
+    "variations": [
+        {
+            "slug": "background-image-slider",
+            "name": "Background Image Slider",
+            "description": "Background Image Slider"
+        },
+        {
+            "slug": "double-vertical-slider",
+            "name": "Double Vertical Slider",
+            "description": "Double Vertical Slider"
+        },
+        {
+            "slug": "image-carousel",
+            "name": "Image Carousel",
+            "description": "Image Carousel"
+        }
+    ]
 }
