@@ -96,6 +96,11 @@
             "slug": "random-choice-picker",
             "name": "Random Choice Picker",
             "description": "Random Choice Picker"
+        },
+        {
+            "slug": "insect-catch-game",
+            "name": "Insect Catch Game",
+            "description": "Insect Catch Game"
         }
     ]
 }
