@@ -22,9 +22,14 @@
             "description": "Movie App"
         },
         {
-          "slug": "pokedex",
-          "name": "Pokedex",
-          "description": "Pokedex"
-      }
+            "slug": "pokedex",
+            "name": "Pokedex",
+            "description": "Pokedex"
+        },
+        {
+            "slug": "random-image-feed",
+            "name": "Random Image Feed",
+            "description": "Random Image Feed"
+        }
     ]
 }
