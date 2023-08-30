@@ -51,7 +51,7 @@ function buildBookmarks() {
         const closeIcon = document.createElement("i");
         closeIcon.classList.add("fas", "fa-times");
         closeIcon.setAttribute("title", "Delete Bookmark");
-        closeIcon.setAttribute("onclick", `deleteBookmark('${id}')`);
+        // closeIcon.setAttribute("onclick", `deleteBookmark('${id}')`);
         // Favicon / Link Container
         const linkInfo = document.createElement("div");
         linkInfo.classList.add("name");
@@ -68,6 +68,10 @@ function buildBookmarks() {
         linkInfo.append(favicon, link);
         item.append(closeIcon, linkInfo);
         bookmarksContainer.appendChild(item);
+        const deleteBookmarkEl = document.getElementById("delete-bookmark");
+        deleteBookmarkEl.addEventListener("click", () => {
+            deleteBookmark(id);
+        });
     });
 }
 

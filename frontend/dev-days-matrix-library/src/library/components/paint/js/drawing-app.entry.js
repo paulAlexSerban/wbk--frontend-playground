@@ -21,7 +21,7 @@ canvas.addEventListener("mousedown", (e) => {
     y = e.offsetY;
 });
 
-document.addEventListener("mouseup", (e) => {
+document.addEventListener("mouseup", () => {
     isPressed = false;
 
     x = undefined;
@@ -63,21 +63,13 @@ function updateSizeOnScreen() {
 
 increaseBtn.addEventListener("click", () => {
     size += 5;
-
-    if (size > 50) {
-        size = 50;
-    }
-
+    size = Math.min(size, 50);
     updateSizeOnScreen();
 });
 
 decreaseBtn.addEventListener("click", () => {
     size -= 5;
-
-    if (size < 5) {
-        size = 5;
-    }
-
+    size = Math.max(size, 5);
     updateSizeOnScreen();
 });
 

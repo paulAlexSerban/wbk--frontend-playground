@@ -28,6 +28,11 @@
             "slug": "signup-form-validation",
             "name": "Signup Form (Validation)",
             "description": "Simple client side form validation. Check requird, length, email and password match"
+        },
+        {
+            "slug": "password-strength-background",
+            "name": "Password Strength Background",
+            "description": "Password strength background"
         }
     ]
 }

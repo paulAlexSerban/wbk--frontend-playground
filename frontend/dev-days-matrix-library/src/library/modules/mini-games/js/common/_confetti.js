@@ -47,7 +47,7 @@ let colors = [
     "rgba(220,20,60,",
 ];
 let streamingConfetti = false;
-let animationTimer = null;
+// let animationTimer;
 let pause = false;
 let lastFrameTime = Date.now();
 let particles = [];
@@ -92,7 +92,7 @@ function runAnimation() {
         return;
     } else if (particles.length === 0) {
         context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        animationTimer = null;
+        // animationTimer = null;
     } else {
         let now = Date.now();
         let delta = now - lastFrameTime;
@@ -102,7 +102,8 @@ function runAnimation() {
             drawParticles(context);
             lastFrameTime = now - (delta % confetti.frameInterval);
         }
-        animationTimer = requestAnimationFrame(runAnimation);
+        // animationTimer = requestAnimationFrame(runAnimation);
+        requestAnimationFrame(runAnimation);
     }
 }
 
@@ -138,26 +139,28 @@ function startConfetti(timeout, min, max) {
             true
         );
         context = canvas.getContext("2d");
-    } else if (context === null) {context = canvas.getContext("2d");}
+    } else if (context === null) {
+        context = canvas.getContext("2d");
+    }
     let count = confetti.maxCount;
     if (min) {
         if (max) {
-          if (min == max) {
-            count = particles.length + max;
-          } else {
-                        if (min > max) {
-                            let temp = min;
-                            min = max;
-                            max = temp;
-                        }
-                        count = particles.length + ((Math.random() * (max - min) + min) | 0);
-                    }
+            if (min == max) {
+                count = particles.length + max;
+            } else {
+                if (min > max) {
+                    let temp = min;
+                    min = max;
+                    max = temp;
+                }
+                count = particles.length + ((Math.random() * (max - min) + min) | 0);
+            }
         } else {
-          count = particles.length + min;
+            count = particles.length + min;
         }
     } else if (max) {
-             count = particles.length + max;
-           }
+        count = particles.length + max;
+    }
     while (particles.length < count) {
         particles.push(resetParticle({}, width, height));
     }
@@ -181,9 +184,9 @@ function removeConfetti() {
 
 function toggleConfetti() {
     if (streamingConfetti) {
-      stopConfetti();
+        stopConfetti();
     } else {
-      startConfetti();
+        startConfetti();
     }
 }
 
@@ -193,7 +196,10 @@ function isConfettiRunning() {
 
 function drawParticles(context) {
     let particle;
-    let x, y, x2, y2;
+    let x;
+    // let y;
+    let x2;
+    let y2;
     for (let i = 0; i < particles.length; i++) {
         particle = particles[i];
         context.beginPath();
@@ -202,12 +208,12 @@ function drawParticles(context) {
         x = x2 + particle.diameter / 2;
         y2 = particle.y + particle.tilt + particle.diameter / 2;
         if (confetti.gradient) {
-          let gradient = context.createLinearGradient(x, particle.y, x2, y2);
-          gradient.addColorStop("0", particle.color);
-          gradient.addColorStop("1.0", particle.color2);
-          context.strokeStyle = gradient;
+            let gradient = context.createLinearGradient(x, particle.y, x2, y2);
+            gradient.addColorStop("0", particle.color);
+            gradient.addColorStop("1.0", particle.color2);
+            context.strokeStyle = gradient;
         } else {
-          context.strokeStyle = particle.color;
+            context.strokeStyle = particle.color;
         }
         context.moveTo(x, particle.y);
         context.lineTo(x2, y2);
@@ -223,20 +229,20 @@ function updateParticles() {
     for (let i = 0; i < particles.length; i++) {
         particle = particles[i];
         if (!streamingConfetti && particle.y < -15) {
-          particle.y = height + 100;
+            particle.y = height + 100;
         } else {
-                    particle.tiltAngle += particle.tiltAngleIncrement;
-                    particle.x += Math.sin(waveAngle) - 0.5;
-                    particle.y += (Math.cos(waveAngle) + particle.diameter + confetti.speed) * 0.5;
-                    particle.tilt = Math.sin(particle.tiltAngle) * 15;
-                }
+            particle.tiltAngle += particle.tiltAngleIncrement;
+            particle.x += Math.sin(waveAngle) - 0.5;
+            particle.y += (Math.cos(waveAngle) + particle.diameter + confetti.speed) * 0.5;
+            particle.tilt = Math.sin(particle.tiltAngle) * 15;
+        }
         if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {
             if (streamingConfetti && particles.length <= confetti.maxCount) {
-              resetParticle(particle, width, height);
+                resetParticle(particle, width, height);
             } else {
-                            particles.splice(i, 1);
-                            i--;
-                        }
+                particles.splice(i, 1);
+                i--;
+            }
         }
     }
 }

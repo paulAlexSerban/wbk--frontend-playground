@@ -10,7 +10,6 @@
  * See usage examples at http://jscolor.com/examples/
  */
 
-
 if (!window.jscolor) {
     window.jscolor = (function () {
         var jsc = {
@@ -31,8 +30,12 @@ if (!window.jscolor) {
                 var matchClass = new RegExp("(^|\\s)(" + className + ")(\\s*(\\{[^}]*\\})|\\s|$)", "i");
 
                 for (var i = 0; i < elms.length; i += 1) {
-                    if (elms[i].type !== undefined && elms[i].type.toLowerCase() == "color" && jsc.isColorAttrSupported) {
-                          continue;
+                    if (
+                        elms[i].type !== undefined &&
+                        elms[i].type.toLowerCase() == "color" &&
+                        jsc.isColorAttrSupported
+                    ) {
+                        continue;
                     }
                     var m;
                     if (!elms[i].jscolor && elms[i].className && (m = elms[i].className.match(matchClass))) {
@@ -511,7 +514,6 @@ if (!window.jscolor) {
 
                         case "v":
                             return "v";
-
                     }
                 }
                 return null;
@@ -665,6 +667,8 @@ if (!window.jscolor) {
             },
 
             onDocumentPointerEnd: function (e, target, controlName, pointerType) {
+                /* eslint-disable */
+                console.log({ controlName, pointerType });
                 return function (e) {
                     let thisObj = target._jscInstance;
                     jsc.detachGroupEvents("drag");
@@ -678,7 +682,7 @@ if (!window.jscolor) {
 
             dispatchChange: function (thisObj) {
                 if (thisObj.valueElement && jsc.isElementType(thisObj.valueElement, "input")) {
-                      jsc.fireEvent(thisObj.valueElement, "change");
+                    jsc.fireEvent(thisObj.valueElement, "change");
                 }
             },
 

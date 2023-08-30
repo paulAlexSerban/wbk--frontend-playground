@@ -52,6 +52,7 @@ function storeFormData() {
     password: form.password.value,
   };
   // Do something with user data
+  /* eslint-disable */
   console.log(user);
 }
 

@@ -22,3 +22,5 @@
 1. `bash modulize.bash -e dev -m <module-name> -p fe-generate` - will generate new FE module
    @TODO: copy template
    @TODO: find and replace template-module-name-library with module-name
+
+

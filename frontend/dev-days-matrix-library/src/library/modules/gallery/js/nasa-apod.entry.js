@@ -4,7 +4,7 @@ const imagesContainer = document.querySelector('.images-container');
 const saveConfirmed = document.querySelector('.save-confirmed');
 const loader = document.querySelector('.loader');
 const toggleFavorites = document.getElementById('toggleFavorites');
-const loadMore = document.getElementById('loadMore');
+// const loadMore = document.getElementById('loadMore');
 const loadMoreNasaPics = document.getElementById('loadMoreNasaPics');
 
 
