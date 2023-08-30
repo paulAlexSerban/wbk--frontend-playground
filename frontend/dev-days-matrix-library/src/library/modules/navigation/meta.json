@@ -1,0 +1,35 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "navigation",
+    "name": "Navigation",
+    "version": "1.0.0",
+    "description": "Navigation",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "navigation"],
+    "variations": [
+        {
+            "slug": "burger-slidein-navigation",
+            "name": "Burger Slidein Navigation",
+            "description": "Burger Slidein Navigation"
+        },
+        {
+            "slug": "expanding-navigation-bar",
+            "name": "Expanding Navigation Bar",
+            "description": "Expanding Navigation Bar"
+        },
+        {
+            "slug": "sticky-navigation-bar",
+            "name": "Sticky Navigation Bar",
+            "description": "Sticky Navigation Bar"
+        },
+        {
+            "slug": "netflix-navigation",
+            "name": "Netflix Navigation",
+            "description": "Netflix Navigation" 
+        }
+    ]
+}

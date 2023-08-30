@@ -1,0 +1,38 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Custom Music Player'
+      attributionFromHref='https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/' 
+      attributionFromLabel='JavaScript Web Projects: 20 Projects to Build Your Portfolio'}}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+
+
+  {{{feLibs 'library' 'modules' 'audio-player' 'custom-music-player' 'all'}}}
+
+      <div class="player-container">
+        <!-- Song -->
+        <div class="img-container">
+            <img src="{{assetsUrl 'images' 'ukulele-original.webp'}}"
+                 data-base-path="{{assetsUrl 'images' '{0}-original.webp'}}" 
+                 alt="Album Art">
+        </div>
+        <h2 id="title">Ukulele Music</h2>
+        <h3 id="artist">Paul</h3>
+        <audio src="{{assetsUrl 'audio' 'ukulele.mp3'}}" 
+               data-base-path="{{assetsUrl 'audio' '{0}.mp3'}}"></audio>
+        <!-- Progress -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">2:06</span>
+            </div>
+        </div>
+        <!-- Controls -->
+        <div class="player-controls">
+            <i class="fas fa-backward" id="prev" title="Previous"></i>
+            <i class="fas fa-play main-button" id="play" title="Play"></i>
+            <i class="fas fa-forward" id="next" title="Next"></i>
+        </div>
+    </div>
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base }}

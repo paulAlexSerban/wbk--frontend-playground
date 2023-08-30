@@ -1,0 +1,17 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Drawing App' 
+      attributionFromHref='https://www.udemy.com/course/50-projects-50-days/' 
+      attributionFromLabel='50 Projects In 50 Days - HTML, CSS & JavaScript'}}
+
+  {{{feLibs 'library' 'components' 'paint' 'drawing-app' 'all'}}}
+
+    <canvas id="canvas" width="800" height="700"></canvas>
+    <div class="toolbox">
+      <button id="decrease">-</button>
+      <span id="size">10</span>
+      <button id="increase">+</button>
+      <input type="color" id="color">
+      <button id="clear">X</button>
+    </div>
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

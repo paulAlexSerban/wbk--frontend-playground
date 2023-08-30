@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "components",
+  "component": "timer",
+  "name": "Timer",
+  "version": "1.0.0",
+  "description": "Timer",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "modules", "time"],
+  "variations": [
+      {
+          "slug": "animated-countdown",
+          "name": "Animated Countdown",
+          "description": "Animated Countdown"
+      }
+    ]
+}

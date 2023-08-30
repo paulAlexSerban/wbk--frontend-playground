@@ -1,0 +1,18 @@
+
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Picture in Picture'
+      attributionFromHref='https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/' 
+      attributionFromLabel='JavaScript Web Projects: 20 Projects to Build Your Portfolio'}}
+
+  {{{feLibs 'library' 'modules' 'video-player' 'picture-in-picture' 'all'}}}
+
+  <link rel="icon" type="image/png" href="{{assetsUrl 'icons' 'ztm-favicon.png'}}">
+    <!-- Video -->
+    <video id="video" controls height="360" width="640" hidden></video>
+    <!-- Button -->
+    <div class="button-container">
+        <button id="button">START</button>
+    </div>
+    <!-- Script -->
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

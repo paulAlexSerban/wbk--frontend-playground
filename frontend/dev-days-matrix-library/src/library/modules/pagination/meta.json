@@ -32,6 +32,11 @@
                 "Add pagination",
                 "Add get lyrics functionality and display in DOM"
             ]
+        },
+        {
+            "slug": "infinite-scroll-images",
+            "name": "Infinite Scroll Images",
+            "description": "Infinite scroll images from Unsplash and add filter box"
         }
     ]
 }

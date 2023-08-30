@@ -22,6 +22,11 @@
                 "Click on meal and see the details",
                 "Click on generate button and fetch & display a random meal"
             ]
+        },
+        {
+            "slug": "github-profiles",
+            "name": "Github Profiles",
+            "description": "Github profile search"
         }
     ]
 }

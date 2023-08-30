@@ -48,6 +48,11 @@
                 "Delete items from DOM",
                 "Persist to local storage"
             ]
+        },
+        {
+            "slug": "classic-calculator",
+            "name": "Classic Calculator",
+            "description": "Classic Calculator"
         }
     ]
 }

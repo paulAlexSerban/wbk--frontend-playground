@@ -31,11 +31,8 @@ function addTransaction(e) {
         };
 
         transactions.push(transaction);
-
         addTransactionDOM(transaction);
-
         updateValues();
-
         updateLocalStorage();
 
         text.value = "";
@@ -61,10 +58,14 @@ function addTransactionDOM(transaction) {
     item.innerHTML = `
     ${transaction.text} <span>${sign}${Math.abs(
         transaction.amount
-    )}</span> <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
+    )}</span> <button class="delete-btn">x</button>
   `;
 
     list.appendChild(item);
+    const deleteButton = document.querySelector(".delete-btn");
+    deleteButton.addEventListener("click", () => {
+        removeTransaction(transaction.id);
+    });
 }
 
 // Update the balance, income and expense
