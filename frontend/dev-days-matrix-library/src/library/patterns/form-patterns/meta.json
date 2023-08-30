@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "patterns",
+  "component": "form-patterns",
+  "name": "Form Patterns",
+  "version": "1.0.0",
+  "description": "Form Patterns",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "patterns", "form"],
+  "variations": [
+      {
+          "slug": "verify-account-input",
+          "name": "Verify Account Input",
+          "description": "Verify Account Input"
+      }
+  ]
+}
