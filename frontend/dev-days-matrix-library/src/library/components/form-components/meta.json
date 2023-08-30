@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "components",
+  "component": "form-components",
+  "name": "Form Components",
+  "version": "1.0.0",
+  "description": "Form Components library",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "components", "form", "custom", "range", "slider"],
+  "variations": [
+      {
+          "slug": "custom-range-slider",
+          "name": "Custom Range Slider",
+          "description": "Custom Range Slider component"
+      }
+  ]
+}
