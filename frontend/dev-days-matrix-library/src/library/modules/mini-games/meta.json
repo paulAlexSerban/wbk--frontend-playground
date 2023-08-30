@@ -12,6 +12,11 @@
     "keywords": ["library", "modules", "mini-games"],
     "variations": [
         {
+            "slug": "3d-boxes-background",
+            "name": "3D Boxes Background",
+            "description": "3D Boxes Background"
+        },
+        {
             "slug": "hangman",
             "name": "Hangman",
             "description": "Select a letter to figure out a hidden word in a set amount of chances",
