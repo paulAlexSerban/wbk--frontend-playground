@@ -33,6 +33,11 @@
             "slug": "password-strength-background",
             "name": "Password Strength Background",
             "description": "Password strength background"
+        },
+        {
+            "slug": "email-extractor",
+            "name": "Email Extractor",
+            "description": "Email extractor"
         }
     ]
 }
