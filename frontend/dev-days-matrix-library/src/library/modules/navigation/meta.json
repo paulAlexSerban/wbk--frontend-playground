@@ -25,6 +25,11 @@
             "slug": "sticky-navigation-bar",
             "name": "Sticky Navigation Bar",
             "description": "Sticky Navigation Bar"
+        },
+        {
+            "slug": "netflix-navigation",
+            "name": "Netflix Navigation",
+            "description": "Netflix Navigation" 
         }
     ]
 }
