@@ -23,4 +23,10 @@
    @TODO: copy template
    @TODO: find and replace template-module-name-library with module-name
 
+## Backlog
 
+### v2.0 Restructure to Monorepo
+- [ ] Monorepo w. Lerna & Yarn for FE & BE development
+  - [ ] setup yarn instead of npm
+  - [ ] setup workspaces w. lerna
+- [ ] Modulize for local setup w. Docker Compose (traefik, nginx and node.js)
