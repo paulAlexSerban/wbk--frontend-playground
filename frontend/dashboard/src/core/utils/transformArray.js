@@ -14,12 +14,18 @@ function transformArrayToObj(arr) {
           result[item.group][item.category] = [];
       }
 
-      // Add the component to the category
-      result[item.group][item.category].push({
+      const itemObj = {
           component: item.component,
           variations: item.variations,
           version: item.version,
-      });
+      };
+
+      if(item.hide) {
+            itemObj.hide = item.hide;
+      }
+
+      // Add the component to the category
+      result[item.group][item.category].push(itemObj);
   });
 
   return result;

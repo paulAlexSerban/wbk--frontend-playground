@@ -104,3 +104,4 @@ dist
 .tern-port
 /package/component-library
 **/public/*/*
+.DS_Store
