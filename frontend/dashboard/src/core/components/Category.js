@@ -8,7 +8,7 @@ export default function Category({ categoryName, categoryContent, groupName, lib
                 <summary>{formatString(categoryName)}</summary>
                 <ul>
                     {categoryContent.map((component, index) => (
-                        <Component
+                        !component.hide && <Component
                             key={index}
                             component={component}
                             groupName={groupName}

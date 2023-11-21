@@ -9,13 +9,13 @@ import fs from "fs/promises";
 
 export default function Index({ data }) {
     const libraries = [
-        {
-            obj: data.bigFrontendLibraryObj,
-            title: "Big Frontend Library",
-            libName: "big-frontend",
-            class: library,
-            listClass: libraryList,
-        },
+        // {
+        //     obj: data.bigFrontendLibraryObj,
+        //     title: "Big Frontend Library",
+        //     libName: "big-frontend",
+        //     class: library,
+        //     listClass: libraryList,
+        // },
         {
             obj: data.devDaysMatrixObj,
             title: "Dev Days Matrix Library",

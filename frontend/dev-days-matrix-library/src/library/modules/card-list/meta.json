@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "modules",
+  "component": "card-list",
+  "name": "card List",
+  "version": "1.0.0",
+  "description": "Card List",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "modules", "card-list",  "testimonial-card-switch"],
+  "variations": [
+      {
+          "slug": "testimonial-card-switch",
+          "name": "Testimonial Card Switch",
+          "description": "Counter"
+      }
+  ]
+}

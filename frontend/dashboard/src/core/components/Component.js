@@ -2,6 +2,7 @@ import formatString from "@/core/utils/formatStrings";
 import Variation from "@/core/components/Variation";
 import { base } from "./component.module.scss";
 export default function Component({ component, groupName, categoryName, library }) {
+    console.log( {component});
     return (
         <li className={base}>
             <details>

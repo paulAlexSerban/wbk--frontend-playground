@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "list-keeper",
+    "name": "List Keeper",
+    "version": "1.0.0",
+    "description": "List Keeper",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "list-keeper"],
+    "variations": [
+        {
+            "slug": "bookmark-keeper",
+            "name": "Bookmark Keeper",
+            "description": "Bookmark Keeper"
+        }
+    ]
+}

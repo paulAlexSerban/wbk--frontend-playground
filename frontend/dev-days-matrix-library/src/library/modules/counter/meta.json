@@ -1,0 +1,20 @@
+{
+  "group": "library",
+  "category": "modules",
+  "component": "counter",
+  "name": "Counter",
+  "version": "1.0.0",
+  "description": "Counter",
+  "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+  },
+  "keywords": ["library", "modules", "counter"],
+  "variations": [
+      {
+          "slug": "incrementing-counter",
+          "name": "Incrementing Counter",
+          "description": "Counter"
+      }
+  ]
+}

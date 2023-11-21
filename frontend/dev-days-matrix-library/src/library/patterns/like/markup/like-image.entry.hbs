@@ -1,0 +1,17 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Like Image' 
+      attributionFromHref='https://www.udemy.com/course/50-projects-50-days/' 
+      attributionFromLabel='50 Projects In 50 Days - HTML, CSS & JavaScript'}}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+
+  {{{feLibs 'library' 'patterns' 'like' 'like-image' 'all'}}}
+
+  <h3>Double click on the image to <i class="fas fa-heart"></i> it</h3>
+  <small>You liked it <span id="times">0</span> times</small>
+
+  <div class="loveMe"></div>
+
+  {{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

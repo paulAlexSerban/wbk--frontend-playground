@@ -1,0 +1,35 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "gallery",
+    "name": "Gallery",
+    "version": "1.0.0",
+    "description": "Gallery",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "gallery"],
+    "variations": [
+        {
+            "slug": "nasa-apod",
+            "name": "NASA Astronomy Picture of the Day",
+            "description": "NASA Astronomy Picture of the Day"
+        },
+        {
+            "slug": "movie-app",
+            "name": "Movie App",
+            "description": "Movie App"
+        },
+        {
+            "slug": "pokedex",
+            "name": "Pokedex",
+            "description": "Pokedex"
+        },
+        {
+            "slug": "random-image-feed",
+            "name": "Random Image Feed",
+            "description": "Random Image Feed"
+        }
+    ]
+}

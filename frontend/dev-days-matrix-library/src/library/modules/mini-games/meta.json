@@ -12,6 +12,11 @@
     "keywords": ["library", "modules", "mini-games"],
     "variations": [
         {
+            "slug": "3d-boxes-background",
+            "name": "3D Boxes Background",
+            "description": "3D Boxes Background"
+        },
+        {
             "slug": "hangman",
             "name": "Hangman",
             "description": "Select a letter to figure out a hidden word in a set amount of chances",
@@ -66,6 +71,36 @@
                 "This component is using the experimental Speech Recognition API which is only available in Chrome and not on all platforms. If you are having issues with this component, try using Chrome on a desktop.",
                 "In FireFox, you need to enable the experimental Web Speech API in about:config - media.webspeech.recognition.force_enable"
             ]
+        },
+        {
+            "slug": "rock-paper-scissors-lizard-spock",
+            "name": "Rock Paper Scissors Lizard Spock",
+            "description": "Game where you control a paddle with the arrow keys to bounce a ball up to break bricks. This app uses the HTML5 canvas element and API"
+        },
+        {
+            "slug": "math-sprint-game",
+            "name": "Math Sprint Game",
+            "description": "Math Sprint Game"
+        },
+        {
+            "slug": "paint-clone",
+            "name": "Paint Clone",
+            "description": "Paint Clone"
+        },
+        {
+            "slug": "pong",
+            "name": "Pong",
+            "description": "Pong"
+        },
+        {
+            "slug": "random-choice-picker",
+            "name": "Random Choice Picker",
+            "description": "Random Choice Picker"
+        },
+        {
+            "slug": "insect-catch-game",
+            "name": "Insect Catch Game",
+            "description": "Insect Catch Game"
         }
     ]
 }

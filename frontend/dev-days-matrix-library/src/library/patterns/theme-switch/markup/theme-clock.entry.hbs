@@ -1,0 +1,24 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Theme Clock' 
+      attributionFromHref='https://www.udemy.com/course/50-projects-50-days/' 
+      attributionFromLabel='50 Projects In 50 Days - HTML, CSS & JavaScript'}}
+
+  {{{feLibs 'library' 'patterns' 'theme-switch' 'theme-clock' 'all'}}}
+
+  <!-- Inspired by this dribbble shot https://dribbble.com/shots/5958443-Alarm-clock -->
+
+  <button class="toggle">Dark mode</button>
+
+  <div class="clock-container">
+    <div class="clock">
+      <div class="needle hour"></div>
+      <div class="needle minute"></div>
+      <div class="needle second"></div>
+      <div class="center-point"></div>
+    </div>
+
+    <div class="time"></div>
+    <div class="date"></div>
+  </div>
+
+  {{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

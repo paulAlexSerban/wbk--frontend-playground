@@ -1,0 +1,13 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='To Do List' 
+      attributionFromHref='https://www.udemy.com/course/50-projects-50-days/' 
+      attributionFromLabel='50 Projects In 50 Days - HTML, CSS & JavaScript'}}
+  {{{feLibs 'library' 'modules' 'to-do-list' 'todo-list' 'all'}}}
+  <h1>todos</h1>
+  <form id="form">
+    <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
+
+    <ul class="todos" id="todos"></ul>
+  </form>
+  <small>Left click to toggle completed. <br> Right click to delete todo</small>
+  {{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

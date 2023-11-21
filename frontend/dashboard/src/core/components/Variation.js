@@ -16,6 +16,7 @@ export default function Variation({ variation, groupName, categoryName, componen
             <a
                 href={`${basePath}/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
                 alt={variation.description}
+                target='_blank'
             >
                 {variation.name}
             </a>

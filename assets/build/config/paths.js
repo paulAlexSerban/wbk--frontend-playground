@@ -7,6 +7,7 @@ export const paths = {
       videos: [`source/videos/*`],
       audio: [`source/audio/*`],
       gifs: [`source/gifs/*`],
+      png: [`source/pngs/*`],
     },
   },
   dist: {
