@@ -2,6 +2,8 @@ name: CI/CD - FEAT / FIX / REFACTOR / PERF / REVERT / TEST
 on:
     push:
         branches:
+            - develop
+            - main
             - feat/*
             - fix/*
             - refactor/*
@@ -54,38 +56,23 @@ jobs:
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
-            - name: '🔍  Verify Changed Files [shared, backend, database, frontend, assets]'
-              uses: tj-actions/changed-files@v35
-              id: changed-test-files
-              with:
-                  files: |
-                      shared/**/*
-                      frontend/**/*
-                      assets/**/*
-                      backend/**/*
-                      database/**/*
 
             - name: '🔧  Setup NodeJS ${{ env.NODE_VERSION }}'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ env.NODE_VERSION }}
                   cache: 'yarn'
 
             - name: '🔧 Install dependencies'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               run: yarn install
 
             - name: 'Run Build'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               run: yarn run build:prod
 
             - name: 'Package ./libraries'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               run: yarn run package
 
             - name: 'Upload libraries artifact'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               uses: actions/upload-artifact@v3
               with:
                   name: libraries-${{ github.run_number }}-${{ github.run_id }}
@@ -100,39 +87,24 @@ jobs:
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
-            - name: '🔍  Verify Changed Files [shared, backend, database, frontend, assets]'
-              uses: tj-actions/changed-files@v35
-              id: changed-test-files
-              with:
-                  files: |
-                      shared/**/*
-                      frontend/**/*
-                      assets/**/*
-                      backend/**/*
-                      database/**/*
 
             - name: 'Create package/dist'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               run: mkdir -p package/libraries
 
             - uses: actions/download-artifact@v3
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               with:
                   name: libraries-${{ github.run_number }}-${{ github.run_id }}
                   path: package/libraries
 
             - name: Upload artifact
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               uses: actions/upload-pages-artifact@v2
               with:
                   # Upload entire repository
                   path: './package/libraries'
 
             - name: '🔧 Setup Pages'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               uses: actions/configure-pages@v3
 
             - name: '🚀 Deploy to GitHub Pages'
-              if: steps.changed-test-files.outputs.any_changed == 'true'
               id: deployment
               uses: actions/deploy-pages@v2
