@@ -23,6 +23,7 @@ permissions:
 env:
     NODE_VERSION: 18.17.1
     BASE_URL: ${{ secrets.BASE_URL }}
+    ASSETS_PATH: ${{ secrets.ASSETS_PATH }}
 
 jobs:
     formats-check:
@@ -79,7 +80,7 @@ jobs:
                   path: './package/libraries/'
 
     deploy-dev:
-        name: 'Deploy to Netlify DEV env.'
+        name: 'Deploy to Gh. Pages'
         runs-on: ubuntu-latest
         needs: [build-n-package]
         steps:
