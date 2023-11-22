@@ -1,6 +1,6 @@
-import formatString from "@/core/utils/formatStrings";
-import Category from "@/core/components/Category";
-import { base } from "./group.module.scss";
+import formatString from '@/core/utils/formatStrings';
+import Category from '@/core/components/Category';
+import { base } from './group.module.scss';
 
 export default function Group({ groupName, groupContent, library }) {
     const filteredGroupContent = Object.entries(groupContent).filter(([categoryName, categoryContent]) => {

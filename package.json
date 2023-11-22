@@ -1,31 +1,27 @@
 {
-    "name": "prj--js-component-lib",
+    "name": "@prj--js-component-lib/core",
     "version": "1.18.0",
     "description": "",
     "main": "index.js",
-    "scripts": {
-        "test": "echo 'Error: no test specified'",
-        "lint": "echo 'Error: no lint specified'",
-        "install:ci": "npm ci --omit=dev --ignore-scripts",
-        "install:root": "npm install",
-        "prepare": "husky install",
-        "formats:check": "npx prettier --check .",
-        "formats:write": "npx prettier --write .",
-        "MODULIZE": "SCRIPTS",
-        "mdz:dev:build": "bash modulize.bash --env dev --phase build",
-        "mdz:dev:clean": "bash modulize.bash --env dev --phase clean",
-        "mdz:dev:install": "bash modulize.bash --env dev --phase install"
-    },
     "author": "Paul Serban",
-    "license": "ISC",
-    "devDependencies": {
-        "@commitlint/cli": "^16.2.4",
-        "@commitlint/config-conventional": "^16.2.4",
-        "cz-conventional-changelog": "^3.3.0",
-        "husky": "^7.0.4",
-        "prettier": "^2.7.1"
+    "license": "MIT",
+    "scripts": {
+        "process:assets": "lerna run process --scope=@prj--js-component-lib/assets --stream",
+        "publish:assets": "lerna run publish --scope=@prj--js-component-lib/assets --stream",
+        "test": "echo 'Error: no test specified'",
+        "lint": "yarn formats:check",
+        "prepare": "husky install",
+        "formats:check": "yarn prettier --check .",
+        "formats:write": "yarn prettier --write .",
+        "start": "yarn formats:write && yarn lerna run start --stream --parallel",
+        "build:dev": "yarn formats:write && lerna run build:dev --stream --parallel",
+        "build:prod": "yarn formats:write && lerna run build:prod --stream --parallel",
+        "version:modules": "bash tools/build-scripts/version.bash",
+        "commit": "yarn git-cz"
     },
     "dependencies": {
+        "@commitlint/cli": "^17.7.2",
+        "@commitlint/config-conventional": "^17.7.0",
         "@aws-sdk/client-s3": "^3.354.0",
         "@semantic-release/changelog": "^6.0.1",
         "@semantic-release/commit-analyzer": "^9.0.2",
@@ -33,7 +29,37 @@
         "@semantic-release/github": "^8.0.4",
         "@semantic-release/npm": "^9.0.1",
         "@semantic-release/release-notes-generator": "^10.0.3",
-        "semantic-release": "^19.0.2"
+        "commitizen": "^4.3.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "dotenv": "^16.3.1",
+        "husky": "^8.0.3",
+        "lerna": "^7.3.0",
+        "prettier": "^3.0.3",
+        "semantic-release": "^22.0.8"
+    },
+    "workspaces": {
+        "packages": [
+            "assets/*",
+            "assets/**/*",
+            "backend/*",
+            "database/*",
+            "frontend/*",
+            "frontend/**/*",
+            "shared/*",
+            "shared/**/*",
+            "tools/*"
+        ],
+        "nohoist": [
+            "**/normalize-scss",
+            "**/axios",
+            "**/scrollreveal",
+            "**/tealight",
+            "**/rematrix",
+            "**/miniraf",
+            "**/is-dom-node",
+            "**/is-dom-node-list",
+            "**/jquery"
+        ]
     },
     "config": {
         "commitizen": {
@@ -44,5 +70,6 @@
         "hooks": {
             "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
         }
-    }
+    },
+    "private": true
 }

@@ -1,10 +1,10 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
   * PIG GAME WIDGET
 \* ------------------------------------ */
 
-$block: "pig-game";
+$block: 'pig-game';
 
 .#{$block} {
     &__base {

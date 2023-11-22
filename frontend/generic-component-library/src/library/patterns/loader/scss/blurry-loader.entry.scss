@@ -1,21 +1,21 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * BLURRY-LOADER
 \* ------------------------------------ */
 
-$block: "blurry-loader";
+$block: 'blurry-loader';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         @include relative();
     }
 
-    @include e("background-image") {
+    @include e('background-image') {
         filter: blur(0);
     }
 
-    @include e("loading-text") {
+    @include e('loading-text') {
         @include absolute($top: 50%, $left: 50%);
 
         color: get-color($c-light, light);

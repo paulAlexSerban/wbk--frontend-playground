@@ -1,14 +1,14 @@
 // the debounce function receives our functions as a parameter
 export const debounce = (fn) => {
-  let frame;
+    let frame;
 
-  return (...params) => {
-    if(frame) {
-      cancelAnimationFrame(frame);
-    }
+    return (...params) => {
+        if (frame) {
+            cancelAnimationFrame(frame);
+        }
 
-    frame = requestAnimationFrame(() => {
-      fn(...params);
-    })
-  }
-}
+        frame = requestAnimationFrame(() => {
+            fn(...params);
+        });
+    };
+};

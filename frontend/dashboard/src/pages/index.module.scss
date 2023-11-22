@@ -1,15 +1,14 @@
 .base {
-  display: flex;
-  flex-direction: column;
-  column-gap: 30px;
-  width: 100%;
-  justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .library {
-  min-width: calc(100% / 3);
+    min-width: calc(100% / 3);
 }
 
 .libraryList {
-  
 }

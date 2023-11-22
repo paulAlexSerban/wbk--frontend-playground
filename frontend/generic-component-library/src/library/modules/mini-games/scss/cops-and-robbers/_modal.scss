@@ -1,73 +1,73 @@
 @import 'variables.scss';
 
 .modal {
-  &__base {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
+    &__base {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
 
-    &--is-visible {
-      display: flex;
+        &--is-visible {
+            display: flex;
+        }
     }
-  }
 
-  &__overlay {
-    display: block;
-    position: absolute;
-    background-color: $c-grey;
-    backdrop-filter: blur(3px);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-  }
-
-  &__container {
-    background: $c-bkg-white;
-    border: $c-darkgrey solid 0px;
-    width: 90vw;
-    min-height: 300px;
-    height: fit-content;
-    box-shadow:0 $baseline $baseline*2 $c-darkgrey;
-    z-index: 5;
-    padding:$baseline;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px;
-
-    p {
-      font-size: 20px;
+    &__overlay {
+        display: block;
+        position: absolute;
+        background-color: $c-grey;
+        backdrop-filter: blur(3px);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
     }
-  }
 
-  &__text {
-    font-size: $baseline*4;
-  }
+    &__container {
+        background: $c-bkg-white;
+        border: $c-darkgrey solid 0px;
+        width: 90vw;
+        min-height: 300px;
+        height: fit-content;
+        box-shadow: 0 $baseline $baseline * 2 $c-darkgrey;
+        z-index: 5;
+        padding: $baseline;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 800px;
 
-  &__switch {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  &__button {
-    width: 100%;
-    height: fit-content;
-    padding-top: $baseline*2;
-
-    &-continue {
-      width: 300px;
+        p {
+            font-size: 20px;
+        }
     }
-  }
+
+    &__text {
+        font-size: $baseline * 4;
+    }
+
+    &__switch {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__button {
+        width: 100%;
+        height: fit-content;
+        padding-top: $baseline * 2;
+
+        &-continue {
+            width: 300px;
+        }
+    }
 }

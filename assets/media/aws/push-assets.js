@@ -1,8 +1,8 @@
-const { readdirSync, readFileSync, statSync, lstatSync } = require("fs");
-const { resolve, join, relative } = require("path");
-const { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } = require("@aws-sdk/client-s3");
-require("dotenv").config({ path: resolve(__dirname, "..", "..", ".env"), debug: true });
-var mime = require("mime-types");
+const { readdirSync, readFileSync, statSync, lstatSync } = require('fs');
+const { resolve, join, relative } = require('path');
+const { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } = require('@aws-sdk/client-s3');
+require('dotenv').config({ path: resolve(__dirname, '..', '..', '.env'), debug: true });
+var mime = require('mime-types');
 
 const REGION = process.env.S3_BUCKET_REGION;
 
@@ -10,7 +10,7 @@ const REGION = process.env.S3_BUCKET_REGION;
 const s3 = new S3Client({ region: REGION });
 
 const BUCKET_NAME = process.env.S3_ASSETS_BUCKET;
-const ASSETS_PATH = resolve(__dirname, "..", "dist");
+const ASSETS_PATH = resolve(__dirname, '..', 'dist');
 
 function getLocalFilePaths(directory, _root = directory) {
     let filePaths = [];
@@ -59,7 +59,7 @@ async function uploadDirectory(directory, prefix, s3FilePaths) {
 
 async function deleteNonexistentS3Objects(localFilePaths) {
     const s3Objects = await s3.send(new ListObjectsV2Command({ Bucket: BUCKET_NAME }));
-    if(!s3Objects.Contents) {
+    if (!s3Objects.Contents) {
         return [];
     }
     for (const s3Object of s3Objects.Contents) {
@@ -76,7 +76,7 @@ async function main() {
         let localFilePaths = getLocalFilePaths(ASSETS_PATH);
         let s3FilePaths = await deleteNonexistentS3Objects(localFilePaths);
 
-        await uploadDirectory(ASSETS_PATH, "", s3FilePaths);
+        await uploadDirectory(ASSETS_PATH, '', s3FilePaths);
         console.log(`Successfully uploaded all files in directory "${ASSETS_PATH}" to S3 bucket "${BUCKET_NAME}"`);
     } catch (err) {
         console.error(`Error: ${err}`);

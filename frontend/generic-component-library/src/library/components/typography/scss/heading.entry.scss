@@ -1,49 +1,48 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * #HEADING
 \* ------------------------------------ */
 
-
-$block: "heading";
+$block: 'heading';
 
 .#{$block} {
-    @include e("base") {
-        @include m("heading-100") {
+    @include e('base') {
+        @include m('heading-100') {
             @include font($heading-100);
         }
 
-        @include m("heading-200") {
+        @include m('heading-200') {
             @include font($heading-200);
         }
 
-        @include m("heading-300") {
+        @include m('heading-300') {
             @include font($heading-300);
         }
 
-        @include m("heading-400") {
+        @include m('heading-400') {
             @include font($heading-400);
         }
 
-        @include m("is-center-aligned") {
+        @include m('is-center-aligned') {
             text-align: center;
         }
 
-        @include m("is-right-aligned") {
+        @include m('is-right-aligned') {
             text-align: right;
         }
     }
 
-    @include e("main", "subheading") {
+    @include e('main', 'subheading') {
         display: block;
     }
 
-    @include e("subheading") {
+    @include e('subheading') {
         .heading__base--heading-100 &,
         .heading__base--heading-200 &,
         .heading__base--heading-300 &,
         .heading__base--page-title & {
-          @include font($subheading);
+            @include font($subheading);
         }
     }
 }

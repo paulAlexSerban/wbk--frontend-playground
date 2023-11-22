@@ -1,15 +1,15 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * SIMPLE SUBSCRIBE FORM
 \* ------------------------------------ */
 
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
-$block: "simple-subscribe-form";
+$block: 'simple-subscribe-form';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         margin: 40px auto;
         background: #d3d3d3;
         padding: 10px;

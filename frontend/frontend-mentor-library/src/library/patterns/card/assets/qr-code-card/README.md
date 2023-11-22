@@ -4,18 +4,18 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Table of contents
 
-- [QR Code Component (Frontend Mentor - Solution)](#qr-code-component-frontend-mentor---solution)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
-  - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
+-   [QR Code Component (Frontend Mentor - Solution)](#qr-code-component-frontend-mentor---solution)
+    -   [Table of contents](#table-of-contents)
+    -   [Overview](#overview)
+        -   [Screenshot](#screenshot)
+        -   [Links](#links)
+    -   [My process](#my-process)
+        -   [Built with](#built-with)
+        -   [What I learned](#what-i-learned)
+        -   [Continued development](#continued-development)
+        -   [Useful resources](#useful-resources)
+    -   [Author](#author)
+    -   [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -25,7 +25,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
--   Solution URL: 
+-   Solution URL:
     -   [Markup](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/generic-component-library/src/library/patterns/card/markup/qr-code-card.entry.hbs)
     -   [Styles](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/generic-component-library/src/library/patterns/card/scss/qr-code-card.entry.scss)
 -   Live Site URL: [QR Code Card](https://paulalexserban.github.io/prj--js-component-lib/generic-component-library/library/patterns/card/qr-code-card.html)
@@ -92,11 +92,11 @@ Convert-rem Scss `@function`:
 
 ```scss
 @function convert-rem($px) {
-    @if unit($px) != "px" {
+    @if unit($px) != 'px' {
         @warn "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
     }
 
-    @if meta.function-exists("div", "math") {
+    @if meta.function-exists('div', 'math') {
         @return math.div($px, $default-font-size) * 1rem;
     } @else {
         @return ($px / $default-font-size) * 1rem;

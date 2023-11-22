@@ -1,11 +1,11 @@
 export const config = {
-    type: "widget",
-    name: "CoinGame",
+    type: 'widget',
+    name: 'CoinGame',
 };
 
 export const CoinGame = () => {
-    const avatar = document.querySelector("#player");
-    const coin = document.querySelector("#coin");
+    const avatar = document.querySelector('#player');
+    const coin = document.querySelector('#coin');
 
     function isTouching(a, b) {
         const aRect = a.getBoundingClientRect();
@@ -44,17 +44,17 @@ export const CoinGame = () => {
 
     const init = () => {
         moveCoin();
-        window.addEventListener("keyup", function (e) {
-            if (e.key === "ArrowDown" || e.key === "Down") {
+        window.addEventListener('keyup', function (e) {
+            if (e.key === 'ArrowDown' || e.key === 'Down') {
                 moveVertical(avatar, 50);
-            } else if (e.key === "ArrowUp" || e.key === "Up") {
+            } else if (e.key === 'ArrowUp' || e.key === 'Up') {
                 moveVertical(avatar, -50);
-            } else if (e.key === "ArrowRight" || e.key === "Right") {
+            } else if (e.key === 'ArrowRight' || e.key === 'Right') {
                 moveHorizontal(avatar, 50);
-                avatar.style.transform = "scale(1,1)";
-            } else if (e.key === "ArrowLeft" || e.key === "Left") {
+                avatar.style.transform = 'scale(1,1)';
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
                 moveHorizontal(avatar, -50);
-                avatar.style.transform = "scale(-1,1)";
+                avatar.style.transform = 'scale(-1,1)';
             }
             if (isTouching(avatar, coin)) {
                 moveCoin();

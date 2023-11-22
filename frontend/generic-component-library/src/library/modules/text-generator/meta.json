@@ -1,20 +1,20 @@
 {
-  "group": "library",
-  "category": "modules",
-  "component": "text-generator",
-  "name": "Text Generator",
-  "version": "1.0.0",
-  "description": "Text Generator",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "modules", "text-generator"],
-  "variations": [
-    {
-      "slug": "quotation-generator",
-      "name": "Quotation Generator",
-      "description": "Quotation Generator"
-  }
-  ]
+    "group": "library",
+    "category": "modules",
+    "component": "text-generator",
+    "name": "Text Generator",
+    "version": "1.0.0",
+    "description": "Text Generator",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "text-generator"],
+    "variations": [
+        {
+            "slug": "quotation-generator",
+            "name": "Quotation Generator",
+            "description": "Quotation Generator"
+        }
+    ]
 }

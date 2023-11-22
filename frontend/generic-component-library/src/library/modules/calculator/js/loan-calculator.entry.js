@@ -1,6 +1,6 @@
 export const config = {
-    type: "widget",
-    name: "LoanCalculator",
+    type: 'widget',
+    name: 'LoanCalculator',
 };
 
 (() => {
@@ -13,25 +13,25 @@ export const config = {
         };
 
         const setupDomReferences = () => {
-            global.elements.loanForm = document.getElementById("loan-form");
-            global.elements.results = document.getElementById("results");
-            global.elements.loading = document.getElementById("loading");
-            global.elements.amount = document.getElementById("amount");
-            global.elements.interest = document.getElementById("interest");
-            global.elements.years = document.getElementById("years");
-            global.elements.monthlyPayment = document.getElementById("monthly-payment");
-            global.elements.totalPayment = document.getElementById("total-payment");
-            global.elements.totalInterest = document.getElementById("total-interest");
-            global.elements.alert = document.querySelector(".alert");
-            global.elements.card = document.querySelector(".card");
-            global.elements.heading = document.querySelector(".heading");
+            global.elements.loanForm = document.getElementById('loan-form');
+            global.elements.results = document.getElementById('results');
+            global.elements.loading = document.getElementById('loading');
+            global.elements.amount = document.getElementById('amount');
+            global.elements.interest = document.getElementById('interest');
+            global.elements.years = document.getElementById('years');
+            global.elements.monthlyPayment = document.getElementById('monthly-payment');
+            global.elements.totalPayment = document.getElementById('total-payment');
+            global.elements.totalInterest = document.getElementById('total-interest');
+            global.elements.alert = document.querySelector('.alert');
+            global.elements.card = document.querySelector('.card');
+            global.elements.heading = document.querySelector('.heading');
         };
 
         const setupEventListeners = () => {
-            global.elements.loanForm.addEventListener("submit", (e) => {
+            global.elements.loanForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                global.elements.results.style.display = "none";
-                global.elements.loading.style.display = "block";
+                global.elements.results.style.display = 'none';
+                global.elements.loading.style.display = 'block';
                 setTimeout(() => {
                     calculateResults();
                 }, 200);
@@ -53,21 +53,21 @@ export const config = {
                 global.elements.monthlyPayment.value = monthly.toFixed(2);
                 global.elements.totalPayment.value = (monthly * calculatedPayments).toFixed(2);
                 global.elements.totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
-                global.elements.results.style.display = "block";
-                global.elements.loading.style.display = "none";
+                global.elements.results.style.display = 'block';
+                global.elements.loading.style.display = 'none';
             } else {
-                showError("Please check your numbers");
+                showError('Please check your numbers');
             }
         };
 
         // Show Error
         const showError = (error) => {
-            global.elements.results.style.display = "none";
-            global.elements.loading.style.display = "none";
+            global.elements.results.style.display = 'none';
+            global.elements.loading.style.display = 'none';
 
-            const errorDiv = document.createElement("div");
+            const errorDiv = document.createElement('div');
 
-            errorDiv.className = "alert alert-danger";
+            errorDiv.className = 'alert alert-danger';
             errorDiv.appendChild(document.createTextNode(error));
             global.elements.card.insertBefore(errorDiv, global.elements.heading);
             setTimeout(() => {

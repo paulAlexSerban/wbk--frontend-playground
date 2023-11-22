@@ -1,7 +1,7 @@
 (() => {
     const config = {
-        type: "pat",
-        name: "Scrollspy",
+        type: 'pat',
+        name: 'Scrollspy',
     };
 
     const Scrollspy = () => {
@@ -13,11 +13,11 @@
         };
 
         const setupDomReferences = () => {
-            global.elements.boxes = document.querySelectorAll(".js-box");
+            global.elements.boxes = document.querySelectorAll('.js-box');
         };
 
         const setupEventListeners = () => {
-            window.addEventListener("scroll", () => {
+            window.addEventListener('scroll', () => {
                 checkBoxes();
             });
         };
@@ -29,9 +29,9 @@
                 const boxTop = box.getBoundingClientRect().top;
 
                 if (boxTop < triggerBottom) {
-                    box.classList.add("show");
+                    box.classList.add('show');
                 } else {
-                    box.classList.remove("show");
+                    box.classList.remove('show');
                 }
             });
         };

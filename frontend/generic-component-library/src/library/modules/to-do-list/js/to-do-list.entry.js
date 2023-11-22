@@ -1,6 +1,6 @@
 export const config = {
-    type: "widget",
-    name: "ToDoListApp",
+    type: 'widget',
+    name: 'ToDoListApp',
 };
 
 export const ToDoListApp = () => {
@@ -12,14 +12,14 @@ export const ToDoListApp = () => {
     };
 
     const setupDomReferences = () => {
-        global.elements.addForm = document.querySelector(".js-add");
-        global.elements.search = document.querySelector(".js-search input");
-        global.elements.list = document.querySelector(".js-todos");
+        global.elements.addForm = document.querySelector('.js-add');
+        global.elements.search = document.querySelector('.js-search input');
+        global.elements.list = document.querySelector('.js-todos');
     };
 
     const setupEventListeners = () => {
         // add todos event
-        global.elements.addForm.addEventListener("submit", (e) => {
+        global.elements.addForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const todo = global.elements.addForm.add.value.trim();
 
@@ -30,14 +30,14 @@ export const ToDoListApp = () => {
         });
 
         // delete todos event
-        global.elements.list.addEventListener("click", (e) => {
-            if (e.target.classList.contains("js-delete")) {
+        global.elements.list.addEventListener('click', (e) => {
+            if (e.target.classList.contains('js-delete')) {
                 e.target.parentElement.remove();
             }
         });
 
         // filter todos event
-        global.elements.search.addEventListener("keyup", () => {
+        global.elements.search.addEventListener('keyup', () => {
             const term = global.elements.search.value.trim().toLowerCase();
             filterTodos(term);
         });
@@ -61,7 +61,7 @@ export const ToDoListApp = () => {
                 return !todo.textContent.toLowerCase().includes(term);
             })
             .forEach((todo) => {
-                todo.classList.add("to-do-list-app__filtered");
+                todo.classList.add('to-do-list-app__filtered');
             });
 
         // remove filtered class
@@ -70,7 +70,7 @@ export const ToDoListApp = () => {
                 return todo.textContent.toLowerCase().includes(term);
             })
             .forEach((todo) => {
-                todo.classList.remove("to-do-list-app__filtered");
+                todo.classList.remove('to-do-list-app__filtered');
             });
     };
 

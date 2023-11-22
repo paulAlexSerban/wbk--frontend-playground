@@ -1,14 +1,14 @@
-import paths from "@/core/commons/paths";
-import { base } from "./variation.module.scss";
+import paths from '@/core/commons/paths';
+import { base } from './variation.module.scss';
 export default function Variation({ variation, groupName, categoryName, componentName, library }) {
-    let basePath = "";
-    if (library === "generic") {
+    let basePath = '';
+    if (library === 'generic') {
         basePath = paths.userComponentLibraryUrl;
-    } else if (library === "frontend-mentor") {
+    } else if (library === 'frontend-mentor') {
         basePath = paths.userFrontendMentorLibrary;
-    } else if (library === "big-frontend") {
+    } else if (library === 'big-frontend') {
         basePath = paths.userBigFrontendLibrary;
-    } else if (library === "dev-days-matrix") {
+    } else if (library === 'dev-days-matrix') {
         basePath = paths.userDevDaysMatrix;
     }
     return (
@@ -16,7 +16,7 @@ export default function Variation({ variation, groupName, categoryName, componen
             <a
                 href={`${basePath}/${groupName}/${categoryName}/${componentName}/${variation.slug}.html`}
                 alt={variation.description}
-                target='_blank'
+                target="_blank"
             >
                 {variation.name}
             </a>

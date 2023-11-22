@@ -1,15 +1,15 @@
-import { find } from "../../../../_abstracts/js/dom/traversing";
-import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulation";
+import { find } from '../../../../_abstracts/js/dom/traversing';
+import { addClass, removeClass } from '../../../../_abstracts/js/dom/manipulation';
 
 (() => {
     const config = {
-        type: "pat",
-        name: "ExpandingCards",
+        type: 'pat',
+        name: 'ExpandingCards',
         selectors: {
-            cardPanel: ".js-expanding-cards-panel",
+            cardPanel: '.js-expanding-cards-panel',
         },
         states: {
-            panelActive: "active",
+            panelActive: 'active',
         },
     };
 
@@ -29,7 +29,7 @@ import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulatio
 
         const setupEventListeners = () => {
             global.elements.cardPanels.forEach((panel) => {
-                panel.addEventListener("click", () => {
+                panel.addEventListener('click', () => {
                     removeActiveClasses();
                     addClass(config.states.panelActive, panel);
                 });

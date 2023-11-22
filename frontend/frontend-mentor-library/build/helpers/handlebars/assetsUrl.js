@@ -1,4 +1,4 @@
-const process = require("process");
+const process = require('process');
 /**
  * returns path to assets depending on the name of the environment
  * @param {*} path

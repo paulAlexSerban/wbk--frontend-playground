@@ -1,4 +1,4 @@
-@use "sass:meta";
+@use 'sass:meta';
 
 /// Generate a media query for the maximum width of the given styles
 /// @param {String | Number} $name
@@ -7,7 +7,7 @@
 /// @access public
 
 @mixin breakpoint-down($name, $breakpoints: $breakpoints) {
-    @if meta.type-of($name) == "number" {
+    @if meta.type-of($name) == 'number' {
         @media (max-width: $name) {
             @content;
         }

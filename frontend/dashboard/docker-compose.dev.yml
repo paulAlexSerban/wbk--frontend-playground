@@ -1,38 +1,38 @@
 ---
-version: "3.7"
+version: '3.7'
 # ---------------------------------------------------------------------
 # | NextJS Dashboard                                                        |
 # ---------------------------------------------------------------------
 
 services:
-  dashboard:
-    container_name: dashboard
-    restart: always
-    build:
-      context: .
-      dockerfile: dev.Dockerfile
-    volumes:
-      - .:/usr/src/app/
-      - /usr/src/app/node_modules
-    labels:
-      - traefik.enable=true
-      # Routers
-      - traefik.http.routers.dashboard.entrypoints=web
-      - traefik.http.routers.dashboard.middlewares=test-redirectscheme
+    dashboard:
+        container_name: dashboard
+        restart: always
+        build:
+            context: .
+            dockerfile: dev.Dockerfile
+        volumes:
+            - .:/usr/src/app/
+            - /usr/src/app/node_modules
+        labels:
+            - traefik.enable=true
+            # Routers
+            - traefik.http.routers.dashboard.entrypoints=web
+            - traefik.http.routers.dashboard.middlewares=test-redirectscheme
 
-      - traefik.http.routers.dashboard.rule=Host(`localhost`)
-      - traefik.http.routers.dashboard-secure.rule=Host(`localhost`)
+            - traefik.http.routers.dashboard.rule=Host(`localhost`)
+            - traefik.http.routers.dashboard-secure.rule=Host(`localhost`)
 
-      - traefik.http.routers.dashboard-secure.entrypoints=websecure
-      - traefik.http.routers.dashboard-secure.tls=true
-      - traefik.http.routers.dashboard-secure.middlewares=test-compress,test-ratelimit,test-redirectscheme
-      # Services
-      - traefik.http.services.dashboard-secure.loadbalancer.server.port=3000
-      # Middlewares
-      - traefik.http.middlewares.test-compress.compress=true
-      - traefik.http.middlewares.test-ratelimit.ratelimit.average=100
-      - traefik.http.middlewares.test-ratelimit.ratelimit.burst=100
-      - traefik.http.middlewares.test-ratelimit.ratelimit.period=1s
-      - traefik.http.middlewares.test-redirectscheme.redirectscheme.scheme=https
-      - traefik.http.middlewares.test-redirectscheme.redirectscheme.permanent=true
-      - traefik.http.middlewares.test-redirectscheme.redirectscheme.port=443
+            - traefik.http.routers.dashboard-secure.entrypoints=websecure
+            - traefik.http.routers.dashboard-secure.tls=true
+            - traefik.http.routers.dashboard-secure.middlewares=test-compress,test-ratelimit,test-redirectscheme
+            # Services
+            - traefik.http.services.dashboard-secure.loadbalancer.server.port=3000
+            # Middlewares
+            - traefik.http.middlewares.test-compress.compress=true
+            - traefik.http.middlewares.test-ratelimit.ratelimit.average=100
+            - traefik.http.middlewares.test-ratelimit.ratelimit.burst=100
+            - traefik.http.middlewares.test-ratelimit.ratelimit.period=1s
+            - traefik.http.middlewares.test-redirectscheme.redirectscheme.scheme=https
+            - traefik.http.middlewares.test-redirectscheme.redirectscheme.permanent=true
+            - traefik.http.middlewares.test-redirectscheme.redirectscheme.port=443

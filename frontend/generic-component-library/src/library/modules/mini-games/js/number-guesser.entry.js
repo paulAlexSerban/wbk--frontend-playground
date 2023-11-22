@@ -1,6 +1,6 @@
 const config = {
-    type: "widget",
-    name: "NumberGuesser",
+    type: 'widget',
+    name: 'NumberGuesser',
 };
 
 const NumberGuesser = () => {
@@ -22,25 +22,25 @@ const NumberGuesser = () => {
     };
 
     const setupDomReferences = () => {
-        global.elements.game = document.querySelector("#game");
-        global.elements.minNum = document.querySelector(".min-num");
-        global.elements.maxNum = document.querySelector(".max-num");
-        global.elements.guessBtn = document.querySelector("#guess-btn");
-        global.elements.guessInput = document.querySelector("#guess-input");
-        global.elements.message = document.querySelector(".message");
+        global.elements.game = document.querySelector('#game');
+        global.elements.minNum = document.querySelector('.min-num');
+        global.elements.maxNum = document.querySelector('.max-num');
+        global.elements.guessBtn = document.querySelector('#guess-btn');
+        global.elements.guessInput = document.querySelector('#guess-input');
+        global.elements.message = document.querySelector('.message');
     };
 
     const setupEventListeners = () => {
-        global.elements.game.addEventListener("mousedown", function (e) {
-            if (e.target.className === "play-again") {
+        global.elements.game.addEventListener('mousedown', function (e) {
+            if (e.target.className === 'play-again') {
                 window.location.reload();
             }
         });
 
-        global.elements.guessBtn.addEventListener("click", function () {
+        global.elements.guessBtn.addEventListener('click', function () {
             let guess = parseInt(global.elements.guessInput.value);
             if (isNaN(guess) || guess < global.state.min || guess > global.state.max) {
-                setMessage(`Please enter a number between ${global.state.min} and ${global.state.max}`, "red");
+                setMessage(`Please enter a number between ${global.state.min} and ${global.state.max}`, 'red');
             }
             if (guess === global.state.winningNum) {
                 gameOver(true, `${global.state.winningNum} is correct, YOU WIN!`);
@@ -49,9 +49,9 @@ const NumberGuesser = () => {
                 if (global.state.guessesLeft === 0) {
                     gameOver(false, `Game Over, you lost. The correct number was ${global.state.winningNum}`);
                 } else {
-                    global.elements.guessInput.style.borderColor = "red";
-                    global.elements.guessInput.value = "";
-                    setMessage(`${guess} is not correct, ${global.state.guessesLeft} guesses left`, "red");
+                    global.elements.guessInput.style.borderColor = 'red';
+                    global.elements.guessInput.value = '';
+                    setMessage(`${guess} is not correct, ${global.state.guessesLeft} guesses left`, 'red');
                 }
             }
         });
@@ -60,14 +60,14 @@ const NumberGuesser = () => {
     // Game over
     const gameOver = (won, msg) => {
         let color;
-        won === true ? (color = "green") : (color = "red");
+        won === true ? (color = 'green') : (color = 'red');
         global.elements.guessInput.disabled = true;
         global.elements.guessInput.style.borderColor = color;
         global.elements.message.style.color = color;
         setMessage(msg);
 
-        global.elements.guessBtn.value = "Play Again";
-        global.elements.guessBtn.className += "play-again";
+        global.elements.guessBtn.value = 'Play Again';
+        global.elements.guessBtn.className += 'play-again';
     };
 
     const getRandomNum = (min, max) => {

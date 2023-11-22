@@ -1,5 +1,5 @@
-@use "sass:meta";
-@use "sass:map";
+@use 'sass:meta';
+@use 'sass:map';
 
 /// Generate a media query for the range between the lower and upper breakpoints
 /// @param {String | Number} $lower
@@ -9,8 +9,8 @@
 /// @access public
 
 @mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
-    $is-number-lower: meta.type-of($lower) == "number";
-    $is-number-upper: meta.type-of($upper) == "number";
+    $is-number-lower: meta.type-of($lower) == 'number';
+    $is-number-upper: meta.type-of($upper) == 'number';
     $min: if($is-number-lower, $lower, map.get($breakpoints, $lower));
     $max: if($is-number-upper, $upper, map.get($breakpoints, $upper));
 

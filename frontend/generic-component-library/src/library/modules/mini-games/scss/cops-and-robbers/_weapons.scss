@@ -1,17 +1,12 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 @mixin weaponsClasses {
-  $weapons: (
-    multitool-knife,
-    baton,
-    gun,
-    rifle
-  );
-  @each $weapon in $weapons {
-    &__#{$weapon} {
-      @include bkgImage(#{$weapon});
+    $weapons: (multitool-knife, baton, gun, rifle);
+    @each $weapon in $weapons {
+        &__#{$weapon} {
+            @include bkgImage(#{$weapon});
+        }
     }
-  }
 }
 
 .weapons {

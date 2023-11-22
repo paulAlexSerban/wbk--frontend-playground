@@ -1,5 +1,4 @@
-
 (() => {
     /* eslint-disable no-alert, no-console */
-    console.log("[ LOADED ] Base Page");
+    console.log('[ LOADED ] Base Page');
 })();

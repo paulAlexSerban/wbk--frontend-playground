@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 /*
 * Skeleton V2.0.4
@@ -11,9 +11,9 @@
 */
 
 @function grid-column-width($n) {
-  @return $column-width * $n - math.div($column-margin*($total-columns - $n), $total-columns);
-} 
+    @return $column-width * $n - math.div($column-margin * ($total-columns - $n), $total-columns);
+}
 
 @function grid-offset-length($n) {
-  @return grid-column-width($n) + $column-margin;
+    @return grid-column-width($n) + $column-margin;
 }

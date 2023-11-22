@@ -1,17 +1,17 @@
-import { findOne } from "../../../../_abstracts/js/dom/traversing";
-import { toggleClass } from "../../../../_abstracts/js/dom/manipulation";
+import { findOne } from '../../../../_abstracts/js/dom/traversing';
+import { toggleClass } from '../../../../_abstracts/js/dom/manipulation';
 
 (() => {
     const config = {
-        type: "pat",
-        name: "SearchHidden",
+        type: 'pat',
+        name: 'SearchHidden',
         selectors: {
-            search: ".js-search",
-            button: ".js-search-btn",
-            input: ".js-search-input",
+            search: '.js-search',
+            button: '.js-search-btn',
+            input: '.js-search-input',
         },
         states: {
-            active: "active",
+            active: 'active',
         },
     };
 
@@ -30,7 +30,7 @@ import { toggleClass } from "../../../../_abstracts/js/dom/manipulation";
         };
 
         const setupEventListeners = () => {
-            global.elements.btn.addEventListener("click", () => {
+            global.elements.btn.addEventListener('click', () => {
                 toggleClass(config.states.active, global.elements.search);
                 global.elements.input.focus();
             });

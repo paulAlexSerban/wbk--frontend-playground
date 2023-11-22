@@ -1,12 +1,11 @@
-
 (() => {
     const config = {
-        type: "pat",
-        name: "SoundBoard",
+        type: 'pat',
+        name: 'SoundBoard',
     };
-    
+
     const SoundBoard = () => {
-        const SOUNDS = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
+        const SOUNDS = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
 
         const init = () => {
             setupButtons();
@@ -16,16 +15,16 @@
 
         const setupButtons = () => {
             SOUNDS.forEach((sound) => {
-                const btn = document.createElement("button");
-                btn.classList.add("btn");
+                const btn = document.createElement('button');
+                btn.classList.add('btn');
                 btn.innerText = sound;
-                btn.addEventListener("click", () => {
+                btn.addEventListener('click', () => {
                     stopSongs();
 
                     document.getElementById(sound).play();
                 });
 
-                document.getElementById("buttons").appendChild(btn);
+                document.getElementById('buttons').appendChild(btn);
             });
         };
 

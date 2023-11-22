@@ -1,24 +1,24 @@
 const quotes = [
     [
-        "Win in silence",
-        "Just smile",
-        "Take a deep breath",
-        "Be the best",
-        "Be happy",
-        "Just fly",
+        'Win in silence',
+        'Just smile',
+        'Take a deep breath',
+        'Be the best',
+        'Be happy',
+        'Just fly',
         "I'm not a second option",
-        "Do not wait to be rich",
+        'Do not wait to be rich',
     ],
-    [" and", " or", " along with", " also", " as well as", " furthermore", " including", " moreover"],
+    [' and', ' or', ' along with', ' also', ' as well as', ' furthermore', ' including', ' moreover'],
     [
-        " let them think.",
-        " remember who.",
-        " not be jealous.",
-        " be happy.",
-        " do it twice.",
-        " for what you want.",
-        " watch them succeed.",
-        " happiness is free.",
+        ' let them think.',
+        ' remember who.',
+        ' not be jealous.',
+        ' be happy.',
+        ' do it twice.',
+        ' for what you want.',
+        ' watch them succeed.',
+        ' happiness is free.',
     ],
 ];
 const randomIndexGenerator = (quotes) => {
@@ -35,11 +35,11 @@ export class SimpleGenerator {
     }
 
     setupDOMReferences() {
-        this.simpleQuoteText = document.querySelector(".simple-generator__quote");
-        this.button = document.querySelector(".simple-generator__button");
+        this.simpleQuoteText = document.querySelector('.simple-generator__quote');
+        this.button = document.querySelector('.simple-generator__button');
     }
     setupEvents() {
-        this.button.addEventListener("click", () => this.quoteGenerator());
+        this.button.addEventListener('click', () => this.quoteGenerator());
     }
 
     quoteGenerator() {
@@ -56,31 +56,31 @@ export class SimpleGenerator {
 }
 
 const travelQuotes = [
-    ["Travel ", "Wander ", "Adventure ", "Explore ", "Vacation "],
-    ["is something you do ", "someplace ", "leaves you speechless ", "bring power and love ", "needs no plan "],
+    ['Travel ', 'Wander ', 'Adventure ', 'Explore ', 'Vacation '],
+    ['is something you do ', 'someplace ', 'leaves you speechless ', 'bring power and love ', 'needs no plan '],
     [
-        "like breathing.",
-        "you have never been before.",
-        "turns you into a storyteller.",
-        "back to your life.",
-        "and no intent of arriving.",
+        'like breathing.',
+        'you have never been before.',
+        'turns you into a storyteller.',
+        'back to your life.',
+        'and no intent of arriving.',
     ],
 ];
 const learnQuotes = [
-    ["People ", "Society ", "The team ", "Community ", "The group "],
+    ['People ', 'Society ', 'The team ', 'Community ', 'The group '],
     [
-        "can not be made to feel inferior ",
-        "needs to know itself ",
-        "failing ",
-        "measures intelligence ",
-        "should think before speaking ",
+        'can not be made to feel inferior ',
+        'needs to know itself ',
+        'failing ',
+        'measures intelligence ',
+        'should think before speaking ',
     ],
     [
-        "without their consent.",
-        "to begin its wisdom.",
-        "is the condiment that gives success its flavour.",
-        "by the ability to change.",
-        "and read before thinking.",
+        'without their consent.',
+        'to begin its wisdom.',
+        'is the condiment that gives success its flavour.',
+        'by the ability to change.',
+        'and read before thinking.',
     ],
 ];
 
@@ -91,18 +91,18 @@ export class CustomGenerator {
     }
 
     setupDOMRefrences() {
-        this.switchButton = document.querySelector(".switch-button");
-        this.quotesContainer = document.querySelector(".custom-generator__quotes");
-        this.generatorButtons = document.querySelectorAll(".custom-generator__button");
-        this.removeButton = document.querySelector(".button__base--remove");
+        this.switchButton = document.querySelector('.switch-button');
+        this.quotesContainer = document.querySelector('.custom-generator__quotes');
+        this.generatorButtons = document.querySelectorAll('.custom-generator__button');
+        this.removeButton = document.querySelector('.button__base--remove');
     }
 
     setupEvents() {
         this.generatorButtons.forEach((button) =>
-            button.addEventListener("click", (event) => this.multipleInit(event.target.dataset.quotes))
+            button.addEventListener('click', (event) => this.multipleInit(event.target.dataset.quotes))
         );
-        this.switchButton.addEventListener("click", () => this.quoteTypeSwitch());
-        this.removeButton.addEventListener("click", () => this.removeQuotes());
+        this.switchButton.addEventListener('click', () => this.quoteTypeSwitch());
+        this.removeButton.addEventListener('click', () => this.removeQuotes());
     }
 
     quoteRepeater(times) {
@@ -112,7 +112,7 @@ export class CustomGenerator {
     }
 
     createQuoteParagraph() {
-        this.quoteText = document.createElement("p");
+        this.quoteText = document.createElement('p');
         this.quotesContainer.appendChild(this.quoteText);
         this.fragmentOne = this.quoteType[0][randomIndexGenerator(this.quoteType)];
         this.fragmentTwo = this.quoteType[1][randomIndexGenerator(this.quoteType)];
@@ -129,7 +129,7 @@ export class CustomGenerator {
     }
 
     removeQuotes() {
-        this.quotesContainer.innerHTML = "";
+        this.quotesContainer.innerHTML = '';
     }
 
     multipleInit(quoteCount) {

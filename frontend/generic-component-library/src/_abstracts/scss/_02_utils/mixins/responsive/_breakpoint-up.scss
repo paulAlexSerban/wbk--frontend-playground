@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 /* ------------------------------------ *\
   #BREAKPOINT-UP
@@ -10,7 +10,7 @@
 /// @content
 /// @access public
 @mixin breakpoint-up($name, $breakpoints: $breakpoints) {
-    @if type-of($name) == "number" {
+    @if type-of($name) == 'number' {
         @media only screen and (min-width: $name) {
             @content;
         }

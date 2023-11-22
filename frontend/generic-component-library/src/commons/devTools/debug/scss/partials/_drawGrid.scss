@@ -1,7 +1,7 @@
 //  Mixin to draw baseline grid to check vertical rhythm
 @mixin drawGrid($lh: 1rem, $color: #0ff) {
-  outline: 1px solid color.adjust($color, -20%);
-  background: linear-gradient(rgba($color, 0.6) 1px, transparent 1px);
-  background-repeat: repeat-y;
-  background-size: 100% $lh;
+    outline: 1px solid color.adjust($color, -20%);
+    background: linear-gradient(rgba($color, 0.6) 1px, transparent 1px);
+    background-repeat: repeat-y;
+    background-size: 100% $lh;
 }

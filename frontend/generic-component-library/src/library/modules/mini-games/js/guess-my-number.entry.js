@@ -1,6 +1,6 @@
 export const config = {
-    type: "widget",
-    name: "GuessMyNumber",
+    type: 'widget',
+    name: 'GuessMyNumber',
 };
 
 export const GuessMyNumber = (el) => {
@@ -23,28 +23,28 @@ export const GuessMyNumber = (el) => {
     };
 
     const setupDomReferences = () => {
-        global.elements.message = el.querySelector(".js-message");
-        global.elements.check = el.querySelector(".js-check");
-        global.elements.again = el.querySelector(".js-again");
-        global.elements.number = document.querySelector(".js-number");
-        global.elements.score = document.querySelector(".js-score");
-        global.elements.highscore = document.querySelector(".js-highscore");
-        global.elements.guess = document.querySelector(".js-guess");
+        global.elements.message = el.querySelector('.js-message');
+        global.elements.check = el.querySelector('.js-check');
+        global.elements.again = el.querySelector('.js-again');
+        global.elements.number = document.querySelector('.js-number');
+        global.elements.score = document.querySelector('.js-score');
+        global.elements.highscore = document.querySelector('.js-highscore');
+        global.elements.guess = document.querySelector('.js-guess');
     };
 
     const setupEventListeners = () => {
-        global.elements.check.addEventListener("click", function () {
+        global.elements.check.addEventListener('click', function () {
             const guess = Number(global.elements.guess.value);
 
             // When there is no input
             if (!guess) {
-                displayMessage("⛔️ No number!");
+                displayMessage('⛔️ No number!');
 
                 // When player wins
             } else if (guess === global.state.secretNumber) {
-                displayMessage("🎉 Correct Number!");
+                displayMessage('🎉 Correct Number!');
                 global.elements.number.textContent = global.state.secretNumber;
-                global.elements.number.style.width = "30rem";
+                global.elements.number.style.width = '30rem';
 
                 if (global.state.score > global.state.highscore) {
                     global.state.highscore = global.state.score;
@@ -54,24 +54,24 @@ export const GuessMyNumber = (el) => {
                 // When guess is wrong
             } else if (guess !== global.state.secretNumber) {
                 if (global.state.score > 1) {
-                    displayMessage(guess > global.state.secretNumber ? "📈 Too high!" : "📉 Too low!");
+                    displayMessage(guess > global.state.secretNumber ? '📈 Too high!' : '📉 Too low!');
                     global.state.score--;
                     global.elements.score.textContent = global.state.score;
                 } else {
-                    displayMessage("💥 You lost the game!");
+                    displayMessage('💥 You lost the game!');
                     global.elements.score.textContent = 0;
                 }
             }
         });
 
-        global.elements.again.addEventListener("click", function () {
+        global.elements.again.addEventListener('click', function () {
             global.state.score = 20;
             global.state.secretNumber = Math.trunc(Math.random() * 20) + 1;
-            displayMessage("Start guessing...");
+            displayMessage('Start guessing...');
             global.elements.score.textContent = global.state.score;
-            global.elements.number.textContent = "?";
-            global.elements.guess.value = "";
-            global.elements.number.style.width = "15rem";
+            global.elements.number.textContent = '?';
+            global.elements.guess.value = '';
+            global.elements.number.style.width = '15rem';
         });
     };
 

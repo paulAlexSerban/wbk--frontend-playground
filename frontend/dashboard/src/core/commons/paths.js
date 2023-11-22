@@ -1,4 +1,4 @@
-const { env } = require("process");
+const { env } = require('process');
 
 const paths = {
     internalComponentLibraryUrl: env.INTERNAL_COMPONENT_LIBRARY_URL,

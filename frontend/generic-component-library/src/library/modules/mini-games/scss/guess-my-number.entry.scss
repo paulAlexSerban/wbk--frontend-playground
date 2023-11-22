@@ -1,24 +1,24 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
   * GUESS MY NUMBER
 \* ------------------------------------ */
 
-$block: "guess-my-number";
+$block: 'guess-my-number';
 
 .#{$block} {
-    @include e("base") {
-        font-family: "Press Start 2P", sans-serif;
+    @include e('base') {
+        font-family: 'Press Start 2P', sans-serif;
         color: #eee;
         background-color: #222;
     }
-    @include e("header") {
+    @include e('header') {
         position: relative;
         height: 35vh;
         border-bottom: 7px solid #eee;
     }
 
-    @include e("main") {
+    @include e('main') {
         height: 65vh;
         color: #eee;
         display: flex;
@@ -26,19 +26,19 @@ $block: "guess-my-number";
         justify-content: space-around;
     }
 
-    @include e("left") {
+    @include e('left') {
         width: 52rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    @include e("right") {
+    @include e('right') {
         width: 52rem;
         font-size: 2rem;
     }
 
-    @include e("heading") {
+    @include e('heading') {
         font-size: 4rem;
         text-align: center;
         position: absolute;
@@ -48,7 +48,7 @@ $block: "guess-my-number";
         transform: translate(-50%, -50%);
     }
 
-    @include e("number") {
+    @include e('number') {
         background: #eee;
         color: #333;
         font-size: 6rem;
@@ -61,20 +61,20 @@ $block: "guess-my-number";
         transform: translate(-50%, 50%);
     }
 
-    @include e("between") {
+    @include e('between') {
         font-size: 1.4rem;
         position: absolute;
         top: 2rem;
         right: 2rem;
     }
 
-    @include e("again") {
+    @include e('again') {
         position: absolute;
         top: 2rem;
         left: 2rem;
     }
 
-    @include e("guess") {
+    @include e('guess') {
         background: none;
         border: 4px solid #eee;
         font-family: inherit;
@@ -87,7 +87,7 @@ $block: "guess-my-number";
         margin-bottom: 3rem;
     }
 
-    @include e("btn") {
+    @include e('btn') {
         border: none;
         background-color: #eee;
         color: #222;
@@ -100,12 +100,12 @@ $block: "guess-my-number";
         }
     }
 
-    @include e("message") {
+    @include e('message') {
         margin-bottom: 8rem;
         height: 3rem;
     }
 
-    @include e("label-score") {
+    @include e('label-score') {
         margin-bottom: 2rem;
     }
 }

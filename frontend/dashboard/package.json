@@ -1,14 +1,18 @@
 {
-    "name": "dashboard",
+    "name": "@prj--js-component-lib/dashboard",
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "npx serve@latest out",
-        "lint": "next lint"
+        "build:dev": "next build",
+        "build:prod": "next build",
+        "start": "next dev",
+        "serve": "npx serve@latest out"
     },
     "dependencies": {
+        "@prj--js-component-lib/big-frontend-dev-library": "*",
+        "@prj--js-component-lib/dev-days-matrix-library": "*",
+        "@prj--js-component-lib/frontend-mentor-library": "*",
+        "@prj--js-component-lib/generic-component-library": "*",
         "eslint": "8.41.0",
         "eslint-config-next": "13.4.4",
         "next": "13.4.4",

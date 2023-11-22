@@ -13,12 +13,12 @@ jobs:
         name: Test Docker
         runs-on: ubuntu-latest
         steps:
-            - name: "📥 Checkout repository"
+            - name: '📥 Checkout repository'
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
 
-            - name: "🔍  Verify Changed Traefik files ./docker or *.Dockerfile"
+            - name: '🔍  Verify Changed Traefik files ./docker or *.Dockerfile'
               uses: tj-actions/changed-files@v23.1
               id: changed-traefik-proxy-docker
               with:
@@ -26,7 +26,7 @@ jobs:
                       docker/*.traefik-proxy.yml
                       **/traefik-entrypoints.yml
 
-            - name: "🔍  Verify Changed Nginx files ./docker or *.Dockerfile"
+            - name: '🔍  Verify Changed Nginx files ./docker or *.Dockerfile'
               uses: tj-actions/changed-files@v23.1
               id: changed-nginx-docker
               with:
@@ -42,22 +42,22 @@ jobs:
                     echo "$file was changed"
                   done
 
-            - name: "🐳  Start Traefik Docker Containers"
+            - name: '🐳  Start Traefik Docker Containers'
               if: steps.changed-traefik-proxy-docker.outputs.any_changed == 'true'
               run: bash scripts/docker-traefik-proxy-start.bash
 
-            - name: "🐳  Start Nginx Docker Containers"
+            - name: '🐳  Start Nginx Docker Containers'
               if: steps.changed-nginx-docker.outputs.any_changed == 'true'
               run: bash scripts/docker-nginx-start.bash
 
-            - name: "🧪  List running containers"
+            - name: '🧪  List running containers'
               if: steps.changed-traefik-proxy-docker.outputs.any_changed == 'true'
               run: docker ps -a
 
-            - name: "🧪 Test Traefik container"
+            - name: '🧪 Test Traefik container'
               if: steps.changed-traefik-proxy-docker.outputs.any_changed == 'true'
               run: bash scripts/docker-traefik-proxy-test.bash
 
-            - name: "🧪 Test Nginx Front-end Component Collection container"
+            - name: '🧪 Test Nginx Front-end Component Collection container'
               if: steps.changed-nginx-docker.outputs.any_changed == 'true'
               run: bash scripts/docker-frontend-component-collection-test.bash

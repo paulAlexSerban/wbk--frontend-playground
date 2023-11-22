@@ -1,9 +1,9 @@
-const form = document.getElementById("form");
-const search = document.getElementById("search");
-const result = document.getElementById("result");
-const more = document.getElementById("more");
+const form = document.getElementById('form');
+const search = document.getElementById('search');
+const result = document.getElementById('result');
+const more = document.getElementById('more');
 
-const apiURL = "https://api.lyrics.ovh";
+const apiURL = 'https://api.lyrics.ovh';
 
 // Search by song or artist
 async function searchSongs(term) {
@@ -24,25 +24,25 @@ function showData(data) {
         <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button>
         </li>`
             )
-            .join("")}
+            .join('')}
         </ul>
     `;
 
     if (data.prev || data.next) {
         more.innerHTML = `
-            ${data.prev ? `<button class="btn prev">Prev</button>` : ""}
-            ${data.next ? `<button class="btn prev">Next</button>` : ""}
+            ${data.prev ? `<button class="btn prev">Prev</button>` : ''}
+            ${data.next ? `<button class="btn prev">Next</button>` : ''}
         `;
     } else {
-        more.innerHTML = "";
+        more.innerHTML = '';
     }
 
-    const btnPrev = document.querySelector(".btn.prev");
-    const btnNext = document.querySelector(".btn.next");
-    btnPrev.addEventListener("click", () => {
+    const btnPrev = document.querySelector('.btn.prev');
+    const btnNext = document.querySelector('.btn.next');
+    btnPrev.addEventListener('click', () => {
         getMoreSongs(data.prev);
     });
-    btnNext.addEventListener("click", () => {
+    btnNext.addEventListener('click', () => {
         getMoreSongs(data.next);
     });
 }
@@ -60,34 +60,34 @@ async function getLyrics(artist, songTitle) {
     const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
     const data = await res.json();
 
-    const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
+    const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
 
     result.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
   <span>${lyrics}</span>`;
 
-    more.innerHTML = "";
+    more.innerHTML = '';
 }
 
 // Event listeners
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const searchTerm = search.value.trim();
 
     if (!searchTerm) {
-        alert("Please type in a search term");
+        alert('Please type in a search term');
     } else {
         searchSongs(searchTerm);
     }
 });
 
 // Get lyrics button click
-result.addEventListener("click", (e) => {
+result.addEventListener('click', (e) => {
     const clickedEl = e.target;
 
-    if (clickedEl.tagName === "BUTTON") {
-        const artist = clickedEl.getAttribute("data-artist");
-        const songTitle = clickedEl.getAttribute("data-songtitle");
+    if (clickedEl.tagName === 'BUTTON') {
+        const artist = clickedEl.getAttribute('data-artist');
+        const songTitle = clickedEl.getAttribute('data-songtitle');
 
         getLyrics(artist, songTitle);
     }

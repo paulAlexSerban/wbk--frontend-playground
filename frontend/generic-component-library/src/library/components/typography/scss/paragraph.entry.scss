@@ -1,13 +1,13 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * #PARAGRAPH
 \* ------------------------------------ */
 
-$block-p: "paragraph";
+$block-p: 'paragraph';
 
 .#{$block-p} {
-    @include e("base") {
+    @include e('base') {
         @include font($body);
 
         color: var(--text-color);

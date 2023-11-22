@@ -26,10 +26,10 @@
 
 ### Templates / Pages (or Complex Organisms)ᴺᴱᵂ
 
--  these are advanced life forms. The quickest reference would be animals, plants and human beings. As it turns out, products are similarly complex. Not only do they consist of more than templates of components, patterns and modules, they have flows across different pages or screens. Interestingly, this is where the “onion”(Mu, 2020) calls out the term “products”. I, on the other hand, chose to stick to the naming convention of the metaphor. I have also consolidated templates and pages under the same sequence, keeping the mental model intact.
+-   these are advanced life forms. The quickest reference would be animals, plants and human beings. As it turns out, products are similarly complex. Not only do they consist of more than templates of components, patterns and modules, they have flows across different pages or screens. Interestingly, this is where the “onion”(Mu, 2020) calls out the term “products”. I, on the other hand, chose to stick to the naming convention of the metaphor. I have also consolidated templates and pages under the same sequence, keeping the mental model intact.
 -   Examples: User Interface, App, Web
 
 ### Products (or Species)ᴺᴱᵂ
 
-- these are a family of complex organisms of unique yet similar traits. In design, species can be referred to as product lines or portfolio. As more organizations see the value of design, and with advancements of our understanding of design systems, so is our ability to apply the entire gamut of design across products in organizations.
-Examples: Suites, platforms, omnichannel
+-   these are a family of complex organisms of unique yet similar traits. In design, species can be referred to as product lines or portfolio. As more organizations see the value of design, and with advancements of our understanding of design systems, so is our ability to apply the entire gamut of design across products in organizations.
+    Examples: Suites, platforms, omnichannel

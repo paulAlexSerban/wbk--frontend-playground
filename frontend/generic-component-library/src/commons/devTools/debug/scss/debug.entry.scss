@@ -1,5 +1,5 @@
-@import "~ScssAbstracts";
-@import "./partials/drawGrid.scss";
+@import '~ScssAbstracts';
+@import './partials/drawGrid.scss';
 
 %debug {
     outline: 1px solid #f0f !important;
@@ -43,5 +43,3 @@
         @extend %debug3;
     }
 }
-
-

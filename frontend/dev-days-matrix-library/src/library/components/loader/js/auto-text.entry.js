@@ -1,6 +1,6 @@
-const textEl = document.getElementById("text");
-const speedEl = document.getElementById("speed");
-const text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+const textEl = document.getElementById('text');
+const speedEl = document.getElementById('speed');
+const text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
 let idx = 1;
 let speed = 300 / speedEl.value;
 
@@ -18,4 +18,4 @@ function writeText() {
     setTimeout(writeText, speed);
 }
 
-speedEl.addEventListener("input", (e) => (speed = 300 / e.target.value));
+speedEl.addEventListener('input', (e) => (speed = 300 / e.target.value));
