@@ -1,4 +1,4 @@
-const ESLintPlugin = require('eslint-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,7 +11,7 @@ const MergeJsonWebpackPlugin = require('./MergeJsonWebpackPlugin');
 
 const plugins = [
     // use eslint to lint JavaScript code
-    new ESLintPlugin(),
+    // new ESLintPlugin(),
     // extract CSS styles into separate files
     new MiniCssExtractPlugin({
         filename: (all) => {

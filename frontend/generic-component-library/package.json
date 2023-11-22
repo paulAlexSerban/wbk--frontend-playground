@@ -5,7 +5,8 @@
     "scripts": {
         "start": "export NODE_ENV=development && webpack --config build/webpack.dev.js --watch --progress --stats-children",
         "build:dev": "export NODE_ENV=development && webpack --config build/webpack.dev.js",
-        "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js"
+        "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js",
+        "package": "bash scripts/package.bash"
     },
     "dependencies": {
         "@babel/plugin-proposal-class-properties": "^7.18.6",

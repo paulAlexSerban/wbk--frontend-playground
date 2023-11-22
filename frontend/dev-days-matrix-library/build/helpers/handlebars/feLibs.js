@@ -1,10 +1,8 @@
 const process = require('process');
 const { env } = process;
-
+const projectName = require('../../../package.json').name.split('/')[1];
 module.exports = function (group, category, name, variation, type) {
-    const path = `${env.BASE_URL}${
-        env.BASE_URL.length !== 0 ? '/dev-days-matrix-library' : ''
-    }/${group}/${category}/${name}/${variation}`;
+    const path = `${env.BASE_URL}${projectName}/${group}/${category}/${name}/${variation}`;
 
     const feLibs = {
         css: `<link rel="stylesheet" href="${path}.css">`,
