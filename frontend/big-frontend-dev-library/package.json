@@ -4,7 +4,8 @@
     "private": true,
     "description": "",
     "scripts": {
-        "start": "export NODE_ENV=development && webpack --config build/webpack.dev.js --watch --progress --stats-children",
+        "start": "npx serve dist",
+        "develop": "export NODE_ENV=development && webpack --config build/webpack.dev.js --watch --progress --stats-children",
         "build:dev": "export NODE_ENV=development && webpack --config build/webpack.dev.js",
         "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js",
         "package": "bash scripts/package.bash"

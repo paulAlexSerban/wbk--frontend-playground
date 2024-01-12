@@ -6,7 +6,7 @@
     "main": "index.js",
     "scripts": {
         "process": "gulp process --require @babel/register --gulpfile build",
-        "publish": "bash scripts/publish.bash"
+        "publish:assets": "bash scripts/publish.bash"
     },
     "author": "Paul Serban",
     "license": "MIT",
