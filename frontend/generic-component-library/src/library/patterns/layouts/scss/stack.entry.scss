@@ -1,0 +1,19 @@
+@import '~ScssAbstracts';
+
+[class^='stack'] > * {
+    /* top and bottom margins in horizontal-tb writing mode */
+    margin-block: 0;
+    /* reset vertical margin for stack like elements - only the vertical margins are reset as stacks only affect vertical margins */
+}
+
+.stack {
+    --stack-mt: #{$baseline};
+
+    &--adjacent-sibling > * + * {
+        margin-block-start: var(--stack-mt);
+    }
+
+    &--recursive * + * {
+        margin-block-start: var(--stack-mt);
+    }
+}
