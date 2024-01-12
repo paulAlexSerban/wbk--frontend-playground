@@ -21,6 +21,25 @@
     box-sizing: border-box;
 }
 
+/* All elements display a sans-serif font */
+* {
+    font-family: sans-serif;
+}
+
+* {
+    max-inline-size: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+    max-inline-size: none;
+}
+
 /* Reapply the pointer cursor for anchor tags */
 a,
 button {

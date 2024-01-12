@@ -1,0 +1,15 @@
+@import '~ScssAbstracts';
+
+/* ------------------------------------ *\
+ * ICON
+\* ------------------------------------ */
+
+$block: 'icon';
+
+.#{$block} {
+    /* 
+        direction: ltr; => margin is on the right
+        direction: rtl; => margin is on the left
+    */
+    margin-inline-end: $baseline;
+}

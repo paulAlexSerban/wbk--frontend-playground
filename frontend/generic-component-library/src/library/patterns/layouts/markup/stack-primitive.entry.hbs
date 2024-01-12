@@ -3,14 +3,14 @@
   {{{feLibs 'library' 'patterns' 'layouts' 'stack' 'css'}}}
   {{{feLibs 'commons' 'devTools' 'debug' 'debug' 'css'}}}
     {{{feLibs 'library' 'components' 'typography' 'paragraph' 'css' }}}
-  <div class='container stack stack--adjacent-sibling'>
-    <div class='row stack--adjacent-sibling'>
+  <div class='container stack stack--successive'>
+    <div class='row stack--successive'>
 
       <article class='col-smartphone-4 col-tablet-6 offset-tablet-3'>
         <h2>Stack - Adjacent Sibling</h2>
         {{#> patterns/layouts/markup/partials/_stack 
              classNames='withDebugs' 
-             type='adjacent-sibling'}}
+             type='successive'}}
 
           {{#> components/typography/markup/partials/_paragraph}}
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, quis illo! Ullam nisi provident officiis

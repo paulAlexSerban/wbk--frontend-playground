@@ -1,0 +1,33 @@
+@import '~ScssAbstracts';
+.box {
+    /* NOT NEEDED because style is inherited */
+    // font-family: sans-serif;
+
+    --box-color-light: #eee;
+    --box-color-dark: #222;
+    --box-padding: var(--ss1);
+    --box-border: 2px solid var(--box-color-dark);
+
+    /* padding set to the first point on the modular scale */
+    padding: var(--box-padding);
+
+    border: var(--box-border);
+    color: var(--box-color-dark);
+    background-color: var(--box-color-light);
+
+    /* always apply the transparent outline for, for high contrast mode */
+    outline: 0.125rem solid transparent;
+    outline-offset: -0.125rem;
+    * {
+        /* forces colors to inherit from parent and honor inversion */
+        color: inherit;
+    }
+
+    &.invert {
+        /* dark becomes light and light becomes dark */
+        --box-border: 2px solid var(--box-color-light);
+
+        color: var(--box-color-light);
+        background-color: var(--box-color-dark);
+    }
+}

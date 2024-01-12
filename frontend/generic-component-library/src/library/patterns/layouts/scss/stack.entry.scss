@@ -9,7 +9,7 @@
 .stack {
     --stack-mt: #{$baseline};
 
-    &--adjacent-sibling > * + * {
+    &--successive > * + * {
         margin-block-start: var(--stack-mt);
     }
 
