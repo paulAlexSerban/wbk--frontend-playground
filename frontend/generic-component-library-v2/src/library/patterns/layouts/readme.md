@@ -17,3 +17,9 @@
 
 -   Stack - inject vertical spacings (margin-block) between elements via common parent
 -   Box - take care of any styles that can be considered intrinsic to individual elements - styles that are not dictated, inherited, or inferred from meta-layouts to which an individual element may be subjected
+-   Center - center an element horizontally
+-   Cluster - Cluster components suit any groups of elements that differ in length and are liable to wrap. Buttons that appear together at the end of forms are ideal candidates, as well as lists of tags, keywords, or other meta information. Use the Cluster to align any groups of horizontally laid out elements to the left or right, or in the center.
+-   Sidebar - The Sidebar layout is named for the element that forms the diminutive sidebar: the narrower of two adjacent elements. It is a quantum layout, existing simultaneously in one of the two configurations—horizontal and vertical.
+-   Switcher - element (based on the bizarrely named Flexbox Holy Albatross ) switches a Flexbox context between a horizontal and a vertical layout at a given, container-based breakpoint.
+-   Grid - The Grid layout is a quantum layout, existing simultaneously in one of the two configurations—horizontal and vertical. It is named for the element that forms the diminutive grid: the narrower of two adjacent elements.
+-   Frame The Frame is mostly useful for cropping media (videos and images) to a desired aspect ratio. Once you start controlling the aspect ratio, you can of course tailor it to the current circumstances. The Frame is also useful for creating a consistent visual rhythm for images of different sizes.

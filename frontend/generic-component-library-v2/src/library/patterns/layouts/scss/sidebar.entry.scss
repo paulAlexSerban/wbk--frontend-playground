@@ -1,0 +1,32 @@
+.with-sidebar {
+    --sidebar-space: var(--gutter, var(--ss1));
+    --sidebar-width: 20rem;
+    --sidebar-content-min: 50%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    /* The default value is the first point on the modular scale */
+    gap: var(--sidebar-space);
+
+    & > * {
+        flex-grow: 1;
+        flex-basis: var(--sidebar-width);
+    }
+
+    &--right {
+        & > :first-child {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-inline-size: var(--sidebar-content-min);
+        }
+    }
+
+    &--left {
+        & > :last-child {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-inline-size: var(--sidebar-content-min);
+        }
+    }
+}

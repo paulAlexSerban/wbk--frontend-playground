@@ -1,21 +1,22 @@
 {{#> templates/base/markup/partials/_base title='Center Primitive Layout - Pattern'}}
   {{{feLibs 'commons' 'themes' 'base' 'base-auto' 'css'}}}
   {{{feLibs 'system' 'templates' 'base' 'base-tpl' 'css'}}}
-  {{{feLibs 'library' 'patterns' 'layouts' 'center' 'css'}}}
+
   {{{feLibs 'commons' 'devTools' 'debug' 'debug' 'css'}}}
   {{{feLibs 'commons' 'devTools' 'lint' 'lint' 'css'}}}
+
+  {{{feLibs 'library' 'patterns' 'layouts' 'stack' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'layouts' 'box' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'layouts' 'center' 'css'}}}
+
   <h2>Center Primitive Layout</h2>
 
-  <div class='center withDebugs'>
-    <div style='padding: 1rem;'>
-      <code style='display: block;'>
-        <pre>
-div {
-  inline-size: 100%;
-  padding: 1rem;
-}
-        </pre>
-      </code>
+  <div class="box">
+    <div class="center">
+      <div class="stack stack--successive">
+        <h3>Basic Example</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quod iste quos odio, aspernatur exercitationem quas harum, cum, dolorum assumenda sunt ipsum officiis expedita. Laudantium nihil quis voluptas debitis nesciunt?</p>
+      </div>
     </div>
   </div>
 

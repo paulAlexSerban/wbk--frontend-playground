@@ -1,0 +1,39 @@
+.reel {
+    /* ↓ Custom properties for ease of adjustment */
+    --space: 1rem;
+    --color-light: #fff;
+    --color-dark: #000;
+    --reel-height: auto;
+    --item-width: 50ch;
+    display: flex;
+    block-size: var(--reel-height);
+    /* ↓ Overflow */
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* ↓ For Firefox */
+    scrollbar-color: var(--color-light) var(--color-dark);
+
+    & > * {
+        /*
+    ↓ Just a `width` wouldn’t work because
+    `flex-shrink: 1` (default) still applies
+     */
+        flex: 0 0 var(--item-width);
+
+        & + * {
+            margin-inline-start: var(--space);
+        }
+    }
+
+    &.overflowing:not(.no-bar) {
+        /* ↓ Only apply if there is a scrollbar (see the JavaScript) */
+        padding-block-end: var(--space);
+    }
+    /* ↓ Hide scrollbar with `no-bar` class */
+    &.no-bar {
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}

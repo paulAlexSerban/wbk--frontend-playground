@@ -4,7 +4,9 @@
 \* ------------------------------------ */
 
 :root {
-    --measure: 80ch;
+    --baseline: #{$baseline};
+    --gutter: #{$gutter};
+    --measure: 60ch;
     --font-size-xs: #{convert-rem(14px)};
     --font-size-base: #{convert-rem(18px)};
     --font-size-lg: #{convert-rem(24px)};
