@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "system",
+    "category": "products",
+    "component": "basic-design-system",
+    "name": "Basic Design System",
+    "version": "1.0.0",
+    "description": "Basic Design System",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "products", "base"],
+    "variations": [
+        {
+            "slug": "basic-design-system",
+            "name": "Basic Design System",
+            "description": "Basic Design System"
+        }
+    ]
+}
