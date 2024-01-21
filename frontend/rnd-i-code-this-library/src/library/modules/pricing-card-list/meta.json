@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "library",
+    "category": "modules",
+    "component": "pricing-card-list",
+    "name": "Pricing Card List",
+    "version": "1.0.0",
+    "description": "Pricing Card List",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "recording-ui"],
+    "variations": [
+        {
+            "slug": "pricing-card-list",
+            "name": "Pricing Card List",
+            "description": "Pricing Card List"
+        }
+    ]
+}
