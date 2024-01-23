@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "library",
+    "category": "modules",
+    "component": "browser-detect",
+    "name": "Browser Detect",
+    "version": "1.0.0",
+    "description": "",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [],
+    "variations": [
+        {
+            "slug": "browser-detect",
+            "name": "Browser Detect",
+            "description": ""
+        }
+    ]
+}
