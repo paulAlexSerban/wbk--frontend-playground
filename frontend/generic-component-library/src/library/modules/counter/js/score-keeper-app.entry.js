@@ -16,7 +16,7 @@ class Player {
     }
 
     setupEvents() {
-        this.playerButton.addEventListener("click", () => this.updateScore());
+        this.playerButton.addEventListener('click', () => this.updateScore());
     }
 
     updateScore() {
@@ -24,8 +24,8 @@ class Player {
             this.score++;
             if (this.score == this.winingScore) {
                 this.isGameOver = true;
-                this.playerDisplay.classList.add("has-text-success");
-                this.oponentDisplay.classList.add("has-text-danger");
+                this.playerDisplay.classList.add('has-text-success');
+                this.oponentDisplay.classList.add('has-text-danger');
                 this.playerButton.disabled = true;
                 this.oponentButton.disabled = true;
             }
@@ -37,8 +37,8 @@ class Player {
         this.score = 0;
         this.isGameOver = false;
         this.playerDisplay.textContent = this.score;
-        this.playerDisplay.classList.remove("has-text-success", "has-text-danger");
-        this.oponentDisplay.classList.remove("has-text-success", "has-text-danger");
+        this.playerDisplay.classList.remove('has-text-success', 'has-text-danger');
+        this.oponentDisplay.classList.remove('has-text-success', 'has-text-danger');
         this.playerButton.disabled = false;
         this.oponentButton.disabled = false;
     }
@@ -52,16 +52,16 @@ class Player {
 class Scorekeeper {
     constructor() {
         this.players = {
-            playerOne: new Player("playerOne", "playerTwo"),
-            playerTwo: new Player("playerTwo", "playerOne"),
+            playerOne: new Player('playerOne', 'playerTwo'),
+            playerTwo: new Player('playerTwo', 'playerOne'),
         };
         this.init();
         this.setupScore();
     }
 
     setupDomRefrence() {
-        this.btnReset = document.querySelector("#reset-button");
-        this.selectWinScore = document.querySelector("#playTo");
+        this.btnReset = document.querySelector('#reset-button');
+        this.selectWinScore = document.querySelector('#playTo');
     }
 
     setupScore() {
@@ -70,9 +70,9 @@ class Scorekeeper {
     }
 
     setupEvents() {
-        this.btnReset.addEventListener("click", () => this.resetScore());
+        this.btnReset.addEventListener('click', () => this.resetScore());
 
-        this.selectWinScore.addEventListener("change", (e) => {
+        this.selectWinScore.addEventListener('change', (e) => {
             this.winScore = parseInt(e.target.value);
             this.resetScore();
         });

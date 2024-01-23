@@ -1,38 +1,38 @@
-@use "sass:color";
-@use "sass:map";
+@use 'sass:color';
+@use 'sass:map';
 
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * ALERT MODULE
 \* ------------------------------------ */
 
-$block: "alert";
+$block: 'alert';
 
 $alert-colors: (
-    "grey": (
-        "background": get-color($c-gray, spanish-gray),
-        "link": get-color($c-blue, french-blue),
+    'grey': (
+        'background': get-color($c-gray, spanish-gray),
+        'link': get-color($c-blue, french-blue),
     ),
-    "white": (
-        "background": get-color($c-light, light),
-        "link": get-color($c-blue, french-blue),
+    'white': (
+        'background': get-color($c-light, light),
+        'link': get-color($c-blue, french-blue),
     ),
-    "blue": (
-        "background": get-color($c-blue, colombia-blue),
-        "link": get-color($c-blue, french-blue),
+    'blue': (
+        'background': get-color($c-blue, colombia-blue),
+        'link': get-color($c-blue, french-blue),
     ),
-    "coral": (
-        "background": get-color($c-brown, misty-rose),
-        "link": color.adjust(get-color($c-brown, misty-rose), $lightness: -25%),
+    'coral': (
+        'background': get-color($c-brown, misty-rose),
+        'link': color.adjust(get-color($c-brown, misty-rose), $lightness: -25%),
     ),
-    "gold": (
-        "background": get-color($c-yellow, wheat),
-        "link": color.adjust(get-color($c-yellow, wheat), $lightness: -25%),
+    'gold': (
+        'background': get-color($c-yellow, wheat),
+        'link': color.adjust(get-color($c-yellow, wheat), $lightness: -25%),
     ),
-    "green": (
-        "background": get-color($c-green, honeydew),
-        "link": color.adjust(get-color($c-green, honeydew), $lightness: -25%),
+    'green': (
+        'background': get-color($c-green, honeydew),
+        'link': color.adjust(get-color($c-green, honeydew), $lightness: -25%),
     ),
 );
 
@@ -43,10 +43,10 @@ $alert-colors: (
 
         @each $name, $color in $alert-colors {
             &--#{$name} {
-                background: map.get($color, "background");
+                background: map.get($color, 'background');
 
                 .#{$block}__link {
-                    color: map.get($color, "link");
+                    color: map.get($color, 'link');
                 }
             }
         }

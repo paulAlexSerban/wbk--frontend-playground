@@ -1,10 +1,13 @@
 {{#> templates/base/markup/partials/_base-demo-container use12ColGrid=true title='Paragraph - Typography Component'}}
   {{{feLibs 'library' 'components' 'typography' 'paragraph' 'css' }}}
   <div class='col-smartphone-4 col-tablet-8 offset-tablet-2'>
-    <p class='paragraph__base'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nesciunt quia ut
-      delectus aliquam tenetur repudiandae, doloremque itaque inventore magni autem voluptate hic dignissimos
-      perspiciatis
-      placeat. Dolore distinctio aliquid voluptatibus.</p>
+
+    {{#> components/typography/markup/partials/_paragraph}}
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus nesciunt quia ut delectus aliquam tenetur
+      repudiandae, doloremque itaque inventore magni autem voluptate hic dignissimos perspiciatis placeat. Dolore
+      distinctio aliquid voluptatibus.
+    {{/ components/typography/markup/partials/_paragraph}}
+    
   </div>
 
   {{/ templates/base/markup/partials/_base-demo-container}}

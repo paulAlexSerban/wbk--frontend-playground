@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "system",
+    "category": "products",
+    "component": "editorial-page",
+    "name": "Editorial Page",
+    "version": "1.0.0",
+    "description": "Editoial page",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "system", "products", "editorial"],
+    "variations": [
+        {
+            "slug": "editorial-page",
+            "name": "Editoial page",
+            "description": "blog/magazine-ish template built around a toggleable 'locking' sidebar (scroll down to see what I mean) and an accordion-style menu. Not the usual landing page/portfolio"
+        }
+    ]
+}

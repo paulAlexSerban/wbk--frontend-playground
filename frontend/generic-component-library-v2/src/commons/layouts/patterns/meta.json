@@ -1,0 +1,14 @@
+{
+    "group": "commons",
+    "category": "layouts",
+    "component": "patterns",
+    "name": "Patterns",
+    "version": "1.0.0",
+    "description": "Patterns",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["commons", "layouts", "patterns"],
+    "variations": []
+}

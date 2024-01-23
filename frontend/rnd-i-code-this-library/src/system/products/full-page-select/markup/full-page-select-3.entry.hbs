@@ -1,0 +1,1157 @@
+{{#> templates/i-code-this/markup/partials/_i-code-this title='Full Page Select'}}
+
+  {{{feLibs 'system' 'products' 'full-page-select' 'full-page-select-3' 'all'}}}
+
+
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css2?family=Montserrat:wght@300..700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+
+  <div class="text-gray-700 flex justify-center items-center min-h-screen p-4">
+    <input type="radio" name="catetory" id="cat-1" class="sr-only peer/cat-1">
+    <input type="radio" name="catetory" id="cat-2" class="sr-only peer/cat-2" checked="">
+    <input type="radio" name="catetory" id="cat-3" class="sr-only peer/cat-3">
+
+    <div class="w-full max-w-4xl
+            peer-checked/cat-1:[&amp;_#article-1]:border-green-400
+            peer-checked/cat-1:[&amp;_#article-1_label]:bg-green-400
+            peer-checked/cat-1:[&amp;_#article-1_label]:text-white
+            peer-checked/cat-2:[&amp;_#article-2]:border-rose-400
+            peer-checked/cat-2:[&amp;_#article-2_label]:bg-rose-400
+            peer-checked/cat-2:[&amp;_#article-2_label]:text-white
+            peer-checked/cat-3:[&amp;_#article-3]:border-orange-400
+            peer-checked/cat-3:[&amp;_#article-3_label]:bg-orange-400
+            peer-checked/cat-3:[&amp;_#article-3_label]:text-white
+        ">
+
+      <header class="space-y-4  relative isolate 
+                before:absolute
+                before:-top-full
+                before:text-gray-300
+                before:text-[10rem]
+                before:content-['2/3']
+                before:-z-10
+                before:font-thin
+                before:opacity-30
+                before:
+            ">
+        <h1 class="font-semibold tracking-wider text-4xl">Select category</h1>
+        <p class="font-thin">Select the category where you want to add these records</p>
+      </header>
+
+      <button
+        class="ml-auto material-symbols-outlined border rounded-md grid place-content-center w-14 h-14 text-blue-400 text-2xl transition-all duration-300 hover:bg-blue-400 hover:text-white">add</button>
+
+      <section class="my-6 grid  min-[500px]:grid-cols-3 gap-3 sm:gap-6
+                [&amp;>article]:rounded-lg
+                [&amp;>article]:border-2
+                [&amp;>article]:grid
+                [&amp;>article]:place-content-center
+                [&amp;>article]:gap-4
+                [&amp;>article]:p-4
+                sm:[&amp;>article]:p-8
+                [&amp;>article]:bg-white
+                [&amp;>article]:text-center
+                [&amp;>article]:transition-all
+                [&amp;>article]:duration-300
+                hover:[&amp;>article]:drop-shadow-[0_15px_15px_rgba(0,0,0,0.25)]
+                hover:[&amp;_#article-1]:border-green-400
+                hover:[&amp;_#article-2]:border-red-400
+                hover:[&amp;_#article-3]:border-orange-400
+
+                [&amp;_div]:mx-auto
+                [&amp;_div]:rounded-full
+                [&amp;_div]:w-24
+                [&amp;_div]:h-24
+                [&amp;_div]:border-8
+                [&amp;_div]:border-gray-100
+                [&amp;_div]:overflow-hidden
+                [&amp;_img]:rounded-full
+                [&amp;_img]:w-full
+                [&amp;_img]:h-full
+                [&amp;_img]:object-cover
+                [&amp;_img]:scale-110
+                [&amp;_img]:transition-all
+                [&amp;_img]:duration-[1000ms]
+                [&amp;>article:hover_img]:scale-100
+                [&amp;_h2]:font-semibold
+                [&amp;_h2]:tracking-wider
+                [&amp;_h2]:text-[clamp(1rem,2vw,1.3rem)]
+                [&amp;_label]:mt-8
+                [&amp;_label]:border
+                [&amp;_label]:rounded-md
+                [&amp;_label]:py-3
+                [&amp;_label]:w-full 
+                [&amp;_label]:block
+                sm:[&amp;_label]:px-12
+                [&amp;_label]:cursor-pointer
+                [&amp;_label]:transition-all
+                [&amp;_label]:duration-300
+                [&amp;_label]:relative
+                [&amp;_label]:isolate
+                [&amp;_label]:overflow-hidden
+                hover:[&amp;_label]:text-white
+                before:[&amp;_label]:absolute
+                before:[&amp;_label]:inset-full
+                before:[&amp;_#article-1_label]:bg-green-400
+                before:[&amp;_#article-2_label]:bg-rose-400
+                before:[&amp;_#article-3_label]:bg-orange-400
+                before:[&amp;_label]:transition-all
+                before:[&amp;_label]:duration-300
+                before:[&amp;_label]:-z-10
+                hover:before:[&amp;_label]:inset-0
+            ">
+
+        <article id="article-1" class="animate-in" style="--d:300ms;">
+          <div>
+            <img
+              src="https://images.pexels.com/photos/11985972/pexels-photo-11985972.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=680&amp;h=375&amp;dpr=1"
+              alt="Plants">
+          </div>
+          <h2>Plants</h2>
+          <label for="cat-1">Select</label>
+        </article>
+
+        <article id="article-2" class="animate-in" style="--d:800ms;">
+          <div>
+            <img
+              src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=680&amp;h=375&amp;dpr=1"
+              alt="Desserts">
+          </div>
+          <h2>Desserts</h2>
+          <label for="cat-2">Select</label>
+        </article>
+
+        <article id="article-3" class="animate-in" style="--d:1300ms;">
+          <div>
+            <img src="https://images.pexels.com/photos/3908800/pexels-photo-3908800.jpeg" alt="Accesories">
+          </div>
+          <h2>Accesories</h2>
+          <label for="cat-3">Select</label>
+        </article>
+
+      </section>
+
+      <button
+        class="ml-auto flex items-center gap-4 divide-x border border-white/30 text-white rounded-md transition-all duration-300 hover:bg-white/20 [&amp;>*]:px-6 [&amp;>*]:py-2">
+        <p>Contintue</p>
+        <span class="material-symbols-outlined w-12 grid place-content-center">arrow_right_alt</span>
+      </button>
+
+    </div>
+
+    <!-- background gradients -->
+    <div id="bg-1"
+      class="fixed inset-[50%_0_0_0] transition-all duration-300 delay-150 opacity-0 peer-checked/cat-1:opacity-100 peer-checked/cat-1:delay-0 bg-gradient-to-t from-green-600 to-green-500 -z-10">
+    </div>
+    <div id="bg-2"
+      class="fixed inset-[50%_0_0_0] transition-all duration-300 delay-150 opacity-0 peer-checked/cat-2:opacity-100 peer-checked/cat-2:delay-0 bg-gradient-to-t from-red-400 to-rose-300 -z-10">
+    </div>
+    <div id="bg-3"
+      class="fixed inset-[50%_0_0_0] transition-all duration-300 delay-150 opacity-0 peer-checked/cat-3:opacity-100 peer-checked/cat-3:delay-0 bg-gradient-to-t from-orange-400 to-orange-300 -z-10">
+    </div>
+
+    <style>
+      @media (prefers-reduced-motion: no-preference) {
+        .animate-in {
+          scale: 0;
+          animation: scale-up 500ms forwards;
+          animation-delay: var(--d, 0ms);
+        }
+      }
+
+      @keyframes scale-up {
+        0% {
+          scale: 0;
+        }
+
+        60% {
+          scale: 1.15;
+        }
+
+        100% {
+          scale: 1;
+        }
+      }
+    </style>
+    <script type="module">
+      // preview hack
+      if (navigator.userAgent.includes("Headless")) {
+        document.querySelectorAll(".animate-in").forEach(el => el.classList.remove("animate-in"));
+      }
+    </script>
+
+    <style>
+      /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb
+      }
+
+      ::after,
+      ::before {
+        --tw-content: ''
+      }
+
+      :host,
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        -webkit-tap-highlight-color: transparent
+      }
+
+      body {
+        margin: 0;
+        line-height: inherit
+      }
+
+      hr {
+        height: 0;
+        color: inherit;
+        border-top-width: 1px
+      }
+
+      abbr:where([title]) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit
+      }
+
+      a {
+        color: inherit;
+        text-decoration: inherit
+      }
+
+      b,
+      strong {
+        font-weight: bolder
+      }
+
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        font-size: 1em
+      }
+
+      small {
+        font-size: 80%
+      }
+
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline
+      }
+
+      sub {
+        bottom: -.25em
+      }
+
+      sup {
+        top: -.5em
+      }
+
+      table {
+        text-indent: 0;
+        border-color: inherit;
+        border-collapse: collapse
+      }
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0
+      }
+
+      button,
+      select {
+        text-transform: none
+      }
+
+      [type=button],
+      [type=reset],
+      [type=submit],
+      button {
+        -webkit-appearance: button;
+        background-color: transparent;
+        background-image: none
+      }
+
+      :-moz-focusring {
+        outline: auto
+      }
+
+      :-moz-ui-invalid {
+        box-shadow: none
+      }
+
+      progress {
+        vertical-align: baseline
+      }
+
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        height: auto
+      }
+
+      [type=search] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px
+      }
+
+      ::-webkit-search-decoration {
+        -webkit-appearance: none
+      }
+
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit
+      }
+
+      summary {
+        display: list-item
+      }
+
+      blockquote,
+      dd,
+      dl,
+      figure,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      p,
+      pre {
+        margin: 0
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0
+      }
+
+      legend {
+        padding: 0
+      }
+
+      menu,
+      ol,
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0
+      }
+
+      dialog {
+        padding: 0
+      }
+
+      textarea {
+        resize: vertical
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        opacity: 1;
+        color: #9ca3af
+      }
+
+      [role=button],
+      button {
+        cursor: pointer
+      }
+
+      :disabled {
+        cursor: default
+      }
+
+      audio,
+      canvas,
+      embed,
+      iframe,
+      img,
+      object,
+      svg,
+      video {
+        display: block;
+        vertical-align: middle
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto
+      }
+
+      [hidden] {
+        display: none
+      }
+
+      *,
+      ::before,
+      ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia:
+      }
+
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia:
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0
+      }
+
+      .fixed {
+        position: fixed
+      }
+
+      .relative {
+        position: relative
+      }
+
+      .inset-\[50\%_0_0_0\] {
+        inset: 50% 0 0 0
+      }
+
+      .isolate {
+        isolation: isolate
+      }
+
+      .-z-10 {
+        z-index: -10
+      }
+
+      .my-6 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem
+      }
+
+      .ml-auto {
+        margin-left: auto
+      }
+
+      .flex {
+        display: flex
+      }
+
+      .grid {
+        display: grid
+      }
+
+      .h-14 {
+        height: 3.5rem
+      }
+
+      .min-h-screen {
+        min-height: 100vh
+      }
+
+      .w-12 {
+        width: 3rem
+      }
+
+      .w-14 {
+        width: 3.5rem
+      }
+
+      .w-full {
+        width: 100%
+      }
+
+      .max-w-4xl {
+        max-width: 56rem
+      }
+
+      .place-content-center {
+        place-content: center
+      }
+
+      .items-center {
+        align-items: center
+      }
+
+      .justify-center {
+        justify-content: center
+      }
+
+      .gap-3 {
+        gap: 0.75rem
+      }
+
+      .gap-4 {
+        gap: 1rem
+      }
+
+      .space-y-4> :not([hidden])~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+      }
+
+      .divide-x> :not([hidden])~ :not([hidden]) {
+        --tw-divide-x-reverse: 0;
+        border-right-width: calc(1px * var(--tw-divide-x-reverse));
+        border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)))
+      }
+
+      .rounded-md {
+        border-radius: 0.375rem
+      }
+
+      .border {
+        border-width: 1px
+      }
+
+      .border-white\/30 {
+        border-color: rgb(255 255 255 / 0.3)
+      }
+
+      .bg-gray-100 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+      }
+
+      .bg-gradient-to-t {
+        background-image: linear-gradient(to top, var(--tw-gradient-stops))
+      }
+
+      .from-green-600 {
+        --tw-gradient-from: #16a34a var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(22 163 74 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+      }
+
+      .from-orange-400 {
+        --tw-gradient-from: #fb923c var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(251 146 60 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+      }
+
+      .from-red-400 {
+        --tw-gradient-from: #f87171 var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(248 113 113 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+      }
+
+      .to-green-500 {
+        --tw-gradient-to: #22c55e var(--tw-gradient-to-position)
+      }
+
+      .to-orange-300 {
+        --tw-gradient-to: #fdba74 var(--tw-gradient-to-position)
+      }
+
+      .to-rose-300 {
+        --tw-gradient-to: #fda4af var(--tw-gradient-to-position)
+      }
+
+      .p-4 {
+        padding: 1rem
+      }
+
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem
+      }
+
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem
+      }
+
+      .font-semibold {
+        font-weight: 600
+      }
+
+      .font-thin {
+        font-weight: 100
+      }
+
+      .tracking-wider {
+        letter-spacing: 0.05em
+      }
+
+      .text-blue-400 {
+        --tw-text-opacity: 1;
+        color: rgb(96 165 250 / var(--tw-text-opacity))
+      }
+
+      .text-gray-700 {
+        --tw-text-opacity: 1;
+        color: rgb(55 65 81 / var(--tw-text-opacity))
+      }
+
+      .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+
+      .opacity-0 {
+        opacity: 0
+      }
+
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms
+      }
+
+      .delay-150 {
+        transition-delay: 150ms
+      }
+
+      .duration-300 {
+        transition-duration: 300ms
+      }
+
+      .before\:absolute::before {
+        content: var(--tw-content);
+        position: absolute
+      }
+
+      .before\:-top-full::before {
+        content: var(--tw-content);
+        top: -100%
+      }
+
+      .before\:-z-10::before {
+        content: var(--tw-content);
+        z-index: -10
+      }
+
+      .before\:text-\[10rem\]::before {
+        content: var(--tw-content);
+        font-size: 10rem
+      }
+
+      .before\:font-thin::before {
+        content: var(--tw-content);
+        font-weight: 100
+      }
+
+      .before\:text-gray-300::before {
+        content: var(--tw-content);
+        --tw-text-opacity: 1;
+        color: rgb(209 213 219 / var(--tw-text-opacity))
+      }
+
+      .before\:opacity-30::before {
+        content: var(--tw-content);
+        opacity: 0.3
+      }
+
+      .before\:content-\[\'2\/3\'\]::before {
+        --tw-content: '2/3';
+        content: var(--tw-content)
+      }
+
+      .hover\:bg-blue-400:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(96 165 250 / var(--tw-bg-opacity))
+      }
+
+      .hover\:bg-white\/20:hover {
+        background-color: rgb(255 255 255 / 0.2)
+      }
+
+      .hover\:text-white:hover {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+
+      .peer\/cat-1:checked~.peer-checked\/cat-1\:opacity-100 {
+        opacity: 1
+      }
+
+      .peer\/cat-2:checked~.peer-checked\/cat-2\:opacity-100 {
+        opacity: 1
+      }
+
+      .peer\/cat-3:checked~.peer-checked\/cat-3\:opacity-100 {
+        opacity: 1
+      }
+
+      .peer\/cat-1:checked~.peer-checked\/cat-1\:delay-0 {
+        transition-delay: 0s
+      }
+
+      .peer\/cat-2:checked~.peer-checked\/cat-2\:delay-0 {
+        transition-delay: 0s
+      }
+
+      .peer\/cat-3:checked~.peer-checked\/cat-3\:delay-0 {
+        transition-delay: 0s
+      }
+
+      @media (min-width: 500px) {
+        .min-\[500px\]\:grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+      }
+
+      @media (min-width: 640px) {
+        .sm\:gap-6 {
+          gap: 1.5rem
+        }
+      }
+
+      .\[\&\>\*\]\:px-6>* {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+      }
+
+      .\[\&\>\*\]\:py-2>* {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem
+      }
+
+      .\[\&\>article\:hover_img\]\:scale-100>article:hover img {
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+      }
+
+      .\[\&\>article\]\:grid>article {
+        display: grid
+      }
+
+      .\[\&\>article\]\:place-content-center>article {
+        place-content: center
+      }
+
+      .\[\&\>article\]\:gap-4>article {
+        gap: 1rem
+      }
+
+      .\[\&\>article\]\:rounded-lg>article {
+        border-radius: 0.5rem
+      }
+
+      .\[\&\>article\]\:border-2>article {
+        border-width: 2px
+      }
+
+      .\[\&\>article\]\:bg-white>article {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+      }
+
+      .\[\&\>article\]\:p-4>article {
+        padding: 1rem
+      }
+
+      .\[\&\>article\]\:text-center>article {
+        text-align: center
+      }
+
+      .\[\&\>article\]\:transition-all>article {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms
+      }
+
+      .\[\&\>article\]\:duration-300>article {
+        transition-duration: 300ms
+      }
+
+      .hover\:\[\&\>article\]\:drop-shadow-\[0_15px_15px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]>article:hover {
+        --tw-drop-shadow: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.25));
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+      }
+
+      @media (min-width: 640px) {
+        .sm\:\[\&\>article\]\:p-8>article {
+          padding: 2rem
+        }
+      }
+
+      .hover\:\[\&_\#article-1\]\:border-green-400 #article-1:hover {
+        --tw-border-opacity: 1;
+        border-color: rgb(74 222 128 / var(--tw-border-opacity))
+      }
+
+      .peer\/cat-1:checked~.peer-checked\/cat-1\:\[\&_\#article-1\]\:border-green-400 #article-1 {
+        --tw-border-opacity: 1;
+        border-color: rgb(74 222 128 / var(--tw-border-opacity))
+      }
+
+      .before\:\[\&_\#article-1_label\]\:bg-green-400 #article-1 label::before {
+        content: var(--tw-content);
+        --tw-bg-opacity: 1;
+        background-color: rgb(74 222 128 / var(--tw-bg-opacity))
+      }
+
+      .peer\/cat-1:checked~.peer-checked\/cat-1\:\[\&_\#article-1_label\]\:bg-green-400 #article-1 label {
+        --tw-bg-opacity: 1;
+        background-color: rgb(74 222 128 / var(--tw-bg-opacity))
+      }
+
+      .peer\/cat-1:checked~.peer-checked\/cat-1\:\[\&_\#article-1_label\]\:text-white #article-1 label {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+
+      .hover\:\[\&_\#article-2\]\:border-red-400 #article-2:hover {
+        --tw-border-opacity: 1;
+        border-color: rgb(248 113 113 / var(--tw-border-opacity))
+      }
+
+      .peer\/cat-2:checked~.peer-checked\/cat-2\:\[\&_\#article-2\]\:border-rose-400 #article-2 {
+        --tw-border-opacity: 1;
+        border-color: rgb(251 113 133 / var(--tw-border-opacity))
+      }
+
+      .before\:\[\&_\#article-2_label\]\:bg-rose-400 #article-2 label::before {
+        content: var(--tw-content);
+        --tw-bg-opacity: 1;
+        background-color: rgb(251 113 133 / var(--tw-bg-opacity))
+      }
+
+      .peer\/cat-2:checked~.peer-checked\/cat-2\:\[\&_\#article-2_label\]\:bg-rose-400 #article-2 label {
+        --tw-bg-opacity: 1;
+        background-color: rgb(251 113 133 / var(--tw-bg-opacity))
+      }
+
+      .peer\/cat-2:checked~.peer-checked\/cat-2\:\[\&_\#article-2_label\]\:text-white #article-2 label {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+
+      .hover\:\[\&_\#article-3\]\:border-orange-400 #article-3:hover {
+        --tw-border-opacity: 1;
+        border-color: rgb(251 146 60 / var(--tw-border-opacity))
+      }
+
+      .peer\/cat-3:checked~.peer-checked\/cat-3\:\[\&_\#article-3\]\:border-orange-400 #article-3 {
+        --tw-border-opacity: 1;
+        border-color: rgb(251 146 60 / var(--tw-border-opacity))
+      }
+
+      .before\:\[\&_\#article-3_label\]\:bg-orange-400 #article-3 label::before {
+        content: var(--tw-content);
+        --tw-bg-opacity: 1;
+        background-color: rgb(251 146 60 / var(--tw-bg-opacity))
+      }
+
+      .peer\/cat-3:checked~.peer-checked\/cat-3\:\[\&_\#article-3_label\]\:bg-orange-400 #article-3 label {
+        --tw-bg-opacity: 1;
+        background-color: rgb(251 146 60 / var(--tw-bg-opacity))
+      }
+
+      .peer\/cat-3:checked~.peer-checked\/cat-3\:\[\&_\#article-3_label\]\:text-white #article-3 label {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+
+      .\[\&_div\]\:mx-auto div {
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      .\[\&_div\]\:h-24 div {
+        height: 6rem
+      }
+
+      .\[\&_div\]\:w-24 div {
+        width: 6rem
+      }
+
+      .\[\&_div\]\:overflow-hidden div {
+        overflow: hidden
+      }
+
+      .\[\&_div\]\:rounded-full div {
+        border-radius: 9999px
+      }
+
+      .\[\&_div\]\:border-8 div {
+        border-width: 8px
+      }
+
+      .\[\&_div\]\:border-gray-100 div {
+        --tw-border-opacity: 1;
+        border-color: rgb(243 244 246 / var(--tw-border-opacity))
+      }
+
+      .\[\&_h2\]\:text-\[clamp\(1rem\2c 2vw\2c 1\.3rem\)\] h2 {
+        font-size: clamp(1rem, 2vw, 1.3rem)
+      }
+
+      .\[\&_h2\]\:font-semibold h2 {
+        font-weight: 600
+      }
+
+      .\[\&_h2\]\:tracking-wider h2 {
+        letter-spacing: 0.05em
+      }
+
+      .\[\&_img\]\:h-full img {
+        height: 100%
+      }
+
+      .\[\&_img\]\:w-full img {
+        width: 100%
+      }
+
+      .\[\&_img\]\:scale-110 img {
+        --tw-scale-x: 1.1;
+        --tw-scale-y: 1.1;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+      }
+
+      .\[\&_img\]\:rounded-full img {
+        border-radius: 9999px
+      }
+
+      .\[\&_img\]\:object-cover img {
+        object-fit: cover
+      }
+
+      .\[\&_img\]\:transition-all img {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms
+      }
+
+      .\[\&_img\]\:duration-\[1000ms\] img {
+        transition-duration: 1000ms
+      }
+
+      .\[\&_label\]\:relative label {
+        position: relative
+      }
+
+      .\[\&_label\]\:isolate label {
+        isolation: isolate
+      }
+
+      .\[\&_label\]\:mt-8 label {
+        margin-top: 2rem
+      }
+
+      .\[\&_label\]\:block label {
+        display: block
+      }
+
+      .\[\&_label\]\:w-full label {
+        width: 100%
+      }
+
+      .\[\&_label\]\:cursor-pointer label {
+        cursor: pointer
+      }
+
+      .\[\&_label\]\:overflow-hidden label {
+        overflow: hidden
+      }
+
+      .\[\&_label\]\:rounded-md label {
+        border-radius: 0.375rem
+      }
+
+      .\[\&_label\]\:border label {
+        border-width: 1px
+      }
+
+      .\[\&_label\]\:py-3 label {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem
+      }
+
+      .\[\&_label\]\:transition-all label {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms
+      }
+
+      .\[\&_label\]\:duration-300 label {
+        transition-duration: 300ms
+      }
+
+      .before\:\[\&_label\]\:absolute label::before {
+        content: var(--tw-content);
+        position: absolute
+      }
+
+      .before\:\[\&_label\]\:inset-full label::before {
+        content: var(--tw-content);
+        inset: 100%
+      }
+
+      .before\:\[\&_label\]\:-z-10 label::before {
+        content: var(--tw-content);
+        z-index: -10
+      }
+
+      .before\:\[\&_label\]\:transition-all label::before {
+        content: var(--tw-content);
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms
+      }
+
+      .before\:\[\&_label\]\:duration-300 label::before {
+        content: var(--tw-content);
+        transition-duration: 300ms
+      }
+
+      .hover\:\[\&_label\]\:text-white label:hover {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+      }
+
+      .hover\:before\:\[\&_label\]\:inset-0 label:hover::before {
+        content: var(--tw-content);
+        inset: 0px
+      }
+
+      @media (min-width: 640px) {
+        .sm\:\[\&_label\]\:px-12 label {
+          padding-left: 3rem;
+          padding-right: 3rem
+        }
+      }
+    </style>
+  </div>
+
+  {{/ templates/i-code-this/markup/partials/_i-code-this}}

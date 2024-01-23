@@ -1,14 +1,13 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * DIGITAL-CLOCK
 \* ------------------------------------ */
 
 .digital-clock {
-    @include e("base") {
+    @include e('base') {
         width: 100%;
 
         @include flex();
     }
 }
-

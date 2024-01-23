@@ -13,12 +13,12 @@ jobs:
         name: Lint Scripts
         runs-on: ubuntu-latest
         steps:
-            - name: "📥 Checkout repository"
+            - name: '📥 Checkout repository'
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
 
-            - name: "🔍  Verify Changed .yaml files"
+            - name: '🔍  Verify Changed .yaml files'
               uses: tj-actions/changed-files@v23.1
               id: changed-yaml-files
               with:
@@ -26,7 +26,7 @@ jobs:
                       *.yml
                       **/*.yml
 
-            - name: "🔍  Verify Changed .bash or .sh files"
+            - name: '🔍  Verify Changed .bash or .sh files'
               uses: tj-actions/changed-files@v23.1
               id: changed-bash-files
               with:
@@ -36,7 +36,7 @@ jobs:
                       **/*.bash
                       **/*.sh
 
-            - name: "🔍  Verify Changed Nginx configuration"
+            - name: '🔍  Verify Changed Nginx configuration'
               uses: tj-actions/changed-files@v23.1
               id: changed-nginx-config
               with:
@@ -57,13 +57,13 @@ jobs:
                     echo "$file was changed"
                   done
 
-            - name: "🧪 Lint Yaml"
+            - name: '🧪 Lint Yaml'
               if: steps.changed-yaml-files.outputs.any_changed == 'true'
               uses: ibiqlik/action-yamllint@v3
               with:
                   file_or_dir: ./**/*.yml
 
-            - name: "🧪  Lint Bash Script with ShellCheck"
+            - name: '🧪  Lint Bash Script with ShellCheck'
               if: steps.changed-bash-files.outputs.any_changed == 'true'
               uses: azohra/shell-linter@latest
               with:
@@ -71,7 +71,7 @@ jobs:
                       ./**/*.bash
                       ./**/*.sh
 
-            - name: "🧪  Lint Nginx configuration using Gixy"
+            - name: '🧪  Lint Nginx configuration using Gixy'
               if: steps.changed-nginx-config.outputs.any_changed == 'true'
               uses: docker://yandex/gixy:latest
               with:

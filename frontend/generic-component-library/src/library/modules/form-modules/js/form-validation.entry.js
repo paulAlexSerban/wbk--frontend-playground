@@ -1,28 +1,28 @@
-import { patterns } from "../../../../_abstracts/js/constants/patterns";
-import { findOne } from "../../../../_abstracts/js/dom/traversing";
-import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulation";
+import { patterns } from '../../../../_abstracts/js/constants/patterns';
+import { findOne } from '../../../../_abstracts/js/dom/traversing';
+import { addClass, removeClass } from '../../../../_abstracts/js/dom/manipulation';
 
 (() => {
     const config = {
-        type: "pat",
-        name: "FormValidation",
+        type: 'pat',
+        name: 'FormValidation',
         selectors: {
-            username: ".js-validation-username",
-            email: ".js-validation-email",
-            password: ".js-validation-password",
-            confirmPassword: ".js-validation-confirm-password",
-            errorMessage: ".js-validation-message",
+            username: '.js-validation-username',
+            email: '.js-validation-email',
+            password: '.js-validation-password',
+            confirmPassword: '.js-validation-confirm-password',
+            errorMessage: '.js-validation-message',
         },
         classes: {
-            error: "error",
-            success: "success",
+            error: 'error',
+            success: 'success',
         },
     };
 
     const regexValidator = (value) => {
         return new RegExp(patterns.email).test(value);
     };
-    
+
     const getFieldName = (input) => {
         const name = input.dataset.name ? input.dataset.name : input.id;
         return `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
@@ -61,7 +61,7 @@ import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulatio
 
         const checkRequired = (inputArr) => {
             inputArr.forEach((input) => {
-                if (input.value.trim() === "") {
+                if (input.value.trim() === '') {
                     showError(input, `${getFieldName(input)} is required`);
                 } else {
                     showSuccess(input);
@@ -73,7 +73,7 @@ import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulatio
             if (regexValidator(input.value.trim())) {
                 showSuccess(input);
             } else {
-                showError(input, "Email is not valid");
+                showError(input, 'Email is not valid');
             }
         };
 
@@ -89,12 +89,12 @@ import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulatio
 
         const checkPasswordsMatch = (input1, input2) => {
             if (input1.value !== input2.value) {
-                showError(input2, "Passwords do not match");
+                showError(input2, 'Passwords do not match');
             }
         };
 
         const setupEvents = () => {
-            el.addEventListener("submit", (e) => {
+            el.addEventListener('submit', (e) => {
                 e.preventDefault();
                 checkRequired([
                     global.elements.username,
@@ -116,9 +116,3 @@ import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulatio
         FormValidation(el);
     });
 })();
-
-
-
-
-
-

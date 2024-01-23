@@ -1,4 +1,4 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
   * QUIZ WIDGET
@@ -22,8 +22,9 @@
     }
 
     &__landing-wrapper {
-        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-            url($assetsPath + "/images/landing-bg-original.webp") no-repeat center;
+        background:
+            linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+            url($assetsPath + '/images/landing-bg-original.webp') no-repeat center;
         font-family: Raleway, sans-serif;
         height: 90vh;
         width: 95%;
@@ -63,7 +64,7 @@
     &__landing-input {
         width: 300px;
         font-size: 17px;
-        font-family: "Josefin Sans", sans-serif;
+        font-family: 'Josefin Sans', sans-serif;
         padding: 15px 10px;
         margin: 10px auto;
         background: transparent;
@@ -113,8 +114,9 @@
         width: 95%;
         margin: 5vh 2.5%;
         position: relative;
-        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
-            url($assetsPath + "/images/admin-bg-original.webp") no-repeat center;
+        background:
+            linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+            url($assetsPath + '/images/admin-bg-original.webp') no-repeat center;
         box-shadow: 15px 15px 35px #999;
         background-size: cover;
         overflow: hidden;
@@ -147,7 +149,7 @@ div.header {
 }
 
 div.header h2 {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
     text-align: left;
     width: 50%;
@@ -162,7 +164,7 @@ div.forms-wrapper {
 }
 
 #new-question-text {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     color: #eee;
     max-width: 500px;
@@ -189,9 +191,9 @@ div.admin-option-wrapper {
     width: 70%;
 }
 
-div.forms-wrapper input[type="text"] {
+div.forms-wrapper input[type='text'] {
     width: 300px;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 17px;
     color: #eee;
     display: block;
@@ -205,19 +207,19 @@ div.forms-wrapper input[type="text"] {
     transition: all 0.5s;
 }
 
-div.forms-wrapper input[type="text"]:focus {
+div.forms-wrapper input[type='text']:focus {
     border: 0.5px solid #3b8beb;
     background: #555;
 }
 
-div.forms-wrapper input[type="radio"] {
+div.forms-wrapper input[type='radio'] {
     position: absolute;
     left: 60px;
     top: 15px;
 }
 
 #question-insert-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     margin-left: 80px;
     padding: 10px 10px;
     width: 120px;
@@ -228,7 +230,10 @@ div.forms-wrapper input[type="radio"] {
     border-radius: 25px;
     outline: none;
     border: 1px solid #ccc;
-    transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+    transition:
+        background 0.3s,
+        border 0.3s,
+        box-shadow 0.3s;
 }
 
 #question-insert-btn:hover {
@@ -238,7 +243,7 @@ div.forms-wrapper input[type="radio"] {
 }
 
 #admin-logout-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-size: 15px;
     float: right;
     margin: 20px;
@@ -261,7 +266,7 @@ div.forms-wrapper input[type="radio"] {
 
 #questions-clear-btn {
     letter-spacing: 1.5px;
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     color: #eee;
     font-size: 16px;
     padding: 10px;
@@ -282,7 +287,7 @@ div.forms-wrapper input[type="radio"] {
 }
 
 #question-update-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     padding: 10px;
     margin-left: 80px;
     width: 110px;
@@ -294,7 +299,10 @@ div.forms-wrapper input[type="radio"] {
     border: 1px solid #ccc;
     outline: none;
     visibility: hidden;
-    transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+    transition:
+        background 0.3s,
+        border 0.3s,
+        box-shadow 0.3s;
 }
 
 #question-update-btn:hover {
@@ -304,7 +312,7 @@ div.forms-wrapper input[type="radio"] {
 }
 
 #question-delete-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     margin-left: 80px;
     padding: 10px;
     width: 110px;
@@ -316,7 +324,10 @@ div.forms-wrapper input[type="radio"] {
     border: 1px solid #ccc;
     outline: none;
     visibility: hidden;
-    transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+    transition:
+        background 0.3s,
+        border 0.3s,
+        box-shadow 0.3s;
 }
 
 #question-delete-btn:hover {
@@ -362,12 +373,12 @@ div.inserted-questions-wrapper p:hover {
 }
 
 div.inserted-questions-wrapper p span {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
 }
 
 div.inserted-questions-wrapper p button {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     float: right;
     color: #eee;
     padding: 4px 10px;
@@ -400,7 +411,7 @@ div.results-list-container {
 }
 
 div.results-list-container h2 {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
     color: #eee;
     text-align: left;
@@ -409,7 +420,7 @@ div.results-list-container h2 {
 }
 
 #results-clear-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     letter-spacing: 1.5px;
     float: right;
     margin: 10px;
@@ -440,7 +451,7 @@ div.results-list-container::-webkit-scrollbar-thumb {
 }
 
 div.results-list-container p {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     width: 90%;
     padding: 5px;
     margin: 10px auto;
@@ -451,7 +462,9 @@ div.results-list-container p {
     overflow: hidden;
     color: #eee;
     background: #444;
-    transition: background 0.3s, border 0.3s;
+    transition:
+        background 0.3s,
+        border 0.3s;
 }
 
 div.results-list-container p:hover {
@@ -466,7 +479,7 @@ div.results-list-container p span {
 }
 
 .delete-result-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     letter-spacing: 1.5px;
     display: block;
     float: right;
@@ -476,7 +489,9 @@ div.results-list-container p span {
     background: #222;
     border: 1px solid #ccc;
     outline: none;
-    transition: background 0.3s, border 0.3s;
+    transition:
+        background 0.3s,
+        border 0.3s;
 }
 
 .delete-result-btn:hover {
@@ -495,8 +510,9 @@ section.quiz-container {
     width: 95%;
     margin: 5vh 2.5%;
     position: relative;
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
-        url($assetsPath + "/images/quiz-bg-original.webp") no-repeat center;
+    background:
+        linear-gradient(to bottom right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
+        url($assetsPath + '/images/quiz-bg-original.webp') no-repeat center;
     box-shadow: 0px 10px 25px #aaa;
     background-size: cover;
     overflow: hidden;
@@ -523,7 +539,7 @@ div.quiz-wrapper::-webkit-scrollbar-thumb {
 }
 
 h2#asked-question-text {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #eee;
     text-indent: 15px;
     font-size: 26px;
@@ -545,7 +561,7 @@ div#instant-answer-wrapper {
 }
 
 div#instant-answer-wrapper::before {
-    content: " ";
+    content: ' ';
     height: 0;
     position: absolute;
     width: 0;
@@ -574,7 +590,7 @@ div.green {
 }
 
 div#instant-answer-wrapper p {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: #eee;
     float: left;
     width: 80%;
@@ -582,7 +598,7 @@ div#instant-answer-wrapper p {
 }
 
 div#instant-answer-wrapper button {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     display: inline;
     float: right;
     padding: 4px 10px;
@@ -593,7 +609,10 @@ div#instant-answer-wrapper button {
     border-radius: 25px;
     letter-spacing: 1.5px;
     font-size: 16px;
-    transition: background 0.3s, color 0.3s, border 0.3s;
+    transition:
+        background 0.3s,
+        color 0.3s,
+        border 0.3s;
 }
 
 div#instant-answer-wrapper button:hover {
@@ -646,7 +665,7 @@ div.quiz-options-wrapper div span {
 }
 
 div.quiz-options-wrapper div span::before {
-    content: " ";
+    content: ' ';
     height: 0;
     position: absolute;
     width: 0;
@@ -670,7 +689,7 @@ div.quiz-options-wrapper div:hover > span::before {
 }
 
 div.quiz-options-wrapper div p {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     float: left;
     margin-left: 10px;
     font-size: 20px;
@@ -681,7 +700,7 @@ div.quiz-options-wrapper div p {
 /*PROGRES BAR*/
 
 div.progressBar {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Cormorant Garamond', serif;
     background: rgba(0, 0, 0, 0.65);
     position: absolute;
     right: 9%;
@@ -761,14 +780,15 @@ p#progress {
 **************************************/
 
 section.final-result-container {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     height: 90vh;
     width: 95%;
     margin: 5vh 2.5%;
     position: relative;
     box-shadow: 0px 10px 25px #aaa;
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
-        url($assetsPath + "/images/final-bg-original.webp") no-repeat center;
+    background:
+        linear-gradient(to bottom right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
+        url($assetsPath + '/images/final-bg-original.webp') no-repeat center;
     background-size: cover;
     border-radius: 3px;
     animation: fade 0.8s;
@@ -802,7 +822,7 @@ h2#final-score-text {
 }
 
 button#final-logout-btn {
-    font-family: "Cabin", sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-size: 16px;
     margin: 10px;
     padding: 10px;

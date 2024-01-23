@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Muli", sans-serif;
+    font-family: 'Muli', sans-serif;
     background-color: #f0f0f0;
 }
 
@@ -32,13 +32,15 @@ h1 {
 
 .faq.active {
     background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.1),
+        0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .faq.active::before,
 .faq.active::after {
-    content: "\f075";
-    font-family: "Font Awesome 5 Free";
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
     color: #2ecc71;
     font-size: 7rem;
     position: absolute;

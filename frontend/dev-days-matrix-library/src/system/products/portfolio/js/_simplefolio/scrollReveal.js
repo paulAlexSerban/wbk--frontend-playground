@@ -1,8 +1,8 @@
-import ScrollReveal from "scrollreveal";
+import ScrollReveal from 'scrollreveal';
 
 export default function initScrollReveal(targetElements, defaultProps) {
     if (!targetElements.length) {
-      return;
+        return;
     }
 
     ScrollReveal({ reset: false });

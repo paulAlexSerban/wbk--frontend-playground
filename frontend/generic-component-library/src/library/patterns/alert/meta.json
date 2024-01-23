@@ -1,20 +1,20 @@
 {
-  "group": "library",
-  "category": "patterns",
-  "component": "alert",
-  "name": "Alert",
-  "version": "1.0.0",
-  "description": "Alert",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "patterns", "alert"],
-  "variations": [
-      {
-          "slug": "alert",
-          "name": "Alert",
-          "description": "Alert component"
-      }
-  ]
+    "group": "library",
+    "category": "patterns",
+    "component": "alert",
+    "name": "Alert",
+    "version": "1.0.0",
+    "description": "Alert",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "alert"],
+    "variations": [
+        {
+            "slug": "alert",
+            "name": "Alert",
+            "description": "Alert component"
+        }
+    ]
 }

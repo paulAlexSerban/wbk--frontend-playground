@@ -1,17 +1,17 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 /* ------------------------------------ *\
  * #EXPANDING CARDS
 \* ------------------------------------ */
-$block-expanding: "expanding-cards";
+$block-expanding: 'expanding-cards';
 
 .#{$block-expanding} {
-    @include e("base") {
+    @include e('base') {
         width: 100%;
 
         @include flex();
     }
 
-    @include e("panel") {
+    @include e('panel') {
         @include flex($direction: column);
         height: 45vh;
         border-radius: 50px;

@@ -16,7 +16,7 @@
             "name": "Text Input",
             "description": "Text input component to input text."
         },
-                {
+        {
             "slug": "search-hidden",
             "name": "Search (Hidden)",
             "description": "Search component to input search text."

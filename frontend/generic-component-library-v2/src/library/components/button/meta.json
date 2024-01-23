@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "components",
+    "component": "button",
+    "name": "Button",
+    "version": "1.0.0",
+    "description": "Button",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "components", "button"],
+    "variations": [
+        {
+            "slug": "button",
+            "name": "Button (Base)",
+            "description": "Base button component, used for all button types."
+        }
+    ]
+}

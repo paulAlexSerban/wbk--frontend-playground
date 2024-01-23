@@ -1,0 +1,722 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Remove the line below if you don't want to use TailwindCSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+
+</head>
+
+<!-- Change code below this line -->
+
+<body>
+  <main>
+    <div class="container">
+      <div class="card card-left--active" style="--before-left-top: -10rem;">
+        <div class="upper-card">
+          <div class="price">
+            <h2>Starter</h2>
+            <p>Free</p>
+          </div>
+        </div>
+        <ul class="features">
+          <li class="features-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            Unlimited files
+          </li>
+          <li class="features-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            Unlimited editors
+          </li>
+          <li class="features-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            Unlimited cloud storage
+          </li>
+        </ul>
+        <button class="choose-button">
+          <p>Choose Starter</p>
+        </button>
+      </div>
+      <div class="card card-right--active" "=" style="--before-right-bottom: -9rem;">
+        <div class=" upper-card">
+          <div class="price">
+            <h2>Professional</h2>
+            <p>$12 per member</p>
+          </div>
+        </div>
+        <ul class="features">
+          <li class="features-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>Unlimited projects
+          </li>
+          <li class="features-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>Private Projects
+          </li>
+          <li class="features-item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            Team libraries
+          </li>
+        </ul>
+        <button class="choose-button">
+          <p>Choose Professional</p>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+
+    const links = document.querySelectorAll('a');
+    const card1 = document.querySelector('.card:nth-child(1)');
+    const card2 = document.querySelector('.card:nth-child(2)');
+
+    // Prevent links default behaviour
+    const overrideLinks = () => {
+      links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+      });
+    }
+
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+      overrideLinks();
+      setTimeout(() => {
+        card1.classList.remove('-translate-y-100vh');
+        card1.classList.remove('opacity-0');
+        card2.classList.remove('translate-y-100vh');
+        card2.classList.remove('opacity-0');
+      }, 1000);
+
+      setTimeout(() => {
+        card1.style.setProperty('--before-left-top', '-10rem');
+        card2.style.setProperty('--before-right-bottom', '-9rem');
+        card1.classList.add('card-left--active');
+        card2.classList.add('card-right--active');
+      }, 1500);
+
+    });
+  </script>
+
+
+
+  <style>
+    /* Add CSS here */
+
+    :root {
+      --clr-hover-gradient-left: hsla(282, 25%, 66%, 1);
+      --clr-hover-gradient-right: hsla(195, 94%, 69%, 1);
+      --clr-gradient-right: hsla(356, 84%, 65%, 1);
+      --clr-gradient-left: hsla(340, 83%, 66%, 1);
+      --clr-bg: hsla(0, 0%, 16%, 1);
+      --clr-bg-card: hsla(0, 0%, 12%, 1);
+      --clr-bg-upper-card-hover: hsla(195, 94%, 69%, .5);
+      --clr-box-shadow: hsla(0, 0%, 0%, .4);
+      --ff-primaria: 'Space Grotesk', sans-serif;
+      --fs-primaria: 1rem;
+    }
+
+    /* Estilos Reset */
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      font-family: var(--ff-primaria);
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    body {
+      line-height: 1.5;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    button,
+    input {
+      position: relative;
+      appearance: none;
+      background-color: transparent;
+      color: inherit;
+      font: inherit;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    ::-webkit-scrollbar {
+      height: 4px;
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--clr-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: var(--clr-primario);
+    }
+
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    /* utility classes */
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .visibility-0 {
+      visibility: hidden;
+    }
+
+    .pointer-events-none {
+      pointer-events: none;
+    }
+
+    .translate-x-100 {
+      transform: translateX(100%);
+    }
+
+    .-translate-x-100 {
+      transform: translateX(-100%);
+    }
+
+    .translate-x-100vw {
+      transform: translateX(100vw);
+    }
+
+    .-translate-x-100vw {
+      transform: translateX(-100vw);
+    }
+
+    .translate-y-100vh {
+      transform: translateY(100vh);
+    }
+
+    .-translate-y-100vh {
+      transform: translateY(-100vh);
+    }
+
+    .translate-y-100 {
+      transform: translateY(100%);
+    }
+
+    .-translate-y-100 {
+      transform: translateY(-100%);
+    }
+
+    .scale-0 {
+      transform: scale(0);
+    }
+
+    .scale-y-0 {
+      transform: scaleY(0);
+    }
+
+    .-rotate-180 {
+      transform: rotate(-180deg);
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .invert-x {
+      transform: scaleX(-1);
+    }
+
+    .invert-y {
+      transform: scaleY(-1);
+    }
+
+
+    /* Estilos principales */
+    body {
+      display: grid;
+      place-content: center;
+      min-height: 100dvh;
+      background-color: var(--clr-bg);
+      color: var(--clr-primario);
+      font-size: var(--fs-primario);
+      font-weight: 400;
+      user-select: none;
+      overflow-x: hidden;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      width: clamp(18rem, 100vw, 44rem);
+      margin-block: 6rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 18rem;
+      padding: 2rem;
+      background:
+        linear-gradient(var(--clr-bg-card), var(--clr-bg-card)) padding-box,
+        linear-gradient(45deg, var(--clr-bg-upper-card-hover) 0%, var(--clr-hover-gradient-right) 100%) border-box;
+      border: .6rem solid transparent;
+      border-radius: .8rem;
+      box-shadow: 0px 0px 20px var(--clr-box-shadow);
+      will-change: all;
+      transition: all .400s ease-in-out;
+      z-index: 0;
+      --before-left-top: -2rem;
+      --before-right-bottom: -2rem;
+    }
+
+    .card:nth-child(2) {
+      background:
+        linear-gradient(var(--clr-bg-card), var(--clr-bg-card)) padding-box,
+        linear-gradient(to right, var(--clr-gradient-left) 0%, var(--clr-gradient-right) 100%) border-box;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .card:after {
+      position: absolute;
+      content: '';
+      top: 110%;
+      left: .5rem;
+      right: .5rem;
+      bottom: .5rem;
+      background: linear-gradient(180deg, transparent 0%, var(--clr-bg-upper-card-hover) 100%);
+      border-bottom-left-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+      will-change: opacity, top;
+      transition: opacity .250s ease-in-out, top .360s .400s ease-in-out;
+      opacity: 1;
+      z-index: -1;
+    }
+
+    .card:nth-child(2):after {
+      background: linear-gradient(180deg, transparent 0%, var(--clr-gradient-right) 100%);
+    }
+
+    .card:hover:after {
+      top: 85%;
+      opacity: 1;
+    }
+
+    .card:before {
+      position: absolute;
+      content: '';
+      top: -8rem;
+      left: var(--before-left-top);
+      width: 125%;
+      height: 75%;
+      background: var(--clr-bg-upper-card-hover);
+      background:
+        linear-gradient(var(--tr-upper-angle), var(--clr-bg-upper-card-hover) 0%, transparent var(--tr-gr), transparent 100%) padding-box,
+        linear-gradient(var(--tr-left-angle), var(--clr-bg-upper-card-hover) 0%, transparent var(--tr-gr), transparent 100%) border-box;
+      border: 1px solid transparent;
+      border-radius: .8rem;
+      will-change: opacity, left, right;
+      transition: opacity .250s ease-in-out, transform .400s ease-in-out, left .400s ease-in-out, right .400s ease-in-out;
+      opacity: 1;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -2;
+    }
+
+    .card:nth-child(2):before {
+      top: unset;
+      bottom: -8rem;
+      left: unset;
+      right: var(--before-right-bottom);
+      background: var(--clr-gradient-right);
+      background:
+        linear-gradient(var(--tr-right-angle), var(--clr-gradient-right) 0%, transparent var(--tr-gr), transparent 100%) padding-box,
+        linear-gradient(var(--tr-lower-angle), var(--clr-gradient-right) 0%, transparent var(--tr-gr), transparent 100%) border-box;
+      border: 1px solid transparent;
+    }
+
+    .card:hover:before {
+      transform: scale(.6);
+      opacity: .7;
+      animation: animate 5s 1s linear forwards infinite, animateAngleRight 5s 1s linear forwards infinite, animateAngleLower 5s 1s linear forwards infinite, animateAngleUpper 5s 1s linear forwards infinite, animateAngleLeft 5s 1s linear forwards infinite;
+    }
+
+
+
+    .price {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-inline-start: -.4rem;
+      padding: .4rem;
+      background: linear-gradient(-90deg, var(--clr-bg-upper-card-hover) 0%, var(--clr-hover-gradient-right) 100%) border-box;
+      color: var(--clr-gradient-right);
+      color: white;
+      border-radius: .5rem;
+      z-index: 1
+    }
+
+    .card:nth-child(2) h2 {
+      background: linear-gradient(-90deg, var(--clr-gradient-left) 0%, var(--clr-gradient-right) 100%) border-box;
+      color: var(--clr-hover-gradient-right);
+      color: white;
+    }
+
+    .price p {
+      display: flex;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--clr-gradient-left) 20%, var(--clr-gradient-right) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card:nth-child(2) .price p {
+      background: linear-gradient(90deg, var(--clr-hover-gradient-right) 20%, var(--clr-bg-upper-card-hover) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      width: 100%;
+      margin-block-start: 1rem;
+      padding-block: 3rem;
+      font-size: .9rem;
+      list-style: none;
+    }
+
+    .features-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: linear-gradient(90deg, var(--clr-gradient-left) 20%, var(--clr-gradient-right) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      will-change: color;
+      transition: color .250s ease-in-out;
+      opacity: .7;
+    }
+
+    .card:nth-child(2) .features-item {
+      background: linear-gradient(90deg, var(--clr-hover-gradient-right) 20%, var(--clr-bg-upper-card-hover) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features-item:hover {
+      color: var(--clr--hover-gradient-right);
+      opacity: 1;
+    }
+
+    .features-item svg {
+      flex-shrink: 0;
+      width: 1.4rem;
+      stroke: var(--clr-hover-gradient-right);
+      will-change: stroke;
+      transition: stroke .250s .250s ease-in-out;
+    }
+
+    .card:nth-child(2) .features-item svg {
+      stroke: var(--clr-gradient-left);
+    }
+
+    .features-item:hover svg {
+      stroke: var(--clr-gradient-left);
+    }
+
+    .card:nth-child(2) .features-item:hover svg {
+      stroke: var(--clr-hover-gradient-right);
+    }
+
+
+    .card>*:not(.choose-button) {
+      transform: translateX(101%);
+      transition: all .400s ease-in-out;
+      opacity: 0;
+    }
+
+    .card.card-left--active>*:not(.choose-button) {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    .card:nth-child(2)>*:not(.choose-button) {
+      transform: translateX(-101%);
+      transition: all .400s ease-in-out;
+      opacity: 0;
+    }
+
+    .card:nth-child(2).card-right--active>*:not(.choose-button) {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+
+    .choose-button {
+      position: relative;
+      width: 100%;
+      padding-block: .65rem;
+      margin-block-start: 2rem;
+      background:
+        linear-gradient(var(--clr-bg-card), var(--clr-bg-card)) padding-box,
+        linear-gradient(to right, var(--clr-hover-gradient-right) 0%, var(--clr-hover-gradient-right) 100%) border-box;
+      border: .2rem solid transparent;
+      border-radius: .5rem;
+      transform: translateY(2rem);
+      transition: all .400s .400s ease-in-out, width .400s ease-in-out, color .400s ease-in-out;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 1;
+
+    }
+
+    .card:nth-child(2) .choose-button {
+      background:
+        linear-gradient(var(--clr-bg-card), var(--clr-bg-card)) padding-box,
+        linear-gradient(to right, var(--clr-gradient-right) 0%, var(--clr-gradient-right) 100%) border-box;
+    }
+
+    .choose-button:after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(-90deg, var(--clr-bg-upper-card-hover) 0%, var(--clr-hover-gradient-right) 100%) border-box;
+      border-radius: .0rem;
+      transition: all .400s ease-in-out;
+      z-index: -1;
+    }
+
+    .card:nth-child(2) .choose-button:after {
+      background: linear-gradient(-90deg, var(--clr-gradient-left) 0%, var(--clr-gradient-right) 100%) border-box;
+    }
+
+    .choose-button:hover:after {
+      width: 100%;
+    }
+
+    .card:hover .choose-button {
+      transform: translateY(-.6rem);
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+
+    .choose-button p {
+      font-size: .7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--clr-hover-gradient-right);
+      transition: all .400s ease-in-out;
+    }
+
+    .card:nth-child(2) .choose-button p {
+      color: var(--clr-gradient-right);
+    }
+
+    .choose-button:hover p,
+    .card:nth-child(2) .choose-button:hover p {
+      color: white;
+    }
+
+    @property --tr-gr {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 50%;
+    }
+
+
+    @property --tr-right-angle {
+      syntax: '<angle>';
+      inherits: false;
+      initial-value: 270deg;
+    }
+
+    @property --tr-lower-angle {
+      syntax: '<angle>';
+      inherits: false;
+      initial-value: 360deg;
+    }
+
+    @property --tr-left-angle {
+      syntax: '<angle>';
+      inherits: false;
+      initial-value: 90deg;
+    }
+
+    @property --tr-upper-angle {
+      syntax: '<angle>';
+      inherits: false;
+      initial-value: 180deg;
+    }
+
+    @keyframes animate {
+
+      0%,
+      100% {
+        --tr-gr: 50%;
+      }
+
+      50% {
+        --tr-gr: 10%;
+      }
+    }
+
+    @keyframes animateAngleRight {
+
+      0%,
+      100% {
+        --tr-right-angle: 270deg;
+      }
+
+      33% {
+        --tr-right-angle: 360deg;
+      }
+
+      66% {
+        --tr-right-angle: 230deg;
+      }
+    }
+
+    @keyframes animateAngleLower {
+
+      0%,
+      100% {
+        --tr-lower-angle: 360deg;
+
+      }
+
+      33% {
+        --tr-lower-angle: 270deg;
+      }
+
+      66% {
+        --tr-lower-angle: 400deg;
+      }
+    }
+
+    @keyframes animateAngleLeft {
+
+      0%,
+      100% {
+        --tr-left-angle: 90deg;
+      }
+
+      33% {
+        --tr-left-angle: 180deg;
+      }
+
+      66% {
+        --tr-left-angle: 50deg;
+      }
+    }
+
+    @keyframes animateAngleUpper {
+
+      0%,
+      100% {
+        --tr-upper-angle: 180deg;
+      }
+
+      33% {
+        --tr-upper-angle: 90deg;
+      }
+
+      66% {
+        --tr-upper-angle: 220deg;
+      }
+    }
+  </style>
+
+</body>
+
+</html>

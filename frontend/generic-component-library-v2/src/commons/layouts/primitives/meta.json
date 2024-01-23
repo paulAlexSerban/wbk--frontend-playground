@@ -1,0 +1,14 @@
+{
+    "group": "commons",
+    "category": "layouts",
+    "component": "primitives",
+    "name": "Primitives",
+    "version": "1.0.0",
+    "description": "Primitives",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["commons", "layouts", "primitives"],
+    "variations": []
+}

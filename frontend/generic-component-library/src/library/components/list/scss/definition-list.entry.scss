@@ -1,19 +1,19 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
-$type: "cmp";
-$block: "#{$type}-list-definition";
+$type: 'cmp';
+$block: '#{$type}-list-definition';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         color: var(--text-color);
         margin-bottom: $baseline * 2;
     }
 
-    @include e("term") {
+    @include e('term') {
         @include font($body-bold);
     }
 
-    @include e("explanation") {
+    @include e('explanation') {
         @include font($body);
         padding-left: $gutter * 4;
     }

@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "system",
+    "category": "products",
+    "component": "project-board",
+    "name": "Project Board",
+    "version": "1.0.0",
+    "description": "Project Board",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "products", "base"],
+    "variations": [
+        {
+            "slug": "project-board",
+            "name": "Project Board",
+            "description": "Project Board"
+        }
+    ]
+}

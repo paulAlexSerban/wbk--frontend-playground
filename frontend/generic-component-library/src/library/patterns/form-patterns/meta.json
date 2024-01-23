@@ -17,8 +17,8 @@
             "description": "Checkbox Field"
         },
         {
-          "slug": "inline-checkbox",
-          "name": "Inline Checkbox",
+            "slug": "inline-checkbox",
+            "name": "Inline Checkbox",
             "description": "Inline Checkbox"
         },
         {
@@ -42,5 +42,4 @@
             "description": "Textarea Field"
         }
     ]
-  }
-  
+}

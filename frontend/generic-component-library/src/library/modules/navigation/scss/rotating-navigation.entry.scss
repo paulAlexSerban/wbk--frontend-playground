@@ -1,4 +1,4 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 /* ------------------------------------ *\
  * ROTATING NAVIGATION
 \* ------------------------------------ */
@@ -10,16 +10,16 @@ DEPENDENCIES to implement and add using html not scss imports
 @import "../link-list/link-list.pat.scss";
 */
 
-$block: "navigation-rotating";
+$block: 'navigation-rotating';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         @include flex();
         @include relative();
         overflow: hidden;
     }
 
-    @include e("container") {
+    @include e('container') {
         @include relative();
         overflow: hidden;
         background-color: #fafafa;
@@ -33,11 +33,11 @@ $block: "navigation-rotating";
         }
     }
 
-    @include e("circle-container") {
+    @include e('circle-container') {
         @include absolute($top: -100px, $left: -100px);
     }
 
-    @include e("circle") {
+    @include e('circle') {
         background-color: #ff7979;
         height: 200px;
         width: 200px;
@@ -50,7 +50,7 @@ $block: "navigation-rotating";
         }
     }
 
-    @include e("close-button", "open-button") {
+    @include e('close-button', 'open-button') {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -67,18 +67,18 @@ $block: "navigation-rotating";
         }
     }
 
-    @include e("open-button") {
+    @include e('open-button') {
         left: 60%;
     }
 
-    @include e("close-button") {
+    @include e('close-button') {
         top: 70%;
         left: 60%;
         transform: rotate(90deg);
         transform-origin: top left;
     }
 
-    @include e("navigation") {
+    @include e('navigation') {
         position: absolute;
         bottom: 50%;
         left: 0;
@@ -88,7 +88,7 @@ $block: "navigation-rotating";
             z-index: 100;
         }
     }
-    @include e("navigation-item") {
+    @include e('navigation-item') {
         color: #fff;
         margin: 40px 0;
         transform: translateX(-100%);

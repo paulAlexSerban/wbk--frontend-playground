@@ -1,4 +1,4 @@
-@use "sass:string";
+@use 'sass:string';
 
 /*
 Inspired by:
@@ -7,7 +7,7 @@ https://webdevstudios.com/2015/09/22/using-sass-to-manage-layers-z-index/
 https://medium.com/ccoutzoukis/better-z-index-management-with-sass-a8095ba3a2bc/
 */
 
-$layers: ("overlay", "tooltip", "sticky", "flyout", "dropdown", "base");
+$layers: ('overlay', 'tooltip', 'sticky', 'flyout', 'dropdown', 'base');
 
 @function layer-index($layer, $adjust: 0) {
     @if not index($layers, $layer) {

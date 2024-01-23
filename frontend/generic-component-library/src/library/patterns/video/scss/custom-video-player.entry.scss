@@ -1,22 +1,21 @@
+@import '~ScssAbstracts';
 
-@import "~ScssAbstracts";
-
-$block: "custom-player";
+$block: 'custom-player';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         @include flex($direction: column);
     }
 
-    @include e("heading") {
+    @include e('heading') {
         color: #fff;
     }
 
-    @include e("screen", "controls") {
+    @include e('screen', 'controls') {
         width: 90%;
     }
 
-    @include e("screen") {
+    @include e('screen') {
         width: 60%;
         cursor: pointer;
         background-color: #000 !important;
@@ -24,7 +23,7 @@ $block: "custom-player";
         border-top-right-radius: 10px;
     }
 
-    @include e("controls") {
+    @include e('controls') {
         @include flex();
         width: 60%;
         padding: 10px;
@@ -46,13 +45,15 @@ $block: "custom-player";
         }
     }
 
-    $progress-bar-box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+    $progress-bar-box-shadow:
+        1px 1px 1px #000,
+        0 0 1px #0d0d0d;
     $progress-bar-box-border-range: 0.2px solid #010101;
     $progress-bar-box-border-thumb: 1px solid #000;
     $progress-bar-slider-color: #367ebd;
     $progress-bar-track-color: #3071a9;
 
-    @include e("progress") {
+    @include e('progress') {
         width: 100%; /* Specific width is required for Firefox. */
         background: transparent; /* Otherwise white in Chrome */
         margin-left: 10px;
@@ -127,7 +128,7 @@ $block: "custom-player";
         }
     }
 
-    @include e("button") {
+    @include e('button') {
         cursor: pointer;
         background: transparent;
         border: 0;
@@ -141,7 +142,7 @@ $block: "custom-player";
         }
     }
 
-    @include e("timestamp") {
+    @include e('timestamp') {
         margin-left: 10px;
         font-weight: 700;
         color: #fff;

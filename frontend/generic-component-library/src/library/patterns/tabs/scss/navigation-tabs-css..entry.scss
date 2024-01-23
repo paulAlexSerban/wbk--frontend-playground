@@ -1,5 +1,5 @@
-@use "sass:math";
-@import "~ScssAbstracts";
+@use 'sass:math';
+@import '~ScssAbstracts';
 /* ------------------------------------ *\
  * NAVIGATION-TABS-JS
 \* ------------------------------------ */
@@ -13,19 +13,19 @@
     }
 }
 
-$block: "navigation-tabs-css";
+$block: 'navigation-tabs-css';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         @include flex($direction: column);
     }
 
-    @include e("tabs-list") {
+    @include e('tabs-list') {
         @include flex();
         column-gap: math.div($gutter, 2);
     }
 
-    @include e("tab") {
+    @include e('tab') {
         padding: 16px;
         margin-bottom: 8px;
         display: inline-block;
@@ -35,7 +35,7 @@ $block: "navigation-tabs-css";
         border-radius: 3px 3px 0 0;
     }
 
-    @include e("panels-list") {
+    @include e('panels-list') {
         padding: 32px;
         min-height: 200px;
         width: 100%;
@@ -43,12 +43,12 @@ $block: "navigation-tabs-css";
         overflow: hidden;
     }
 
-    @include e("panel") {
+    @include e('panel') {
         display: none;
         animation: fadein 0.8s;
     }
 
-    @include e("radio") {
+    @include e('radio') {
         display: none;
 
         &--one:checked ~ .#{$block}__panels-list .#{$block}__panel--one,

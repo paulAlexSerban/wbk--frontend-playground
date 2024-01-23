@@ -1,10 +1,10 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * POPUP
 \* ------------------------------------ */
 
-$block: "popup";
+$block: 'popup';
 
 .#{$block} {
     &__wrapper {

@@ -1,13 +1,13 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * #PILL
 \* ------------------------------------ */
 
-$cmp: "pill";
+$cmp: 'pill';
 
 .#{$cmp} {
-    @include e("base") {
+    @include e('base') {
         @include flex();
 
         background-color: get-color($c-light, light);
@@ -23,7 +23,7 @@ $cmp: "pill";
             border-color: get-color($c-blue, carolina-blue);
         }
 
-        @include m("round") {
+        @include m('round') {
             border-radius: 50%;
         }
     }

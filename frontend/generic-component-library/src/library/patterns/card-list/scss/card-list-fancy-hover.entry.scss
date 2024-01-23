@@ -1,9 +1,9 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 /* ------------------------------------ *\
  * #CARD-LIST
 \* ------------------------------------ */
 
-$block-fancy: "card-list-fancy-hover";
+$block-fancy: 'card-list-fancy-hover';
 .#{$block-fancy} {
     &__list {
         @include flex();

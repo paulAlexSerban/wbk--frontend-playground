@@ -1,23 +1,23 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 /* ------------------------------------ *\
  * NAVIGATION-TABS-JS
 \* ------------------------------------ */
 
-$block: "navigation-tabs-js";
+$block: 'navigation-tabs-js';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         @include flex($direction: column);
     }
 
-    @include e("tab-list") {
+    @include e('tab-list') {
         @include flex();
         margin-bottom: 16px;
 
         column-gap: $gutter;
     }
 
-    @include e("panel") {
+    @include e('panel') {
         display: none;
     }
 }

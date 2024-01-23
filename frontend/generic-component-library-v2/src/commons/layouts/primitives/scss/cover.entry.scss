@@ -1,0 +1,34 @@
+.cover {
+    --space: var(--ss1);
+    /* ↓ Establish a columnal flex context */
+    display: flex;
+    flex-direction: column;
+    /* ↓ Set a minimum height to match the viewport height
+  (any minimum would be fine) */
+    min-block-size: 100vh;
+    /* Set a padding value */
+    padding: var(--space);
+
+    & > * {
+        /* ↓ Give each child a top and bottom margin */
+        margin-block: var(--ss1);
+    }
+
+    & > :first-child:not(main) {
+        /* ↓ Remove the top margin from the first-child
+  if it _doesn't_ match the centered element */
+        margin-block-start: 0;
+    }
+
+    & > :last-child:not(main) {
+        /* ↓ Remove the bottom margin from the last-child
+if it _doesn't_ match the centered element */
+        margin-block-end: 0;
+    }
+
+    & > main {
+        /* ↓ Center the centered element (h1 here)
+in the available vertical space */
+        margin-block: auto;
+    }
+}

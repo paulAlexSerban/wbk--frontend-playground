@@ -1,20 +1,20 @@
 {
-  "group": "library",
-  "category": "components",
-  "component": "drag-n-drop",
-  "name": "Drag and Drop",
-  "version": "1.0.0",
-  "description": "Keyboard event key codes",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "modules", "drag and drop"],
-  "variations": [
-      {
-          "slug": "drag-n-drop",
-          "name": "Drag and Drop",
-          "description": "Drag and Drop component"
-      }
-  ]
+    "group": "library",
+    "category": "components",
+    "component": "drag-n-drop",
+    "name": "Drag and Drop",
+    "version": "1.0.0",
+    "description": "Keyboard event key codes",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "drag and drop"],
+    "variations": [
+        {
+            "slug": "drag-n-drop",
+            "name": "Drag and Drop",
+            "description": "Drag and Drop component"
+        }
+    ]
 }

@@ -1,10 +1,10 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * TO DO LOST APP V1
 \* ------------------------------------ */
 
-$block: "to-do-list-app";
+$block: 'to-do-list-app';
 
 .#{$block} {
     &__base {
@@ -15,8 +15,8 @@ $block: "to-do-list-app";
         flex-direction: column;
     }
 
-    &__input[type="text"],
-    &__input[type="text"]:focus {
+    &__input[type='text'],
+    &__input[type='text']:focus {
         color: #fff;
         border: none;
         background: rgba(0, 0, 0, 0.2);

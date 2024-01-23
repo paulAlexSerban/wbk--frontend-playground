@@ -1,7 +1,7 @@
-@use "sass:math";
-@use "sass:meta";
-@import "~ScssAbstracts";
-@import "./partials/no-gutter.scss";
+@use 'sass:math';
+@use 'sass:meta';
+@import '~ScssAbstracts';
+@import './partials/no-gutter.scss';
 //amount of columns
 $columns: 12;
 
@@ -38,15 +38,15 @@ $margin-left: 1%;
 
 .container::after,
 .row::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
 }
 
 //smartphone
 @for $i from 1 to $columns + 1 {
-    $grid: "";
-    @if meta.function-exists("div", "math") {
+    $grid: '';
+    @if meta.function-exists('div', 'math') {
         $grid: math.div($i, $columns) * 100% - $margin-left;
     } @else {
         $grid: ($i / $columns) * 100% - $margin-left;
@@ -59,8 +59,8 @@ $margin-left: 1%;
 //tablet
 @media (min-width: $tablet) {
     @for $i from 1 to $columns + 1 {
-        $grid: "";
-        @if meta.function-exists("div", "math") {
+        $grid: '';
+        @if meta.function-exists('div', 'math') {
             $grid: math.div($i, $columns) * 100% - $margin-left;
         } @else {
             $grid: ($i / $columns) * 100% - $margin-left;
@@ -74,8 +74,8 @@ $margin-left: 1%;
 //desktop
 @media (min-width: $desktop) {
     @for $i from 1 to $columns + 1 {
-        $grid: "";
-        @if meta.function-exists("div", "math") {
+        $grid: '';
+        @if meta.function-exists('div', 'math') {
             $grid: math.div($i, $columns) * 100% - $margin-left;
         } @else {
             $grid: ($i / $columns) * 100% - $margin-left;
@@ -85,7 +85,6 @@ $margin-left: 1%;
         }
     }
 }
-
 
 @for $i from 1 to $columns + 1 {
     .col-smartphone-#{$i},
@@ -103,8 +102,8 @@ $margin-left: 1%;
 //offset
 @media (min-width: $mobile) {
     @for $i from 1 to $columns + 1 {
-        $grid: "";
-        @if meta.function-exists("div", "math") {
+        $grid: '';
+        @if meta.function-exists('div', 'math') {
             $grid: math.div($i, $columns) * 100% + $margin-left;
         } @else {
             $grid: ($i / $columns) * 100% + $margin-left;

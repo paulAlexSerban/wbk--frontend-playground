@@ -5,19 +5,19 @@
   * FROM: https://web.dev/patterns/layout/
 */
 
-$layout: "lyt-sidebar-says";
+$layout: 'lyt-sidebar-says';
 
 .#{$layout} {
-    @include e("base") {
+    @include e('base') {
         display: grid;
         column-gap: $gutter;
     }
 
-    @include e("sidebar") {
+    @include e('sidebar') {
         grid-column: 1;
     }
 
-    @include e("content") {
+    @include e('content') {
         grid-column: 2;
     }
 }

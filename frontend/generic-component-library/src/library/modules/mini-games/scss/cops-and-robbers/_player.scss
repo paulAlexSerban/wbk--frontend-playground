@@ -1,17 +1,17 @@
-@import "variables.scss";
+@import 'variables.scss';
 
-$avatars: ("police", "thug");
+$avatars: ('police', 'thug');
 
 .player {
     &__policeAvatar {
-        @include bkgImage("police-avatar");
+        @include bkgImage('police-avatar');
     }
 
     &__thugAvatar {
-        @include bkgImage("thug-avatar");
+        @include bkgImage('thug-avatar');
     }
 
-    &__base { 
+    &__base {
         display: flex;
         justify-content: space-between;
     }

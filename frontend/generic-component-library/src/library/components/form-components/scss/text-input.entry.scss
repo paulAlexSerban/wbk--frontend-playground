@@ -1,9 +1,9 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
-$block: "input";
+$block: 'input';
 
 .#{$block} {
-    @include e("input") {
+    @include e('input') {
         padding: 16px;
         border-radius: 3px;
         margin-bottom: 16px;
@@ -26,7 +26,7 @@ $block: "input";
         }
     }
 
-    @include e("label") {
+    @include e('label') {
         @include font($label);
         margin-bottom: 8px;
         display: inline-block;

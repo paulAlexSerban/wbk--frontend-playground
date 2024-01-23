@@ -3,18 +3,18 @@
 /// @access private
 @mixin no-gutter() {
     .no-gutter,
-    .row.no-gutter [class*="col"] {
+    .row.no-gutter [class*='col'] {
         padding-right: 0;
         padding-left: 0;
     }
 
     .no-gutter--start,
-    .row.no-gutter--start [class*="col"] {
+    .row.no-gutter--start [class*='col'] {
         padding-left: 0;
     }
 
     .no-gutter--end,
-    .row.no-gutter--end [class*="col"] {
+    .row.no-gutter--end [class*='col'] {
         padding-right: 0;
     }
 }

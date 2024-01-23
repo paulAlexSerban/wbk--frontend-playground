@@ -1,11 +1,10 @@
-
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * MODAL WINDOW
 \* ------------------------------------ */
 
-$block: "modal-window";
+$block: 'modal-window';
 
 .#{$block} {
     &__base {
