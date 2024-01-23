@@ -2,7 +2,7 @@
     "group": "library",
     "category": "patterns",
     "component": "card",
-    "name": "Cardt",
+    "name": "Card",
     "version": "1.0.0",
     "description": "Card",
     "author": {

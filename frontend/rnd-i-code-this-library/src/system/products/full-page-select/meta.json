@@ -10,7 +10,7 @@
         "name": "Paul Serban",
         "email": "paul.alex.serban@gmail.com"
     },
-    "keywords": ["page", "products", "base"],
+    "keywords": [],
     "variations": [
         {
             "slug": "full-page-select",

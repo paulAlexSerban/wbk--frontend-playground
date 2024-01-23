@@ -1,5 +1,4 @@
 {
-    "hide": true,
     "group": "system",
     "category": "products",
     "component": "basic-design-system",
@@ -15,6 +14,26 @@
         {
             "slug": "basic-design-system",
             "name": "Basic Design System",
+            "description": "Basic Design System"
+        },
+        {
+            "slug": "basic-design-system-animated",
+            "name": "Basic Design System - Animated",
+            "description": "Basic Design System"
+        },
+        {
+            "slug": "basic-design-system-custom-delimiter",
+            "name": "Basic Design System - Custom Delimiter",
+            "description": "Basic Design System"
+        },
+        {
+            "slug": "basic-design-system-sidebar",
+            "name": "Basic Design System - Sidebar",
+            "description": "Basic Design System"
+        },
+        {
+            "slug": "basic-design-system-themed",
+            "name": "Basic Design System - Themed",
             "description": "Basic Design System"
         }
     ]

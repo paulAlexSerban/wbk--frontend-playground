@@ -24,9 +24,10 @@
         "start:generic-component-library-v2": "yarn lerna run start --scope=@prj--js-component-lib/generic-component-library-v2",
         "start:rnd-html5up-library": "yarn lerna run start --scope=@prj--js-component-lib/rnd-html5up-library",
         "build:dev": "yarn formats:write && lerna run build:dev --stream --parallel",
-        "build:prod": "yarn formats:write && lerna run build:prod --stream --parallel",
+        "build:prod": "yarn formats:write && lerna run build:prod --stream",
         "version:modules": "bash tools/build-scripts/version.bash",
-        "commit": "yarn git-cz"
+        "commit": "yarn git-cz",
+        "start:package": "npx serve package/libraries"
     },
     "dependencies": {
         "@aws-sdk/client-s3": "^3.354.0",

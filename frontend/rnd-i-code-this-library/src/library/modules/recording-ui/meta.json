@@ -1,8 +1,7 @@
 {
-    "hide": true,
     "group": "library",
     "category": "modules",
-    "component": "redording-ui",
+    "component": "recording-ui",
     "name": "Recording UI",
     "version": "1.0.0",
     "description": "Recording UI",
@@ -10,10 +9,10 @@
         "name": "Paul Serban",
         "email": "paul.alex.serban@gmail.com"
     },
-    "keywords": ["library", "modules", "recording-ui"],
+    "keywords": [],
     "variations": [
         {
-            "slug": "redording-ui",
+            "slug": "recording-ui",
             "name": "Recording UI",
             "description": "Recording UI"
         }
