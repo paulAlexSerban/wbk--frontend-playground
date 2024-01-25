@@ -1,0 +1,758 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@700&amp;display=swap"
+    rel="stylesheet">
+</head>
+
+<!-- Change code below this line -->
+
+<body>
+  <main>
+    <div class="container">
+      <div class="card-header">
+        <div class="card-header-control">
+          <button class="back-btn">
+            <span class="sr-only">back</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75">
+              </path>
+            </svg>
+          </button>
+          <h2>Bergen&nbsp;-&nbsp;Budapest</h2>
+          <button class="more-btn">
+            <span class="sr-only">open notificatins</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul class="steps">
+          <li class="step-item">
+            <div class="check-line check--active">
+            </div>
+            <div class="check check--active">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+            </div>
+            <div class="inner-step-item">
+              <h3>Flight booked</h3>
+              <div class="confirmation-code">
+                <span>Confirmation Code</span>
+                <p><span class="code-digit" style="animation-play-state: paused;"></span><span class="code-digit"
+                    style="animation-play-state: paused;"></span><span class="code-digit"
+                    style="animation-play-state: paused;"></span><span class="code-digit"
+                    style="animation-play-state: paused;"></span><span class="code-digit"
+                    style="animation-play-state: paused;"></span><span class="code-digit"
+                    style="animation-play-state: paused;"></span></p>
+              </div>
+              <button class="standard-btn show-booking-btn">Show Booking Summary</button>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="check-line check--active">
+            </div>
+            <div class="check check--active">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+            </div>
+            <div class="inner-step-item">
+              <h3>Preparation</h3>
+              <span class="tag">Priority</span>
+              <button class="standard-btn add-services-btn">Add services</button>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="check-line">
+            </div>
+            <div class="check check--active">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+            </div>
+            <div class="inner-step-item" style="opacity: 1; transform: translateX(0px);">
+              <h3>Check-in</h3>
+              <span class="checked-all">All Passengers Checked-In</span>
+              <div class="tag-group">
+                <span class="tag">AG</span>
+                <span class="tag">II</span>
+              </div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="check-line">
+            </div>
+            <div class="check">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+            </div>
+            <div class="inner-step-item" style="opacity: 1; transform: translateX(0px);">
+              <h3>Packing</h3>
+              <span class="checked-all">You may upgrade your baggage up to three hours before departure</span>
+              <button class="standard-btn add-baggages-btn">Add Baggages</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    const containerElem = document.querySelector('.container');
+    const backBtn = document.querySelector('.back-btn');
+    const checkElems = document.querySelectorAll('.check');
+    const checkLineElems = document.querySelectorAll('.check-line');
+    const innerStepItems = document.querySelectorAll('.inner-step-item');
+    const confirmationCode = document.querySelector('.confirmation-code p');
+
+    // Split confirmation Code into spans
+    const convertConfirmationSpan = () => {
+      const confirmationCodeData = confirmationCode.textContent;
+      confirmationCode.innerHTML = '';
+      String(confirmationCodeData).split("").map((char) => {
+        confirmationCode.innerHTML += `<span class="code-digit"></span>`
+      });
+    }
+
+
+    // Back Button Animation
+    const backButtonAnim = () => {
+      backBtn.addEventListener('click', (e) => {
+        containerElem.classList.add('opacity-0');
+        containerElem.classList.add('pointer-events-none');
+        containerElem.classList.add('-translate-y-100vh');
+
+        setTimeout(() => {
+          containerElem.classList.remove('opacity-0');
+          containerElem.classList.remove('pointer-events-none');
+          containerElem.classList.remove('-translate-y-100vh');
+
+        }, 2000);
+      });
+    };
+
+    //The Marcin Malecki's way for thumbnail perfection
+    if (navigator.userAgent.includes("Headless")) {
+      containerElem.classList.remove('translate-y-100');
+      containerElem.classList.remove('opacity-0');
+      containerElem.style.transitionDuration = '0s';
+    }
+
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+      backButtonAnim();
+      convertConfirmationSpan();
+
+      setTimeout(() => {
+        containerElem.classList.remove('opacity-0');
+        containerElem.classList.remove('pointer-events-none');
+        containerElem.classList.remove('translate-y-100vh');
+      }, 1000);
+
+      setTimeout(() => {
+        checkElems[0].classList.add('check--active');
+        checkLineElems[0].classList.add('check--active');
+      }, 1500);
+      setTimeout(() => {
+        checkElems[1].classList.add('check--active');
+        checkLineElems[1].classList.add('check--active');
+      }, 2500);
+      setTimeout(() => {
+        checkElems[2].classList.add('check--active');
+      }, 3500);
+      setTimeout(() => {
+        checkElems[2].classList.add('check--active');
+        innerStepItems[2].style.opacity = '1';
+        innerStepItems[2].style.transform = 'translateX(0)';
+      }, 3500);
+      setTimeout(() => {
+        innerStepItems[3].style.opacity = '1';
+        innerStepItems[3].style.transform = 'translateX(0)';
+      }, 4500);
+
+      setTimeout(() => {
+        const confirmationCodeDigits = document.querySelectorAll('.confirmation-code .code-digit');
+        confirmationCodeDigits.forEach((digit, i) => {
+          setTimeout(() => { digit.style.animationPlayState = 'paused'; }, 500 * i);
+        })
+      }, 6500);
+
+    });
+  </script>
+
+  <style>
+    /* Add CSS here */
+
+    :root {
+      --clr-primario: hsla(222, 16%, 21%, 1);
+      --clr-secundario: white;
+      --clr-accent: hsl(199, 92%, 56%);
+      --clr-accent-dark: hsl(199, 92%, 30%);
+      --clr-bg: hsla(200, 97%, 45%, 1);
+      --clr-bg-gradient-left: hsl(197, 100%, 40%);
+      --clr-bg-gradient-right: hsl(184, 100%, 38%);
+      --clr-bg-header: hsl(204, 15%, 94%);
+      --clr-bg-header-dark: hsl(204, 15%, 54%);
+      --clr-bg-body: white;
+      --clr-bg-sold-out: hsl(0, 0%, 91%, 1);
+      --clr-bg-icon: hsl(206, 31%, 73%);
+      --clr-bg-check: hsl(94, 100%, 44%);
+      --clr-box-shadow: hsla(0, 0%, 0%, .2);
+      --ff-primaria: 'Poppins', sans-serif;
+      --ff-secundaria: 'IBM Plex Mono', monospace;
+      --fs-primaria: 1rem;
+      transition: all .250s ease-in-out;
+    }
+
+    /* Estilos Reset */
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      font-family: var(--ff-primaria);
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    body {
+      line-height: 1.5;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    button,
+    input {
+      position: relative;
+      appearance: none;
+      background-color: transparent;
+      color: inherit;
+      font: inherit;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    ::-webkit-scrollbar {
+      height: 4px;
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--clr-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: var(--clr-accent);
+    }
+
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    /* utility classes */
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .visibility-0 {
+      visibility: hidden;
+    }
+
+    .pointer-events-none {
+      pointer-events: none;
+    }
+
+    .translate-x-100 {
+      transform: translateX(100%);
+    }
+
+    .-translate-x-100 {
+      transform: translateX(-100%);
+    }
+
+    .translate-x-100vw {
+      transform: translateX(100vw);
+    }
+
+    .-translate-x-100vw {
+      transform: translateX(-100vw);
+    }
+
+    .translate-y-100 {
+      transform: translateY(100%);
+    }
+
+    .-translate-y-100 {
+      transform: translateY(-100%);
+    }
+
+    .translate-y-100vh {
+      transform: translateY(100vh);
+    }
+
+    .-translate-y-100vh {
+      transform: translateY(-100vh);
+    }
+
+    .scale-0 {
+      transform: scale(0);
+    }
+
+    .scale-y-0 {
+      transform: scaleY(0);
+    }
+
+    .-rotate-180 {
+      transform: rotate(-180deg);
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .invert-x {
+      transform: scaleX(-1);
+    }
+
+    .invert-y {
+      transform: scaleY(-1);
+    }
+
+    /* Estilos principales */
+    body {
+      display: grid;
+      place-content: center;
+      min-height: 100dvh;
+      background-color: var(--clr-bg);
+      color: var(--clr-primario);
+      font-size: var(--fs-primario);
+      font-weight: 400;
+      user-select: none;
+      transition: all .250s ease-in-out;
+    }
+
+    body:after {
+      position: fixed;
+      content: '';
+      inset: 0rem;
+      background: linear-gradient(90deg, var(--clr-bg-gradient-left) 0%, var(--clr-bg-gradient-right) 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      opacity: 1;
+      z-index: -1;
+      animation: animate 5s linear infinite forwards, animateGrAngle 10s linear infinite forwards;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: clamp(20rem, 100vw, 20rem);
+      margin-block: 1rem;
+      margin-inline: auto;
+      background-color: var(--clr-bg-card);
+      border-radius: .8rem;
+      box-shadow: 0px 20px 30px var(--clr-box-shadow);
+      transition: all .400s ease-in-out;
+      overflow: hidden;
+    }
+
+    .card-header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      padding: 1rem;
+      background: var(--clr-bg-header);
+      box-shadow: 0px 5px 10px var(--clr-box-shadow);
+      z-index: 9;
+    }
+
+    .card-header-control {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-btn,
+    .more-btn {
+      position: relative;
+      display: grid;
+      place-content: center;
+      width: 2rem;
+      aspect-ratio: 1;
+    }
+
+    .back-btn svg {
+      width: 1.6rem;
+      stroke-width: 3;
+      stroke: var(--clr-bg-icon);
+      transition: all .250s ease-in-out;
+    }
+
+    .more-btn svg {
+      width: 1.8rem;
+      stroke-width: 3;
+      stroke: var(--clr-bg-icon);
+      transition: all .250s ease-in-out;
+    }
+
+    .back-btn:hover svg,
+    .more-btn:hover svg {
+      stroke: var(--clr-accent);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .card-body {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: auto;
+      padding-inline: 1rem;
+      background-color: var(--clr-bg-body);
+      overflow: hidden;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      width: 100%;
+      padding-block: 2rem;
+      padding-inline: 1rem;
+      will-change: opacity, transform;
+      transition: opacity .250s ease-in-out, transform .500s ease-in-out;
+    }
+
+    .step-item {
+      position: relative;
+      display: flex;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .inner-step-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-block-end: 1rem;
+      padding-inline-start: 1.4rem;
+      width: 100%;
+      z-index: 1;
+      opacity: 0;
+      transform: translateX(3rem);
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .step-item:has(.check-line.check--active) .inner-step-item {
+      opacity: 1;
+      transform: translateX(0rem);
+    }
+
+    .check-line {
+      position: absolute;
+      content: '';
+      top: .9rem;
+      left: -.1rem;
+      width: .4rem;
+      height: 100%;
+      background-color: var(--clr-bg-header);
+    }
+
+    .check-line:after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      width: 100%;
+      height: 0%;
+      background-color: var(--clr-bg-check);
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .check-line.check--active:after {
+      height: 100%;
+    }
+
+
+    .step-item:nth-child(4) .check-line {
+      opacity: 0;
+    }
+
+
+    .check {
+      flex-shrink: 0;
+      position: absolute;
+      content: '';
+      top: .1rem;
+      left: -.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.2rem;
+      aspect-ratio: 1;
+      background-color: var(--clr-bg-header);
+      box-shadow: 0px 5px 10px var(--clr-box-shadow);
+      border-radius: 2rem;
+      transition: all .400s .400s ease-in-out;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .check.check--active {
+      background-color: var(--clr-bg-check);
+    }
+
+    .check:after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      transform: translateY(-101%);
+      background-color: var(--clr-bg-check);
+      border-radius: 50%;
+      transition: all .400s ease-in-out;
+      z-index: -1;
+    }
+
+    .check.check--active:after {
+      transform: translateY(-0%);
+    }
+
+    .check svg {
+      width: 1rem;
+      stroke: var(--clr-bg-header);
+      stroke-width: 2;
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .check.check--active svg {
+      stroke: var(--clr-secundario);
+    }
+
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--clr-accent);
+    }
+
+    .confirmation-code {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .confirmation-code span {
+      font-size: .6rem;
+      font-weight: 300;
+    }
+
+    .confirmation-code>p {
+      display: flex;
+      align-items: center;
+    }
+
+
+    .standard-btn {
+      position: relative;
+      align-self: start;
+      padding: .4rem;
+      padding-inline: .8rem;
+      background-color: var(--clr-accent);
+      color: var(--clr-secundario);
+      font-size: .7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .05rem;
+      border-radius: .5rem;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .standard-btn:after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      transform: translateY(101%);
+      background-color: var(--clr-accent-dark);
+      transition: all .400s ease-in-out;
+      z-index: -1;
+    }
+
+    .standard-btn:hover:after {
+      transform: translateY(0%);
+    }
+
+    .tag {
+      position: relative;
+      align-self: start;
+      display: grid;
+      place-content: center;
+      margin-block-start: -.7rem;
+      padding-block: .2rem;
+      padding-inline: .6rem;
+      background-color: var(--clr-bg-header);
+      font-size: .7rem;
+      line-height: 1.2;
+      border-radius: 2rem;
+      transition: all .400s ease-in-out;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .tag:hover {
+      color: vaR(--clr-secundario);
+    }
+
+    .tag:after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      transform: translateY(101%);
+      background-color: var(--clr-bg-header-dark);
+      transition: all .400s ease-in-out;
+      z-index: -1;
+    }
+
+    .tag:hover:after {
+      transform: translateY(0%);
+    }
+
+
+    .add-services-btn {
+      margin-block-start: .4rem;
+    }
+
+    .checked-all {
+      margin-block-start: -1.2rem;
+      font-size: .7rem;
+    }
+
+    .tag-group {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      margin-block-start: .5rem;
+    }
+
+
+    @property --num {
+      syntax: "<integer>";
+      initial-value: 0;
+      inherits: false;
+    }
+
+    .confirmation-code .code-digit {
+      width: 1rem;
+      display: flex;
+      justify-content: start;
+      font-size: 1.2rem;
+      font-weight: 800;
+      animation: counter .500s infinite forwards linear;
+      counter-reset: num var(--num);
+    }
+
+    .confirmation-code .code-digit:nth-child(4) {
+      animation-delay: 50ms;
+    }
+
+    .confirmation-code .code-digit:nth-child(5) {
+      animation-delay: 100ms;
+    }
+
+    .confirmation-code .code-digit:nth-child(3) {
+      animation-delay: 150ms;
+    }
+
+    .confirmation-code .code-digit:nth-child(2) {
+      animation-delay: .200s;
+    }
+
+    .confirmation-code .code-digit:nth-child(6) {
+      animation-delay: .250s;
+    }
+
+    .confirmation-code .code-digit::after {
+      font-family: var(--ff-secundaria);
+      content: counter(num);
+    }
+
+    @keyframes counter {
+      0% {
+        --num: 0;
+      }
+
+      100% {
+        --num: 9;
+      }
+    }
+
+    @media (max-width:40rem) {
+      body {
+        overflow-y: scroll;
+      }
+    }
+  </style>
+
+
+</body>
+
+</html>

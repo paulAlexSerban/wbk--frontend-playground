@@ -1,0 +1,637 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- OPEN SANS LINK -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+
+</head>
+
+<!-- Change code below this line -->
+
+<body>
+  <div class="container">
+    <header class="header">
+      <nav class="nav">
+        <ul class="row gap-2">
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Group Visit</a></li>
+          <li class=""><a href="#">Exhibits</a></li>
+          <li class="active"><a href="#">About</a></li>
+          <li class=""><a href="#">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="row ai-cen jc-sb gap-1 top">
+        <span class="logo">
+          <img class="logo-img" src="https://chromie-squiggles.com/imgs/ab-logo-bg.png" alt="CU Rainbow logo vector">
+        </span>
+
+        <span class="flag">
+          <img class="flag-img" src="https://www.flagcolorcodes.com/data/Flag-of-Great-Britain.png" alt="British Flag">
+        </span>
+      </div>
+
+      <div class="main-content row ai-cen gap-2">
+        <div class="hero">
+          <h1>Come to your senses</h1>
+          <button class="btn">View our prices</button>
+        </div>
+
+        <div class="img-gallery-wrapper">
+          <div class="img-gallery row ai-cen gap-1">
+            <img src="https://source.unsplash.com/300x300/?landscape" alt="image of landscape">
+            <img src="https://source.unsplash.com/300x300/?forest" alt="image of landscape">
+            <img src="https://source.unsplash.com/300x300/?desert" alt="image of landscape">
+            <img src="https://source.unsplash.com/300x300/?beach" alt="image of landscape">
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer row gap-2 ai-cen jc-sb">
+      <blockquote class="testimonial">
+        <p><em>"Not just fun but really cool experience! Lovely stuff, excited to show you it all and lots of things to
+            see and try!"</em></p>
+        <p class="bold">River of dreams, Florida</p>
+
+      </blockquote>
+
+      <div class="hours">
+        <p class="lg uppercase bold">Working Hours</p>
+
+        <div class="row ai-st gap-1 jc-sb">
+          <ul>
+            <li class="bold">Monday-Thursday</li>
+            <li>10:00-22:00</li>
+          </ul>
+
+          <ul>
+            <li class="bold">Friday-Saturday</li>
+            <li>10:00-23:00</li>
+          </ul>
+
+          <ul>
+            <li class="bold">Sunday</li>
+            <li>10:00-22:00</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
+
+  <style>
+    /* SETUP and RESET */
+
+    :root {
+      font-size: 62.5%;
+
+      --fs-h1-clamp: clamp(2.5rem, 1.0184rem + 2.683vw, 3.25rem);
+      --fs-h2-clamp: clamp(1.75rem, 0.8818rem + 2.0723vw, 2.25rem);
+      --fs-h3-clamp: clamp(1.5rem, 0.7607rem + 1.75vw, 2rem);
+      --fs-body-clamp: clamp(1.5rem, 0.6548rem + 1.2259vw, 1.8rem);
+      --fs-small-clamp: clamp(1rem, 0.4821rem + 0.7143vw, 1.125rem);
+
+
+      --ff-primary: 'Open Sans';
+      --ff-secondary: 'Font Awesome 6 Pro';
+
+      --fs-h1: var(--fs-h1-clamp);
+      --fs-h2: var(--fs-h2-clamp);
+      --fs-h3: var(--fs-h3-clamp);
+      --fs-body: var(--fs-body-clamp);
+      --fs-small: var(--fs-small-clamp);
+
+      --clr-primary: oklch(2% 0.29 220);
+      --clr-neutral-100: #FFF;
+      --clr-neutral-900: #000;
+      --clr-neutral-500: #ccc;
+
+      --clr-bg-body: #;
+      --clr-bg-card: #;
+
+      --min-width: 30rem;
+      --width-min: min(100%, var(--min-width));
+    }
+
+    /* @media (prefers-color-scheme: dark) {
+    :root {
+        --clr-primary: #;
+        --clr-neutral-100: #FFF;
+        --clr-neutral-900: #000;
+    
+        --clr-bg-body: #;
+        --clr-bg-card: #;
+    }
+} */
+
+    @media (prefers-reduced-motion: no-preference) {
+
+      *,
+      *:before,
+      *:after {
+        scroll-behavior: smooth;
+      }
+
+      ;
+    }
+
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+      background-color: transparent;
+      border: 1px solid rgba(0 0 0 / .7);
+      width: 100%;
+    }
+
+    /* REMOVE DEFAULT SPINNERS FROM NUMBER INPUTS */
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    button {
+      background-color: transparent;
+      color: inherit;
+      font: inherit;
+      border: none;
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar {
+      height: 4px;
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: var(--clr-accent);
+    }
+
+    ::placeholder {
+      color: inherit;
+      opacity: .7;
+    }
+
+    ::selection {
+      background-color: var(--clr-primary);
+    }
+
+    .visuallyhidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    /* CLIP PROPERTIES  */
+    /* background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent; */
+
+
+    /* **********UTILITY CLASSES********** */
+
+    .asp-rat-1 {
+      aspect-ratio: 1;
+    }
+
+    .transition-250 {
+      transition: all 250ms ease-in-out;
+    }
+
+    .transition-300 {
+      transition: all 300ms ease-in-out;
+    }
+
+    /* GRID AND FLEX UTILITY CLASSES */
+    .row {
+      display: flex;
+
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .pc-cen {
+      place-content: center;
+    }
+
+    .pi-cen {
+      place-items: center;
+    }
+
+    .ac-st {
+      align-content: start;
+    }
+
+    .ac-cen {
+      align-content: center;
+    }
+
+    .ac-end {
+      align-content: end;
+    }
+
+    .ac-sb {
+      align-content: space-between;
+    }
+
+    .ac-sa {
+      align-content: space-around;
+    }
+
+    .ai-st {
+      align-items: start;
+    }
+
+    .ai-cen {
+      align-items: center;
+    }
+
+    .ai-end {
+      align-items: end;
+    }
+
+    .jc-st {
+      justify-content: start;
+    }
+
+    .jc-cen {
+      justify-content: center;
+    }
+
+    .jc-end {
+      justify-content: end;
+    }
+
+    .jc-sb {
+      justify-content: space-between;
+    }
+
+    .jc-sa {
+      justify-content: space-around;
+    }
+
+    .jc-se {
+      justify-content: space-evenly;
+    }
+
+    .as-st {
+      align-self: start;
+    }
+
+    .as-cen {
+      align-self: center;
+    }
+
+    .as-end {
+      align-self: end;
+    }
+
+    .js-st {
+      justify-self: start;
+    }
+
+    .js-cen {
+      justify-self: center;
+    }
+
+    .js-end {
+      justify-self: end;
+    }
+
+    .fg-1 {
+      flex-grow: 1;
+    }
+
+    .fs-0 {
+      flex-shrink: 0;
+    }
+
+    .fw-wrap {
+      flex-wrap: wrap;
+    }
+
+    .fb-100 {
+      flex-basis: 100%;
+    }
+
+    .gap-2 {
+      gap: 2em;
+    }
+
+    .gap-1 {
+      gap: 1em;
+    }
+
+    .gap-half {
+      gap: .5em;
+    }
+
+    .gap-quarter {
+      gap: .25em;
+    }
+
+    /* ELEMENT SELECTORS */
+
+    body {
+      font-family: var(--ff-primary);
+      font-size: var(--fs-body);
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--clr-primary);
+      text-wrap: pretty;
+      margin: 0;
+      background: var(--clr-bg-body);
+
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: var(--fs-h1);
+      text-wrap: balance;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: var(--fs-h2);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: var(--fs-h3);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .small {
+      font-size: var(--fs-small);
+    }
+
+    .desat {
+      opacity: 0.8;
+    }
+
+    .bold {
+      font-weight: 600;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .lg {
+      font-size: 1.1em;
+    }
+
+    /* LAYOUT */
+
+    .card {
+      background-color: var(--clr-bg-card);
+    }
+
+    /* PROJECT SPECIFIC STYLES */
+
+    .container {
+      width: 100%;
+      min-block-size: 100svh;
+      min-block-size: 100vh;
+    }
+
+    .top {
+      padding-block: 1em;
+
+    }
+
+    .nav {
+      padding-block-start: 1em;
+    }
+
+    .header {
+      background-color: var(--clr-primary);
+      color: var(--clr-neutral-100);
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 5;
+    }
+
+    .nav ul {
+      writing-mode: vertical-rl;
+      transform: rotateZ(-180deg);
+    }
+
+    .nav :is(li) {
+      opacity: 0.6;
+      padding: 1em;
+      border-block-start: 4px solid transparent;
+    }
+
+    .nav :is(li.active) {
+      opacity: 1;
+      border-color: currentColor;
+    }
+
+    .logo-img {
+      width: 5em;
+    }
+
+    .flag-img {
+      width: 2em;
+      margin-inline-start: auto;
+      margin-inline-end: 1em;
+    }
+
+    .btn {
+      border: 2px solid var(--clr-primary);
+      padding: 0.5em 1.25em;
+      font-weight: 500;
+      margin-block: 1em;
+      text-transform: uppercase;
+      transition: background-color 300ms, color 300ms;
+
+      &:is(:hover, :focus) {
+        background-color: var(--clr-primary);
+        color: var(--clr-neutral-100);
+      }
+    }
+
+    .img-gallery-wrapper {
+      width: max(100%, 60vw);
+      /* max-width: 60vw; */
+      overflow-x: hidden;
+      position: relative;
+      padding-block: 2em;
+      padding-inline-start: 2em;
+    }
+
+    .img-gallery-wrapper::before,
+    .img-gallery-wrapper::after {
+      position: absolute;
+      content: '';
+      width: min(100%, 8em);
+      height: min(100%, 8em);
+      background-image: radial-gradient(var(--clr-neutral-500) 30%, transparent 0);
+      background-size: 1em 1em;
+      z-index: -1;
+
+    }
+
+    .img-gallery-wrapper::before {
+      bottom: 0;
+      left: -2em;
+    }
+
+    .img-gallery-wrapper::after {
+      top: -2em;
+      right: 0;
+      width: min(100%, 15em);
+
+    }
+
+    .img-gallery {
+      overflow-x: scroll;
+    }
+
+    .img-gallery>img:last-child {
+      margin-inline-end: 2em;
+    }
+
+    .testimonial {
+      max-width: 50ch;
+    }
+
+    .hours {
+      background-color: var(--clr-neutral-500);
+      padding: 0.25em 0.5em;
+      flex-grow: 1;
+    }
+
+    .hours :is(.lg) {
+      margin-block-end: 0.25em;
+    }
+
+    .main,
+    .footer {
+      margin-inline-start: min(6em, 10%);
+    }
+
+    @media (width < 800px) {
+      .main-content {
+        flex-direction: column;
+        align-items: start;
+        /* justify-content: start; */
+      }
+
+      .footer {
+        flex-direction: column;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        /* justify-content: center; */
+      }
+
+      .container {
+        padding-inline-start: 6em;
+      }
+
+      .main,
+      .footer {
+        margin-inline-start: initial;
+      }
+
+      .hours {
+        width: 100%;
+      }
+
+      .hours>.row {
+        flex-wrap: wrap;
+      }
+
+    }
+  </style>
+  <script type="module">
+    const links = document.querySelectorAll('a');
+
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const grandparent = link.parentElement.parentElement;
+        const children = grandparent.querySelectorAll('li');
+        children.forEach((child) => {
+          child.classList.remove('active');
+        })
+
+        link.parentElement.classList.add('active');
+
+
+      })
+    })
+  </script>
+</body><!-- Change code above this line -->
+
+</html>

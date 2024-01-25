@@ -1,0 +1,215 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <section>
+    <nav>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="35" height="35"
+        viewBox="0 0 24 24" stroke-width="2" stroke="#9ab5ca" fill="none" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15 6l-6 6l6 6"></path>
+      </svg>
+      <h1>Bergen - Budapest</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="35" height="35"
+        viewBox="0 0 24 24" stroke-width="2" stroke="#9ab5ca" fill="none" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </nav>
+    <div>
+      <h2><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="20" height="20"
+          viewBox="0 0 24 24" stroke-width="4" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M5 12l5 5l10 -10"></path>
+        </svg>Flight booked</h2>
+      <div class="info">
+        <p>Confirmation Code</p>
+        <p class="code">678900</p>
+        <button>SHOW BOOKING SUMMARY</button>
+      </div>
+      <h2><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="20" height="20"
+          viewBox="0 0 24 24" stroke-width="4" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M5 12l5 5l10 -10"></path>
+        </svg>Preparation</h2>
+      <div class="info">
+        <p class="label priority">Priority</p>
+        <button>ADD SERVICES</button>
+      </div>
+      <h2><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="20" height="20"
+          viewBox="0 0 24 24" stroke-width="4" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M5 12l5 5l10 -10"></path>
+        </svg>Check-in</h2>
+      <div class="info">
+        <p>All Passengers Checked-in</p>
+        <div class="labels-container">
+          <p class="label">AG</p>
+          <p class="label">II</p>
+        </div>
+      </div>
+      <h2>
+        <div class="gray-circle"></div> Packing
+      </h2>
+      <div class="info">
+        <p>You may upgrade your baggage up to three hours before departure</p>
+        <button>ADD BAGGAGE</button>
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, #0086d4, #00b8c1);
+      font-family: 'Poppins', sans-serif;
+      color: #546e7a;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 0.5rem;
+      max-width: 350px;
+      margin: 2rem 1rem;
+    }
+
+    nav {
+      width: 100%;
+      background: #ebeff1;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .icon-tabler-chevron-left,
+    .icon-tabler-dots {
+      cursor: pointer;
+    }
+
+    h1 {
+      color: #546e7a;
+    }
+
+    section>div {
+      padding: 2rem 2rem 0 2rem;
+    }
+
+    h2 {
+      color: #2bb6f6;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .icon-tabler-check {
+      background: #5edf00;
+      border-radius: 50%;
+      padding: 0.25rem;
+      box-shadow: 0 0 0.5rem 0.25rem #c3eabf;
+    }
+
+    .info {
+      border-left: 1.5px solid #ecf0f2;
+      margin-left: 0.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .info:last-of-type {
+      border-left: none;
+    }
+
+    p {
+      font-size: 0.7rem;
+      color: #858585;
+    }
+
+    .labels-container {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 1rem;
+      padding-bottom: 2rem;
+      font-size: 0.8rem;
+    }
+
+    .label {
+      background: #ecf0f2;
+      width: max-content;
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.8rem;
+    }
+
+    .label.priority {
+      padding: 0.25rem 0.8rem;
+    }
+
+    .labels-container .label {
+      width: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .code {
+      color: #546e7a;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 4px;
+    }
+
+    .gray-circle {
+      background: #e2e6e8;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 0.5rem;
+      background: linear-gradient(90deg, #2bb6f6, #2bb6f6);
+      color: #fff;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.6rem;
+      cursor: pointer;
+      margin: 2rem 0;
+      transition: 0.8s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #0086d4, #00b8c1);
+    }
+  </style>
+  <script type="module">
+    // Add JavaScript code here
+  </script>
+</body>
+
+</html>

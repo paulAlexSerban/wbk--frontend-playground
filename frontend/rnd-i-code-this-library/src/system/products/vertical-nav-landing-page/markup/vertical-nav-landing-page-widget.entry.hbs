@@ -1,0 +1,1028 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+</head>
+
+<!-- Change code below this line -->
+
+<body>
+  <div class="container">
+    <nav>
+      <ul class="main-nav">
+        <li class="main-nav-item main-nav--active">
+          <a href="javascript:void(0)" class="translation">Home</a>
+        </li>
+        <li class="main-nav-item">
+          <a href="javascript:void(0)" class="translation">Acerca de</a>
+        </li>
+        <li class="main-nav-item">
+          <a href="javascript:void(0)" class="translation">Exhibit</a>
+        </li>
+        <li class="main-nav-item">
+          <a href="javascript:void(0)" class="translation">Visitas en grupo</a>
+        </li>
+        <li class="main-nav-item">
+          <a href="javascript:void(0)" class="translation">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <div class="logo">
+          <img src="https://i.imgur.com/MMSAYyV.png" alt="Logo">
+        </div>
+        <div class="select-group" data-title="Change Language">
+          <div class="flags">
+            <img title="English" class="uk-flag opacity-0 pointer-events-none"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1920px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
+              alt="UK Flag">
+            <img title="Spanish" class="spain-flag"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1920px-Flag_of_Spain.svg.png"
+              alt="Spain flag">
+          </div>
+          <label for="languages-select" hidden="">select language</label>
+          <select name="languages" id="languages-select">
+            <option value="english" selected="">INGLÉS</option>
+            <option value="spanish">ESPAÑOL</option>
+          </select>
+          <button class="menu-icon" title="Open/Close Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </header>
+      <section class="hero">
+        <div class="hero-left">
+          <h1 class="translation">Expande tus sentidos</h1>
+          <a href="javascript:void(0)" class="view-btn translation">Descubre precios</a>
+        </div>
+        <div class="hero-right">
+          <ul class="images-list">
+            <li class="image-item">
+              <img src="https://source.unsplash.com/300x300/?art_exhibition" alt="Art">
+            </li>
+            <li class="image-item">
+              <img src="https://source.unsplash.com/300x300/?art_piece" alt="Art">
+            </li>
+            <li class="image-item">
+              <img src="https://source.unsplash.com/300x300/?art_gallery" alt="Art">
+            </li>
+            <li class="image-item">
+              <img src="https://source.unsplash.com/300x300/?art" alt="Art">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="body-lower">
+        <div class="body-lower-left">
+          <blockquote class="translation">¡No solo divertida, también es una experiencia genial! Cosas encantadoras,
+            para ver y probar.</blockquote>
+          <p class="translation">El río de lo sueños, Florida</p>
+        </div>
+        <div class="body-lower-right">
+          <h3 class="translation">Horario de apertura</h3>
+          <div class="timetable">
+            <div>
+              <p class="translation">Lunes - Jueves</p>
+              <span>10:00 - 22:00</span>
+            </div>
+            <div>
+              <p class="translation">Viernes - Sábado</p>
+              <span>10:00 - 23:00</span>
+            </div>
+            <div>
+              <p class="translation">Domingo</p>
+              <span>10:00 - 22:00</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module">
+    // Add JavaScript code here
+
+    const links = document.querySelectorAll('a');
+    const menuIcon = document.querySelector('.menu-icon');
+    const mainNav = document.querySelector('nav');
+    const container = document.querySelector('.container');
+    const selectGroup = document.querySelector('.select-group');
+    const flags = document.querySelectorAll('.flags img');
+    const languagesSelect = document.querySelector('#languages-select');
+    const translatableElems = document.querySelectorAll('.translation');
+
+
+
+
+    // Prevent links default behaviour
+    const overrideLinks = () => {
+      links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+      });
+    }
+
+    const LANGUAGES = {
+      spanish: {
+        field1: 'Home',
+        field2: 'Acerca de',
+        field3: 'Exhibit',
+        field4: 'Visitas en grupo',
+        field5: 'Contacto',
+        field6: 'Expande tus sentidos',
+        field7: 'Descubre precios',
+        field8: '¡No solo divertida, también es una experiencia genial! Cosas encantadoras, para ver y probar.',
+        field9: 'El río de lo sueños, Florida',
+        field10: 'Horario de apertura',
+        field11: 'Lunes - Jueves',
+        field12: 'Viernes - Sábado',
+        field13: 'Domingo',
+        selectOptions: ['INGLÉS', 'ESPAÑOL'],
+      },
+
+      english: {
+        field1: 'Home',
+        field2: 'About',
+        field3: 'Exhibit',
+        field4: 'Group Visits',
+        field5: 'Contact',
+        field6: 'Come to your senses',
+        field7: 'View our prices',
+        field8: 'Not just fun but really cool experience! Lovely stuff, exited to show you it all and lots of things to see and try',
+        field9: 'River of dreams',
+        field10: 'Working hours',
+        field11: 'Monday - Thursday',
+        field12: 'Friday - Saturday',
+        field13: 'Sunday',
+        selectOptions: ['ENGLISH', 'SPANISH'],
+      },
+    };
+
+
+    // Update every single element with proper translation
+    const updateLanguageElems = (languageOption) => {
+      translatableElems.forEach((translatableElem, i) => {
+        // Updates languages for almost all visible elements
+        const field = 'field' + (i + 1);
+        translatableElem.textContent = LANGUAGES[languageOption][field];
+
+      });
+    }
+
+    // Updates languages for Select Options
+    const updateSelectOptions = (languageOption) => {
+      // Translation for select options text
+      const options = languagesSelect.querySelectorAll('option');
+      options.forEach((option, i) => {
+        option.textContent = LANGUAGES[languageOption].selectOptions[i];
+      });
+    };
+
+
+    // Change language settings and updates flag icons;
+    const setLanguage = () => {
+      languagesSelect.addEventListener('change', () => {
+        const languageOption = languagesSelect.value;
+        if (languageOption == 'english') {
+          flags[0].classList.remove('opacity-0');
+          flags[0].classList.remove('pointer-events-none');
+          flags[1].classList.add('opacity-0');
+          flags[1].classList.add('pointer-events-none');
+
+        } else {
+          flags[0].classList.add('opacity-0');
+          flags[0].classList.add('pointer-events-none');
+          flags[1].classList.remove('opacity-0');
+          flags[1].classList.remove('pointer-events-none')
+        }
+        updateLanguageElems(languageOption);
+        updateSelectOptions(languageOption);
+      });
+    }
+
+
+    /* Hamburger menu toggle */
+    menuIcon.addEventListener('click', () => {
+      mainNav.classList.toggle('nav--active');
+      if (mainNav.classList.contains('nav--active')) {
+        menuIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>`;
+      } else {
+        menuIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>`;
+      };
+    });
+
+
+
+    //The Marcin Malecki's way for thumbnail perfection
+    if (navigator.userAgent.includes("Headless")) {
+    }
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+      overrideLinks();
+      setLanguage();
+      setTimeout(() => {
+        container.classList.remove('-translate-y-100vh');
+        container.classList.remove('opacity-0');
+      }, 1000);
+    });
+  </script>
+
+
+  <style>
+    /* Add CSS here */
+
+    :root {
+      --clr-primario: hsl(207, 33%, 21%);
+      --clr-secundario: white;
+      --clr-accent-1: hsl(183, 69%, 40%);
+      --clr-accent-2: hsl(341, 92%, 58%);
+      --clr-ternario: hsla(234, 37%, 26%, .6);
+      --clr-bg: hsl(160, 20%, 94%);
+      --clr-bg-gradient-left: hsl(0, 0%, 91%);
+      --clr-bg-gradient-right: hsl(207, 33%, 21%);
+      --clr-bg-nav: hsl(207, 33%, 21%);
+      --clr-bg-working-hours: hsl(180, 5%, 96%);
+      --clr-bg-card: white;
+      --clr-box-shadow: hsl(207, 33%, 21%);
+      --ff-primaria: 'Poppins', sans-serif;
+      --fs-primaria: 1rem;
+      transition: all .250s ease-in-out;
+    }
+
+    /* Estilos Reset */
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      font-family: var(--ff-primaria);
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    body {
+      line-height: 1.5;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    button,
+    input {
+      position: relative;
+      appearance: none;
+      background-color: transparent;
+      color: inherit;
+      font: inherit;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: var(--clr-accent-1);
+    }
+
+    ::-webkit-scrollbar-track-piece {
+      background-color: transparent;
+    }
+
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    /* utility classes */
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .visibility-0 {
+      visibility: hidden;
+    }
+
+    .pointer-events-none {
+      pointer-events: none;
+    }
+
+    .translate-x-100 {
+      transform: translateX(100%);
+    }
+
+    .-translate-x-100 {
+      transform: translateX(-100%);
+    }
+
+    .translate-x-100vw {
+      transform: translateX(100vw);
+    }
+
+    .-translate-x-100vw {
+      transform: translateX(-100vw);
+    }
+
+    .translate-y-100vh {
+      transform: translateY(100vh);
+    }
+
+    .-translate-y-100vh {
+      transform: translateY(-100vh);
+    }
+
+    .translate-y-100 {
+      transform: translateY(100%);
+    }
+
+    .-translate-y-100 {
+      transform: translateY(-100%);
+    }
+
+    .scale-0 {
+      scale: 0;
+    }
+
+    .scale-y-0 {
+      transform: scaleY(0);
+    }
+
+    .-rotate-180 {
+      transform: rotate(-180deg);
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .invert-x {
+      transform: scaleX(-1);
+    }
+
+    .invert-y {
+      transform: scaleY(-1);
+    }
+
+    .translate-x-vw {
+      transform: translateX(100vw);
+    }
+
+    .-translate-x-vw {
+      transform: translateX(-100vw);
+    }
+
+    /* Estilos principales */
+    body {
+      display: grid;
+      place-content: center;
+      min-height: 100dvh;
+      background-color: var(--clr-bg);
+      background: linear-gradient(90deg, var(--clr-bg-gradient-left) 0%, var(--clr-bg-gradient-right) 40%, var(--clr-bg-gradient-right) 80%, var(--clr-bg-gradient-left) 100%);
+      color: var(--clr-primario);
+      font-size: var(--fs-primaria);
+      font-weight: 400;
+      user-select: none;
+    }
+
+    body:after {
+      position: fixed;
+      content: '';
+      inset: 0rem;
+      background: linear-gradient(var(--angle-gradient), var(--clr-bg-gradient-left) 0%, var(--clr-bg-gradient-right) var(--pc-left), var(--clr-bg-gradient-right) var(--pc-right), var(--clr-bg-gradient-left) 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      opacity: 1;
+      z-index: -1;
+      animation: animate 5s linear infinite forwards, animateGrAngle 10s linear infinite forwards;
+    }
+
+
+    @property --angle-gradient {
+      syntax: '<angle>';
+      inherits: false;
+      initial-value: 135deg;
+    }
+
+    @property --pc-left {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 40%;
+    }
+
+    @property --pc-right {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 80%;
+    }
+
+    @keyframes animate {
+
+      0%,
+      100% {
+        --pc-left: 40%;
+        --pc-right: 80%;
+      }
+
+      50% {
+        --pc-left: 60%;
+        --pc-right: 60%
+      }
+    }
+
+    @keyframes animateGrAngle {
+
+      0% {
+        --angle-gradient: 135deg;
+      }
+
+      50% {
+        --angle-gradient: 180deg;
+      }
+
+      100% {
+        --angle-gradient: 135deg;
+      }
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      width: clamp(20rem, 100vw, 62rem);
+      background-color: var(--clr-bg-gradient-left);
+      border: .2rem solid vaR(--clr-primario);
+      border-radius: .8rem;
+      box-shadow: 0px 10px 30px 5px var(--clr-box-shadow);
+      transition: all .800s ease-in-out;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    nav {
+      flex-shrink: 0;
+      display: flex;
+      width: 6rem;
+      padding-block: 2rem;
+      background-color: var(--clr-bg-nav);
+      overflow: hidden;
+    }
+
+    .menu-icon {
+      position: relative;
+      display: none;
+      flex-shrink: 0;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .menu-icon svg {
+      width: 1.6rem;
+      aspect-ratio: 1;
+      stroke: var(--clr-primario);
+      fill: var(--clr-primario);
+      cursor: pointer;
+    }
+
+    .main-nav {
+      display: fleX;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .main-nav-item {
+      position: relative;
+      block-size: max-content;
+      margin-block-start: 2.6rem;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      color: var(--clr-secundario);
+      font-size: .9rem;
+    }
+
+    .main-nav-item:after,
+    .main-nav-item:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: -2.55rem;
+      transform: translateY(-50%);
+      width: .2rem;
+      height: 0%;
+      background-color: var(--clr-accent-2);
+      transition: all .250s ease-in-out;
+      border-radius: .5rem;
+    }
+
+    .main-nav-item.main-nav--active:after {
+      height: 100%;
+    }
+
+    .main-nav-item:before {
+      right: 3.1rem;
+      background-color: var(--clr-accent-1);
+    }
+
+    .main-nav-item:not(.main-nav-item.main-nav--active):hover:after {
+      animation: rightToLeft .300s linear forwards;
+    }
+
+    .main-nav-item:not(.main-nav-item.main-nav--active):hover:before {
+      animation: leftToRight .300s linear forwards;
+    }
+
+    @keyframes rightToLeft {
+      0% {
+        height: 100%;
+        opacity: 0;
+        right: -2.55rem;
+      }
+
+      100% {
+        height: 100%;
+        opacity: 1;
+        right: 3.1rem;
+      }
+    }
+
+    @keyframes leftToRight {
+      0% {
+        height: 100%;
+        opacity: 0;
+        right: 3.1rem;
+      }
+
+      100% {
+        height: 100%;
+        opacity: 1;
+        right: -2.55rem;
+      }
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      flex: 1;
+      padding-inline-start: 2rem;
+      padding-block-end: 3rem;
+      background-color: var(--clr-bg-card);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline-end: 2rem;
+    }
+
+    .logo {
+      margin-inline-start: -1.8rem;
+      width: 7rem;
+      transform: rotate(90deg);
+    }
+
+    .select-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+    }
+
+    .flags {
+      position: relative;
+      width: 2rem;
+      aspect-ratio: 16/9;
+    }
+
+    .flags img {
+      position: absolute;
+      inset: 0;
+      will-change: opacity;
+      transition: opacity .250s ease-in-out;
+    }
+
+    select {
+      align-self: start;
+      width: 6rem;
+      background-color: var(--clr-bg-card);
+      color: var(--clr-primario);
+      font-size: .9rem;
+      font-weight: 600;
+      border: none;
+      border-radius: .1rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    select:focus-visible {
+      outline: 2px solid var(--clr-accent);
+    }
+
+    .hero {
+      display: flex;
+      gap: 4rem;
+    }
+
+    .hero-left {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 12.5rem;
+    }
+
+    h1 {
+      max-width: 11rem;
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .view-btn {
+      position: relative;
+      min-width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-block: .5rem;
+      font-size: .9rem !important;
+      font-weight: 600 !important;
+      text-transform: uppercase;
+      border: 3px solid var(--clr-primario);
+      border-radius: .5rem;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .view-btn:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      background-color: var(--clr-accent-1);
+      opacity: 0;
+      z-index: -1;
+      transition: all .500s ease-in-out;
+    }
+
+    .view-btn:after {
+      position: absolute;
+      content: '';
+      top: 0%;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: var(--clr-accent-2);
+      opacity: 0;
+      z-index: -1;
+      transition: all .500s ease-in-out;
+    }
+
+    .view-btn:hover:before {
+      left: 0;
+      opacity: .5;
+    }
+
+    .view-btn:hover:after {
+      left: 50%;
+      opacity: .5;
+    }
+
+    .hero-right {
+      display: flex;
+    }
+
+    .images-list {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 2rem;
+      padding-block: 2.5rem;
+      padding-inline-start: 2.5rem;
+      list-style: none;
+      z-index: 1;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .images-list:before {
+      position: absolute;
+      content: '';
+      bottom: 0rem;
+      left: 0rem;
+      width: 5rem;
+      aspect-ratio: 1;
+      background-image: radial-gradient(circle at center,
+          black 0.05rem,
+          transparent 0);
+      background-size: .5rem .5rem;
+      background-repeat: round;
+      transition: all .400s ease-in-out;
+      opacity: .2;
+      z-index: -1;
+    }
+
+
+    .images-list:after {
+      position: absolute;
+      content: '';
+      top: -5rem;
+      left: 19rem;
+      width: 10rem;
+      aspect-ratio: 1;
+      background-image: radial-gradient(circle at center,
+          black 0.05rem,
+          transparent 0);
+      background-size: .5rem .5rem;
+      background-repeat: round;
+      transition: all .400s ease-in-out;
+      opacity: .2;
+      z-index: -1;
+    }
+
+    .images-list:hover:before {
+      background-image: radial-gradient(circle at center,
+          var(--clr-accent-1) 0.05rem,
+          transparent 0);
+      background-size: .5rem .5rem;
+      background-repeat: round;
+      transform: rotate(45deg);
+      opacity: 1;
+    }
+
+    .images-list:hover:after {
+      background-image: radial-gradient(circle at center,
+          var(--clr-accent-2) 0.05rem,
+          transparent 0);
+      background-size: .5rem .5rem;
+      background-repeat: round;
+      transform: rotate(45deg);
+      opacity: 1;
+    }
+
+    .image-item {
+      flex-shrink: 0;
+      max-width: 16rem;
+    }
+
+    .image-item:nth-child(1) {
+      min-width: 18rem !important;
+    }
+
+    .body-lower {
+      display: fleX;
+      align-items: center;
+      gap: 4rem;
+      width: 100%;
+    }
+
+    .body-lower-left {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      width: 12.4rem;
+      font-size: .8rem;
+      opacity: .7;
+    }
+
+    blockquote {
+      font-size: .8rem;
+      opacity: .7;
+    }
+
+    .body-lower-left p {
+      font-weight: 600;
+    }
+
+    .body-lower-right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--clr-bg-working-hours);
+    }
+
+    .body-lower-right h3 {
+      position: absolute;
+      top: -.5rem;
+      left: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .timetable {
+      display: flex;
+      gap: 3rem;
+      width: 100%;
+      padding-block-start: 1.5rem;
+      padding-block-end: 1rem;
+      padding-inline: 1rem;
+    }
+
+
+    .timetable div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timetable div p {
+      font-size: .7rem;
+      font-weight: 600;
+    }
+
+    .timetable div span {
+      font-size: .8rem;
+      font-weight: 400;
+    }
+
+    @media (max-width: 50rem) {
+      .container {
+        width: 20rem;
+        margin-block-start: 2rem;
+      }
+
+      main {
+        padding-inline-start: 0rem;
+      }
+
+      header {
+        position: relative;
+      }
+
+      .flags {
+        width: 1.4rem;
+        aspect-ratio: 16/9;
+      }
+
+      .select-group {
+        margin-inline-end: 3rem;
+      }
+
+      select {
+        width: 5.6rem;
+      }
+
+
+      .logo {
+        width: 5rem;
+        margin-inline-start: 0rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding-inline-end: 1.5rem;
+        gap: 2rem;
+      }
+
+      .hero-left {
+        align-self: center;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        padding-inline-start: 10%;
+      }
+
+      .hero-right {
+        display: flex;
+        width: 20rem;
+        padding-inline-end: 1.5rem;
+        overflow: hidden;
+      }
+
+      .images-list {
+        padding-inline-start: 1.5rem;
+      }
+
+      .images-list:after {
+        left: 6rem;
+      }
+
+      .image-item,
+      .image-item:nth-child(1) {
+        width: 12rem;
+        aspect-ratio: 1;
+        overflow: hidden;
+      }
+
+      .image-item:nth-child(1) {
+        min-width: 12rem !important;
+      }
+
+      .body-lower {
+        align-self: center;
+        flex-direction: column;
+        margin-inline-start: -1.5rem;
+      }
+
+      .body-lower-right {
+        align-self: center;
+        width: 14rem;
+      }
+
+      .timetable {
+        flex-direction: column;
+        gap: 2rem;
+        margin-block-start: 1rem;
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: var(--clr-bg-nav);
+        transform: translateX(-101%);
+        transition: all .250s ease-in-out;
+        opacity: 1;
+        z-index: 99;
+        overflow: visible;
+      }
+
+      nav.nav--active {
+        transform: translateX(0rem);
+        opacity: 1;
+      }
+
+      .menu-icon {
+        position: absolute;
+        top: -.1rem;
+        left: 7.6rem;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        display: block;
+        transition: all .250s ease-in-out;
+        z-index: 999;
+      }
+
+      nav.nav--active .menu-icon {
+        left: 16.8rem;
+      }
+
+      .menu-icon svg {
+        width: 4rem;
+        stroke-width: 2;
+        stroke: var(--clr-primario);
+      }
+    }
+  </style>
+</body>
+
+</html>

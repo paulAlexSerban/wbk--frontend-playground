@@ -1,0 +1,30 @@
+{
+    "group": "system",
+    "category": "products",
+    "component": "vertical-nav-landing-page",
+    "name": "Vertical Navigation Landing Page",
+    "version": "1.0.0",
+    "description": "Vertical Navigation Landing Page",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "products", "base"],
+    "variations": [
+        {
+            "slug": "vertical-nav-landing-page",
+            "name": "Vertical Navigation Landing Page",
+            "description": "Vertical Navigation Landing Page"
+        },
+        {
+            "slug": "vertical-nav-landing-page-v2",
+            "name": "Vertical Navigation Landing Page v2",
+            "description": "Vertical Navigation Landing Page v2"
+        },
+        {
+            "slug": "vertical-nav-landing-page-widget",
+            "name": "Vertical Navigation Landing Page - Widget",
+            "description": "Vertical Navigation Landing Page - Widget"
+        }
+    ]
+}
