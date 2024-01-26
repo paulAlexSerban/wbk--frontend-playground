@@ -1,0 +1,805 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Lisu+Bosa:wght@400;500&amp;display=swap"
+    rel="stylesheet">
+</head>
+
+<!-- Change code below this line -->
+
+<body>
+  <main>
+    <div class="card profile">
+      <div class="inner-profile">
+        <div class="profile-info">
+          <div class="profile-image">
+            <img src="https://i.imgur.com/XAHfqiQ.jpeg" alt="Jenn Elodie">
+            <img src="https://i.imgur.com/XAHfqiQ.jpeg" data-id="1" alt="Jenn Elodie" class="extra--active">
+            <img src="https://i.imgur.com/XAHfqiQ.jpeg" data-id="2" alt="Jenn Elodie" class="">
+            <img src="https://i.imgur.com/XAHfqiQ.jpeg" data-id="3" alt="Jenn Elodie">
+            <img src="https://i.imgur.com/XAHfqiQ.jpeg" data-id="4" alt="Jenn Elodie" class="">
+          </div>
+          <h2>Jenn Elodie</h2>
+          <p>UX Consultant</p>
+        </div>
+        <ul class="menu-list">
+          <li class="menu-item" title="Profile">
+            <a href="#" title="Profile" data-id="1" class="extra--active">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" title="App permissions" data-id="2" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-screen-share"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M21 12v3a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1h9"></path>
+                <path d="M7 20l10 0"></path>
+                <path d="M9 16l0 4"></path>
+                <path d="M15 16l0 4"></path>
+                <path d="M17 4h4v4"></path>
+                <path d="M16 9l5 -5"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" title="Notifications" data-id="3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell-ringing-2" width="44"
+                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M19.364 4.636a2 2 0 0 1 0 2.828a7 7 0 0 1 -1.414 7.072l-2.122 2.12a4 4 0 0 0 -.707 3.536l-11.313 -11.312a4 4 0 0 0 3.535 -.707l2.121 -2.123a7 7 0 0 1 7.072 -1.414a2 2 0 0 1 2.828 0z">
+                </path>
+                <path d="M7.343 12.414l-.707 .707a3 3 0 0 0 4.243 4.243l.707 -.707"></path>
+              </svg>
+              <div class="notification-alert">3</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" title="Settings" data-id="4" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z">
+                </path>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="extra-cards">
+      <div class="extra-card extra--active" data-id="1">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+          </svg>
+          Profile
+        </h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore est voluptatibus consectetur sequi
+          unde!
+          Aliquam, hic eos! Repellat dolor, voluptatibus nobis qui error exercitationem aspernatur, esse ad,
+          dicta vero
+          sint!</p>
+      </div>
+      <div class="extra-card" data-id="2">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+            <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+            <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+          </svg>
+          App permissions
+        </h2>
+        <div class="data"><strong>32 apps</strong> have access to your data</div>
+        <p>Manage wich apps have access to your data. You can revoke permission whenever you want</p>
+        <button class="change-btn">
+          <p>Change app permissions</p>
+        </button>
+      </div>
+      <div class="extra-card" data-id="3">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell-ringing-2"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M19.364 4.636a2 2 0 0 1 0 2.828a7 7 0 0 1 -1.414 7.072l-2.122 2.12a4 4 0 0 0 -.707 3.536l-11.313 -11.312a4 4 0 0 0 3.535 -.707l2.121 -2.123a7 7 0 0 1 7.072 -1.414a2 2 0 0 1 2.828 0z">
+            </path>
+            <path d="M7.343 12.414l-.707 .707a3 3 0 0 0 4.243 4.243l.707 -.707"></path>
+          </svg>
+          Notifications
+        </h2>
+        <div class="data"><strong>@marcinmalecki</strong> has earned another Featured submission in my heart.
+        </div>
+        <div class="data">Congrats <strong>@Chris</strong> on your <strong>200-streak sub</strong></div>
+        <div class="data">Amazing streak <strong>@metalyzed</strong>, congratulations!</div>
+      </div>
+      <div class="extra-card" data-id="4">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z">
+            </path>
+            <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+          </svg>
+          Settings
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsa suscipit facilis id dolore
+          cumque impedit. Illum sapiente libero quos blanditiis nostrum iste excepturi similique debitis
+          laborum, voluptatum odit! Excepturi!</p>
+      </div>
+    </div>
+
+  </main>
+
+
+  <style>
+    /* Add CSS here */
+
+    :root {
+      --clr-primario: white;
+      --clr-secundario: hsl(214, 86%, 14%);
+      --clr-ternario: hsla(234, 37%, 26%, .6);
+      --clr-accent-light: hsl(56, 45%, 58%, .4);
+      --clr-accent: hsl(56, 45%, 58%);
+      --clr-accent-dark: hsl(56, 45%, 38%);
+      --clr-bg: hsl(164, 63%, 45%);
+      --clr-bg-card: hsl(214, 86%, 14%);
+      --clr-bg-menu-item: hsl(212, 87%, 60%);
+      --clr-box-shadow: hsl(0, 0%, 0%, .4);
+      --ff-primaria: 'Poppins', sans-serif;
+      --ff-secundaria: 'Lisu Bosa', serif;
+      --fs-primaria: 1rem;
+      transition: all .250s ease-in-out;
+    }
+
+    /* Estilos Reset */
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      font-family: var(--ff-primaria);
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    body {
+      line-height: 1.5;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    button,
+    input {
+      position: relative;
+      appearance: none;
+      background-color: transparent;
+      color: inherit;
+      font: inherit;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: var(--clr-accent);
+    }
+
+    ::-webkit-scrollbar-track-piece {
+      background-color: transparent;
+    }
+
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    /* utility classes */
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .visibility-0 {
+      visibility: hidden;
+    }
+
+    .pointer-events-none {
+      pointer-events: none;
+    }
+
+    .translate-x-100 {
+      transform: translateX(100%);
+    }
+
+    .-translate-x-100 {
+      transform: translateX(-100%);
+    }
+
+    .translate-x-100vw {
+      transform: translateX(100vw);
+    }
+
+    .-translate-x-100vw {
+      transform: translateX(-100vw);
+    }
+
+    .translate-y-100vh {
+      transform: translateY(100vh);
+    }
+
+    .-translate-y-100vh {
+      transform: translateY(-100vh);
+    }
+
+    .translate-y-100 {
+      transform: translateY(100%);
+    }
+
+    .-translate-y-100 {
+      transform: translateY(-100%);
+    }
+
+    .scale-0 {
+      scale: 0;
+    }
+
+    .scale-y-0 {
+      transform: scaleY(0);
+    }
+
+    .-rotate-180 {
+      transform: rotate(-180deg);
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .invert-x {
+      transform: scaleX(-1);
+    }
+
+    .invert-y {
+      transform: scaleY(-1);
+    }
+
+    .translate-x-vw {
+      transform: translateX(100vw);
+    }
+
+    .-translate-x-vw {
+      transform: translateX(-100vw);
+    }
+
+    /* Estilos principales */
+    body {
+      display: grid;
+      place-content: center center;
+      min-height: 100dvh;
+      background-color: var(--clr-bg);
+      color: var(--clr-primario);
+      font-size: var(--fs-primaria);
+      font-weight: 400;
+      user-select: none;
+    }
+
+    /* 
+body:after {
+    position: fixed;
+    content: '';
+    inset: 0rem;
+    background-image: '';
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: .3;
+    z-index: -1;
+} */
+
+    main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      width: clamp(20rem, 100vw, 20rem);
+      padding-block-start: 3.2rem;
+      padding-block-end: 2rem;
+      transition: all .400s ease-in-out;
+      border-radius: 1.2rem;
+      overflow: hidden;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      width: 12rem;
+      padding-block-start: 3.2rem;
+      transition: all .400s ease-in-out;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      box-shadow: 0px 10px 15px -10px var(--clr-box-shadow);
+    }
+
+    .profile:hover,
+    .profile:has(a.extra--active) {
+      width: 20rem;
+    }
+
+    .inner-profile {
+      display: grid;
+      grid-template-rows: 13rem 0rem;
+      justify-content: center;
+      background-color: var(--clr-bg-card);
+      border-radius: 1.2rem;
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding-block: 1.5rem;
+      border-radius: 1.2rem;
+      transition: all .400s ease-in-out;
+    }
+
+    .profile-image {
+      position: relative;
+      display: grid;
+      place-content: center;
+      width: 5rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0rem transparent;
+      transition: all .400s ease-in-out;
+      overflow: hidden;
+    }
+
+    .profile:hover .profile-image,
+    .profile:has(a.extra--active) .profile-image {
+      box-shadow: 0 0 0 .6rem var(--clr-bg-menu-item);
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .profile-image img {
+      position: absolute;
+      max-width: 15.4rem;
+      top: -.2rem;
+      left: 0rem;
+      transition: all .100s ease-in-out;
+
+    }
+
+    /* PROFILE IMAGE EXPRESSIONS */
+
+    .profile-image img[data-id="1"] {
+      top: -.2rem;
+      left: -5.2rem;
+      opacity: 0;
+    }
+
+    .profile-image img[data-id="2"] {
+      top: -10.4rem;
+      left: .2rem;
+      opacity: 0;
+    }
+
+    .profile-image img[data-id="3"] {
+      top: -10.4rem;
+      left: -5.2rem;
+      opacity: 0;
+    }
+
+    .profile-image img[data-id="4"] {
+      top: -5.3rem;
+      left: -5.2rem;
+      opacity: 0;
+    }
+
+    .profile-image img[data-id].extra--active {
+      opacity: 1;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--ff-secundaria);
+      font-size: 1.2rem;
+    }
+
+    h2 svg {
+      width: 1.2rem;
+      stroke: var(--clr-primario);
+    }
+
+    .profile-info p {
+      font-size: .7rem;
+      margin-block-start: -.7rem;
+    }
+
+    .profile:hover .inner-profile,
+    .profile:has(a.extra--active) .inner-profile {
+      display: grid;
+      grid-template-rows: 13rem 0rem;
+    }
+
+    .menu-list {
+      align-self: normal;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      min-width: max-content;
+      margin-block-end: 1rem;
+      padding-block: .5rem;
+      padding-inline: .5rem;
+      list-style: none;
+      border-radius: .7rem;
+      background-color: var(--clr-bg);
+      transform: translateY(5rem);
+      transition: all .400s ease-in-out;
+    }
+
+    .menu-item {
+      position: relative;
+      display: grid;
+      place-content: center;
+      width: 3rem;
+      aspect-ratio: 1;
+      background-color: var(--clr-bg-menu-item);
+      border-radius: 50%;
+      box-shadow: 0px 5px 10px var(--clr-box-shadow);
+      transition: all .400s ease-in-out;
+    }
+
+    .menu-item a {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+    }
+
+    .menu-item:has(a.extra--active) {
+      background-color: var(--clr-bg-card);
+      box-shadow: 0px 0px 10px var(--clr-bg-menu-item);
+    }
+
+    .menu-item a.extra--active svg {
+      stroke: var(--clr-primario);
+    }
+
+    .menu-item a svg {
+      width: 1.4rem;
+      stroke-width: 2;
+      stroke: var(--clr-secundario);
+      transform: translateY(5rem);
+      transition: all .400s ease-in-out, scale .100s ease-in-out;
+    }
+
+    .menu-item:hover a svg {
+      scale: 1.2;
+    }
+
+    .menu-item:nth-child(1):hover a svg {
+      animation: moveProfile 1s linear infinite;
+    }
+
+    .menu-item:nth-child(2):hover a svg {
+      animation: moveApps 1s linear infinite;
+    }
+
+    .menu-item:nth-child(3):hover a svg {
+      animation: bellBuzz .150s linear infinite;
+    }
+
+    .menu-item:nth-child(4):hover a svg {
+      animation: rotateCog 1s linear infinite;
+    }
+
+
+    .profile:hover .menu-list,
+    .profile:has(a.extra--active) .menu-list {
+      transform: translateY(-3.8rem);
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .profile:hover .profile-info,
+    .profile:has(a.extra--active) .profile-info {
+      transform: translateY(-4rem);
+      transition: all .400s .400s ease-in-out;
+    }
+
+    .profile:hover .menu-item a svg,
+    .profile:has(a.extra--active) .menu-item a svg {
+      transform: translateY(0rem);
+    }
+
+    .notification-alert {
+      position: absolute;
+      top: -.1rem;
+      right: -.1rem;
+      display: grid;
+      place-content: center;
+      width: 1.2rem;
+      aspect-ratio: 1;
+      background-color: var(--clr-accent);
+      color: var(--clr-secundario);
+      font-size: .7rem;
+      font-weight: 600;
+      border-radius: 50%;
+    }
+
+    .extra-cards {
+      position: relative;
+      width: 20rem;
+      height: 20rem;
+      padding-block: 1rem;
+      overflow: hidden;
+    }
+
+    .extra-card {
+      position: absolute;
+      inset: 1rem;
+      display: fleX;
+      flex-direction: column;
+      gap: .7rem;
+      padding: 2rem;
+      background-color: var(--clr-bg-card);
+      box-shadow: 0px 5px 10px var(--clr-box-shadow);
+      border-radius: 1.2rem;
+      scale: 0;
+      transform: translateY(15rem);
+      opacity: 0;
+      transition: all .400s ease-in-out;
+    }
+
+    .extra-card.extra--active {
+      scale: 1;
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+
+    .data {
+      margin-inline-start: 1.5rem;
+      padding-block: .1rem;
+      padding-inline: .3rem;
+      max-width: max-content;
+      background-color: var(--clr-bg-menu-item);
+      font-size: .75rem;
+      border: .2rem solid var(--clr-bg);
+      border-radius: .3rem;
+    }
+
+    .extra-card>p {
+      margin-inline-start: 1.5rem;
+      font-size: .75rem;
+    }
+
+    .change-btn {
+      position: relative;
+      width: 10rem;
+      margin-inline-start: 1.5rem;
+      padding-block: .5rem;
+      background-color: var(--clr-bg-menu-item);
+      font-size: .65rem;
+      border-radius: .3rem;
+    }
+
+    @keyframes bellBuzz {
+
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-20deg);
+      }
+
+      50% {
+        transform: rotate(0deg);
+      }
+
+      75% {
+        transform: rotate(20deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+
+      }
+
+    }
+
+    @keyframes rotateCog {
+
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
+
+    }
+
+
+    @keyframes moveProfile {
+
+      0% {
+        transform: translateX(0rem);
+      }
+
+      25% {
+        transform: translateX(.2rem);
+      }
+
+      50% {
+        transform: translateX(0rem);
+      }
+
+      75% {
+        transform: translateX(-.2rem);
+      }
+
+      100% {
+        transform: translateX(0rem);
+
+      }
+    }
+
+    @keyframes moveApps {
+
+      0% {
+        transform: translateY(0rem);
+      }
+
+      25% {
+        transform: translateY(.2rem);
+      }
+
+      50% {
+        transform: translateY(0rem);
+      }
+
+      75% {
+        transform: translateY(-.2rem);
+      }
+
+      100% {
+        transform: translateY(0rem);
+
+      }
+    }
+  </style>
+  <script type="module">
+    // Add JavaScript code here
+
+    const links = document.querySelectorAll('a');
+    const menuBtns = document.querySelectorAll('.menu-item a');
+    const extraCards = document.querySelectorAll('.extra-card');
+    const images = document.querySelectorAll('img[data-id]');
+
+    // Prevent links default behaviour
+    const overrideLinks = () => {
+      links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+      });
+    }
+
+
+    const removeAllExtraCards = () => {
+      extraCards.forEach((extraCard) => {
+        extraCard.classList.remove('extra--active');
+      });
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.classList.remove('extra--active');
+      });
+      images.forEach((image) => {
+        image.classList.remove('extra--active');
+      });
+    }
+
+    // Display extra screens on button click
+    const displayExtraCards = () => {
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.addEventListener('click', (e) => {
+          if (e.currentTarget.classList.contains('extra--active')) {
+            removeAllExtraCards();
+            e.currentTarget.classList.remove('extra--active');
+          } else {
+            removeAllExtraCards();
+            e.currentTarget.classList.add('extra--active');
+            const buttonId = +e.currentTarget.dataset.id;
+            setTimeout(() => {
+              images[buttonId - 1].classList.add('extra--active');
+              extraCards[buttonId - 1].classList.add('extra--active');
+            }, 400);
+          }
+        });
+      });
+    }
+
+
+
+
+    //The Marcin Malecki's way for thumbnail perfection
+    if (navigator.userAgent.includes("Headless")) {
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      displayExtraCards();
+      overrideLinks();
+
+    });
+  </script>
+</body>
+
+</html>

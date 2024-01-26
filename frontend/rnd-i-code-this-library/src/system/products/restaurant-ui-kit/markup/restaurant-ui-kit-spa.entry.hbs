@@ -1,0 +1,2041 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Remove the line below if you don't want to use TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;family=Mukta:wght@200;300;400;500;600;700;800&amp;family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&amp;family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&amp;family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto+Slab:wght@100;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;Pacifico&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb
+    }
+
+    ::after,
+    ::before {
+      --tw-content: ''
+    }
+
+    :host,
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit
+    }
+
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit
+    }
+
+    b,
+    strong {
+      font-weight: bolder
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      font-size: 1em
+    }
+
+    small {
+      font-size: 80%
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline
+    }
+
+    sub {
+      bottom: -.25em
+    }
+
+    sup {
+      top: -.5em
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0
+    }
+
+    button,
+    select {
+      text-transform: none
+    }
+
+    [type=button],
+    [type=reset],
+    [type=submit],
+    button {
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none
+    }
+
+    :-moz-focusring {
+      outline: auto
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none
+    }
+
+    progress {
+      vertical-align: baseline
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto
+    }
+
+    [type=search] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit
+    }
+
+    summary {
+      display: list-item
+    }
+
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+      margin: 0
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0
+    }
+
+    legend {
+      padding: 0
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    dialog {
+      padding: 0
+    }
+
+    textarea {
+      resize: vertical
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af
+    }
+
+    [role=button],
+    button {
+      cursor: pointer
+    }
+
+    :disabled {
+      cursor: default
+    }
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+      display: block;
+      vertical-align: middle
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto
+    }
+
+    [hidden] {
+      display: none
+    }
+
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia:
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia:
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+        padding-right: 2rem;
+        padding-left: 2rem
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+        padding-right: 5rem;
+        padding-left: 5rem
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+        padding-right: 7rem;
+        padding-left: 7rem
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .container {
+        max-width: 1280px;
+        padding-right: 10rem;
+        padding-left: 10rem
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1536px
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0
+    }
+
+    .fixed {
+      position: fixed
+    }
+
+    .absolute {
+      position: absolute
+    }
+
+    .relative {
+      position: relative
+    }
+
+    .inset-0 {
+      inset: 0px
+    }
+
+    .left-0 {
+      left: 0px
+    }
+
+    .left-1\/2 {
+      left: 50%
+    }
+
+    .left-\[-7\%\] {
+      left: -7%
+    }
+
+    .right-2 {
+      right: 0.5rem
+    }
+
+    .top-0 {
+      top: 0px
+    }
+
+    .top-1\/2 {
+      top: 50%
+    }
+
+    .top-2 {
+      top: 0.5rem
+    }
+
+    .top-\[-20\%\] {
+      top: -20%
+    }
+
+    .-top-\[100\%\] {
+      top: -100%
+    }
+
+    .bottom-2 {
+      bottom: 0.5rem
+    }
+
+    .left-2 {
+      left: 0.5rem
+    }
+
+    .z-10 {
+      z-index: 10
+    }
+
+    .z-\[2\] {
+      z-index: 2
+    }
+
+    .z-\[3\] {
+      z-index: 3
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem
+    }
+
+    .mt-3 {
+      margin-top: 0.75rem
+    }
+
+    .flex {
+      display: flex
+    }
+
+    .grid {
+      display: grid
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .h-16 {
+      height: 4rem
+    }
+
+    .h-8 {
+      height: 2rem
+    }
+
+    .h-\[2px\] {
+      height: 2px
+    }
+
+    .h-full {
+      height: 100%
+    }
+
+    .h-10 {
+      height: 2.5rem
+    }
+
+    .h-36 {
+      height: 9rem
+    }
+
+    .h-40 {
+      height: 10rem
+    }
+
+    .h-5 {
+      height: 1.25rem
+    }
+
+    .min-h-screen {
+      min-height: 100vh
+    }
+
+    .w-8 {
+      width: 2rem
+    }
+
+    .w-full {
+      width: 100%
+    }
+
+    .w-10 {
+      width: 2.5rem
+    }
+
+    .w-36 {
+      width: 9rem
+    }
+
+    .w-5 {
+      width: 1.25rem
+    }
+
+    .w-64 {
+      width: 16rem
+    }
+
+    .max-w-\[36ch\] {
+      max-width: 36ch
+    }
+
+    .max-w-\[264px\] {
+      max-width: 264px
+    }
+
+    .-translate-x-1\/2 {
+      --tw-translate-x: -50%;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .-translate-y-1\/2 {
+      --tw-translate-y: -50%;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .cursor-pointer {
+      cursor: pointer
+    }
+
+    .select-none {
+      -webkit-user-select: none;
+      user-select: none
+    }
+
+    .snap-x {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness)
+    }
+
+    .grid-flow-col {
+      grid-auto-flow: column
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr))
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .grid-cols-8 {
+      grid-template-columns: repeat(8, minmax(0, 1fr))
+    }
+
+    .flex-col {
+      flex-direction: column
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    .place-items-center {
+      place-items: center
+    }
+
+    .items-start {
+      align-items: flex-start
+    }
+
+    .items-center {
+      align-items: center
+    }
+
+    .justify-start {
+      justify-content: flex-start
+    }
+
+    .justify-center {
+      justify-content: center
+    }
+
+    .justify-between {
+      justify-content: space-between
+    }
+
+    .gap-10 {
+      gap: 2.5rem
+    }
+
+    .gap-14 {
+      gap: 3.5rem
+    }
+
+    .gap-2 {
+      gap: 0.5rem
+    }
+
+    .gap-3 {
+      gap: 0.75rem
+    }
+
+    .gap-4 {
+      gap: 1rem
+    }
+
+    .gap-5 {
+      gap: 1.25rem
+    }
+
+    .gap-6 {
+      gap: 1.5rem
+    }
+
+    .overflow-hidden {
+      overflow: hidden
+    }
+
+    .overflow-x-hidden {
+      overflow-x: hidden
+    }
+
+    .scroll-smooth {
+      scroll-behavior: smooth
+    }
+
+    .rounded-full {
+      border-radius: 9999px
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem
+    }
+
+    .border {
+      border-width: 1px
+    }
+
+    .border-gray-300 {
+      --tw-border-opacity: 1;
+      border-color: rgb(209 213 219 / var(--tw-border-opacity))
+    }
+
+    .border-gray-400 {
+      --tw-border-opacity: 1;
+      border-color: rgb(156 163 175 / var(--tw-border-opacity))
+    }
+
+    .bg-\[\#f48266\] {
+      --tw-bg-opacity: 1;
+      background-color: rgb(244 130 102 / var(--tw-bg-opacity))
+    }
+
+    .bg-black\/20 {
+      background-color: rgb(0 0 0 / 0.2)
+    }
+
+    .bg-gray-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+    }
+
+    .bg-gray-300 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+    }
+
+    .bg-white {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+    }
+
+    .bg-black\/60 {
+      background-color: rgb(0 0 0 / 0.6)
+    }
+
+    .bg-green-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(22 163 74 / var(--tw-bg-opacity))
+    }
+
+    .object-cover {
+      object-fit: cover
+    }
+
+    .p-8 {
+      padding: 2rem
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+    .px-5 {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem
+    }
+
+    .py-1 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem
+    }
+
+    .py-1\.5 {
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem
+    }
+
+    .py-2\.5 {
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem
+    }
+
+    .py-24 {
+      padding-top: 6rem;
+      padding-bottom: 6rem
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem
+    }
+
+    .px-2\.5 {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .font-pacifico {
+      font-family: Pacifico, cursive
+    }
+
+    .font-poppins {
+      font-family: Poppins, sans-serif
+    }
+
+    .font-robotoSlab {
+      font-family: Roboto Slab, serif
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem
+    }
+
+    .font-bold {
+      font-weight: 700
+    }
+
+    .font-light {
+      font-weight: 300
+    }
+
+    .font-medium {
+      font-weight: 500
+    }
+
+    .font-semibold {
+      font-weight: 600
+    }
+
+    .font-black {
+      font-weight: 900
+    }
+
+    .tracking-normal {
+      letter-spacing: 0em
+    }
+
+    .tracking-wide {
+      letter-spacing: 0.025em
+    }
+
+    .tracking-wider {
+      letter-spacing: 0.05em
+    }
+
+    .text-\[\#f48266\] {
+      --tw-text-opacity: 1;
+      color: rgb(244 130 102 / var(--tw-text-opacity))
+    }
+
+    .text-black\/60 {
+      color: rgb(0 0 0 / 0.6)
+    }
+
+    .text-black\/75 {
+      color: rgb(0 0 0 / 0.75)
+    }
+
+    .text-black\/80 {
+      color: rgb(0 0 0 / 0.8)
+    }
+
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+
+    .drop-shadow-2xl {
+      --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+    }
+
+    .duration-150 {
+      transition-duration: 150ms
+    }
+
+    .duration-200 {
+      transition-duration: 200ms
+    }
+
+    .duration-300 {
+      transition-duration: 300ms
+    }
+
+    .ease-linear {
+      transition-timing-function: linear
+    }
+
+    .\[box-shadow\:0_0_10px_rgba\(0\2c 0\2c 0\2c 0\.15\)\] {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15)
+    }
+
+    .\[text-shadow\:_0_0_20px_rgb\(0_0_0_\/_100\%\)\] {
+      text-shadow: 0 0 20px rgb(0 0 0 / 100%)
+    }
+
+    .hover\:bg-\[\#EDE9D0\]:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(237 233 208 / var(--tw-bg-opacity))
+    }
+
+    .hover\:bg-\[\#ff6842\]:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 104 66 / var(--tw-bg-opacity))
+    }
+
+    .hover\:bg-gray-200:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+    }
+
+    .hover\:bg-gray-300:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+    }
+
+    .hover\:bg-gray-400:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(156 163 175 / var(--tw-bg-opacity))
+    }
+
+    .hover\:underline:hover {
+      -webkit-text-decoration-line: underline;
+      text-decoration-line: underline
+    }
+
+    .group:hover .group-hover\:top-2 {
+      top: 0.5rem
+    }
+
+    .group:hover .group-hover\:rotate-12 {
+      --tw-rotate: 12deg;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .group:hover .group-hover\:scale-125 {
+      --tw-scale-x: 1.25;
+      --tw-scale-y: 1.25;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    @media (min-width: 640px) {
+      .sm\:flex {
+        display: flex
+      }
+
+      .sm\:h-10 {
+        height: 2.5rem
+      }
+
+      .sm\:w-10 {
+        width: 2.5rem
+      }
+
+      .sm\:text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem
+      }
+
+      .sm\:text-\[28px\] {
+        font-size: 28px
+      }
+
+      .sm\:text-base {
+        font-size: 1rem;
+        line-height: 1.5rem
+      }
+
+      .sm\:text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:h-60 {
+        height: 15rem
+      }
+
+      .md\:w-96 {
+        width: 24rem
+      }
+
+      .md\:max-w-\[300px\] {
+        max-width: 300px
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .md\:flex-row {
+        flex-direction: row
+      }
+
+      .md\:items-start {
+        align-items: flex-start
+      }
+
+      .md\:gap-10 {
+        gap: 2.5rem
+      }
+
+      .md\:text-base {
+        font-size: 1rem;
+        line-height: 1.5rem
+      }
+
+      .md\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem
+      }
+
+      .md\:font-semibold {
+        font-weight: 600
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+
+      .lg\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem
+      }
+    }
+
+    .peer:checked~.peer-checked\:\[\&_\.fa-regular\]\:hidden .fa-regular {
+      display: none
+    }
+
+    .peer:checked~.peer-checked\:\[\&_\.fa-solid\]\:block .fa-solid {
+      display: block
+    }
+
+    .\[\&_span\]\:grid span {
+      display: grid
+    }
+
+    .\[\&_span\]\:h-10 span {
+      height: 2.5rem
+    }
+
+    .\[\&_span\]\:w-10 span {
+      width: 2.5rem
+    }
+
+    .\[\&_span\]\:cursor-pointer span {
+      cursor: pointer
+    }
+
+    .\[\&_span\]\:place-items-center span {
+      place-items: center
+    }
+
+    .\[\&_span\]\:whitespace-nowrap span {
+      white-space: nowrap
+    }
+
+    .\[\&_span\]\:rounded-full span {
+      border-radius: 9999px
+    }
+
+    .\[\&_span\]\:rounded-lg span {
+      border-radius: 0.5rem
+    }
+
+    .\[\&_span\]\:px-4 span {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+    .\[\&_span\]\:py-2 span {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem
+    }
+
+    .\[\&_span\]\:duration-150 span {
+      transition-duration: 150ms
+    }
+
+    .\[\&_span\]\:ease-linear span {
+      transition-timing-function: linear
+    }
+
+    .hover\:\[\&_span\]\:bg-gray-300 span:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+    }
+
+    @media (min-width: 768px) {
+      .\[\&_span\]\:md\:px-5 span {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .\[\&_span\]\:xl\:px-8 span {
+        padding-left: 2rem;
+        padding-right: 2rem
+      }
+    }
+  </style>
+</head>
+
+<!-- Change code below this line -->
+
+<body
+  class="bg-white flex flex-col justify-start items-center gap-14 min-h-screen font-poppins px-5 py-24 relative overflow-x-hidden text-black/75">
+  <nav
+    class="bg-white z-10 fixed top-0 left-0 h-16 w-full [box-shadow:0_0_10px_rgba(0,0,0,0.15)] flex items-center justify-center">
+    <div class="container flex items-center justify-between">
+      <a href="#" id="logo" class="text-xl tracking-wider font-bold font-pacifico text-[#f48266]">MyFoodCo.</a>
+      <div class="flex items-center justify-center gap-2">
+        <button
+          class="font-medium text-black/75 flex items-center justify-center gap-2 px-4 py-2 rounded-lg hover:bg-[#EDE9D0] duration-150 ease-linear "><i
+            class="fa-solid fa-search"></i> Search</button>
+        <button
+          class="hidden font-medium text-black/75 sm:flex items-center justify-center gap-2 px-4 py-2 rounded-lg hover:bg-[#EDE9D0] duration-150 ease-linear "><i
+            class="fa-solid fa-tags"></i> Offers</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-page" class="w-full h-full flex flex-col justify-start items-center gap-14">
+    <section class="container w-full flex flex-col items-start justify-center gap-6">
+      <div class="flex items-center justify-between w-full">
+        <h1 class="text-xl sm:text-[28px] font-semibold">What's on your mind?</h1>
+        <div class="flex items-center justify-center gap-4">
+          <button id="carousel-left"
+            class="w-8 h-8 text-sm sm:text-base sm:h-10 sm:w-10 bg-gray-300 rounded-full hover:bg-gray-400 cursor-pointer duration-150 ease-linear"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button id="carousel-right"
+            class="w-8 h-8 text-sm sm:text-base sm:h-10 sm:w-10 bg-gray-300 rounded-full hover:bg-gray-400 cursor-pointer duration-150 ease-linear"><i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div id="carousel-buffer" class="w-full overflow-x-hidden scroll-smooth">
+        <div id="carousel" class="w-full grid grid-flow-col gap-10 snap-x">
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/pizza-with-cheese-and-green-leaf-a66sGfOnnqQ" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Pizza</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/burger-with-lettuce-and-tomatoes-sc5sTPMrVfk" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Burger</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/cooked-food-on-stainless-steel-bowl-ZN-TT10kf4o" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Indian</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/cooked-food-on-white-ceramic-plate-0j4bisyPo3M" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Biriyani</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/round-gray-and-black-round-wall-mounted-device-hWQvZaN7jnQ" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Cakes</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/pasta-dish-on-brown-ceramic-plate-wEBg_pYtynw" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Chinese</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/potato-fries-on-white-ceramic-plate-flFd8L7_B3g" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Pasta</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/green-and-purple-vegetable-salad-2RrBE90w0T8" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Salad</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/oreo-cookie-sandwiches-dessert-in-short-stem-glass-cLpdEA23Z44"
+                alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Ice Cream</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/bowl-of-vegetable-salads-IGfIGP5ONV0" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Vegan</h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+            <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+              <img src="https://source.unsplash.com/sliced-pizza-on-green-plate-dzn37nOmki4" alt=""
+                class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            </figure>
+            <h2 class="text-xl text-black/75 font-medium">Mexican</h2>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </section>
+
+    <section id="restaurants" class="container w-full flex flex-col items-start justify-center gap-6">
+      <h2 class="text-lg sm:text-2xl font-semibold">Top restaurant cahins in your area</h2>
+      <div class="flex items-center justify-start gap-3 flex-wrap">
+        <button
+          class="bg-white border border-gray-400 rounded-full px-4 py-2 text-xs sm:text-sm text-black/80 hover:bg-gray-200 duration-150 ease-linear cursor-pointer">Filters
+          <i class="fa-solid fa-filter"></i></button>
+        <button
+          class="bg-white border border-gray-400 rounded-full px-4 py-2 text-xs sm:text-sm text-black/80 hover:bg-gray-200 duration-150 ease-linear cursor-pointer">Sort
+          by <i class="fa-solid fa-chevron-down"></i></button>
+        <button
+          class="bg-white border border-gray-400 rounded-full px-4 py-2 text-xs sm:text-sm text-black/80 hover:bg-gray-200 duration-150 ease-linear cursor-pointer">Fast
+          Delivery <i class="fa-solid fa-person-biking"></i></button>
+        <button
+          class="bg-white border border-gray-400 rounded-full px-4 py-2 text-xs sm:text-sm text-black/80 hover:bg-gray-200 duration-150 ease-linear cursor-pointer">Vegan</button>
+        <button
+          class="bg-white border border-gray-400 rounded-full px-4 py-2 text-xs sm:text-sm text-black/80 hover:bg-gray-200 duration-150 ease-linear cursor-pointer">New</button>
+        <button
+          class="bg-white border border-gray-400 rounded-full px-4 py-2 text-xs sm:text-sm text-black/80 hover:bg-gray-200 duration-150 ease-linear cursor-pointer">Ratings
+          4.0+</button>
+      </div>
+      <div id="restaurant-buffer"
+        class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+        <div data-item="0" class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+          <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA"
+              alt="Italian Delights Bistro"
+              class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">Flat
+              10% Off</span>
+            <input type="checkbox" id="radioItalian Delights Bistro" class="sr-only peer">
+            <label for="radioItalian Delights Bistro"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-200 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-2">
+            <h2 class="text-sm text-black/75 font-medium">Italian Delights Bistro</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              4.1 · 31 mins
+            </div>
+            <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Italian</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Continental</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Brewery</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Pizzas</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-item="1" class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+          <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/brown-and-gray-concrete-store-nmpW_WwwVSc"
+              alt="Spice Fusion Grill House"
+              class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">Flat
+              5% Off</span>
+            <input type="checkbox" id="radioSpice Fusion Grill House" class="sr-only peer">
+            <label for="radioSpice Fusion Grill House"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-200 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-2">
+            <h2 class="text-sm text-black/75 font-medium">Spice Fusion Grill House</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              4.2 · 40 mins
+            </div>
+            <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Grill</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Continental</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Pub</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Barbeque</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-item="2" class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+          <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/a-wooden-counter-topped-with-bowls-and-chopsticks-mV9VIOgojuw"
+              alt="Tokyo Tastes Sushi Bar"
+              class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">Flat
+              15% Off</span>
+            <input type="checkbox" id="radioTokyo Tastes Sushi Bar" class="sr-only peer">
+            <label for="radioTokyo Tastes Sushi Bar"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-200 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-2">
+            <h2 class="text-sm text-black/75 font-medium">Tokyo Tastes Sushi Bar</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              4.0 · 25 mins
+            </div>
+            <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Japanses</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Asian</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Chinese</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Ramen</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Noodles</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Sake</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-item="3" class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+          <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/brown-wooden-table-and-chairs-PkbyxvkGWcU"
+              alt="Mediterranean Eats Oasis"
+              class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]"></span>
+            <input type="checkbox" id="radioMediterranean Eats Oasis" class="sr-only peer">
+            <label for="radioMediterranean Eats Oasis"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-200 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-2">
+            <h2 class="text-sm text-black/75 font-medium">Mediterranean Eats Oasis</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              4 · 35 mins
+            </div>
+            <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Mediterranean</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Middle East</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Falafel</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Healthy</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-item="4" class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+          <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/a-restaurant-with-a-view-of-the-water-YYZU0Lo1uXE"
+              alt="Café Parisienne Patisserie"
+              class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">Upto
+              10% Off</span>
+            <input type="checkbox" id="radioCafé Parisienne Patisserie" class="sr-only peer">
+            <label for="radioCafé Parisienne Patisserie"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-200 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-2">
+            <h2 class="text-sm text-black/75 font-medium">Café Parisienne Patisserie</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              3.9 · 29 mins
+            </div>
+            <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                French</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                European</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Desserts</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Sweets</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Cafe</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-item="5" class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+          <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/restaurant-close-up-photography-wfM1Fi-kMaY"
+              alt="The Great Curry House"
+              class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">Upto
+              15% Off</span>
+            <input type="checkbox" id="radioThe Great Curry House" class="sr-only peer">
+            <label for="radioThe Great Curry House"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-200 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-2">
+            <h2 class="text-sm text-black/75 font-medium">The Great Curry House</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              4.5 · 28 mins
+            </div>
+            <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Indian</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Asian</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Thai</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Curry</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Savoury</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Breads</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="booking-page"
+    class="select-none w-full container flex flex-col items-center justify-center gap-14 relative hidden">
+    <div class="flex items-center justify-start w-full lg:px-14">
+      <button id="back"
+        class="text-black/75 text-sm px-5 py-1.5 rounded-full bg-gray-100 border border-gray-300 hover:bg-gray-300 duration-150 ease-linear"><i
+          class="fa-solid fa-arrow-left text-sm"></i> Back</button>
+    </div>
+    <div class="relative">
+      <div class="booking-confirmed hidden absolute top-[-20%] left-[-7%] z-[3]">
+        <img width="100" height="100" src="https://img.icons8.com/plasticine/100/approval.png" alt="approval">
+      </div>
+      <div id="reservation-buffer">
+        <div data-item="0"
+          class="flex flex-col md:flex-row md:items-start items-center justify-center gap-4 md:gap-10 cursor-pointer">
+          <figure class="img h-40 md:h-60 w-64 md:w-96 object-cover rounded-lg group overflow-hidden relative">
+            <img src="https://source.unsplash.com/brown-and-gray-concrete-store-nmpW_WwwVSc"
+              alt="Spice Fusion Grill House"
+              class="h-40 md:h-60 w-64 md:w-96 object-cover rounded-lg duration-150 ease-linear">
+            <span
+              class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">Flat
+              5% Off</span>
+            <input type="checkbox" id="Spice Fusion Grill House" class="sr-only peer">
+            <label for="Spice Fusion Grill House"
+              class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-300 ease-linear"><i
+                class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+          </figure>
+          <div class="flex flex-col items-start justify-center gap-4">
+            <h2 class="text-sm md:text-xl text-black/75 font-medium md:font-semibold">Spice Fusion Grill House</h2>
+            <div class="font-semibold flex items-center justify-center gap-2 text-sm md:text-base">
+              <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i
+                  class="fa-solid fa-star"></i></span>
+              4.2 · 40 mins
+            </div>
+            <div class="max-w-[264px] md:max-w-[300px] flex items-center justify-start gap-2 flex-wrap">
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Grill</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Continental</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Pub</p>
+
+              <p
+                class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">
+                Barbeque</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10 text-black/75">
+      <div class="people bg-gray-100 px-6 py-4 rounded-lg border border-gray-300">
+        <div class="people-top text-sm font-medium tracking-wide py-1 flex items-center justify-between">
+          <p><i class="fa-solid fa-user-group text-sm"></i> <span id="people-value">4</span> People</p>
+          <p><i
+              class="fa-solid fa-chevron-up text-[#f48266] h-8 w-8 grid place-items-center rounded-full hover:bg-gray-300 cursor-pointer duration-150 ease-linear"></i>
+          </p>
+        </div>
+        <hr class="mt-3 mb-3 h-[2px]">
+        <div class="people-bottom">
+          <div class="grid grid-cols-8
+                        [&amp;_span]:grid
+                        [&amp;_span]:place-items-center
+                        [&amp;_span]:h-10
+                        [&amp;_span]:w-10
+                        [&amp;_span]:rounded-full
+                        [&amp;_span]:cursor-pointer
+                        hover:[&amp;_span]:bg-gray-300
+                        [&amp;_span]:duration-150
+                        [&amp;_span]:ease-linear
+                    ">
+            <span class="num-people">2</span>
+            <span class="num-people">3</span>
+            <span class="num-people people-active">4</span>
+            <span class="num-people">5</span>
+            <span class="num-people">6</span>
+            <span class="num-people">7</span>
+            <span class="num-people">8</span>
+            <span class="num-people">9</span>
+            <span class="num-people">10</span>
+            <span class="num-people">11</span>
+            <span class="num-people">12</span>
+            <span class="num-people">13</span>
+            <span class="num-people">14</span>
+            <span class="num-people">15</span>
+            <span class="num-people">16</span>
+            <span class="num-people">17</span>
+            <span class="num-people">18</span>
+            <span class="num-people">19</span>
+            <span class="num-people">20</span>
+          </div>
+          <p class="text-sm text-[#f48266] font-light tracking-normal cursor-pointer hover:underline">More than 20
+            people?</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-5">
+        <div class="time bg-gray-100 px-6 py-4 rounded-lg border border-gray-300">
+          <div class="time-top text-sm font-medium tracking-wide py-1">
+            <p><i class="fa-solid fa-clock text-sm"></i> Choose a time</p>
+            <p></p>
+            <hr class="mt-3 mb-3 h-[2px]">
+            <div class="time-bottom grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3
+                                        [&amp;_span]:xl:px-8
+                                        [&amp;_span]:md:px-5
+                                        [&amp;_span]:px-4
+                                        [&amp;_span]:py-2
+                                        [&amp;_span]:rounded-lg
+                                        [&amp;_span]:cursor-pointer
+                                        hover:[&amp;_span]:bg-gray-300
+                                        [&amp;_span]:duration-150
+                                        [&amp;_span]:ease-linear
+                                        [&amp;_span]:whitespace-nowrap
+                                    ">
+              <span class="num-time">8:00 pm</span>
+              <span class="num-time people-active">8:30 pm</span>
+              <span class="num-time">9:00 pm</span>
+              <span class="num-time">9:30 pm</span>
+            </div>
+          </div>
+        </div>
+        <button id="booking-button"
+          class="w-full rounded-full bg-[#f48266] hover:bg-[#ff6842] text-white text-sm font-semibold py-4 px-5 duration-150 ease-linear">Reserve
+          a table</button>
+      </div>
+    </div>
+
+    <div class="overlay hidden fixed inset-0 bg-black/20 z-[2]"></div>
+    <div id="confirmation-modal"
+      class="hidden absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 bg-white rounded-xl flex flex-col items-center justify-center gap-4">
+      <i id="close-confirmation"
+        class="absolute top-2 right-2 fa-solid fa-xmark h-8 w-8 grid place-items-center rounded-full hover:bg-gray-300 cursor-pointer duration-150 ease-linear"></i>
+      <h2 class="text-xl font-semibold">Confirm Booking?</h2>
+      <p class="text-sm text-black/60 max-w-[36ch] text-center">
+        Please confirm your booking at <span id="booking-restaurant"
+          class="font-semibold tracking-wide text-black/75">Some restaurant</span> for
+        <span id="booking-people" class="font-semibold tracking-wide text-black/75">4</span> People at <span
+          id="booking-time" class="font-semibold tracking-wide text-black/75">8:30 pm</span>
+      </p>
+      <button id="confirm-booking-button"
+        class="text-sm w-full py-2.5 px-2 rounded-full bg-[#f48266] hover:bg-[#ff6842] text-white duration-150 ease-linear">Confirm
+        booking?</button>
+    </div>
+  </section>
+
+
+
+  <style>
+    /* Add CSS here */
+    hr {
+      height: 2px;
+      width: 100%;
+      background-color: black;
+      opacity: 0.2;
+      margin-top: rem;
+    }
+
+    .num-people.people-active,
+    .num-time.people-active {
+      background-color: #f48266;
+    }
+
+    .hideLeft {
+      transform: translateX(0%);
+      animation: hideLeft 1500ms ease-in-out;
+    }
+
+    .booking-confirmed {
+      scale: 5;
+      opacity: 0;
+      animation: confirmed 1s ease-in-out forwards;
+    }
+
+    @keyframes hideLeft {
+      30% {
+        transform: translateX(10%);
+      }
+
+      100% {
+        transform: translateX(-150%);
+      }
+    }
+
+    @keyframes confirmed {
+      80% {
+        scale: 0.8;
+        opacity: 1;
+      }
+
+      100% {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+  </style>
+  <script type="module">
+    // Add JavaScript code here
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            roboto: ['Roboto', 'sans-serif'],
+            robotoSlab: ['Roboto Slab', 'serif'],
+            openSans: ['Open Sans', 'sans-serif'],
+            montseratt: ['Montserrat', 'sans-serif'],
+            nunito: ['Nunito Sans', 'sans-serif'],
+            noto: ['Noto Sans', 'sans-serif'],
+            mukta: ['Mukta', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            pacifico: ['Pacifico', 'cursive']
+          },
+        },
+        container: {
+          padding: {
+            DEFAULT: '1rem',
+            xl: "10rem",
+            lg: "7rem",
+            md: "5rem",
+            sm: "2rem"
+          }
+        }
+      }
+    }
+
+    let carousel = document.getElementById("carousel");
+    let carouselBuffer = document.getElementById("carousel-buffer");
+    let restaurantBuffer = document.getElementById("restaurant-buffer");
+    let carouselLeft = document.getElementById("carousel-left");
+    let carouselRight = document.getElementById("carousel-right");
+
+    let currentRestaurant;
+
+    let foodCategories = [
+      {
+        name: "Pizza",
+        img: "https://source.unsplash.com/pizza-with-cheese-and-green-leaf-a66sGfOnnqQ",
+      },
+      {
+        name: "Burger",
+        img: "https://source.unsplash.com/burger-with-lettuce-and-tomatoes-sc5sTPMrVfk"
+      },
+      {
+        name: "Indian",
+        img: "https://source.unsplash.com/cooked-food-on-stainless-steel-bowl-ZN-TT10kf4o"
+      },
+      {
+        name: "Biriyani",
+        img: "https://source.unsplash.com/cooked-food-on-white-ceramic-plate-0j4bisyPo3M"
+      },
+      {
+        name: "Cakes",
+        img: "https://source.unsplash.com/round-gray-and-black-round-wall-mounted-device-hWQvZaN7jnQ"
+      },
+      {
+        name: "Chinese",
+        img: "https://source.unsplash.com/pasta-dish-on-brown-ceramic-plate-wEBg_pYtynw"
+      },
+      {
+        name: "Pasta",
+        img: "https://source.unsplash.com/potato-fries-on-white-ceramic-plate-flFd8L7_B3g"
+      },
+      {
+        name: "Salad",
+        img: "https://source.unsplash.com/green-and-purple-vegetable-salad-2RrBE90w0T8"
+      },
+      {
+        name: "Ice Cream",
+        img: "https://source.unsplash.com/oreo-cookie-sandwiches-dessert-in-short-stem-glass-cLpdEA23Z44"
+      },
+      {
+        name: "Vegan",
+        img: "https://source.unsplash.com/bowl-of-vegetable-salads-IGfIGP5ONV0"
+      },
+      {
+        name: "Mexican",
+        img: "https://source.unsplash.com/sliced-pizza-on-green-plate-dzn37nOmki4"
+      }
+    ]
+
+    let restaurants = [
+      {
+        name: "Italian Delights Bistro",
+        img: "https://source.unsplash.com/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA",
+        tags: "Italian, Continental, Brewery, Pizzas",
+        discount: "Flat 10% Off",
+        rating: 4.1,
+        distance: "31 mins"
+      },
+      {
+        name: "Spice Fusion Grill House",
+        img: "https://source.unsplash.com/brown-and-gray-concrete-store-nmpW_WwwVSc",
+        tags: "Grill, Continental, Pub, Barbeque",
+        discount: "Flat 5% Off",
+        rating: 4.2,
+        distance: "40 mins"
+      },
+      {
+        name: "Tokyo Tastes Sushi Bar",
+        img: "https://source.unsplash.com/a-wooden-counter-topped-with-bowls-and-chopsticks-mV9VIOgojuw",
+        tags: "Japanses, Asian, Chinese, Ramen, Noodles, Sake",
+        discount: "Flat 15% Off",
+        rating: "4.0",
+        distance: "25 mins"
+      },
+      {
+        name: "Mediterranean Eats Oasis",
+        img: "https://source.unsplash.com/brown-wooden-table-and-chairs-PkbyxvkGWcU",
+        tags: "Mediterranean, Middle East, Falafel, Healthy",
+        discount: "",
+        rating: 4.0,
+        distance: "35 mins"
+      },
+      {
+        name: "Café Parisienne Patisserie",
+        img: "https://source.unsplash.com/a-restaurant-with-a-view-of-the-water-YYZU0Lo1uXE",
+        tags: "French, European, Desserts, Sweets, Cafe",
+        discount: "Upto 10% Off",
+        rating: "3.9",
+        distance: "29 mins"
+      },
+      {
+        name: "The Great Curry House",
+        img: "https://source.unsplash.com/restaurant-close-up-photography-wfM1Fi-kMaY",
+        tags: "Indian, Asian, Thai, Curry, Savoury, Breads",
+        discount: "Upto 15% Off",
+        rating: "4.5",
+        distance: "28 mins"
+      },
+    ]
+
+    function generateFoodCategories(list) {
+      let output = '';
+      list.forEach(item => {
+        output += `
+            <div class="flex flex-col items-center justify-center gap-4 cursor-pointer">
+                <figure class="img h-36 w-36 object-cover rounded-lg group overflow-hidden">
+                    <img src="${item.img}" alt="" class="h-36 w-36 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+                </figure>
+                <h2 class="text-xl text-black/75 font-medium">${item.name}</h2>
+            </div>
+        `
+      })
+
+      carousel.innerHTML = output;
+    }
+
+    function generateRestaurantList(list) {
+      let output = ``;
+      list.forEach((item, i) => {
+        output += `
+            <div data-item=${i} class="restaurant flex flex-col items-start justify-center gap-4 cursor-pointer">
+                <figure class="img h-40 w-64 object-cover rounded-lg group overflow-hidden relative">
+                    <img src="${item.img}" alt="${item.name}" class="h-40 w-64 object-cover rounded-lg group-hover:scale-125 group-hover:rotate-12 duration-150 ease-linear">
+                    <span class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">${item.discount}</span>
+                    <input type='checkbox' id="radio${item.name}" class="sr-only peer"/>
+                    <label for="radio${item.name}" class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&_.fa-regular]:hidden peer-checked:[&_.fa-solid]:block duration-200 ease-linear"><i class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+                </figure>
+                <div class="flex flex-col items-start justify-center gap-2">
+                    <h2 class="text-sm text-black/75 font-medium">${item.name}</h2>
+                    <div class="font-semibold flex items-center justify-center gap-2 text-sm">
+                        <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i class="fa-solid fa-star"></i></span>
+                        ${item.rating} · ${item.distance}
+                    </div>
+                    <div class="max-w-[264px] flex items-center justify-start gap-2 flex-wrap">`
+
+        item.tags.split(",").forEach(tag => {
+          output += `
+                <p class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">${tag}</p>
+            `
+        })
+
+        output += `</div>
+                </div>
+            </div>
+        `
+      })
+
+      restaurantBuffer.innerHTML = output;
+
+      document.querySelectorAll(".restaurant").forEach(res => {
+        res.addEventListener("click", function (e) {
+          currentRestaurant = restaurants[this.dataset.item];
+          console.log("here");
+          document.getElementById("main-page").classList.add("hidden");
+          generateReservationPage(currentRestaurant);
+          document.getElementById("booking-page").classList.remove("hidden")
+        })
+      })
+    }
+
+    function generateReservationPage(item) {
+      let output = `
+        <div data-item="0"
+            class="flex flex-col md:flex-row md:items-start items-center justify-center gap-4 md:gap-10 cursor-pointer">
+            <figure class="img h-40 md:h-60 w-64 md:w-96 object-cover rounded-lg group overflow-hidden relative">
+                <img src="${item.img}" alt="${item.name}" class="h-40 md:h-60 w-64 md:w-96 object-cover rounded-lg duration-150 ease-linear">
+                <span class="absolute bottom-2 left-2 text-white text-xl font-black tracking-wide font-robotoSlab drop-shadow-2xl [text-shadow:_0_0_20px_rgb(0_0_0_/_100%)]">${item.discount}</span>
+                <input type="checkbox" id="${item.name}" class="sr-only peer">
+                <label for="${item.name}" class="absolute -top-[100%] group-hover:top-2 right-2 h-10 w-10 rounded-full text-white bg-black/60 flex items-center justify-center peer-checked:[&amp;_.fa-regular]:hidden peer-checked:[&amp;_.fa-solid]:block duration-300 ease-linear"><i class="fa-regular fa-bookmark"></i><i class="hidden fa-solid fa-bookmark"></i></label>
+            </figure>
+            <div class="flex flex-col items-start justify-center gap-4">
+                <h2 class="text-sm md:text-xl text-black/75 font-medium md:font-semibold">${item.name}</h2>
+                <div class="font-semibold flex items-center justify-center gap-2 text-sm md:text-base">
+                    <span class="bg-green-600 text-white text-xs h-5 w-5 rounded-full flex items-center justify-center"><i class="fa-solid fa-star"></i></span>
+                    ${item.rating} · ${item.distance}
+                </div>
+                <div class="max-w-[264px] md:max-w-[300px] flex items-center justify-start gap-2 flex-wrap">`
+
+      item.tags.split(",").forEach(tag => {
+        output += `
+                            <p class="bg-gray-100 border border-gray-400 px-2.5 py-1 rounded-lg text-xs hover:bg-gray-200 duration-150 ease-linear">${tag}</p>
+                        `
+      })
+
+      output += `</div>
+            </div>
+        </div>
+    `
+
+      document.getElementById("reservation-buffer").innerHTML = output;
+    }
+
+    generateFoodCategories(foodCategories);
+    generateRestaurantList(restaurants);
+
+    carouselLeft.addEventListener("click", function (e) {
+      carouselBuffer.scrollLeft -= 300;
+    })
+
+    carouselRight.addEventListener("click", function (e) {
+      carouselBuffer.scrollLeft += 300;
+    })
+
+    let prevActivePeople;
+    let currActivePeople = document.querySelectorAll(".people-active")[0];
+    let prevActiveTime;
+    let currActiveTime = document.querySelectorAll(".people-active")[1];
+
+    document.querySelector(".people-bottom").addEventListener("click", function (e) {
+      if (e.target.classList.contains("num-people")) {
+        prevActivePeople = currActivePeople;
+        currActivePeople = e.target;
+        document.getElementById("people-value").textContent = e.target.textContent;
+        currActivePeople.classList.add("people-active");
+        prevActivePeople ? prevActivePeople.classList.remove("people-active") : "";
+      }
+    })
+
+    document.querySelector(".time-bottom").addEventListener("click", function (e) {
+      if (e.target.classList.contains("num-time")) {
+        prevActiveTime = currActiveTime;
+        currActiveTime = e.target;
+        currActiveTime.classList.add("people-active");
+        prevActiveTime ? prevActiveTime.classList.remove("people-active") : "";
+      }
+    })
+
+    document.getElementById("back").addEventListener("click", function (e) {
+      document.getElementById("main-page").classList.remove("hidden");
+      document.getElementById("booking-page").classList.add("hidden")
+    })
+
+    document.getElementById("booking-button").addEventListener("click", function (e) {
+      document.querySelector(".overlay").classList.remove("hidden");
+      document.querySelector("#confirmation-modal").classList.remove("hidden");
+      document.getElementById("booking-restaurant").textContent = currentRestaurant.name;
+      document.getElementById("booking-people").textContent = currActivePeople.textContent;
+      document.getElementById("booking-time").textContent = currActiveTime.textContent;
+    })
+
+    document.getElementById("close-confirmation").addEventListener("click", function (e) {
+      document.querySelector(".overlay").classList.add("hidden");
+      document.querySelector("#confirmation-modal").classList.add("hidden");
+    })
+
+    document.getElementById("confirm-booking-button").addEventListener("click", function (e) {
+      document.querySelector(".overlay").classList.add("hidden");
+      document.querySelector("#confirmation-modal").classList.add("hidden");
+      document.querySelector(".booking-confirmed").classList.remove("hidden");
+    })
+  </script>
+</body><!-- Change code above this line -->
+
+</html>
