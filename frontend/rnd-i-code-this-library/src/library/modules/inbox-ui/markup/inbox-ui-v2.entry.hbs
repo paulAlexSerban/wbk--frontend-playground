@@ -1,0 +1,988 @@
+<html lang="en" data-theme="light" class="online">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inbox UI</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Your messages</h1>
+    <button>
+      <span>Compose</span>
+      <svg class="icon" width="24" height="24" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1"
+        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <ul id="messages" role="list">
+      <li class="online">
+        <div aria-hidden="true" class="avatar"><img alt="" src="https://i.pravatar.cc/200?img=13"></div>
+        <div class="name-message">
+          <h2>Rafel Jay<span class="visually-hidden"> (online)</span></h2>
+          <p><span class="visually-hidden">Last message: </span>Hi there, how are you?</p>
+        </div>
+        <div class="when"><span class="visually-hidden">Sent: </span><time datetime="2024-01-24T20:28:02.836Z">4 days
+            ago</time></div>
+      </li>
+      <li class="away">
+        <div aria-hidden="true" class="avatar"><img alt="" src="https://i.pravatar.cc/200?img=51"></div>
+        <div class="name-message">
+          <h2>Frank Johnson<span class="visually-hidden"> (away)</span></h2>
+          <p><span class="visually-hidden">Last message: </span>How was the trip?</p>
+        </div>
+        <div class="when"><span class="visually-hidden">Sent: </span><time datetime="2024-01-23T20:28:02.836Z">5 days
+            ago</time></div>
+      </li>
+      <li class="online">
+        <div aria-hidden="true" class="avatar"><img alt="" src="https://i.pravatar.cc/200?img=28"></div>
+        <div class="name-message">
+          <h2>Ashley Pierce<span class="visually-hidden"> (online)</span></h2>
+          <p><span class="visually-hidden">Last message: </span>I hope you are well.</p>
+        </div>
+        <div class="when"><span class="visually-hidden">Sent: </span><time datetime="2022-03-12T10:24:01.396Z">Mar 12,
+            2022</time></div>
+      </li>
+      <li class="offline">
+        <div aria-hidden="true" class="avatar"><img alt="" src="https://i.pravatar.cc/200?img=20"></div>
+        <div class="name-message">
+          <h2>Nancy Meyer<span class="visually-hidden"> (offline)</span></h2>
+          <p><span class="visually-hidden">Last message: </span>Thank you for answering.</p>
+        </div>
+        <div class="when"><span class="visually-hidden">Sent: </span><time datetime="2022-02-03T18:04:53.134Z">Feb 3,
+            2022</time></div>
+      </li>
+    </ul>
+  </main>
+  <aside id="status" role="status"></aside>
+  <dialog id="settings-modal" aria-describedby="settings-title">
+    <form>
+      <button class="close-button" formmethod="dialog">
+        <svg class="icon" width="24" height="24" aria-hidden="true" stroke-width="1" stroke="currentColor" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+        <span>close</span>
+      </button>
+      <h2 id="settings-title" class="settings-title">settings</h2>
+      <label for="settings-darkmode">dark mode</label>
+      <input id="settings-darkmode" class="toggle" type="checkbox">
+      <label for="settings-hue">accent color</label>
+      <div id="settings-hue-wrapper">
+        <div id="settings-hue-preview"></div>
+        <input id="settings-hue" type="range" min="0" max="360">
+      </div>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+
+
+  <style>
+    @import url("https://fonts.bunny.net/css2?family=Merriweather:wght@400;700&display=swap");
+    @import url("https://fonts.bunny.net/css2?family=Poppins:wght@500;700&display=swap");
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root,
+    [data-theme="light"] {
+      --font-1-family: Poppins, sans-serif;
+      --font-1-weight-normal: 500;
+      --font-1-weight-bold: 700;
+      --font-2-family: Merriweather, serif;
+      --font-2-weight-normal: 400;
+      --font-2-weight-bold: 700;
+      --line-height-small: 1.1;
+      --line-height-medium: 1.25;
+      --line-height-large: 1.5;
+      --border-width: 0.15rem;
+      --outline-offset: calc(0.5 * var(--border-width));
+      --stroke-width-icon: calc(0.8 * var(--border-width));
+      --radius-small: 0.25rem;
+      --radius-medium: 0.75rem;
+      --radius-large: 2rem;
+      --size-small: clamp(0.25rem, 3vw, 0.75rem);
+      --size-medium: clamp(0.5rem, 5vw, 1.5rem);
+      --size-large: clamp(0.5rem, 8vw, 4rem);
+      --speed-fast: 300ms;
+      --speed-medium: 500ms;
+      --speed-slow: 2000ms;
+      --timing-function-default: ease-in-out;
+      --l: 0.52;
+      /* base color lightness */
+      --c: 0.17;
+      /* base color chroma */
+      --h: 270;
+      /* base color hue */
+      --color-text-1: oklch(calc(var(--l) - 0.3) calc(var(--c) - 0.07) var(--h));
+      --color-text-2: oklch(calc(var(--l) - 0.3) calc(var(--c) - 0.07) var(--h) / 0.5);
+      --color-text-button: #fff;
+      --color-background-1: oklch(calc(var(--l) + 0.45) calc(var(--c) - 0.15) var(--h));
+      --color-background-2: #fff;
+      --color-background-modal: var(--color-background-2);
+      --color-accent-1: oklch(var(--l) var(--c) var(--h));
+      --color-offline: #d1d1d1;
+      --color-online: #3fdea5;
+      --color-away: #de783f;
+      --color-status: var(--color-offline);
+      --filter-hover: brightness(0.9) contrast(1.5) saturate(0.9);
+      --filter-image: none;
+      --shadow-1: 0 1.25rem 3rem -2rem var(--color-status);
+      --shadow-modal: 0 0 2rem oklch(var(--l) 0.025 var(--h) / 0.75);
+      color: var(--color-text-1);
+      color-scheme: only light;
+    }
+
+    :root.online {
+      --color-status: var(--color-online);
+    }
+
+    :root.away {
+      --color-status: var(--color-away);
+    }
+
+    ::backdrop,
+    [data-theme="light"] ::backdrop {
+      backdrop-filter: blur(3px);
+      background-color: #dddb;
+    }
+
+    [data-theme="dark"] {
+      --l: 0.66;
+      --color-text-1: #bbb;
+      --color-text-2: #777;
+      --color-text-button: #000;
+      --color-background-1: oklch(calc(var(--l) - 0.34) calc(var(--c) - 0.13) var(--h));
+      --color-background-2: oklch(calc(var(--l) - 0.46) calc(var(--c) - 0.13) var(--h));
+      --color-offline: #666;
+      --color-online: #008b63;
+      --color-away: #c15e22;
+      --filter-hover: brightness(1.2) contrast(1.5) saturate(0.9);
+      --filter-image: brightness(0.8);
+      --shadow-modal: 0 0 2rem var(--border-width) oklch(0.1 0.025 var(--h) / 0.75);
+      color: var(--color-text-1);
+      color-scheme: only dark;
+    }
+
+    [data-theme="dark"] ::backdrop {
+      background-color: #111a;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    :focus {
+      outline-offset: var(--outline-offset);
+    }
+
+    /* Visually hide text while keeping it accessible */
+    /* Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+    .visually-hidden:not(:focus):not(:active) {
+      /* shrink to a 1px square */
+      width: 1px;
+      height: 1px;
+
+      /* hide any resulting overflow */
+      overflow: hidden;
+
+      /* clip the element to remove any visual trace */
+      clip: rect(0 0 0 0);
+      /* for IE only */
+      clip-path: inset(50%);
+
+      /* remove from page flow so it doesn’t affect surrounding layout */
+      position: absolute;
+
+      /* ensure proper text announcement by screen readers */
+      white-space: nowrap;
+    }
+
+    img,
+    svg {
+      block-size: auto;
+      max-inline-size: 100%;
+    }
+
+    img,
+    svg:not(.icon) {
+      filter: var(--filter-image);
+    }
+
+    svg.icon {
+      stroke-width: var(--stroke-width-icon);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-1-family);
+      font-weight: var(--font-1-weight-bold);
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    input,
+    textarea {
+      background-color: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      margin: 0;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="reset"]):not([type="submit"]):not([type="button"]),
+    textarea {
+      block-size: 3rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: var(--radius-small);
+      display: flex;
+      inline-size: 100%;
+      max-inline-size: 100%;
+      padding-inline: 1rem;
+    }
+
+    input[type="checkbox"] {
+      align-items: center;
+      appearance: none;
+      block-size: 1.8rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: var(--radius-small);
+      cursor: pointer;
+      display: flex;
+      flex-shrink: 0;
+      inline-size: 1.8rem;
+      justify-content: center;
+    }
+
+    input[type="checkbox"]:checked::before {
+      color: var(--color-accent-1);
+      content: "\2713";
+      font-size: 1.4rem;
+      font-weight: var(--font-1-weight-bold);
+    }
+
+    input[type="checkbox"].toggle {
+      border-radius: 0.9rem;
+      inline-size: 3.25rem;
+      justify-content: start;
+      margin: 0;
+      padding: 0.2rem;
+    }
+
+    input[type="checkbox"].toggle::before {
+      background-color: currentColor;
+      block-size: calc(1.6rem - 2 * var(--border-width));
+      border-radius: 50%;
+      content: "";
+      flex-shrink: 0;
+      inline-size: calc(1.6rem - 2 * var(--border-width));
+      transition: all var(--speed-fast) var(--timing-function-default);
+    }
+
+    input[type="checkbox"].toggle:checked::before {
+      background-color: var(--color-accent-1);
+      margin-left: 1.25rem;
+    }
+
+    input[type="radio"] {
+      align-items: center;
+      appearance: none;
+      block-size: 1.8rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      flex-shrink: 0;
+      inline-size: 1.8rem;
+      justify-content: center;
+    }
+
+    input[type="radio"]:checked::before {
+      background-color: var(--color-accent-1);
+      block-size: calc(1.6rem - 2 * var(--border-width));
+      border-radius: 50%;
+      content: "";
+      flex-shrink: 0;
+      inline-size: calc(1.6rem - 2 * var(--border-width));
+      transition: all var(--speed-fast) var(--timing-function-default);
+    }
+
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+      align-items: center;
+      appearance: none;
+      background: none;
+      background-color: var(--color-text-1);
+      border: none;
+      border-color: transparent;
+      border-radius: var(--radius-medium);
+      color: var(--color-text-button);
+      cursor: pointer;
+      display: flex;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      justify-content: center;
+      min-block-size: 4rem;
+      padding-block: 0.25rem;
+      padding-inline: 1rem;
+      transition: all var(--speed-fast) var(--timing-function-default);
+      gap: 0.25rem;
+    }
+
+    button:focus-visible,
+    button:hover,
+    input[type="button"]:focus-visible,
+    input[type="button"]:hover,
+    input[type="reset"]:focus-visible,
+    input[type="reset"]:hover,
+    input[type="submit"]:focus-visible,
+    input[type="submit"]:hover {
+      filter: var(--filter-hover);
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    dialog[open] {
+      animation: var(--speed-fast) var(--timing-function-default) 0s backwards scale-up;
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      inset: 0;
+      max-block-size: 100%;
+      max-inline-size: 100%;
+      overflow: visible;
+      padding: 0;
+      position: fixed;
+    }
+
+    dialog>* {
+      background-color: var(--color-background-modal);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-modal);
+      display: grid;
+      padding: var(--size-medium);
+      position: relative;
+      max-block-size: 100vh;
+      overflow: auto;
+    }
+
+    .hiding {
+      animation: var(--speed-fast) var(--timing-function-default) 0s backwards scale-down !important;
+    }
+
+    body {
+      accent-color: var(--color-accent-1);
+      align-items: center;
+      background-color: var(--color-background-1);
+      display: grid;
+      font-family: var(--font-1-family);
+      font-weight: var(--font-1-weight-normal);
+      justify-content: center;
+      line-height: var(--line-height-medium);
+      margin: 0;
+      min-block-size: 100vh;
+      padding: 0.5rem;
+      padding-block-end: 1rem;
+    }
+
+    main {
+      background-color: var(--color-background-2);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-1);
+      display: grid;
+      inline-size: 100%;
+      max-inline-size: 40rem;
+      padding: var(--size-large);
+      gap: var(--size-medium);
+      position: relative;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-status);
+      border-radius: var(--radius-large);
+      z-index: -1;
+      transform: translate(-3rem, -4rem);
+      block-size: 80%;
+      transition: background-color var(--speed-slow) var(--timing-function-default);
+    }
+
+    h1 {
+      font-family: var(--font-2-family);
+      font-size: 1.25rem;
+      animation: var(--speed-medium) var(--timing-function-default) 0s backwards scale-up;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    h2 span {
+      display: none;
+    }
+
+    html.online h2 span {
+      display: initial;
+    }
+
+    main button {
+      animation: var(--speed-medium) var(--timing-function-default) calc(0.5 * var(--speed-fast)) backwards scale-up;
+    }
+
+    #messages {
+      display: grid;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #messages li {
+      animation: var(--speed-medium) var(--timing-function-default) 0s backwards scale-up;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: var(--size-small);
+      margin-inline: calc(-1 * var(--size-small));
+      flex-wrap: wrap;
+      border-radius: var(--radius-medium);
+      transition: background-color var(--speed-medium) var(--timing-function-default);
+    }
+
+    #messages li:hover,
+    #messages li.hover {
+      background-color: var(--color-background-1);
+    }
+
+    #messages li:nth-of-type(1) {
+      animation-delay: calc(1 * var(--speed-fast));
+    }
+
+    #messages li:nth-of-type(2) {
+      animation-delay: calc(1.5 * var(--speed-fast));
+    }
+
+    #messages li:nth-of-type(3) {
+      animation-delay: calc(2 * var(--speed-fast));
+    }
+
+    #messages li:nth-of-type(4) {
+      animation-delay: calc(2.5 * var(--speed-fast));
+    }
+
+    #messages .avatar {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    #messages .avatar::after {
+      content: "";
+      block-size: 0.9rem;
+      inline-size: 0.9rem;
+      position: absolute;
+      inset-block-start: var(--border-width);
+      inset-inline-end: var(--border-width);
+      border-radius: 50%;
+      background-color: var(--color-offline);
+      box-shadow: 0 0 0 var(--border-width) var(--color-background-2);
+      scale: 0;
+      opacity: 0;
+      transition: scale var(--speed-medium) var(--timing-function-default);
+    }
+
+    .online #messages .avatar::after {
+      scale: 1;
+      opacity: 1;
+    }
+
+    #messages .online .avatar::after {
+      background-color: var(--color-online);
+    }
+
+    #messages .away .avatar::after {
+      background-color: var(--color-away);
+    }
+
+    #messages img {
+      block-size: 4rem;
+      inline-size: 4rem;
+      border-radius: 50%;
+      display: flex;
+    }
+
+    #messages .name-message {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    #messages .when {
+      color: var(--color-text-2);
+      margin-inline-start: auto;
+      font-size: 0.9rem;
+    }
+
+    #status {
+      position: fixed;
+      inset-block-start: 0;
+      inset-inline: 0;
+      background-color: var(--color-background-2);
+      padding-block: var(--size-small);
+      padding-inline: var(--size-medium);
+      border-end-start-radius: var(--radius-large);
+      border-end-end-radius: var(--radius-large);
+      display: grid;
+      text-align: center;
+      inline-size: fit-content;
+      margin-inline: auto;
+      z-index: 9999;
+    }
+
+    #status:empty {
+      display: none;
+    }
+
+    #settings-modal h2 {
+      text-transform: capitalize;
+    }
+
+    #settings-modal p {
+      margin: 0;
+      text-transform: capitalize;
+    }
+
+    #settings-modal label {
+      display: block;
+      margin-block: 1rem 0.25rem;
+      text-transform: capitalize;
+    }
+
+    .settings-open-button {
+      background-color: var(--color-background-1);
+      block-size: 3rem;
+      border: 0 solid currentColor;
+      color: inherit;
+      inline-size: auto;
+      inset-block-end: 0.5rem;
+      inset-inline-start: 0.5rem;
+      min-inline-size: 3rem;
+      padding-inline: 0.75rem;
+      position: fixed;
+    }
+
+    .settings-open-button:focus-visible,
+    .settings-open-button:hover {
+      background-color: var(--color-background-1);
+      border-width: var(--border-width);
+    }
+
+    .settings-open-button span {
+      padding-inline-start: 0.25rem;
+      text-transform: capitalize;
+    }
+
+    .settings-open-button svg,
+    .close-button svg {
+      block-size: auto;
+      inline-size: 1.5rem;
+    }
+
+    .settings-open-button:not(:hover):not(:focus):not(:active):not(:focus-within) span,
+    .close-button span {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .close-button {
+      background-color: transparent;
+      block-size: 3rem;
+      border-radius: 100vmax;
+      color: inherit;
+      inline-size: 3rem;
+      inset-block-start: 0.25rem;
+      inset-inline-end: 0.25rem;
+      padding: 0;
+      position: absolute;
+    }
+
+    .close-button:focus-visible,
+    .close-button:hover {
+      color: var(--color-background-modal);
+    }
+
+    #settings-hue-wrapper {
+      align-items: center;
+      display: flex;
+    }
+
+    #settings-hue {
+      -webkit-appearance: none;
+      background-image: linear-gradient(to right, oklch(var(--l) var(--c) 0), oklch(var(--l) var(--c) 90), oklch(var(--l) var(--c) 180), oklch(var(--l) var(--c) 270), oklch(var(--l) var(--c) 360));
+      block-size: 1.8rem;
+      border: none;
+      border-radius: var(--radius-small);
+      color: inherit;
+      cursor: crosshair;
+      display: flex;
+      inline-size: 17.5rem;
+      margin-inline: 0;
+      max-inline-size: 100%;
+      padding: 0;
+    }
+
+    #settings-hue::-moz-range-thumb {
+      background: transparent;
+      border: var(--border-width) solid currentColor;
+      border-radius: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+      height: 1.8rem;
+      width: var(--radius-small);
+    }
+
+    #settings-hue::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: transparent;
+      border: var(--border-width) solid currentColor;
+      border-radius: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+      height: 1.8rem;
+      width: var(--border-width);
+    }
+
+    #settings-hue::-ms-thumb {
+      background: transparent;
+      border: var(--border-width) solid currentColor;
+      border-radius: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+      height: 1.8rem;
+      width: var(--border-width);
+    }
+
+    #settings-hue-preview {
+      background-color: var(--color-accent-1);
+      block-size: 2rem;
+      border-radius: var(--radius-small);
+      display: flex;
+      inline-size: 2rem;
+      margin-inline-end: 0.25rem;
+    }
+
+    @keyframes scale-up {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes scale-down {
+      from {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+  </style>
+  <script type="module">
+    "use strict";
+    addEventListener("DOMContentLoaded", () => {
+      //// contact list
+      let contactList = [
+        {
+          id: 1,
+          name: "Rafel Jay",
+          avatar: "https://i.pravatar.cc/200?img=13",
+          status: "online",
+        },
+        {
+          id: 2,
+          name: "Frank Johnson",
+          avatar: "https://i.pravatar.cc/200?img=51",
+          status: "away",
+        },
+        {
+          id: 3,
+          name: "Ashley Pierce",
+          avatar: "https://i.pravatar.cc/200?img=28",
+          status: "online",
+        },
+        {
+          id: 4,
+          name: "Nancy Meyer",
+          avatar: "https://i.pravatar.cc/200?img=20",
+          status: "offline",
+        },
+      ];
+
+      //// messages
+      let now = new Date();
+      let messages = [
+        {
+          contactId: 1,
+          dateTime: new Date(now.getTime() - 4 * 24 * 60 * 60 * 1000).toISOString(),
+          message: "Hi there, how are you?",
+        },
+        {
+          contactId: 2,
+          dateTime: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+          message: "How was the trip?",
+        },
+        {
+          contactId: 3,
+          dateTime: "2022-03-12T10:24:01.396Z",
+          message: "I hope you are well.",
+        },
+        {
+          contactId: 4,
+          dateTime: "2022-02-03T18:04:53.134Z",
+          message: "Thank you for answering.",
+        },
+      ];
+      const messagesDOM = document.querySelector("#messages");
+
+      //// generate messages
+      function ago(date) {
+        var seconds = Math.floor((new Date() - date) / 1000);
+        var interval = Math.floor(seconds / 31536000);
+
+        if (interval === 1) {
+          //return interval + " year ago";
+          return date.toLocaleDateString("en-us", { year: "numeric", month: "short", day: "numeric" });
+        }
+        if (interval > 1) {
+          //return interval + " years ago";
+          return date.toLocaleDateString("en-us", { year: "numeric", month: "short", day: "numeric" });
+        }
+
+        interval = Math.floor(seconds / 2592000);
+        if (interval === 1) {
+          //return interval + " month ago";
+          return date.toLocaleDateString("en-us", { year: "numeric", month: "short", day: "numeric" });
+        }
+        if (interval > 1) {
+          //return interval + " months ago";
+          return date.toLocaleDateString("en-us", { year: "numeric", month: "short", day: "numeric" });
+        }
+
+        interval = Math.floor(seconds / 86400);
+        if (interval === 1) {
+          return interval + " day ago";
+        }
+        if (interval > 1) {
+          return interval + " days ago";
+        }
+
+        interval = Math.floor(seconds / 3600);
+        if (interval === 1) {
+          return interval + " hour ago";
+        }
+        if (interval > 1) {
+          return interval + " hours ago";
+        }
+
+        interval = Math.floor(seconds / 60);
+        if (interval === 1) {
+          return interval + " minute ago";
+        }
+        if (interval > 1) {
+          return interval + " minutes ago";
+        }
+
+        return Math.floor(seconds) + " seconds ago";
+      }
+
+      function generateMessageHTML(message) {
+        const contact = contactList.find((contact) => contact.id === message.contactId);
+        let html = `<li class="${contact.status}">`;
+        html += `<div aria-hidden="true" class="avatar"><img alt="" src="${contact.avatar}"></div>`;
+        html += `<div class="name-message">`;
+        html += `<h2>${contact.name}<span class="visually-hidden"> (${contact.status})</span></h2>`;
+        html += `<p><span class="visually-hidden">Last message: </span>${message.message}</p>`;
+        html += `</div>`;
+        html += `<div class="when"><span class="visually-hidden">Sent: </span><time datetime="${message.dateTime}">${ago(new Date(message.dateTime))}</time></div>`;
+        html += `</li>`;
+        return html;
+      }
+
+      function generateMessagesHTML(messages) {
+        let html = ``;
+        messages.forEach((message) => {
+          html += generateMessageHTML(message);
+        });
+        return html;
+      }
+
+      messagesDOM.innerHTML = generateMessagesHTML(messages);
+
+      //// connect
+      const statusDOM = document.querySelector("#status");
+      setTimeout(() => {
+        statusDOM.innerHTML = "Connecting...";
+      }, "500");
+
+      setTimeout(() => {
+        statusDOM.innerHTML = "Connected. Your status: Online.";
+        document.documentElement.classList.add("online");
+      }, "3000");
+
+      setTimeout(() => {
+        statusDOM.innerHTML = "";
+      }, "7000");
+
+      //// thumbnail hack
+      if (navigator.userAgent.includes("Headless")) {
+        document.documentElement.style.setProperty("--speed-fast", "0s");
+        document.documentElement.style.setProperty("--speed-medium", "0s");
+        document.documentElement.style.setProperty("--speed-slow", "0s");
+        //const workInProgress = `<span style="position: absolute; inset-inline: 0; inset-block-end: 0; inline-size: 100%; color: #fff; background-color: #2c2446; font-size: 3rem; font-weight: bold; text-align: center; padding: 0.5rem;">Work in progress…<span>`;
+        //document.body.insertAdjacentHTML("beforeend", workInProgress);
+        document.body.style.setProperty("padding-block-end", "0");
+        document.body.style.setProperty("margin-block-start", "152px");
+        document.body.style.setProperty("min-block-size", "0");
+        document.body.style.setProperty("block-size", "calc(100vh - 304px)");
+        document.body.style.setProperty("position", "relative");
+        document.documentElement.classList.add("online");
+        document.querySelector("#messages li:nth-of-type(2)").classList.add("hover");
+      }
+
+      //// closing
+      // closing dialog
+      document.querySelectorAll("dialog").forEach((dialog) => {
+        // close .hiding dialog after animation ends
+        dialog.addEventListener("animationend", (event) => {
+          if (event.target.classList.contains("hiding")) {
+            event.target.close();
+            event.target.classList.remove("hiding");
+          }
+        });
+        // add .hiding class when clicked on modal backdrop
+        dialog.addEventListener("click", (event) => {
+          const dialog = event.target.closest("dialog");
+          const rect = dialog.getBoundingClientRect();
+          const isInDialog = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+          if (!isInDialog && event.target.tagName === "DIALOG") {
+            dialog.classList.add("hiding");
+          }
+        });
+      });
+      // closing .hideable
+      document.querySelectorAll(".hideable").forEach((element) => {
+        // close .hiding after animation ends
+        element.addEventListener("animationend", (event) => {
+          if (event.target.classList.contains("hiding")) {
+            event.target.hidden = true;
+            event.target.classList.remove("hiding");
+          }
+        });
+      });
+      /// close buttons
+      document.querySelectorAll(".close-button").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.target.closest("button").blur();
+          event.target.closest("dialog, .hideable").classList.add("hiding");
+        });
+      });
+
+      //// settings
+      /// open settings modal
+      const settingsOpenButtonHTML = `
+	  <button class="settings-open-button">
+			<svg class="icon" width="24" height="24" stroke-width="1" aria-hidden="true" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+				<path d="M6 4v4"></path>
+				<path d="M6 12v8"></path>
+				<path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+				<path d="M12 4v10"></path>
+				<path d="M12 18v2"></path>
+				<path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+				<path d="M18 4v1"></path>
+				<path d="M18 9v11"></path>
+			</svg>
+			<span>settings</span>
+		</button>`;
+      document.body.insertAdjacentHTML("beforeend", settingsOpenButtonHTML);
+      document.querySelectorAll(".settings-open-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelector("#settings-modal").showModal();
+        });
+      });
+
+      /// dark mode
+      const settingsDarkmodeDOM = document.querySelector("#settings-darkmode");
+      if (document.documentElement.getAttribute("data-theme") === "dark") settingsDarkmodeDOM.checked = true;
+      else settingsDarkmodeDOM.checked = false;
+      settingsDarkmodeDOM.addEventListener("change", () => {
+        if (settingsDarkmodeDOM.checked) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      });
+
+      /// accent color
+      const settingsHueDOM = document.querySelector("#settings-hue");
+      settingsHueDOM.value = getComputedStyle(document.documentElement).getPropertyValue("--h");
+      settingsHueDOM.addEventListener("input", () => {
+        document.documentElement.style.setProperty("--h", settingsHueDOM.value);
+      });
+    });
+
+  </script>
+  <button class="settings-open-button">
+    <svg class="icon" width="24" height="24" stroke-width="1" aria-hidden="true" stroke="currentColor" fill="none"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M6 4v4"></path>
+      <path d="M6 12v8"></path>
+      <path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M12 4v10"></path>
+      <path d="M12 18v2"></path>
+      <path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M18 4v1"></path>
+      <path d="M18 9v11"></path>
+    </svg>
+    <span>settings</span>
+  </button>
+</body>
+
+</html>

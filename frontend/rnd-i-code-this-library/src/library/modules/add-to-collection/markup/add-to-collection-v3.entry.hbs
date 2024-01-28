@@ -1,0 +1,1034 @@
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <dialog id="collections" class="" open="">
+    <form>
+      <button class="close-button" formmethod="dialog">
+        <svg class="icon" width="24" height="24" aria-hidden="true" stroke-width="1" stroke="currentColor" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+        <span>close</span>
+      </button>
+      <h1>Add to collection</h1>
+      <ul id="collections-list" role="list">
+        <li>
+          <img width="160" height="90" alt="Dashboard thumbnail"
+            src="https://shismqklzntzxworibfn.supabase.co/storage/v1/object/public/previews/82f968bc-3569-4455-ab4b-f66ea9e60ef4.png">
+          <div>
+            <h2 id="dashboards">Dashboards</h2>
+            <p>24 items • Updated yesterday</p>
+          </div>
+          <input type="radio" name="collection" value="dahsboards" aria-labelledby="dashboards">
+        </li>
+        <li>
+          <img width="160" height="90" alt="Authentication thumbnail"
+            src="https://shismqklzntzxworibfn.supabase.co/storage/v1/object/public/previews/9c815be3-64dc-46df-85df-a1d12475d165.png">
+          <div>
+            <h2 id="authentication">Authentication</h2>
+            <p>7 items • Updated May 9, 2021</p>
+          </div>
+          <input type="radio" name="collection" value="authentication" aria-labelledby="authentication" checked="">
+        </li>
+        <li>
+          <img width="160" height="90" alt="UI Kit"
+            src="https://shismqklzntzxworibfn.supabase.co/storage/v1/object/public/previews/fc994d65-e8d3-41d6-9234-96ef8d0661c5.png">
+          <div>
+            <h2 id="ui-kit">UI Kit</h2>
+            <p>9 items • Updated May 3, 2021</p>
+          </div>
+          <input type="radio" name="collection" aria-labelledby="ui-kit">
+        </li>
+      </ul>
+      <div id="create-new" hidden="">
+        <div id="create-new-image" aria-hidden="true">?</div>
+        <div>
+          <input id="new" name="new">
+          <label for="new">New collection name</label>
+        </div>
+      </div>
+      <div id="buttons">
+        <button id="create-new-button" type="button">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1"
+            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 5l0 14"></path>
+            <path d="M5 12l14 0"></path>
+          </svg>
+          Create new
+        </button>
+        <button id="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog id="settings-modal">
+    <form>
+      <button class="close-button" formmethod="dialog">
+        <svg class="icon" width="24" height="24" aria-hidden="true" stroke-width="1" stroke="currentColor" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+        <span>close</span>
+      </button>
+      <h2 class="settings-title">settings</h2>
+      <label for="settings-darkmode">dark mode</label>
+      <input id="settings-darkmode" class="toggle" type="checkbox">
+      <label for="settings-hue">accent color</label>
+      <div id="settings-hue-wrapper">
+        <div id="settings-hue-preview"></div>
+        <input id="settings-hue" type="range" min="0" max="360">
+      </div>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root,
+    [data-theme="light"] {
+      --font-1-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      --font-1-weight-normal: 400;
+      --font-1-weight-bold: 700;
+      --line-height-small: 1.1;
+      --line-height-medium: 1.25;
+      --line-height-large: 1.5;
+      --border-width: 0.075rem;
+      --outline-offset: 0.1rem;
+      --stroke-width-icon: 0.11rem;
+      --radius-small: 0.25rem;
+      --radius-medium: 0.5rem;
+      --radius-large: 1rem;
+      --size-small: clamp(0.5rem, 3vw, 1rem);
+      --size-medium: clamp(0.5rem, 5vw, 1.5rem);
+      --size-large: clamp(0.5rem, 6vw, 3.5rem);
+      --speed-fast: 300ms;
+      --speed-medium: 500ms;
+      --speed-slow: 1500ms;
+      --timing-function-default: ease-in-out;
+      --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E%0A");
+      --l: 0.557;
+      /* base color lightness */
+      --c: 0.207;
+      /* base color chroma */
+      --h: 295;
+      /* base color hue */
+      --color-text-1: #333;
+      --color-text-2: #777;
+      --color-text-button: #fff;
+      --color-background-1: oklch(calc(var(--l) + 0.41) calc(var(--c) - 0.13) var(--h));
+      --color-background-2: #fff;
+      --color-background-3: oklch(calc(var(--l) + 0) calc(var(--c) - 0.05) var(--h) / 0.075);
+      --color-background-modal: var(--color-background-2);
+      --color-accent-1: oklch(var(--l) var(--c) var(--h));
+      --color-link-1: oklch(var(--l) var(--c) var(--h));
+      --color-link-2: oklch(calc(var(--l) + 0) calc(var(--c) + 0) calc(var(--h) + 180));
+      --color-border-1: oklch(calc(var(--l) + 0) calc(var(--c) - 0.05) var(--h) / 0.2);
+      --filter-hover: brightness(0.9) contrast(1.5) saturate(0.9);
+      --filter-image: none;
+      --gradient-1: linear-gradient(315deg, var(--color-background-1), var(--color-background-2));
+      --shadow-1: 0 0.5rem 1rem oklch(calc(var(--l) + 0) calc(var(--c) - 0.05) var(--h) / 0.75);
+      --shadow-2: 0 0 1rem var(--color-background-1);
+      --shadow-3: 0 0 0 0.5rem oklch(calc(var(--l) + 0) calc(var(--c) - 0.05) var(--h) / 0.2);
+      --shadow-modal: 0 0 2rem oklch(var(--l) 0.025 var(--h) / 0.75);
+      color: var(--color-text-1);
+      color-scheme: only light;
+    }
+
+    ::backdrop,
+    [data-theme="light"] ::backdrop {
+      backdrop-filter: blur(3px);
+      background-color: #dddb;
+    }
+
+    [data-theme="dark"] {
+      --l: 0.66;
+      --color-text-1: #eee;
+      --color-text-2: #444;
+      --color-background-1: oklch(calc(var(--l) - 0.36) calc(var(--c) - 0.159) var(--h));
+      --color-background-2: oklch(calc(var(--l) - 0.27) calc(var(--c) - 0.14) var(--h));
+      --color-background-3: oklch(calc(var(--l) - 0.45) calc(var(--c) - 0.12) var(--h) / 0.15);
+      --color-border-1: oklch(calc(var(--l) - 0.45) calc(var(--c) - 0.12) var(--h) / 0.25);
+      --filter-hover: brightness(1.2) contrast(1.5) saturate(0.9);
+      --filter-image: brightness(0.9);
+      --shadow-1: 0 0.5rem 1rem oklch(calc(var(--l) - 0.45) calc(var(--c) - 0.12) var(--h) / 0.75);
+      --shadow-2: 0 0.5rem 1rem oklch(calc(var(--l) - 0.45) calc(var(--c) - 0.12) var(--h) / 0.75);
+      --shadow-3: 0 0 0 0.5rem oklch(calc(var(--l) - 0.45) calc(var(--c) - 0.12) var(--h) / 0.25);
+      --shadow-modal: 0 0 2rem var(--border-width) oklch(0.1 0.025 var(--h) / 0.75);
+      color: var(--color-text-1);
+      color-scheme: only dark;
+    }
+
+    [data-theme="dark"] ::backdrop {
+      background-color: #111a;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    :focus {
+      outline-offset: var(--outline-offset);
+    }
+
+    /* Visually hide text while keeping it accessible */
+    /* Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+    .visually-hidden:not(:focus):not(:active) {
+      /* shrink to a 1px square */
+      width: 1px;
+      height: 1px;
+
+      /* hide any resulting overflow */
+      overflow: hidden;
+
+      /* clip the element to remove any visual trace */
+      clip: rect(0 0 0 0);
+      /* for IE only */
+      clip-path: inset(50%);
+
+      /* remove from page flow so it doesn’t affect surrounding layout */
+      position: absolute;
+
+      /* ensure proper text announcement by screen readers */
+      white-space: nowrap;
+    }
+
+    img,
+    svg {
+      block-size: auto;
+      max-inline-size: 100%;
+    }
+
+    img,
+    svg:not(.icon) {
+      filter: var(--filter-image);
+    }
+
+    svg.icon {
+      stroke-width: var(--stroke-width-icon);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-1-family);
+      font-weight: var(--font-1-weight-bold);
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    a {
+      color: var(--color-link-1);
+      transition: color var(--speed-fast) var(--timing-function-default);
+    }
+
+    a:focus-visible,
+    a:hover {
+      filter: var(--filter-hover);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    input,
+    textarea {
+      background-color: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      margin: 0;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="reset"]):not([type="submit"]):not([type="button"]),
+    textarea {
+      block-size: 3rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: var(--radius-small);
+      display: flex;
+      inline-size: 100%;
+      max-inline-size: 100%;
+      padding-inline: 1rem;
+    }
+
+    textarea {
+      block-size: 6rem;
+    }
+
+    input[type="checkbox"] {
+      align-items: center;
+      appearance: none;
+      block-size: 1.8rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: var(--radius-small);
+      cursor: pointer;
+      display: flex;
+      flex-shrink: 0;
+      inline-size: 1.8rem;
+      justify-content: center;
+    }
+
+    input[type="checkbox"]:checked::before {
+      color: var(--color-accent-1);
+      content: "\2713";
+      font-size: 1.4rem;
+      font-weight: var(--font-1-weight-bold);
+    }
+
+    input[type="checkbox"].toggle {
+      border-radius: 0.9rem;
+      inline-size: 3.25rem;
+      justify-content: start;
+      margin: 0;
+      padding: 0.2rem;
+    }
+
+    input[type="checkbox"].toggle::before {
+      background-color: currentColor;
+      block-size: calc(1.6rem - 2 * var(--border-width));
+      border-radius: 50%;
+      content: "";
+      flex-shrink: 0;
+      inline-size: calc(1.6rem - 2 * var(--border-width));
+      transition: all var(--speed-fast) var(--timing-function-default);
+    }
+
+    input[type="checkbox"].toggle:checked::before {
+      background-color: var(--color-accent-1);
+      margin-left: 1.25rem;
+    }
+
+    input[type="radio"] {
+      align-items: center;
+      appearance: none;
+      block-size: 1.8rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      flex-shrink: 0;
+      inline-size: 1.8rem;
+      justify-content: center;
+    }
+
+    input[type="radio"]:checked::before {
+      background-color: var(--color-accent-1);
+      block-size: calc(1.6rem - 2 * var(--border-width));
+      border-radius: 50%;
+      content: "";
+      flex-shrink: 0;
+      inline-size: calc(1.6rem - 2 * var(--border-width));
+      transition: all var(--speed-fast) var(--timing-function-default);
+    }
+
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+      align-items: center;
+      appearance: none;
+      background: none;
+      background-color: var(--color-link-1);
+      border: none;
+      border-color: transparent;
+      border-radius: var(--radius-small);
+      color: var(--color-text-button);
+      cursor: pointer;
+      display: flex;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      justify-content: center;
+      min-block-size: 3rem;
+      padding-block: 0.25rem;
+      padding-inline: 1rem;
+      transition: all var(--speed-fast) var(--timing-function-default);
+      gap: 0.25rem;
+    }
+
+    button:focus-visible,
+    button:hover,
+    input[type="button"]:focus-visible,
+    input[type="button"]:hover,
+    input[type="reset"]:focus-visible,
+    input[type="reset"]:hover,
+    input[type="submit"]:focus-visible,
+    input[type="submit"]:hover {
+      filter: var(--filter-hover);
+    }
+
+    button.outline,
+    input[type="button"].outline,
+    input[type="reset"].outline,
+    input[type="submit"].outline {
+      background-color: transparent;
+      border: var(--border-width) solid currentColor;
+      color: var(--color-link-1);
+    }
+
+    button.outline:focus-visible,
+    button.outline:hover,
+    input[type="button"].outline:focus-visible,
+    input[type="button"].outline:hover,
+    input[type="reset"].outline:focus-visible,
+    input[type="reset"].outline:hover,
+    input[type="submit"].outline:focus-visible,
+    input[type="submit"].outline:hover {
+      background-color: oklch(var(--l) var(--c) var(--h) / 0.2);
+    }
+
+    button.secondary,
+    input[type="button"].secondary,
+    input[type="reset"].secondary,
+    input[type="submit"].secondary {
+      background-color: var(--color-link-2);
+    }
+
+    button.secondary:focus-visible,
+    button.secondary:hover,
+    input[type="button"].secondary:focus-visible,
+    input[type="button"].secondary:hover,
+    input[type="reset"].secondary:focus-visible,
+    input[type="reset"].secondary:hover,
+    input[type="submit"].secondary:focus-visible,
+    input[type="submit"].secondary:hover {
+      filter: var(--filter-hover);
+    }
+
+    button.link {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      color: var(--color-link-1);
+      display: inline;
+      font-weight: var(--font-1-weight-normal);
+      inline-size: auto;
+      min-block-size: 0;
+      padding: 0;
+      text-align: inherit;
+    }
+
+    button.link:focus-visible,
+    button.link:hover {
+      text-decoration: underline;
+    }
+
+    button[disabled],
+    input[type="button"][disabled],
+    input[type="reset"][disabled],
+    input[type="submit"][disabled] {
+      background-color: transparent;
+      color: currentColor;
+      cursor: not-allowed;
+    }
+
+    select {
+      appearance: none;
+      background-color: transparent;
+      background-image: conic-gradient(from -40deg, currentColor 80deg, transparent 80deg);
+      background-position: calc(100% - 1rem) calc(50% + 0.25rem);
+      background-repeat: no-repeat;
+      background-size: 1rem 1rem;
+      block-size: 3rem;
+      border: var(--border-width) solid currentColor;
+      border-radius: var(--radius-small);
+      color: inherit;
+      cursor: pointer;
+      display: flex;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      inline-size: 100%;
+      margin-block: var(--size-medium);
+      max-inline-size: 100%;
+      padding-inline: 1rem 3rem;
+    }
+
+    select:focus {
+      background-image: conic-gradient(from 140deg, currentColor 80deg, transparent 80deg);
+      background-position: calc(100% - 1rem) calc(50% - 0.25rem);
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    dialog[open] {
+      animation: var(--speed-fast) var(--timing-function-default) 0s backwards scale-up;
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      inset: 0;
+      max-block-size: 100%;
+      max-inline-size: 100%;
+      overflow: visible;
+      padding: 0;
+      position: fixed;
+    }
+
+    dialog>* {
+      background-color: var(--color-background-modal);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-modal);
+      display: grid;
+      padding: var(--size-large);
+      position: relative;
+      max-block-size: 100vh;
+      overflow: auto;
+    }
+
+    .hiding {
+      animation: var(--speed-fast) var(--timing-function-default) 0s backwards scale-down !important;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      accent-color: var(--color-accent-1);
+      align-items: center;
+      background-color: var(--color-background-1);
+      display: grid;
+      font-family: var(--font-1-family);
+      font-weight: var(--font-1-weight-normal);
+      justify-content: center;
+      line-height: var(--line-height-medium);
+      margin: 0;
+      min-block-size: 100vh;
+      padding: 0.5rem;
+      padding-block-end: 4rem;
+    }
+
+    h1 {
+      max-inline-size: 10rem;
+      margin-block-end: var(--size-large);
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    #collections-list {
+      display: grid;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #collections-list li {
+      position: relative;
+      padding: 0.5rem;
+      border: var(--border-width) solid transparent;
+      display: flex;
+      border-radius: var(--radius-medium);
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: all var(--speed-medium) var(--timing-function-default);
+    }
+
+    #collections-list li:has(:checked) {
+      border-color: var(--color-border-1);
+      background-color: var(--color-background-3);
+    }
+
+    #collections-list li:has(:focus-visible) {
+      outline: 0.2rem solid var(--color-accent-1);
+      outline-offset: var(--outline-offset);
+    }
+
+    #collections-list li::after,
+    #create-new::after {
+      content: "";
+      block-size: 2rem;
+      inline-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      border-radius: 50%;
+      margin-inline: auto 1.5rem;
+      margin-block: 0.5rem;
+      transition: all var(--speed-medium) var(--timing-function-default);
+      scale: 0;
+    }
+
+    #collections-list li:has(:checked)::after,
+    #create-new.selected::after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='%23fff' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l5 5l10 -10' /%3E%3C/svg%3E");
+      background-color: var(--color-accent-1);
+      box-shadow: var(--shadow-3);
+      scale: 1;
+      padding-block: 0.3rem;
+    }
+
+    #collections-list div {
+      min-inline-size: 15rem;
+    }
+
+    #collections-list input {
+      opacity: 0;
+      position: absolute;
+      inset: 0;
+      block-size: unset;
+      inline-size: unset;
+      border-radius: 0;
+    }
+
+    #collections-list img,
+    #create-new-image {
+      block-size: 5.625rem;
+      inline-size: 10rem;
+      border-radius: var(--radius-small);
+      flex-shrink: 0;
+    }
+
+    #create-new {
+      display: flex;
+      padding: 0.5rem;
+      border: var(--border-width) solid transparent;
+      border-radius: var(--radius-medium);
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      animation: var(--speed-medium) var(--timing-function-default) 0s backwards scale-up;
+      cursor: pointer;
+    }
+
+    #create-new.selected {
+      border-color: var(--color-border-1);
+      background-color: var(--color-background-3);
+    }
+
+    #create-new-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: clip;
+      font-size: 2.5rem;
+      font-weight: var(--font-1-weight-bold);
+    }
+
+    #create-new-image::before {
+      content: "";
+      display: flex;
+      position: absolute;
+      inset: 0;
+      background-color: currentColor;
+      opacity: 0.2;
+    }
+
+    #buttons {
+      display: flex;
+      margin-block-start: var(--size-large);
+      gap: 1rem;
+    }
+
+    #save {
+      margin-inline-start: auto;
+    }
+
+    #settings-modal h2 {
+      text-transform: capitalize;
+    }
+
+    #settings-modal p {
+      margin: 0;
+      text-transform: capitalize;
+    }
+
+    #settings-modal label {
+      display: block;
+      margin-block: 1rem 0.25rem;
+      text-transform: capitalize;
+    }
+
+    .settings-open-button {
+      background-color: var(--color-background-1);
+      block-size: 3rem;
+      border: 0 solid currentColor;
+      color: inherit;
+      inline-size: auto;
+      inset-block-end: 0.5rem;
+      inset-inline-start: 0.5rem;
+      min-inline-size: 3rem;
+      padding-inline: 0.75rem;
+      position: fixed;
+    }
+
+    .settings-open-button:focus-visible,
+    .settings-open-button:hover {
+      background-color: var(--color-background-1);
+      border-width: var(--border-width);
+    }
+
+    .settings-open-button span {
+      padding-inline-start: 0.25rem;
+      text-transform: capitalize;
+    }
+
+    .settings-open-button svg,
+    .close-button svg {
+      block-size: auto;
+      inline-size: 1.5rem;
+    }
+
+    .settings-open-button:not(:hover):not(:focus):not(:active):not(:focus-within) span,
+    .close-button span {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .close-button {
+      background-color: transparent;
+      block-size: 3rem;
+      border-radius: 100vmax;
+      color: inherit;
+      inline-size: 3rem;
+      inset-block-start: 0.25rem;
+      inset-inline-end: 0.25rem;
+      padding: 0;
+      position: absolute;
+    }
+
+    .close-button:focus-visible,
+    .close-button:hover {
+      color: var(--color-background-modal);
+    }
+
+    #settings-hue-wrapper {
+      align-items: center;
+      display: flex;
+    }
+
+    #settings-hue {
+      -webkit-appearance: none;
+      background-image: linear-gradient(to right, oklch(var(--l) var(--c) 0), oklch(var(--l) var(--c) 90), oklch(var(--l) var(--c) 180), oklch(var(--l) var(--c) 270), oklch(var(--l) var(--c) 360));
+      block-size: 1.8rem;
+      border: none;
+      border-radius: var(--radius-small);
+      color: inherit;
+      cursor: crosshair;
+      display: flex;
+      inline-size: 17.5rem;
+      margin-inline: 0;
+      max-inline-size: 100%;
+      padding: 0;
+    }
+
+    #settings-hue::-moz-range-thumb {
+      background: transparent;
+      border: var(--border-width) solid currentColor;
+      border-radius: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+      height: 1.8rem;
+      width: var(--radius-small);
+    }
+
+    #settings-hue::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: transparent;
+      border: var(--border-width) solid currentColor;
+      border-radius: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+      height: 1.8rem;
+      width: var(--border-width);
+    }
+
+    #settings-hue::-ms-thumb {
+      background: transparent;
+      border: var(--border-width) solid currentColor;
+      border-radius: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+      height: 1.8rem;
+      width: var(--border-width);
+    }
+
+    #settings-hue-preview {
+      background-color: var(--color-accent-1);
+      block-size: 2rem;
+      border-radius: var(--radius-largest);
+      display: flex;
+      inline-size: 2rem;
+      margin-inline-end: 0.25rem;
+    }
+
+    @keyframes scale-up {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes scale-down {
+      from {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes from-top {
+      from {
+        transform: translateY(-100vh);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes from-bottom {
+      from {
+        transform: translateY(100vh);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes from-left {
+      from {
+        transform: translateX(-100vw);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes from-right {
+      from {
+        transform: translateX(100vw);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @media (min-width: 40rem) {}
+  </style>
+  <script type="module">
+    "use strict";
+    addEventListener("DOMContentLoaded", () => {
+      //// thumbnail hack
+      if (navigator.userAgent.includes("Headless")) {
+        document.documentElement.style.setProperty("--speed-fast", "0s");
+        document.documentElement.style.setProperty("--speed-medium", "0s");
+        document.documentElement.style.setProperty("--speed-slow", "0s");
+        //const workInProgress = `<span style="position: absolute; inset-inline: 0; inset-block-end: 0; inline-size: 100%; color: #fff; background-color: #2c2446; font-size: 3rem; font-weight: bold; text-align: center; padding: 0.5rem;">Work in progress…<span>`;
+        //document.body.insertAdjacentHTML("beforeend", workInProgress);
+        document.body.style.setProperty("padding-block-end", "0");
+        document.body.style.setProperty("margin-block-start", "152px");
+        document.body.style.setProperty("min-block-size", "0");
+        document.body.style.setProperty("block-size", "calc(100vh - 304px)");
+        document.body.style.setProperty("position", "relative");
+      }
+
+      //// create new
+      document.querySelector("#create-new-button").addEventListener("click", (event) => {
+        document.querySelector("#create-new").hidden = false;
+        document.querySelector("#new").focus();
+        event.target.hidden = true;
+      });
+
+      document.querySelector("#new").addEventListener("input", (event) => {
+        if (event.target.value !== "") {
+          document.querySelectorAll("#collections-list input").forEach((radio) => {
+            radio.checked = false;
+          });
+          document.querySelector("#create-new").classList.add("selected");
+        } else {
+          document.querySelector("#create-new").classList.remove("selected");
+        }
+      });
+
+      document.querySelector("#new").addEventListener("focus", (event) => {
+        if (event.target.value !== "") {
+          document.querySelectorAll("#collections-list input").forEach((radio) => {
+            radio.checked = false;
+          });
+          document.querySelector("#create-new").classList.add("selected");
+        } else {
+          document.querySelector("#create-new").classList.remove("selected");
+        }
+      });
+
+      document.querySelectorAll("#collections-list input").forEach((radio) => {
+        radio.addEventListener("change", (event) => {
+          if (event.target.checked) document.querySelector("#create-new").classList.remove("selected");
+        });
+      });
+
+      document.querySelector("#collections form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        document.querySelector("#collections").classList.add("hiding");
+      });
+
+      document.querySelector("#collections").addEventListener("animationend", (event) => {
+        if (event.target.classList.contains("hiding")) {
+          setTimeout(() => {
+            event.target.showModal();
+          }, 2000);
+        }
+      });
+
+      document.querySelector("#create-new").addEventListener("click", (event) => {
+        document.querySelector("#new").focus();
+      });
+
+      //// closing
+      // closing dialog
+      document.querySelectorAll("dialog").forEach((dialog) => {
+        // close .hiding dialog after animation ends
+        dialog.addEventListener("animationend", (event) => {
+          if (event.target.classList.contains("hiding")) {
+            event.target.close();
+            event.target.classList.remove("hiding");
+          }
+        });
+        // add .hiding class when clicked on modal backdrop
+        dialog.addEventListener("click", (event) => {
+          const dialog = event.target.closest("dialog");
+          const rect = dialog.getBoundingClientRect();
+          const isInDialog = rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width;
+          if (!isInDialog && event.target.tagName === "DIALOG") {
+            dialog.classList.add("hiding");
+          }
+        });
+      });
+      // closing .hideable
+      document.querySelectorAll(".hideable").forEach((element) => {
+        // close .hiding after animation ends
+        element.addEventListener("animationend", (event) => {
+          if (event.target.classList.contains("hiding")) {
+            event.target.hidden = true;
+            event.target.classList.remove("hiding");
+          }
+        });
+      });
+      /// close buttons
+      document.querySelectorAll(".close-button").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.target.closest("button").blur();
+          event.target.closest("dialog, .hideable").classList.add("hiding");
+        });
+      });
+
+      //// settings
+      /// open settings modal
+      const settingsOpenButtonHTML = `
+	  <button class="settings-open-button">
+			<svg class="icon" width="24" height="24" stroke-width="1" aria-hidden="true" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+				<path d="M6 4v4"></path>
+				<path d="M6 12v8"></path>
+				<path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+				<path d="M12 4v10"></path>
+				<path d="M12 18v2"></path>
+				<path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+				<path d="M18 4v1"></path>
+				<path d="M18 9v11"></path>
+			</svg>
+			<span>settings</span>
+		</button>`;
+      document.body.insertAdjacentHTML("beforeend", settingsOpenButtonHTML);
+      document.querySelectorAll(".settings-open-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelector("#settings-modal").showModal();
+        });
+      });
+
+      /// dark mode
+      const settingsDarkmodeDOM = document.querySelector("#settings-darkmode");
+      if (document.documentElement.getAttribute("data-theme") === "dark") settingsDarkmodeDOM.checked = true;
+      else settingsDarkmodeDOM.checked = false;
+      settingsDarkmodeDOM.addEventListener("change", () => {
+        if (settingsDarkmodeDOM.checked) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      });
+
+      /// accent color
+      const settingsHueDOM = document.querySelector("#settings-hue");
+      settingsHueDOM.value = getComputedStyle(document.documentElement).getPropertyValue("--h");
+      settingsHueDOM.addEventListener("input", () => {
+        document.documentElement.style.setProperty("--h", settingsHueDOM.value);
+      });
+    });
+
+  </script>
+  <button class="settings-open-button">
+    <svg class="icon" width="24" height="24" stroke-width="1" aria-hidden="true" stroke="currentColor" fill="none"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M6 4v4"></path>
+      <path d="M6 12v8"></path>
+      <path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M12 4v10"></path>
+      <path d="M12 18v2"></path>
+      <path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M18 4v1"></path>
+      <path d="M18 9v11"></path>
+    </svg>
+    <span>settings</span>
+  </button>
+</body>
+
+</html>

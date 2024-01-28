@@ -1,0 +1,1627 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Remove the line below if you don't want to use TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;family=Mukta:wght@200;300;400;500;600;700;800&amp;family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&amp;family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&amp;family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto+Slab:wght@100;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;Pacifico&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb
+    }
+
+    ::after,
+    ::before {
+      --tw-content: ''
+    }
+
+    :host,
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit
+    }
+
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit
+    }
+
+    b,
+    strong {
+      font-weight: bolder
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      font-size: 1em
+    }
+
+    small {
+      font-size: 80%
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline
+    }
+
+    sub {
+      bottom: -.25em
+    }
+
+    sup {
+      top: -.5em
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0
+    }
+
+    button,
+    select {
+      text-transform: none
+    }
+
+    [type=button],
+    [type=reset],
+    [type=submit],
+    button {
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none
+    }
+
+    :-moz-focusring {
+      outline: auto
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none
+    }
+
+    progress {
+      vertical-align: baseline
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto
+    }
+
+    [type=search] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit
+    }
+
+    summary {
+      display: list-item
+    }
+
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+      margin: 0
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0
+    }
+
+    legend {
+      padding: 0
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    dialog {
+      padding: 0
+    }
+
+    textarea {
+      resize: vertical
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af
+    }
+
+    [role=button],
+    button {
+      cursor: pointer
+    }
+
+    :disabled {
+      cursor: default
+    }
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+      display: block;
+      vertical-align: middle
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto
+    }
+
+    [hidden] {
+      display: none
+    }
+
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia:
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia:
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 2rem;
+      padding-left: 2rem
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+        padding-right: 2rem;
+        padding-left: 2rem
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+        padding-right: 5rem;
+        padding-left: 5rem
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+        padding-right: 7rem;
+        padding-left: 7rem
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .container {
+        max-width: 1280px;
+        padding-right: 10rem;
+        padding-left: 10rem
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1536px
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0
+    }
+
+    .fixed {
+      position: fixed
+    }
+
+    .absolute {
+      position: absolute
+    }
+
+    .relative {
+      position: relative
+    }
+
+    .inset-0 {
+      inset: 0px
+    }
+
+    .left-0 {
+      left: 0px
+    }
+
+    .left-1\/2 {
+      left: 50%
+    }
+
+    .right-3 {
+      right: 0.75rem
+    }
+
+    .right-5 {
+      right: 1.25rem
+    }
+
+    .top-0 {
+      top: 0px
+    }
+
+    .top-1\/2 {
+      top: 50%
+    }
+
+    .top-28 {
+      top: 7rem
+    }
+
+    .top-3 {
+      top: 0.75rem
+    }
+
+    .-bottom-20 {
+      bottom: -5rem
+    }
+
+    .right-2 {
+      right: 0.5rem
+    }
+
+    .z-\[1\] {
+      z-index: 1
+    }
+
+    .z-\[2\] {
+      z-index: 2
+    }
+
+    .z-\[4\] {
+      z-index: 4
+    }
+
+    .mt-3 {
+      margin-top: 0.75rem
+    }
+
+    .mt-5 {
+      margin-top: 1.25rem
+    }
+
+    .mt-8 {
+      margin-top: 2rem
+    }
+
+    .flex {
+      display: flex
+    }
+
+    .grid {
+      display: grid
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .h-10 {
+      height: 2.5rem
+    }
+
+    .h-11 {
+      height: 2.75rem
+    }
+
+    .h-20 {
+      height: 5rem
+    }
+
+    .h-4 {
+      height: 1rem
+    }
+
+    .h-8 {
+      height: 2rem
+    }
+
+    .h-12 {
+      height: 3rem
+    }
+
+    .h-auto {
+      height: auto
+    }
+
+    .min-h-screen {
+      min-height: 100vh
+    }
+
+    .w-10 {
+      width: 2.5rem
+    }
+
+    .w-11 {
+      width: 2.75rem
+    }
+
+    .w-24 {
+      width: 6rem
+    }
+
+    .w-32 {
+      width: 8rem
+    }
+
+    .w-4 {
+      width: 1rem
+    }
+
+    .w-8 {
+      width: 2rem
+    }
+
+    .w-full {
+      width: 100%
+    }
+
+    .w-12 {
+      width: 3rem
+    }
+
+    .min-w-\[75vw\] {
+      min-width: 75vw
+    }
+
+    .max-w-\[40ch\] {
+      max-width: 40ch
+    }
+
+    .-translate-x-1\/2 {
+      --tw-translate-x: -50%;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .-translate-y-1\/2 {
+      --tw-translate-y: -50%;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .scale-0 {
+      --tw-scale-x: 0;
+      --tw-scale-y: 0;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .cursor-pointer {
+      cursor: pointer
+    }
+
+    .select-none {
+      -webkit-user-select: none;
+      user-select: none
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr))
+    }
+
+    .flex-col {
+      flex-direction: column
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    .place-items-center {
+      place-items: center
+    }
+
+    .items-start {
+      align-items: flex-start
+    }
+
+    .items-center {
+      align-items: center
+    }
+
+    .justify-start {
+      justify-content: flex-start
+    }
+
+    .justify-end {
+      justify-content: flex-end
+    }
+
+    .justify-center {
+      justify-content: center
+    }
+
+    .justify-between {
+      justify-content: space-between
+    }
+
+    .gap-10 {
+      gap: 2.5rem
+    }
+
+    .gap-2 {
+      gap: 0.5rem
+    }
+
+    .gap-3 {
+      gap: 0.75rem
+    }
+
+    .gap-4 {
+      gap: 1rem
+    }
+
+    .gap-6 {
+      gap: 1.5rem
+    }
+
+    .gap-8 {
+      gap: 2rem
+    }
+
+    .overflow-hidden {
+      overflow: hidden
+    }
+
+    .rounded-full {
+      border-radius: 9999px
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem
+    }
+
+    .border {
+      border-width: 1px
+    }
+
+    .border-2 {
+      border-width: 2px
+    }
+
+    .border-b {
+      border-bottom-width: 1px
+    }
+
+    .border-\[\#2a9d8f\] {
+      --tw-border-opacity: 1;
+      border-color: rgb(42 157 143 / var(--tw-border-opacity))
+    }
+
+    .border-gray-200 {
+      --tw-border-opacity: 1;
+      border-color: rgb(229 231 235 / var(--tw-border-opacity))
+    }
+
+    .border-transparent {
+      border-color: transparent
+    }
+
+    .bg-\[\#264653\] {
+      --tw-bg-opacity: 1;
+      background-color: rgb(38 70 83 / var(--tw-bg-opacity))
+    }
+
+    .bg-\[\#2a9d8f\] {
+      --tw-bg-opacity: 1;
+      background-color: rgb(42 157 143 / var(--tw-bg-opacity))
+    }
+
+    .bg-\[\#e7e7f7\] {
+      --tw-bg-opacity: 1;
+      background-color: rgb(231 231 247 / var(--tw-bg-opacity))
+    }
+
+    .bg-\[\#f4a261\] {
+      --tw-bg-opacity: 1;
+      background-color: rgb(244 162 97 / var(--tw-bg-opacity))
+    }
+
+    .bg-black\/30 {
+      background-color: rgb(0 0 0 / 0.3)
+    }
+
+    .bg-gray-200 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+    }
+
+    .bg-transparent {
+      background-color: transparent
+    }
+
+    .bg-white {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+    }
+
+    .object-cover {
+      object-fit: cover
+    }
+
+    .p-0 {
+      padding: 0px
+    }
+
+    .p-0\.5 {
+      padding: 0.125rem
+    }
+
+    .p-4 {
+      padding: 1rem
+    }
+
+    .p-8 {
+      padding: 2rem
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+    .px-5 {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem
+    }
+
+    .py-0 {
+      padding-top: 0px;
+      padding-bottom: 0px
+    }
+
+    .py-0\.5 {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem
+    }
+
+    .py-1 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem
+    }
+
+    .py-1\.5 {
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem
+    }
+
+    .pb-10 {
+      padding-bottom: 2.5rem
+    }
+
+    .pt-40 {
+      padding-top: 10rem
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .font-pacifico {
+      font-family: Pacifico, cursive
+    }
+
+    .font-poppins {
+      font-family: Poppins, sans-serif
+    }
+
+    .font-robotoSlab {
+      font-family: Roboto Slab, serif
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem
+    }
+
+    .font-light {
+      font-weight: 300
+    }
+
+    .font-medium {
+      font-weight: 500
+    }
+
+    .font-semibold {
+      font-weight: 600
+    }
+
+    .text-\[\#264653\] {
+      --tw-text-opacity: 1;
+      color: rgb(38 70 83 / var(--tw-text-opacity))
+    }
+
+    .text-\[\#2a9d8f\] {
+      --tw-text-opacity: 1;
+      color: rgb(42 157 143 / var(--tw-text-opacity))
+    }
+
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+
+    .opacity-80 {
+      opacity: 0.8
+    }
+
+    .shadow-lg {
+      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    .shadow-sm {
+      --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    .outline-none {
+      outline: 2px solid transparent;
+      outline-offset: 2px
+    }
+
+    .duration-150 {
+      transition-duration: 150ms
+    }
+
+    .duration-200 {
+      transition-duration: 200ms
+    }
+
+    .ease-linear {
+      transition-timing-function: linear
+    }
+
+    .hover\:bg-\[\#2a9d8f\]:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(42 157 143 / var(--tw-bg-opacity))
+    }
+
+    .hover\:bg-\[\#e76f51\]:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(231 111 81 / var(--tw-bg-opacity))
+    }
+
+    .hover\:bg-gray-300:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+    }
+
+    .hover\:text-white:hover {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+
+    .group:hover .group-hover\:bottom-2 {
+      bottom: 0.5rem
+    }
+
+    .peer:checked~.peer-checked\:border-\[\#2a9d8f\] {
+      --tw-border-opacity: 1;
+      border-color: rgb(42 157 143 / var(--tw-border-opacity))
+    }
+
+    @media (min-width: 640px) {
+      .sm\:min-w-\[450px\] {
+        min-width: 450px
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:block {
+        display: block
+      }
+
+      .md\:flex {
+        display: flex
+      }
+
+      .md\:h-10 {
+        height: 2.5rem
+      }
+
+      .md\:h-14 {
+        height: 3.5rem
+      }
+
+      .md\:w-10 {
+        width: 2.5rem
+      }
+
+      .md\:w-14 {
+        width: 3.5rem
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+
+      .md\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem
+      }
+
+      .md\:text-base {
+        font-size: 1rem;
+        line-height: 1.5rem
+      }
+
+      .md\:text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .xl\:block {
+        display: block
+      }
+    }
+
+    .\[\&_li\]\:cursor-pointer li {
+      cursor: pointer
+    }
+
+    .\[\&_li\]\:rounded-lg li {
+      border-radius: 0.5rem
+    }
+
+    .\[\&_li\]\:px-4 li {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+    .\[\&_li\]\:py-1\.5 li {
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem
+    }
+
+    .\[\&_li\]\:text-sm li {
+      font-size: 0.875rem;
+      line-height: 1.25rem
+    }
+
+    .\[\&_li\]\:font-medium li {
+      font-weight: 500
+    }
+
+    .\[\&_li\]\:duration-150 li {
+      transition-duration: 150ms
+    }
+
+    .\[\&_li\]\:ease-linear li {
+      transition-timing-function: linear
+    }
+
+    .hover\:\[\&_li\]\:bg-\[\#2a9d8f\] li:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(42 157 143 / var(--tw-bg-opacity))
+    }
+
+    .hover\:\[\&_li\]\:text-white li:hover {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+
+    .\[\&_p\]\:cursor-pointer p {
+      cursor: pointer
+    }
+
+    .\[\&_p\]\:rounded-lg p {
+      border-radius: 0.5rem
+    }
+
+    .\[\&_p\]\:border p {
+      border-width: 1px
+    }
+
+    .\[\&_p\]\:border-gray-300 p {
+      --tw-border-opacity: 1;
+      border-color: rgb(209 213 219 / var(--tw-border-opacity))
+    }
+
+    .\[\&_p\]\:bg-gray-100 p {
+      --tw-bg-opacity: 1;
+      background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+    }
+
+    .\[\&_p\]\:px-4 p {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+    .\[\&_p\]\:py-1\.5 p {
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem
+    }
+
+    .\[\&_p\]\:text-xs p {
+      font-size: 0.75rem;
+      line-height: 1rem
+    }
+
+    .\[\&_p\]\:duration-200 p {
+      transition-duration: 200ms
+    }
+
+    .\[\&_p\]\:ease-linear p {
+      transition-timing-function: linear
+    }
+
+    .hover\:\[\&_p\]\:border-\[\#2a9d8f\] p:hover {
+      --tw-border-opacity: 1;
+      border-color: rgb(42 157 143 / var(--tw-border-opacity))
+    }
+
+    .hover\:\[\&_p\]\:bg-\[\#2a9d8f\] p:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(42 157 143 / var(--tw-bg-opacity))
+    }
+
+    .hover\:\[\&_p\]\:text-white p:hover {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+
+    @media (min-width: 768px) {
+      .\[\&_p\]\:md\:text-sm p {
+        font-size: 0.875rem;
+        line-height: 1.25rem
+      }
+    }
+
+    .peer:checked~.peer-checked\:\[\&_span\]\:scale-100 span {
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+  </style>
+</head>
+
+<!-- Change code below this line -->
+
+<body class="bg-white flex justify-center items-start min-h-screen relative font-poppins text-[#264653] pt-40 pb-10">
+  <nav
+    class="absolute top-0 left-0 bg-white h-20 w-full flex items-center justify-center border-b border-gray-200 shadow-sm">
+    <div class="container w-full grid grid-cols-1 md:grid-cols-3 place-items-center">
+      <ul class="w-full hidden md:flex items-center justify-start gap-2
+                [&amp;_li]:px-4
+                [&amp;_li]:py-1.5
+                [&amp;_li]:cursor-pointer
+                [&amp;_li]:text-sm
+                [&amp;_li]:rounded-lg
+                [&amp;_li]:font-medium
+                [&amp;_li]:duration-150
+                [&amp;_li]:ease-linear
+                hover:[&amp;_li]:bg-[#2a9d8f]
+                hover:[&amp;_li]:text-white
+            ">
+        <li><a href="#">Inspiration</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Learn UI/UX</a></li>
+      </ul>
+      <a href="#" id="logo" class="font-pacifico text-2xl font-medium">Pixels</a>
+      <div class="object-cover rounded-full w-full hidden md:flex items-center justify-end gap-2">
+        <div class="hidden xl:block bg-gray-200 py-1.5 px-4 rounded-full">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Search" class="w-32 text-sm bg-transparent outline-none px-2 py-0.5">
+        </div>
+        <img
+          src="https://shismqklzntzxworibfn.supabase.co/storage/v1/object/public/avatars/76179c7f-6c6e-4ab3-96d9-f8903ed6e370.jpg"
+          alt="profile" class="h-11 w-11 rounded-full border-2 border-[#2a9d8f] p-0.5 cursor-pointer">
+      </div>
+    </div>
+  </nav>
+
+  <div
+    class="saved open hidden flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-lg px-5 py-2 shadow-lg fixed z-[4] top-28 right-5">
+    <i class="fa-solid fa-check h-8 w-8 grid place-items-center rounded-full bg-[#2a9d8f] text-white"></i> Saved</div>
+
+  <main class="bg-white w-full flex items-start justify-center">
+    <div class="container flex flex-col items-center justify-start">
+      <h1 class="font-semibold text-3xl md:text-4xl font-robotoSlab">Find <span id="text-wheel">People</span></h1>
+      <p class="text-xs md:text-sm opacity-80 mt-3 max-w-[40ch] text-center">Transforming Ideas into Timeless Designs:
+        Where Creativity Meets Craftsmanship.</p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-5
+                [&amp;_p]:md:text-sm
+                [&amp;_p]:text-xs
+                [&amp;_p]:bg-gray-100
+                [&amp;_p]:px-4
+                [&amp;_p]:py-1.5
+                [&amp;_p]:rounded-lg
+                [&amp;_p]:border
+                [&amp;_p]:duration-200
+                [&amp;_p]:cursor-pointer
+                [&amp;_p]:ease-linear
+                [&amp;_p]:border-gray-300
+                hover:[&amp;_p]:bg-[#2a9d8f]
+                hover:[&amp;_p]:text-white
+                hover:[&amp;_p]:border-[#2a9d8f]
+            ">
+        <p>Web Designs</p>
+        <p>Illustrations</p>
+        <p>Mobile Designs</p>
+        <p>Prints</p>
+        <p>Pictures</p>
+        <p>Animations</p>
+      </div>
+
+      <div id="projects-buffer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/userupload/3361768/file/original-b8ad9725f5830b039c822edabb3821b2.jpg?resize=1200x900"
+              alt="Emily Thompson" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="0" id="proj-button-0"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Emily Thompson</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 315</span>
+              <span><i class="fa-solid fa-eye"></i> 811</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/users/1089442/screenshots/4679349/designer_platform_copy_2x.png?resize=450x338&amp;vertical=center"
+              alt="Brandon Rodriguez" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="1" id="proj-button-1"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Brandon Rodriguez</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 193</span>
+              <span><i class="fa-solid fa-eye"></i> 245</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/userupload/4108810/file/original-7b4e072c6137a7504415a16b75eee036.jpg?resize=400x300&amp;vertical=center"
+              alt="Olivia Mitchell" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="2" id="proj-button-2"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Olivia Mitchell</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 897</span>
+              <span><i class="fa-solid fa-eye"></i> 688</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/userupload/9903455/file/original-3ec202555a7d66731ec6cb453d665729.jpg?crop=0x3-1920x1443&amp;resize=400x300&amp;vertical=center"
+              alt="Jacob Evans" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="3" id="proj-button-3"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Jacob Evans</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 143</span>
+              <span><i class="fa-solid fa-eye"></i> 741</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/users/1650285/screenshots/18050324/media/402ca1b7ae3fbc831a35b54cffdcc29b.png?resize=400x300&amp;vertical=center"
+              alt="Sophia Patel" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="4" id="proj-button-4"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Sophia Patel</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 191</span>
+              <span><i class="fa-solid fa-eye"></i> 731</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/users/562913/screenshots/15926182/media/bc90e64475e51774deb6ee4428afd1f7.jpg?resize=400x300&amp;vertical=center"
+              alt="Caleb Foster" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="5" id="proj-button-5"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Caleb Foster</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 514</span>
+              <span><i class="fa-solid fa-eye"></i> 834</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/userupload/8564380/file/original-01a4ffd59724105265083e41da715904.jpg?resize=400x300&amp;vertical=center"
+              alt="Ava Reynolds" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="6" id="proj-button-6"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Ava Reynolds</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 421</span>
+              <span><i class="fa-solid fa-eye"></i> 480</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/users/2352812/screenshots/14230556/media/e8d225a7026e22000b41faab083c8482.png?resize=400x300&amp;vertical=center"
+              alt="Ethan Nguyen" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="7" id="proj-button-7"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Ethan Nguyen</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 975</span>
+              <span><i class="fa-solid fa-eye"></i> 864</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/userupload/12298546/file/original-7140e62ab5c853213970d48426e5ea78.png?crop=0x0-4800x3600&amp;resize=400x300&amp;vertical=center"
+              alt="Grace Turner" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="8" id="proj-button-8"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Grace Turner</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 925</span>
+              <span><i class="fa-solid fa-eye"></i> 624</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+          <div class="relative overflow-hidden group">
+            <img
+              src="https://cdn.dribbble.com/userupload/9164189/file/original-effa226ccdc03f87a3d78bbc4782c4d3.jpg?resize=400x300&amp;vertical=center"
+              alt="Noah Williams" class="object-cover w-full h-auto rounded-xl">
+            <button data-item="9" id="proj-button-9"
+              class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="w-full flex items-center justify-between">
+            <h2>Noah Williams</h2>
+            <div class="flex items-center justify-center gap-2 text-xs select-none">
+              <span><i class="fa-solid fa-heart"></i> 934</span>
+              <span><i class="fa-solid fa-eye"></i> 764</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="overlay fixed inset-0 bg-black/30 z-[1] hidden"></div>
+  <div id="modal"
+    class="open fixed z-[2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 rounded-xl bg-white flex flex-col items-start justify-center gap-10 hidden">
+    <i id="close-modal"
+      class="fa-solid fa-xmark h-10 w-10 grid place-items-center rounded-full cursor-pointer hover:bg-gray-300 absolute top-3 right-3 duration-150 ease-linear"></i>
+
+    <h2 class="md:text-4xl text-2xl font-semibold">Add to collection</h2>
+    <div class="flex flex-col gap-4 items-center justify-center">
+      <div class="w-full sm:min-w-[450px] min-w-[75vw]">
+        <input type="radio" name="radio" id="radio1" class="sr-only peer" checked="">
+        <label for="radio1"
+          class="w-full flex items-center justify-between gap-6 p-4 border border-transparent peer-checked:border-[#2a9d8f] rounded-lg peer-checked:[&amp;_span]:scale-100">
+          <img
+            src="https://cdn.dribbble.com/userupload/3361768/file/original-b8ad9725f5830b039c822edabb3821b2.jpg?resize=1200x900"
+            alt="" class="h-20 w-24 object-cover rounded-lg">
+          <div>
+            <p class="font-medium text-sm">Dashboards</p>
+            <p class="text-xs font-light hidden md:block">24 Items · Updated yesterday</p>
+          </div>
+          <span class="md:h-14 h-8 md:w-14 w-8 rounded-full bg-[#e7e7f7] grid place-items-center scale-0">
+            <i
+              class="fa-solid fa-check md:h-10 h-4 md:w-10 w-4 bg-[#264653] text-white grid place-items-center rounded-full text-xs md:text-base"></i>
+          </span>
+        </label>
+      </div>
+      <div class="w-full sm:min-w-[450px] min-w-[75vw]">
+        <input type="radio" name="radio" id="radio2" class="sr-only peer">
+        <label for="radio2"
+          class="w-full flex items-center justify-between gap-6 p-4 border border-transparent peer-checked:border-[#2a9d8f] rounded-lg peer-checked:[&amp;_span]:scale-100">
+          <img
+            src="https://cdn.dribbble.com/userupload/9164189/file/original-effa226ccdc03f87a3d78bbc4782c4d3.jpg?resize=400x300&amp;vertical=center"
+            alt="" class="h-20 w-24 object-cover rounded-lg">
+          <div>
+            <p class="font-medium text-sm">Authentication</p>
+            <p class="text-xs font-light hidden md:block">7 Items · Updated May 9, 2021</p>
+          </div>
+          <span class="md:h-14 h-8 md:w-14 w-8 rounded-full bg-[#e7e7f7] grid place-items-center scale-0">
+            <i
+              class="fa-solid fa-check md:h-10 h-4 md:w-10 w-4 bg-[#264653] text-white grid place-items-center rounded-full text-xs md:text-base"></i>
+          </span>
+        </label>
+      </div>
+      <div class="w-full sm:min-w-[450px] min-w-[75vw]">
+        <input type="radio" name="radio" id="radio3" class="sr-only peer">
+        <label for="radio3"
+          class="w-full flex items-center justify-between gap-6 p-4 border border-transparent peer-checked:border-[#2a9d8f] rounded-lg peer-checked:[&amp;_span]:scale-100">
+          <img
+            src="https://cdn.dribbble.com/userupload/8564380/file/original-01a4ffd59724105265083e41da715904.jpg?resize=400x300&amp;vertical=center"
+            alt="" class="h-20 w-24 object-cover rounded-lg">
+          <div>
+            <p class="font-medium text-sm">UI Kit</p>
+            <p class="text-xs font-light hidden md:block">9 Items · Updated May 3, 2021</p>
+          </div>
+          <span class="md:h-14 h-8 md:w-14 w-8 rounded-full bg-[#e7e7f7] grid place-items-center scale-0">
+            <i
+              class="fa-solid fa-check md:h-10 h-4 md:w-10 w-4 bg-[#264653] text-white grid place-items-center rounded-full text-xs md:text-base"></i>
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="flex items-center justify-between w-full gap-2">
+      <button
+        class="px-4 py-2 rounded-lg text-[#2a9d8f] text-sm font-medium hover:bg-[#2a9d8f] hover:text-white duration-150 ease-linear"><i
+          class="fa-solid fa-plus"></i> Create New</button>
+      <button id="save"
+        class="px-4 py-2 rounded-lg text-white text-sm font-medium bg-[#f4a261] hover:bg-[#e76f51] duration-150 ease-linear">Save</button>
+    </div>
+  </div>
+
+
+
+  <style>
+    /* Add CSS here */
+    .open {
+      scale: 0;
+      transform-origin: 0;
+      animation: popUp 500ms ease-in-out forwards;
+    }
+
+    @keyframes popUp {
+      75% {
+        scale: 1.1;
+      }
+
+      100% {
+        scale: 1;
+      }
+    }
+  </style>
+  <script type="module">
+    // Add JavaScript code here
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            roboto: ['Roboto', 'sans-serif'],
+            robotoSlab: ['Roboto Slab', 'serif'],
+            openSans: ['Open Sans', 'sans-serif'],
+            montseratt: ['Montserrat', 'sans-serif'],
+            nunito: ['Nunito Sans', 'sans-serif'],
+            noto: ['Noto Sans', 'sans-serif'],
+            mukta: ['Mukta', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            pacifico: ['Pacifico', 'cursive']
+          },
+        },
+        container: {
+          padding: {
+            DEFAULT: '2rem',
+            xl: "10rem",
+            lg: "7rem",
+            md: "5rem",
+            sm: "2rem"
+          }
+        }
+      }
+    }
+
+    let projects = [
+      {
+        name: "Emily Thompson",
+        img: "https://cdn.dribbble.com/userupload/3361768/file/original-b8ad9725f5830b039c822edabb3821b2.jpg?resize=1200x900",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Brandon Rodriguez",
+        img: "https://cdn.dribbble.com/users/1089442/screenshots/4679349/designer_platform_copy_2x.png?resize=450x338&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Olivia Mitchell",
+        img: "https://cdn.dribbble.com/userupload/4108810/file/original-7b4e072c6137a7504415a16b75eee036.jpg?resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Jacob Evans",
+        img: "https://cdn.dribbble.com/userupload/9903455/file/original-3ec202555a7d66731ec6cb453d665729.jpg?crop=0x3-1920x1443&resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Sophia Patel",
+        img: "https://cdn.dribbble.com/users/1650285/screenshots/18050324/media/402ca1b7ae3fbc831a35b54cffdcc29b.png?resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Caleb Foster",
+        img: "https://cdn.dribbble.com/users/562913/screenshots/15926182/media/bc90e64475e51774deb6ee4428afd1f7.jpg?resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Ava Reynolds",
+        img: "https://cdn.dribbble.com/userupload/8564380/file/original-01a4ffd59724105265083e41da715904.jpg?resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Ethan Nguyen",
+        img: "https://cdn.dribbble.com/users/2352812/screenshots/14230556/media/e8d225a7026e22000b41faab083c8482.png?resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Grace Turner",
+        img: "https://cdn.dribbble.com/userupload/12298546/file/original-7140e62ab5c853213970d48426e5ea78.png?crop=0x0-4800x3600&resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+      {
+        name: "Noah Williams",
+        img: "https://cdn.dribbble.com/userupload/9164189/file/original-effa226ccdc03f87a3d78bbc4782c4d3.jpg?resize=400x300&vertical=center",
+        likes: Math.floor(Math.random() * 1000),
+        views: Math.floor(Math.random() * 1000)
+      },
+    ]
+
+    function generateProjects(list) {
+      let output = ``;
+      list.forEach((item, i) => {
+        output += `
+            <div class="flex flex-col items-center justify-center gap-2 cursor-pointer">
+                <div class="relative overflow-hidden group">
+                    <img src="${item.img}" alt="${item.name}" class="object-cover w-full h-auto rounded-xl">
+                    <button data-item="${i}" id="proj-button-${i}" class="absolute -bottom-20 group-hover:bottom-2 right-2 duration-200 bg-[#f4a261] hover:bg-[#e76f51] h-12 w-12 rounded-lg grid place-items-center text-white"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="w-full flex items-center justify-between">
+                    <h2>${item.name}</h2>
+                    <div class="flex items-center justify-center gap-2 text-xs select-none">
+                        <span><i class="fa-solid fa-heart"></i> ${item.likes}</span>
+                        <span><i class="fa-solid fa-eye"></i> ${item.views}</span>
+                    </div>
+                </div>
+            </div>
+        `
+      });
+
+      document.getElementById("projects-buffer").innerHTML = output;
+
+      document.querySelectorAll("[data-item]").forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          document.querySelector(".overlay").classList.remove("hidden");
+          document.querySelector("#modal").classList.remove("hidden");
+        })
+      })
+    }
+
+    generateProjects(projects);
+
+    document.getElementById("close-modal").addEventListener("click", function (e) {
+      document.querySelector(".overlay").classList.add("hidden");
+      document.querySelector("#modal").classList.add("hidden");
+    })
+
+    document.getElementById("save").addEventListener("click", function (e) {
+      document.querySelector(".overlay").classList.add("hidden");
+      document.querySelector("#modal").classList.add("hidden");
+      document.querySelector(".saved").classList.remove("hidden");
+      setTimeout(() => {
+        document.querySelector(".saved").classList.add("hidden");
+      }, 2000)
+    })
+
+    let textArray = ["People", "Inspiration", "Jobs", "Designs"];
+    let i = 0;
+    setInterval(() => {
+      console.log("here")
+      if (i <= 3) {
+        document.getElementById("text-wheel").textContent = textArray[i];
+        i++;
+      } else {
+        i = 0;
+      }
+    }, 2000)
+  </script>
+</body><!-- Change code above this line -->
+
+</html>

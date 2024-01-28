@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "add-to-collection",
+    "name": "Add To Collection",
+    "version": "1.0.0",
+    "description": "Add To Collection",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [],
+    "variations": [
+        {
+            "slug": "add-to-collection",
+            "name": "Add To Collection",
+            "description": "Add To Collection"
+        }
+    ]
+}
