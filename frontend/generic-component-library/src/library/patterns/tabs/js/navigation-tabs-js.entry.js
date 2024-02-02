@@ -1,17 +1,16 @@
-
-import { find, findOne } from "../../../../_abstracts/js/dom/traversing";
-import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulation";
+import { find, findOne } from '../../../../_abstracts/js/dom/traversing';
+import { addClass, removeClass } from '../../../../_abstracts/js/dom/manipulation';
 
 (() => {
     const config = {
-        type: "pat",
-        name: "NavigationTabsJs",
+        type: 'pat',
+        name: 'NavigationTabsJs',
         selectors: {
-            tabButton: ".js-tab-button",
-            tabPanel: ".js-tab-panel",
+            tabButton: '.js-tab-button',
+            tabPanel: '.js-tab-panel',
         },
         states: {
-            active: "active",
+            active: 'active',
         },
     };
 
@@ -43,7 +42,7 @@ import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulatio
 
         const setupEventListeners = () => {
             global.elements.tabButtons.forEach((tab) => {
-                tab.addEventListener("click", (e) => {
+                tab.addEventListener('click', (e) => {
                     setInactivePanel();
                     setActivePanel(tab);
                     setActiveButton(e.target);

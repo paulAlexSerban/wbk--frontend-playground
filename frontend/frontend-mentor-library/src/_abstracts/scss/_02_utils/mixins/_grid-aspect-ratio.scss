@@ -1,6 +1,6 @@
-@use "sass:meta";
-@use "sass:math";
-@use "sass:list";
+@use 'sass:meta';
+@use 'sass:math';
+@use 'sass:list';
 
 /// The aspect ratios that are used to generate corresponding aspect ratio
 /// classes in code
@@ -24,7 +24,7 @@ $aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3
         @include relative();
         &::after {
             display: table;
-            content: "";
+            content: '';
             clear: both;
         }
 
@@ -34,7 +34,7 @@ $aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3
             width: 1px;
             height: 0;
             margin-left: -1px;
-            content: "";
+            content: '';
         }
     }
 
@@ -43,7 +43,7 @@ $aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3
         $height: list.nth($aspect-ratio, 2);
 
         .aspect-ratio--#{$width}x#{$height}::before {
-            @if meta.function-exists("div", "math") {
+            @if meta.function-exists('div', 'math') {
                 padding-top: math.percentage(math.div($height, $width));
             } @else {
                 padding-top: math.percentage(($height / $width));

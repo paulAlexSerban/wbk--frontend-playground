@@ -1,13 +1,13 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * SEARCH-HIDDEN
 \* ------------------------------------ */
 
-$block: "search-hidden";
+$block: 'search-hidden';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         @include font($body);
         @include flex();
 
@@ -16,7 +16,7 @@ $block: "search-hidden";
         width: 75%;
     }
 
-    @include e("container") {
+    @include e('container') {
         position: relative;
         height: 50px;
 
@@ -25,11 +25,11 @@ $block: "search-hidden";
         }
     }
 
-    @include e("input", "btn") {
+    @include e('input', 'btn') {
         outline: none;
     }
 
-    @include e("input") {
+    @include e('input') {
         @include font($input);
 
         background-color: get-color($c-light, cultured);
@@ -44,7 +44,7 @@ $block: "search-hidden";
         }
     }
 
-    @include e("btn") {
+    @include e('btn') {
         @include absolute($top: 0, $left: 0);
         @include font($button-large);
         @include flex();

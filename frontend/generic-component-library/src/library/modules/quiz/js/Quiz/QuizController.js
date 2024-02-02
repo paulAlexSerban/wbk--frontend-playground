@@ -11,15 +11,15 @@ export const QuizController = () => {
 
     const questionLocalStorage = {
         setQuestionCollection: (newCollection) => {
-            localStorage.setItem("questionCollection", JSON.stringify(newCollection));
+            localStorage.setItem('questionCollection', JSON.stringify(newCollection));
         },
 
         getQuestionCollection: () => {
-            return JSON.parse(localStorage.getItem("questionCollection"));
+            return JSON.parse(localStorage.getItem('questionCollection'));
         },
 
         removeQuestionCollection: () => {
-            localStorage.removeItem("questionCollection");
+            localStorage.removeItem('questionCollection');
         },
     };
 
@@ -47,17 +47,17 @@ export const QuizController = () => {
         score: 0,
     };
 
-    const adminFullName = ["John", "Smith"];
+    const adminFullName = ['John', 'Smith'];
 
     const personLocalStorage = {
         setPersonData: (newPersonData) => {
-            localStorage.setItem("personData", JSON.stringify(newPersonData));
+            localStorage.setItem('personData', JSON.stringify(newPersonData));
         },
         getPersonData: () => {
-            return JSON.parse(localStorage.getItem("personData"));
+            return JSON.parse(localStorage.getItem('personData'));
         },
         removePersonData: () => {
-            localStorage.removeItem("personData");
+            localStorage.removeItem('personData');
         },
     };
 
@@ -78,10 +78,10 @@ export const QuizController = () => {
         }
 
         for (let i = 0; i < opts.length; i++) {
-            if (opts[i].value !== "") {
+            if (opts[i].value !== '') {
                 optionsArr.push(opts[i].value);
             }
-            if (opts[i].previousElementSibling.checked && opts[i].value !== "") {
+            if (opts[i].previousElementSibling.checked && opts[i].value !== '') {
                 corrAns = opts[i].value;
                 isChecked = true;
             }
@@ -95,31 +95,31 @@ export const QuizController = () => {
             questionId = 0;
         }
 
-        if (newQuestText.value !== "") {
+        if (newQuestText.value !== '') {
             if (optionsArr.length > 1) {
                 if (isChecked) {
                     newQuestion = new Question(questionId, newQuestText.value, optionsArr, corrAns);
                     getStoredQuests = questionLocalStorage.getQuestionCollection();
                     getStoredQuests.push(newQuestion);
                     questionLocalStorage.setQuestionCollection(getStoredQuests);
-                    newQuestText.value = "";
+                    newQuestText.value = '';
 
                     for (var x = 0; x < opts.length; x++) {
-                        opts[x].value = "";
+                        opts[x].value = '';
                         opts[x].previousElementSibling.checked = false;
                     }
 
                     return true;
                 } else {
-                    alert("You missed to check correct answer, or you checked answer without value");
+                    alert('You missed to check correct answer, or you checked answer without value');
                     return false;
                 }
             } else {
-                alert("You must insert at least two options");
+                alert('You must insert at least two options');
                 return false;
             }
         } else {
-            alert("Please, Insert Question");
+            alert('Please, Insert Question');
             return false;
         }
     };

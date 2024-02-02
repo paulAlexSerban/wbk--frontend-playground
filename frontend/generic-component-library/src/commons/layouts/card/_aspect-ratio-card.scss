@@ -2,7 +2,7 @@
 // Maintains the aspect ratio of an image in a card, while letting you resize the card.
 // TODO: adjust according to standards
 
-$layout: "lyt-aspect-ratio-card";
+$layout: 'lyt-aspect-ratio-card';
 
 .#{$layout} {
     &__parent {

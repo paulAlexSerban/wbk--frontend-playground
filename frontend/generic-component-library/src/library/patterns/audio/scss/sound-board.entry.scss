@@ -1,10 +1,10 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * SOUND BOARD
 \* ------------------------------------ */
 
-$block: "sound-board";
+$block: 'sound-board';
 
 .#{$block} {
     &__base {

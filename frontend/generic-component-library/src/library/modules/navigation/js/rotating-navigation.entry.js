@@ -1,19 +1,18 @@
-import { findOne } from "../../../../_abstracts/js/dom/traversing";
-import { addClass, removeClass } from "../../../../_abstracts/js/dom/manipulation";
+import { findOne } from '../../../../_abstracts/js/dom/traversing';
+import { addClass, removeClass } from '../../../../_abstracts/js/dom/manipulation';
 
 export const config = {
-    type: "pat",
-    name: "NavigationRotating",
+    type: 'pat',
+    name: 'NavigationRotating',
     selectors: {
-        container: ".js-nav-rotating-container",
-        btnOpen: ".js-nav-rotating-btn-open",
-        btnClose: ".js-nav-rotating-btn-close",
+        container: '.js-nav-rotating-container',
+        btnOpen: '.js-nav-rotating-btn-open',
+        btnClose: '.js-nav-rotating-btn-close',
     },
     states: {
-        showNavigation: "navigationVisible",
+        showNavigation: 'navigationVisible',
     },
 };
-
 
 (() => {
     const NavigationRotating = (el) => {
@@ -31,11 +30,11 @@ export const config = {
         };
 
         const setupEventListeners = () => {
-            global.elements.btnOpen.addEventListener("click", () => {
+            global.elements.btnOpen.addEventListener('click', () => {
                 addClass(config.states.showNavigation, global.elements.container);
             });
 
-            global.elements.btnClose.addEventListener("click", () => {
+            global.elements.btnClose.addEventListener('click', () => {
                 removeClass(config.states.showNavigation, global.elements.container);
             });
         };

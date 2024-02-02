@@ -86,16 +86,14 @@ a {
 }
 
 a {
-  text-decoration: none;
-  
-  @include on-event() {
-      color: var(--text-link-color-hover);
-      text-decoration: none;
-  }
-}
+    text-decoration: none;
 
+    @include on-event() {
+        color: var(--text-link-color-hover);
+        text-decoration: none;
+    }
+}
 
 code {
     @include font($code);
 }
-

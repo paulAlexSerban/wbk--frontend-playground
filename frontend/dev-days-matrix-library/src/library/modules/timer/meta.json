@@ -28,6 +28,5 @@
             "name": "Custom Countdown",
             "description": "Custom countdown that counts down from current date to a specific date"
         }
-
     ]
 }

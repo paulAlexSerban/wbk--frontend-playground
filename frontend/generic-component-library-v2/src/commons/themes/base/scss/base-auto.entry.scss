@@ -1,0 +1,46 @@
+@import '~ScssAbstracts';
+/* ------------------------------------ *\
+  #BASE-AUTO-THEME
+\* ------------------------------------ */
+
+:root {
+    --baseline: #{$baseline};
+    --gutter: #{$gutter};
+    --measure: 60ch;
+    --font-size-xs: #{convert-rem(14px)};
+    --font-size-base: #{convert-rem(18px)};
+    --font-size-lg: #{convert-rem(24px)};
+    --font-size-xl: #{convert-rem(32px)};
+    --font-size-2xl: #{convert-rem(36px)};
+
+    @include modular-harmonic-spacing-generator($propertyName: 'ss');
+    @include modular-harmonic-spacing-generator($propertyName: 'rs');
+
+    @include breakpoint($mobile) {
+        @include modular-harmonic-spacing-generator($propertyName: 'rs', $ratio: 1.65);
+    }
+
+    @include breakpoint($tablet) {
+        @include modular-harmonic-spacing-generator($propertyName: 'rs', $ratio: 1.75);
+    }
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+}
+
+h4 {
+    font-size: var(--font-size-base);
+}
+
+h5 {
+    font-size: var(--font-size-xs);
+}

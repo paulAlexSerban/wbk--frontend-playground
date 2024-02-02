@@ -1,5 +1,5 @@
-@use "sass:map";
-@use "sass:list";
+@use 'sass:map';
+@use 'sass:list';
 
 /* ------------------------------------ *\
   * GRID FUNCTIONS
@@ -11,7 +11,7 @@
 /// @access public
 
 @function breakpoint-infix($name) {
-    @return "-#{$name}";
+    @return '-#{$name}';
 }
 
 /// Get the value of the next breakpoint, or null for the last breakpoint

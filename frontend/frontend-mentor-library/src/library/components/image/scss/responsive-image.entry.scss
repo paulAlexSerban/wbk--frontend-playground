@@ -1,10 +1,10 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * #IMAGE
 \* ------------------------------------ */
 
-$block: "responsive-image";
+$block: 'responsive-image';
 
 .#{$block} {
     &__base {

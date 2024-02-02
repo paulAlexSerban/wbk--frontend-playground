@@ -1,162 +1,161 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 .button {
-  &__base {
-    display: block;
-    margin: auto;
-    padding: $baseline * 2;
-    border: 1px solid transparent;
-    border-radius: $baseline * 2;
-    background-color: white;
-    font-size: $baseline * 2;
-    width: fit-content;
-    min-width: 100px;
+    &__base {
+        display: block;
+        margin: auto;
+        padding: $baseline * 2;
+        border: 1px solid transparent;
+        border-radius: $baseline * 2;
+        background-color: white;
+        font-size: $baseline * 2;
+        width: fit-content;
+        min-width: 100px;
 
-    @media (min-width: $tablet) {
-      font-size: $baseline * 3;
-    }
+        @media (min-width: $tablet) {
+            font-size: $baseline * 3;
+        }
 
-    &--generator {
-      background-color: lightgrey;
-    }
+        &--generator {
+            background-color: lightgrey;
+        }
 
-    &--remove {
-      background-color: lightsalmon;
-    }
+        &--remove {
+            background-color: lightsalmon;
+        }
 
-    &:focus {
-      outline: none;
+        &:focus {
+            outline: none;
+        }
     }
-  }
 }
 
 .switch {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-  &__base {
-    width: 150px;
-    height: 34px;
-    display: block;
-    position: relative;
-    margin: auto $baseline * 3;
-  }
-
-  &__input {
-    width: 0;
-    height: 0;
-    opacity: 0;
-
-    &:checked + spam {
-      background-color: #2196f3;
+    &__base {
+        width: 150px;
+        height: 34px;
+        display: block;
+        position: relative;
+        margin: auto $baseline * 3;
     }
 
-    &:focus + spam {
-      box-shadow: 0 0 1px #2196f3;
+    &__input {
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        &:checked + spam {
+            background-color: #2196f3;
+        }
+
+        &:focus + spam {
+            box-shadow: 0 0 1px #2196f3;
+        }
+
+        &:checked + spam:before {
+            transform: translateX(117px);
+        }
     }
 
-    &:checked + spam:before {
-      transform: translateX(117px);
-    }
-  }
+    &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: red;
+        transition: 0.4s;
+        border-radius: 34px;
 
-  &__slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: red;
-    transition: 0.4s;
-    border-radius: 34px;
-
-    &::before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: 0.4s;
-      border-radius: 50%;
+        &::before {
+            position: absolute;
+            content: '';
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
     }
-  }
 }
 
 .simple-generator {
-  &__base {
-      background-color: lightsteelblue;
-      width: 99.99%;
-      min-width: $tablet;
-      height: 230px;
-      margin: $baseline * 3 auto;
-      padding: $baseline * 4;
-      box-sizing: border-box;
+    &__base {
+        background-color: lightsteelblue;
+        width: 99.99%;
+        min-width: $tablet;
+        height: 230px;
+        margin: $baseline * 3 auto;
+        padding: $baseline * 4;
+        box-sizing: border-box;
 
-      @media (min-width: $tablet) {
-          height: 350px;
-      }
-  }
+        @media (min-width: $tablet) {
+            height: 350px;
+        }
+    }
 
-  &__title {
-      text-align: center;
-  }
+    &__title {
+        text-align: center;
+    }
 
-  &__instructions {       
-      text-align: center;
-  }
+    &__instructions {
+        text-align: center;
+    }
 
-  &__quote {
-      margin: $baseline * 2;
-      text-align: center;
-  }
+    &__quote {
+        margin: $baseline * 2;
+        text-align: center;
+    }
 }
 
 .custom-generator {
-  &__base {
-      background-color: lightsteelblue;
-      width: 99.99%;
-      min-width: $tablet;
-      height: 600px;
-      margin: auto;
-      padding: $baseline * 3;
-      box-sizing: border-box;
+    &__base {
+        background-color: lightsteelblue;
+        width: 99.99%;
+        min-width: $tablet;
+        height: 600px;
+        margin: auto;
+        padding: $baseline * 3;
+        box-sizing: border-box;
 
-      @media (min-width: $tablet) {
-          height: 900px;
-      }
-  }
+        @media (min-width: $tablet) {
+            height: 900px;
+        }
+    }
 
-  &__title {
-      text-align: center;
-  }
+    &__title {
+        text-align: center;
+    }
 
-  &__instructions {
-      text-align: center;
-  }
+    &__instructions {
+        text-align: center;
+    }
 
-  &__buttons-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 99.99%;
-      margin: 24px 0;
+    &__buttons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 99.99%;
+        margin: 24px 0;
 
-      > button {
-          margin: $baseline * 3;
-      }
-  }
+        > button {
+            margin: $baseline * 3;
+        }
+    }
 
-  &__quotes {
-      display: flex;
-      flex-direction: column;
+    &__quotes {
+        display: flex;
+        flex-direction: column;
 
-      >p {
-          text-align: center;
-      }
-
-  }
+        > p {
+            text-align: center;
+        }
+    }
 }

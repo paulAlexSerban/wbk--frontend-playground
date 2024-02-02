@@ -1,4 +1,4 @@
-import { stopBubbling } from "../../../../_abstracts/js/functions/stopBubbling";
+import { stopBubbling } from '../../../../_abstracts/js/functions/stopBubbling';
 
 class Counter {
     constructor() {
@@ -12,15 +12,15 @@ class Counter {
     }
 
     setupEventListeners() {
-        this.counterButton.addEventListener("click", (event) => {
+        this.counterButton.addEventListener('click', (event) => {
             stopBubbling(event);
             this.bumpCounter();
         });
     }
 
     setupDOMReferences() {
-        this.counterButton = document.querySelector(".counter__button");
-        this.counterOutput = document.querySelector(".counter__output");
+        this.counterButton = document.querySelector('.counter__button');
+        this.counterOutput = document.querySelector('.counter__output');
     }
 
     init() {

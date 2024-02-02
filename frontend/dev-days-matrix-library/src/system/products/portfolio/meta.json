@@ -1,25 +1,25 @@
 {
-  "group": "system",
-  "category": "products",
-  "component": "portfolio",
-  "name": "Portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["page", "template", "base"],
-  "variations": [
-      {
-          "slug": "simplefolio",
-          "name": "Simplefolio",
-          "description": "Simple portfolio"
-      },
-      {
-        "slug": "light-dark-mode",
-        "name": "Light Dark Mode Portfolio",
-        "description": "Light Dark Mode Portfolio with a simple switch"
-    }
-  ]
+    "group": "system",
+    "category": "products",
+    "component": "portfolio",
+    "name": "Portfolio",
+    "version": "1.0.0",
+    "description": "Portfolio",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "simplefolio",
+            "name": "Simplefolio",
+            "description": "Simple portfolio"
+        },
+        {
+            "slug": "light-dark-mode",
+            "name": "Light Dark Mode Portfolio",
+            "description": "Light Dark Mode Portfolio with a simple switch"
+        }
+    ]
 }

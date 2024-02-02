@@ -1,8 +1,8 @@
-@use "sass:map";
-@use "sass:meta";
-@use "sass:math";
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:math';
 
-@import "./no-gutter.scss";
+@import './no-gutter.scss';
 
 /* ------------------------------------ *\
   * GRID MIXINS
@@ -14,7 +14,7 @@
 /// @access private
 @mixin make-col-offset($span, $columns) {
     $offset: 0;
-    @if meta.function-exists("div", "math") {
+    @if meta.function-exists('div', 'math') {
         $offset: math.div($span, $columns);
     } @else {
         $offset: ($span / $columns);
@@ -39,7 +39,7 @@
         // Add a `max-width` to ensure content within each column does not blow out
         // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
         // do not appear to require this.
-        @if meta.function-exists("div", "math") {
+        @if meta.function-exists('div', 'math') {
             max-width: math.percentage(math.div($span, $columns));
             flex: 0 0 math.percentage(math.div($span, $columns));
         } @else {
@@ -126,7 +126,7 @@
             }
 
             @for $i from 0 through ($columns - 1) {
-                @if not($infix == "") {
+                @if not($infix == '') {
                     .offset#{$infix}-#{$i} {
                         @include make-col-offset($i, $columns);
                     }
@@ -153,7 +153,7 @@
 @mixin set-max-width-by-largest-breakpoint($breakpoints: $breakpoints) {
     $largest-breakpoint: last-map-item($breakpoints);
 
-    max-width: map.get($largest-breakpoint, "width");
+    max-width: map.get($largest-breakpoint, 'width');
 }
 
 /// Create the container for a grid. Will cause full-bleed for the grid unless
@@ -201,13 +201,13 @@
         @include make-container($breakpoints);
 
         @include largest-breakpoint($breakpoints) {
-            @include m("full-width") {
+            @include m('full-width') {
                 max-width: 100%;
             }
         }
 
-        @include m("condensed") {
-            [class*="col"] {
+        @include m('condensed') {
+            [class*='col'] {
                 padding-top: $condensed-gutter * 0.5;
                 padding-bottom: $condensed-gutter * 0.5;
             }
@@ -218,7 +218,7 @@
         @include make-row();
     }
 
-    .row-padding [class*="col"],
+    .row-padding [class*='col'],
     .col-padding {
         padding-top: $grid-gutter * 0.5;
         padding-bottom: $grid-gutter * 0.5;

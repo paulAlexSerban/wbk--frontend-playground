@@ -8,7 +8,7 @@
     factory(root.jQuery);
 })(this, function ($) {
     // Create the defaults once
-    var pluginName = "scrolly",
+    var pluginName = 'scrolly',
         defaults = {
             bgParallax: false,
         },
@@ -31,8 +31,8 @@
         this.startPosition = this.$element.position().top;
         this.offsetTop = this.$element.offset().top;
         this.height = this.$element.outerHeight(true);
-        this.velocity = this.$element.attr("data-velocity");
-        this.bgStart = parseInt(this.$element.attr("data-fit"), 10);
+        this.velocity = this.$element.attr('data-velocity');
+        this.bgStart = parseInt(this.$element.attr('data-fit'), 10);
 
         $(document).scroll(function () {
             self.didScroll = true;
@@ -52,9 +52,9 @@
             position = this.startPosition;
 
         if (this.offsetTop >= dT + wH) {
-            this.$element.addClass("scrolly-invisible");
+            this.$element.addClass('scrolly-invisible');
         } else {
-            if (this.$element.hasClass("scrolly-invisible")) {
+            if (this.$element.hasClass('scrolly-invisible')) {
                 position = this.startPosition + (dT + (wH - this.offsetTop)) * this.velocity;
             } else {
                 position = this.startPosition + dT * this.velocity;
@@ -66,7 +66,7 @@
         }
 
         if (this.options.bgParallax === true) {
-            this.$element.css({ backgroundPosition: "50% " + position + "px" });
+            this.$element.css({ backgroundPosition: '50% ' + position + 'px' });
         } else {
             this.$element.css({ top: position });
         }
@@ -74,8 +74,8 @@
 
     $.fn[pluginName] = function (options) {
         return this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+            if (!$.data(this, 'plugin_' + pluginName)) {
+                $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
             }
         });
     };

@@ -1,20 +1,20 @@
 {
-  "group": "library",
-  "category": "patterns",
-  "component": "accordion",
-  "name": "Accordion",
-  "version": "1.0.0",
-  "description": "Accordion",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "modules", "accordion"],
-  "variations": [
-      {
-          "slug": "faq-collapse",
-          "name": "FAQ Collapse",
-          "description": "FAQ Collapse"
-      }
-  ]
+    "group": "library",
+    "category": "patterns",
+    "component": "accordion",
+    "name": "Accordion",
+    "version": "1.0.0",
+    "description": "Accordion",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "accordion"],
+    "variations": [
+        {
+            "slug": "faq-collapse",
+            "name": "FAQ Collapse",
+            "description": "FAQ Collapse"
+        }
+    ]
 }

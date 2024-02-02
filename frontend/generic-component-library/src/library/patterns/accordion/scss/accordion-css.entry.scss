@@ -1,8 +1,8 @@
-@use "sass:color";
+@use 'sass:color';
 
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
-$block: "accordion-css";
+$block: 'accordion-css';
 
 .#{$block} {
     &__base {
@@ -50,7 +50,7 @@ $block: "accordion-css";
         cursor: pointer;
 
         &::after {
-            content: "\276F";
+            content: '\276F';
             width: 1em;
             height: 1em;
             text-align: center;

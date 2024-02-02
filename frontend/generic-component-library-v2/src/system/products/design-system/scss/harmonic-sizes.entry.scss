@@ -1,0 +1,120 @@
+@import '~ScssAbstracts';
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--ss-1);
+    align-items: baseline;
+}
+.box {
+    background-color: rgb(32, 32, 32);
+
+    &.ss-5 {
+        height: var(--ss-5);
+        width: var(--ss-5);
+    }
+
+    &.ss-4 {
+        height: var(--ss-4);
+        width: var(--ss-4);
+    }
+
+    &.ss-3 {
+        height: var(--ss-3);
+        width: var(--ss-3);
+    }
+
+    &.ss-2 {
+        height: var(--ss-2);
+        width: var(--ss-2);
+    }
+
+    &.ss-1 {
+        height: var(--ss-1);
+        width: var(--ss-1);
+    }
+
+    &.ss0 {
+        height: var(--ss0);
+        width: var(--ss0);
+    }
+
+    &.ss1 {
+        height: var(--ss1);
+        width: var(--ss1);
+    }
+
+    &.ss2 {
+        height: var(--ss2);
+        width: var(--ss2);
+    }
+
+    &.ss3 {
+        height: var(--ss3);
+        width: var(--ss3);
+    }
+
+    &.ss4 {
+        height: var(--ss4);
+        width: var(--ss4);
+    }
+
+    &.ss5 {
+        height: var(--ss5);
+        width: var(--ss5);
+    }
+
+    &.rs-5 {
+        height: var(--rs-5);
+        width: var(--rs-5);
+    }
+
+    &.rs-4 {
+        height: var(--rs-4);
+        width: var(--rs-4);
+    }
+
+    &.rs-3 {
+        height: var(--rs-3);
+        width: var(--rs-3);
+    }
+
+    &.rs-2 {
+        height: var(--rs-2);
+        width: var(--rs-2);
+    }
+
+    &.rs-1 {
+        height: var(--rs-1);
+        width: var(--rs-1);
+    }
+
+    &.rs0 {
+        height: var(--rs0);
+        width: var(--rs0);
+    }
+
+    &.rs1 {
+        height: var(--rs1);
+        width: var(--rs1);
+    }
+
+    &.rs2 {
+        height: var(--rs2);
+        width: var(--rs2);
+    }
+
+    &.rs3 {
+        height: var(--rs3);
+        width: var(--rs3);
+    }
+
+    &.rs4 {
+        height: var(--rs4);
+        width: var(--rs4);
+    }
+
+    &.rs5 {
+        height: var(--rs5);
+        width: var(--rs5);
+    }
+}
