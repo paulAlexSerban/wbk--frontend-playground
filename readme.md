@@ -1,5 +1,6 @@
-# JavaScript Component Library
+# Front-end Playground - JavaScript
 
+-   Workbook project for Front-end development research and development with JavaScript.
 -   A collection of reusable components for JavaScript projects.
 -   Scss only components, JavaScript only components, and full components with both JavaScript and Scss.
 
@@ -33,14 +34,3 @@ A unified platform showcasing diverse frontend components with a focus on learni
 ## Useful Scripts
 
 -   install all dependencies: `yarn install`
-
-## Backlog
-
-### v2.0 Restructure to Monorepo
-
--   [ ] Monorepo w. Lerna & Yarn for FE & BE development
-    -   [x] setup yarn instead of npm
-    -   [x] setup workspaces w. lerna
-    -   [x] serve static files with `npx serve`
-    -   [ ] setup local express api for serving JSON data
--   [ ] Modulize for local setup w. Docker Compose (traefik, nginx and node.js)
