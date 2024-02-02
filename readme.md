@@ -5,8 +5,8 @@
 
 ## URL's
 
--   [Live Website](https://paulalexserban.github.io/prj--js-component-lib/)
--   [Github Repository](https://github.com/paulAlexSerban/prj--js-component-lib)
+-   [Live Website](https://paulalexserban.github.io/wbk--fe-playground--javascript/)
+-   [Github Repository](https://github.com/paulAlexSerban/wbk--fe-playground--javascript)
 
 ## Project Brief
 

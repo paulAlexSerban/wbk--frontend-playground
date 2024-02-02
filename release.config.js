@@ -1,6 +1,6 @@
 module.exports = {
     branches: 'release',
-    repositoryUrl: 'https://github.com/paulAlexSerban/prj--js-component-lib',
+    repositoryUrl: 'https://github.com/paulAlexSerban/wbk--fe-playground--javascript',
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',

@@ -21,14 +21,14 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Screenshot
 
-![](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/generic-component-library/src/library/patterns/card/assets/qr-code-card/screenshots/Screen%20Shot%202023-07-30%20at%2020.31.46.png?raw=true)
+![](https://github.com/paulAlexSerban/wbk--fe-playground--javascript/blob/main/frontend/generic-component-library/src/library/patterns/card/assets/qr-code-card/screenshots/Screen%20Shot%202023-07-30%20at%2020.31.46.png?raw=true)
 
 ### Links
 
 -   Solution URL:
-    -   [Markup](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/generic-component-library/src/library/patterns/card/markup/qr-code-card.entry.hbs)
-    -   [Styles](https://github.com/paulAlexSerban/prj--js-component-lib/blob/main/frontend/generic-component-library/src/library/patterns/card/scss/qr-code-card.entry.scss)
--   Live Site URL: [QR Code Card](https://paulalexserban.github.io/prj--js-component-lib/generic-component-library/library/patterns/card/qr-code-card.html)
+    -   [Markup](https://github.com/paulAlexSerban/wbk--fe-playground--javascript/blob/main/frontend/generic-component-library/src/library/patterns/card/markup/qr-code-card.entry.hbs)
+    -   [Styles](https://github.com/paulAlexSerban/wbk--fe-playground--javascript/blob/main/frontend/generic-component-library/src/library/patterns/card/scss/qr-code-card.entry.scss)
+-   Live Site URL: [QR Code Card](https://paulalexserban.github.io/wbk--fe-playground--javascript/generic-component-library/library/patterns/card/qr-code-card.html)
 
 ## My process
 
