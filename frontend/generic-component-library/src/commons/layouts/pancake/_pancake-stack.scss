@@ -2,7 +2,7 @@
 // Commonly referred to as a sticky footer, this layout is often used for both websites and apps.
 // TODO: adjust according to standards
 
-$layout: "lyt-pancake-stack";
+$layout: 'lyt-pancake-stack';
 
 .#{$layout} {
     display: grid;

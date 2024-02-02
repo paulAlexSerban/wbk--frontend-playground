@@ -1,9 +1,9 @@
 export const config = {
-    type: "widget",
-    name: "NinjaQuiz",
+    type: 'widget',
+    name: 'NinjaQuiz',
 };
 
-const correctAnswers = ["B", "B", "B", "B"];
+const correctAnswers = ['B', 'B', 'B', 'B'];
 
 export const NinjaQuiz = (el) => {
     const global = { state: {}, elements: {} };
@@ -14,12 +14,12 @@ export const NinjaQuiz = (el) => {
     };
 
     const setupDomReferences = () => {
-        global.elements.form = el.querySelector(".quiz-form");
-        global.elements.result = el.querySelector(".result");
+        global.elements.form = el.querySelector('.quiz-form');
+        global.elements.result = el.querySelector('.result');
     };
 
     const setupEventListeners = () => {
-        global.elements.form.addEventListener("submit", (e) => {
+        global.elements.form.addEventListener('submit', (e) => {
             e.preventDefault();
 
             let score = 0;
@@ -38,14 +38,13 @@ export const NinjaQuiz = (el) => {
             });
 
             // show the result
-            global.elements.result.querySelector("span").textContent = `${score}%`;
-            global.elements.result.classList.remove("d-none");
+            global.elements.result.querySelector('span').textContent = `${score}%`;
+            global.elements.result.classList.remove('d-none');
         });
     };
 
     init();
 };
-
 
 (() => {
     document.querySelectorAll(`[data-js-${config.type}=${config.name}]`).forEach((el) => {

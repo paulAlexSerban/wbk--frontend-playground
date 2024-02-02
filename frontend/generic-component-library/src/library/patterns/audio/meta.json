@@ -1,20 +1,20 @@
 {
-  "group": "library",
-  "category": "patterns",
-  "component": "audio",
-  "name": "Audio",
-  "version": "1.0.0",
-  "description": "Audio",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "patterns", "audio"],
-  "variations": [
-      {
-          "slug": "sound-board",
-          "name": "Sound Board",
-          "description": "Sound Board"
-      }
-  ]
+    "group": "library",
+    "category": "patterns",
+    "component": "audio",
+    "name": "Audio",
+    "version": "1.0.0",
+    "description": "Audio",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "audio"],
+    "variations": [
+        {
+            "slug": "sound-board",
+            "name": "Sound Board",
+            "description": "Sound Board"
+        }
+    ]
 }

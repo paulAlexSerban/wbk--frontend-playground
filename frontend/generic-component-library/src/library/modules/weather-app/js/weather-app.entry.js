@@ -1,34 +1,32 @@
-import { findOne } from "../../../../_abstracts/js/dom/traversing";
+import { findOne } from '../../../../_abstracts/js/dom/traversing';
 
 export const config = {
-    type: "widget",
-    name: "WeatherApp",
+    type: 'widget',
+    name: 'WeatherApp',
     selectors: {
-        longitude: ".js-weather-app-longitude",
-        latitude: ".js-weather-app-latitude",
-        tempInfoCelsius: ".js-weather-app-celsius",
-        tempInfoFahrenheit: ".js-weather-app-fahrenheit",
-        weatherImage: ".js-weather-app-image",
-        weatherDescription: ".js-weather-app-description",
-        cityName: ".js-weather-app-city",
-        switchBtnFahrenheit: ".js-weather-app-button-fahrenheit",
-        switchBtnCelsius: ".js-weather-app-button-celsius",
-        tempInfoMinTemp: ".js-weather-app-min",
-        tempInfoMaxTemp: ".js-weather-app-max",
-        windSpeed: ".js-weather-app-windSpeed",
-        pressure: ".js-weather-app-pressure",
-        humidity: ".js-weather-app-humidity",
+        longitude: '.js-weather-app-longitude',
+        latitude: '.js-weather-app-latitude',
+        tempInfoCelsius: '.js-weather-app-celsius',
+        tempInfoFahrenheit: '.js-weather-app-fahrenheit',
+        weatherImage: '.js-weather-app-image',
+        weatherDescription: '.js-weather-app-description',
+        cityName: '.js-weather-app-city',
+        switchBtnFahrenheit: '.js-weather-app-button-fahrenheit',
+        switchBtnCelsius: '.js-weather-app-button-celsius',
+        tempInfoMinTemp: '.js-weather-app-min',
+        tempInfoMaxTemp: '.js-weather-app-max',
+        windSpeed: '.js-weather-app-windSpeed',
+        pressure: '.js-weather-app-pressure',
+        humidity: '.js-weather-app-humidity',
     },
     states: {
-        active: "active",
+        active: 'active',
     },
 };
-
 
 export const getApiUrl = (lat, lon) => {
     return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=059dcee9c15c93a942eb1f38b72876be`;
 };
-
 
 (() => {
     const WeatherApp = (el) => {
@@ -41,7 +39,7 @@ export const getApiUrl = (lat, lon) => {
         };
 
         const getUserGeolocation = () => {
-            fetch("https://ipapi.co/json/") // Call the fetch function passing the url of the API as a parameter
+            fetch('https://ipapi.co/json/') // Call the fetch function passing the url of the API as a parameter
                 .then((data) => data.json())
                 .then((data) => {
                     // Code for handling the data you get from the API
@@ -53,8 +51,7 @@ export const getApiUrl = (lat, lon) => {
 
                     getWeather();
                 })
-                .catch(() => {
-                });
+                .catch(() => {});
         };
 
         const getWeather = () => {
@@ -70,8 +67,8 @@ export const getApiUrl = (lat, lon) => {
                     const iconImage = `${weatherDescription} image`;
                     const cityName = weatherData.name;
 
-                    global.elements.weatherImage.setAttribute("src", icon);
-                    global.elements.weatherImage.setAttribute("alt", iconImage);
+                    global.elements.weatherImage.setAttribute('src', icon);
+                    global.elements.weatherImage.setAttribute('alt', iconImage);
 
                     global.elements.weatherDescription.append(weatherDescription);
                     global.elements.cityName.append(cityName);
@@ -96,18 +93,17 @@ export const getApiUrl = (lat, lon) => {
                     global.elements.tempInfoMinTemp.append(`Min: ${global.data.minCelsius} ºC`);
                     global.elements.tempInfoMaxTemp.append(`Max: ${global.data.maxCelsius} ºC`);
                 })
-                .catch(() => {
-                });
+                .catch(() => {});
         };
 
         const switchCelsius = () => {
             global.elements.switchBtnFahrenheit.classList.remove(config.states.active);
             global.elements.switchBtnCelsius.classList.add(config.states.active);
 
-            global.elements.tempInfoFahrenheit.innerHTML = "";
-            global.elements.tempInfoCelsius.innerHTML = "";
-            global.elements.tempInfoMinTemp.innerHTML = "";
-            global.elements.tempInfoMaxTemp.innerHTML = "";
+            global.elements.tempInfoFahrenheit.innerHTML = '';
+            global.elements.tempInfoCelsius.innerHTML = '';
+            global.elements.tempInfoMinTemp.innerHTML = '';
+            global.elements.tempInfoMaxTemp.innerHTML = '';
             global.elements.tempInfoCelsius.append(`${global.data.celsius} ºC`);
             global.elements.tempInfoMinTemp.append(`${global.data.minCelsius} ºC`);
             global.elements.tempInfoMaxTemp.append(`${global.data.maxCelsius} ºC`);
@@ -117,10 +113,10 @@ export const getApiUrl = (lat, lon) => {
             global.elements.switchBtnFahrenheit.classList.add(config.states.active);
             global.elements.switchBtnCelsius.classList.remove(config.states.active);
 
-            global.elements.tempInfoCelsius.innerHTML = "";
-            global.elements.tempInfoFahrenheit.innerHTML = "";
-            global.elements.tempInfoMinTemp.innerHTML = "";
-            global.elements.tempInfoMaxTemp.innerHTML = "";
+            global.elements.tempInfoCelsius.innerHTML = '';
+            global.elements.tempInfoFahrenheit.innerHTML = '';
+            global.elements.tempInfoMinTemp.innerHTML = '';
+            global.elements.tempInfoMaxTemp.innerHTML = '';
             global.elements.tempInfoFahrenheit.append(`${global.data.fahrenheit} ºF`);
             global.elements.tempInfoMinTemp.append(`${global.data.minFahrenheit} ºF`);
             global.elements.tempInfoMaxTemp.append(`${global.data.maxFahrenheit} ºF`);
@@ -145,7 +141,7 @@ export const getApiUrl = (lat, lon) => {
 
         const setupEventListeners = () => {
             global.elements.switchBtnCelsius.addEventListener(
-                "click",
+                'click',
                 () => {
                     switchCelsius();
                 },
@@ -153,7 +149,7 @@ export const getApiUrl = (lat, lon) => {
             );
 
             global.elements.switchBtnFahrenheit.addEventListener(
-                "click",
+                'click',
                 () => {
                     switchFahrenheit();
                 },

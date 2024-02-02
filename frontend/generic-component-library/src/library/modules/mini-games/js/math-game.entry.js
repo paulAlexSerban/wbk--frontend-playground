@@ -1,6 +1,6 @@
 export const config = {
-    type: "widget",
-    name: "MathGame",
+    type: 'widget',
+    name: 'MathGame',
 };
 
 export const MathGame = (el) => {
@@ -17,20 +17,20 @@ export const MathGame = (el) => {
     };
 
     const setupDomReferences = () => {
-        global.elements.startreset = document.getElementById("startreset");
-        global.elements.scorevalue = document.getElementById("scorevalue");
-        global.elements.timeremainingvalue = document.getElementById("timeremainingvalue");
-        global.elements.gameOver = document.getElementById("gameOver");
+        global.elements.startreset = document.getElementById('startreset');
+        global.elements.scorevalue = document.getElementById('scorevalue');
+        global.elements.timeremainingvalue = document.getElementById('timeremainingvalue');
+        global.elements.gameOver = document.getElementById('gameOver');
         for (let i = 1; i < 5; i++) {
             global.elements[`box${i}`] = document.getElementById(`box${i}`);
         }
-        global.elements.question = document.getElementById("question");
+        global.elements.question = document.getElementById('question');
     };
 
     const setupEventListeners = () => {
-        global.elements.startreset.addEventListener("click", () => handleStartReset());
+        global.elements.startreset.addEventListener('click', () => handleStartReset());
         for (let i = 1; i < 5; i++) {
-            global.elements[`box${i}`].addEventListener("click", (e) => handleAnswerClick(e));
+            global.elements[`box${i}`].addEventListener('click', (e) => handleAnswerClick(e));
         }
     };
 
@@ -39,18 +39,18 @@ export const MathGame = (el) => {
             if (e.target.innerHTML == correctAnswer) {
                 score++;
                 global.elements.scorevalue.innerHTML = score;
-                hide("wrong");
-                show("correct");
+                hide('wrong');
+                show('correct');
                 setTimeout(() => {
-                    hide("correct");
+                    hide('correct');
                 }, 1000);
 
                 generateQA();
             } else {
-                hide("correct");
-                show("wrong");
+                hide('correct');
+                show('wrong');
                 setTimeout(() => {
-                    hide("wrong");
+                    hide('wrong');
                 }, 1000);
             }
         }
@@ -63,11 +63,11 @@ export const MathGame = (el) => {
             playing = true;
             score = 0;
             global.elements.scorevalue.innerHTML = score;
-            show("timeremaining");
+            show('timeremaining');
             timeremaining = 60;
             global.elements.timeremainingvalue.innerHTML = timeremaining;
-            hide("gameOver");
-            global.elements.startreset.innerHTML = "Reset Game";
+            hide('gameOver');
+            global.elements.startreset.innerHTML = 'Reset Game';
             startCountdown();
             generateQA();
         }
@@ -80,13 +80,13 @@ export const MathGame = (el) => {
             if (timeremaining == 0) {
                 // game over
                 stopCountdown();
-                show("gameOver");
-                global.elements.gameOver.innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
-                hide("timeremaining");
-                hide("correct");
-                hide("wrong");
+                show('gameOver');
+                global.elements.gameOver.innerHTML = '<p>Game over!</p><p>Your score is ' + score + '.</p>';
+                hide('timeremaining');
+                hide('correct');
+                hide('wrong');
                 playing = false;
-                global.elements.startreset.innerHTML = "Start Game";
+                global.elements.startreset.innerHTML = 'Start Game';
             }
         }, 1000);
     };
@@ -96,20 +96,20 @@ export const MathGame = (el) => {
     };
 
     const hide = (Id) => {
-        document.getElementById(Id).style.display = "none";
+        document.getElementById(Id).style.display = 'none';
     };
 
     const show = (Id) => {
-        document.getElementById(Id).style.display = "block";
+        document.getElementById(Id).style.display = 'block';
     };
 
     const generateQA = () => {
         const x = 1 + Math.round(9 * Math.random());
         const y = 1 + Math.round(9 * Math.random());
         correctAnswer = x * y;
-        global.elements.question.innerHTML = x + "x" + y;
+        global.elements.question.innerHTML = x + 'x' + y;
         const correctPosition = 1 + Math.round(3 * Math.random());
-        document.getElementById("box" + correctPosition).innerHTML = correctAnswer; //fill one box with the correct answer
+        document.getElementById('box' + correctPosition).innerHTML = correctAnswer; //fill one box with the correct answer
 
         //fill other boxes with wrong answers
 
@@ -121,7 +121,7 @@ export const MathGame = (el) => {
                 do {
                     wrongAnswer = (1 + Math.round(9 * Math.random())) * (1 + Math.round(9 * Math.random())); //a wrong answer
                 } while (answers.indexOf(wrongAnswer) > -1);
-                document.getElementById("box" + i).innerHTML = wrongAnswer;
+                document.getElementById('box' + i).innerHTML = wrongAnswer;
                 answers.push(wrongAnswer);
             }
         }

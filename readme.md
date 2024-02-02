@@ -1,32 +1,36 @@
-# JavaScript Component Library
+# Front-end Playground - JavaScript
 
+-   Workbook project for Front-end development research and development with JavaScript.
 -   A collection of reusable components for JavaScript projects.
 -   Scss only components, JavaScript only components, and full components with both JavaScript and Scss.
 
-## Install Project Dependencies
-- `bash modulize.bash -e dev -p install` - Install all dependencies for all modules.
+## URL's
 
-## Start Local Development Dcoker-Compose Setup
-2. `bash modulize.bash -e production -p docker-start` - start docker compose setup
-3. `bash modulize.bash -e production -p watch` - start component library watcher
+-   [Live Website](https://paulalexserban.github.io/wbk--fe-playground--javascript/)
+-   [Github Repository](https://github.com/paulAlexSerban/wbk--fe-playground--javascript)
 
-## Process and Publish assets to AWS S3
-- `bash modulize.bash -e dev -m assets -p process` - Process assets before publishing to AWS.
-- `bash modulize.bash -e dev -m assets -p publish` - Publish assets to AWS.
+## Project Brief
 
-## Component Library Development
-1. `bash modulize.bash -e dev -m generic-component-library -p build` - Build the component library to make sure it is up to date and building correctly.
-2. `bash modulize.bash -e dev -m generic-component-library -p watch` - Watch the component library for changes and rebuild when changes are detected.
+### Summary
 
-## How to add new module
-1. `bash modulize.bash -e dev -m <module-name> -p fe-generate` - will generate new FE module
-   @TODO: copy template
-   @TODO: find and replace template-module-name-library with module-name
+The project is a comprehensive JavaScript component library that showcases various UI components sourced from diverse online challenges and courses. It's a testament to an individual's journey in frontend development, and a platform for others to witness the potential of these UI components.
 
-## Backlog
+### Goal Details
 
-### v2.0 Restructure to Monorepo
-- [ ] Monorepo w. Lerna & Yarn for FE & BE development
-  - [ ] setup yarn instead of npm
-  - [ ] setup workspaces w. lerna
-- [ ] Modulize for local setup w. Docker Compose (traefik, nginx and node.js)
+-   Display and categorize UI components from various challenges and courses.
+-   Offer a seamless user experience to navigate through the different UI components.
+-   Serve as a learning tool and portfolio to showcase frontend skills.
+
+### Target Audience
+
+-   Recruiters or employers looking to hire frontend developers.
+-   Developers seeking inspiration or references for frontend components.
+-   Students or beginners in frontend development.
+
+### Promise
+
+A unified platform showcasing diverse frontend components with a focus on learning and practical implementation.
+
+## Useful Scripts
+
+-   install all dependencies: `yarn install`

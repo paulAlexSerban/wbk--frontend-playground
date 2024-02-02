@@ -1,10 +1,10 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  *  MOVIE SEAT BOOKING
 \* ------------------------------------ */
 
-$block: "movie-seat-booking";
+$block: 'movie-seat-booking';
 
 .#{$block} {
     // --color-page-background: #{get-color($c-light, light)};
@@ -17,7 +17,7 @@ $block: "movie-seat-booking";
     // --text-font-family-regular: #{$font-family-lato}; /* regular font family */
     // --text-font-family-code: #{$font-family-courierPrime}; /* code family */
 
-    @include e("base") {
+    @include e('base') {
         @include flex($direction: column);
 
         min-width: convert-rem(400px);
@@ -27,11 +27,11 @@ $block: "movie-seat-booking";
         background-color: get-color($c-light, cultured);
     }
 
-    @include e("movie-picker") {
+    @include e('movie-picker') {
         margin: 0 0 convert-rem(20px) 0;
     }
 
-    @include e("select") {
+    @include e('select') {
         @include font($select);
 
         padding: convert-rem(5px) convert-rem(15px);
@@ -42,12 +42,12 @@ $block: "movie-seat-booking";
         appearance: none;
     }
 
-    @include e("container") {
+    @include e('container') {
         margin-bottom: convert-rem(30px);
         perspective: convert-rem(1000px);
     }
 
-    @include e("seat") {
+    @include e('seat') {
         width: convert-rem(15px);
         height: convert-rem(12px);
         margin: convert-rem(3px);
@@ -73,16 +73,16 @@ $block: "movie-seat-booking";
             margin-left: $gutter;
         }
 
-        @include m("selected") {
+        @include m('selected') {
             background-color: get-color($c-blue, french-sky-blue);
         }
 
-        @include m("occupied") {
+        @include m('occupied') {
             background-color: get-color($c-light, cultured);
         }
     }
 
-    @include e("showcase-list") {
+    @include e('showcase-list') {
         @include flex($main: space-between);
 
         padding: $baseline $gutter;
@@ -90,23 +90,23 @@ $block: "movie-seat-booking";
         border-radius: convert-rem(5px);
     }
 
-    @include e("showcase-item") {
+    @include e('showcase-item') {
         @include flex();
         margin: 0 $gutter;
     }
 
-    @include e("caption") {
+    @include e('caption') {
         @include font($showcase);
 
         margin-left: convert-rem(2px);
     }
 
-    @include e("row") {
+    @include e('row') {
         @include flex();
         background: get-color($c-dark, dark-10);
     }
 
-    @include e("screen") {
+    @include e('screen') {
         width: 100%;
         height: convert-rem(70px);
         margin: ($baseline * 2) 0;
@@ -115,11 +115,11 @@ $block: "movie-seat-booking";
         transform: rotateX(-45deg);
     }
 
-    @include e("text") {
+    @include e('text') {
         margin: convert-rem(5px) 0;
     }
 
-    @include e("count", "total") {
+    @include e('count', 'total') {
         color: get-color($c-blue, carolina-blue);
     }
 }

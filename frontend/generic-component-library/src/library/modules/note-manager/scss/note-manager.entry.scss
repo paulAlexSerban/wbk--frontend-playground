@@ -1,13 +1,13 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 /* ------------------------------------ *\
  * NOTE MANAGER STYLES
 \* ------------------------------------ */
 
-$block: "note-manager";
+$block: 'note-manager';
 
 .#{$block} {
-    @include e("base") {
+    @include e('base') {
         .changeBg {
             background-color: #ff0;
         }

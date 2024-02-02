@@ -1,4 +1,4 @@
-import { find, findOne } from "../../../../_abstracts/js/dom/traversing";
+import { find, findOne } from '../../../../_abstracts/js/dom/traversing';
 
 class ImageComparisonSlider {
     constructor(el) {
@@ -10,13 +10,13 @@ class ImageComparisonSlider {
 
     setupDomReferences() {
         this.elements = {
-            container: findOne(".img-comparison__container", this.element),
-            imgOverlay: find(".img-comparison__overlay", this.element),
-            imageForComparisonInput: findOne(".js-image-path-for-compare", this.element),
-            imageToCompareInput: findOne(".js-image-path-to-compare", this.element),
-            imageWidthInput: findOne(".js-image-width", this.element),
-            imageForComparison: findOne(".js-image-for-compare", this.element),
-            imageToCompare: findOne(".js-image-to-compare", this.element),
+            container: findOne('.img-comparison__container', this.element),
+            imgOverlay: find('.img-comparison__overlay', this.element),
+            imageForComparisonInput: findOne('.js-image-path-for-compare', this.element),
+            imageToCompareInput: findOne('.js-image-path-to-compare', this.element),
+            imageWidthInput: findOne('.js-image-width', this.element),
+            imageForComparison: findOne('.js-image-for-compare', this.element),
+            imageToCompare: findOne('.js-image-to-compare', this.element),
         };
     }
 
@@ -30,16 +30,16 @@ class ImageComparisonSlider {
     }
 
     setupEventListeners() {
-        this.elements.imageForComparisonInput.addEventListener("change", (e) =>
-            this.updateImage("imageForComparison", e.target.value)
+        this.elements.imageForComparisonInput.addEventListener('change', (e) =>
+            this.updateImage('imageForComparison', e.target.value)
         );
-        this.elements.imageToCompareInput.addEventListener("change", (e) =>
-            this.updateImage("imageToCompare", e.target.value)
+        this.elements.imageToCompareInput.addEventListener('change', (e) =>
+            this.updateImage('imageToCompare', e.target.value)
         );
 
-        this.elements.imageWidthInput.addEventListener("change", (e) => {
+        this.elements.imageWidthInput.addEventListener('change', (e) => {
             const value = parseInt(e.target.value);
-            this.elements.container.style.setProperty("--img-comp-slider-width", `${value}px`);
+            this.elements.container.style.setProperty('--img-comp-slider-width', `${value}px`);
             this.resetComparisons();
             this.initComparisons();
         });
@@ -47,7 +47,7 @@ class ImageComparisonSlider {
 
     updateImage(type, path) {
         this.fetchImage(path).then(() => {
-            this.elements[type].setAttribute("src", path);
+            this.elements[type].setAttribute('src', path);
         });
     }
 
@@ -57,25 +57,25 @@ class ImageComparisonSlider {
         const w = img.offsetWidth;
         const h = img.offsetHeight;
         /* Set the width of the img element to 50%: */
-        img.style.width = w / 2 + "px";
+        img.style.width = w / 2 + 'px';
 
         /* Create slider: */
-        const slider = document.createElement("DIV");
-        slider.setAttribute("class", "img-comparison__slider");
+        const slider = document.createElement('DIV');
+        slider.setAttribute('class', 'img-comparison__slider');
         /* Insert slider */
         img.parentElement.insertBefore(slider, img);
         /* Position the slider in the middle: */
-        slider.style.top = h / 2 - slider.offsetHeight / 2 + "px";
-        slider.style.left = w / 2 - slider.offsetWidth / 2 + "px";
+        slider.style.top = h / 2 - slider.offsetHeight / 2 + 'px';
+        slider.style.left = w / 2 - slider.offsetWidth / 2 + 'px';
 
         /* Execute a function when the mouse button is pressed: */
-        slider.addEventListener("mousedown", slideReady);
+        slider.addEventListener('mousedown', slideReady);
         /* And another function when the mouse button is released: */
-        window.addEventListener("mouseup", slideFinish);
+        window.addEventListener('mouseup', slideFinish);
         /* Or touched (for touch screens: */
-        slider.addEventListener("touchstart", slideReady);
+        slider.addEventListener('touchstart', slideReady);
         /* And released (for touch screens: */
-        window.addEventListener("touchend", slideFinish);
+        window.addEventListener('touchend', slideFinish);
 
         function slideReady(e) {
             /* Prevent any other actions that may occur when moving over the image: */
@@ -83,8 +83,8 @@ class ImageComparisonSlider {
             /* The slider is now clicked and ready to move: */
             clicked = 1;
             /* Execute a function when the slider is moved: */
-            window.addEventListener("mousemove", slideMove);
-            window.addEventListener("touchmove", slideMove);
+            window.addEventListener('mousemove', slideMove);
+            window.addEventListener('touchmove', slideMove);
         }
 
         const slideFinish = () => {
@@ -123,9 +123,9 @@ class ImageComparisonSlider {
         };
         const slide = (x) => {
             /* Resize the image: */
-            img.style.width = x + "px";
+            img.style.width = x + 'px';
             /* Position the slider: */
-            slider.style.left = img.offsetWidth - slider.offsetWidth / 2 + "px";
+            slider.style.left = img.offsetWidth - slider.offsetWidth / 2 + 'px';
         };
     }
 
@@ -137,8 +137,8 @@ class ImageComparisonSlider {
 
     resetComparisons() {
         for (let img of this.elements.imgOverlay) {
-            img.style.width = "";
-            const slider = img.parentNode.querySelector(".img-comparison__slider");
+            img.style.width = '';
+            const slider = img.parentNode.querySelector('.img-comparison__slider');
             if (slider) {
                 slider.remove();
             }

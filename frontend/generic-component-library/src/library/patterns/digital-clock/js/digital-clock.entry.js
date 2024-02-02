@@ -1,7 +1,7 @@
 (() => {
     const config = {
         selectors: {
-            digitalClock: ".js-digital-clock__time",
+            digitalClock: '.js-digital-clock__time',
         },
     };
     class DigitalClock {
@@ -29,7 +29,7 @@
                 seconds = `0${seconds}`;
             }
 
-            const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             this.digitalClock.innerHTML = `${weekdays[day]} ${hours}:${minutes}:${seconds}`;
         }
 
@@ -44,5 +44,5 @@
         }
     }
 
-    document.querySelectorAll(".js-digital-clock").forEach((el) => new DigitalClock(el));
+    document.querySelectorAll('.js-digital-clock').forEach((el) => new DigitalClock(el));
 })();

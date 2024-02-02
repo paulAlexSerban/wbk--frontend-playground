@@ -1,31 +1,31 @@
-const image = document.querySelector("img");
-const title = document.getElementById("title");
-const artist = document.getElementById("artist");
-const music = document.querySelector("audio");
-const currentTimeEl = document.getElementById("current-time");
-const durationEl = document.getElementById("duration");
-const progress = document.getElementById("progress");
-const progressContainer = document.getElementById("progress-container");
-const prevBtn = document.getElementById("prev");
-const playBtn = document.getElementById("play");
-const nextBtn = document.getElementById("next");
+const image = document.querySelector('img');
+const title = document.getElementById('title');
+const artist = document.getElementById('artist');
+const music = document.querySelector('audio');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
+const progress = document.getElementById('progress');
+const progressContainer = document.getElementById('progress-container');
+const prevBtn = document.getElementById('prev');
+const playBtn = document.getElementById('play');
+const nextBtn = document.getElementById('next');
 
 // Music
 const songs = [
     {
-        name: "ukulele",
-        displayName: "Ukulele Musice",
-        artist: "Paul One",
+        name: 'ukulele',
+        displayName: 'Ukulele Musice',
+        artist: 'Paul One',
     },
     {
-        name: "hey",
-        displayName: "Hey Musice",
-        artist: "Le Paul",
+        name: 'hey',
+        displayName: 'Hey Musice',
+        artist: 'Le Paul',
     },
     {
-        name: "summer",
-        displayName: "Summer Music",
-        artist: "Paul Sings",
+        name: 'summer',
+        displayName: 'Summer Music',
+        artist: 'Paul Sings',
     },
 ];
 
@@ -35,30 +35,30 @@ let isPlaying = false;
 // Play
 function playSong() {
     isPlaying = true;
-    playBtn.classList.replace("fa-play", "fa-pause");
-    playBtn.setAttribute("title", "Pause");
+    playBtn.classList.replace('fa-play', 'fa-pause');
+    playBtn.setAttribute('title', 'Pause');
     music.play();
 }
 
 // Pause
 function pauseSong() {
     isPlaying = false;
-    playBtn.classList.replace("fa-pause", "fa-play");
-    playBtn.setAttribute("title", "Play");
+    playBtn.classList.replace('fa-pause', 'fa-play');
+    playBtn.setAttribute('title', 'Play');
     music.pause();
 }
 
 // Play or Pause Event Listener
-playBtn.addEventListener("click", () => (isPlaying ? pauseSong() : playSong()));
+playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 
 // Update DOM
 function loadSong(song) {
     title.textContent = song.displayName;
     artist.textContent = song.artist;
-    const musicBasePath = music.getAttribute("data-base-path");
-    const imageBasePath = image.getAttribute("data-base-path");
-    music.src = musicBasePath.replace("{0}", song.name);
-    image.src = imageBasePath.replace("{0}", song.name);
+    const musicBasePath = music.getAttribute('data-base-path');
+    const imageBasePath = image.getAttribute('data-base-path');
+    music.src = musicBasePath.replace('{0}', song.name);
+    image.src = imageBasePath.replace('{0}', song.name);
 }
 
 // Current Song
@@ -123,8 +123,8 @@ function setProgressBar(e) {
 }
 
 // Event Listeners
-prevBtn.addEventListener("click", prevSong);
-nextBtn.addEventListener("click", nextSong);
-music.addEventListener("ended", nextSong);
-music.addEventListener("timeupdate", updateProgressBar);
-progressContainer.addEventListener("click", setProgressBar);
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+music.addEventListener('ended', nextSong);
+music.addEventListener('timeupdate', updateProgressBar);
+progressContainer.addEventListener('click', setProgressBar);

@@ -1,18 +1,18 @@
-import { find, findOne } from "../../../../_abstracts/js/dom/traversing";
+import { find, findOne } from '../../../../_abstracts/js/dom/traversing';
 
 (() => {
     const config = {
-        type: "pat",
-        name: "ProgressSteps",
+        type: 'pat',
+        name: 'ProgressSteps',
         selectors: {
-            progressBar: ".js-progress-bar",
-            btnPrev: ".js-btn-prev",
-            btnNext: ".js-btn-next",
-            pill: ".js-pill",
-            active: ".active",
+            progressBar: '.js-progress-bar',
+            btnPrev: '.js-btn-prev',
+            btnNext: '.js-btn-next',
+            pill: '.js-pill',
+            active: '.active',
         },
         states: {
-            active: "active",
+            active: 'active',
         },
     };
 
@@ -37,7 +37,7 @@ import { find, findOne } from "../../../../_abstracts/js/dom/traversing";
         };
 
         const setupEventListener = () => {
-            global.elements.btnNext.addEventListener("click", () => {
+            global.elements.btnNext.addEventListener('click', () => {
                 global.state.currentActive++;
 
                 if (global.state.currentActive > global.elements.pillCircle.length) {
@@ -47,7 +47,7 @@ import { find, findOne } from "../../../../_abstracts/js/dom/traversing";
                 update();
             });
 
-            global.elements.btnPrev.addEventListener("click", () => {
+            global.elements.btnPrev.addEventListener('click', () => {
                 global.state.currentActive--;
 
                 if (global.state.currentActive < 1) {
@@ -70,7 +70,7 @@ import { find, findOne } from "../../../../_abstracts/js/dom/traversing";
             global.elements.activeSteps = find(config.selectors.active);
 
             global.elements.progressBar.style.width =
-                ((global.elements.activeSteps.length - 1) / (global.elements.pillCircle.length - 1)) * 100 + "%";
+                ((global.elements.activeSteps.length - 1) / (global.elements.pillCircle.length - 1)) * 100 + '%';
 
             if (global.state.currentActive === 1) {
                 global.elements.btnPrev.disabled = true;

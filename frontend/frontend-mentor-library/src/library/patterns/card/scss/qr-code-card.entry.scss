@@ -1,4 +1,4 @@
-@import "~ScssAbstracts";
+@import '~ScssAbstracts';
 
 :root {
     --color-white: hsl(0, 0%, 100%);
@@ -18,7 +18,7 @@
 body {
     @include flex($direction: column);
 
-    font-family: "Outfit", sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-color: var(--color-light-gray);
     min-height: 100vh;
     font-size: convert-rem(16px);

@@ -1,20 +1,20 @@
 {
-  "group": "library",
-  "category": "components",
-  "component": "toast",
-  "name": "Toast",
-  "version": "1.0.0",
-  "description": "Toast",
-  "author": {
-      "name": "Paul Serban",
-      "email": "paul.alex.serban@gmail.com"
-  },
-  "keywords": ["library", "modules", "paint"],
-  "variations": [
-      {
-          "slug": "toast-notification",
-          "name": "Toast Notification",
-          "description": "Toast Notification"
-      }
+    "group": "library",
+    "category": "components",
+    "component": "toast",
+    "name": "Toast",
+    "version": "1.0.0",
+    "description": "Toast",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "paint"],
+    "variations": [
+        {
+            "slug": "toast-notification",
+            "name": "Toast Notification",
+            "description": "Toast Notification"
+        }
     ]
 }

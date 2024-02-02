@@ -1,10 +1,10 @@
-const assetsUrl = require("./assetsUrl");
+const assetsUrl = require('./assetsUrl');
 
-const aspectRatiosArr = ["1x1", "4x3", "16x9", "21x9", "3x4"];
+const aspectRatiosArr = ['1x1', '4x3', '16x9', '21x9', '3x4'];
 const widthsArr = [480, 960, 1280, 1920, 2560];
 
 const paths = (path, resource) => ({
-    "1x1": {
+    '1x1': {
         480: {
             src: `${assetsUrl(path, resource)}-480_480.webp`,
             srcset: `${assetsUrl(path, resource)}-480_480.webp 480w`,
@@ -26,7 +26,7 @@ const paths = (path, resource) => ({
             srcset: `${assetsUrl(path, resource)}-2560_2560.webp 2560w`,
         },
     },
-    "4x3": {
+    '4x3': {
         480: {
             src: `${assetsUrl(path, resource)}-480_360.webp`,
             srcset: `${assetsUrl(path, resource)}-480_360.webp 480w`,
@@ -48,7 +48,7 @@ const paths = (path, resource) => ({
             srcset: `${assetsUrl(path, resource)}-2560_1920.webp 2560w`,
         },
     },
-    "16x9": {
+    '16x9': {
         480: {
             src: `${assetsUrl(path, resource)}-480_270.webp`,
             srcset: `${assetsUrl(path, resource)}-480_270.webp 480w`,
@@ -70,7 +70,7 @@ const paths = (path, resource) => ({
             srcset: `${assetsUrl(path, resource)}-2560_1440.webp 2560w`,
         },
     },
-    "21x9": {
+    '21x9': {
         480: {
             src: `${assetsUrl(path, resource)}-480_228.webp`,
             srcset: `${assetsUrl(path, resource)}-480_228.webp 480w`,
@@ -92,7 +92,7 @@ const paths = (path, resource) => ({
             srcset: `${assetsUrl(path, resource)}-2560_1216.webp 2560w`,
         },
     },
-    "3x4": {
+    '3x4': {
         480: {
             src: `${assetsUrl(path, resource)}-360_480.webp`,
             srcset: `${assetsUrl(path, resource)}-360_480.webp 480w`,

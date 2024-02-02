@@ -1,18 +1,18 @@
-import { findOne } from "../../../../_abstracts/js/dom/traversing";
+import { findOne } from '../../../../_abstracts/js/dom/traversing';
 
 (() => {
     const config = {
-        type: "pat",
-        name: "VideoPlayer",
+        type: 'pat',
+        name: 'VideoPlayer',
         selectors: {
-            videoEl: "#video",
-            playBtn: "#play",
-            stopBtn: "#stop",
-            progressBar: "#progress",
-            timeStamp: "#timestamp",
+            videoEl: '#video',
+            playBtn: '#play',
+            stopBtn: '#stop',
+            progressBar: '#progress',
+            timeStamp: '#timestamp',
         },
         classes: {
-            bookingSeat: "selected",
+            bookingSeat: 'selected',
         },
     };
 
@@ -22,8 +22,8 @@ import { findOne } from "../../../../_abstracts/js/dom/traversing";
         const init = () => {
             setupDomReferences();
             setupEventListeners();
-            global.sources.playSvg = el.getAttribute("data-assets-play-src");
-            global.sources.stopSvg = el.getAttribute("data-assets-stop-src");
+            global.sources.playSvg = el.getAttribute('data-assets-play-src');
+            global.sources.stopSvg = el.getAttribute('data-assets-stop-src');
             updatePlayIcon();
         };
 
@@ -36,25 +36,25 @@ import { findOne } from "../../../../_abstracts/js/dom/traversing";
         };
 
         const setupEventListeners = () => {
-            global.elements.video.addEventListener("click", () => {
+            global.elements.video.addEventListener('click', () => {
                 toggleVideoStatus();
             });
-            global.elements.video.addEventListener("pause", () => {
+            global.elements.video.addEventListener('pause', () => {
                 updatePlayIcon();
             });
-            global.elements.video.addEventListener("play", () => {
+            global.elements.video.addEventListener('play', () => {
                 updatePlayIcon();
             });
-            global.elements.video.addEventListener("timeupdate", () => {
+            global.elements.video.addEventListener('timeupdate', () => {
                 updateProgress();
             });
-            global.elements.play.addEventListener("click", () => {
+            global.elements.play.addEventListener('click', () => {
                 toggleVideoStatus();
             });
-            global.elements.stop.addEventListener("click", () => {
+            global.elements.stop.addEventListener('click', () => {
                 stopVideo();
             });
-            global.elements.progress.addEventListener("change", () => {
+            global.elements.progress.addEventListener('change', () => {
                 setVideoProgress();
             });
         };

@@ -1,26 +1,26 @@
 // Pages
-const gamePage = document.getElementById("game-page");
-const scorePage = document.getElementById("score-page");
-const splashPage = document.getElementById("splash-page");
-const countdownPage = document.getElementById("countdown-page");
+const gamePage = document.getElementById('game-page');
+const scorePage = document.getElementById('score-page');
+const splashPage = document.getElementById('splash-page');
+const countdownPage = document.getElementById('countdown-page');
 // Splash Page
-const startForm = document.getElementById("start-form");
-const radioContainers = document.querySelectorAll(".radio-container");
-const radioInputs = document.querySelectorAll("input");
-const bestScores = document.querySelectorAll(".best-score-value");
+const startForm = document.getElementById('start-form');
+const radioContainers = document.querySelectorAll('.radio-container');
+const radioInputs = document.querySelectorAll('input');
+const bestScores = document.querySelectorAll('.best-score-value');
 // Countdown Page
-const countdown = document.querySelector(".countdown");
+const countdown = document.querySelector('.countdown');
 // Game Page
-const itemContainer = document.querySelector(".item-container");
+const itemContainer = document.querySelector('.item-container');
 // Score Page
-const finalTimeEl = document.querySelector(".final-time");
-const baseTimeEl = document.querySelector(".base-time");
-const penaltyTimeEl = document.querySelector(".penalty-time");
-const playAgainBtn = document.querySelector(".play-again");
+const finalTimeEl = document.querySelector('.final-time');
+const baseTimeEl = document.querySelector('.base-time');
+const penaltyTimeEl = document.querySelector('.penalty-time');
+const playAgainBtn = document.querySelector('.play-again');
 
-const buttonSelectWrong = document.querySelector("#button-select-wrong");
-const buttonSelectRight = document.querySelector("#button-select-right");
-const buttonPlayAgain = document.querySelector("#button-play-again");
+const buttonSelectWrong = document.querySelector('#button-select-wrong');
+const buttonSelectRight = document.querySelector('#button-select-right');
+const buttonPlayAgain = document.querySelector('#button-play-again');
 
 // Equations
 let questionAmount = 0;
@@ -40,7 +40,7 @@ let timePlayed = 0;
 let baseTime = 0;
 let penaltyTime = 0;
 let finalTime = 0;
-let finalTimeDisplay = "0.0";
+let finalTimeDisplay = '0.0';
 
 // Scroll
 let valueY = 0;
@@ -55,7 +55,7 @@ function bestScoresToDOM() {
 
 // Check Local Storage for Best Scores, Set bestScoreArray
 function getSavedBestScores() {
-    if (localStorage.getItem("bestScores")) {
+    if (localStorage.getItem('bestScores')) {
         bestScoreArray = JSON.parse(localStorage.bestScores);
     } else {
         bestScoreArray = [
@@ -64,7 +64,7 @@ function getSavedBestScores() {
             { questions: 50, bestScore: finalTimeDisplay },
             { questions: 99, bestScore: finalTimeDisplay },
         ];
-        localStorage.setItem("bestScores", JSON.stringify(bestScoreArray));
+        localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
     }
     bestScoresToDOM();
 }
@@ -85,12 +85,12 @@ function updateBestScore() {
     // Update Splash Page
     bestScoresToDOM();
     // Save to Local Storage
-    localStorage.setItem("bestScores", JSON.stringify(bestScoreArray));
+    localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
 }
 
 // Reset Game
 function playAgain() {
-    gamePage.addEventListener("click", startTimer);
+    gamePage.addEventListener('click', startTimer);
     scorePage.hidden = true;
     splashPage.hidden = false;
     equationsArray = [];
@@ -119,7 +119,7 @@ function scoresToDOM() {
     finalTimeEl.textContent = `${finalTimeDisplay}s`;
     updateBestScore();
     // Scroll to Top, go to Score Page
-    itemContainer.scrollTo({ top: 0, behavior: "instant" });
+    itemContainer.scrollTo({ top: 0, behavior: 'instant' });
     showScorePage();
 }
 
@@ -156,7 +156,7 @@ function startTimer() {
     penaltyTime = 0;
     finalTime = 0;
     timer = setInterval(addTime, 100);
-    gamePage.removeEventListener("click", startTimer);
+    gamePage.removeEventListener('click', startTimer);
 }
 
 // Scroll, Store user selection in playerGuessArray
@@ -165,7 +165,7 @@ function select(guessedTrue) {
     valueY += 80;
     itemContainer.scroll(0, valueY);
     // Add player guess to array
-    return guessedTrue ? playerGuessArray.push("true") : playerGuessArray.push("false");
+    return guessedTrue ? playerGuessArray.push('true') : playerGuessArray.push('false');
 }
 
 // Displays Game Page
@@ -213,7 +213,7 @@ function createEquations() {
         secondNumber = getRandomInt(9);
         const equationValue = firstNumber * secondNumber;
         const equation = `${firstNumber} x ${secondNumber} = ${equationValue}`;
-        equationObject = { value: equation, evaluated: "true" };
+        equationObject = { value: equation, evaluated: 'true' };
         equationsArray.push(equationObject);
     }
     // Loop through for each wrong equation, mess with the equation results, push to array
@@ -226,7 +226,7 @@ function createEquations() {
         wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
         const formatChoice = getRandomInt(2);
         const equation = wrongFormat[formatChoice];
-        equationObject = { value: equation, evaluated: "false" };
+        equationObject = { value: equation, evaluated: 'false' };
         equationsArray.push(equationObject);
     }
     shuffle(equationsArray);
@@ -236,10 +236,10 @@ function createEquations() {
 function equationsToDOM() {
     equationsArray.forEach((equation) => {
         // Item
-        const item = document.createElement("div");
-        item.classList.add("item");
+        const item = document.createElement('div');
+        item.classList.add('item');
         // Equation Text
-        const equationText = document.createElement("h1");
+        const equationText = document.createElement('h1');
         equationText.textContent = equation.value;
         // Append
         item.appendChild(equationText);
@@ -250,13 +250,13 @@ function equationsToDOM() {
 // Dynamically adding correct/incorrect equations
 function populateGamePage() {
     // Reset DOM, Set Blank Space Above
-    itemContainer.textContent = "";
+    itemContainer.textContent = '';
     // Spacer
-    const topSpacer = document.createElement("div");
-    topSpacer.classList.add("height-240");
+    const topSpacer = document.createElement('div');
+    topSpacer.classList.add('height-240');
     // Selected Item
-    const selectedItem = document.createElement("div");
-    selectedItem.classList.add("selected-item");
+    const selectedItem = document.createElement('div');
+    selectedItem.classList.add('selected-item');
     // Append
     itemContainer.append(topSpacer, selectedItem);
 
@@ -265,8 +265,8 @@ function populateGamePage() {
     equationsToDOM();
 
     // Set Blank Space Below
-    const bottomSpacer = document.createElement("div");
-    bottomSpacer.classList.add("height-500");
+    const bottomSpacer = document.createElement('div');
+    bottomSpacer.classList.add('height-500');
     itemContainer.appendChild(bottomSpacer);
 }
 
@@ -277,7 +277,7 @@ function countdownStart() {
     const timeCountDown = setInterval(() => {
         --count;
         if (count === 0) {
-            countdown.textContent = "GO!";
+            countdown.textContent = 'GO!';
         } else if (count === -1) {
             showGamePage();
             clearInterval(timeCountDown);
@@ -317,27 +317,27 @@ function selectQuestionAmount(e) {
 }
 
 // Switch selected input styling
-startForm.addEventListener("click", () => {
+startForm.addEventListener('click', () => {
     radioContainers.forEach((radioEl) => {
         // Remove Selected Label Styling
-        radioEl.classList.remove("selected-label");
+        radioEl.classList.remove('selected-label');
         // Add it back if radio input is checked
         if (radioEl.children[1].checked) {
-            radioEl.classList.add("selected-label");
+            radioEl.classList.add('selected-label');
         }
     });
 });
 
 // Event Listeners
-gamePage.addEventListener("click", startTimer);
-startForm.addEventListener("submit", selectQuestionAmount);
+gamePage.addEventListener('click', startTimer);
+startForm.addEventListener('submit', selectQuestionAmount);
 
-buttonPlayAgain.addEventListener("click", playAgain);
-buttonSelectWrong.addEventListener("click", () => {
+buttonPlayAgain.addEventListener('click', playAgain);
+buttonSelectWrong.addEventListener('click', () => {
     select(false);
 });
 
-buttonSelectRight.addEventListener("click", () => {
+buttonSelectRight.addEventListener('click', () => {
     select(true);
 });
 

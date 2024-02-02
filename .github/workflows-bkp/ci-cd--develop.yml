@@ -1,0 +1,130 @@
+name: CI/CD
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        types: [synchronize]
+    workflow_dispatch:
+env:
+    NODE_VERSION: 16.19.0
+    GENERIC_COMPONENT_LIBRARY: frontend/generic-component-library
+    FE_DASHBOARD: frontend/dashboard
+    BASE_URL: ${{ secrets.BASE_URL }}
+    BASE_PATH: ${{ secrets.BASE_PATH }}
+    INTERNAL_COMPONENT_LIBRARY_URL: ${{ secrets.INTERNAL_COMPONENT_LIBRARY_URL }}
+    USER_COMPONENT_LIBRARY_URL: ${{ secrets.USER_COMPONENT_LIBRARY_URL }}
+    INTERNAL_FRONTEND_MENTOR_LIBRARY_URL: ${{ secrets.INTERNAL_FRONTEND_MENTOR_LIBRARY_URL }}
+    USER_FRONTEND_MENTOR_LIBRARY_URL: ${{ secrets.USER_FRONTEND_MENTOR_LIBRARY_URL }}
+    INTERNAL_DEV_DAYS_MATRIX_LIBRARY_URL: ${{ secrets.INTERNAL_DEV_DAYS_MATRIX_LIBRARY_URL }}
+    USER_DEV_DAYS_MATRIX_LIBRARY_URL: ${{ secrets.USER_DEV_DAYS_MATRIX_LIBRARY_URL }}
+    INTERNAL_BIG_FRONTEND_LIBRARY_URL: ${{ secrets.INTERNAL_BIG_FRONTEND_LIBRARY_URL }}
+    USER_BIG_FRONTEND_LIBRARY_URL: ${{ secrets.USER_BIG_FRONTEND_LIBRARY_URL }}
+
+jobs:
+    deploy-cmp-libraries:
+        name: Deploy Component Libraries to Github Pages
+        runs-on: ubuntu-latest
+        steps:
+            - name: '📥 checkout repository'
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - name: '🔄  Cache node_modules'
+              uses: actions/cache@v3
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: '🔧  Setup NodeJS ${{ env.NODE_VERSION }}'
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ env.NODE_VERSION }}
+
+            - name: '🔧 Install npm@latest'
+              run: npm i -g npm@latest
+
+            - name: '📦  Install Component Library Build dependencies'
+              run: |
+                  bash modulize.bash -e production -m generic-component-library -p install
+                  bash modulize.bash -e production -m frontend-mentor-library -p install
+                  bash modulize.bash -e production -m dev-days-matrix-library -p install
+                  bash modulize.bash -e production -m big-frontend-dev-library -p install
+
+            - name: '🏗️  Build Frontend Component Library'
+              run: |
+                  bash modulize.bash -e production -m generic-component-library -p build
+                  bash modulize.bash -e production -m frontend-mentor-library -p build
+                  bash modulize.bash -e production -m dev-days-matrix-library -p build
+                  bash modulize.bash -e production -m big-frontend-dev-library -p build
+
+            - name: '🚚  Package Component Library'
+              run: |
+                  mkdir -p package/dist/generic-component-library
+                  mkdir -p package/dist/frontend-mentor-library
+                  mkdir -p package/dist/dev-days-matrix-library
+                  mkdir -p package/dist/big-frontend-dev-library
+                  cp -r frontend/generic-component-library/dist/* package/dist/generic-component-library
+                  cp -r frontend/frontend-mentor-library/dist/* package/dist/frontend-mentor-library
+                  cp -r frontend/dev-days-matrix-library/dist/* package/dist/dev-days-matrix-library
+                  cp -r frontend/big-frontend-dev-library/dist/* package/dist/big-frontend-dev-library
+
+            - uses: actions/upload-artifact@v3
+              with:
+                  name: component-libraries
+                  path: package/dist/
+
+    deploy-dashboard:
+        name: Deploy Dashboard to Github Pages
+        runs-on: ubuntu-latest
+        needs: deploy-cmp-libraries
+        steps:
+            - name: '📥 checkout repository'
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - name: '🔄  Cache node_modules'
+              uses: actions/cache@v3
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: '🔧  Setup NodeJS ${{ env.NODE_VERSION }}'
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ env.NODE_VERSION }}
+
+            - name: '🔧 Install npm@latest'
+              run: npm i -g npm@latest
+
+            - name: '📦  Install Dashboard Build dependencies'
+              run: bash modulize.bash -e production -m dashboard -p install
+
+            - name: 'Create package/dist'
+              run: mkdir -p package/dist
+
+            - uses: actions/download-artifact@v3
+              with:
+                  name: component-libraries
+                  path: package/dist
+
+            - name: '🏗️  Build Frontend Dashboard'
+              run: |
+                  bash modulize.bash -e production -m dashboard -p build
+
+            - name: '🚚  Package Dashboard'
+              run: |
+                  cp -r frontend/dashboard/out/* package/dist
+                  touch package/dist/.nojekyll
+                  touch package/dist/CNAME
+                  echo ${{ env.BASE_URL }} > package/dist/CNAME
+
+            - name: '🚀 Deploy to GitHub Pages'
+              uses: JamesIves/github-pages-deploy-action@4.1.1
+              with:
+                  branch: gh-pages
+                  folder: package/dist

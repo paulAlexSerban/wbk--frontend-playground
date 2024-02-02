@@ -1,8 +1,8 @@
-const rawTxt = document.querySelector("textarea[name=txtarea]");
-const finTxt = document.querySelector("textarea[name=output]");
-const btn = document.querySelector("button");
-const counter = document.querySelector(".counter");
-btn.addEventListener("click", function () {
+const rawTxt = document.querySelector('textarea[name=txtarea]');
+const finTxt = document.querySelector('textarea[name=output]');
+const btn = document.querySelector('button');
+const counter = document.querySelector('.counter');
+btn.addEventListener('click', function () {
     let temp = rawTxt.value;
     let exp = /([A-Za-z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
     let emailData = temp.match(exp);
@@ -12,10 +12,10 @@ btn.addEventListener("click", function () {
             holder.push(emailData[x]);
         }
     }
-    let tempHolder = holder.join(";");
-    counter.innerText = "Emails Found " + holder.length;
+    let tempHolder = holder.join(';');
+    counter.innerText = 'Emails Found ' + holder.length;
     finTxt.innerText = tempHolder;
 });
-finTxt.addEventListener("click", function () {
+finTxt.addEventListener('click', function () {
     this.select();
 });

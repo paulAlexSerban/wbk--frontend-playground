@@ -1,12 +1,12 @@
-import { findOne } from "../../../../_abstracts/js/dom/traversing";
+import { findOne } from '../../../../_abstracts/js/dom/traversing';
 
 (() => {
     const config = {
-        type: "cmp",
-        name: "BlurryLoader",
+        type: 'cmp',
+        name: 'BlurryLoader',
         selectors: {
-            loadingText: ".js-blurry-loader-loading-text",
-            backgroundImage: ".js-blurry-loader-background",
+            loadingText: '.js-blurry-loader-loading-text',
+            backgroundImage: '.js-blurry-loader-background',
         },
     };
 

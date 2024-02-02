@@ -33,18 +33,18 @@ let supportsAnimationFrame =
     window.oRequestAnimationFrame ||
     window.msRequestAnimationFrame;
 let colors = [
-    "rgba(30,144,255,",
-    "rgba(107,142,35,",
-    "rgba(255,215,0,",
-    "rgba(255,192,203,",
-    "rgba(106,90,205,",
-    "rgba(173,216,230,",
-    "rgba(238,130,238,",
-    "rgba(152,251,152,",
-    "rgba(70,130,180,",
-    "rgba(244,164,96,",
-    "rgba(210,105,30,",
-    "rgba(220,20,60,",
+    'rgba(30,144,255,',
+    'rgba(107,142,35,',
+    'rgba(255,215,0,',
+    'rgba(255,192,203,',
+    'rgba(106,90,205,',
+    'rgba(173,216,230,',
+    'rgba(238,130,238,',
+    'rgba(152,251,152,',
+    'rgba(70,130,180,',
+    'rgba(244,164,96,',
+    'rgba(210,105,30,',
+    'rgba(220,20,60,',
 ];
 let streamingConfetti = false;
 // let animationTimer;
@@ -55,8 +55,8 @@ let waveAngle = 0;
 let context = null;
 
 function resetParticle(particle, width, height) {
-    particle.color = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
-    particle.color2 = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
+    particle.color = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ')');
+    particle.color2 = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ')');
     particle.x = Math.random() * width;
     particle.y = Math.random() * height - height;
     particle.diameter = Math.random() * 10 + 5;
@@ -122,25 +122,25 @@ function startConfetti(timeout, min, max) {
             }
         );
     })();
-    let canvas = document.getElementById("confetti-canvas");
+    let canvas = document.getElementById('confetti-canvas');
     if (canvas === null) {
-        canvas = document.createElement("canvas");
-        canvas.setAttribute("id", "confetti-canvas");
-        canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;position:fixed;top:0");
+        canvas = document.createElement('canvas');
+        canvas.setAttribute('id', 'confetti-canvas');
+        canvas.setAttribute('style', 'display:block;z-index:999999;pointer-events:none;position:fixed;top:0');
         document.body.prepend(canvas);
         canvas.width = width;
         canvas.height = height;
         window.addEventListener(
-            "resize",
+            'resize',
             function () {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             },
             true
         );
-        context = canvas.getContext("2d");
+        context = canvas.getContext('2d');
     } else if (context === null) {
-        context = canvas.getContext("2d");
+        context = canvas.getContext('2d');
     }
     let count = confetti.maxCount;
     if (min) {
@@ -209,8 +209,8 @@ function drawParticles(context) {
         y2 = particle.y + particle.tilt + particle.diameter / 2;
         if (confetti.gradient) {
             let gradient = context.createLinearGradient(x, particle.y, x2, y2);
-            gradient.addColorStop("0", particle.color);
-            gradient.addColorStop("1.0", particle.color2);
+            gradient.addColorStop('0', particle.color);
+            gradient.addColorStop('1.0', particle.color2);
             context.strokeStyle = gradient;
         } else {
             context.strokeStyle = particle.color;

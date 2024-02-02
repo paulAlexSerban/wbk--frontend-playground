@@ -1,16 +1,16 @@
-const search = document.getElementById("search"),
-    submit = document.getElementById("submit"),
-    random = document.getElementById("random"),
-    mealsEl = document.getElementById("meals"),
-    resultHeading = document.getElementById("result-heading"),
-    single_mealEl = document.getElementById("single-meal");
+const search = document.getElementById('search'),
+    submit = document.getElementById('submit'),
+    random = document.getElementById('random'),
+    mealsEl = document.getElementById('meals'),
+    resultHeading = document.getElementById('result-heading'),
+    single_mealEl = document.getElementById('single-meal');
 
 // Search meal and fetch from API
 function searchMeal(e) {
     e.preventDefault();
 
     // Clear single meal
-    single_mealEl.innerHTML = "";
+    single_mealEl.innerHTML = '';
 
     // Get search term
     const term = search.value;
@@ -36,13 +36,13 @@ function searchMeal(e) {
             </div>
           `
                         )
-                        .join("");
+                        .join('');
                 }
             });
         // Clear search text
-        search.value = "";
+        search.value = '';
     } else {
-        alert("Please enter a search term");
+        alert('Please enter a search term');
     }
 }
 
@@ -60,8 +60,8 @@ function getMealById(mealID) {
 // Fetch random meal from API
 function getRandomMeal() {
     // Clear meals and heading
-    mealsEl.innerHTML = "";
-    resultHeading.innerHTML = "";
+    mealsEl.innerHTML = '';
+    resultHeading.innerHTML = '';
 
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
         .then((res) => res.json())
@@ -89,14 +89,14 @@ function addMealToDOM(meal) {
       <h1>${meal.strMeal}</h1>
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
       <div class="single-meal-info">
-        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ""}
-        ${meal.strArea ? `<p>${meal.strArea}</p>` : ""}
+        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
+        ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
       </div>
       <div class="main">
         <p>${meal.strInstructions}</p>
         <h2>Ingredients</h2>
         <ul>
-          ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
+          ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
         </ul>
       </div>
     </div>
@@ -104,20 +104,20 @@ function addMealToDOM(meal) {
 }
 
 // Event listeners
-submit.addEventListener("submit", searchMeal);
-random.addEventListener("click", getRandomMeal);
+submit.addEventListener('submit', searchMeal);
+random.addEventListener('click', getRandomMeal);
 
-mealsEl.addEventListener("click", (e) => {
+mealsEl.addEventListener('click', (e) => {
     const mealInfo = e.path.find((item) => {
         if (item.classList) {
-            return item.classList.contains("meal-info");
+            return item.classList.contains('meal-info');
         } else {
             return false;
         }
     });
 
     if (mealInfo) {
-        const mealID = mealInfo.getAttribute("data-mealid");
+        const mealID = mealInfo.getAttribute('data-mealid');
         getMealById(mealID);
     }
 });

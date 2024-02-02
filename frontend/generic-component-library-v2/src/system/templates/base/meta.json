@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "system",
+    "category": "templates",
+    "component": "base",
+    "name": "Base Page Template",
+    "version": "1.0.0",
+    "description": "Base page template to be used by other page templates or to showcase components of the design system.",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "base",
+            "name": "Base Page Template ",
+            "description": "Base page template."
+        }
+    ]
+}

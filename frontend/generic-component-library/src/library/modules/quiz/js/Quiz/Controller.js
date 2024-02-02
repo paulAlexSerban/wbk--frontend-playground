@@ -14,8 +14,8 @@ export const Controller = (quizCtrl, UICtrl) => {
     };
 
     const setupEventListeners = () => {
-        domItems.questInsertBtn.addEventListener("click", () => {
-            const adminOptions = document.querySelectorAll(".admin-option");
+        domItems.questInsertBtn.addEventListener('click', () => {
+            const adminOptions = document.querySelectorAll('.admin-option');
             const checkBoolean = QUIZ_CTRL.addQuestionOnLocalStorage(domItems.newQuestionText, adminOptions);
 
             if (checkBoolean) {
@@ -23,7 +23,7 @@ export const Controller = (quizCtrl, UICtrl) => {
             }
         });
 
-        domItems.startQuizBtn.addEventListener("click", () => {
+        domItems.startQuizBtn.addEventListener('click', () => {
             UI_CTRL.getFullName(
                 QUIZ_CTRL.getCurrPersonData,
                 QUIZ_CTRL.getQuestionLocalStorage,
@@ -31,8 +31,8 @@ export const Controller = (quizCtrl, UICtrl) => {
             );
         });
 
-        domItems.lastNameInput.addEventListener("focus", () => {
-            domItems.lastNameInput.addEventListener("keypress", (e) => {
+        domItems.lastNameInput.addEventListener('focus', () => {
+            domItems.lastNameInput.addEventListener('keypress', (e) => {
                 if (e.keyCode === 13) {
                     UI_CTRL.getFullName(
                         QUIZ_CTRL.getCurrPersonData,
@@ -43,7 +43,7 @@ export const Controller = (quizCtrl, UICtrl) => {
             });
         });
 
-        domItems.insertedQuestsWrapper.addEventListener("click", (e) => {
+        domItems.insertedQuestsWrapper.addEventListener('click', (e) => {
             UI_CTRL.editQuestList(
                 e,
                 QUIZ_CTRL.getQuestionLocalStorage,
@@ -52,19 +52,19 @@ export const Controller = (quizCtrl, UICtrl) => {
             );
         });
 
-        domItems.questsClearBtn.addEventListener("click", () => {
+        domItems.questsClearBtn.addEventListener('click', () => {
             UI_CTRL.clearQuestList(QUIZ_CTRL.getQuestionLocalStorage);
         });
 
-        domItems.quizoptionsWrapper.addEventListener("click", (e) => {
-            let updatedOptionsDiv = domItems.quizoptionsWrapper.querySelectorAll("div");
+        domItems.quizoptionsWrapper.addEventListener('click', (e) => {
+            let updatedOptionsDiv = domItems.quizoptionsWrapper.querySelectorAll('div');
             for (let i = 0; i < updatedOptionsDiv.length; i++) {
-                if (e.target.className === "choice-" + i) {
-                    let answer = document.querySelector(".quiz-options-wrapper div p." + e.target.className);
+                if (e.target.className === 'choice-' + i) {
+                    let answer = document.querySelector('.quiz-options-wrapper div p.' + e.target.className);
                     let answerResult = QUIZ_CTRL.checkAnswer(answer);
                     UI_CTRL.newDesign(answerResult, answer);
                     if (QUIZ_CTRL.isFinished()) {
-                        domItems.nextQuestbtn.textContent = "Finish";
+                        domItems.nextQuestbtn.textContent = 'Finish';
                     }
 
                     let nextQuestion = function () {
@@ -86,7 +86,7 @@ export const Controller = (quizCtrl, UICtrl) => {
             }
         });
 
-        domItems.startQuizBtn.addEventListener("click", () => {
+        domItems.startQuizBtn.addEventListener('click', () => {
             UI_CTRL.getFullName(
                 QUIZ_CTRL.getCurrPersonData,
                 QUIZ_CTRL.getQuestionLocalStorage,
@@ -94,8 +94,8 @@ export const Controller = (quizCtrl, UICtrl) => {
             );
         });
 
-        domItems.lastNameInput.addEventListener("focus", () => {
-            domItems.lastNameInput.addEventListener("keypress", function (e) {
+        domItems.lastNameInput.addEventListener('focus', () => {
+            domItems.lastNameInput.addEventListener('keypress', function (e) {
                 if (e.keyCode === 13) {
                     UI_CTRL.getFullName(
                         QUIZ_CTRL.getCurrPersonData,
@@ -106,12 +106,12 @@ export const Controller = (quizCtrl, UICtrl) => {
             });
         });
 
-        domItems.resultsListWrapper.addEventListener("click", (e) => {
+        domItems.resultsListWrapper.addEventListener('click', (e) => {
             UI_CTRL.deleteResult(e, QUIZ_CTRL.getPersonLocalStorage);
             UI_CTRL.addResultOnPanel(QUIZ_CTRL.getPersonLocalStorage);
         });
 
-        domItems.clearResultsBtn.addEventListener("click", () => {
+        domItems.clearResultsBtn.addEventListener('click', () => {
             UI_CTRL.clearResultList(QUIZ_CTRL.getPersonLocalStorage);
         });
     };
