@@ -10,5 +10,21 @@
         "email": "paul.alex.serban@gmail.com"
     },
     "keywords": ["commons", "layouts", "patterns"],
-    "variations": []
+    "variations": [
+        {
+            "slug": "holy-grail",
+            "name": "Holy Grail",
+            "description": ""
+        },
+        {
+            "slug": "sidebar-simple",
+            "name": "Sidebar Simple",
+            "description": ""
+        },
+        {
+            "slug": "sidebar-media-object",
+            "name": "Sidebar Media Object",
+            "description": ""
+        }
+    ]
 }
