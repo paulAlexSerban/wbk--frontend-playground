@@ -8,6 +8,11 @@ const BASE_URL = process.env.BASE_URL;
 const templates = require('./templates');
 const utils = require('./utils');
 
+// if the destination directory does not exist, create it
+if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest);
+}
+
 const generateHTML = (componentLists) => {
     const transformedComponentLists = Object.entries(componentLists).map(([dir, components]) => {
         return {

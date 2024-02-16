@@ -1,0 +1,25 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "event-loop-use-case-experiments",
+    "name": "Event Loop Use Case Experiments",
+    "version": "1.0.0",
+    "description": "",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [],
+    "variations": [
+        {
+            "slug": "event-loop-use-case-cpu-hungry-task",
+            "name": "Event Loop Use Case CPU Hungry Task",
+            "description": ""
+        },
+        {
+            "slug": "event-loop-use-case-progress-indication",
+            "name": "Event Loop Use Case Progress Indication",
+            "description": ""
+        }
+    ]
+}
