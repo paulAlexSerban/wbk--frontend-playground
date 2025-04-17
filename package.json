@@ -9,7 +9,8 @@
         "formats:write": "yarn prettier --write .",
         "lint": "yarn formats:check",
         "prepare": "husky install && echo 'Husky installed!'",
-        "commit": "yarn git-cz"
+        "commit": "yarn git-cz",
+        "test": "echo 'Error: no test specified'"
     },
     "dependencies": {
         "@commitlint/cli": "^17.7.2",
