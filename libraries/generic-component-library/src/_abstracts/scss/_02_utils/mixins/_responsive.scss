@@ -1,0 +1,155 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:list';
+@use '../../_01_variables/variables.scss' as *;
+
+/// Provide a map and index, and get back the relevant key value
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Integer} $index - Key chain
+/// @return {String} Desired value
+
+@function -key-by-index($map, $index) {
+    $keys: map.keys($map);
+    @return nth($keys, $index);
+}
+
+/// Returns the largest breakpoint name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @return {String}
+/// @access public
+
+@function largest-breakpoint-name($breakpoints: $breakpoints) {
+    $total-breakpoints: list.length($breakpoints);
+    @return -key-by-index($breakpoints, $total-breakpoints);
+}
+
+/// Check to see if the given breakpoint name
+/// @param {String} $name - The name of the breakpoint
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
+/// @return {Bool}
+/// @access public
+@function is-smallest-breakpoint($name, $breakpoints: $breakpoints) {
+    @return index(map-keys($breakpoints), $name) == 1;
+}
+
+/// Generate a media query for the range between the lower and upper breakpoints
+/// @param {String | Number} $lower
+/// @param {String | Number} $upper
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+
+@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+    $is-number-lower: meta.type-of($lower) == 'number';
+    $is-number-upper: meta.type-of($upper) == 'number';
+    $min: if($is-number-lower, $lower, map.get($breakpoints, $lower));
+    $max: if($is-number-upper, $upper, map.get($breakpoints, $upper));
+
+    @if $min and $max {
+        $min-width: if(not $is-number-lower and $min, map.get($min, width), $min);
+        $max-width: if(not $is-number-upper and $max, map.get($max, width), $max);
+        @media (min-width: $min-width) and (max-width: $max-width) {
+            @content;
+        }
+    } @else if $min != null and $max == null {
+        @include breakpoint-up($lower) {
+            @content;
+        }
+    } @else if $min == null and $max != null {
+        @include breakpoint-down($upper) {
+            @content;
+        }
+    } @else {
+        @error "Unable to find a breakpoint to satisfy: (#{$lower},#{$upper}). Expected both to be one of (#{map.keys($breakpoints)}).";
+    }
+}
+
+/* Examples
+.example__breakpoint-between {
+@include breakpoint-between(desktop, ultra-wide) {
+  color: red;
+}
+}
+*/
+
+/// Generate a media query for the maximum width of the given styles
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+
+@mixin breakpoint-down($name, $breakpoints: $breakpoints) {
+    @if meta.type-of($name) == 'number' {
+        @media (max-width: $name) {
+            @content;
+        }
+    } @else if map.has-key($breakpoints, $name) {
+        // We borrow this logic from bootstrap for specifying the value of the
+        // max-width. The maximum width is calculated by finding the breakpoint and
+        // subtracting .02 from its value. This value is used instead of .01 to
+        // avoid rounding issues in Safari
+        // https://github.com/twbs/bootstrap/blob/c5b1919deaf5393fcca9e9b9d7ce9c338160d99d/scss/mixins/_breakpoints.scss#L34-L46
+        $breakpoint: map.get($breakpoints, $name);
+        $width: map.get($breakpoint, width) - 0.02;
+        @media (max-width: $width) {
+            @content;
+        }
+    } @else {
+        @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map.keys($breakpoints)})";
+    }
+}
+
+/* ------------------------------------ *\
+  #BREAKPOINT-UP
+\* ------------------------------------ */
+
+/// Generate a media query from the width of the given breakpoint to infinity
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
+    @if type-of($name) == 'number' {
+        @media only screen and (min-width: $name) {
+            @content;
+        }
+    } @else if map-has-key($breakpoints, $name) {
+        $breakpoint: map.get($breakpoints, $name);
+        $width: map.get($breakpoint, width);
+
+        @if is-smallest-breakpoint($name, $breakpoints) {
+            @content;
+        } @else {
+            @media only screen and (min-width: $width) {
+                @content;
+            }
+        }
+    } @else {
+        @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})";
+    }
+}
+/* ------------------------------------ *\
+  #BREAKPOINT
+\* ------------------------------------ */
+
+/// Generate a media query for a given breakpoint
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin breakpoint($name, $breakpoints: $breakpoints) {
+    @include breakpoint-up($name, $breakpoints) {
+        @content;
+    }
+}
+
+/// Generate media query for the largest breakpoint
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin largest-breakpoint($breakpoints: $breakpoints) {
+    @include breakpoint(largest-breakpoint-name()) {
+        @content;
+    }
+}
