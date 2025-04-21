@@ -1,10 +1,10 @@
-// @charset "utf-8";
-// /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
-// @use 'utilities/_all' as *;
-// @use 'base/_all' as *;
-// @use 'elements/_all' as *;
-// @use 'form/_all' as *;
-// @use 'components/_all' as *;
-// @use 'grid/_all' as *;
-// @use 'helpers/_all' as *;
-// @use 'layout/_all' as *;
+@forward 'utilities';
+@forward 'themes';
+@forward 'base';
+@forward 'elements';
+@forward 'form';
+@forward 'components';
+@forward 'grid';
+@forward 'layout';
+@forward 'base/skeleton';
+@forward 'helpers';

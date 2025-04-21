@@ -16,7 +16,7 @@
         "@babel/preset-env": "^7.20.2",
         "ansi-html-community": "^0.0.8",
         "babel-loader": "^9.1.2",
-        "bulma": "^0.9.4",
+        "bulma": "^1.0.4",
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^13.0.0",
         "css-loader": "^6.7.3",
