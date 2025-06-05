@@ -1,0 +1,72 @@
+@use '~ScssAbstracts' as *;
+
+/* ------------------------------------ *\
+  * HEADINGS
+\* ------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0;
+}
+
+h1 {
+    font-size: convert-rem($font-size--xxxl);
+}
+
+h2 {
+    font-size: convert-rem($font-size--xxl);
+}
+
+h3 {
+    font-size: convert-rem($font-size--xl);
+}
+
+h4 {
+    font-size: convert-rem($font-size--l);
+}
+
+h5 {
+    font-size: convert-rem($font-size--m);
+}
+
+h6 {
+    font-size: convert-rem($font-size--s);
+}
+
+/* ------------------------------------ *\
+  * PARAGRAPHS
+\* ------------------------------------ */
+
+p {
+    margin: 0 0;
+    font-size: convert-rem($font-size--m);
+}
+
+/* ------------------------------------ *\
+  * LINKS
+\* ------------------------------------ */
+
+a {
+    color: var(--text-link-color);
+    text-decoration: none;
+    font-size: convert-rem($font-size--m);
+
+    @include on-event() {
+        color: var(--text-link-color-hover);
+        text-decoration: underline;
+    }
+}
+
+/* ------------------------------------ *\
+  * LISTS
+\* ------------------------------------ */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

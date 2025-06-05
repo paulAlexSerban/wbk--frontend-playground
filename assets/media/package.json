@@ -1,12 +1,11 @@
 {
-    "name": "@wbk--fe-playground--javascript/assets",
+    "name": "assets-media",
     "private": true,
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "process": "gulp process --require @babel/register --gulpfile build",
-        "publish:assets": "bash scripts/publish.bash"
+        "process": "gulp process --require @babel/register --gulpfile build"
     },
     "author": "Paul Serban",
     "license": "MIT",

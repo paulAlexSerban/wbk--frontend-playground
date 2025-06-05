@@ -106,3 +106,4 @@ dist
 **/public/*/*
 .DS_Store
 package
+libraries/**/assets
