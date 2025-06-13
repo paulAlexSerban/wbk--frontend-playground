@@ -16,9 +16,9 @@
         "install:libs": "yarn && bash scripts.bash install",
         "install:dashboard": "cd dashboard && yarn install && cd -",
         "install:assets": "cd assets/media && yarn install && cd -",
-        "install:all": "yarn install:libs && yarn install:dashboard && install:assets",
+        "install:all": "yarn install:libs && yarn install:dashboard && yarn install:assets",
         "process:assets": "cd assets/media && yarn process && cd -",
-        "build:libs": "bash scripts.bash build && yarn process:assets",
+        "build:libs": "bash scripts.bash build",
         "package": "rm -rfv ./package/* && bash scripts.bash package",
         "build": "yarn build:libs && yarn package && cd dashboard && yarn build && cd - && yarn sync:assets"
     },

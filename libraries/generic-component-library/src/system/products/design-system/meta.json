@@ -1,0 +1,25 @@
+{
+    "group": "system",
+    "category": "products",
+    "component": "design-system",
+    "name": "Design System",
+    "version": "1.0.0",
+    "description": "Design System",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "product", "design system"],
+    "variations": [
+        {
+            "slug": "harmonic-sizes",
+            "name": "Harmonic Sizes",
+            "description": "Harmonic Sizes"
+        },
+        {
+            "slug": "typography",
+            "name": "Typography",
+            "description": "Typography"
+        }
+    ]
+}

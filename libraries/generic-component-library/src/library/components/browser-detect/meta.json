@@ -1,6 +1,6 @@
 {
     "group": "library",
-    "category": "modules",
+    "category": "components",
     "component": "browser-detect",
     "name": "Browser Detect",
     "version": "1.0.0",
