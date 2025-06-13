@@ -1,13 +1,13 @@
-{{#> templates/base/markup/partials/_base title='Center Primitive Layout - Pattern'}}
+{{#> templates/base/markup/partials/_base-demo-container title='Center Primitive Layout - Pattern'}}
   {{{feLibs 'commons' 'themes' 'base' 'base-auto' 'css'}}}
   {{{feLibs 'system' 'templates' 'base' 'base' 'css'}}}
 
   {{{feLibs 'commons' 'devTools' 'debug' 'debug' 'css'}}}
   {{{feLibs 'commons' 'devTools' 'lint' 'lint' 'css'}}}
 
-  {{{feLibs 'commons' 'layouts' 'primitives' 'box' 'css'}}}
-  {{{feLibs 'commons' 'layouts' 'primitives' 'stack' 'css'}}}
-  {{{feLibs 'commons' 'layouts' 'primitives' 'grid' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'layouts' 'box' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'layouts' 'stack' 'css'}}}
+  {{{feLibs 'library' 'patterns' 'layouts' 'grid' 'css'}}}
 
 
   <div class='grid withDebugs' style="--grid-col-min-width: calc(var(--measure) / 3)">
@@ -68,4 +68,4 @@
 
   </div>
 
-  {{/ templates/base/markup/partials/_base}}
+  {{/ templates/base/markup/partials/_base-demo-container}}
