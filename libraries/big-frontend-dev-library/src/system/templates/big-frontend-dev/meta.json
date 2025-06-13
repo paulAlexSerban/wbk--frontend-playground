@@ -1,5 +1,5 @@
 {
-    "hide": true,
+    "hide": false,
     "group": "system",
     "category": "templates",
     "component": "big-frontend-dev",
