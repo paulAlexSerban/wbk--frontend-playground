@@ -1,0 +1,13 @@
+{
+    "name": "frontend-practice-library",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "serve dist",
+        "sync:assets": "echo 'Syncing assets...'",
+        "develop": "echo 'Starting development server...'",
+        "build:dev": "echo 'Building for development...'",
+        "build:prod": "echo 'Building for production...'",
+        "package": "bash scripts/package.bash"
+    }
+}
