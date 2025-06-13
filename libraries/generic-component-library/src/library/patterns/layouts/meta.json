@@ -12,9 +12,79 @@
     "keywords": ["library", "patterns", "layouts"],
     "variations": [
         {
+            "slug": "box-primitive",
+            "name": "Layout: Box (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "center-primitive",
+            "name": "Layout: Center (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "cluster-primitive",
+            "name": "Layout: Cluster (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "cover-primitive",
+            "name": "Layout: Cover (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "frame-primitive",
+            "name": "Layout: Frame (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "grid-primitive",
+            "name": "Layout: Grid (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "grid-cards",
+            "name": "Layout: Grid Cards",
+            "description": ""
+        },
+        {
+            "slug": "icon-primitive",
+            "name": "Layout: Icon (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "imposter-primitive",
+            "name": "Layout: Imposter (primitive)",
+            "description": ""
+        },
+        {
+            "slug": "reel-primitive",
+            "name": "Layout: Reel (primitive)",
+            "description": "Reel primitive is a layout that allows for horizontal scrolling of content, similar to a carousel or slider."
+        },
+        {
             "slug": "stack-primitive",
-            "name": "Stack (primitive)",
-            "description": "Stack layout, "
+            "name": "Layout: Stack (primitive)",
+            "description": "Stack primitive is a layout that stacks elements on top of each other, allowing for overlapping content."
+        },
+        {
+            "slug": "switcher-primitive",
+            "name": "Layout: Switcher (primitive)",
+            "description": "Switcher primitive is a layout that allows for switching between different content views, typically used for tabbed interfaces."
+        },
+        {
+            "slug": "holy-grail",
+            "name": "Layout: Holy Grail",
+            "description": ""
+        },
+        {
+            "slug": "sidebar-simple",
+            "name": "Layout: Sidebar Simple",
+            "description": ""
+        },
+        {
+            "slug": "sidebar-media-object",
+            "name": "Layout: Sidebar Media Object",
+            "description": ""
         }
     ]
 }

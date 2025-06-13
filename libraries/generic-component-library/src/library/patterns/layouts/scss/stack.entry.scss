@@ -7,13 +7,44 @@
 }
 
 .stack {
-    --stack-mt: #{$baseline};
+    --stack-mt: var(--ss1);
+    --stack-bottom-child: 2;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    /* only direct children of stack get margin-top */
+    /* top margin is only applied to successive elements */
     &--successive > * + * {
         margin-block-start: var(--stack-mt);
     }
 
+    /* all children of stack get margin-top */
     &--recursive * + * {
         margin-block-start: var(--stack-mt);
+    }
+
+    &--large > * + * {
+        margin-block-start: var(--ss2);
+    }
+
+    &--small > * + * {
+        margin-block-start: var(--ss0);
+    }
+
+    /* useful stack in case of cards */
+    /* pushes the second last element to bottom */
+    &.card {
+        & > :nth-child(2) {
+            margin-block-end: auto;
+        }
+    }
+
+    /* useful stack in case of stack is the only child */
+    /* stack's height matches the parent's */
+    &:only-child {
+        /* height in horizontal-tb writing more */
+        block-size: 100%;
     }
 }
