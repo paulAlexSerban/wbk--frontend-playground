@@ -7,5 +7,7 @@ const process = require('process');
  */
 
 module.exports = function (path, resource) {
-    return `${process.env.ASSETS_PATH}/${path}/${resource}`;
+    const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+    const ASSETS_PATH = process.env.ASSETS_PATH || `${BASE_URL}/assets`;
+    return `${ASSETS_PATH}/${path}/${resource}`;
 };
