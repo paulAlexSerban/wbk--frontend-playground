@@ -17,3 +17,35 @@
  * widths ................. Fraction widths
  *
 \* ------------------------------------------------------------------------ */
+
+/* Utility class with backslash to escape colon */
+.font-size {
+    &\:xs {
+        font-size: var(--font-size-xs) !important;
+    }
+
+    &\:base {
+        font-size: var(--font-size-base) !important;
+    }
+
+    &\:lg {
+        font-size: var(--font-size-lg) !important;
+    }
+
+    &\:xl {
+        font-size: var(--font-size-xl) !important;
+    }
+
+    &\:2xl {
+        font-size: var(--font-size-2xl) !important;
+    }
+}
+
+/* Max Inline Size */
+.max-inline-size\:measure {
+    max-inline-size: var(--measure);
+}
+
+.max.max-inline-size\:measure\/2 {
+    max-inline-size: calc(var(--measure) / 2);
+}
