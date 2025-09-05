@@ -21,31 +21,39 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-
 
-            - name: '🔧 Setup NodeJS 14.19.1'
+            - name: '🔧 Setup NodeJS 22.14.0'
               uses: actions/setup-node@v1
               with:
-                  node-version: 14.19.1
+                  node-version: 22.14.0
 
             - name: '🔧 Install npm@latest'
-              run: npm i -g npm@latest
+              run: |
+                  npm i -g npm@latest
+                  npm i -g yarn
 
             - name: '📦  Install Assets dependencies'
-              run: |
-                  bash scripts/assets-install.bash
+              run: yarn install:assets
 
-            - name: '📦  Install Front-end Component Collection Development dependencies'
-              run: |
-                  bash scripts/frontend-frontend-component-collection-install.bash
+            - name: '📦  Install Dashboard dependencies'
+              run: yarn install:dashboard
 
-            - name: '🏗️  Build Frontend Front-end Component Collection'
-              run: |
-                  bash scripts/assets-process.bash
-                  bash scripts/frontend-frontend-component-collection-build.bash production
+            - name: '📦  Install Libraries dependencies'
+              run: yarn install:libs
 
-            - name: '🚚  Package Front-end Component Collection'
-              run: |
-                  bash scripts/package-clean.bash
-                  bash scripts/package-frontend-component-collection.bash
+            - name: '🏗️  Process Assets'
+              run: yarn process:assets
+
+            - name: '🏗️  Build Libraries'
+              run: yarn build:libs
+
+            - name: '🚚  Package Libraries'
+              run: yarn package
+
+            - name: '🏗️  Process Dashboard'
+              run: yarn process:dashboard
+
+            - name: '🚀 Sync Assets'
+              run: yarn sync:assets
 
             - name: '🚀 Deploy to GitHub Pages'
               uses: JamesIves/github-pages-deploy-action@4.1.1

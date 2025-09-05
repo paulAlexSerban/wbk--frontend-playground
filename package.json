@@ -19,8 +19,9 @@
         "install:all": "yarn install:libs && yarn install:dashboard && yarn install:assets",
         "process:assets": "cd assets/media && yarn process && cd -",
         "build:libs": "bash scripts.bash build",
+        "build:dashboard": "cd dashboard && yarn build && cd -",
         "package": "rm -rfv ./package/* && bash scripts.bash package",
-        "build": "yarn build:libs && yarn package && cd dashboard && yarn build && cd - && yarn sync:assets"
+        "build": "yarn build:libs && yarn package && yarn build:dashboard && yarn sync:assets"
     },
     "dependencies": {
         "@commitlint/cli": "^17.7.2",
