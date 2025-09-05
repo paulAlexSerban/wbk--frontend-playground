@@ -1,0 +1,1 @@
+(()=>{var e=document.getElementById("password"),t=document.getElementById("background");e.addEventListener("input",(function(e){var n=20-2*e.target.value.length;t.style.filter="blur(".concat(n,"px)")}))})();

@@ -1,0 +1,1 @@
+(()=>{var e=document.querySelector(".open-btn"),n=document.querySelector(".close-btn"),t=document.querySelectorAll(".nav");e.addEventListener("click",(function(){t.forEach((function(e){return e.classList.add("visible")}))})),n.addEventListener("click",(function(){t.forEach((function(e){return e.classList.remove("visible")}))}))})();

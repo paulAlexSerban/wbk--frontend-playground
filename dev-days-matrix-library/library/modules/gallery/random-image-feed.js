@@ -1,0 +1,1 @@
+(()=>{for(var c=document.querySelector(".container"),n=0;n<15;n++){var o=document.createElement("img");o.src="".concat("https://source.unsplash.com/random/").concat("".concat(t(),"x").concat(t())),c.appendChild(o)}function t(){return Math.floor(10*Math.random())+300}})();

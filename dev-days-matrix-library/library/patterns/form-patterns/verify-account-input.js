@@ -1,0 +1,1 @@
+(()=>{var e=document.querySelectorAll(".code");e[0].focus(),e.forEach((function(n,o){n.addEventListener("keydown",(function(n){n.key>=0&&n.key<=9?(e[o].value="",setTimeout((function(){return e[o+1].focus()}),10)):"Backspace"===n.key&&setTimeout((function(){return e[o-1].focus()}),10)}))}))})();

@@ -1,0 +1,1 @@
+(()=>{var e=document.getElementById("toggle"),t=document.getElementById("nav");e.addEventListener("click",(function(){return t.classList.toggle("active")}))})();

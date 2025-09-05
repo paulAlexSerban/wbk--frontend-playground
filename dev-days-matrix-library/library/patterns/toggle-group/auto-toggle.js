@@ -1,0 +1,1 @@
+(()=>{var e=document.querySelectorAll(".toggle"),c=document.querySelector("#good"),t=document.querySelector("#cheap"),r=document.querySelector("#fast");e.forEach((function(e){return e.addEventListener("change",(function(e){return o=e.target,void(c.checked&&t.checked&&r.checked&&(c===o&&(r.checked=!1),t===o&&(c.checked=!1),r===o&&(t.checked=!1)));var o}))}))})();

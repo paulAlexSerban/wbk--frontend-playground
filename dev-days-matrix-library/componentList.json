@@ -1,0 +1,1375 @@
+[
+  {
+    "group": "library",
+    "category": "components",
+    "component": "animations",
+    "name": "Animations",
+    "version": "1.0.0",
+    "description": "Animations",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "animations"
+    ],
+    "variations": [
+      {
+        "slug": "Hoverboard",
+        "name": "Hoverboard",
+        "description": "Hoverboard"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "button",
+    "name": "Button",
+    "version": "1.0.0",
+    "description": "Button",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "button"
+    ],
+    "variations": [
+      {
+        "slug": "ripple-button",
+        "name": "Ripple Button",
+        "description": "Ripple Button"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "drag-n-drop",
+    "name": "Drag and Drop",
+    "version": "1.0.0",
+    "description": "Keyboard event key codes",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "drag and drop"
+    ],
+    "variations": [
+      {
+        "slug": "drag-n-drop",
+        "name": "Drag and Drop",
+        "description": "Drag and Drop component"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "form-components",
+    "name": "Form Components",
+    "version": "1.0.0",
+    "description": "Form Components library",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "form",
+      "custom",
+      "range",
+      "slider"
+    ],
+    "variations": [
+      {
+        "slug": "custom-range-slider",
+        "name": "Custom Range Slider",
+        "description": "Custom Range Slider component"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "keyboard-keys",
+    "name": "Keyboard Keys",
+    "version": "1.0.0",
+    "description": "Keyboard event key codes",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "keyboards"
+    ],
+    "variations": [
+      {
+        "slug": "event-key-codes",
+        "name": "Event Key Codes",
+        "description": "Event Key Codes"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "loader",
+    "name": "Loader",
+    "version": "1.0.0",
+    "description": "Loader component",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "loader"
+    ],
+    "variations": [
+      {
+        "slug": "kinetic-loader",
+        "name": "Kinetic Loader",
+        "description": "Kinetic loader component"
+      },
+      {
+        "slug": "auto-text",
+        "name": "Auto Text",
+        "description": "Auto Text"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "paint",
+    "name": "Paint",
+    "version": "1.0.0",
+    "description": "Paint",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "paint"
+    ],
+    "variations": [
+      {
+        "slug": "drawing-app",
+        "name": "Drawing App",
+        "description": "Drawing app"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "timer",
+    "name": "Timer",
+    "version": "1.0.0",
+    "description": "Timer",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "time"
+    ],
+    "variations": [
+      {
+        "slug": "animated-countdown",
+        "name": "Animated Countdown",
+        "description": "Animated Countdown"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "toast",
+    "name": "Toast",
+    "version": "1.0.0",
+    "description": "Toast",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "paint"
+    ],
+    "variations": [
+      {
+        "slug": "toast-notification",
+        "name": "Toast Notification",
+        "description": "Toast Notification"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "audio-player",
+    "name": "Audio Player",
+    "version": "1.0.0",
+    "description": "Audio Player",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "audio",
+      "player"
+    ],
+    "variations": [
+      {
+        "slug": "custom-audio-player",
+        "name": "Custom Audio Player",
+        "description": "Create beautiful UI to play music stored in the 'music folder' using the HTML5 audio API",
+        "specs": [
+          "Create UI for music player including spinning image and song detail popup",
+          "Add play and pause functionality",
+          "Switch songs",
+          "Progress bar"
+        ]
+      },
+      {
+        "slug": "custom-music-player",
+        "name": "Custom Music Player",
+        "description": "Custom music player"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "calculator",
+    "name": "Calculator",
+    "version": "1.0.0",
+    "description": "Calculator",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "calculator"
+    ],
+    "variations": [
+      {
+        "slug": "exchangerate-calculator",
+        "name": "Exchange Rate Calculator",
+        "description": "Select countries to get the exchange rate for a specific amount",
+        "specs": [
+          "Display UI with 2 select lists for countries and 2 inputs for amounts",
+          "Fetch exchange rates from API (https://api.exchangerate-api.com)",
+          "Display the values for both countries",
+          "Update values on amount change",
+          "Swap country rates"
+        ]
+      },
+      {
+        "slug": "fortune-calculator",
+        "name": "Fortune  Calculator",
+        "description": "Project to teach high order array methods and DOM manipulation",
+        "specs": [
+          "Fetch random users from the https://randomuser.me API",
+          "Use forEach() to loop and output user/wealth",
+          "Use map() to double wealth",
+          "Use filter() to filter only millionaires",
+          "Use sort() to sort by wealth",
+          "Use reduce() to add all wealth"
+        ]
+      },
+      {
+        "slug": "expense-tracker",
+        "name": "Expense Tracker",
+        "description": "Keep track of income and expenses. Add and remove items and save to local storage",
+        "specs": [
+          "Create UI for project",
+          "Display transaction items in DOM",
+          "Show balance, expense and income totals",
+          "Add new transation and reflect in total",
+          "Delete items from DOM",
+          "Persist to local storage"
+        ]
+      },
+      {
+        "slug": "classic-calculator",
+        "name": "Classic Calculator",
+        "description": "Classic Calculator"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "card-list",
+    "name": "card List",
+    "version": "1.0.0",
+    "description": "Card List",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "card-list",
+      "testimonial-card-switch"
+    ],
+    "variations": [
+      {
+        "slug": "testimonial-card-switch",
+        "name": "Testimonial Card Switch",
+        "description": "Counter"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "counter",
+    "name": "Counter",
+    "version": "1.0.0",
+    "description": "Counter",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "counter"
+    ],
+    "variations": [
+      {
+        "slug": "incrementing-counter",
+        "name": "Incrementing Counter",
+        "description": "Counter"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "filter",
+    "name": "Gallery",
+    "version": "1.0.0",
+    "description": "Filter",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "filter"
+    ],
+    "variations": [
+      {
+        "slug": "live-user-filter",
+        "name": "Live User Filter",
+        "description": "Live User Filter"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "form-modules",
+    "name": "Form Modules",
+    "version": "1.0.0",
+    "description": "Form Modules",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "form",
+      "modules"
+    ],
+    "variations": [
+      {
+        "slug": "form-validation",
+        "name": "Form (Validation)",
+        "description": "Simple client side form validation. Check requird, length, email and password match",
+        "specs": [
+          "Create form UI",
+          "Show error messages under specific inputs",
+          "checkRequired() to accept array of inputs",
+          "checkLength() to check min and max length",
+          "checkEmail() to validate email with regex",
+          "checkPasswordsMatch() to match confirm password]"
+        ]
+      },
+      {
+        "slug": "signup-form-validation",
+        "name": "Signup Form (Validation)",
+        "description": "Simple client side form validation. Check requird, length, email and password match"
+      },
+      {
+        "slug": "password-strength-background",
+        "name": "Password Strength Background",
+        "description": "Password strength background"
+      },
+      {
+        "slug": "email-extractor",
+        "name": "Email Extractor",
+        "description": "Email extractor"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "gallery",
+    "name": "Gallery",
+    "version": "1.0.0",
+    "description": "Gallery",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "gallery"
+    ],
+    "variations": [
+      {
+        "slug": "nasa-apod",
+        "name": "NASA Astronomy Picture of the Day",
+        "description": "NASA Astronomy Picture of the Day"
+      },
+      {
+        "slug": "movie-app",
+        "name": "Movie App",
+        "description": "Movie App"
+      },
+      {
+        "slug": "pokedex",
+        "name": "Pokedex",
+        "description": "Pokedex"
+      },
+      {
+        "slug": "random-image-feed",
+        "name": "Random Image Feed",
+        "description": "Random Image Feed"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "list-keeper",
+    "name": "List Keeper",
+    "version": "1.0.0",
+    "description": "List Keeper",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "list-keeper"
+    ],
+    "variations": [
+      {
+        "slug": "bookmark-keeper",
+        "name": "Bookmark Keeper",
+        "description": "Bookmark Keeper"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "loader",
+    "name": "Loader",
+    "version": "1.0.0",
+    "description": "Loader",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "loader",
+      "relaxer"
+    ],
+    "variations": [
+      {
+        "slug": "Relaxer",
+        "name": "relaxer",
+        "description": "A relaxing breathing app with a visual director to tell you when to breathe in, hold and breathe out",
+        "specs": [
+          "Create circle and gradient circle with CSS",
+          "Create and animate pointer (Small circle)",
+          "Create grow and shrink animations",
+          "Add JavaScript to create the breath animation effect"
+        ]
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "mini-games",
+    "name": "Mini Games",
+    "version": "1.0.0",
+    "description": "Mini Games",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "mini-games"
+    ],
+    "variations": [
+      {
+        "slug": "3d-boxes-background",
+        "name": "3D Boxes Background",
+        "description": "3D Boxes Background"
+      },
+      {
+        "slug": "hangman",
+        "name": "Hangman",
+        "description": "Select a letter to figure out a hidden word in a set amount of chances",
+        "specs": [
+          "Display hangman pole and figure using SVG",
+          "Generate a random word",
+          "Display word in UI with correct letters",
+          "Display wrong letters",
+          "Show notification when select a letter twice",
+          "Show popup on win or lose",
+          "Play again button to reset game"
+        ]
+      },
+      {
+        "slug": "speed-typer",
+        "name": "Speed Typer",
+        "description": "Game to beat the clock by typing random words",
+        "specs": [
+          "Create game UI including a difficuly setting",
+          "Generate random word and place in DOM",
+          "Score increase after word is typed",
+          "Implement timer",
+          "Add certain amount of time after word is typed based on difficulty",
+          "Store difficulty setting in local storage"
+        ]
+      },
+      {
+        "slug": "breakout",
+        "name": "Breakout",
+        "description": "Game where you control a paddle with the arrow keys to bounce a ball up to break bricks. This app uses the HTML5 canvas element and API",
+        "specs": [
+          "Draw elements on canvas",
+          "Use canvas paths to draw shapes",
+          "Add animation with requestAnimationFrame(cb)",
+          "Move paddle on arrow key press",
+          "Add collision detection",
+          "Keep score",
+          "Add rules button with slider"
+        ]
+      },
+      {
+        "slug": "speak-number-guessing",
+        "name": "Speak Number Guessing",
+        "description": "Number guessing game where you speak your guess into the microphone using the speech recognition API",
+        "specs": [
+          "Display UI directing user to speak guess",
+          "Implement speech recognition to listen to mic",
+          "Process user's guess and match",
+          "Let user know higher, lower, match or not a number"
+        ],
+        "troubleshooting": [
+          "This component is using the experimental Speech Recognition API which is only available in Chrome and not on all platforms. If you are having issues with this component, try using Chrome on a desktop.",
+          "In FireFox, you need to enable the experimental Web Speech API in about:config - media.webspeech.recognition.force_enable"
+        ]
+      },
+      {
+        "slug": "rock-paper-scissors-lizard-spock",
+        "name": "Rock Paper Scissors Lizard Spock",
+        "description": "Game where you control a paddle with the arrow keys to bounce a ball up to break bricks. This app uses the HTML5 canvas element and API"
+      },
+      {
+        "slug": "math-sprint-game",
+        "name": "Math Sprint Game",
+        "description": "Math Sprint Game"
+      },
+      {
+        "slug": "paint-clone",
+        "name": "Paint Clone",
+        "description": "Paint Clone"
+      },
+      {
+        "slug": "pong",
+        "name": "Pong",
+        "description": "Pong"
+      },
+      {
+        "slug": "random-choice-picker",
+        "name": "Random Choice Picker",
+        "description": "Random Choice Picker"
+      },
+      {
+        "slug": "insect-catch-game",
+        "name": "Insect Catch Game",
+        "description": "Insect Catch Game"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "movie-seat-booking",
+    "name": "Movie Seat Booking",
+    "version": "1.0.0",
+    "description": "Movie Seat Booking",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "movie-seat-booking"
+    ],
+    "variations": [
+      {
+        "slug": "movie-seat-booking",
+        "name": "Movie Seat Booking",
+        "description": "Display movie choices and seats in a theater to select from in order to purchase tickets",
+        "specs": [
+          "Display UI with movie select, screen, seats, legend & seat info",
+          "User can select a movie/price",
+          "User can select/deselect seats",
+          "User can not select occupied seats",
+          "Number of seats and price will update",
+          "Save seats, movie and price to local storage so that UI is still populated on refresh",
+          "Design: https://dribbble.com/shots/3628370-Movie-Seat-Booking"
+        ]
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "navigation",
+    "name": "Navigation",
+    "version": "1.0.0",
+    "description": "Navigation",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "navigation"
+    ],
+    "variations": [
+      {
+        "slug": "burger-slidein-navigation",
+        "name": "Burger Slidein Navigation",
+        "description": "Burger Slidein Navigation"
+      },
+      {
+        "slug": "expanding-navigation-bar",
+        "name": "Expanding Navigation Bar",
+        "description": "Expanding Navigation Bar"
+      },
+      {
+        "slug": "sticky-navigation-bar",
+        "name": "Sticky Navigation Bar",
+        "description": "Sticky Navigation Bar"
+      },
+      {
+        "slug": "netflix-navigation",
+        "name": "Netflix Navigation",
+        "description": "Netflix Navigation"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "notes",
+    "name": "Notes",
+    "version": "1.0.0",
+    "description": "Notes",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "notes"
+    ],
+    "variations": [
+      {
+        "slug": "markdown-notes-app",
+        "name": "Markdown Notes App",
+        "description": "Markdown Notes App"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "pagination",
+    "name": "Pagination",
+    "version": "1.0.0",
+    "description": "Pagination",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "pagination",
+      "infinite"
+    ],
+    "variations": [
+      {
+        "slug": "infinite-scroll-posts",
+        "name": "Infinite Scroll Posts",
+        "description": "Display blog posts from https://jsonplaceholder.typicode.com and add infinite scroll to fetch posts and also add filter box",
+        "specs": [
+          "Create UI & custom CSS loader animation",
+          "Fetch initial posts from API and display",
+          "Scroll down, show loader and fetch next set of posts",
+          "Add filtering for fetched posts"
+        ]
+      },
+      {
+        "slug": "lyrics-search",
+        "name": "Lyrics Search",
+        "description": "Find songs, artists and lyrics using the https://lyrics.ovh API",
+        "specs": [
+          "Display UI with song/artist input",
+          "Fetch songs/artists and put in DOM",
+          "Add pagination",
+          "Add get lyrics functionality and display in DOM"
+        ]
+      },
+      {
+        "slug": "infinite-scroll-images",
+        "name": "Infinite Scroll Images",
+        "description": "Infinite scroll images from Unsplash and add filter box"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "quiz",
+    "name": "Quiz",
+    "version": "1.0.0",
+    "description": "Quiz",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "quiz"
+    ],
+    "variations": [
+      {
+        "slug": "memory-cards",
+        "name": "Memory Cards",
+        "description": "Flash card app for learning. Display, add and remove memory cards with questions and answers",
+        "stats": [
+          "Create flip cards using CSS",
+          "Create 'Add new card' overlay with form",
+          "Display question cards and flip for answer",
+          "View prev and next cards",
+          "Add new cards to local storage",
+          "Clear all cards from local storage"
+        ]
+      },
+      {
+        "slug": "richest-people",
+        "name": "Richest People",
+        "description": "Display a scrambled list that can be sorted with drag and drop",
+        "stats": [
+          "Create an ordered list (Top 10 richest people)",
+          "Scramble list items randomly",
+          "Allow user to drag and drop an item to a different position",
+          "Button to check if items are in correct order",
+          "Show green for correct order and red for wrong order"
+        ]
+      },
+      {
+        "slug": "quiz-app",
+        "name": "Quiz App",
+        "description": "Quiz App"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "search",
+    "name": "Search",
+    "version": "1.0.0",
+    "description": "Search",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "search"
+    ],
+    "variations": [
+      {
+        "slug": "meal-finder",
+        "name": "Meal Finder",
+        "description": "Search and generate random meals from the www.themealdb.com API",
+        "specs": [
+          "Display UI with form to search and button to generate",
+          "Connect to API and get meals",
+          "Display meals in DOM with image and hover effect",
+          "Click on meal and see the details",
+          "Click on generate button and fetch & display a random meal"
+        ]
+      },
+      {
+        "slug": "github-profiles",
+        "name": "Github Profiles",
+        "description": "Github profile search"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "text-generator",
+    "name": "Text Generator",
+    "version": "1.0.0",
+    "description": "Text Generator",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "text",
+      "generator"
+    ],
+    "variations": [
+      {
+        "slug": "quote-generator",
+        "name": "Quote Generator",
+        "description": "Quote Generator",
+        "post-mvp": [
+          "implement quote generator local API with NodeJS"
+        ]
+      },
+      {
+        "slug": "dad-jokes",
+        "name": "Dad Jokes",
+        "description": "Dad Jokes"
+      },
+      {
+        "slug": "password-generator",
+        "name": "Password Generator",
+        "description": "Password Generator"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "text-reader",
+    "name": "Text Reader",
+    "version": "1.0.0",
+    "description": "Text Reader",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "text",
+      "reader"
+    ],
+    "variations": [
+      {
+        "slug": "speech-text-reader",
+        "name": "Speech Text Reader",
+        "description": "A text to speech app for non-verbal people. Pre-made buttons and custom text speech. This project uses the Web Speech API",
+        "specs": [
+          "Create responsive UI (CSS Grid) with picture buttons",
+          "Speaks the text when button clicked",
+          "Drop down custom text to speech",
+          "Speaks the text typed in",
+          "Change voices and accents"
+        ]
+      },
+      {
+        "slug": "joke-teller",
+        "name": "Joke Teller",
+        "description": "Joke Teller app using Joke API and Text to Speech API"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "timer",
+    "name": "Timer",
+    "version": "1.0.0",
+    "description": "Timer",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "timer"
+    ],
+    "variations": [
+      {
+        "slug": "new-year-countdown",
+        "name": "New York Countdown",
+        "description": "Landing page that counts down from the current date to the next new year",
+        "specs": [
+          "Create landing page with HTML/CSS",
+          "Calculate the days, hours, mins and seconds to the new year",
+          "Insert values into the DOM",
+          "Show a spinner right before loading the countdown",
+          "Show the coming year in the background"
+        ]
+      },
+      {
+        "slug": "custom-countdown",
+        "name": "Custom Countdown",
+        "description": "Custom countdown that counts down from current date to a specific date"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "to-do-list",
+    "name": "To Do List",
+    "version": "1.0.0",
+    "description": "To Do List",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "to-do-list"
+    ],
+    "variations": [
+      {
+        "slug": "kanban-board",
+        "name": "Kanban Board",
+        "description": "Kanban Board"
+      },
+      {
+        "slug": "drink-water",
+        "name": "Drink Water",
+        "description": "Drink Water"
+      },
+      {
+        "slug": "todo-list",
+        "name": "To Do List",
+        "description": "To Do List"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "video-player",
+    "name": "Video Player",
+    "version": "1.0.0",
+    "description": "Video Player",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "video",
+      "player"
+    ],
+    "variations": [
+      {
+        "slug": "custom-video-player",
+        "name": "Custom Video Player",
+        "description": "Custom video player using the HTML5 video element and it's JavaScript API with a custom design",
+        "specs": [
+          "Display custom video player styled with CSS",
+          "Play/pause",
+          "Stop",
+          "Video progress bar",
+          "Set progress bar time",
+          "Display time in mins and seconds"
+        ]
+      },
+      {
+        "slug": "picture-in-picture",
+        "name": "Picture in Picture",
+        "description": "Picture in Picture video player using the HTML5 video element and it's JavaScript API with a custom design"
+      },
+      {
+        "slug": "remote-video-player",
+        "name": "Remote Video Player",
+        "description": "Remote video player using the HTML5 video element and it's JavaScript API with a custom design"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "accordion",
+    "name": "Accordion",
+    "version": "1.0.0",
+    "description": "Accordion",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "accordion"
+    ],
+    "variations": [
+      {
+        "slug": "faq-collapse",
+        "name": "FAQ Collapse",
+        "description": "FAQ Collapse"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "card",
+    "name": "Card",
+    "version": "1.0.0",
+    "description": "card",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "card"
+    ],
+    "variations": [
+      {
+        "slug": "content-placeholder-card",
+        "name": "Card (w. Content Placeholder)",
+        "description": "Card with content placeholder"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "form-patterns",
+    "name": "Form Patterns",
+    "version": "1.0.0",
+    "description": "Form Patterns",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "form"
+    ],
+    "variations": [
+      {
+        "slug": "verify-account-input",
+        "name": "Verify Account Input",
+        "description": "Verify Account Input"
+      },
+      {
+        "slug": "smiley-feedback",
+        "name": "Smiley Feedback",
+        "description": "Smiley Feedback"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "like",
+    "name": "Like",
+    "version": "1.0.0",
+    "description": "Like",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "like"
+    ],
+    "variations": [
+      {
+        "slug": "like-image",
+        "name": "Like Image",
+        "description": "Like Image"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "navigation",
+    "name": "Navigation",
+    "version": "1.0.0",
+    "description": "Navigation",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "navigation",
+      "switch"
+    ],
+    "variations": [
+      {
+        "slug": "side-nav-buttons",
+        "name": "Side Navigation Buttons",
+        "description": "Side Navigation Buttons"
+      },
+      {
+        "slug": "mobile-footer-nav",
+        "name": "Mobile Footer Navigation",
+        "description": "Mobile Footer Navigation"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "slider",
+    "name": "Slider",
+    "version": "1.0.0",
+    "description": "Slider",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "slider"
+    ],
+    "variations": [
+      {
+        "slug": "background-image-slider",
+        "name": "Background Image Slider",
+        "description": "Background Image Slider"
+      },
+      {
+        "slug": "double-vertical-slider",
+        "name": "Double Vertical Slider",
+        "description": "Double Vertical Slider"
+      },
+      {
+        "slug": "image-carousel",
+        "name": "Image Carousel",
+        "description": "Image Carousel"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "theme-switch",
+    "name": "Theme Switch",
+    "version": "1.0.0",
+    "description": "Theme Switcher",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "theme",
+      "switch"
+    ],
+    "variations": [
+      {
+        "slug": "theme-clock",
+        "name": "Theme Clock",
+        "description": "Theme Clock"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "toggle-group",
+    "name": "Toggle Group",
+    "version": "1.0.0",
+    "description": "Toggle Group",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "toggle-group",
+      "toggle",
+      "group",
+      "patterns"
+    ],
+    "variations": [
+      {
+        "slug": "auto-toggle",
+        "name": "Auto Toggle",
+        "description": "Auto Toggle"
+      }
+    ]
+  },
+  {
+    "group": "system",
+    "category": "products",
+    "component": "landing-page",
+    "name": "Menu Slide Landing Page",
+    "version": "1.0.0",
+    "description": "Dev Days Matrix Base Page Template",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "base"
+    ],
+    "variations": [
+      {
+        "slug": "menu-slide-landing-page",
+        "name": "Menu Slide & Modal Landing Page",
+        "description": "Simple landing page with sliding menu and modal",
+        "specs": [
+          "Create and style landing page",
+          "Style side nav and modal",
+          "Add functionality to make menu open/close on button click",
+          "Add functionality to make modal open/close on button click"
+        ]
+      },
+      {
+        "slug": "animated-tailwind-template",
+        "name": "Animated Tailwind Landing Page Template",
+        "description": "Animated Tailwind Landing Page Template"
+      },
+      {
+        "slug": "splash-clone",
+        "name": "Splash Clone",
+        "description": "Splash Clone"
+      }
+    ]
+  },
+  {
+    "group": "system",
+    "category": "products",
+    "component": "portfolio",
+    "name": "Portfolio",
+    "version": "1.0.0",
+    "description": "Portfolio",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "base"
+    ],
+    "variations": [
+      {
+        "slug": "simplefolio",
+        "name": "Simplefolio",
+        "description": "Simple portfolio"
+      },
+      {
+        "slug": "light-dark-mode",
+        "name": "Light Dark Mode Portfolio",
+        "description": "Light Dark Mode Portfolio with a simple switch"
+      }
+    ]
+  },
+  {
+    "hide": true,
+    "group": "system",
+    "category": "templates",
+    "component": "dev-days-matrix",
+    "name": "Dev Days Matrix Base Page Template",
+    "version": "1.0.0",
+    "description": "Dev Days Matrix Base Page Template",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "base"
+    ],
+    "variations": [
+      {
+        "slug": "dev-days-matrix-base",
+        "name": "Dev Days Matrix Base Page Template",
+        "description": "Dev Days Matrix Base Page Template"
+      }
+    ]
+  }
+]

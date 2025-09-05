@@ -1,0 +1,1 @@
+(()=>{var t=document.getElementById("boxes");document.getElementById("btn").addEventListener("click",(function(){return t.classList.toggle("big")})),function(){for(var e=0;e<4;e++)for(var n=0;n<4;n++){var c=document.createElement("div");c.classList.add("box"),c.style.backgroundPosition="".concat(125*-n,"px ").concat(125*-e,"px"),t.appendChild(c)}}()})();

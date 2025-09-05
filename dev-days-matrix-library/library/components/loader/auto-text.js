@@ -1,0 +1,1 @@
+(()=>{var e=document.getElementById("text"),t=document.getElementById("speed"),n="Lorem ipsum dolor sit amet, consectetur adipisicing elit.",i=1,u=300/t.value;!function t(){e.innerText=n.slice(0,i),++i>57&&(i=1);setTimeout(t,u)}(),t.addEventListener("input",(function(e){return u=300/e.target.value}))})();

@@ -1,0 +1,1 @@
+(()=>{var e=document.getElementById("container"),t=document.getElementById("text"),n=7500;function i(){t.innerText="Breathe In!",e.className="container grow",setTimeout((function(){t.innerText="Hold",setTimeout((function(){t.innerText="Breathe Out!",e.className="container shrink"}),1500)}),3e3)}i(),setInterval(i,n)})();

@@ -1,0 +1,1 @@
+document.querySelectorAll(".counter").forEach((function(t){t.innerText="0";var e=function(){var n=+t.getAttribute("data-target"),r=+t.innerText,c=n/200;r<n?(t.innerText="".concat(Math.ceil(r+c)),setTimeout(e,1)):t.innerText=n};e()}));

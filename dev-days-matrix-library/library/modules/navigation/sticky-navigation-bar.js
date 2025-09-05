@@ -1,0 +1,1 @@
+(()=>{var e=document.querySelector(".nav");window.addEventListener("scroll",(function(){window.scrollY>e.offsetHeight+150?e.classList.add("active"):e.classList.remove("active")}))})();

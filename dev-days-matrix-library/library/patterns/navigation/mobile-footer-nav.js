@@ -1,0 +1,1 @@
+(()=>{var c=document.querySelectorAll(".content"),e=document.querySelectorAll("nav ul li");e.forEach((function(t,n){t.addEventListener("click",(function(){c.forEach((function(c){return c.classList.remove("show")})),e.forEach((function(c){return c.classList.remove("active")})),t.classList.add("active"),c[n].classList.add("show")}))}))})();

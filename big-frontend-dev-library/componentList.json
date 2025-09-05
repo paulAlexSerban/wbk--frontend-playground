@@ -1,0 +1,27 @@
+[
+  {
+    "hide": false,
+    "group": "system",
+    "category": "templates",
+    "component": "big-frontend-dev",
+    "name": "Big Frontend Dev Base Page Template",
+    "version": "1.0.0",
+    "description": "Big Frontend Dev Base Page Template",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "base"
+    ],
+    "variations": [
+      {
+        "slug": "big-frontend-dev",
+        "name": "Big Frontend Dev Base Page Template",
+        "description": "Big Frontend Dev Base Page Template"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+document.querySelectorAll(".ripple").forEach((function(e){e.addEventListener("click",(function(e){var t=e.clientX,n=e.clientY,c=e.target.offsetTop,l=t-e.target.offsetLeft,i=n-c,o=document.createElement("span");o.classList.add("circle"),o.style.top=i+"px",o.style.left=l+"px",this.appendChild(o),setTimeout((function(){return o.remove()}),500)}))}));
