@@ -16,7 +16,7 @@ jobs:
                   fetch-depth: 0
 
             - name: '🔄  Cache node_modules'
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
                   path: |
                       ~/.npm
@@ -30,9 +30,7 @@ jobs:
                   node-version: 22.14.0
 
             - name: '🔧 Install npm@latest'
-              run: |
-                  npm i -g npm@latest
-                  npm i -g yarn
+              run: npm i -g yarn
 
             - name: '📦  Install Assets dependencies'
               run: yarn install:assets
