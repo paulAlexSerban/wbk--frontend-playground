@@ -1,10 +1,13 @@
-name: Deploy Front-end Component Collection to Github Pages
+name: Deploy Front-end Playground to Github Pages
 on:
+    push:
+        branches:
+            - main
     workflow_dispatch:
 
 jobs:
     deploy:
-        name: Deploy Front-end Component Collection
+        name: Deploy Front-end Playground
         runs-on: ubuntu-latest
         steps:
             - name: '📥 checkout repository'
