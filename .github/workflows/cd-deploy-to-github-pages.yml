@@ -5,6 +5,10 @@ on:
             - main
     workflow_dispatch:
 
+env:
+    NODE_VERSION: 22.14.9
+    BASE_URL: ${{ secrets.BASE_URL }}
+
 jobs:
     deploy:
         name: Deploy Front-end Playground
@@ -24,10 +28,10 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-
 
-            - name: '🔧 Setup NodeJS 22.14.0'
-              uses: actions/setup-node@v1
+            - name: '🔧  Setup NodeJS ${{ env.NODE_VERSION }}'
+              uses: actions/setup-node@v3
               with:
-                  node-version: 22.14.0
+                  node-version: ${{ env.NODE_VERSION }}
 
             - name: '🔧 Install npm@latest'
               run: npm i -g yarn
@@ -59,5 +63,5 @@ jobs:
             - name: '🚀 Deploy to GitHub Pages'
               uses: JamesIves/github-pages-deploy-action@4.1.1
               with:
-                  branch: gh-pages-frontend-component-collection
-                  folder: package/frontend-component-collection
+                  branch: gh-pages
+                  folder: package/libraires
