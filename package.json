@@ -20,7 +20,7 @@
         "process:assets": "cd assets/media && yarn process && cd -",
         "build:libs": "bash scripts.bash build",
         "build:dashboard": "cd dashboard && yarn build && cd -",
-        "package": "rm -rfv ./package/* && bash scripts.bash package",
+        "package": "bash scripts.bash package",
         "build": "yarn build:libs && yarn package && yarn build:dashboard && yarn sync:assets"
     },
     "dependencies": {

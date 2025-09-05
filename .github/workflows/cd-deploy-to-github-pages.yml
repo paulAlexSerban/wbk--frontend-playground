@@ -51,7 +51,7 @@ jobs:
               run: yarn package
 
             - name: '🏗️  Process Dashboard'
-              run: yarn process:dashboard
+              run: yarn build:dashboard
 
             - name: '🚀 Sync Assets'
               run: yarn sync:assets
