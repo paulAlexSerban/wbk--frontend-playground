@@ -6,7 +6,7 @@ on:
     workflow_dispatch:
 
 env:
-    NODE_VERSION: 22.14.9
+    NODE_VERSION: 22.14.0
     BASE_URL: ${{ secrets.BASE_URL }}
 
 jobs:
