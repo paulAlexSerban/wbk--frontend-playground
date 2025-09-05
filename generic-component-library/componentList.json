@@ -1,0 +1,1197 @@
+[
+  {
+    "group": "library",
+    "category": "components",
+    "component": "browser-detect",
+    "name": "Browser Detect",
+    "version": "1.0.0",
+    "description": "",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [],
+    "variations": [
+      {
+        "slug": "browser-detect",
+        "name": "Browser Detect",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "button",
+    "name": "Button",
+    "version": "1.0.0",
+    "description": "Button",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "button"
+    ],
+    "variations": [
+      {
+        "slug": "button",
+        "name": "Button (Base)",
+        "description": "Base button component, used for all button types."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "form-components",
+    "name": "Form Components",
+    "version": "1.0.0",
+    "description": "Form components for the application.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "form components"
+    ],
+    "variations": [
+      {
+        "slug": "text-input",
+        "name": "Text Input",
+        "description": "Text input component to input text."
+      },
+      {
+        "slug": "search-hidden",
+        "name": "Search (Hidden)",
+        "description": "Search component to input search text."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "image",
+    "name": "Image",
+    "version": "1.0.0",
+    "description": "Image component for displaying images.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "image"
+    ],
+    "variations": [
+      {
+        "slug": "image",
+        "name": "Image",
+        "description": "Image component for displaying images."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "pill",
+    "name": "Pill",
+    "version": "1.0.0",
+    "description": "Pill component for displaying pills of data such as numbered steps.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "pill"
+    ],
+    "variations": [
+      {
+        "slug": "pill-round",
+        "name": "Pill (Round)",
+        "description": "Pill component for displaying pills of data such as numbered steps."
+      },
+      {
+        "slug": "pill-round-active",
+        "name": "Pill (Round - Active)",
+        "description": "Pill component for displaying pills of data such as numbered steps in active state."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "components",
+    "component": "typography",
+    "name": "Typography",
+    "version": "1.0.0",
+    "description": "Typography components",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "typography"
+    ],
+    "variations": [
+      {
+        "slug": "paragraph",
+        "name": "Paragraph",
+        "description": "Paragraph text"
+      },
+      {
+        "slug": "heading",
+        "name": "Heading",
+        "description": "Heading text"
+      },
+      {
+        "slug": "time-text",
+        "name": "Time (Text)",
+        "description": "Time text"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "book-list",
+    "name": "Book List",
+    "version": "1.0.0",
+    "description": "Book list component for displaying a list of books.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "book-list"
+    ],
+    "variations": [
+      {
+        "slug": "book-list",
+        "name": "Book List",
+        "description": "Book list component for displaying a list of books."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "calculator",
+    "name": "Calculator",
+    "version": "1.0.0",
+    "description": "Calculator",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "calculator"
+    ],
+    "variations": [
+      {
+        "slug": "loan-calculator",
+        "name": "Load Calculator",
+        "description": "Loan Calculator"
+      },
+      {
+        "slug": "exchangerate-calculator",
+        "name": "Exchange Rate Calculator",
+        "description": "Exchange Rate Calculator"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "counter",
+    "name": "Counter",
+    "version": "1.0.0",
+    "description": "Counter",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "counter",
+      "score keeper app"
+    ],
+    "variations": [
+      {
+        "slug": "counter",
+        "name": "Counter",
+        "description": "Counter"
+      },
+      {
+        "slug": "score-keeper-app",
+        "name": "Score Keeper App",
+        "description": "Score Keeper App"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "dashboard",
+    "name": "Dashboard",
+    "version": "1.0.0",
+    "description": "Dashboard",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "dashboard"
+    ],
+    "variations": [
+      {
+        "slug": "activity-launcher",
+        "name": "Activity Launcher",
+        "description": "Activity Launcher"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "form-modules",
+    "name": "Form Modules",
+    "version": "1.0.0",
+    "description": "Form Modules",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "form",
+      "modules"
+    ],
+    "variations": [
+      {
+        "slug": "form-validation",
+        "name": "Form (Validation)",
+        "description": "Form with validation"
+      },
+      {
+        "slug": "form-wave",
+        "name": "Form (Wave)",
+        "description": "Form with wave effect"
+      },
+      {
+        "slug": "simple-subscribe-form",
+        "name": "Simple Subscribe Form",
+        "description": "Simple Subscribe Form"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "image-comparison-slider",
+    "name": "Image Comparison Slider",
+    "version": "1.0.0",
+    "description": "Image slider that compares two images.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "image-comparison-slider"
+    ],
+    "variations": [
+      {
+        "slug": "image-comparison-slider",
+        "name": "Image Comparison Slider",
+        "description": "Image Comparison Slider"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "mini-games",
+    "name": "Mini Games",
+    "version": "1.0.0",
+    "description": "Mini Games",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "mini-games"
+    ],
+    "variations": [
+      {
+        "slug": "coin-game",
+        "name": "Coin Game",
+        "description": "Coin Game"
+      },
+      {
+        "slug": "guess-my-number",
+        "name": "Guess My Number",
+        "description": "Guess My Number"
+      },
+      {
+        "slug": "number-guesser",
+        "name": "Number Guesser",
+        "description": "Number Guesser"
+      },
+      {
+        "slug": "math-game",
+        "name": "Math Game",
+        "description": "Math Game"
+      },
+      {
+        "slug": "pig-game",
+        "name": "Pig Game",
+        "description": "Pig Game"
+      },
+      {
+        "slug": "cops-and-robbers",
+        "name": "Cops and Robbers (Board Game)",
+        "description": "Cops and Robbers (Board Game)"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "movie-seat-booking",
+    "name": "Movie Seat Booking",
+    "version": "1.0.0",
+    "description": "Movie Seat Booking",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "movie-seat-booking"
+    ],
+    "variations": [
+      {
+        "slug": "movie-seat-booking",
+        "name": "Movie Seat Booking",
+        "description": "Movie Seat Booking"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "navigation",
+    "name": "Rotating Navigation",
+    "version": "1.0.0",
+    "description": "Rotating Navigation",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "counter",
+      "score keeper app"
+    ],
+    "variations": [
+      {
+        "slug": "rotating-navigation",
+        "name": "Rotating Navigation",
+        "description": "Rotating Navigation"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "note-manager",
+    "name": "Note Manager",
+    "version": "1.0.0",
+    "description": "Note Manager",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "counter",
+      "score keeper app"
+    ],
+    "variations": [
+      {
+        "slug": "note-manager",
+        "name": "Note Manager",
+        "description": "Note Manager"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "quiz",
+    "name": "Quiz",
+    "version": "1.0.0",
+    "description": "Quiz",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "quiz"
+    ],
+    "variations": [
+      {
+        "slug": "ninja-quiz",
+        "name": "Ninja Quiz",
+        "description": "Ninja Quiz"
+      },
+      {
+        "slug": "quiz",
+        "name": "Quiz",
+        "description": "Quiz"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "stopwatch",
+    "name": "Stopwatch",
+    "version": "1.0.0",
+    "description": "Stopwatch",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "stopwatch"
+    ],
+    "variations": [
+      {
+        "slug": "stopwatch",
+        "name": "Stopwatch",
+        "description": "Stopwatch"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "text-generator",
+    "name": "Text Generator",
+    "version": "1.0.0",
+    "description": "Text Generator",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "text-generator"
+    ],
+    "variations": [
+      {
+        "slug": "quotation-generator",
+        "name": "Quotation Generator",
+        "description": "Quotation Generator"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "to-do-list",
+    "name": "To Do List",
+    "version": "1.0.0",
+    "description": "To Do List",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "modules",
+      "to-do-list"
+    ],
+    "variations": [
+      {
+        "slug": "task-list",
+        "name": "Task List",
+        "description": "Task List"
+      },
+      {
+        "slug": "to-do-list",
+        "name": "To Do List",
+        "description": "To Do List"
+      },
+      {
+        "slug": "to-do-list-v2",
+        "name": "To Do List (V2)",
+        "description": "To Do List (V2)"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "modules",
+    "component": "weather-app",
+    "name": "Weather App",
+    "version": "1.0.0",
+    "description": "Weater App",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "weather",
+      "app",
+      "widget"
+    ],
+    "variations": [
+      {
+        "slug": "weather-app",
+        "name": "Weather App",
+        "description": "Weather App"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "accordion",
+    "name": "Accordion",
+    "version": "1.0.0",
+    "description": "Accordion component for displaying collapsible content.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "accordion"
+    ],
+    "variations": [
+      {
+        "slug": "accordion-css",
+        "name": "Accordion (CSS Only)",
+        "description": "Accordion component for displaying collapsible content."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "alert",
+    "name": "Alert",
+    "version": "1.0.0",
+    "description": "Alert",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "alert"
+    ],
+    "variations": [
+      {
+        "slug": "alert",
+        "name": "Alert",
+        "description": "Alert component"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "audio",
+    "name": "Audio",
+    "version": "1.0.0",
+    "description": "Audio",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "audio"
+    ],
+    "variations": [
+      {
+        "slug": "sound-board",
+        "name": "Sound Board",
+        "description": "Sound Board"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "card-list",
+    "name": "Card List",
+    "version": "1.0.0",
+    "description": "Card List",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "card-list"
+    ],
+    "variations": [
+      {
+        "slug": "card-list-fancy-hover",
+        "name": "Card List (Fancy Hover)",
+        "description": "Card List (Fancy Hover)"
+      },
+      {
+        "slug": "expanding-cards",
+        "name": "Expanding Cards",
+        "description": "Expanding Cards"
+      },
+      {
+        "slug": "pricing-panel",
+        "name": "Pricing Panel",
+        "description": "Pricing Panel"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "digital-clock",
+    "name": "Digital Clock",
+    "version": "1.0.0",
+    "description": "Digital Clock",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "digital-clock"
+    ],
+    "variations": [
+      {
+        "slug": "digital-clock",
+        "name": "Digital Clock",
+        "description": "Digital Clock"
+      },
+      {
+        "slug": "digital-clock-v2",
+        "name": "Digital Clock (V2)",
+        "description": "Digital Clock (V2)"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "form-patterns",
+    "name": "Form Patterns",
+    "version": "1.0.0",
+    "description": "Form Patterns",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "form-patterns"
+    ],
+    "variations": [
+      {
+        "slug": "checkbox-field",
+        "name": "Checkbox Field",
+        "description": "Checkbox Field"
+      },
+      {
+        "slug": "inline-checkbox",
+        "name": "Inline Checkbox",
+        "description": "Inline Checkbox"
+      },
+      {
+        "slug": "radio-field",
+        "name": "Radio Field",
+        "description": "Radio Field"
+      },
+      {
+        "slug": "select-field",
+        "name": "Select Field",
+        "description": "Select Field"
+      },
+      {
+        "slug": "text-field",
+        "name": "Text Field",
+        "description": "Text Field"
+      },
+      {
+        "slug": "textarea-field",
+        "name": "Textarea Field",
+        "description": "Textarea Field"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "hero",
+    "name": "Hero",
+    "version": "1.0.0",
+    "description": "Hero",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "hero"
+    ],
+    "variations": [
+      {
+        "slug": "split-screen-hero",
+        "name": "Sprit Screen Hero",
+        "description": "A split screen hero with a background image and a text overlay."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "layouts",
+    "name": "Layouts",
+    "version": "1.0.0",
+    "description": "Layouts",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "layouts"
+    ],
+    "variations": [
+      {
+        "slug": "box-primitive",
+        "name": "Layout: Box (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "center-primitive",
+        "name": "Layout: Center (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "cluster-primitive",
+        "name": "Layout: Cluster (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "cover-primitive",
+        "name": "Layout: Cover (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "frame-primitive",
+        "name": "Layout: Frame (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "grid-primitive",
+        "name": "Layout: Grid (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "grid-cards",
+        "name": "Layout: Grid Cards",
+        "description": ""
+      },
+      {
+        "slug": "icon-primitive",
+        "name": "Layout: Icon (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "imposter-primitive",
+        "name": "Layout: Imposter (primitive)",
+        "description": ""
+      },
+      {
+        "slug": "reel-primitive",
+        "name": "Layout: Reel (primitive)",
+        "description": "Reel primitive is a layout that allows for horizontal scrolling of content, similar to a carousel or slider."
+      },
+      {
+        "slug": "stack-primitive",
+        "name": "Layout: Stack (primitive)",
+        "description": "Stack primitive is a layout that stacks elements on top of each other, allowing for overlapping content."
+      },
+      {
+        "slug": "switcher-primitive",
+        "name": "Layout: Switcher (primitive)",
+        "description": "Switcher primitive is a layout that allows for switching between different content views, typically used for tabbed interfaces."
+      },
+      {
+        "slug": "holy-grail",
+        "name": "Layout: Holy Grail",
+        "description": ""
+      },
+      {
+        "slug": "sidebar-simple",
+        "name": "Layout: Sidebar Simple",
+        "description": ""
+      },
+      {
+        "slug": "sidebar-media-object",
+        "name": "Layout: Sidebar Media Object",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "loader",
+    "name": "Blurry Loader",
+    "version": "1.0.0",
+    "description": "Blurry Loa",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "loader",
+      "blurry"
+    ],
+    "variations": [
+      {
+        "slug": "blurry-loader",
+        "name": "Blurry Loader",
+        "description": "Blurry Loader"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "modal",
+    "name": "Modal",
+    "version": "1.0.0",
+    "description": "Modal",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "modal"
+    ],
+    "variations": [
+      {
+        "slug": "modal-window",
+        "name": "Modal Window"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "popup",
+    "name": "Popup",
+    "version": "1.0.0",
+    "description": "Popup",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "popup"
+    ],
+    "variations": [
+      {
+        "slug": "popup",
+        "name": "Popup",
+        "description": "Popup"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "progress",
+    "name": "Progress",
+    "version": "1.0.0",
+    "description": "Progress",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "progress"
+    ],
+    "variations": [
+      {
+        "slug": "progress-steps",
+        "name": "Progress Steps",
+        "description": "Progress Steps"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "scrollspy",
+    "name": "Scrollspy",
+    "version": "1.0.0",
+    "description": "Scrollspy",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "scrollspy",
+      "scroll",
+      "spy",
+      "scrolling",
+      "element"
+    ],
+    "variations": [
+      {
+        "slug": "scrollspy",
+        "name": "Scrollspy",
+        "description": "Scrollspy"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "tabs",
+    "name": "Tabs",
+    "version": "1.0.0",
+    "description": "Tabs",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "tabs"
+    ],
+    "variations": [
+      {
+        "slug": "navigation-tabs-css",
+        "name": "Navigation Tabs (Only CSS)",
+        "description": "Navigation Tabs (Only CSS)"
+      },
+      {
+        "slug": "navigation-tabs-js",
+        "name": "Navigation Tabs (with JS)",
+        "description": "Navigation Tabs (with JS)"
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "video",
+    "name": "Video",
+    "version": "1.0.0",
+    "description": "Video",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "video",
+      "player"
+    ],
+    "variations": [
+      {
+        "slug": "custom-video-player",
+        "name": "Custom Video Player",
+        "description": "Custom Video Player"
+      }
+    ]
+  },
+  {
+    "group": "system",
+    "category": "products",
+    "component": "design-system",
+    "name": "Design System",
+    "version": "1.0.0",
+    "description": "Design System",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "product",
+      "design system"
+    ],
+    "variations": [
+      {
+        "slug": "harmonic-sizes",
+        "name": "Harmonic Sizes",
+        "description": "Harmonic Sizes"
+      },
+      {
+        "slug": "typography",
+        "name": "Typography",
+        "description": "Typography"
+      }
+    ]
+  },
+  {
+    "group": "system",
+    "category": "products",
+    "component": "freeCodeCamp-rwd-examples",
+    "name": "FreeCodeCamp - Responsive Web Design",
+    "version": "1.0.0",
+    "description": "FreeCodeCamp - Responsive Web Design Projects",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "product",
+      "freeCodeCamp",
+      "responsive",
+      "web",
+      "design",
+      "projects"
+    ],
+    "variations": []
+  },
+  {
+    "group": "system",
+    "category": "products",
+    "component": "resume",
+    "name": "Resume",
+    "version": "1.0.0",
+    "description": "Resume",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "product",
+      "resume"
+    ],
+    "variations": [
+      {
+        "slug": "resume-timeline",
+        "name": "Resume page w/ Timeline",
+        "description": "Resume page w/ Timeline"
+      }
+    ]
+  },
+  {
+    "hide": true,
+    "group": "system",
+    "category": "templates",
+    "component": "base",
+    "name": "Base Page Template",
+    "version": "1.0.0",
+    "description": "Base page template to be used by other page templates or to showcase components of the design system.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "base"
+    ],
+    "variations": [
+      {
+        "slug": "base-template-12-col-flex-grid",
+        "name": "Base Page Template w/ 12 Column Flex Grid",
+        "description": "Base page template with 12 column flex grid."
+      },
+      {
+        "slug": "base-template-typography-mixins",
+        "name": "Base Page Template w/ Typography Mixins",
+        "description": "Base page template with typography mixins."
+      }
+    ]
+  },
+  {
+    "hide": true,
+    "group": "system",
+    "category": "templates",
+    "component": "landing",
+    "name": "landing Page Template",
+    "version": "1.0.0",
+    "description": "Landing page template with a hero section, features section, testimonials section and a footer.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "landing"
+    ],
+    "variations": [
+      {
+        "slug": "landing",
+        "name": "Landing Page Template",
+        "description": "Landing page template with a hero section, features section, testimonials section and a footer."
+      }
+    ]
+  }
+]

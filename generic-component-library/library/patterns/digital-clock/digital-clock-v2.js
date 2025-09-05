@@ -1,0 +1,1 @@
+document.querySelectorAll(".js-digital-clock-v2").forEach((function(n){!function(n){var t=function(){var t=new Date,c=t.getHours(),a=t.getMinutes(),e=t.getSeconds(),o="\n    <span>".concat(c,"</span> :\n    <span>").concat(a,"</span> :\n    <span>").concat(e,"</span>\n  ");n.innerHTML=o};setInterval((function(){t()}),1e3)}(n)}));

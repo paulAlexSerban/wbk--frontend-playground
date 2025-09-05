@@ -902,5 +902,715 @@
         ]
       }
     }
+  },
+  {
+    "generic-component-library": {
+      "library": {
+        "components": [
+          {
+            "name": "Browser Detect",
+            "version": "1.0.0",
+            "component": "browser-detect",
+            "variations": [
+              {
+                "slug": "browser-detect",
+                "name": "Browser Detect",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "name": "Button",
+            "version": "1.0.0",
+            "component": "button",
+            "variations": [
+              {
+                "slug": "button",
+                "name": "Button (Base)",
+                "description": "Base button component, used for all button types."
+              }
+            ]
+          },
+          {
+            "name": "Form Components",
+            "version": "1.0.0",
+            "component": "form-components",
+            "variations": [
+              {
+                "slug": "text-input",
+                "name": "Text Input",
+                "description": "Text input component to input text."
+              },
+              {
+                "slug": "search-hidden",
+                "name": "Search (Hidden)",
+                "description": "Search component to input search text."
+              }
+            ]
+          },
+          {
+            "name": "Image",
+            "version": "1.0.0",
+            "component": "image",
+            "variations": [
+              {
+                "slug": "image",
+                "name": "Image",
+                "description": "Image component for displaying images."
+              }
+            ]
+          },
+          {
+            "name": "Pill",
+            "version": "1.0.0",
+            "component": "pill",
+            "variations": [
+              {
+                "slug": "pill-round",
+                "name": "Pill (Round)",
+                "description": "Pill component for displaying pills of data such as numbered steps."
+              },
+              {
+                "slug": "pill-round-active",
+                "name": "Pill (Round - Active)",
+                "description": "Pill component for displaying pills of data such as numbered steps in active state."
+              }
+            ]
+          },
+          {
+            "name": "Typography",
+            "version": "1.0.0",
+            "component": "typography",
+            "variations": [
+              {
+                "slug": "paragraph",
+                "name": "Paragraph",
+                "description": "Paragraph text"
+              },
+              {
+                "slug": "heading",
+                "name": "Heading",
+                "description": "Heading text"
+              },
+              {
+                "slug": "time-text",
+                "name": "Time (Text)",
+                "description": "Time text"
+              }
+            ]
+          }
+        ],
+        "modules": [
+          {
+            "name": "Book List",
+            "version": "1.0.0",
+            "component": "book-list",
+            "variations": [
+              {
+                "slug": "book-list",
+                "name": "Book List",
+                "description": "Book list component for displaying a list of books."
+              }
+            ]
+          },
+          {
+            "name": "Calculator",
+            "version": "1.0.0",
+            "component": "calculator",
+            "variations": [
+              {
+                "slug": "loan-calculator",
+                "name": "Load Calculator",
+                "description": "Loan Calculator"
+              },
+              {
+                "slug": "exchangerate-calculator",
+                "name": "Exchange Rate Calculator",
+                "description": "Exchange Rate Calculator"
+              }
+            ]
+          },
+          {
+            "name": "Counter",
+            "version": "1.0.0",
+            "component": "counter",
+            "variations": [
+              {
+                "slug": "counter",
+                "name": "Counter",
+                "description": "Counter"
+              },
+              {
+                "slug": "score-keeper-app",
+                "name": "Score Keeper App",
+                "description": "Score Keeper App"
+              }
+            ]
+          },
+          {
+            "name": "Dashboard",
+            "version": "1.0.0",
+            "component": "dashboard",
+            "variations": [
+              {
+                "slug": "activity-launcher",
+                "name": "Activity Launcher",
+                "description": "Activity Launcher"
+              }
+            ]
+          },
+          {
+            "name": "Form Modules",
+            "version": "1.0.0",
+            "component": "form-modules",
+            "variations": [
+              {
+                "slug": "form-validation",
+                "name": "Form (Validation)",
+                "description": "Form with validation"
+              },
+              {
+                "slug": "form-wave",
+                "name": "Form (Wave)",
+                "description": "Form with wave effect"
+              },
+              {
+                "slug": "simple-subscribe-form",
+                "name": "Simple Subscribe Form",
+                "description": "Simple Subscribe Form"
+              }
+            ]
+          },
+          {
+            "name": "Image Comparison Slider",
+            "version": "1.0.0",
+            "component": "image-comparison-slider",
+            "variations": [
+              {
+                "slug": "image-comparison-slider",
+                "name": "Image Comparison Slider",
+                "description": "Image Comparison Slider"
+              }
+            ]
+          },
+          {
+            "name": "Mini Games",
+            "version": "1.0.0",
+            "component": "mini-games",
+            "variations": [
+              {
+                "slug": "coin-game",
+                "name": "Coin Game",
+                "description": "Coin Game"
+              },
+              {
+                "slug": "guess-my-number",
+                "name": "Guess My Number",
+                "description": "Guess My Number"
+              },
+              {
+                "slug": "number-guesser",
+                "name": "Number Guesser",
+                "description": "Number Guesser"
+              },
+              {
+                "slug": "math-game",
+                "name": "Math Game",
+                "description": "Math Game"
+              },
+              {
+                "slug": "pig-game",
+                "name": "Pig Game",
+                "description": "Pig Game"
+              },
+              {
+                "slug": "cops-and-robbers",
+                "name": "Cops and Robbers (Board Game)",
+                "description": "Cops and Robbers (Board Game)"
+              }
+            ]
+          },
+          {
+            "name": "Movie Seat Booking",
+            "version": "1.0.0",
+            "component": "movie-seat-booking",
+            "variations": [
+              {
+                "slug": "movie-seat-booking",
+                "name": "Movie Seat Booking",
+                "description": "Movie Seat Booking"
+              }
+            ]
+          },
+          {
+            "name": "Rotating Navigation",
+            "version": "1.0.0",
+            "component": "navigation",
+            "variations": [
+              {
+                "slug": "rotating-navigation",
+                "name": "Rotating Navigation",
+                "description": "Rotating Navigation"
+              }
+            ]
+          },
+          {
+            "name": "Note Manager",
+            "version": "1.0.0",
+            "component": "note-manager",
+            "variations": [
+              {
+                "slug": "note-manager",
+                "name": "Note Manager",
+                "description": "Note Manager"
+              }
+            ]
+          },
+          {
+            "name": "Quiz",
+            "version": "1.0.0",
+            "component": "quiz",
+            "variations": [
+              {
+                "slug": "ninja-quiz",
+                "name": "Ninja Quiz",
+                "description": "Ninja Quiz"
+              },
+              {
+                "slug": "quiz",
+                "name": "Quiz",
+                "description": "Quiz"
+              }
+            ]
+          },
+          {
+            "name": "Stopwatch",
+            "version": "1.0.0",
+            "component": "stopwatch",
+            "variations": [
+              {
+                "slug": "stopwatch",
+                "name": "Stopwatch",
+                "description": "Stopwatch"
+              }
+            ]
+          },
+          {
+            "name": "Text Generator",
+            "version": "1.0.0",
+            "component": "text-generator",
+            "variations": [
+              {
+                "slug": "quotation-generator",
+                "name": "Quotation Generator",
+                "description": "Quotation Generator"
+              }
+            ]
+          },
+          {
+            "name": "To Do List",
+            "version": "1.0.0",
+            "component": "to-do-list",
+            "variations": [
+              {
+                "slug": "task-list",
+                "name": "Task List",
+                "description": "Task List"
+              },
+              {
+                "slug": "to-do-list",
+                "name": "To Do List",
+                "description": "To Do List"
+              },
+              {
+                "slug": "to-do-list-v2",
+                "name": "To Do List (V2)",
+                "description": "To Do List (V2)"
+              }
+            ]
+          },
+          {
+            "name": "Weather App",
+            "version": "1.0.0",
+            "component": "weather-app",
+            "variations": [
+              {
+                "slug": "weather-app",
+                "name": "Weather App",
+                "description": "Weather App"
+              }
+            ]
+          }
+        ],
+        "patterns": [
+          {
+            "name": "Accordion",
+            "version": "1.0.0",
+            "component": "accordion",
+            "variations": [
+              {
+                "slug": "accordion-css",
+                "name": "Accordion (CSS Only)",
+                "description": "Accordion component for displaying collapsible content."
+              }
+            ]
+          },
+          {
+            "name": "Alert",
+            "version": "1.0.0",
+            "component": "alert",
+            "variations": [
+              {
+                "slug": "alert",
+                "name": "Alert",
+                "description": "Alert component"
+              }
+            ]
+          },
+          {
+            "name": "Audio",
+            "version": "1.0.0",
+            "component": "audio",
+            "variations": [
+              {
+                "slug": "sound-board",
+                "name": "Sound Board",
+                "description": "Sound Board"
+              }
+            ]
+          },
+          {
+            "name": "Card List",
+            "version": "1.0.0",
+            "component": "card-list",
+            "variations": [
+              {
+                "slug": "card-list-fancy-hover",
+                "name": "Card List (Fancy Hover)",
+                "description": "Card List (Fancy Hover)"
+              },
+              {
+                "slug": "expanding-cards",
+                "name": "Expanding Cards",
+                "description": "Expanding Cards"
+              },
+              {
+                "slug": "pricing-panel",
+                "name": "Pricing Panel",
+                "description": "Pricing Panel"
+              }
+            ]
+          },
+          {
+            "name": "Digital Clock",
+            "version": "1.0.0",
+            "component": "digital-clock",
+            "variations": [
+              {
+                "slug": "digital-clock",
+                "name": "Digital Clock",
+                "description": "Digital Clock"
+              },
+              {
+                "slug": "digital-clock-v2",
+                "name": "Digital Clock (V2)",
+                "description": "Digital Clock (V2)"
+              }
+            ]
+          },
+          {
+            "name": "Form Patterns",
+            "version": "1.0.0",
+            "component": "form-patterns",
+            "variations": [
+              {
+                "slug": "checkbox-field",
+                "name": "Checkbox Field",
+                "description": "Checkbox Field"
+              },
+              {
+                "slug": "inline-checkbox",
+                "name": "Inline Checkbox",
+                "description": "Inline Checkbox"
+              },
+              {
+                "slug": "radio-field",
+                "name": "Radio Field",
+                "description": "Radio Field"
+              },
+              {
+                "slug": "select-field",
+                "name": "Select Field",
+                "description": "Select Field"
+              },
+              {
+                "slug": "text-field",
+                "name": "Text Field",
+                "description": "Text Field"
+              },
+              {
+                "slug": "textarea-field",
+                "name": "Textarea Field",
+                "description": "Textarea Field"
+              }
+            ]
+          },
+          {
+            "name": "Hero",
+            "version": "1.0.0",
+            "component": "hero",
+            "variations": [
+              {
+                "slug": "split-screen-hero",
+                "name": "Sprit Screen Hero",
+                "description": "A split screen hero with a background image and a text overlay."
+              }
+            ]
+          },
+          {
+            "name": "Layouts",
+            "version": "1.0.0",
+            "component": "layouts",
+            "variations": [
+              {
+                "slug": "box-primitive",
+                "name": "Layout: Box (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "center-primitive",
+                "name": "Layout: Center (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "cluster-primitive",
+                "name": "Layout: Cluster (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "cover-primitive",
+                "name": "Layout: Cover (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "frame-primitive",
+                "name": "Layout: Frame (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "grid-primitive",
+                "name": "Layout: Grid (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "grid-cards",
+                "name": "Layout: Grid Cards",
+                "description": ""
+              },
+              {
+                "slug": "icon-primitive",
+                "name": "Layout: Icon (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "imposter-primitive",
+                "name": "Layout: Imposter (primitive)",
+                "description": ""
+              },
+              {
+                "slug": "reel-primitive",
+                "name": "Layout: Reel (primitive)",
+                "description": "Reel primitive is a layout that allows for horizontal scrolling of content, similar to a carousel or slider."
+              },
+              {
+                "slug": "stack-primitive",
+                "name": "Layout: Stack (primitive)",
+                "description": "Stack primitive is a layout that stacks elements on top of each other, allowing for overlapping content."
+              },
+              {
+                "slug": "switcher-primitive",
+                "name": "Layout: Switcher (primitive)",
+                "description": "Switcher primitive is a layout that allows for switching between different content views, typically used for tabbed interfaces."
+              },
+              {
+                "slug": "holy-grail",
+                "name": "Layout: Holy Grail",
+                "description": ""
+              },
+              {
+                "slug": "sidebar-simple",
+                "name": "Layout: Sidebar Simple",
+                "description": ""
+              },
+              {
+                "slug": "sidebar-media-object",
+                "name": "Layout: Sidebar Media Object",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "name": "Blurry Loader",
+            "version": "1.0.0",
+            "component": "loader",
+            "variations": [
+              {
+                "slug": "blurry-loader",
+                "name": "Blurry Loader",
+                "description": "Blurry Loader"
+              }
+            ]
+          },
+          {
+            "name": "Modal",
+            "version": "1.0.0",
+            "component": "modal",
+            "variations": [
+              {
+                "slug": "modal-window",
+                "name": "Modal Window"
+              }
+            ]
+          },
+          {
+            "name": "Popup",
+            "version": "1.0.0",
+            "component": "popup",
+            "variations": [
+              {
+                "slug": "popup",
+                "name": "Popup",
+                "description": "Popup"
+              }
+            ]
+          },
+          {
+            "name": "Progress",
+            "version": "1.0.0",
+            "component": "progress",
+            "variations": [
+              {
+                "slug": "progress-steps",
+                "name": "Progress Steps",
+                "description": "Progress Steps"
+              }
+            ]
+          },
+          {
+            "name": "Scrollspy",
+            "version": "1.0.0",
+            "component": "scrollspy",
+            "variations": [
+              {
+                "slug": "scrollspy",
+                "name": "Scrollspy",
+                "description": "Scrollspy"
+              }
+            ]
+          },
+          {
+            "name": "Tabs",
+            "version": "1.0.0",
+            "component": "tabs",
+            "variations": [
+              {
+                "slug": "navigation-tabs-css",
+                "name": "Navigation Tabs (Only CSS)",
+                "description": "Navigation Tabs (Only CSS)"
+              },
+              {
+                "slug": "navigation-tabs-js",
+                "name": "Navigation Tabs (with JS)",
+                "description": "Navigation Tabs (with JS)"
+              }
+            ]
+          },
+          {
+            "name": "Video",
+            "version": "1.0.0",
+            "component": "video",
+            "variations": [
+              {
+                "slug": "custom-video-player",
+                "name": "Custom Video Player",
+                "description": "Custom Video Player"
+              }
+            ]
+          }
+        ]
+      },
+      "system": {
+        "products": [
+          {
+            "name": "Design System",
+            "version": "1.0.0",
+            "component": "design-system",
+            "variations": [
+              {
+                "slug": "harmonic-sizes",
+                "name": "Harmonic Sizes",
+                "description": "Harmonic Sizes"
+              },
+              {
+                "slug": "typography",
+                "name": "Typography",
+                "description": "Typography"
+              }
+            ]
+          },
+          {
+            "name": "FreeCodeCamp - Responsive Web Design",
+            "version": "1.0.0",
+            "component": "freeCodeCamp-rwd-examples",
+            "variations": []
+          },
+          {
+            "name": "Resume",
+            "version": "1.0.0",
+            "component": "resume",
+            "variations": [
+              {
+                "slug": "resume-timeline",
+                "name": "Resume page w/ Timeline",
+                "description": "Resume page w/ Timeline"
+              }
+            ]
+          }
+        ],
+        "templates": [
+          {
+            "name": "Base Page Template",
+            "version": "1.0.0",
+            "component": "base",
+            "variations": [
+              {
+                "slug": "base-template-12-col-flex-grid",
+                "name": "Base Page Template w/ 12 Column Flex Grid",
+                "description": "Base page template with 12 column flex grid."
+              },
+              {
+                "slug": "base-template-typography-mixins",
+                "name": "Base Page Template w/ Typography Mixins",
+                "description": "Base page template with typography mixins."
+              }
+            ],
+            "hide": true
+          },
+          {
+            "name": "landing Page Template",
+            "version": "1.0.0",
+            "component": "landing",
+            "variations": [
+              {
+                "slug": "landing",
+                "name": "Landing Page Template",
+                "description": "Landing page template with a hero section, features section, testimonials section and a footer."
+              }
+            ],
+            "hide": true
+          }
+        ]
+      }
+    }
   }
 ]
