@@ -61,7 +61,7 @@ jobs:
               run: yarn sync:packages:assets
 
             - name: '🚀 Deploy to GitHub Pages'
-              uses: JamesIves/github-pages-deploy-action@4.7.3
+              uses: JamesIves/github-pages-deploy-action@4.1.1
               with:
                   branch: gh-pages
                   folder: package/libraries
