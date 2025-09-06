@@ -1,4 +1,11 @@
-@import './-key-by-index.scss';
-@import './convert-units';
-@import './map-utilities.scss';
-@import './largest-breakpoint-name.scss';
+/* ------------------------------------ *\
+  * COMMON FUNCTIONS
+\* ------------------------------------ */
+
+@forward './box-shadow.scss';
+@forward './convert-units.scss';
+@forward './get-color.scss';
+@forward './get-font-weight.scss';
+@forward './map-utilities.scss';
+@forward './shift.scss';
+@forward './z-index.scss';

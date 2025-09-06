@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 $block: 'accordion-css';
 

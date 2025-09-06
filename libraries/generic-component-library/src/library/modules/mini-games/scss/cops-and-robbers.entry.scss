@@ -1,4 +1,4 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 @import './cops-and-robbers/normalize';
 @import './cops-and-robbers/basepage';

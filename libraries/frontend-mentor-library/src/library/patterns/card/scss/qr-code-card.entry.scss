@@ -1,4 +1,4 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 :root {
     --color-white: hsl(0, 0%, 100%);

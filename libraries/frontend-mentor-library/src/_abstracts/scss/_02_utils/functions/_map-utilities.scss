@@ -30,5 +30,5 @@
 /// @return {*} Desired value
 @function last-map-item($map) {
     $total-length: list.length($map);
-    @return map-get($map, key-by-index($map, $total-length));
+    @return map.get($map, key-by-index($map, $total-length));
 }

@@ -36,17 +36,17 @@ jobs:
             - name: '🔧 Install npm@latest'
               run: npm i -g yarn
 
-            - name: '📦  Install Assets dependencies'
-              run: yarn install:assets
-
-            - name: '📦  Install Dashboard dependencies'
-              run: yarn install:dashboard
-
-            - name: '📦  Install Libraries dependencies'
-              run: yarn install:libs
+            - name: '📦  Install Dependencies'
+              run: |
+                  yarn install:assets
+                  yarn install:dashboard
+                  yarn install:libs
 
             - name: '🏗️  Process Assets'
               run: yarn process:assets
+
+            - name: '🏗️ Sync Libs Assets'
+              run: yarn sync:libs:assets
 
             - name: '🏗️  Build Libraries'
               run: yarn build:libs
@@ -58,10 +58,10 @@ jobs:
               run: yarn build:dashboard
 
             - name: '🚀 Sync Assets'
-              run: yarn sync:assets
+              run: yarn sync:packages:assets
 
             - name: '🚀 Deploy to GitHub Pages'
-              uses: JamesIves/github-pages-deploy-action@4.1.1
+              uses: JamesIves/github-pages-deploy-action@4.7.3
               with:
                   branch: gh-pages
                   folder: package/libraries

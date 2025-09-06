@@ -4,7 +4,8 @@
     "private": true,
     "description": "",
     "scripts": {
-        "start": "npx serve dist",
+        "start": "serve dist",
+        "sync:assets": "rsync -av --delete --exclude=.DS_Store --exclude=*.scss --exclude=*.js --exclude=*.html ../../assets/media/dist/ ./assets/",
         "develop": "export NODE_ENV=development && webpack --config build/webpack.dev.js --watch --progress --stats-children",
         "build:dev": "export NODE_ENV=development && webpack --config build/webpack.dev.js",
         "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js",

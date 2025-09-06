@@ -1,4 +1,4 @@
-@import './z-index.scss';
+@use './z-index.scss' as *;
 
 /// Shorthand mixin for offset positioning
 /// @param {String} $position - Either `relative`, `absolute` or `fixed`

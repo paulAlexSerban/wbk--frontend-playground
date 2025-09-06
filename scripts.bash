@@ -40,4 +40,16 @@ function build() {
     done
 }
 
+function sync_assets() {
+    ## for each library inside ./libraries run inside it yarn sync:assets
+    for dir in ./libraries/*/; do
+        if [ -d "$dir" ]; then
+            echo "📦  Syncing assets for $(basename "$dir")"
+            cd "$dir" || exit
+            yarn sync:assets
+            cd - || exit
+        fi
+    done
+}
+
 $1 && echo "[ ✅ ] --- done" || echo "[ 🚫 ]Failed"

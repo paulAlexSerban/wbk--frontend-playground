@@ -12,7 +12,7 @@
     "keywords": ["library", "modules", "animations"],
     "variations": [
         {
-            "slug": "Hoverboard",
+            "slug": "hoverboard",
             "name": "Hoverboard",
             "description": "Hoverboard"
         }

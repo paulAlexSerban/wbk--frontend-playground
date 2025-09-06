@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use 'sass:map';
 
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 /* ------------------------------------ *\
  * ALERT MODULE

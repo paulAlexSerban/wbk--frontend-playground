@@ -1,4 +1,4 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 @import './partials/drawGrid.scss';
 
 %debug {

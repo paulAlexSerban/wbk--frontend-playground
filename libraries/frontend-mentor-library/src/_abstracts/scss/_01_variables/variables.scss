@@ -1,1 +1,10 @@
-@import './sizes.scss';
+/* ------------------------------------ *\
+  * #VARIABLES
+  *
+  * This file contains all application-wide Sass variables.
+\* ------------------------------------ */
+
+@forward './column-grid.scss';
+@forward './radiuses.scss';
+@forward './sizes.scss';
+@forward './url.scss';

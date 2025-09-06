@@ -1,10 +1,10 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 /* ------------------------------------ *\
  * SIMPLE SUBSCRIBE FORM
 \* ------------------------------------ */
 
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 $block: 'simple-subscribe-form';
 

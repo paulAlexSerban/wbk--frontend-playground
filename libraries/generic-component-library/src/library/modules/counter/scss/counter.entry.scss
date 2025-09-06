@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 $molecule: 'counter';
 .#{$molecule} {
     @include e('base') {
