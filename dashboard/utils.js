@@ -1,7 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-// split string by - and capitalize each word in the string then join them back together
+/**
+ * Split string by '-' and capitalize each word, then join them back together.
+ * @param {string} str
+ * @returns {string}
+ */
 const capitalize = (str) => {
     return str
         .split('-')
@@ -9,40 +13,39 @@ const capitalize = (str) => {
         .join(' ');
 };
 
+/**
+ * Transform an array of components into a grouped object by group and category.
+ * @param {Array} arr
+ * @returns {Object}
+ */
 const transformArrayToObj = (arr) => {
-    // Create a result object instead of an array
     let result = {};
-
-    // Iterate over the input array
     arr.forEach((item) => {
-        // Find or create the group in the result object
         if (!result[item.group]) {
             result[item.group] = {};
         }
-
-        // Find or create the category in the group
         if (!result[item.group][item.category]) {
             result[item.group][item.category] = [];
         }
-
         const itemObj = {
             name: item.name,
             version: item.version,
             component: item.component,
             variations: item.variations,
         };
-
         if (item.hide) {
             itemObj.hide = item.hide;
         }
-
-        // Add the component to the category
         result[item.group][item.category].push(itemObj);
     });
-
     return result;
 };
 
+/**
+ * Read and parse a JSON file asynchronously.
+ * @param {string} filePath
+ * @returns {Promise<Object|null>}
+ */
 const readJsonFile = async (filePath) => {
     try {
         const jsonContent = await fs.promises.readFile(filePath, 'utf8');
@@ -53,20 +56,22 @@ const readJsonFile = async (filePath) => {
     }
 };
 
+/**
+ * Process directories and read all JSON files in each subdirectory.
+ * @param {string} source
+ * @returns {Promise<Object>}
+ */
 const processDirectories = async (source) => {
     const componentLists = {};
     try {
         const files = await fs.promises.readdir(source);
-
         for (const file of files) {
             const dirPath = path.join(source, file);
             const stats = await fs.promises.stat(dirPath);
-
             if (stats.isDirectory()) {
                 const jsonFiles = (await fs.promises.readdir(dirPath)).filter(
                     (f) => path.extname(f).toLowerCase() === '.json'
                 );
-
                 for (const jsonFile of jsonFiles) {
                     const filePath = path.join(dirPath, jsonFile);
                     const obj = await readJsonFile(filePath);
