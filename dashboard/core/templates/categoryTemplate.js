@@ -15,19 +15,14 @@ function generateCategoryHTML(baseUrl, dir, groupName, categoryContent) {
     return Object.entries(categoryContent)
         .map(
             ([categoryName, components]) => `
-                <div>
-                    <h4>${utils.capitalize(categoryName)}</h4>
-                    <div class="row">
-                        ${components
-                            .map((component) => {
-                                if (!component.hide) {
-                                    return generateComponentHTML(baseUrl, dir, groupName, categoryName, component);
-                                }
-                                return '';
-                            })
-                            .join('')}
-                </div>
-            </div>
+                ${components
+                    .map((component) => {
+                        if (!component.hide) {
+                            return generateComponentHTML(baseUrl, dir, groupName, categoryName, component);
+                        }
+                        return '';
+                    })
+                    .join('')}
             `
         )
         .join('');

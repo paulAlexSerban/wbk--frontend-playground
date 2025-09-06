@@ -33,10 +33,7 @@ function generateLibraryHTML(library, baseUrl) {
     return Object.entries(filteredLibrary)
         .map(
             ([dir, groups]) => `
-                <section>
-                    <h2 class="px-2 row bg-secondary text-light">${utils.capitalize(dir)}</h2>
-                        ${generateGroupHTML(baseUrl, dir, groups)}
-                </section>
+                ${generateGroupHTML(baseUrl, dir, groups)}
             `
         )
         .join('');

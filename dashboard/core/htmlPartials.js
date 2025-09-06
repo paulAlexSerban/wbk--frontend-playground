@@ -9,8 +9,75 @@ const headHTML = `
         <title>Front-end Playground Workbook</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
+            .component-card {
+                transition: all 0.3s ease;
+                border-radius: 12px !important;
+                overflow: hidden;
+            }
+            .component-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+            }
+            .component-card .card-header {
+                border-radius: 12px 12px 0 0 !important;
+                background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%) !important;
+            }
+            .component-card .card-body {
+                padding: 1.5rem;
+            }
+            .component-card .btn-group .btn {
+                border-radius: 6px;
+            }
+            .component-card .badge {
+                font-size: 0.7em;
+            }
+            .sidebar {
+                position: fixed;
+                top: 56px;
+                left: 0;
+                height: calc(100vh - 56px);
+                width: 250px;
+                background: #212529;
+                overflow-y: auto;
+                z-index: 1020;
+                transition: all 0.3s;
+            }
+            .sidebar .nav-link {
+                color: #adb5bd;
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid #343a40;
+                transition: all 0.2s;
+            }
+            .sidebar .nav-link:hover {
+                color: #fff;
+                background-color: #495057;
+            }
+            .sidebar .nav-link.active {
+                color: #0d6efd;
+                background-color: rgba(13, 110, 253, 0.1);
+                border-left: 3px solid #0d6efd;
+            }
+            .main-content {
+                margin-left: 250px;
+                padding: 2rem;
+                min-height: calc(100vh - 56px);
+            }
+            @media (max-width: 768px) {
+                .sidebar {
+                    margin-left: -250px;
+                }
+                .sidebar.show {
+                    margin-left: 0;
+                }
+                .main-content {
+                    margin-left: 0;
+                }
+            }
             summary {
                 display: flex;
+            }
+            .navbar-toggler {
+                border: none;
             }
         </style>
     </head>

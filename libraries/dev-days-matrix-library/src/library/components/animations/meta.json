@@ -14,7 +14,13 @@
         {
             "slug": "hoverboard",
             "name": "Hoverboard",
-            "description": "Hoverboard"
+            "description": "Hoverboard",
+            "images": [
+                {
+                    "filename_suffix": "hoverboard",
+                    "alt": "Hoverboard"
+                }
+            ]
         }
     ]
 }

@@ -14,10 +14,7 @@ function generateGroupHTML(baseUrl, dir, groupContent) {
     return Object.entries(groupContent)
         .map(
             ([groupName, categories]) => `
-                <div>
-                    <h3>${utils.capitalize(groupName)}</h3>
-                        ${generateCategoryHTML(baseUrl, dir, groupName, categories)}
-                </div>
+                ${generateCategoryHTML(baseUrl, dir, groupName, categories)}
             `
         )
         .join('');
