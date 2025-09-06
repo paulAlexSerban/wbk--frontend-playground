@@ -1,6 +1,6 @@
 const generateSidebarHTML = () => {
     return `
-<nav class="col-md-2 d-none d-md-block bg-white border-end vh-100">
+<nav class="col-md-2 d-none d-md-block bg-white border-end h-auto">
     <div class="pt-3">
         <h6 class="px-3">Categories</h6>
         <ul class="nav flex-column">
