@@ -17,13 +17,19 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
             const cardId = `card-${dir}-${groupName}-${categoryName}-${component.component}-${index}`;
             const carouselId = `carousel-${cardId}`;
 
-            // Generate image gallery if images exist
-            const imageGallery =
-                variation.images && variation.images.length > 0
-                    ? `
+            // Generate image gallery if images exist, otherwise use default image
+            const hasImages = variation.images && variation.images.length > 0;
+            const imagesToShow = hasImages
+                ? variation.images
+                : [{ filename: 'default-background', alt: 'Default component image' }];
+
+            const imageGallery = `
                     <div id="${carouselId}" class="carousel slide card-img-top" data-bs-ride="carousel">
+                        ${
+                            imagesToShow.length > 1
+                                ? `
                         <div class="carousel-indicators">
-                            ${variation.images
+                            ${imagesToShow
                                 .map(
                                     (_, imgIndex) => `
                                 <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${imgIndex}" 
@@ -33,12 +39,16 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                                 )
                                 .join('')}
                         </div>
+                        `
+                                : ''
+                        }
                         <div class="carousel-inner">
-                            ${variation.images
+                            ${imagesToShow
                                 .map((image, imgIndex) => {
-                                    const imageURL = image
-                                        ? `${baseUrl}/assets/images/${dir}--${image.filename_suffix}-480_360.webp`
-                                        : `${baseUrl}/assets/images/default-background-480_360.webp`;
+                                    const imageURL =
+                                        image && image.filename
+                                            ? `${baseUrl}/assets/images/${image.filename}-960_720.webp`
+                                            : `${baseUrl}/assets/images/default-background-960_720.webp`;
                                     return `
                                 <div class="carousel-item ${imgIndex === 0 ? 'active' : ''}">
                                     <img src="${imageURL}" class="d-block w-100" alt="${image.alt || variation.name}" style="height: 200px; object-fit: cover;">
@@ -55,7 +65,7 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                                 .join('')}
                         </div>
                         ${
-                            variation.images.length > 1
+                            imagesToShow.length > 1
                                 ? `
                             <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,11 +78,6 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                         `
                                 : ''
                         }
-                    </div>
-                `
-                    : `
-                    <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="bi bi-image text-muted" style="font-size: 3rem;"></i>
                     </div>
                 `;
 
@@ -96,7 +101,7 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                                         <i class="bi bi-eye me-1"></i>Preview
                                     </a>
                                     ${
-                                        variation.images && variation.images.length > 0
+                                        hasImages
                                             ? `
                                         <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#galleryModal-${cardId}">
                                             <i class="bi bi-images me-1"></i>Gallery
@@ -114,7 +119,7 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                 </div>
                 
                 ${
-                    variation.images && variation.images.length > 0
+                    hasImages
                         ? `
                 <!-- Gallery Modal for ${variation.name} -->
                 <div class="modal fade" id="galleryModal-${cardId}" tabindex="-1" aria-labelledby="galleryModalLabel-${cardId}" aria-hidden="true">
@@ -142,7 +147,7 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                                             .map(
                                                 (image, imgIndex) => `
                                             <div class="carousel-item ${imgIndex === 0 ? 'active' : ''}">
-                                                <img src="${baseUrl}/assets/images/${dir}--${image.filename_suffix}-960_720.webp" class="d-block w-100" alt="${image.alt || variation.name}" style="max-height: 60vh; object-fit: contain;">
+                                                <img src="${baseUrl}/assets/images/${image.filename}-1920_1440.webp" class="d-block w-100" alt="${image.alt || variation.name}" style="max-height: 60vh; object-fit: contain;">
                                                 ${
                                                     image.caption
                                                         ? `<div class="carousel-caption">

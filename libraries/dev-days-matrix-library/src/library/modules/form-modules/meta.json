@@ -32,7 +32,13 @@
         {
             "slug": "password-strength-background",
             "name": "Password Strength Background",
-            "description": "Password strength background"
+            "description": "Password strength background",
+            "images": [
+                {
+                    "filename": "dev-days-matrix-library--password-strength-background",
+                    "alt": "Password Strength Background"
+                }
+            ]
         },
         {
             "slug": "email-extractor",

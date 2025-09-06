@@ -17,7 +17,7 @@
             "description": "Hoverboard",
             "images": [
                 {
-                    "filename_suffix": "hoverboard",
+                    "filename": "dev-days-matrix-library--hoverboard",
                     "alt": "Hoverboard"
                 }
             ]
