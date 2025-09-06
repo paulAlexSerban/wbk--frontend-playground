@@ -1,0 +1,79 @@
+[
+  {
+    "hide": true,
+    "group": "library",
+    "category": "components",
+    "component": "image",
+    "name": "Image",
+    "version": "1.0.0",
+    "description": "Image component for displaying images.",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "components",
+      "image"
+    ],
+    "variations": [
+      {
+        "slug": "responsive-image",
+        "name": "Responsive Image",
+        "description": "Responsive Image component for displaying images."
+      }
+    ]
+  },
+  {
+    "group": "library",
+    "category": "patterns",
+    "component": "card",
+    "name": "Cardt",
+    "version": "1.0.0",
+    "description": "Card",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "library",
+      "patterns",
+      "card"
+    ],
+    "variations": [
+      {
+        "slug": "qr-code-card",
+        "name": "QR Code Card",
+        "description": "QR Code Card",
+        "tags": [
+          "fe-mentor"
+        ]
+      }
+    ]
+  },
+  {
+    "hide": true,
+    "group": "system",
+    "category": "templates",
+    "component": "frontend-mentor",
+    "name": "Frontend Mentor Base Page Template",
+    "version": "1.0.0",
+    "description": "Frontend Mentor Base Page Template",
+    "author": {
+      "name": "Paul Serban",
+      "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": [
+      "page",
+      "template",
+      "base"
+    ],
+    "variations": [
+      {
+        "slug": "frontend-mentor",
+        "name": "Frontend Mentor Base Page Template",
+        "description": "Frontend Mentor Base Page Template"
+      }
+    ]
+  }
+]

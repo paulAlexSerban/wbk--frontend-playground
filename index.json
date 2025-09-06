@@ -11,7 +11,8 @@
               {
                 "slug": "big-frontend-dev",
                 "name": "Big Frontend Dev Base Page Template",
-                "description": "Big Frontend Dev Base Page Template"
+                "description": "Big Frontend Dev Base Page Template",
+                "hide": true
               }
             ]
           }
@@ -29,9 +30,15 @@
             "component": "animations",
             "variations": [
               {
-                "slug": "Hoverboard",
+                "slug": "hoverboard",
                 "name": "Hoverboard",
-                "description": "Hoverboard"
+                "description": "Hoverboard",
+                "images": [
+                  {
+                    "filename": "dev-days-matrix-library--hoverboard",
+                    "alt": "Hoverboard"
+                  }
+                ]
               }
             ]
           },
@@ -146,7 +153,7 @@
               {
                 "slug": "custom-audio-player",
                 "name": "Custom Audio Player",
-                "description": "Create beautiful UI to play music stored in the 'music folder' using the HTML5 audio API",
+                "description": "Create beautiful UI to play music stored in the music folder using the HTML5 audio API",
                 "specs": [
                   "Create UI for music player including spinning image and song detail popup",
                   "Add play and pause functionality",
@@ -273,7 +280,13 @@
               {
                 "slug": "password-strength-background",
                 "name": "Password Strength Background",
-                "description": "Password strength background"
+                "description": "Password strength background",
+                "images": [
+                  {
+                    "filename": "dev-days-matrix-library--password-strength-background",
+                    "alt": "Password Strength Background"
+                  }
+                ]
               },
               {
                 "slug": "email-extractor",
@@ -290,7 +303,13 @@
               {
                 "slug": "nasa-apod",
                 "name": "NASA Astronomy Picture of the Day",
-                "description": "NASA Astronomy Picture of the Day"
+                "description": "NASA Astronomy Picture of the Day",
+                "images": [
+                  {
+                    "filename": "dev-days-matrix-library--nasa-apod",
+                    "alt": "NASA Astronomy Picture of the Day"
+                  }
+                ]
               },
               {
                 "slug": "movie-app",
@@ -300,7 +319,13 @@
               {
                 "slug": "pokedex",
                 "name": "Pokedex",
-                "description": "Pokedex"
+                "description": "Pokedex",
+                "images": [
+                  {
+                    "filename": "dev-days-matrix-library--pokedex",
+                    "alt": "Pokedex"
+                  }
+                ]
               },
               {
                 "slug": "random-image-feed",
@@ -895,6 +920,61 @@
                 "slug": "dev-days-matrix-base",
                 "name": "Dev Days Matrix Base Page Template",
                 "description": "Dev Days Matrix Base Page Template"
+              }
+            ],
+            "hide": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "frontend-mentor-library": {
+      "library": {
+        "components": [
+          {
+            "name": "Image",
+            "version": "1.0.0",
+            "component": "image",
+            "variations": [
+              {
+                "slug": "responsive-image",
+                "name": "Responsive Image",
+                "description": "Responsive Image component for displaying images."
+              }
+            ],
+            "hide": true
+          }
+        ],
+        "patterns": [
+          {
+            "name": "Cardt",
+            "version": "1.0.0",
+            "component": "card",
+            "variations": [
+              {
+                "slug": "qr-code-card",
+                "name": "QR Code Card",
+                "description": "QR Code Card",
+                "tags": [
+                  "fe-mentor"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "system": {
+        "templates": [
+          {
+            "name": "Frontend Mentor Base Page Template",
+            "version": "1.0.0",
+            "component": "frontend-mentor",
+            "variations": [
+              {
+                "slug": "frontend-mentor",
+                "name": "Frontend Mentor Base Page Template",
+                "description": "Frontend Mentor Base Page Template"
               }
             ],
             "hide": true
@@ -1572,7 +1652,13 @@
               {
                 "slug": "resume-timeline",
                 "name": "Resume page w/ Timeline",
-                "description": "Resume page w/ Timeline"
+                "description": "Resume page w/ Timeline that shows experience and education in a timeline format",
+                "images": [
+                  {
+                    "filename": "generic-component-library--resume-timeline",
+                    "alt": "Resume page w/ Timeline"
+                  }
+                ]
               }
             ]
           }
