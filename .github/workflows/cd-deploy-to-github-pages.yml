@@ -58,7 +58,7 @@ jobs:
               run: yarn build:dashboard
 
             - name: '🚀 Sync Assets'
-              run: yarn sync:packages:assets
+              run: yarn sync:package:assets
 
             - name: '🚀 Deploy to GitHub Pages'
               uses: JamesIves/github-pages-deploy-action@4.1.1
