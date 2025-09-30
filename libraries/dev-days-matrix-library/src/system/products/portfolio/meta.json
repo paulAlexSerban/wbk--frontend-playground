@@ -14,12 +14,56 @@
         {
             "slug": "simplefolio",
             "name": "Simplefolio",
-            "description": "Simple portfolio"
+            "description": "Simple portfolio",
+            "images": [
+                {
+                    "filename": "simplefolio-1",
+                    "alt": "Simplefolio Portfolio"
+                },
+                {
+                    "filename": "simplefolio-2",
+                    "alt": "Simplefolio Portfolio"
+                },
+                {
+                    "filename": "simplefolio-3",
+                    "alt": "Simplefolio Portfolio"
+                },
+                {
+                    "filename": "simplefolio-4",
+                    "alt": "Simplefolio Portfolio"
+                }
+            ]
         },
         {
             "slug": "light-dark-mode",
             "name": "Light Dark Mode Portfolio",
-            "description": "Light Dark Mode Portfolio with a simple switch"
+            "description": "Light Dark Mode Portfolio with a simple switch",
+            "images": [
+                {
+                    "filename": "portfolio-light-dark-mode-1",
+                    "alt": "Light Dark Mode Portfolio"
+                },
+                {
+                    "filename": "portfolio-light-dark-mode-2",
+                    "alt": "Light Dark Mode Portfolio"
+                },
+                {
+                    "filename": "portfolio-light-dark-mode-3",
+                    "alt": "Light Dark Mode Portfolio"
+                },
+                {
+                    "filename": "portfolio-light-dark-mode-4",
+                    "alt": "Light Dark Mode Portfolio"
+                },
+                {
+                    "filename": "portfolio-light-dark-mode-5",
+                    "alt": "Light Dark Mode Portfolio"
+                },
+                {
+                    "filename": "portfolio-light-dark-mode-6",
+                    "alt": "Light Dark Mode Portfolio"
+                }
+            ]
         }
     ]
 }
