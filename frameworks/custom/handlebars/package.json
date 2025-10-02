@@ -8,7 +8,8 @@
         "develop": "export NODE_ENV=development && webpack --config build/webpack.dev.js --watch --progress --stats-children",
         "build:dev": "export NODE_ENV=development && webpack --config build/webpack.dev.js",
         "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js",
-        "package": "bash scripts/package.bash"
+        "package": "bash scripts/package.bash",
+        "test": "echo \"Error: no test specified in custom/handlebars/package.json\""
     },
     "dependencies": {
         "@babel/core": "^7.26.10",

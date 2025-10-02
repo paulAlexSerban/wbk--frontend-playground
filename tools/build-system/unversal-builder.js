@@ -13,42 +13,42 @@ class UniversalBuilder {
                 name: 'nextjs',
                 type: 'node',
                 path: 'frameworks/javascript/nextjs',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P0',
             },
             {
                 name: 'nuxtjs',
                 type: 'node',
                 path: 'frameworks/javascript/nuxtjs',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P0',
             },
             {
                 name: 'sveltekit',
                 type: 'node',
                 path: 'frameworks/javascript/sveltekit',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P0',
             },
             {
                 name: 'astro',
                 type: 'node',
                 path: 'frameworks/javascript/astro',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P0',
             },
             {
                 name: 'gatsby',
                 type: 'node',
                 path: 'frameworks/javascript/gatsby',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P1',
             },
             {
                 name: 'remix',
                 type: 'node',
                 path: 'frameworks/javascript/remix',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P1',
             },
             {
@@ -62,7 +62,7 @@ class UniversalBuilder {
                 name: 'vitepress',
                 type: 'node',
                 path: 'frameworks/javascript/vitepress',
-                buildCmd: 'npm run build',
+                buildCmd: 'yarn build',
                 priority: 'P2',
             },
 
@@ -308,7 +308,7 @@ class UniversalBuilder {
             version: '1.0.0',
             private: true,
             scripts: {
-                build: framework.buildCmd.replace('npm run ', ''),
+                build: framework.buildCmd.replace('yarn ', ''),
                 dev: "echo 'Development server not configured'",
                 start: "echo 'Start command not configured'",
             },
@@ -319,7 +319,7 @@ class UniversalBuilder {
         await fs.writeFile(path.join(frameworkPath, 'package.json'), JSON.stringify(packageJson, null, 2));
 
         // Create basic README
-        const readme = `# ${framework.name} Implementation\n\nThis is a ${framework.name} implementation of the Frontend Playground components.\n\n## Getting Started\n\n\`\`\`bash\nnpm install\nnpm run build\n\`\`\`\n`;
+        const readme = `# ${framework.name} Implementation\n\nThis is a ${framework.name} implementation of the Frontend Playground components.\n\n## Getting Started\n\n\`\`\`bash\nnpm install\nyarn build\n\`\`\`\n`;
         await fs.writeFile(path.join(frameworkPath, 'README.md'), readme);
     }
 

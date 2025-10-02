@@ -33,14 +33,16 @@
         "dashboard"
     ],
     "engines": {
-        "node": ">=18.0.0",
-        "npm": ">=9.0.0"
+        "node": ">=22.0.0",
+        "npm": ">=10.9.0",
+        "yarn": ">=1.22.0"
     },
     "scripts": {
         "///// INSTALLATION SCRIPTS /////": "",
-        "install:all": "npm install && npm run install:frameworks && npm run install:tools",
-        "install:handlebars": "cd frameworks/custom/handlebars && npm install || echo '⚠️  Custom Handlebars not initialized'",
-        "install:html-templates": "cd frameworks/custom/html-templates && npm install || echo '⚠️  Custom HTML Templates not initialized'",
+        "install:all": "yarn && yarn install:frameworks && yarn install:tools",
+        "install:frameworks": "yarn install:handlebars && yarn install:html-templates",
+        "install:handlebars": "cd frameworks/custom/handlebars && pwd && yarn || echo '⚠️  Custom Handlebars not initialized'",
+        "install:html-templates": "cd frameworks/custom/html-templates && pwd && yarn || echo '⚠️  Custom HTML Templates not initialized'",
         "///// UNIVERSAL BUILD SCRIPTS /////": "",
         "build:all": "node tools/build-system/unversal-builder.js",
         "build:all:sequential": "node tools/build-system/unversal-builder.js --sequential",
@@ -52,13 +54,13 @@
         "build:handlebars": "cd frameworks/custom/handlebars && node generate.js || echo '⚠️  Custom Handlebars build failed'",
         "build:html-templates": "cd frameworks/custom/html-templates && node build.js || echo '⚠️  Custom HTML Templates build failed'",
         "///// DEVELOPMENT SCRIPTS /////": "",
-        "dev:handlebars": "cd frameworks/custom/handlebars && npm run dev || node generate.js",
-        "dev:html-templates": "cd frameworks/custom/html-templates && npm run dev || node build.js",
+        "dev:handlebars": "cd frameworks/custom/handlebars && yarn dev || node generate.js",
+        "dev:html-templates": "cd frameworks/custom/html-templates && yarn dev || node build.js",
         "///// DASHBOARD & COMPARISON SCRIPTS /////": "",
         "build:dashboard": "node dashboard/core/universal-dashboard.js",
-        "dev:dashboard": "cd dashboard && npm run dev || node index.js",
+        "dev:dashboard": "cd dashboard && yarn dev || node index.js",
         "///// UTILITY SCRIPTS /////": "",
-        "clean:all": "npm run clean:builds && npm run clean:node-modules && npm run clean:caches",
+        "clean:all": "yarn clean:builds && yarn clean:node-modules && yarn clean:caches",
         "clean:builds": "find frameworks -name 'dist' -o -name 'build' -o -name '_site' -o -name 'public' | xargs rm -rf",
         "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
         "clean:caches": "find . -name '.cache' -o -name '.next' -o -name '.nuxt' -o -name '.svelte-kit' | xargs rm -rf",
@@ -68,14 +70,13 @@
         "format": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "format:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
-        "prepare": "husky install",
         "commit": "git-cz",
         "precommit": "lint-staged",
-        "prepush": "npm run test:framework",
+        "prepush": "yarn test:framework",
         "///// HELPER SCRIPTS /////": "",
-        "start": "echo '🚀 Frontend Playground Multi-SSG Platform' && echo 'Available commands:' && npm run",
+        "start": "echo '🚀 Frontend Playground Multi-SSG Platform' && echo 'Available commands:' && yarn",
         "info": "node -e \"console.log('📊 Project Info:'); console.log('Node:', process.version); console.log('NPM:', process.env.npm_version); console.log('Platform:', process.platform);\"",
-        "health": "npm run check:env && npm run test:framework"
+        "health": "yarn check:env && yarn test:framework"
     },
     "dependencies": {
         "@commitlint/cli": "^20.1.0",
@@ -112,13 +113,7 @@
             "prettier --write"
         ]
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "pre-push": "npm run test:framework"
-        }
-    },
+
     "repository": {
         "type": "git",
         "url": "https://github.com/paulAlexSerban/wbk--frontend-playground.git"
