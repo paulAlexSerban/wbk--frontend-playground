@@ -306,7 +306,7 @@ class UniversalBuilder {
             version: '1.0.0',
             private: true,
             scripts: {
-                build: framework.buildCmd.replace('yarn ', ''),
+                build: framework.buildCmd.replace('npm ', ''),
                 dev: "echo 'Development server not configured'",
                 start: "echo 'Start command not configured'",
             },
@@ -317,7 +317,7 @@ class UniversalBuilder {
         await fs.writeFile(path.join(frameworkPath, 'package.json'), JSON.stringify(packageJson, null, 2));
 
         // Create basic README
-        const readme = `# ${framework.name} Implementation\n\nThis is a ${framework.name} implementation of the Frontend Playground components.\n\n## Getting Started\n\n\`\`\`bash\nnpm install\nyarn build\n\`\`\`\n`;
+        const readme = `# ${framework.name} Implementation\n\nThis is a ${framework.name} implementation of the Frontend Playground components.\n\n## Getting Started\n\n\`\`\`bash\nyarn\nyarn build\n\`\`\`\n`;
         await fs.writeFile(path.join(frameworkPath, 'README.md'), readme);
     }
 
@@ -380,10 +380,10 @@ class UniversalBuilder {
 
             // Install dependencies
             console.log(`📦 Installing Node.js dependencies for ${framework.name}...`);
-            await execAsync('npm install', { cwd: frameworkPath });
+            await execAsync('yarn', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  No package.json found for ${framework.name}, skipping npm install`);
+                console.log(`⚠️  No package.json found for ${framework.name}, skipping yarn`);
             } else {
                 throw error;
             }
