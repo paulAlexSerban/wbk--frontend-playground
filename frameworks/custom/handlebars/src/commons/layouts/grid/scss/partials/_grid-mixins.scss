@@ -1,56 +1,171 @@
+@use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:math';
-@use 'sass:list';
-
 @use '~ScssAbstracts' as *;
-@use './no-gutter.scss' as *;
+
+@use './_02_utils/grid-functions.scss' as *;
+@use './_02_utils/map.scss' as *;
+@use './_01_sizes/grid-sizes' as *;
 
 /* ------------------------------------ *\
-  * GRID FUNCTIONS
+  #BREAKPOINT
 \* ------------------------------------ */
 
-/// Get the infix for a given breakpoint in a list of breakpoints. Useful for generating the size part in a selector, for example: `.prefix--col-sm-2`.
-/// @param {String} $name - The name of the breakpoint
-/// @return {String}
+/// Generate a media query for a given breakpoint
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
 /// @access public
-
-@function breakpoint-infix($name) {
-    @return '-#{$name}';
-}
-
-/// Get the value of the next breakpoint, or null for the last breakpoint
-/// @param {String} $name - The name of the breakpoint
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
-/// @param {List} $breakpoint-names [map.keys($breakpoints)] - A list of names from the `$breakpoints` map
-/// @return {String}
-/// @access public
-
-@function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
-    $n: list.index($breakpoint-names, $name);
-    @if $n != null and $n < list.length($breakpoint-names) {
-        @return list.nth($breakpoint-names, $n + 1);
+@mixin breakpoint($name, $breakpoints: $breakpoints) {
+    @include breakpoint-up($name, $breakpoints) {
+        @content;
     }
-    @return null;
-}
-
-/// Get the value of the previous breakpoint, or null for the first breakpoint
-/// @param {String} $name - The name of the breakpoint
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
-/// @param {List} $breakpoint-names [map.keys($breakpoints)] - A list of names from the `$breakpoints` map
-/// @return {String}
-/// @access public
-@function breakpoint-prev($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
-    $n: list.index($breakpoint-names, $name);
-    @if $n != null and $n > 1 {
-        @return list.nth($breakpoint-names, $n - 1);
-    }
-    @return null;
 }
 
 /* ------------------------------------ *\
-  * GRID MIXINS
+  #LARGEST-BREAKPOINT
 \* ------------------------------------ */
+
+/// Generate media query for the largest breakpoint
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin largest-breakpoint($breakpoints: $breakpoints) {
+    @include breakpoint(largest-breakpoint-name()) {
+        @content;
+    }
+}
+
+/* ------------------------------------ *\
+  #BREAKPOINT-UP
+\* ------------------------------------ */
+
+/// Generate a media query from the width of the given breakpoint to infinity
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
+    @if meta.type-of($name) == 'number' {
+        @media only screen and (min-width: $name) {
+            @content;
+        }
+    } @else if map.has-key($breakpoints, $name) {
+        $breakpoint: map.get($breakpoints, $name);
+        $width: map.get($breakpoint, width);
+
+        @if is-smallest-breakpoint($name, $breakpoints) {
+            @content;
+        } @else {
+            @media only screen and (min-width: $width) {
+                @content;
+            }
+        }
+    } @else {
+        @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map.keys($breakpoints)})";
+    }
+}
+
+/* ------------------------------------ *\
+  #BREAKPOINT-DOWN
+\* ------------------------------------ */
+
+/// Generate a media query for the maximum width of the given styles
+/// @param {String | Number} $name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+
+@mixin breakpoint-down($name, $breakpoints: $breakpoints) {
+    @if meta.type-of($name) == 'number' {
+        @media (max-width: $name) {
+            @content;
+        }
+    } @else if map.has-key($breakpoints, $name) {
+        // We borrow this logic from bootstrap for specifying the value of the
+        // max-width. The maximum width is calculated by finding the breakpoint and
+        // subtracting .02 from its value. This value is used instead of .01 to
+        // avoid rounding issues in Safari
+        // https://github.com/twbs/bootstrap/blob/c5b1919deaf5393fcca9e9b9d7ce9c338160d99d/scss/mixins/_breakpoints.scss#L34-L46
+        $breakpoint: map.get($breakpoints, $name);
+        $width: map.get($breakpoint, width) - 0.02;
+        @media (max-width: $width) {
+            @content;
+        }
+    } @else {
+        @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map.keys($breakpoints)})";
+    }
+}
+
+/* ------------------------------------ *\
+  #BREAKPOINT-BETWEEN
+\* ------------------------------------ */
+
+/// Generate a media query for the range between the lower and upper breakpoints
+/// @param {String | Number} $lower
+/// @param {String | Number} $upper
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @content
+/// @access public
+
+@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+    $is-number-lower: meta.type-of($lower) == 'number';
+    $is-number-upper: meta.type-of($upper) == 'number';
+    $min: if($is-number-lower, $lower, map.get($breakpoints, $lower));
+    $max: if($is-number-upper, $upper, map.get($breakpoints, $upper));
+
+    @if $min and $max {
+        $min-width: if(not $is-number-lower and $min, map.get($min, width), $min);
+        $max-width: if(not $is-number-upper and $max, map.get($max, width), $max);
+        @media (min-width: $min-width) and (max-width: $max-width) {
+            @content;
+        }
+    } @else if $min != null and $max == null {
+        @include breakpoint-up($lower) {
+            @content;
+        }
+    } @else if $min == null and $max != null {
+        @include breakpoint-down($upper) {
+            @content;
+        }
+    } @else {
+        @error "Unable to find a breakpoint to satisfy: (#{$lower},#{$upper}). Expected both to be one of (#{map.keys($breakpoints)}).";
+    }
+}
+
+/* Examples
+.example__breakpoint-between {
+    @include breakpoint-between(desktop, ultra-wide) {
+    color: red;
+    }
+}
+*/
+
+/* ------------------------------------ *\
+  #GRID-MIXINS
+\* ------------------------------------ */
+
+/// Add `no-gutter` and `no-gutter--{start,end}` classes to the output CSS. These
+/// classes are useful for dropping the gutter in fluid situations.
+/// @access private
+@mixin no-gutter() {
+    .no-gutter,
+    .row.no-gutter [class*='col'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .no-gutter--start,
+    .row.no-gutter--start [class*='col'] {
+        padding-left: 0;
+    }
+
+    .no-gutter--end,
+    .row.no-gutter--end [class*='col'] {
+        padding-right: 0;
+    }
+}
 
 /// Create a column offset for a given span and column count.
 /// @param {Number} $span - The number of columns the offset should cover
@@ -200,7 +315,7 @@
     max-width: map.get($largest-breakpoint, 'width');
 }
 
-/// Create the container for a grid. Will cause full-bleed for the grid unless
+/// Create the container for a grid. Will cause full-bleed for the grid unless02_utils
 /// max-width properties are added with `make-container-max-widths`
 /// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
 
@@ -292,18 +407,64 @@
     }
 }
 
-
-
-// SCSS variable to set the number of columns used for media-queries (12 OR 16)
-$breakpoints: $column-grid-12;
-
 /* ------------------------------------ *\
-  * 12 COLUMN GRID
+  #GRID-ASPECT-RATIO
 \* ------------------------------------ */
 
-// // Grid mixin
-@include generate-grid();
-@include make-grid-columns($breakpoints, $grid-gutter);
-@include no-gutter();
-@include hang($grid-gutter);
-@include grid-aspect-ratio();
+/// The aspect ratios that are used to generate corresponding aspect ratio
+/// classes in code
+/// @type List
+/// @access public
+$aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3), (1, 1));
+
+/// Generates the CSS classname utilities for the aspect ratios
+///
+/// CSS Tricks article on aspect ratios and all the different ways it can be done.
+/// https://css-tricks.com/aspect-ratio-boxes/#article-header-id-6
+///
+/// That article references an earlier article on the topic.
+/// https://keithjgrant.com/posts/2017/03/aspect-ratios/
+///
+/// @param {Number} $width width from an aspect ratio
+/// @param {Number} $height height from an aspect ratio
+/// @access private
+@mixin grid-aspect-ratio($aspect-ratios: $aspect-ratios) {
+    .aspect-ratio {
+        @include relative();
+        &::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+
+        &::before {
+            float: left;
+
+            width: 1px;
+            height: 0;
+            margin-left: -1px;
+            content: '';
+        }
+    }
+
+    @each $aspect-ratio in $aspect-ratios {
+        $width: list.nth($aspect-ratio, 1);
+        $height: list.nth($aspect-ratio, 2);
+
+        .aspect-ratio--#{$width}x#{$height}::before {
+            @if meta.function-exists('div', 'math') {
+                padding-top: math.percentage(math.div($height, $width));
+            } @else {
+                padding-top: math.percentage(($height / $width));
+            }
+        }
+    }
+
+    .aspect-ratio--object {
+        @include absolute($top: 0, $left: 0);
+
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 2 / 1;
+    }
+}
