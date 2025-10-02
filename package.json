@@ -1,6 +1,7 @@
 {
     "name": "@frontend-playground/multi-ssg-ultimate",
     "version": "2.0.0",
+    "type": "module",
     "description": "Ultimate Frontend Playground: Multi-SSG Framework Showcase - The most comprehensive Static Site Generator comparison platform ever built",
     "author": "Paul Serban <paul.alex.serban@gmail.com>",
     "license": "MIT",
@@ -62,8 +63,8 @@
         "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
         "clean:caches": "find . -name '.cache' -o -name '.next' -o -name '.nuxt' -o -name '.svelte-kit' | xargs rm -rf",
         "///// CODE QUALITY SCRIPTS /////": "",
-        "lint": "eslint . --ext .js,.ts,.vue,.svelte --ignore-pattern .gitignore",
-        "lint:fix": "eslint . --ext .js,.ts,.vue,.svelte --ignore-pattern .gitignore --fix",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
         "format": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "format:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
