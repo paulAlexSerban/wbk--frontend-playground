@@ -3,7 +3,7 @@
 const audioElement = document.getElementById('audio');
 const VoiceRSS = {
     speech(e) {
-        this._validate(e), this._request(e);
+        (this._validate(e), this._request(e));
     },
     _validate(e) {
         if (!e) {
@@ -44,21 +44,21 @@ const VoiceRSS = {
     _request(e) {
         const a = this._buildRequest(e),
             t = this._getXHR();
-        (t.onreadystatechange = function () {
+        ((t.onreadystatechange = function () {
             if (t.readyState == 4 && t.status == 200) {
                 if (t.responseText.indexOf('ERROR') == 0) {
                     throw t.responseText;
                 }
                 let e = t.responseText;
-                (audioElement.src = e),
+                ((audioElement.src = e),
                     (audioElement.onloadedmetadata = () => {
                         audioElement.play();
-                    });
+                    }));
             }
         }),
             t.open('POST', 'https://api.voicerss.org/', !0),
             t.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8'),
-            t.send(a);
+            t.send(a));
     },
     _buildRequest(e) {
         const a = e.c && 'auto' != e.c.toLowerCase() ? e.c : this._detectCodec();
