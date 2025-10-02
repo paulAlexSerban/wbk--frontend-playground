@@ -2,146 +2,13 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:math';
-@use '~ScssAbstracts' as *;
+@use '../../_01_sizes/sizes.scss' as sizes;
+@use '../functions/functions.scss' as functions;
 
-@use './_02_utils/grid-functions.scss' as *;
-@use './_02_utils/map.scss' as *;
-@use './_01_sizes/grid-sizes' as *;
-
-/* ------------------------------------ *\
-  #BREAKPOINT
-\* ------------------------------------ */
-
-/// Generate a media query for a given breakpoint
-/// @param {String | Number} $name
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
-/// @content
-/// @access public
-@mixin breakpoint($name, $breakpoints: $breakpoints) {
-    @include breakpoint-up($name, $breakpoints) {
-        @content;
-    }
-}
-
-/* ------------------------------------ *\
-  #LARGEST-BREAKPOINT
-\* ------------------------------------ */
-
-/// Generate media query for the largest breakpoint
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
-/// @content
-/// @access public
-@mixin largest-breakpoint($breakpoints: $breakpoints) {
-    @include breakpoint(largest-breakpoint-name()) {
-        @content;
-    }
-}
-
-/* ------------------------------------ *\
-  #BREAKPOINT-UP
-\* ------------------------------------ */
-
-/// Generate a media query from the width of the given breakpoint to infinity
-/// @param {String | Number} $name
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
-/// @content
-/// @access public
-@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
-    @if meta.type-of($name) == 'number' {
-        @media only screen and (min-width: $name) {
-            @content;
-        }
-    } @else if map.has-key($breakpoints, $name) {
-        $breakpoint: map.get($breakpoints, $name);
-        $width: map.get($breakpoint, width);
-
-        @if is-smallest-breakpoint($name, $breakpoints) {
-            @content;
-        } @else {
-            @media only screen and (min-width: $width) {
-                @content;
-            }
-        }
-    } @else {
-        @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map.keys($breakpoints)})";
-    }
-}
-
-/* ------------------------------------ *\
-  #BREAKPOINT-DOWN
-\* ------------------------------------ */
-
-/// Generate a media query for the maximum width of the given styles
-/// @param {String | Number} $name
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
-/// @content
-/// @access public
-
-@mixin breakpoint-down($name, $breakpoints: $breakpoints) {
-    @if meta.type-of($name) == 'number' {
-        @media (max-width: $name) {
-            @content;
-        }
-    } @else if map.has-key($breakpoints, $name) {
-        // We borrow this logic from bootstrap for specifying the value of the
-        // max-width. The maximum width is calculated by finding the breakpoint and
-        // subtracting .02 from its value. This value is used instead of .01 to
-        // avoid rounding issues in Safari
-        // https://github.com/twbs/bootstrap/blob/c5b1919deaf5393fcca9e9b9d7ce9c338160d99d/scss/mixins/_breakpoints.scss#L34-L46
-        $breakpoint: map.get($breakpoints, $name);
-        $width: map.get($breakpoint, width) - 0.02;
-        @media (max-width: $width) {
-            @content;
-        }
-    } @else {
-        @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map.keys($breakpoints)})";
-    }
-}
-
-/* ------------------------------------ *\
-  #BREAKPOINT-BETWEEN
-\* ------------------------------------ */
-
-/// Generate a media query for the range between the lower and upper breakpoints
-/// @param {String | Number} $lower
-/// @param {String | Number} $upper
-/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
-/// @content
-/// @access public
-
-@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
-    $is-number-lower: meta.type-of($lower) == 'number';
-    $is-number-upper: meta.type-of($upper) == 'number';
-    $min: if($is-number-lower, $lower, map.get($breakpoints, $lower));
-    $max: if($is-number-upper, $upper, map.get($breakpoints, $upper));
-
-    @if $min and $max {
-        $min-width: if(not $is-number-lower and $min, map.get($min, width), $min);
-        $max-width: if(not $is-number-upper and $max, map.get($max, width), $max);
-        @media (min-width: $min-width) and (max-width: $max-width) {
-            @content;
-        }
-    } @else if $min != null and $max == null {
-        @include breakpoint-up($lower) {
-            @content;
-        }
-    } @else if $min == null and $max != null {
-        @include breakpoint-down($upper) {
-            @content;
-        }
-    } @else {
-        @error "Unable to find a breakpoint to satisfy: (#{$lower},#{$upper}). Expected both to be one of (#{map.keys($breakpoints)}).";
-    }
-}
-
-/* Examples
-.example__breakpoint-between {
-    @include breakpoint-between(desktop, ultra-wide) {
-    color: red;
-    }
-}
-*/
-
+@use './bem.scss' as bem;
+@use './flex.scss' as flexbox;
+@use './responsive.scss' as responsive;
+@use './position.scss' as position;
 /* ------------------------------------ *\
   #GRID-MIXINS
 \* ------------------------------------ */
@@ -214,7 +81,7 @@
 /// 1. Prevent columns from becoming too narrow when at smaller grid tiers by always setting `width: 100%;`. This works because `flex` values are used later on to override this initial width.///// 2. For condensed use-case, the gutters collapse to 2px solid, 1px on each side.
 /// 3. For the narrow use-case, our container hangs 16px into the gutter
 
-@mixin make-col-ready($gutter: $grid-gutter, $condensed-gutter: $grid-gutter--condensed) {
+@mixin make-col-ready($gutter: sizes.$grid-gutter, $condensed-gutter: sizes.$grid-gutter--condensed) {
     /* 1 */
     width: 100%;
     padding-right: $gutter * 0.5;
@@ -240,13 +107,13 @@
 /// @param {Number} $gutter [$rid-gutter] - The gutter for the grid system
 /// @access private
 
-@mixin make-grid-columns($breakpoints: $breakpoints, $gutter: $grid-gutter) {
+@mixin make-grid-columns($breakpoints: sizes.$breakpoints, $gutter: sizes.$grid-gutter) {
     .col {
         @include make-col-ready($gutter);
     }
 
     @each $breakpoint in map.keys($breakpoints) {
-        $infix: breakpoint-infix($breakpoint);
+        $infix: functions.breakpoint-infix($breakpoint);
         $columns: map.get(map.get($breakpoints, $breakpoint), columns);
 
         // Allow columns to stretch full width below their breakpoints
@@ -261,7 +128,7 @@
             @include make-col-ready($gutter);
         }
 
-        @include breakpoint($breakpoint, $breakpoints) {
+        @include responsive.breakpoint($breakpoint, $breakpoints) {
             // Provide basic `.col-{bp}` classes for equal-width flexbox columns
             .col,
             .col#{$infix} {
@@ -299,7 +166,7 @@
 /// @param {Number} $gutter [$grid-gutter] - The gutter in the grid system
 /// @access private
 
-@mixin make-row($gutter: $grid-gutter) {
+@mixin make-row($gutter: sizes.$grid-gutter) {
     display: flex;
     flex-wrap: wrap;
     margin-right: -1 * $gutter * 0.5;
@@ -309,8 +176,8 @@
 /// Get the last breakpoint width and set max-width to its value
 /// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
 /// @access private
-@mixin set-max-width-by-largest-breakpoint($breakpoints: $breakpoints) {
-    $largest-breakpoint: last-map-item($breakpoints);
+@mixin set-max-width-by-largest-breakpoint($breakpoints: sizes.$breakpoints) {
+    $largest-breakpoint: functions.last-map-item($breakpoints);
 
     max-width: map.get($largest-breakpoint, 'width');
 }
@@ -319,27 +186,27 @@
 /// max-width properties are added with `make-container-max-widths`
 /// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
 
-@mixin make-container($breakpoints: $breakpoints) {
+@mixin make-container($breakpoints: sizes.$breakpoints) {
     margin: 0 auto;
 
     @include set-max-width-by-largest-breakpoint();
 
     @each $name, $value in $breakpoints {
-        $prev-breakpoint: map.get($breakpoints, breakpoint-prev($name));
+        $prev-breakpoint: map.get($breakpoints, functions.breakpoint-prev($name));
         $margin: map.get($value, margin);
 
         @if $prev-breakpoint {
             $prev-margin: map.get($prev-breakpoint, margin);
             @if $prev-margin != $margin {
-                @include breakpoint($name) {
-                    padding-right: ($grid-gutter * 0.5) + $margin;
-                    padding-left: ($grid-gutter * 0.5) + $margin;
+                @include responsive.breakpoint($name) {
+                    padding-right: (sizes.$grid-gutter * 0.5) + $margin;
+                    padding-left: (sizes.$grid-gutter * 0.5) + $margin;
                 }
             }
         } @else {
-            @include breakpoint($name) {
-                padding-right: #{($grid-gutter * 0.5) + $margin};
-                padding-left: #{($grid-gutter * 0.5) + $margin};
+            @include responsive.breakpoint($name) {
+                padding-right: #{(sizes.$grid-gutter * 0.5) + $margin};
+                padding-left: #{(sizes.$grid-gutter * 0.5) + $margin};
             }
         }
     }
@@ -351,21 +218,21 @@
 /// @param {Number} $condensed-gutter [$grid-gutter--condensed] - The condensed mode gutter
 /// @access public
 @mixin generate-grid(
-    $breakpoints: $breakpoints,
-    $grid-gutter: $grid-gutter,
-    $condensed-gutter: $grid-gutter--condensed
+    $breakpoints: sizes.$breakpoints,
+    $grid-gutter: sizes.$grid-gutter,
+    $condensed-gutter: sizes.$grid-gutter--condensed
 ) {
     .grid {
-        @include flex($direction: column);
+        @include flexbox.flex($direction: column);
         @include make-container($breakpoints);
 
-        @include largest-breakpoint($breakpoints) {
-            @include m('full-width') {
+        @include responsive.largest-breakpoint($breakpoints) {
+            @include bem.m('full-width') {
                 max-width: 100%;
             }
         }
 
-        @include m('condensed') {
+        @include bem.m('condensed') {
             [class*='col'] {
                 padding-top: $condensed-gutter * 0.5;
                 padding-bottom: $condensed-gutter * 0.5;
@@ -388,7 +255,7 @@
 /// used alongside `no-gutter--start` and `no-gutter--end` to "hang" type.
 /// @param {Number} $gutter [$grid-gutter] - The gutter in the grid system
 /// @access private
-@mixin hang($gutter: $grid-gutter) {
+@mixin hang($gutter: sizes.$grid-gutter) {
     .hang--start {
         padding-left: $gutter * 0.5;
     }
@@ -430,7 +297,7 @@ $aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3
 /// @access private
 @mixin grid-aspect-ratio($aspect-ratios: $aspect-ratios) {
     .aspect-ratio {
-        @include relative();
+        @include position.relative();
         &::after {
             display: table;
             content: '';
@@ -461,7 +328,7 @@ $aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3
     }
 
     .aspect-ratio--object {
-        @include absolute($top: 0, $left: 0);
+        @include position.absolute($top: 0, $left: 0);
 
         width: 100%;
         height: 100%;

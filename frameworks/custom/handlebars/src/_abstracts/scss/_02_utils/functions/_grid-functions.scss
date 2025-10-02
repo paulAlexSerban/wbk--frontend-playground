@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:list';
-@use './map.scss' as *;
-@use '../_01_sizes/grid-sizes.scss' as *;
+@use './map-functions.scss' as mapFn;
+@use '../../_01_sizes/sizes.scss' as sizes; 
 /* ------------------------------------ *\
   * GRID FUNCTIONS
 \* ------------------------------------ */
@@ -22,7 +22,7 @@
 /// @return {String}
 /// @access public
 
-@function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
+@function breakpoint-next($name, $breakpoints: sizes.$breakpoints, $breakpoint-names: map.keys(sizes.$breakpoints)) {
     $n: list.index($breakpoint-names, $name);
     @if $n != null and $n < list.length($breakpoint-names) {
         @return list.nth($breakpoint-names, $n + 1);
@@ -36,7 +36,7 @@
 /// @param {List} $breakpoint-names [map.keys($breakpoints)] - A list of names from the `$breakpoints` map
 /// @return {String}
 /// @access public
-@function breakpoint-prev($name, $breakpoints: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
+@function breakpoint-prev($name, $breakpoints: sizes.$breakpoints, $breakpoint-names: map.keys(sizes.$breakpoints)) {
     $n: list.index($breakpoint-names, $name);
     @if $n != null and $n > 1 {
         @return list.nth($breakpoint-names, $n - 1);
@@ -49,7 +49,7 @@
 /// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
 /// @return {Bool}
 /// @access public
-@function is-smallest-breakpoint($name, $breakpoints: $breakpoints) {
+@function is-smallest-breakpoint($name, $breakpoints: sizes.$breakpoints) {
     @return list.index(map.keys($breakpoints), $name) == 1;
 }
 
@@ -58,8 +58,8 @@
 /// @return {String}
 /// @access public
 
-@function largest-breakpoint-name($breakpoints: $breakpoints) {
+@function largest-breakpoint-name($breakpoints: sizes.$breakpoints) {
     $total-breakpoints: list.length($breakpoints);
-    @return key-by-index($breakpoints, $total-breakpoints);
+    @return mapFn.key-by-index($breakpoints, $total-breakpoints);
 }
 
