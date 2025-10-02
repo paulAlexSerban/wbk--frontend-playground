@@ -33,6 +33,12 @@ const plugins = [
         files: metaEntries, // specify the input files here
         output: 'componentList.json', // specify the output file here
     }),
+    // copy static assets to the output directory
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "../../../assets/media/dist", to: "assets" }
+      ],
+    }),
 ];
 
 module.exports = plugins;

@@ -1,6 +1,33 @@
 @use 'sass:math';
 @use 'sass:meta';
-@use '../../_01_variables/variables.scss' as *;
+
+/* ------------------------------------ *\
+  * #SIZES
+\* ------------------------------------ */
+
+/// Default font size
+/// @type Number
+/// Used to convert `px` to `rem` or `em` using convert-rem() and convert-em() functions
+/// Notes:
+/// DO NOT CHANGE to convert-rem(16px); !!!
+$default-font-size: 16px !default;
+
+
+
+/* ------------------------------------ *\
+ * FONT-SIZES
+\* ------------------------------------ */
+$font-size--xxs: 10px !default;
+
+$font-size--xs: 12px !default;
+$font-size--s: 14px !default;
+$font-size--m: 16px !default;
+$font-size--l: 18px !default;
+$font-size--xl: 24px !default;
+$font-size--xxl: 32px !default;
+$font-size--xxxl: 48px !default;
+
+
 
 /* ------------------------------------ *\
   #CONVERT-UNITS
@@ -12,7 +39,7 @@
 /// @access public
 @function convert-rem($px) {
     @if math.unit($px) != 'px' {
-        @warn "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
+        @warn "Expected argument $px to be of type `px`, instead received: `#{math.unit($px)}`";
     }
 
     @if meta.function-exists('div', 'math') {
@@ -28,7 +55,7 @@
 /// @access public
 @function convert-em($px) {
     @if math.unit($px) != 'px' {
-        @warn "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
+        @warn "Expected argument $px to be of type `px`, instead received: `#{math.unit($px)}`";
     }
 
     @if meta.function-exists('div', 'math') {
