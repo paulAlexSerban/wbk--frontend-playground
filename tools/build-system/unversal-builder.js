@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 const { promisify } = require('util');
 
 const execAsync = promisify(exec);
-
+const logLevel = process.env.LOG_LEVEL || 'info';
 class UniversalBuilder {
     constructor() {
         this.frameworks = [
@@ -261,7 +261,7 @@ class UniversalBuilder {
             this.buildMetrics.failed++;
             this.buildMetrics.frameworks.push(result);
 
-            console.error(`❌ ${framework.name} build failed: ${error.message}`);
+            logLevel === 'debug' && console.error(`❌ ${framework.name} build failed: ${error.message}`);
             return result;
         }
     }
@@ -271,7 +271,7 @@ class UniversalBuilder {
             await fs.access(frameworkPath);
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  Framework directory not found: ${framework.path}`);
+                logLevel === 'debug' && console.log(`⚠️  Framework directory not found: ${framework.path}`);
                 console.log(`📁 Creating scaffold for ${framework.name}...`);
                 await this.createFrameworkScaffold(framework, frameworkPath);
             } else {
@@ -383,7 +383,7 @@ class UniversalBuilder {
             await execAsync('yarn', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  No package.json found for ${framework.name}, skipping yarn`);
+                logLevel === 'debug' && console.log(`⚠️  No package.json found for ${framework.name}, skipping yarn`);
             } else {
                 throw error;
             }
@@ -414,7 +414,7 @@ class UniversalBuilder {
             await execAsync('bundle install', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  No Gemfile found for ${framework.name}, skipping bundle install`);
+                logLevel === 'debug' && console.log(`⚠️  No Gemfile found for ${framework.name}, skipping bundle install`);
             } else {
                 throw error;
             }
@@ -431,7 +431,7 @@ class UniversalBuilder {
             await execAsync('pip install -r requirements.txt', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  No requirements.txt found for ${framework.name}, skipping pip install`);
+                logLevel === 'debug' && console.log(`⚠️  No requirements.txt found for ${framework.name}, skipping pip install`);
             } else {
                 throw error;
             }
@@ -448,7 +448,7 @@ class UniversalBuilder {
             await execAsync('composer install', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  No composer.json found for ${framework.name}, skipping composer install`);
+                logLevel === 'debug' && console.log(`⚠️  No composer.json found for ${framework.name}, skipping composer install`);
             } else {
                 throw error;
             }
@@ -471,7 +471,7 @@ class UniversalBuilder {
             await this.copyDirectory(path.join(sharedPath, 'core/assets'), targetAssetsPath);
         } catch (error) {
             if (error.code === 'ENOENT') {
-                console.log(`⚠️  No shared assets found, skipping sync for ${framework.name}`);
+                logLevel === 'debug' && console.log(`⚠️  No shared assets found, skipping sync for ${framework.name}`);
             } else {
                 throw error;
             }
@@ -505,13 +505,39 @@ class UniversalBuilder {
 
     async executeBuild(framework, frameworkPath) {
         console.log(`🔨 Executing build for ${framework.name}: ${framework.buildCmd}`);
+        console.log(`📂 Working directory: ${frameworkPath}`);
+        console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 
-        const { stdout, stderr } = await execAsync(framework.buildCmd, {
-            cwd: frameworkPath,
-            timeout: 300000, // 5 minutes timeout
-        });
+        try {
+            const { stdout, stderr } = await execAsync(framework.buildCmd, {
+                cwd: frameworkPath,
+                timeout: 300000, // 5 minutes timeout
+            });
 
-        return { stdout, stderr };
+            // Print the build output
+            if (stdout) {
+                console.log(`📋 ${framework.name} Build Output:`);
+                console.log(stdout);
+            }
+
+            if (stderr && logLevel === 'debug') {
+                console.warn(`⚠️  ${framework.name} Build Warnings/Errors:`);
+                console.warn(stderr);
+            }
+
+            console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+            return { stdout, stderr };
+        } catch (error) {
+            logLevel === 'debug' && console.error(`💥 ${framework.name} Build Failed:`);
+            if (error.stdout) {
+                console.log(`📋 Stdout:`, error.stdout);
+            }
+            if (error.stderr) {
+                logLevel === 'debug' && console.error(`❌ Stderr:`, error.stderr);
+            }
+            console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+            throw error;
+        }
     }
 
     async collectBuildMetrics(framework, frameworkPath) {
@@ -545,7 +571,7 @@ class UniversalBuilder {
                 }
             }
         } catch (error) {
-            console.log(`⚠️  Could not collect metrics for ${framework.name}: ${error.message}`);
+            logLevel === 'debug' && console.log(`⚠️  Could not collect metrics for ${framework.name}: ${error.message}`);
         }
 
         return metrics;
@@ -568,7 +594,7 @@ class UniversalBuilder {
                 }
             }
         } catch (error) {
-            console.log(`⚠️  Error reading directory ${dirPath}: ${error.message}`);
+            logLevel === 'debug' && console.log(`⚠️  Error reading directory ${dirPath}: ${error.message}`);
             // Ignore errors
         }
 
@@ -589,7 +615,7 @@ class UniversalBuilder {
                 }
             }
         } catch (error) {
-            console.log(`⚠️  Error reading directory ${dirPath}: ${error.message}`);
+            logLevel === 'debug' && console.log(`⚠️  Error reading directory ${dirPath}: ${error.message}`);
             // Ignore errors
         }
 
@@ -704,7 +730,7 @@ Examples:
 
             process.exit(report.summary.failed > 0 ? 1 : 0);
         } catch (error) {
-            console.error('❌ Universal build failed:', error.message);
+            logLevel === 'debug' && console.error('❌ Universal build failed:', error.message);
             process.exit(1);
         }
     }
