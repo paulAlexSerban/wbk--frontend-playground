@@ -2,6 +2,7 @@
   MIXINS
 \* ------------------------------------ */
 
+@forward './animations.scss';
 @forward './bem.scss';
 @forward './flex.scss';
 @forward './get-font.scss';

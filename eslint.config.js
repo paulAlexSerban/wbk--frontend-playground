@@ -107,6 +107,23 @@ export default [
         },
     },
 
+    // Browser code: enable browser globals
+    {
+        files: ['frameworks/**/src/**/*.js'],
+        languageOptions: {
+            globals: {
+                window: 'readonly',
+                document: 'readonly',
+                navigator: 'readonly',
+                location: 'readonly',
+                HTMLElement: 'readonly',
+                Event: 'readonly',
+                Node: 'readonly',
+            },
+        },
+        env: { browser: true },
+    },
+
     // Prettier compatibility (must be last)
     prettierConfig,
 

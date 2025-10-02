@@ -1,30 +1,27 @@
-// @use '~ScssAbstracts' as *;
+@use '~ScssAbstracts' as abstracts;
 
-// @use "../../../../_abstracts/scss/_02_utils/functions/get-color" as *;
-// @use "../../../../_abstracts/scss/_03_foundations/colors" as *;
-// @use "../../../../_abstracts/scss/_03_foundations/typography/typography.scss" as *;
+
 // /* ------------------------------------ *\
 //   #THEMES
 // \* ------------------------------------ */
 
-// :root {
-//     --text-color: #{get-color($c-dark, eerie-black)};
-//     --text-selection-color: #{get-color($c-light, cultured)};
-//     --text-selection-background-color: #{get-color($c-dark, eerie-black)};
+:root {
+    --text-color: #{abstracts.get-color(abstracts.$c-dark, eerie-black)};
+    --text-selection-color: #{abstracts.get-color(abstracts.$c-light, cultured)};
+    --text-selection-background-color: #{abstracts.get-color(abstracts.$c-dark, eerie-black)};
 
-//     --text-link-color: #{get-color($c-gray, davys-grey)};
-//     --text-link-color-hover: #{get-color($c-blue, dark-liver)};
+    --text-link-color: #{abstracts.get-color(abstracts.$c-gray, davys-grey)};
+    --text-link-color-hover: #{abstracts.get-color(abstracts.$c-blue, dark-liver)};
 
-//     --brand-color: #{get-color($c-red, ua-red)};
+    --brand-color: #{abstracts.get-color(abstracts.$c-red, ua-red)};
 
-//     --background-color-generic: #{get-color($c-light, light)};
+    --background-color-generic: #{abstracts.get-color(abstracts.$c-light, light)};
 
-//     --text-font-family-regular: #{$font-family-openSans};
-//     --text-font-family-code: #{$font-family-courierPrime};
+    --text-font-family-regular: #{abstracts.$font-family-openSans};
+    --text-font-family-code: #{abstracts.$font-family-courierPrime};
 
-//   }
+  }
 
-@use '~ScssAbstracts' as abstracts;
 /* ------------------------------------ *\
   #BASE-AUTO-THEME
 \* ------------------------------------ */
