@@ -1,4 +1,4 @@
-@use '~ScssAbstracts' as *;
+@use '~ScssAbstracts' as abstracts;
 
 /* ------------------------------------ *\
   * HEADINGS
@@ -14,27 +14,27 @@ h6 {
 }
 
 h1 {
-    font-size: convert-rem($font-size--xxxl);
+    font-size: abstracts.convert-rem(abstracts.$font-size--xxxl);
 }
 
 h2 {
-    font-size: convert-rem($font-size--xxl);
+    font-size: abstracts.convert-rem(abstracts.$font-size--xxl);
 }
 
 h3 {
-    font-size: convert-rem($font-size--xl);
+    font-size: abstracts.convert-rem(abstracts.$font-size--xl);
 }
 
 h4 {
-    font-size: convert-rem($font-size--l);
+    font-size: abstracts.convert-rem(abstracts.$font-size--l);
 }
 
 h5 {
-    font-size: convert-rem($font-size--m);
+    font-size: abstracts.convert-rem(abstracts.$font-size--m);
 }
 
 h6 {
-    font-size: convert-rem($font-size--s);
+    font-size: abstracts.convert-rem(abstracts.$font-size--s);
 }
 
 /* ------------------------------------ *\
@@ -43,7 +43,7 @@ h6 {
 
 p {
     margin: 0 0;
-    font-size: convert-rem($font-size--m);
+    font-size: abstracts.convert-rem(abstracts.$font-size--m);
 }
 
 /* ------------------------------------ *\
@@ -53,9 +53,9 @@ p {
 a {
     color: var(--text-link-color);
     text-decoration: none;
-    font-size: convert-rem($font-size--m);
+    font-size: abstracts.convert-rem(abstracts.$font-size--m);
 
-    @include on-event() {
+    @include abstracts.on-event() {
         color: var(--text-link-color-hover);
         text-decoration: underline;
     }

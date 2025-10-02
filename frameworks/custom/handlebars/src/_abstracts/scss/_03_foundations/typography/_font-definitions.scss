@@ -1,4 +1,4 @@
-@use '../../_01_variables/variables.scss' as *;
+@use '../../_01_sizes/sizes.scss' as sizes;
 
 /* ------------------------------------ *\
   #FONT-DEFINITIONS
@@ -12,11 +12,11 @@ $body: (
         font-weight: font-weight(regular),
         letter-spacing: convert-rem(0.5px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(19px),
         line-height: convert-rem(27px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(20px),
         line-height: convert-rem(28px),
     ),
@@ -30,11 +30,11 @@ $code: (
         font-weight: font-weight(thin),
         letter-spacing: convert-rem(0.5px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(17px),
         line-height: convert-rem(24px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(20px),
         line-height: convert-rem(25px),
     ),
@@ -48,11 +48,11 @@ $button: (
         font-weight: font-weight(regular),
         letter-spacing: convert-rem(1.25px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(19px),
         line-height: convert-rem(19px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(21px),
         line-height: convert-rem(21px),
     ),
@@ -66,11 +66,11 @@ $page-title: (
         font-weight: font-weight(heavy),
         letter-spacing: convert-rem(-1.5px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(42px),
         line-height: convert-rem(46px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(46px),
         line-height: convert-rem(50px),
         letter-spacing: -0.01em,
@@ -85,11 +85,11 @@ $heading-100: (
         font-weight: font-weight(regular),
         letter-spacing: convert-rem(-1.5px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(42px),
         line-height: convert-rem(46px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(46px),
         line-height: convert-rem(50px),
         letter-spacing: convert-rem(-0.01px),
@@ -104,11 +104,11 @@ $heading-200: (
         font-weight: font-weight(thin),
         letter-spacing: convert-rem(-0.5px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(34px),
         line-height: convert-rem(38px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(38px),
         line-height: convert-rem(42px),
         letter-spacing: convert-rem(-0.75px),
@@ -123,12 +123,12 @@ $heading-300: (
         font-weight: font-weight(thin),
         letter-spacing: 0,
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(27px),
         line-height: convert-rem(30px),
         letter-spacing: convert-rem(0.75px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(30px),
         line-height: convert-rem(33px),
         letter-spacing: convert-rem(-0.75px),
@@ -142,12 +142,12 @@ $heading-400: (
         font-family: var(--text-font-family-regular),
         font-weight: font-weight(thin),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(22px),
         line-height: convert-rem(24px),
         letter-spacing: convert-rem(0.5px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(24px),
         line-height: convert-rem(26px),
         letter-spacing: convert-rem(-0.5px),
@@ -160,12 +160,12 @@ $heading-500: (
         line-height: convert-rem(20px),
         font-weight: font-weight(heavy),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(20px),
         line-height: convert-rem(22px),
         letter-spacing: convert-rem(0.5px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(20px),
         line-height: convert-rem(22px),
         letter-spacing: convert-rem(-0.5px),
@@ -178,12 +178,12 @@ $heading-600: (
         line-height: convert-rem(16px),
         font-weight: font-weight(heavy),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(16px),
         line-height: convert-rem(18px),
         letter-spacing: convert-rem(0.5px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(18px),
         line-height: convert-rem(20px),
         letter-spacing: convert-rem(-0.5px),
@@ -197,12 +197,12 @@ $subheading: (
         font-weight: font-weight(regular),
         letter-spacing: convert-rem(0.25px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(20px),
         line-height: convert-rem(22px),
         letter-spacing: convert-rem(0.5px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(20px),
         line-height: convert-rem(22px),
         letter-spacing: convert-rem(-0.5px),
@@ -216,11 +216,11 @@ $body-bold: (
         line-height: convert-rem(23px),
         font-weight: 700,
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(19px),
         line-height: convert-rem(27px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(20px),
         line-height: convert-rem(28px),
     ),
@@ -234,12 +234,12 @@ $body-small: (
         line-height: convert-rem(22px),
         letter-spacing: 0.005em,
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(16px),
         line-height: convert-rem(22px),
         letter-spacing: 0.008em,
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(18px),
         line-height: convert-rem(24px),
         letter-spacing: 0.005em,
@@ -254,12 +254,12 @@ $body-large: (
         line-height: convert-rem(27px),
         letter-spacing: 0.005em,
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(23px),
         line-height: convert-rem(30px),
         letter-spacing: 0.008em,
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(25px),
         line-height: convert-rem(32px),
         letter-spacing: 0.005em,
@@ -274,11 +274,11 @@ $button-large: (
         font-weight: font-weight(regular),
         letter-spacing: convert-rem(1.25px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(22px),
         line-height: convert-rem(23px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(24px),
         line-height: convert-rem(25px),
     ),
@@ -292,11 +292,11 @@ $button-small: (
         font-weight: font-weight(regular),
         letter-spacing: convert-rem(1.25px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(14px),
         line-height: convert-rem(15px),
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(16px),
         line-height: convert-rem(17px),
     ),
@@ -311,11 +311,11 @@ $link: (
         letter-spacing: convert-rem(0.5px),
         text-decoration: none,
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(19px),
         line-height: 27px,
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: 20px,
         line-height: 28px,
     ),
@@ -329,7 +329,7 @@ $label: (
         font-weight: 400,
         letter-spacing: convert-rem(0.5px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(17px),
         line-height: convert-rem(22px),
     ),
@@ -342,7 +342,7 @@ $label-bold: (
         font-weight: 700,
         line-height: convert-rem(20px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(17px),
         line-height: convert-rem(22px),
     ),
@@ -385,12 +385,12 @@ $blockquote: (
         font-weight: 400,
         line-height: convert-rem(40px),
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(38px),
         line-height: convert-rem(58px),
         letter-spacing: 0.01em,
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(40px),
         line-height: convert-rem(60px),
         letter-spacing: 0,
@@ -406,12 +406,12 @@ $overline: (
         letter-spacing: convert-rem(1.5px),
         text-transform: uppercase,
     ),
-    $desktop: (
+    sizes.$desktop: (
         font-size: convert-rem(10px),
         line-height: convert-rem(14px),
         letter-spacing: 0.01em,
     ),
-    $ultra-wide: (
+    sizes.$ultra-wide: (
         font-size: convert-rem(12px),
         line-height: convert-rem(16px),
         letter-spacing: 0,
