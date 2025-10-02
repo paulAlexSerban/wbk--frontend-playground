@@ -1,0 +1,134 @@
+{
+    "name": "@frontend-playground/multi-ssg-ultimate",
+    "version": "2.0.0",
+    "description": "Ultimate Frontend Playground: Multi-SSG Framework Showcase - The most comprehensive Static Site Generator comparison platform ever built",
+    "author": "Paul Serban <paul.alex.serban@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "keywords": [
+        "ssg",
+        "static-site-generator",
+        "frontend",
+        "multi-framework",
+        "comparison",
+        "nextjs",
+        "nuxtjs",
+        "sveltekit",
+        "astro",
+        "hugo",
+        "jekyll",
+        "pelican"
+    ],
+    "workspaces": [
+        "frameworks/javascript/*",
+        "frameworks/go/*",
+        "frameworks/ruby/*",
+        "frameworks/python/*",
+        "frameworks/php/*",
+        "frameworks/specialized/*",
+        "frameworks/custom/*",
+        "shared/*",
+        "tools/*",
+        "dashboard"
+    ],
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=9.0.0"
+    },
+    "scripts": {
+        "///// INSTALLATION SCRIPTS /////": "",
+        "install:all": "npm install && npm run install:frameworks && npm run install:tools",
+        "install:handlebars": "cd frameworks/custom/handlebars && npm install || echo '⚠️  Custom Handlebars not initialized'",
+        "install:html-templates": "cd frameworks/custom/html-templates && npm install || echo '⚠️  Custom HTML Templates not initialized'",
+        "///// UNIVERSAL BUILD SCRIPTS /////": "",
+        "build:all": "node tools/build-system/unversal-builder.js",
+        "build:all:sequential": "node tools/build-system/unversal-builder.js --sequential",
+        "build:all:fast": "node tools/build-system/unversal-builder.js --concurrency 8 --skip-setup",
+        "build:priority:p0": "node tools/build-system/unversal-builder.js --priority P0",
+        "build:priority:p1": "node tools/build-system/unversal-builder.js --priority P1",
+        "build:priority:p2": "node tools/build-system/unversal-builder.js --priority P2",
+        "///// FRAMEWORK-SPECIFIC BUILD SCRIPTS /////": "",
+        "build:handlebars": "cd frameworks/custom/handlebars && node generate.js || echo '⚠️  Custom Handlebars build failed'",
+        "build:html-templates": "cd frameworks/custom/html-templates && node build.js || echo '⚠️  Custom HTML Templates build failed'",
+        "///// DEVELOPMENT SCRIPTS /////": "",
+        "dev:handlebars": "cd frameworks/custom/handlebars && npm run dev || node generate.js",
+        "dev:html-templates": "cd frameworks/custom/html-templates && npm run dev || node build.js",
+        "///// DASHBOARD & COMPARISON SCRIPTS /////": "",
+        "build:dashboard": "node dashboard/core/universal-dashboard.js",
+        "dev:dashboard": "cd dashboard && npm run dev || node index.js",
+        "///// UTILITY SCRIPTS /////": "",
+        "clean:all": "npm run clean:builds && npm run clean:node-modules && npm run clean:caches",
+        "clean:builds": "find frameworks -name 'dist' -o -name 'build' -o -name '_site' -o -name 'public' | xargs rm -rf",
+        "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+        "clean:caches": "find . -name '.cache' -o -name '.next' -o -name '.nuxt' -o -name '.svelte-kit' | xargs rm -rf",
+        "///// CODE QUALITY SCRIPTS /////": "",
+        "lint": "eslint . --ext .js,.ts,.vue,.svelte --ignore-pattern .gitignore",
+        "lint:fix": "eslint . --ext .js,.ts,.vue,.svelte --ignore-pattern .gitignore --fix",
+        "format": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
+        "format:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
+        "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
+        "prepare": "husky install",
+        "commit": "git-cz",
+        "precommit": "lint-staged",
+        "prepush": "npm run test:framework",
+        "///// HELPER SCRIPTS /////": "",
+        "start": "echo '🚀 Frontend Playground Multi-SSG Platform' && echo 'Available commands:' && npm run",
+        "info": "node -e \"console.log('📊 Project Info:'); console.log('Node:', process.version); console.log('NPM:', process.env.npm_version); console.log('Platform:', process.platform);\"",
+        "health": "npm run check:env && npm run test:framework"
+    },
+    "dependencies": {
+        "@commitlint/cli": "^20.1.0",
+        "@commitlint/config-conventional": "^20.0.0",
+        "@types/node": "^24.6.2",
+        "chalk": "^4.1.2",
+        "commander": "^11.0.0",
+        "cross-spawn": "^7.0.3",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^9.36.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-node": "^11.1.0",
+        "fs-extra": "^11.0.0",
+        "glob": "^10.0.0",
+        "husky": "^9.1.7",
+        "inquirer": "^8.2.0",
+        "lint-staged": "^16.2.3",
+        "ora": "^5.4.1",
+        "prettier": "^3.6.2",
+        "semver": "^7.5.0",
+        "typescript": "^5.9.3"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,vue,svelte}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{md,json,yaml,yml}": [
+            "prettier --write"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-push": "npm run test:framework"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paulAlexSerban/wbk--frontend-playground.git"
+    },
+    "bugs": {
+        "url": "https://github.com/paulAlexSerban/wbk--frontend-playground/issues"
+    },
+    "homepage": "https://paulalexserban.github.io/wbk--frontend-playground/",
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
+}
