@@ -121,7 +121,6 @@ export default [
                 Node: 'readonly',
             },
         },
-        env: { browser: true },
     },
 
     // Prettier compatibility (must be last)
