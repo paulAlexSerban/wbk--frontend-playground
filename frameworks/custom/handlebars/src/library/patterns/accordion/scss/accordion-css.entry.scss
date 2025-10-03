@@ -1,12 +1,12 @@
 @use 'sass:color';
 
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as abstracts;
 
 $block: 'accordion-css';
 
 .#{$block} {
     &__base {
-        @include flex($direction: column);
+        @include abstracts.flex($direction: column);
 
         border-radius: 8px;
         overflow: hidden;
@@ -14,20 +14,20 @@ $block: 'accordion-css';
     }
 
     &__item {
-        width: 100%;
-        color: get-color($c-light, cultured);
+        color: abstracts.get-color(abstracts.$c-light, cultured);
         overflow: hidden;
+        max-inline-size: 100%;
     }
 
     &__inputToggle {
-        @include absolute();
+        @include abstracts.absolute();
 
         opacity: 0;
         z-index: -1;
 
         &:checked {
             + .#{$block}__itemLabel {
-                background: color.adjust(get-color($c-blue, charcoal), $lightness: -10%);
+                background: color.adjust(abstracts.get-color(abstracts.$c-blue, charcoal), $lightness: -10%);
 
                 &::after {
                     transform: rotate(90deg);
@@ -42,11 +42,12 @@ $block: 'accordion-css';
     }
 
     &__itemLabel {
-        @include flex($main: space-between);
-        @include font($label);
+        @include abstracts.flex($main: space-between);
+        @include abstracts.font(abstracts.$label);
 
-        padding: $baseline $gutter;
-        background: get-color($c-blue, charcoal);
+        padding: abstracts.$baseline abstracts.$gutter;
+        background: abstracts.get-color(abstracts.$c-blue, charcoal);
+        max-inline-size: inherit;
         cursor: pointer;
 
         &::after {
@@ -58,15 +59,15 @@ $block: 'accordion-css';
         }
 
         &:hover {
-            background: color.adjust(get-color($c-blue, charcoal), $lightness: -10%);
+            background: color.adjust(abstracts.get-color(abstracts.$c-blue, charcoal), $lightness: -10%);
         }
     }
 
     &__content {
         max-height: 0;
         padding: 0 1em;
-        color: get-color($c-blue, charcoal);
-        background: get-color($c-light, cultured);
+        color: abstracts.get-color(abstracts.$c-blue, charcoal);
+        background: abstracts.get-color(abstracts.$c-light, cultured);
         transition: all 0.35s ease-in-out;
     }
 }

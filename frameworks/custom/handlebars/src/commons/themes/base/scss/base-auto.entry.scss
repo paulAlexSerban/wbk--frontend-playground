@@ -36,7 +36,7 @@
     $current: $base;
     @for $i from $minStep through $maxStep {
         @if $i == 0 {
-            --#{$propertyName}#{$i}: #{convert-rem($current)};
+            --#{$propertyName}#{$i}: #{abstracts.convert-rem($current)};
         }
         @if $i < 0 {
             --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i + 1}) / #{$ratio});

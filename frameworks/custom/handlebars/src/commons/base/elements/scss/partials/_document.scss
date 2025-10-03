@@ -1,3 +1,5 @@
+@use '~ScssAbstracts' as abstracts;
+
 /* -------------------------------------------------------------------------
  * DOCUMENT
  *
@@ -23,7 +25,7 @@ html {
     overflow-y: scroll;
     min-height: 100%;
     line-height: 1.15;
-    font-size: convert-rem(16px);
+    font-size: abstracts.convert-rem(16px);
     position: relative;
 
     > * {
