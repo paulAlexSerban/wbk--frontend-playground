@@ -1,4 +1,4 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 [class^='stack'] > * {
     /* top and bottom margins in horizontal-tb writing mode */

@@ -1,4 +1,4 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 .box {
     /* NOT NEEDED because style is inherited */
     // font-family: sans-serif;

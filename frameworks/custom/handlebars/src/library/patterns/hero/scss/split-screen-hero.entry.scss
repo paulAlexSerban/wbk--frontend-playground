@@ -1,4 +1,4 @@
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 
 :root {
     --left-bg-color: rgba(87, 84, 236, 0.7);

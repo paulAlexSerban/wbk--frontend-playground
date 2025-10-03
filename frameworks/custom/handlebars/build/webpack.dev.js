@@ -13,12 +13,12 @@ module.exports = (env) =>
             ignored: /node_modules/,
         },
         stats: {
-            assets: true,
+            assets: false,
             cachedModules: false,
             cachedAssets: false,
             chunks: false,
             colors: true,
-            depth: true,
+            depth: false,
             entrypoints: false,
         },
         module: {

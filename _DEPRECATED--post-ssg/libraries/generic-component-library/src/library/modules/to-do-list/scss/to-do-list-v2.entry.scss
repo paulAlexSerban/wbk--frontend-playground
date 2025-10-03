@@ -1,5 +1,5 @@
 @use 'sass:math'; // column system
-@import '~ScssAbstracts';
+@use '~ScssAbstracts' as *;
 $baseline: 8px;
 $gutter: $baseline * 2;
 
