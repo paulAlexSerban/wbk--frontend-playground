@@ -15,6 +15,11 @@
             "slug": "button",
             "name": "Button (Base)",
             "description": "Base button component, used for all button types."
+        },
+                {
+            "slug": "ripple-button",
+            "name": "Ripple Button",
+            "description": "Ripple Button"
         }
     ]
 }

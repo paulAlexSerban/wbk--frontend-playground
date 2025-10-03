@@ -25,6 +25,21 @@
             "slug": "to-do-list-v2",
             "name": "To Do List (V2)",
             "description": "To Do List (V2)"
+        },
+                {
+            "slug": "kanban-board",
+            "name": "Kanban Board",
+            "description": "Kanban Board"
+        },
+        {
+            "slug": "drink-water",
+            "name": "Drink Water",
+            "description": "Drink Water"
+        },
+        {
+            "slug": "todo-list",
+            "name": "To Do List",
+            "description": "To Do List"
         }
     ]
 }

@@ -15,6 +15,22 @@
             "slug": "quotation-generator",
             "name": "Quotation Generator",
             "description": "Quotation Generator"
+        },
+                {
+            "slug": "quote-generator",
+            "name": "Quote Generator",
+            "description": "Quote Generator",
+            "post-mvp": ["implement quote generator local API with NodeJS"]
+        },
+        {
+            "slug": "dad-jokes",
+            "name": "Dad Jokes",
+            "description": "Dad Jokes"
+        },
+        {
+            "slug": "password-generator",
+            "name": "Password Generator",
+            "description": "Password Generator"
         }
     ]
 }

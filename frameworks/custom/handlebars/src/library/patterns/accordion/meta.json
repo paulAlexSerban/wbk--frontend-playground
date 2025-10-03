@@ -15,6 +15,11 @@
             "slug": "accordion-css",
             "name": "Accordion (CSS Only)",
             "description": "Accordion component for displaying collapsible content."
+        },
+                {
+            "slug": "faq-collapse",
+            "name": "FAQ Collapse",
+            "description": "FAQ Collapse"
         }
     ]
 }

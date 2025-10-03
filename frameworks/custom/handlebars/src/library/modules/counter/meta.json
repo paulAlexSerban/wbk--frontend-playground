@@ -20,6 +20,11 @@
             "slug": "score-keeper-app",
             "name": "Score Keeper App",
             "description": "Score Keeper App"
+        },
+                {
+            "slug": "incrementing-counter",
+            "name": "Incrementing Counter",
+            "description": "Counter"
         }
     ]
 }

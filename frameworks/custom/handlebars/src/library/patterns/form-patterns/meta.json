@@ -40,6 +40,16 @@
             "slug": "textarea-field",
             "name": "Textarea Field",
             "description": "Textarea Field"
+        },
+                {
+            "slug": "verify-account-input",
+            "name": "Verify Account Input",
+            "description": "Verify Account Input"
+        },
+        {
+            "slug": "smiley-feedback",
+            "name": "Smiley Feedback",
+            "description": "Smiley Feedback"
         }
     ]
 }

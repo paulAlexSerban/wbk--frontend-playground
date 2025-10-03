@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use  '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
@@ -10,12 +11,13 @@
         border: 0px;
     }
 
+    // 
     &__text {
-        color: darken($white-color, 50%);
+        color: color.adjust($white-color, $lightness: -50%);
         font-size: 1.3rem;
 
         a {
-            color: darken($white-color, 50%);
+            color:color.adjust($white-color, $lightness: -50%);
             font-size: 1.3rem;
             transition: all 0.4s;
             display: inline-block;
