@@ -141,6 +141,7 @@ export default [
                 alert: 'readonly',
                 confirm: 'readonly',
                 prompt: 'readonly',
+                NodeList: 'readonly',
             },
         },
     },

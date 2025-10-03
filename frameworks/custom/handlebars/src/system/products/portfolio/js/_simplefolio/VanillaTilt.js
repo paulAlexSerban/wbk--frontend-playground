@@ -1,4 +1,4 @@
-var VanillaTilt = function () {
+const VanillaTilt = function () {
     /**
      * Created by Sergiu Șandor (micku7zu) on 1/27/2017.
      * Original idea: https://github.com/gijsroge/tilt.js
@@ -232,7 +232,7 @@ var VanillaTilt = function () {
                 };
             }
 
-            let backupScale = this.settings.scale;
+            const backupScale = this.settings.scale;
             this.settings.scale = 1;
             this.update();
             this.settings.scale = backupScale;
@@ -260,9 +260,9 @@ var VanillaTilt = function () {
             x = Math.min(Math.max(x, 0), 1);
             y = Math.min(Math.max(y, 0), 1);
 
-            let tiltX = (this.reverse * (this.settings.max - x * this.settings.max * 2)).toFixed(2);
-            let tiltY = (this.reverse * (y * this.settings.max * 2 - this.settings.max)).toFixed(2);
-            let angle =
+            const tiltX = (this.reverse * (this.settings.max - x * this.settings.max * 2)).toFixed(2);
+            const tiltY = (this.reverse * (y * this.settings.max * 2 - this.settings.max)).toFixed(2);
+            const angle =
                 Math.atan2(
                     this.event.clientX - (this.left + this.width / 2),
                     -(this.event.clientY - (this.top + this.height / 2))
@@ -270,16 +270,16 @@ var VanillaTilt = function () {
                 (180 / Math.PI);
 
             return {
-                tiltX: tiltX,
-                tiltY: tiltY,
+                tiltX,
+                tiltY,
                 percentageX: x * 100,
                 percentageY: y * 100,
-                angle: angle,
+                angle,
             };
         }
 
         updateElementPosition() {
-            let rect = this.element.getBoundingClientRect();
+            const rect = this.element.getBoundingClientRect();
 
             this.width = this.element.offsetWidth;
             this.height = this.element.offsetHeight;
@@ -288,7 +288,7 @@ var VanillaTilt = function () {
         }
 
         update() {
-            let values = this.getValues();
+            const values = this.getValues();
 
             this.element.style.transform =
                 'perspective(' +
@@ -437,7 +437,7 @@ var VanillaTilt = function () {
          * @param {gyroscopeSamples} settings.gyroscopeSamples - How many gyroscope moves to decide the starting position.
          */
         extendSettings(settings) {
-            let defaultSettings = {
+            const defaultSettings = {
                 reverse: false,
                 max: 15,
                 startX: 0,
@@ -463,15 +463,16 @@ var VanillaTilt = function () {
                 gyroscopeSamples: 10,
             };
 
-            let newSettings = {};
-            for (var property in defaultSettings) {
+            const newSettings = {};
+            for (const property in defaultSettings) {
                 if (property in settings) {
                     newSettings[property] = settings[property];
                 } else if (this.element.hasAttribute('data-tilt-' + property)) {
-                    let attribute = this.element.getAttribute('data-tilt-' + property);
+                    const attribute = this.element.getAttribute('data-tilt-' + property);
                     try {
                         newSettings[property] = JSON.parse(attribute);
-                    } catch (e) {
+                    } catch (error) {
+                        console.warn('VanillaTilt: Invalid JSON for data-tilt-' + property + ' attribute on element', this.element, error);
                         newSettings[property] = attribute;
                     }
                 } else {
