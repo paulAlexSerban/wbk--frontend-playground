@@ -10,11 +10,7 @@
         "name": "Paul Serban",
         "email": "paul.alex.serban@gmail.com"
     },
-    "keywords": [
-        "page",
-        "template",
-        "base"
-    ],
+    "keywords": ["page", "template", "base"],
     "variations": [
         {
             "slug": "frontend-mentor",

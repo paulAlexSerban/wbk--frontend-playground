@@ -289,14 +289,12 @@ class UniversalBuilder {
             ruby: this.createRubyScaffold,
             python: this.createPythonScaffold,
             php: this.createPhpScaffold,
-        }
+        };
 
         for (const [key, scaffoldFunction] of Object.entries(scaffoldMapper)) {
             if (framework.type === key) {
                 await scaffoldFunction.call(this, framework, frameworkPath);
             }
-
-
         }
     }
 
@@ -414,7 +412,8 @@ class UniversalBuilder {
             await execAsync('bundle install', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                logLevel === 'debug' && console.log(`⚠️  No Gemfile found for ${framework.name}, skipping bundle install`);
+                logLevel === 'debug' &&
+                    console.log(`⚠️  No Gemfile found for ${framework.name}, skipping bundle install`);
             } else {
                 throw error;
             }
@@ -431,7 +430,8 @@ class UniversalBuilder {
             await execAsync('pip install -r requirements.txt', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                logLevel === 'debug' && console.log(`⚠️  No requirements.txt found for ${framework.name}, skipping pip install`);
+                logLevel === 'debug' &&
+                    console.log(`⚠️  No requirements.txt found for ${framework.name}, skipping pip install`);
             } else {
                 throw error;
             }
@@ -448,7 +448,8 @@ class UniversalBuilder {
             await execAsync('composer install', { cwd: frameworkPath });
         } catch (error) {
             if (error.code === 'ENOENT') {
-                logLevel === 'debug' && console.log(`⚠️  No composer.json found for ${framework.name}, skipping composer install`);
+                logLevel === 'debug' &&
+                    console.log(`⚠️  No composer.json found for ${framework.name}, skipping composer install`);
             } else {
                 throw error;
             }
@@ -571,7 +572,8 @@ class UniversalBuilder {
                 }
             }
         } catch (error) {
-            logLevel === 'debug' && console.log(`⚠️  Could not collect metrics for ${framework.name}: ${error.message}`);
+            logLevel === 'debug' &&
+                console.log(`⚠️  Could not collect metrics for ${framework.name}: ${error.message}`);
         }
 
         return metrics;

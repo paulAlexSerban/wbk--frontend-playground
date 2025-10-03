@@ -35,9 +35,7 @@ const plugins = [
     }),
     // copy static assets to the output directory
     new CopyWebpackPlugin({
-      patterns: [
-        { from: "assets", to: "dist/assets" }
-      ],
+        patterns: [{ from: 'assets', to: 'dist/assets' }],
     }),
 ];
 
