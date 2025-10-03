@@ -1,6 +1,5 @@
 // const ESLintPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const DeleteScssPrefixedDirectoriesPlugin = require('./DeleteScssPrefixedDirectoriesPlugin');
@@ -22,8 +21,6 @@ const plugins = [
             return `${groupSlug}/${categorySlug}/${componentSlug}/${variantSlug}.css`;
         },
     }),
-    // clean the output directory before building
-    new CleanWebpackPlugin(),
     // show progress during build process
     new webpack.ProgressPlugin(),
     // generate HTML file using *.hbs files as source

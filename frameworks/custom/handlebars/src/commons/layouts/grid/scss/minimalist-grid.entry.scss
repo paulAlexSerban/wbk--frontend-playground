@@ -1,24 +1,24 @@
 @use 'sass:math';
 @use 'sass:meta';
-@use '~ScssAbstracts' as *;
-@use './no-gutter.scss' as *;
+@use '~ScssAbstracts' as abstracts;
+
 
 //amount of columns
 $columns: 12;
 
 $margin-left: 1%;
 
-@include no-gutter();
+@include abstracts.no-gutter();
 
 .container {
     position: relative;
     margin: 0 auto;
     padding: 0 10px;
     width: 100%;
-    max-width: $max-width;
+    max-width: abstracts.$max-width;
     box-sizing: border-box;
 
-    @media (min-width: $tablet) {
+    @media (min-width: abstracts.$tablet) {
         padding: 0;
         width: 85%;
     }
@@ -58,8 +58,9 @@ $margin-left: 1%;
     }
 }
 
+
 //tablet
-@media (min-width: $tablet) {
+@media (min-width: abstracts.$tablet) {
     @for $i from 1 to $columns + 1 {
         $grid: '';
         @if meta.function-exists('div', 'math') {
@@ -74,7 +75,7 @@ $margin-left: 1%;
 }
 
 //desktop
-@media (min-width: $desktop) {
+@media (min-width: abstracts.$desktop) {
     @for $i from 1 to $columns + 1 {
         $grid: '';
         @if meta.function-exists('div', 'math') {
@@ -93,16 +94,16 @@ $margin-left: 1%;
     .col-desktop-#{$i},
     .col-tablet-#{$i} {
         float: left;
-        padding-left: $gutter;
-        padding-right: $gutter;
+        padding-left: abstracts.$gutter;
+        padding-right: abstracts.$gutter;
         margin-left: $margin-left;
-        margin-bottom: $baseline;
+        margin-bottom: abstracts.$baseline;
         box-sizing: border-box;
     }
 }
 
 //offset
-@media (min-width: $mobile) {
+@media (min-width: abstracts.$mobile) {
     @for $i from 1 to $columns + 1 {
         $grid: '';
         @if meta.function-exists('div', 'math') {
@@ -119,7 +120,7 @@ $margin-left: 1%;
 //force 100% width for too small resolutions
 @for $i from 1 to $columns + 1 {
     .col-smartphone-#{$i} {
-        @media (max-width: $mobile) {
+        @media (max-width: abstracts.$mobile) {
             $max-width: 100% - $margin-left;
             width: $max-width;
         }
@@ -138,12 +139,12 @@ $margin-left: 1%;
 }
 
 .hidden-smartphone {
-    @media (max-width: ($tablet - 1px)) {
+    @media (max-width: (abstracts.$tablet - 1px)) {
         display: none;
     }
 }
 .hidden-tablet {
-    @media (max-width: ($desktop - 1px)) {
+    @media (max-width: (abstracts.$desktop - 1px)) {
         display: none;
     }
 }

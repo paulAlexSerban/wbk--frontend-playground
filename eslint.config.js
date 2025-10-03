@@ -118,7 +118,7 @@ export default [
                 location: 'readonly',
                 HTMLElement: 'readonly',
                 Event: 'readonly',
-                Node: 'readonly', 
+                Node: 'readonly',
                 cancelAnimationFrame: 'readonly',
                 requestAnimationFrame: 'readonly',
                 CustomEvent: 'readonly',

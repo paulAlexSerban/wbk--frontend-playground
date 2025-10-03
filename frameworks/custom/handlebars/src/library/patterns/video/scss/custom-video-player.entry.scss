@@ -12,20 +12,19 @@ $block: 'custom-player';
     }
 
     @include e('screen', 'controls') {
-        width: 90%;
+        max-inline-size: 60%;
     }
 
     @include e('screen') {
-        width: 60%;
         cursor: pointer;
         background-color: #000 !important;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+
     }
 
     @include e('controls') {
         @include flex();
-        width: 60%;
         padding: 10px;
         color: #fff;
         background: #333;
