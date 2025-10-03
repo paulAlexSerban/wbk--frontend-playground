@@ -1,5 +1,5 @@
 {
-    "name": "@wbk-frontend-playground/custom-handlebars",
+    "name": "custom-handlebars",
     "version": "0.0.0",
     "description": "",
     "scripts": {
@@ -33,7 +33,7 @@
         "html-entities": "^2.3.3",
         "html-webpack-plugin": "^5.5.0",
         "inquirer": "^12.9.6",
-        "jquery": "^3.7.0",
+        "jquery": "^3.7.1",
         "marked": "^7.0.4",
         "mini-css-extract-plugin": "^2.7.2",
         "ora": "^9.0.0",

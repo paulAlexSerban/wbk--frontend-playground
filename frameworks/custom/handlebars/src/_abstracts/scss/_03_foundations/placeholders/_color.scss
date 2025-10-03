@@ -1,0 +1,54 @@
+@use '../../_02_utils/utils.scss' as utils;
+@use '../colors.scss' as colors;
+
+/* ------------------------------------ *\
+  COLOR-PLACEHOLDERS
+\* ------------------------------------ */
+
+%txt-color-black {
+    color: utils.get-color(colors.$c-dark, dark);
+}
+
+%txt-color-jet-black {
+    color: utils.get-color(colors.$c-dark, jet);
+}
+
+%txt-color-white {
+    color: utils.get-color(colors.$c-light, light);
+}
+
+%bkg-color-primary {
+    background-color: utils.get-color(colors.$c-blue, carolina-blue);
+}
+
+%bkg-color-secondary {
+    background-color: utils.get-color(colors.$c-light, light);
+}
+
+%bkg-color-success {
+    background-color: utils.get-color(colors.$c-traffic-lights, success);
+}
+
+%bkg-color-danger {
+    background-color: utils.get-color(colors.$c-traffic-lights, danger);
+}
+
+%bkg-color-warning {
+    background-color: utils.get-color(colors.$c-traffic-lights, warning);
+}
+
+%bkg-color-info {
+    background-color: utils.get-color(colors.$c-blue, vivid-sky-blue);
+}
+
+%bkg-color-light {
+    background-color: utils.get-color(colors.$c-light, cultured);
+}
+
+%bkg-color-dark {
+    background-color: utils.get-color(colors.$c-dark, eerie-black);
+}
+
+%bkg-transparent {
+    background-color: transparent;
+}

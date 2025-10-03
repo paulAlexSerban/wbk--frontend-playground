@@ -1,5 +1,5 @@
 {
-    "name": "@frontend-playground/multi-ssg-ultimate",
+    "name": "wbk--frontend-playground",
     "version": "2.0.0",
     "type": "module",
     "description": "Ultimate Frontend Playground: Multi-SSG Framework Showcase - The most comprehensive Static Site Generator comparison platform ever built",
@@ -19,18 +19,6 @@
         "hugo",
         "jekyll",
         "pelican"
-    ],
-    "workspaces": [
-        "frameworks/javascript/*",
-        "frameworks/go/*",
-        "frameworks/ruby/*",
-        "frameworks/python/*",
-        "frameworks/php/*",
-        "frameworks/specialized/*",
-        "frameworks/custom/*",
-        "shared/*",
-        "tools/*",
-        "dashboard"
     ],
     "engines": {
         "node": ">=22.0.0",

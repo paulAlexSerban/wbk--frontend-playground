@@ -1,0 +1,13 @@
+@use './variables/variables.scss' as *;
+
+.section {
+    &__base {
+        margin: 0 auto $baseline;
+        min-width: 350px;
+    }
+
+    &__title {
+        font-size: $baseline * 3;
+        margin: 0 0 $baseline;
+    }
+}

@@ -140,6 +140,7 @@ export default [
                 history: 'readonly',
                 alert: 'readonly',
                 confirm: 'readonly',
+                prompt: 'readonly',
             },
         },
     },
