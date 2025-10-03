@@ -1,4 +1,3 @@
 (() => {
-     
     console.log('[ LOADED ] Base Page');
 })();

@@ -1,5 +1,5 @@
-import { findOne } from '../../../../../../../../_DEPRECATED--post-ssg/libraries/generic-component-library/src/_abstracts/js/dom/traversing';
-import { toggleClass } from '../../../../../../../../_DEPRECATED--post-ssg/libraries/generic-component-library/src/_abstracts/js/dom/manipulation';
+import { findOne } from 'Abstracts/js/dom/traversing';
+import { toggleClass } from 'Abstracts/js/dom/manipulation';
 
 (() => {
     const config = {

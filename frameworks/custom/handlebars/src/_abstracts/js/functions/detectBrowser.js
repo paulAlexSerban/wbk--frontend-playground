@@ -1,7 +1,7 @@
 import { patterns } from '../constants/patterns';
 
 export const detectBrowser = () => {
-    let browserProps = {
+    const browserProps = {
         name: null,
         version: null,
         os: null,
@@ -12,7 +12,7 @@ export const detectBrowser = () => {
 
     let operatingSystem = 'other';
     let osVersion = 0;
-    let userAgent = navigator.userAgent;
+    const userAgent = navigator.userAgent;
     let i;
 
     for (i = 0; i < patterns.browsers.length; i++) {

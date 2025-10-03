@@ -21,6 +21,7 @@ module.exports = {
         modules: [path.join(__dirname, '../node_modules')],
         alias: {
             ScssAbstracts: path.join(cwd, 'src', '_abstracts', 'scss', 'abstracts.scss'),
+            Abstracts: path.join(cwd, 'src', '_abstracts'),
         },
     },
     stats: {
