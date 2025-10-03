@@ -334,6 +334,7 @@ The **Universal Dashboard** serves as the central orchestration and presentation
 #### 3.3.1 Dashboard Core Responsibilities
 
 **Primary Functions:**
+- **Gallery**: Showcase all libraries and componenets
 - **Data Aggregation**: Collect build metrics, performance data, and component inventory from all frameworks
 - **Comparison Generation**: Create side-by-side comparisons of identical components across frameworks
 - **Performance Monitoring**: Track and visualize build times, bundle sizes, and runtime performance
