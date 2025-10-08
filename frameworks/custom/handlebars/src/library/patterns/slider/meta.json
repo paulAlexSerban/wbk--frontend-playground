@@ -25,6 +25,11 @@
             "slug": "image-carousel",
             "name": "Image Carousel",
             "description": "Image Carousel"
+        },
+        {
+            "slug": "css-carousel",
+            "name": "CSS Carousel",
+            "description": "CSS Carousel"
         }
     ]
 }

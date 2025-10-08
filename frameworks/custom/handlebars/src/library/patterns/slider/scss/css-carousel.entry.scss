@@ -1,0 +1,63 @@
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    anchor-name: --carousel;
+
+    >li {
+        scroll-snap-align: center;
+    }
+
+    /* for the left/right arrows */
+    /* Note: they are actually siblings of .carousel */
+    &::scroll-button(*) {
+        position: fixed;
+        position-anchor: --carousel;
+    }
+
+    &::scroll-button(inline-start) {
+        position-area: inline-start center;
+        /* emoji/icon with alt text for accessibility */
+        content: "⬅️" / attr(data-previous);
+    }
+
+    &::scroll-button(inline-end) {
+        position-area: inline-end center;
+        content: "➡️" / attr(data-next);
+    }
+
+    scroll-marker-group: after;
+
+    /* Note: this is actually a sibling of .carousel */
+    &::scroll-marker-group {
+        display: grid;
+        grid-auto-columns: 20px;
+        grid-auto-flow: column;
+        gap: 20px;
+    }
+
+    /* This will add one dot for each <li> */
+    &>li::scroll-marker {
+        content: "⭕";
+        cursor: pointer;
+        aspect-ratio: 1;
+
+        &:target-current {
+            content: "🔴";
+        }
+    }
+
+    >li {
+        container-type: scroll-state;
+
+        >.card {
+            @container not scroll-state(snapped: x) {
+                interactivity: inert;
+                opacity: .25;
+            }
+        }
+    }
+}
