@@ -21,7 +21,7 @@
             "name": "Exchange Rate Calculator",
             "description": "Exchange Rate Calculator"
         },
-                {
+        {
             "slug": "exchangerate-calculator",
             "name": "Exchange Rate Calculator",
             "description": "Select countries to get the exchange rate for a specific amount",

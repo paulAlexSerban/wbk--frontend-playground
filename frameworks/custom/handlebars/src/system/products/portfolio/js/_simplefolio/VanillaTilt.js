@@ -472,7 +472,11 @@ const VanillaTilt = function () {
                     try {
                         newSettings[property] = JSON.parse(attribute);
                     } catch (error) {
-                        console.warn('VanillaTilt: Invalid JSON for data-tilt-' + property + ' attribute on element', this.element, error);
+                        console.warn(
+                            'VanillaTilt: Invalid JSON for data-tilt-' + property + ' attribute on element',
+                            this.element,
+                            error
+                        );
                         newSettings[property] = attribute;
                     }
                 } else {

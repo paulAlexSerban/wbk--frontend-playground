@@ -21,7 +21,7 @@
             "name": "Search (Hidden)",
             "description": "Search component to input search text."
         },
-                {
+        {
             "slug": "custom-range-slider",
             "name": "Custom Range Slider",
             "description": "Custom Range Slider component"

@@ -13,20 +13,20 @@
 if (!window.jscolor) {
     window.jscolor = (function () {
         const jsc = {
-            register () {
+            register() {
                 jsc.attachDOMReadyEvent(jsc.init);
                 jsc.attachEvent(document, 'mousedown', jsc.onDocumentMouseDown);
                 jsc.attachEvent(document, 'touchstart', jsc.onDocumentTouchStart);
                 jsc.attachEvent(window, 'resize', jsc.onWindowResize);
             },
 
-            init () {
+            init() {
                 if (jsc.jscolor.lookupClass) {
                     jsc.jscolor.installByClassName(jsc.jscolor.lookupClass);
                 }
             },
 
-            tryInstallOnElements (elms, className) {
+            tryInstallOnElements(elms, className) {
                 const matchClass = new RegExp('(^|\\s)(' + className + ')(\\s*(\\{[^}]*\\})|\\s|$)', 'i');
 
                 for (let i = 0; i < elms.length; i += 1) {
@@ -78,15 +78,15 @@ if (!window.jscolor) {
                 return !!(elm.getContext && elm.getContext('2d'));
             })(),
 
-            fetchElement (mixed) {
+            fetchElement(mixed) {
                 return typeof mixed === 'string' ? document.getElementById(mixed) : mixed;
             },
 
-            isElementType (elm, type) {
+            isElementType(elm, type) {
                 return elm.nodeName.toLowerCase() === type.toLowerCase();
             },
 
-            getDataAttr (el, name) {
+            getDataAttr(el, name) {
                 const attrName = 'data-' + name;
                 const attrValue = el.getAttribute(attrName);
                 if (attrValue !== null) {
@@ -95,7 +95,7 @@ if (!window.jscolor) {
                 return null;
             },
 
-            attachEvent (el, evnt, func) {
+            attachEvent(el, evnt, func) {
                 if (el.addEventListener) {
                     el.addEventListener(evnt, func, false);
                 } else if (el.attachEvent) {
@@ -103,7 +103,7 @@ if (!window.jscolor) {
                 }
             },
 
-            detachEvent (el, evnt, func) {
+            detachEvent(el, evnt, func) {
                 if (el.removeEventListener) {
                     el.removeEventListener(evnt, func, false);
                 } else if (el.detachEvent) {
@@ -113,7 +113,7 @@ if (!window.jscolor) {
 
             _attachedGroupEvents: {},
 
-            attachGroupEvent (groupName, el, evnt, func) {
+            attachGroupEvent(groupName, el, evnt, func) {
                 /*  eslint-disable-next-line */
                 if (!jsc._attachedGroupEvents.hasOwnProperty(groupName)) {
                     jsc._attachedGroupEvents[groupName] = [];
@@ -122,7 +122,7 @@ if (!window.jscolor) {
                 jsc.attachEvent(el, evnt, func);
             },
 
-            detachGroupEvents (groupName) {
+            detachGroupEvents(groupName) {
                 /*  eslint-disable-next-line */
                 if (jsc._attachedGroupEvents.hasOwnProperty(groupName)) {
                     for (let i = 0; i < jsc._attachedGroupEvents[groupName].length; i += 1) {
@@ -133,7 +133,7 @@ if (!window.jscolor) {
                 }
             },
 
-            attachDOMReadyEvent (func) {
+            attachDOMReadyEvent(func) {
                 let fired = false;
                 const fireOnce = function () {
                     if (!fired) {
@@ -183,20 +183,20 @@ if (!window.jscolor) {
                 }
             },
 
-            warn (msg) {
+            warn(msg) {
                 if (window.console && window.console.warn) {
                     window.console.warn(msg);
                 }
             },
 
-            preventDefault (e) {
+            preventDefault(e) {
                 if (e.preventDefault) {
                     e.preventDefault();
                 }
                 e.returnValue = false;
             },
 
-            captureTarget (target) {
+            captureTarget(target) {
                 // IE
                 if (target.setCapture) {
                     jsc._capturedTarget = target;
@@ -204,7 +204,7 @@ if (!window.jscolor) {
                 }
             },
 
-            releaseTarget () {
+            releaseTarget() {
                 // IE
                 if (jsc._capturedTarget) {
                     jsc._capturedTarget.releaseCapture();
@@ -212,7 +212,7 @@ if (!window.jscolor) {
                 }
             },
 
-            fireEvent (el, evnt) {
+            fireEvent(el, evnt) {
                 if (!el) {
                     return;
                 }
@@ -229,12 +229,12 @@ if (!window.jscolor) {
                 }
             },
 
-            classNameToList (className) {
+            classNameToList(className) {
                 return className.replace(/^\s+|\s+$/g, '').split(/\s+/);
             },
 
             // The className parameter (str) can only contain a single class name
-            hasClass (elm, className) {
+            hasClass(elm, className) {
                 if (!className) {
                     return false;
                 }
@@ -242,7 +242,7 @@ if (!window.jscolor) {
             },
 
             // The className parameter (str) can contain multiple class names separated by whitespace
-            setClass (elm, className) {
+            setClass(elm, className) {
                 const classList = jsc.classNameToList(className);
                 for (let i = 0; i < classList.length; i += 1) {
                     if (!jsc.hasClass(elm, classList[i])) {
@@ -252,7 +252,7 @@ if (!window.jscolor) {
             },
 
             // The className parameter (str) can contain multiple class names separated by whitespace
-            unsetClass (elm, className) {
+            unsetClass(elm, className) {
                 const classList = jsc.classNameToList(className);
                 for (let i = 0; i < classList.length; i += 1) {
                     const repl = new RegExp(
@@ -271,7 +271,7 @@ if (!window.jscolor) {
                 }
             },
 
-            getStyle (elm) {
+            getStyle(elm) {
                 return window.getComputedStyle ? window.getComputedStyle(elm) : elm.currentStyle;
             },
 
@@ -303,15 +303,15 @@ if (!window.jscolor) {
                 };
             })(),
 
-            setBorderRadius (elm, value) {
+            setBorderRadius(elm, value) {
                 jsc.setStyle(elm, 'borderRadius', value || '0');
             },
 
-            setBoxShadow (elm, value) {
+            setBoxShadow(elm, value) {
                 jsc.setStyle(elm, 'boxShadow', value || 'none');
             },
 
-            getElementPos (e, relativeToViewport) {
+            getElementPos(e, relativeToViewport) {
                 let x = 0,
                     y = 0;
                 const rect = e.getBoundingClientRect();
@@ -325,12 +325,12 @@ if (!window.jscolor) {
                 return [x, y];
             },
 
-            getElementSize (e) {
+            getElementSize(e) {
                 return [e.offsetWidth, e.offsetHeight];
             },
 
             // get pointer's X/Y coordinates relative to viewport
-            getAbsPointerPos (e) {
+            getAbsPointerPos(e) {
                 if (!e) {
                     e = window.event;
                 }
@@ -348,7 +348,7 @@ if (!window.jscolor) {
             },
 
             // get pointer's X/Y coordinates relative to target element
-            getRelPointerPos (e) {
+            getRelPointerPos(e) {
                 if (!e) {
                     e = window.event;
                 }
@@ -374,7 +374,7 @@ if (!window.jscolor) {
                 return { x, y };
             },
 
-            getViewPos () {
+            getViewPos() {
                 const doc = document.documentElement;
                 return [
                     (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0),
@@ -382,12 +382,12 @@ if (!window.jscolor) {
                 ];
             },
 
-            getViewSize () {
+            getViewSize() {
                 const doc = document.documentElement;
                 return [window.innerWidth || doc.clientWidth, window.innerHeight || doc.clientHeight];
             },
 
-            redrawPosition () {
+            redrawPosition() {
                 if (jsc.picker && jsc.picker.owner) {
                     const thisObj = jsc.picker.owner;
 
@@ -461,7 +461,7 @@ if (!window.jscolor) {
                 }
             },
 
-            _drawPosition (thisObj, x, y, positionValue, contractShadow) {
+            _drawPosition(thisObj, x, y, positionValue, contractShadow) {
                 const vShadow = contractShadow ? 0 : thisObj.shadowBlur; // px
 
                 jsc.picker.wrap.style.position = positionValue;
@@ -474,7 +474,7 @@ if (!window.jscolor) {
                 );
             },
 
-            getPickerDims (thisObj) {
+            getPickerDims(thisObj) {
                 const displaySlider = !!jsc.getSliderComponent(thisObj);
                 const dims = [
                     2 * thisObj.insetWidth +
@@ -491,16 +491,16 @@ if (!window.jscolor) {
                 return dims;
             },
 
-            getPickerOuterDims (thisObj) {
+            getPickerOuterDims(thisObj) {
                 const dims = jsc.getPickerDims(thisObj);
                 return [dims[0] + 2 * thisObj.borderWidth, dims[1] + 2 * thisObj.borderWidth];
             },
 
-            getPadToSliderPadding (thisObj) {
+            getPadToSliderPadding(thisObj) {
                 return Math.max(thisObj.padding, 1.5 * (2 * thisObj.pointerBorderWidth + thisObj.pointerThickness));
             },
 
-            getPadYComponent (thisObj) {
+            getPadYComponent(thisObj) {
                 switch (thisObj.mode.charAt(1).toLowerCase()) {
                     case 'v':
                         return 'v';
@@ -508,7 +508,7 @@ if (!window.jscolor) {
                 return 's';
             },
 
-            getSliderComponent (thisObj) {
+            getSliderComponent(thisObj) {
                 if (thisObj.mode.length > 2) {
                     switch (thisObj.mode.charAt(2).toLowerCase()) {
                         case 's':
@@ -521,7 +521,7 @@ if (!window.jscolor) {
                 return null;
             },
 
-            onDocumentMouseDown (e) {
+            onDocumentMouseDown(e) {
                 if (!e) {
                     e = window.event;
                 }
@@ -541,7 +541,7 @@ if (!window.jscolor) {
                 }
             },
 
-            onDocumentTouchStart (e) {
+            onDocumentTouchStart(e) {
                 if (!e) {
                     e = window.event;
                 }
@@ -560,11 +560,11 @@ if (!window.jscolor) {
                 }
             },
 
-            onWindowResize () {
+            onWindowResize() {
                 jsc.redrawPosition();
             },
 
-            onParentScroll () {
+            onParentScroll() {
                 // hide the picker when one of the parent elements is scrolled
                 if (jsc.picker && jsc.picker.owner) {
                     jsc.picker.owner.hide();
@@ -583,7 +583,7 @@ if (!window.jscolor) {
             _pointerOrigin: null,
             _capturedTarget: null,
 
-            onControlPointerStart (e, target, controlName, pointerType) {
+            onControlPointerStart(e, target, controlName, pointerType) {
                 const thisObj = target._jscInstance;
 
                 jsc.preventDefault(e);
@@ -645,7 +645,7 @@ if (!window.jscolor) {
                 jsc.dispatchFineChange(thisObj);
             },
 
-            onDocumentPointerMove (e, target, controlName, pointerType, offset) {
+            onDocumentPointerMove(e, target, controlName, pointerType, offset) {
                 return function (e) {
                     const thisObj = target._jscInstance;
                     switch (controlName) {
@@ -668,7 +668,7 @@ if (!window.jscolor) {
                 };
             },
 
-            onDocumentPointerEnd (e, target, controlName, pointerType) {
+            onDocumentPointerEnd(e, target, controlName, pointerType) {
                 /* eslint-disable */
                 console.log({ controlName, pointerType });
                 return function (e) {

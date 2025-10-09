@@ -34,7 +34,7 @@
             "name": "Remote Video Player",
             "description": "Remote video player using the HTML5 video element and it's JavaScript API with a custom design"
         },
-                {
+        {
             "slug": "custom-video-player-v2",
             "name": "Custom Video Player v2",
             "description": "Custom Video Player"

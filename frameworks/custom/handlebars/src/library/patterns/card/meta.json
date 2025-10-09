@@ -17,7 +17,7 @@
             "description": "QR Code Card",
             "tags": ["fe-mentor"]
         },
-                {
+        {
             "slug": "content-placeholder-card",
             "name": "Card (w. Content Placeholder)",
             "description": "Card with content placeholder"

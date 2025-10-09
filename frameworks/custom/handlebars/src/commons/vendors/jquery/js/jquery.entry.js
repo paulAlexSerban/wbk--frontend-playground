@@ -752,7 +752,7 @@
 
             // Support: Android <=4.0
             // Detect silently failing push.apply
-             
+
             arr[preferredDoc.childNodes.length].nodeType;
         } catch (e) {
             push = {
@@ -856,7 +856,7 @@
                             // Support: IE 11+, Edge 17 - 18+
                             // IE/Edge sometimes throw a "Permission denied" error when
                             // strict-comparing two documents; shallow comparisons work.
-                             
+
                             if (newContext != context || !support.scope) {
                                 // Capture the context ID, setting it first if necessary
                                 if ((nid = context.getAttribute('id'))) {
@@ -1060,7 +1060,7 @@
             // Support: IE 11+, Edge 17 - 18+
             // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
             // two documents; shallow comparisons work.
-             
+
             if (doc == document || doc.nodeType !== 9 || !doc.documentElement) {
                 return document;
             }
@@ -1080,7 +1080,7 @@
             // Support: IE 11+, Edge 17 - 18+
             // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
             // two documents; shallow comparisons work.
-             
+
             if (preferredDoc != document && (subWindow = document.defaultView) && subWindow.top !== subWindow) {
                 // Support: IE 9 - 11+, Edge 12 - 18+
                 subWindow.addEventListener('unload', unloadHandler);
@@ -1309,7 +1309,7 @@
                 // Support: IE 11+, Edge 17 - 18+
                 // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
                 // two documents; shallow comparisons work.
-                 
+
                 compare =
                     (a.ownerDocument || a) == (b.ownerDocument || b)
                         ? a.compareDocumentPosition(b)
@@ -1322,7 +1322,7 @@
                     // Support: IE 11+, Edge 17 - 18+
                     // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
                     // two documents; shallow comparisons work.
-                     
+
                     if (a === document || (a.ownerDocument == preferredDoc && find.contains(preferredDoc, a))) {
                         return -1;
                     }
@@ -1330,7 +1330,7 @@
                     // Support: IE 11+, Edge 17 - 18+
                     // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
                     // two documents; shallow comparisons work.
-                     
+
                     if (b === document || (b.ownerDocument == preferredDoc && find.contains(preferredDoc, b))) {
                         return 1;
                     }
@@ -1379,7 +1379,7 @@
             // Support: IE 11+, Edge 17 - 18+
             // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
             // two documents; shallow comparisons work.
-             
+
             if ((context.ownerDocument || context) != document) {
                 setDocument(context);
             }
@@ -1391,7 +1391,7 @@
             // Support: IE 11+, Edge 17 - 18+
             // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
             // two documents; shallow comparisons work.
-             
+
             if ((elem.ownerDocument || elem) != document) {
                 setDocument(elem);
             }
@@ -1874,7 +1874,6 @@
                     // forces the browser to treat the default option as
                     // selected when in an optgroup.
                     if (elem.parentNode) {
-                         
                         elem.parentNode.selectedIndex;
                     }
 
@@ -2307,7 +2306,7 @@
                         // Support: IE 11+, Edge 17 - 18+
                         // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
                         // two documents; shallow comparisons work.
-                         
+
                         var ret =
                             (!leadingRelative && (xml || context != outermostContext)) ||
                             ((checkContext = context).nodeType
@@ -2378,7 +2377,7 @@
                         // Support: IE 11+, Edge 17 - 18+
                         // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
                         // two documents; shallow comparisons work.
-                         
+
                         outermostContext = context == document || context || outermost;
                     }
 
@@ -2393,7 +2392,7 @@
                             // Support: IE 11+, Edge 17 - 18+
                             // IE/Edge sometimes throw a "Permission denied" error when strict-comparing
                             // two documents; shallow comparisons work.
-                             
+
                             if (!context && elem.ownerDocument != document) {
                                 setDocument(elem);
                                 xml = !documentIsHTML;
@@ -2607,7 +2606,7 @@
             // Should return 1, but returns 4 (following)
             return el.compareDocumentPosition(document.createElement('fieldset')) & 1;
         });
-         
+
         jQuery.find = find;
 
         // Deprecated
@@ -7084,8 +7083,6 @@
                     showHide([elem], true);
                 }
 
-                 
-
                 anim.done(function () {
                     /* eslint-enable no-loop-func */
 
@@ -8161,8 +8158,6 @@
 
                     while (i--) {
                         option = options[i];
-
-                         
 
                         if ((option.selected = jQuery.inArray(jQuery.valHooks.option.get(option), values) > -1)) {
                             optionSet = true;

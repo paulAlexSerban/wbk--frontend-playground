@@ -41,7 +41,7 @@
             "name": "Textarea Field",
             "description": "Textarea Field"
         },
-                {
+        {
             "slug": "verify-account-input",
             "name": "Verify Account Input",
             "description": "Verify Account Input"

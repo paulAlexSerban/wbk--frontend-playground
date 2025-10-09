@@ -52,7 +52,7 @@ function storeFormData() {
         password: form.password.value,
     };
     // Do something with user data
-     
+
     console.log(user);
 }
 

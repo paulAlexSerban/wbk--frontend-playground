@@ -26,7 +26,7 @@
             "name": "Simple Subscribe Form",
             "description": "Simple Subscribe Form"
         },
-                {
+        {
             "slug": "form-validation-v2",
             "name": "Form (Validation) V2",
             "description": "Simple client side form validation. Check requird, length, email and password match",
