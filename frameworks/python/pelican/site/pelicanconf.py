@@ -33,7 +33,7 @@ JINJA_ENVIRONMENT = {
 }
 
 # Theme configuration
-THEME = 'themes/generic'  # Custom theme with Jinja2 templates
+THEME = 'themes/base'  # Custom theme with Jinja2 templates
 THEME_STATIC_DIR = 'static'
 THEME_STATIC_PATHS = ['static']
 
