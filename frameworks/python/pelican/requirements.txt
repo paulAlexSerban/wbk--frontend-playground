@@ -1,20 +1,17 @@
-# Core Pelican dependencies
+# Core dependencies
 pelican[markdown]>=4.9.1
 Jinja2>=3.1.2
+Markdown>=3.4.4
 
-# Content processing
-Markdown>=3.5.1
-Pygments>=2.16.1
+# Additional useful dependencies
 python-dateutil>=2.8.2
+pytz>=2023.3
+beautifulsoup4>=4.12.2
+typogrify>=2.0.7
 
-# Development and building
+# Development dependencies
 invoke>=2.2.0
 livereload>=2.6.3
 
 # Optional but useful plugins
-pelican-sitemap>=1.1.0
-pelican-seo>=1.2.2
-
-# Theme development
-beautifulsoup4>=4.12.2
-webassets>=2.0
+pelican-sitemap>=1.0.2
