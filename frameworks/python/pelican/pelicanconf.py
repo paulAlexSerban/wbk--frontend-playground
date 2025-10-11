@@ -103,7 +103,7 @@ MARKDOWN = {
 PLUGIN_PATHS = ['plugins']
 PLUGINS = [
     'sitemap',
-    'seo',
+    # 'seo',
 ]
 
 # SEO and sitemap settings
