@@ -1,0 +1,9 @@
+@use '../../_02_utils/utils.scss' as utils;
+
+/* ------------------------------------ *\
+  #FLEX-BOX
+\* ------------------------------------ */
+
+%flex-col {
+    @include utils.flex($direction: column, $main: flex-start);
+}

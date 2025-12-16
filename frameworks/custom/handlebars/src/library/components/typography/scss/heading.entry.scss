@@ -1,0 +1,48 @@
+@use '~ScssAbstracts' as abstracts;
+
+/* ------------------------------------ *\
+ * #HEADING
+\* ------------------------------------ */
+
+$block: 'heading';
+
+.#{$block} {
+    @include abstracts.e('base') {
+        @include abstracts.m('heading-100') {
+            @include abstracts.font(abstracts.$heading-100);
+        }
+
+        @include abstracts.m('heading-200') {
+            @include abstracts.font(abstracts.$heading-200);
+        }
+
+        @include abstracts.m('heading-300') {
+            @include abstracts.font(abstracts.$heading-300);
+        }
+
+        @include abstracts.m('heading-400') {
+            @include abstracts.font(abstracts.$heading-400);
+        }
+
+        @include abstracts.m('is-center-aligned') {
+            text-align: center;
+        }
+
+        @include abstracts.m('is-right-aligned') {
+            text-align: right;
+        }
+    }
+
+    @include abstracts.e('main', 'subheading') {
+        display: block;
+    }
+
+    @include abstracts.e('subheading') {
+        .heading__base--heading-100 &,
+        .heading__base--heading-200 &,
+        .heading__base--heading-300 &,
+        .heading__base--page-title & {
+            @include abstracts.font(abstracts.$subheading);
+        }
+    }
+}

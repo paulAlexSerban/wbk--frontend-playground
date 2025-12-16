@@ -1,0 +1,64 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "form-modules",
+    "name": "Form Modules",
+    "version": "1.0.0",
+    "description": "Form Modules",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "form", "modules"],
+    "variations": [
+        {
+            "slug": "form-validation",
+            "name": "Form (Validation)",
+            "description": "Form with validation"
+        },
+        {
+            "slug": "form-wave",
+            "name": "Form (Wave)",
+            "description": "Form with wave effect"
+        },
+        {
+            "slug": "simple-subscribe-form",
+            "name": "Simple Subscribe Form",
+            "description": "Simple Subscribe Form"
+        },
+        {
+            "slug": "form-validation-v2",
+            "name": "Form (Validation) V2",
+            "description": "Simple client side form validation. Check requird, length, email and password match",
+            "specs": [
+                "Create form UI",
+                "Show error messages under specific inputs",
+                "checkRequired() to accept array of inputs",
+                "checkLength() to check min and max length",
+                "checkEmail() to validate email with regex",
+                "checkPasswordsMatch() to match confirm password]"
+            ]
+        },
+        {
+            "slug": "signup-form-validation",
+            "name": "Signup Form (Validation)",
+            "description": "Simple client side form validation. Check requird, length, email and password match"
+        },
+        {
+            "slug": "password-strength-background",
+            "name": "Password Strength Background",
+            "description": "Password strength background",
+            "images": [
+                {
+                    "filename": "dev-days-matrix-library--password-strength-background",
+                    "alt": "Password Strength Background"
+                }
+            ]
+        },
+        {
+            "slug": "email-extractor",
+            "name": "Email Extractor",
+            "description": "Email extractor"
+        }
+    ]
+}

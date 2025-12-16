@@ -1,55 +1,112 @@
 {
-    "name": "@wbk--frontend-playground/core",
-    "version": "2.2.0",
-    "description": "",
-    "author": "Paul Serban",
+    "name": "wbk--frontend-playground",
+    "version": "2.0.0",
+    "type": "module",
+    "description": "Ultimate Frontend Playground: Multi-SSG Framework Showcase - The most comprehensive Static Site Generator comparison platform ever built",
+    "author": "Paul Serban <paul.alex.serban@gmail.com>",
     "license": "MIT",
+    "private": true,
+    "keywords": [
+        "ssg",
+        "static-site-generator",
+        "frontend",
+        "multi-framework",
+        "comparison",
+        "nextjs",
+        "nuxtjs",
+        "sveltekit",
+        "astro",
+        "hugo",
+        "jekyll",
+        "pelican"
+    ],
+    "engines": {
+        "node": ">=22.0.0",
+        "npm": ">=10.9.0",
+        "yarn": ">=1.22.0"
+    },
     "scripts": {
-        "/": "Installation scripts",
-        "install:libs": "yarn && bash scripts.bash install",
-        "install:dashboard": "cd dashboard && yarn install && cd -",
-        "install:assets": "cd assets/media && yarn install && cd -",
-        "install:root": "yarn install",
-        "install:all": "yarn install:root && yarn install:libs && yarn install:dashboard && yarn install:assets",
-        "//": "Assets scripts",
-        "process:assets": "cd assets/media && yarn process && cd -",
-        "sync:libs:assets": "bash scripts.bash sync_assets",
-        "sync:package:assets": "rsync -av --delete --exclude=.DS_Store --exclude=*.scss --exclude=*.js --exclude=*.html ./assets/media/dist/ ./package/libraries/assets/",
-        "///": "Build scripts",
-        "build:libs": "bash scripts.bash build",
-        "build:dashboard": "yarn package && cd dashboard && yarn build && cd -",
-        "build": "yarn build:libs && yarn build:dashboard && yarn sync:package:assets",
-        "////": "Package scripts",
-        "package": "bash scripts.bash package",
-        "/////": "Code quality scripts",
-        "formats:check": "yarn prettier --check .",
-        "formats:write": "yarn prettier --write .",
-        "lint": "yarn formats:check",
-        "//////": "Git hooks & commit scripts",
-        "prepare": "husky install && echo 'Husky installed!'",
-        "commit": "yarn git-cz",
-        "test": "echo 'Error: no test specified'",
-        "///////": "Dev server scripts",
-        "start": "serve package/libraries"
+        "///// INSTALLATION SCRIPTS /////": "",
+        "install:all": "yarn && yarn install:frameworks && yarn install:tools",
+        "install:frameworks": "yarn install:handlebars && yarn install:html-templates",
+        "install:handlebars": "cd frameworks/custom/handlebars && pwd && yarn || echo '⚠️  Custom Handlebars not initialized'",
+        "install:html-templates": "cd frameworks/custom/html-templates && pwd && yarn || echo '⚠️  Custom HTML Templates not initialized'",
+        "///// UNIVERSAL BUILD SCRIPTS /////": "",
+        "build:all": "node tools/build-system/unversal-builder.js",
+        "build:all:sequential": "node tools/build-system/unversal-builder.js --sequential",
+        "build:all:fast": "node tools/build-system/unversal-builder.js --concurrency 8 --skip-setup",
+        "build:priority:p0": "node tools/build-system/unversal-builder.js --priority P0",
+        "build:priority:p1": "node tools/build-system/unversal-builder.js --priority P1",
+        "build:priority:p2": "node tools/build-system/unversal-builder.js --priority P2",
+        "///// FRAMEWORK-SPECIFIC BUILD SCRIPTS /////": "",
+        "build:handlebars": "cd frameworks/custom/handlebars && node generate.js || echo '⚠️  Custom Handlebars build failed'",
+        "build:html-templates": "cd frameworks/custom/html-templates && node build.js || echo '⚠️  Custom HTML Templates build failed'",
+        "///// DEVELOPMENT SCRIPTS /////": "",
+        "dev:handlebars": "cd frameworks/custom/handlebars && yarn dev || node generate.js",
+        "dev:html-templates": "cd frameworks/custom/html-templates && yarn dev || node build.js",
+        "///// DASHBOARD & COMPARISON SCRIPTS /////": "",
+        "build:dashboard": "node dashboard/core/universal-dashboard.js",
+        "dev:dashboard": "cd dashboard && yarn dev || node index.js",
+        "///// UTILITY SCRIPTS /////": "",
+        "clean:all": "yarn clean:builds && yarn clean:node-modules && yarn clean:caches",
+        "clean:builds": "find frameworks -name 'dist' -o -name 'build' -o -name '_site' -o -name 'public' | xargs rm -rf",
+        "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+        "clean:caches": "find . -name '.cache' -o -name '.next' -o -name '.nuxt' -o -name '.svelte-kit' | xargs rm -rf",
+        "///// CODE QUALITY SCRIPTS /////": "",
+        "format": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
+        "format:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
+        "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
+        "commit": "git-cz",
+        "precommit": "lint-staged",
+        "prepush": "yarn test:framework",
+        "///// HELPER SCRIPTS /////": "",
+        "start": "echo '🚀 Frontend Playground Multi-SSG Platform' && echo 'Available commands:' && yarn",
+        "info": "node -e \"console.log('📊 Project Info:'); console.log('Node:', process.version); console.log('NPM:', process.env.npm_version); console.log('Platform:', process.platform);\"",
+        "health": "yarn check:env && yarn test:framework"
     },
     "dependencies": {
-        "@commitlint/cli": "^17.7.2",
-        "@commitlint/config-conventional": "^17.7.0",
-        "commitizen": "^4.3.0",
+        "@commitlint/cli": "^20.1.0",
+        "@commitlint/config-conventional": "^20.0.0",
+        "@types/node": "^24.6.2",
+        "chalk": "^4.1.2",
+        "commander": "^11.0.0",
+        "cross-spawn": "^7.0.3",
         "cz-conventional-changelog": "^3.3.0",
-        "husky": "^8.0.3",
-        "prettier": "^3.0.3",
-        "serve": "^14.2.4"
+        "fs-extra": "^11.0.0",
+        "glob": "^10.0.0",
+        "husky": "^9.1.7",
+        "inquirer": "^8.2.0",
+        "lint-staged": "^16.2.3",
+        "ora": "^5.4.1",
+        "prettier": "^3.6.2",
+        "semver": "^7.5.0",
+        "typescript": "^5.9.3"
     },
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
     },
-    "husky": {
-        "hooks": {
-            "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-        }
+    "lint-staged": {
+        "*.{js,ts,vue,svelte}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{md,json,yaml,yml}": [
+            "prettier --write"
+        ]
     },
-    "private": true
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paulAlexSerban/wbk--frontend-playground.git"
+    },
+    "bugs": {
+        "url": "https://github.com/paulAlexSerban/wbk--frontend-playground/issues"
+    },
+    "homepage": "https://paulalexserban.github.io/wbk--frontend-playground/",
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
 }

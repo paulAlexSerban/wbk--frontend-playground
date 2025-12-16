@@ -2,7 +2,7 @@ const { readdirSync, readFileSync, statSync, lstatSync } = require('fs');
 const { resolve, join, relative } = require('path');
 const { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } = require('@aws-sdk/client-s3');
 require('dotenv').config({ path: resolve(__dirname, '..', '..', '.env'), debug: true });
-var mime = require('mime-types');
+const mime = require('mime-types');
 
 const REGION = process.env.S3_BUCKET_REGION;
 
@@ -73,8 +73,8 @@ async function deleteNonexistentS3Objects(localFilePaths) {
 
 async function main() {
     try {
-        let localFilePaths = getLocalFilePaths(ASSETS_PATH);
-        let s3FilePaths = await deleteNonexistentS3Objects(localFilePaths);
+        const localFilePaths = getLocalFilePaths(ASSETS_PATH);
+        const s3FilePaths = await deleteNonexistentS3Objects(localFilePaths);
 
         await uploadDirectory(ASSETS_PATH, '', s3FilePaths);
         console.log(`Successfully uploaded all files in directory "${ASSETS_PATH}" to S3 bucket "${BUCKET_NAME}"`);

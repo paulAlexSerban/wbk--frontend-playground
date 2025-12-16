@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}{{ SITESUBTITLE }}{% endblock %}">
+    <meta name="author" content="{% block author %}{{ AUTHOR }}{% endblock %}">
+
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+    {# Favicon #}
+    <link rel="icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
+
+    {# Stylesheets #}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css">
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        {# Header #}
+        <header class="site-header">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="{{ SITEURL }}/">{{ SITENAME }}</a>
+                </h1>
+                {% if SITESUBTITLE %}
+                <p class="site-subtitle">{{ SITESUBTITLE }}</p>
+                {% endif %}
+            </div>
+
+            {# Navigation #}
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ SITEURL }}/">Home</a></li>
+                    <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                    <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+                    <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for pg in pages %}
+                    <li><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+
+        {# Main Content #}
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+        {# Sidebar #}
+        <aside class="sidebar">
+            {% block sidebar %}
+            {# Categories #}
+            {% if categories %}
+            <section class="widget">
+                <h3>Categories</h3>
+                <ul>
+                    {% for cat, articles in categories %}
+                    <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }} ({{ articles|length }})</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+
+            {# Tags #}
+            {% if tags %}
+            <section class="widget">
+                <h3>Tags</h3>
+                <div class="tag-cloud">
+                    {% for tag, articles in tags %}
+                    <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            {# Links #}
+            {% if LINKS %}
+            <section class="widget">
+                <h3>Links</h3>
+                <ul>
+                    {% for name, url in LINKS %}
+                    <li><a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+
+            {# Social #}
+            {% if SOCIAL %}
+            <section class="widget">
+                <h3>Social</h3>
+                <ul>
+                    {% for name, url in SOCIAL %}
+                    <li><a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+            {% endblock %}
+        </aside>
+
+        {# Footer #}
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; {{ dates[-1].date.year if dates else 2025 }} {{ AUTHOR }}. All rights reserved.</p>
+                <p>Powered by <a href="https://getpelican.com/" target="_blank" rel="noopener">Pelican</a>
+                    and <a href="https://jinja.palletsprojects.com/" target="_blank" rel="noopener">Jinja2</a></p>
+            </div>
+        </footer>
+    </div>
+
+    {# JavaScript #}
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/main.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

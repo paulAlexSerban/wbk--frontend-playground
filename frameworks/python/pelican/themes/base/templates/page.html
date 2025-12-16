@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
+
+{% block description %}{{ page.summary|striptags if page.summary else page.content|striptags|truncate(160) }}{% endblock %}
+
+{% block content %}
+<article class="page-full">
+    <header class="page-header">
+        <h1 class="page-title">{{ page.title }}</h1>
+        
+        {% if page.modified or page.date %}
+        <div class="page-meta">
+            {% if page.date %}
+            <time datetime="{{ page.date.isoformat() }}" class="published">
+                {{ page.locale_date }}
+            </time>
+            {% endif %}
+            {% if page.modified %}
+            <time datetime="{{ page.modified.isoformat() }}" class="modified">
+                Last updated: {{ page.modified.strftime('%B %d, %Y') }}
+            </time>
+            {% endif %}
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="page-content">
+        {{ page.content }}
+    </div>
+    
+    <footer class="page-footer">
+        <div class="back-to-home">
+            <a href="{{ SITEURL }}/">← Back to Home</a>
+        </div>
+    </footer>
+</article>
+{% endblock %}

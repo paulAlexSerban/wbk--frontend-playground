@@ -1,0 +1,72 @@
+@mixin z-index($layer, $adjust: 0, $position: relative) {
+    position: $position;
+
+    @if $layer {
+        z-index: layer-index($layer, $adjust);
+    }
+}
+
+// .o-base {
+//     @include z-index("base", 2)
+// }
+
+// .a-dropdown {
+//     @include z-index("dropdown");
+// }
+
+// OLD IMPLEMENTATION
+// $z-i:
+//   base,
+//   pageLinks,
+//   pageBanner,
+//   siteHeader,
+//   schoolLogo,
+//   menuTrigger,
+//   heroSlider,
+//   search;
+
+// @function z-index($element, $list: $z-i) {
+//   $index: index($list, $element);
+
+//   @return $index;
+// }
+
+
+/// Shorthand mixin for offset positioning
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
+    @include z-index($z-index, $position: $position);
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+/// Shorthand mixin for absolute positioning
+/// Serves as an alias for `position(absolute, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin absolute($args...) {
+    @include position(absolute, $args...);
+}
+
+/// Shorthand mixin for relative positioning
+/// Serves as an alias for `position(relative, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin relative($args...) {
+    @include position(relative, $args...);
+}
+
+/// Shorthand mixin for fixed positioning
+/// Serves as an alias for `position(fixed, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin fixed($args...) {
+    @include position(fixed, $args...);
+}

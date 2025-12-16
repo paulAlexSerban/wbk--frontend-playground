@@ -1,0 +1,14 @@
+@use '~ScssAbstracts' as abstracts;
+
+/* ------------------------------------ *\
+ * #TIME-TEXT
+\* ------------------------------------ */
+
+$block-time: 'time-text';
+
+.#{$block-time} {
+    @include abstracts.e('base') {
+        @include abstracts.font(abstracts.$body);
+        color: abstracts.get-color(abstracts.$c-gray, battleship-grey);
+    }
+}

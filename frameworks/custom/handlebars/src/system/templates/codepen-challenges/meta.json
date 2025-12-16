@@ -1,0 +1,21 @@
+{
+    "hide": false,
+    "group": "system",
+    "category": "templates",
+    "component": "codepen-challenges",
+    "name": "Codepen Challenges Base Page Template",
+    "version": "1.0.0",
+    "description": "Codepen Challenges Base Page Template",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "codepen-challenges",
+            "name": "Codepen Challenges Base Page Template",
+            "description": "Codepen Challenges Base Page Template"
+        }
+    ]
+}
