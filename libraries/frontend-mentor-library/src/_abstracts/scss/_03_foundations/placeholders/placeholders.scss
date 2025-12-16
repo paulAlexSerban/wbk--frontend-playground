@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+/* ------------------------------------ *\
+ * EXTENDS
+ *
+ * Notes:
+ * do NOT use comments inside the
+  block which uses extends, it will
+  generate an empty block of code
+\* ------------------------------------ */
+@use '../../_02_utils/utils.scss' as *;
+
+@forward './box-model.scss';
+@forward './clearfix.scss';
+@forward './color.scss';
+@forward './cursor.scss';
+@forward './display.scss';
+@forward './flex.scss';
+@forward './floats.scss';
+@forward './fonts.scss';
+@forward './position.scss';
+@forward './shadow.scss';
+@forward './sizes.scss';
