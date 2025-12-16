@@ -1,0 +1,67 @@
+name: Deploy Front-end Playground to Github Pages
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+env:
+    NODE_VERSION: 22.14.0
+    BASE_URL: ${{ secrets.BASE_URL }}
+
+jobs:
+    deploy:
+        name: Deploy Front-end Playground
+        runs-on: ubuntu-latest
+        steps:
+            - name: '📥 checkout repository'
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - name: '🔄  Cache node_modules'
+              uses: actions/cache@v4
+              with:
+                  path: |
+                      ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
+
+            - name: '🔧  Setup NodeJS ${{ env.NODE_VERSION }}'
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ env.NODE_VERSION }}
+
+            - name: '🔧 Install npm@latest'
+              run: npm i -g yarn
+
+            - name: '📦  Install Dependencies'
+              run: |
+                  yarn install:assets
+                  yarn install:dashboard
+                  yarn install:libs
+
+            - name: '🏗️  Process Assets'
+              run: yarn process:assets
+
+            - name: '🏗️ Sync Libs Assets'
+              run: yarn sync:libs:assets
+
+            - name: '🏗️  Build Libraries'
+              run: yarn build:libs
+
+            - name: '🚚  Package Libraries'
+              run: yarn package
+
+            - name: '🏗️  Process Dashboard'
+              run: yarn build:dashboard
+
+            - name: '🚀 Sync Assets'
+              run: yarn sync:package:assets
+
+            - name: '🚀 Deploy to GitHub Pages'
+              uses: JamesIves/github-pages-deploy-action@4.1.1
+              with:
+                  branch: gh-pages
+                  folder: package/libraries

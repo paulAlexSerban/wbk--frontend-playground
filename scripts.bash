@@ -4,12 +4,14 @@ cd "$(dirname "$0")" || exit
 
 function package() {
     ## for each library inside ./libraries run inside it yarn build:prod && yarn package
+    local start_dir
+    start_dir="$(pwd)"
     for dir in ./libraries/*/; do
         if [ -d "$dir" ]; then
             echo "📦  Packaging $(basename "$dir")"
             cd "$dir" || exit
-            yarn build:prod && yarn package
-            cd - || exit
+            yarn package
+            cd "$start_dir" || exit
         fi
     done
 }
@@ -33,6 +35,18 @@ function build() {
             echo "📦  Building $(basename "$dir")"
             cd "$dir" || exit
             yarn build:prod
+            cd - || exit
+        fi
+    done
+}
+
+function sync_assets() {
+    ## for each library inside ./libraries run inside it yarn sync:assets
+    for dir in ./libraries/*/; do
+        if [ -d "$dir" ]; then
+            echo "📦  Syncing assets for $(basename "$dir")"
+            cd "$dir" || exit
+            yarn sync:assets
             cd - || exit
         fi
     done

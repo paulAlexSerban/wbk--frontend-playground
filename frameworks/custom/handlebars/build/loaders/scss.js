@@ -1,5 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+const ASSETS_PATH = process.env.ASSETS_PATH || `${BASE_URL}/assets`;
+
 const scss = {
     // use CSS and Sass loaders to compile CSS stylesheets
     test: /\.(sa|sc|c)ss$/,
@@ -11,7 +14,7 @@ const scss = {
             options: {
                 // Prefer `dart-sass`
                 implementation: require('sass'),
-                additionalData: `$assetsPath: '${process.env.ASSETS_PATH}';`,
+                additionalData: `$assetsPath: '${ASSETS_PATH}';`,
             },
         },
     ],

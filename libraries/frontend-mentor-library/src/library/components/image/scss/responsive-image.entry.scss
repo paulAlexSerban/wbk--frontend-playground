@@ -1,0 +1,14 @@
+@use '~ScssAbstracts' as *;
+
+/* ------------------------------------ *\
+ * #IMAGE
+\* ------------------------------------ */
+
+$block: 'responsive-image';
+
+.#{$block} {
+    &__base {
+        object-fit: cover;
+        width: 100%;
+    }
+}
