@@ -15,7 +15,8 @@
         {
             "slug": "big-frontend-dev",
             "name": "Big Frontend Dev Base Page Template",
-            "description": "Big Frontend Dev Base Page Template"
+            "description": "Big Frontend Dev Base Page Template",
+            "hide": true
         }
     ]
 }

@@ -1,0 +1,25 @@
+/*
+  
+*/
+
+@mixin modular-harmonic-spacing-generator(
+    $base: 16px,
+    $ratio: 1.5,
+    $minStep: -5,
+    $maxStep: 5,
+    $propertyName: 'static-'
+) {
+    $current: $base;
+    @for $i from $minStep through $maxStep {
+        @if $i == 0 {
+            --#{$propertyName}#{$i}: #{convert-rem($current)};
+        }
+        @if $i < 0 {
+            --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i + 1}) / #{$ratio});
+        }
+
+        @if $i > 0 {
+            --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i - 1}) * #{$ratio});
+        }
+    }
+}

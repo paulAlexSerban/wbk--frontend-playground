@@ -14,7 +14,13 @@
         {
             "slug": "nasa-apod",
             "name": "NASA Astronomy Picture of the Day",
-            "description": "NASA Astronomy Picture of the Day"
+            "description": "NASA Astronomy Picture of the Day",
+            "images": [
+                {
+                    "filename": "dev-days-matrix-library--nasa-apod",
+                    "alt": "NASA Astronomy Picture of the Day"
+                }
+            ]
         },
         {
             "slug": "movie-app",
@@ -24,7 +30,13 @@
         {
             "slug": "pokedex",
             "name": "Pokedex",
-            "description": "Pokedex"
+            "description": "Pokedex",
+            "images": [
+                {
+                    "filename": "dev-days-matrix-library--pokedex",
+                    "alt": "Pokedex"
+                }
+            ]
         },
         {
             "slug": "random-image-feed",

@@ -12,9 +12,15 @@
     "keywords": ["library", "modules", "animations"],
     "variations": [
         {
-            "slug": "Hoverboard",
+            "slug": "hoverboard",
             "name": "Hoverboard",
-            "description": "Hoverboard"
+            "description": "Hoverboard",
+            "images": [
+                {
+                    "filename": "dev-days-matrix-library--hoverboard",
+                    "alt": "Hoverboard"
+                }
+            ]
         }
     ]
 }

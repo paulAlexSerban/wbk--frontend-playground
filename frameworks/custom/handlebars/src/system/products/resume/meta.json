@@ -14,7 +14,13 @@
         {
             "slug": "resume-timeline",
             "name": "Resume page w/ Timeline",
-            "description": "Resume page w/ Timeline"
+            "description": "Resume page w/ Timeline that shows experience and education in a timeline format",
+            "images": [
+                {
+                    "filename": "generic-component-library--resume-timeline",
+                    "alt": "Resume page w/ Timeline"
+                }
+            ]
         }
     ]
 }
