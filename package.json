@@ -30,44 +30,27 @@
         "install:all": "yarn && yarn install:libraries && yarn install:dashboard",
         "install:dashboard": "cd dashboard && yarn || echo '⚠️  Dashboard not initialized'",
         "install:libraries": "yarn install:lib:dev-days-matrix && yarn install:lib:frontend-mentor",
-        "install:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn || echo '⚠️  Dev Days Matrix Library not initialized'",
+        "install:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn",
         "install:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn || echo '⚠️  Frontend Mentor Library not initialized'",
 
-
-
-        
         "///// UNIVERSAL BUILD SCRIPTS /////": "",
-        "build:all": "node tools/build-system",
-        "build:all:sequential": "node tools/build-system --sequential",
-        "build:all:fast": "node tools/build-system --concurrency 8 --skip-setup",
-        "build:priority:p0": "node tools/build-system --priority P0",
-        "build:priority:p1": "node tools/build-system --priority P1",
-        "build:priority:p2": "node tools/build-system --priority P2",
-        "///// FRAMEWORK-SPECIFIC BUILD SCRIPTS /////": "",
-        "build:handlebars": "cd frameworks/custom/handlebars && node generate.js || echo '⚠️  Custom Handlebars build failed'",
-        "build:html-templates": "cd frameworks/custom/html-templates && node build.js || echo '⚠️  Custom HTML Templates build failed'",
+        "build:all": "yarn && yarn build:libraries && yarn build:dashboard",
+        "build:dashboard": "node dashboard/core/universal-dashboard.js",
+        "build:libraries": "yarn build:lib:dev-days-matrix && yarn build:lib:frontend-mentor",
+        "build:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn",
+        "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn",
+
         "///// DEVELOPMENT SCRIPTS /////": "",
         "dev:handlebars": "cd frameworks/custom/handlebars && yarn dev || node generate.js",
         "dev:html-templates": "cd frameworks/custom/html-templates && yarn dev || node build.js",
-        "///// DASHBOARD & COMPARISON SCRIPTS /////": "",
-        "build:dashboard": "node dashboard/core/universal-dashboard.js",
-        "dev:dashboard": "cd dashboard && yarn dev || node index.js",
-        "///// UTILITY SCRIPTS /////": "",
-        "clean:all": "yarn clean:builds && yarn clean:node-modules && yarn clean:caches",
-        "clean:builds": "find frameworks -name 'dist' -o -name 'build' -o -name '_site' -o -name 'public' | xargs rm -rf",
-        "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
-        "clean:caches": "find . -name '.cache' -o -name '.next' -o -name '.nuxt' -o -name '.svelte-kit' | xargs rm -rf",
+
         "///// CODE QUALITY SCRIPTS /////": "",
         "format": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "format:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
+        
         "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
         "commit": "git-cz",
-        "precommit": "lint-staged",
-        "prepush": "yarn test:framework",
-        "///// HELPER SCRIPTS /////": "",
-        "start": "echo '🚀 Frontend Playground Multi-SSG Platform' && echo 'Available commands:' && yarn",
-        "info": "node -e \"console.log('📊 Project Info:'); console.log('Node:', process.version); console.log('NPM:', process.env.npm_version); console.log('Platform:', process.platform);\"",
-        "health": "yarn check:env && yarn test:framework"
+        "precommit": "lint-staged"
     },
     "dependencies": {
         "@commitlint/cli": "^20.1.0",
