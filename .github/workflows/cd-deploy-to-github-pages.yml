@@ -33,35 +33,35 @@ jobs:
               with:
                   node-version: ${{ env.NODE_VERSION }}
 
-            - name: '🔧 Install npm@latest'
-              run: npm i -g yarn
+            # - name: '🔧 Install npm@latest'
+            #   run: npm i -g yarn
 
-            - name: '📦  Install Dependencies'
-              run: |
-                  yarn install:assets
-                  yarn install:dashboard
-                  yarn install:libs
+            # - name: '📦  Install Dependencies'
+            #   run: |
+            #       yarn install:assets
+            #       yarn install:dashboard
+            #       yarn install:libs
 
-            - name: '🏗️  Process Assets'
-              run: yarn process:assets
+            # - name: '🏗️  Process Assets'
+            #   run: yarn process:assets
 
-            - name: '🏗️ Sync Libs Assets'
-              run: yarn sync:libs:assets
+            # - name: '🏗️ Sync Libs Assets'
+            #   run: yarn sync:libs:assets
 
-            - name: '🏗️  Build Libraries'
-              run: yarn build:libs
+            # - name: '🏗️  Build Libraries'
+            #   run: yarn build:libs
 
-            - name: '🚚  Package Libraries'
-              run: yarn package
+            # - name: '🚚  Package Libraries'
+            #   run: yarn package
 
-            - name: '🏗️  Process Dashboard'
-              run: yarn build:dashboard
+            # - name: '🏗️  Process Dashboard'
+            #   run: yarn build:dashboard
 
-            - name: '🚀 Sync Assets'
-              run: yarn sync:package:assets
+            # - name: '🚀 Sync Assets'
+            #   run: yarn sync:package:assets
 
-            - name: '🚀 Deploy to GitHub Pages'
-              uses: JamesIves/github-pages-deploy-action@4.1.1
-              with:
-                  branch: gh-pages
-                  folder: package/libraries
+            # - name: '🚀 Deploy to GitHub Pages'
+            #   uses: JamesIves/github-pages-deploy-action@4.1.1
+            #   with:
+            #       branch: gh-pages
+            #       folder: package/libraries

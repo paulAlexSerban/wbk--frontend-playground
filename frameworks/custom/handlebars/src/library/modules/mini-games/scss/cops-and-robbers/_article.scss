@@ -1,9 +1,0 @@
-@use './variables/variables.scss' as *;
-
-.article {
-    &__base {
-        padding: $baseline;
-        margin-bottom: $baseline;
-        min-width: 350px;
-    }
-}

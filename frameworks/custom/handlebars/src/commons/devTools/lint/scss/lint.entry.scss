@@ -1,5 +1,0 @@
-@use '~ScssAbstracts' as *;
-@use './partials/lint' as *;
-
-@include lint();
-/* stylelint-enable */
