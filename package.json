@@ -28,6 +28,7 @@
     "scripts": {
         "///// INSTALLATION SCRIPTS /////": "",
         "install:all": "yarn && yarn install:frameworks && yarn install:tools",
+        "install:tools": "cd tools && yarn || echo '⚠️  Tools not initialized'",
         "install:frameworks": "yarn install:handlebars && yarn install:html-templates",
         "install:handlebars": "cd frameworks/custom/handlebars && pwd && yarn || echo '⚠️  Custom Handlebars not initialized'",
         "install:html-templates": "cd frameworks/custom/html-templates && pwd && yarn || echo '⚠️  Custom HTML Templates not initialized'",
