@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "like",
+    "name": "Like",
+    "version": "1.0.0",
+    "description": "Like",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "like"],
+    "variations": [
+        {
+            "slug": "like-image",
+            "name": "Like Image",
+            "description": "Like Image"
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:math';
-@use '../../_01_sizes/sizes.scss' as sizes;
+@use '../../_01_variables/variables.scss' as vars;
 @use '../functions/functions.scss' as functions;
 
 @use './bem.scss' as bem;

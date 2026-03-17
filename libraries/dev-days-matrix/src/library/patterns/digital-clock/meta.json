@@ -1,0 +1,25 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "digital-clock",
+    "name": "Digital Clock",
+    "version": "1.0.0",
+    "description": "Digital Clock",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "digital-clock"],
+    "variations": [
+        {
+            "slug": "digital-clock",
+            "name": "Digital Clock",
+            "description": "Digital Clock"
+        },
+        {
+            "slug": "digital-clock-v2",
+            "name": "Digital Clock (V2)",
+            "description": "Digital Clock (V2)"
+        }
+    ]
+}

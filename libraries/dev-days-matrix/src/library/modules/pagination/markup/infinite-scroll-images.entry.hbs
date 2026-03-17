@@ -1,0 +1,17 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Infinite Scroll w. Images'
+      attributionFromHref='https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/' 
+      attributionFromLabel='JavaScript Web Projects: 20 Projects to Build Your Portfolio'}}
+
+  {{{feLibs 'library' 'modules' 'pagination' 'infinite-scroll-images' 'all'}}}
+
+  <link rel="icon" type="image/png" href="{{assetsUrl 'icons' 'ztm-favicon.png'}}">
+  <h1>Infinite Scroll Images w/ Unsplash API</h1>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    {{./partials/_loader-svg}}
+  </div>
+  <!-- Image Container -->
+  <div class="image-container" id="image-container"></div>
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

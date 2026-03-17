@@ -1,0 +1,37 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='NASA APOD'
+      attributionFromHref='https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/' 
+      attributionFromLabel='JavaScript Web Projects: 20 Projects to Build Your Portfolio'}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <link rel="icon" type="image/png" href="https://s2.googleusercontent.com/s2/favicons?domain=www.nasa.gov">
+  {{{feLibs 'library' 'modules' 'gallery' 'nasa-apod' 'all'}}}
+
+  <!-- Loader -->
+  <div class="loader hidden">
+    <img src="{{assetsUrl 'svgs' 'rocket.svg'}}" alt="Rocket Loading Animation">
+  </div>
+  <!-- Container -->
+  <div class="container">
+    <!-- Navigation -->
+    <div class="navigation-container">
+      <span class="background"></span>
+      <!-- Results Nav -->
+      <span class="navigation-items" id="resultsNav">
+        <h3 class="clickable" id='toggleFavorites'>Favorites</h3>
+        <h3>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</h3>
+        <h3 class="clickable" id='loadMore'>Load More</h3>
+      </span>
+      <!-- Favorites Nav -->
+      <span class="navigation-items hidden" id="favoritesNav">
+        <h3 class="clickable" id='loadMoreNasaPics'>Load More NASA Images</h3>
+      </span>
+    </div>
+    <!-- Images Container -->
+    <div class="images-container"></div>
+  </div>
+  <!-- Save Confirmation -->
+  <div class="save-confirmed" hidden>
+    <h1>ADDED!</h1>
+  </div>
+
+  {{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base }}

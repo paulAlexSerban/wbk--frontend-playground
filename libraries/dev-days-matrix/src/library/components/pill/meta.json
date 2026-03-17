@@ -1,0 +1,25 @@
+{
+    "group": "library",
+    "category": "components",
+    "component": "pill",
+    "name": "Pill",
+    "version": "1.0.0",
+    "description": "Pill component for displaying pills of data such as numbered steps.",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "components", "pill"],
+    "variations": [
+        {
+            "slug": "pill-round",
+            "name": "Pill (Round)",
+            "description": "Pill component for displaying pills of data such as numbered steps."
+        },
+        {
+            "slug": "pill-round-active",
+            "name": "Pill (Round - Active)",
+            "description": "Pill component for displaying pills of data such as numbered steps in active state."
+        }
+    ]
+}

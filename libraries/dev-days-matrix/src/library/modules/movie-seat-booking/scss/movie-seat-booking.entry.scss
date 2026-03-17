@@ -1,0 +1,125 @@
+@use '~ScssAbstracts' as abstracts;
+
+/* ------------------------------------ *\
+ *  MOVIE SEAT BOOKING
+\* ------------------------------------ */
+
+$block: 'movie-seat-booking';
+
+.#{$block} {
+    // --color-page-background: #{get-color($c-light, light)};
+    // --color-button-label: #{get-color($c-light, light)};
+    // --color-container-background: #{get-color($c-light, cultured)};
+    // --text-link-color: #{get-color($c-blue, indigo-blue)};
+    // --color-success: #{get-color($c-green, emerald)};
+    // --color-danger: #{get-color($c-red, cinnabar)};
+    // --color-button-primary: #{get-color($c-blue, carolina-blue)};
+    // --text-font-family-regular: #{$font-family-lato}; /* regular font family */
+    // --text-font-family-code: #{$font-family-courierPrime}; /* code family */
+
+    @include abstracts.e('base') {
+        @include abstracts.flex($direction: column);
+
+        min-width: abstracts.convert-rem(400px);
+        border-radius: abstracts.convert-rem(5px);
+        box-shadow: #{abstracts.$shadow-container};
+        padding: (abstracts.$baseline * 2) 0;
+        background-color: abstracts.get-color(abstracts.$c-light, cultured);
+    }
+
+    @include abstracts.e('movie-picker') {
+        margin: 0 0 abstracts.convert-rem(20px) 0;
+    }
+
+    @include abstracts.e('select') {
+        @include abstracts.font(abstracts.$select);
+
+        padding: abstracts.convert-rem(5px) abstracts.convert-rem(15px);
+        margin-left: abstracts.convert-rem(10px);
+        background-color: abstracts.get-color(abstracts.$c-light, light);
+        border: abstracts.convert-rem(2px);
+        border-radius: abstracts.convert-rem(5px);
+        appearance: none;
+    }
+
+    @include abstracts.e('container') {
+        margin-bottom: abstracts.convert-rem(30px);
+        perspective: abstracts.convert-rem(1000px);
+    }
+
+    @include abstracts.e('seat') {
+        width: abstracts.convert-rem(15px);
+        height: abstracts.convert-rem(12px);
+        margin: abstracts.convert-rem(3px);
+        background-color: abstracts.get-color(abstracts.$c-blue, dark-liver);
+        border-top-left-radius: abstracts.convert-rem(10px);
+        border-top-right-radius: abstracts.convert-rem(10px);
+
+        &:not(.#{$block}__seat--occupied):hover {
+            cursor: pointer;
+            transform: scale(1.2);
+
+            .#{$block}__showcase-list & {
+                cursor: default;
+                transform: scale(1);
+            }
+        }
+
+        &:nth-of-type(2) {
+            margin-right: abstracts.$gutter;
+        }
+
+        &:nth-last-of-type(2) {
+            margin-left: abstracts.$gutter;
+        }
+
+        @include abstracts.m('selected') {
+            background-color: abstracts.get-color(abstracts.$c-blue, french-sky-blue);
+        }
+
+        @include abstracts.m('occupied') {
+            background-color: abstracts.get-color(abstracts.$c-light, cultured);
+        }
+    }
+
+    @include abstracts.e('showcase-list') {
+        @include abstracts.flex($main: space-between);
+
+        padding: abstracts.$baseline abstracts.$gutter;
+        background: abstracts.get-color(abstracts.$c-dark, dark-10);
+        border-radius: abstracts.convert-rem(5px);
+    }
+
+    @include abstracts.e('showcase-item') {
+        @include abstracts.flex();
+        margin: 0 abstracts.$gutter;
+    }
+
+    @include abstracts.e('caption') {
+        @include abstracts.font(abstracts.$showcase);
+
+        margin-left: abstracts.convert-rem(2px);
+    }
+
+    @include abstracts.e('row') {
+        @include abstracts.flex();
+        background: abstracts.get-color(abstracts.$c-dark, dark-10);
+    }
+
+    @include abstracts.e('screen') {
+        width: 100%;
+        height: abstracts.convert-rem(70px);
+        margin: (abstracts.$baseline * 2) 0;
+        background-color: abstracts.get-color(abstracts.$c-light, light);
+        box-shadow: #{abstracts.$shadow-screen};
+        transform: rotateX(-45deg);
+    }
+
+    @include abstracts.e('text') {
+        margin: abstracts.convert-rem(5px) 0;
+    }
+
+    @include abstracts.e('count', 'total') {
+        color: abstracts.get-color(abstracts.$c-blue, carolina-blue);
+    }
+}

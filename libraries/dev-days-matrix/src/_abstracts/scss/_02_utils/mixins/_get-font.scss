@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use './responsive' as responsive;
+
+/* ------------------------------------ *\
+  ITERATE-OBJECT
+\* ------------------------------------ */
+
+/// Iterate SASS object (maps, lists)
+/// @access public
+/// @param {String} $list - Lists's name
+@mixin iterateObject($list) {
+    @each $key, $value in $list {
+        #{$key}: $value;
+    }
+}
+
+/* ------------------------------------ *\
+  #FONT
+\* ------------------------------------ */
+
+@mixin font($font-definition) {
+    @each $viewport, $rules in $font-definition {
+        $map: map.get($font-definition, $viewport);
+        @if $viewport == 'default' {
+            @include iterateObject($map);
+        } @else {
+            @include responsive.breakpoint($viewport) {
+                @include iterateObject($map);
+            }
+        }
+    }
+}

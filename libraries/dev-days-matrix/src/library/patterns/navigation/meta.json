@@ -1,0 +1,25 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "navigation",
+    "name": "Navigation",
+    "version": "1.0.0",
+    "description": "Navigation",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "navigation", "switch"],
+    "variations": [
+        {
+            "slug": "side-nav-buttons",
+            "name": "Side Navigation Buttons",
+            "description": "Side Navigation Buttons"
+        },
+        {
+            "slug": "mobile-footer-nav",
+            "name": "Mobile Footer Navigation",
+            "description": "Mobile Footer Navigation"
+        }
+    ]
+}

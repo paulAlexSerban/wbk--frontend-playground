@@ -1,0 +1,101 @@
+@use '~ScssAbstracts' as abstracts;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0;
+}
+
+h1 {
+    @include abstracts.font(abstracts.$heading-100);
+
+    body > header > & {
+        @include abstracts.font(abstracts.$page-title);
+    }
+
+    & > span {
+        @include abstracts.font(abstracts.$heading-100);
+
+        display: block;
+
+        & + span {
+            @include abstracts.font(abstracts.$subheading);
+
+            display: block;
+        }
+    }
+}
+
+h2 {
+    @include abstracts.font(abstracts.$heading-200);
+
+    & > span {
+        @include abstracts.font(abstracts.$heading-200);
+
+        display: block;
+
+        & + span {
+            @include abstracts.font(abstracts.$subheading);
+
+            display: block;
+        }
+    }
+}
+
+h3 {
+    @include abstracts.font(abstracts.$heading-300);
+
+    & > span {
+        @include abstracts.font(abstracts.$heading-300);
+
+        display: block;
+
+        & + span {
+            @include abstracts.font(abstracts.$subheading);
+
+            display: block;
+        }
+    }
+}
+
+h4 {
+    @include abstracts.font(abstracts.$heading-400);
+}
+
+h5 {
+    @include abstracts.font(abstracts.$heading-500);
+}
+
+h6 {
+    @include abstracts.font(abstracts.$heading-600);
+}
+
+p,
+a {
+    @include abstracts.font(abstracts.$body);
+
+    strong {
+        @include abstracts.font(abstracts.$body-bold);
+    }
+
+    small {
+        @include abstracts.font(abstracts.$body-small);
+    }
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+
+    @include abstracts.on-event() {
+        color: var(--text-link-color-hover);
+        text-decoration: none;
+    }
+}
+
+code {
+    @include abstracts.font(abstracts.$code);
+}

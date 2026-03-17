@@ -1,0 +1,21 @@
+{
+    "hide": true,
+    "group": "library",
+    "category": "components",
+    "component": "image",
+    "name": "Image",
+    "version": "1.0.0",
+    "description": "Image component for displaying images.",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "components", "image"],
+    "variations": [
+        {
+            "slug": "responsive-image",
+            "name": "Responsive Image",
+            "description": "Responsive Image component for displaying images."
+        }
+    ]
+}

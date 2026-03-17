@@ -1,0 +1,82 @@
+@use 'sass:color';
+@use 'sass:map';
+
+@use '~ScssAbstracts' as abstracts;
+
+/* ------------------------------------ *\
+ * BUTTON
+\* ------------------------------------ */
+
+$block: 'button';
+
+$color-patterns: (
+    'primary': (
+        'background-color': abstracts.get-color(abstracts.$c-blue, carolina-blue),
+        'text-color': abstracts.get-color(abstracts.$c-light, light),
+    ),
+    'secondary': (
+        'background-color': abstracts.get-color(abstracts.$c-light, light),
+        'text-color': abstracts.get-color(abstracts.$c-dark, jet),
+    ),
+    'success': (
+        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, success),
+        'text-color': abstracts.get-color(abstracts.$c-light, light),
+    ),
+    'danger': (
+        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, danger),
+        'text-color': abstracts.get-color(abstracts.$c-light, light),
+    ),
+    'warning': (
+        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, warning),
+        'text-color': abstracts.get-color(abstracts.$c-dark, jet),
+    ),
+);
+
+.#{$block} {
+    @include abstracts.element('base') {
+        @include abstracts.font(abstracts.$button);
+        cursor: pointer;
+        display: inline-block;
+        border: none;
+        padding: 16px;
+
+        &:disabled {
+            cursor: not-allowed;
+
+            background-color: abstracts.get-color(abstracts.$c-light, gainsboro-white);
+        }
+
+        @each $name, $color in $color-patterns {
+            @include abstracts.m($name) {
+                background-color: #{map.get($color, 'background-color')};
+                color: #{map.get($color, 'text-color')};
+            }
+        }
+
+        @include abstracts.m('isAnimated') {
+            @include abstracts.transition($transition-property: transform, $transition-time: 0.3s);
+
+            &:hover:not(:disabled) {
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+        @include abstracts.m('success') {
+            &:active {
+                box-shadow: 0 0 0 abstracts.convert-rem(3px) rgba(abstracts.get-color(abstracts.$c-green, green-cyan), 0.5);
+            }
+        }
+
+        @include abstracts.m('secondary') {
+            box-shadow: abstracts.get-color(abstracts.$c-dark, dark-15) 0 0 0 abstracts.convert-rem(1px) inset;
+        }
+
+        @include abstracts.m('rounded') {
+            border-radius: 6px;
+        }
+    }
+}

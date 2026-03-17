@@ -1,0 +1,16 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base 
+      title='Github Profiles' 
+      attributionFromHref='https://www.udemy.com/course/50-projects-50-days/' 
+      attributionFromLabel='50 Projects In 50 Days - HTML, CSS & JavaScript'}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+    integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+    crossorigin="anonymous"></script>
+  {{{feLibs 'library' 'modules' 'search' 'github-profiles' 'all'}}}
+
+  <form class="user-form" id="form">
+    <input type="text" id="search" placeholder="Search a Github User">
+  </form>
+
+  <main id="main"></main>
+
+  {{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

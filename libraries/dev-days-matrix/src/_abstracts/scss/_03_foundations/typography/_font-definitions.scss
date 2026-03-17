@@ -1,0 +1,452 @@
+@use '../../_01_sizes/sizes.scss' as sizes;
+@use '../../_02_utils/functions/functions.scss' as functions;
+
+/* ------------------------------------ *\
+  #FONT-WEIGHTS
+\* ------------------------------------ */
+
+$font-weights: (
+    thin: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    heavy: 800,
+);
+
+/* ------------------------------------ *\
+  #FONT-DEFINITIONS
+\* ------------------------------------ */
+
+$body: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(17px),
+        line-height: functions.convert-rem(23px),
+        font-weight: functions.font-weight($font-weights, regular),
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(19px),
+        line-height: functions.convert-rem(27px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(28px),
+    ),
+);
+
+$code: (
+    default: (
+        font-family: var(--text-font-family-code),
+        font-size: functions.convert-rem(15px),
+        line-height: functions.convert-rem(20px),
+        font-weight: functions.font-weight($font-weights, thin),
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(17px),
+        line-height: functions.convert-rem(24px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(25px),
+    ),
+);
+
+$button: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(17px),
+        line-height: functions.convert-rem(18px),
+        font-weight: functions.font-weight($font-weights, regular),
+        letter-spacing: functions.convert-rem(1.25px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(19px),
+        line-height: functions.convert-rem(19px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(21px),
+        line-height: functions.convert-rem(21px),
+    ),
+);
+
+$page-title: (
+    default: (
+        font-size: functions.convert-rem(38px),
+        line-height: functions.convert-rem(42px),
+        font-family: var(--text-font-family-regular),
+        font-weight: functions.font-weight($font-weights, heavy),
+        letter-spacing: functions.convert-rem(-1.5px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(42px),
+        line-height: functions.convert-rem(46px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(46px),
+        line-height: functions.convert-rem(50px),
+        letter-spacing: -0.01em,
+    ),
+);
+
+$heading-100: (
+    default: (
+        font-size: functions.convert-rem(38px),
+        line-height: functions.convert-rem(42px),
+        font-family: var(--text-font-family-regular),
+        font-weight: functions.font-weight($font-weights, regular),
+        letter-spacing: functions.convert-rem(-1.5px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(42px),
+        line-height: functions.convert-rem(46px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(46px),
+        line-height: functions.convert-rem(50px),
+        letter-spacing: functions.convert-rem(-0.01px),
+    ),
+);
+
+$heading-200: (
+    default: (
+        font-size: functions.convert-rem(30px),
+        line-height: functions.convert-rem(34px),
+        font-family: var(--text-font-family-regular),
+        font-weight: functions.font-weight($font-weights, thin),
+        letter-spacing: functions.convert-rem(-0.5px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(34px),
+        line-height: functions.convert-rem(38px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(38px),
+        line-height: functions.convert-rem(42px),
+        letter-spacing: functions.convert-rem(-0.75px),
+    ),
+);
+
+$heading-300: (
+    default: (
+        font-size: functions.convert-rem(24px),
+        line-height: functions.convert-rem(27px),
+        font-family: var(--text-font-family-regular),
+        font-weight: functions.font-weight($font-weights, thin),
+        letter-spacing: 0,
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(27px),
+        line-height: functions.convert-rem(30px),
+        letter-spacing: functions.convert-rem(0.75px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(30px),
+        line-height: functions.convert-rem(33px),
+        letter-spacing: functions.convert-rem(-0.75px),
+    ),
+);
+
+$heading-400: (
+    default: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(22px),
+        font-family: var(--text-font-family-regular),
+        font-weight: functions.font-weight($font-weights, thin),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(22px),
+        line-height: functions.convert-rem(24px),
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(24px),
+        line-height: functions.convert-rem(26px),
+        letter-spacing: functions.convert-rem(-0.5px),
+    ),
+);
+
+$heading-500: (
+    default: (
+        font-size: functions.convert-rem(18px),
+        line-height: functions.convert-rem(20px),
+        font-weight: functions.font-weight($font-weights, heavy),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(22px),
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(22px),
+        letter-spacing: functions.convert-rem(-0.5px),
+    ),
+);
+
+$heading-600: (
+    default: (
+        font-size: functions.convert-rem(14px),
+        line-height: functions.convert-rem(16px),
+        font-weight: functions.font-weight($font-weights, heavy),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(16px),
+        line-height: functions.convert-rem(18px),
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(18px),
+        line-height: functions.convert-rem(20px),
+        letter-spacing: functions.convert-rem(-0.5px),
+    ),
+);
+
+$subheading: (
+    default: (
+        font-size: functions.convert-rem(18px),
+        line-height: functions.convert-rem(20px),
+        font-weight: functions.font-weight($font-weights, regular),
+        letter-spacing: functions.convert-rem(0.25px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(22px),
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(22px),
+        letter-spacing: functions.convert-rem(-0.5px),
+    ),
+);
+
+$body-bold: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(17px),
+        line-height: functions.convert-rem(23px),
+        font-weight: 700,
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(19px),
+        line-height: functions.convert-rem(27px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(28px),
+    ),
+);
+
+$body-small: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(14px),
+        font-weight: 400,
+        line-height: functions.convert-rem(22px),
+        letter-spacing: 0.005em,
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(16px),
+        line-height: functions.convert-rem(22px),
+        letter-spacing: 0.008em,
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(18px),
+        line-height: functions.convert-rem(24px),
+        letter-spacing: 0.005em,
+    ),
+);
+
+$body-large: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(19px),
+        font-weight: 400,
+        line-height: functions.convert-rem(27px),
+        letter-spacing: 0.005em,
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(23px),
+        line-height: functions.convert-rem(30px),
+        letter-spacing: 0.008em,
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(25px),
+        line-height: functions.convert-rem(32px),
+        letter-spacing: 0.005em,
+    ),
+);
+
+$button-large: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(20px),
+        line-height: functions.convert-rem(21px),
+        font-weight: functions.font-weight($font-weights, regular),
+        letter-spacing: functions.convert-rem(1.25px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(22px),
+        line-height: functions.convert-rem(23px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(24px),
+        line-height: functions.convert-rem(25px),
+    ),
+);
+
+$button-small: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(12px),
+        line-height: functions.convert-rem(13px),
+        font-weight: functions.font-weight($font-weights, regular),
+        letter-spacing: functions.convert-rem(1.25px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(14px),
+        line-height: functions.convert-rem(15px),
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(16px),
+        line-height: functions.convert-rem(17px),
+    ),
+);
+
+$link: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(16px),
+        line-height: functions.convert-rem(18px),
+        font-weight: normal,
+        letter-spacing: functions.convert-rem(0.5px),
+        text-decoration: none,
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(19px),
+        line-height: 27px,
+    ),
+    sizes.$ultra-wide: (
+        font-size: 20px,
+        line-height: 28px,
+    ),
+);
+
+$label: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(15px),
+        line-height: functions.convert-rem(20px),
+        font-weight: 400,
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(17px),
+        line-height: functions.convert-rem(22px),
+    ),
+);
+
+$label-bold: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(15px),
+        font-weight: 700,
+        line-height: functions.convert-rem(20px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(17px),
+        line-height: functions.convert-rem(22px),
+    ),
+);
+
+$input: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(16px),
+        line-height: functions.convert-rem(18px),
+        font-weight: 400,
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+);
+
+$input-message: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(14px),
+        line-height: functions.convert-rem(16px),
+        font-weight: 300,
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+);
+
+$select: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(14px),
+        line-height: functions.convert-rem(16px),
+        font-weight: 400,
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+);
+
+$blockquote: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(27px),
+        font-weight: 400,
+        line-height: functions.convert-rem(40px),
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(38px),
+        line-height: functions.convert-rem(58px),
+        letter-spacing: 0.01em,
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(40px),
+        line-height: functions.convert-rem(60px),
+        letter-spacing: 0,
+    ),
+);
+
+$overline: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(8px),
+        line-height: functions.convert-rem(10px),
+        font-weight: 700,
+        letter-spacing: functions.convert-rem(1.5px),
+        text-transform: uppercase,
+    ),
+    sizes.$desktop: (
+        font-size: functions.convert-rem(10px),
+        line-height: functions.convert-rem(14px),
+        letter-spacing: 0.01em,
+    ),
+    sizes.$ultra-wide: (
+        font-size: functions.convert-rem(12px),
+        line-height: functions.convert-rem(16px),
+        letter-spacing: 0,
+    ),
+);
+
+$showcase: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(14px),
+        line-height: functions.convert-rem(16px),
+        font-weight: 200,
+        text-align: left,
+        letter-spacing: functions.convert-rem(0.5px),
+    ),
+);
+
+$alert-title: (
+    default: (
+        font-family: var(--text-font-family-regular),
+        font-size: functions.convert-rem(22px),
+        line-height: functions.convert-rem(32px),
+        letter-spacing: 0,
+    ),
+);

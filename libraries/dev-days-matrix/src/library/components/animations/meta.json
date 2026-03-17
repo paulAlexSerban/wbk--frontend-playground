@@ -1,0 +1,26 @@
+{
+    "group": "library",
+    "category": "components",
+    "component": "animations",
+    "name": "Animations",
+    "version": "1.0.0",
+    "description": "Animations",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "animations"],
+    "variations": [
+        {
+            "slug": "hoverboard",
+            "name": "Hoverboard",
+            "description": "Hoverboard",
+            "images": [
+                {
+                    "filename": "dev-days-matrix-library--hoverboard",
+                    "alt": "Hoverboard"
+                }
+            ]
+        }
+    ]
+}

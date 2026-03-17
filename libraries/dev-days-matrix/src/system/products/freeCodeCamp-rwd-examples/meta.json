@@ -1,0 +1,14 @@
+{
+    "group": "system",
+    "category": "products",
+    "component": "freeCodeCamp-rwd-examples",
+    "name": "FreeCodeCamp - Responsive Web Design",
+    "version": "1.0.0",
+    "description": "FreeCodeCamp - Responsive Web Design Projects",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "product", "freeCodeCamp", "responsive", "web", "design", "projects"],
+    "variations": []
+}

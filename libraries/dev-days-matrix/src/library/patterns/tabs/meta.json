@@ -1,0 +1,25 @@
+{
+    "group": "library",
+    "category": "patterns",
+    "component": "tabs",
+    "name": "Tabs",
+    "version": "1.0.0",
+    "description": "Tabs",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "patterns", "tabs"],
+    "variations": [
+        {
+            "slug": "navigation-tabs-css",
+            "name": "Navigation Tabs (Only CSS)",
+            "description": "Navigation Tabs (Only CSS)"
+        },
+        {
+            "slug": "navigation-tabs-js",
+            "name": "Navigation Tabs (with JS)",
+            "description": "Navigation Tabs (with JS)"
+        }
+    ]
+}

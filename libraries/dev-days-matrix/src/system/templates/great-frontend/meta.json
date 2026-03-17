@@ -1,0 +1,21 @@
+{
+    "hide": false,
+    "group": "system",
+    "category": "templates",
+    "component": "great-frontend",
+    "name": "Great Frontend Base Page Template",
+    "version": "1.0.0",
+    "description": "Great Frontend Base Page Template",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "great-frontend",
+            "name": "Great Frontend Base Page Template",
+            "description": "Great Frontend Base Page Template"
+        }
+    ]
+}

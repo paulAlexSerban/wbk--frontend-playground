@@ -1,0 +1,20 @@
+{
+    "group": "library",
+    "category": "modules",
+    "component": "stopwatch",
+    "name": "Stopwatch",
+    "version": "1.0.0",
+    "description": "Stopwatch",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["library", "modules", "stopwatch"],
+    "variations": [
+        {
+            "slug": "stopwatch",
+            "name": "Stopwatch",
+            "description": "Stopwatch"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{{#> ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base title='Form Validation' attributionFromHref='https://www.udemy.com/course/web-projects-with-vanilla-javascript/' attributionFromLabel='20 Web Projects With Vanilla JavaScript'}}
+  {{{feLibs 'library' 'modules' 'timer' 'new-year-countdown' 'all'}}}
+
+  <div id="year" class="year"></div>
+
+  <h1>New Year Countdown</h1>
+
+  <div id="countdown" class="countdown">
+    <div class="time">
+      <h2 id="days">00</h2>
+      <small>days</small>
+    </div>
+    <div class="time">
+      <h2 id="hours">00</h2>
+      <small>hours</small>
+    </div>
+    <div class="time">
+      <h2 id="minutes">00</h2>
+      <small>minutes</small>
+    </div>
+    <div class="time">
+      <h2 id="seconds">00</h2>
+      <small>seconds</small>
+    </div>
+  </div>
+
+  <img src="{{assetsUrl 'gifs' 'spinner.gif'}}" alt="Loading..." id="loading" class="loading" />
+
+{{/ ./templates/dev-days-matrix/markup/partials/_dev-days-matrix-base}}

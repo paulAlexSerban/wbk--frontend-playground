@@ -1,0 +1,20 @@
+@use'~ScssAbstracts' as abstracts;
+
+/* ------------------------------------ *\
+ * #PARAGRAPH
+\* ------------------------------------ */
+
+$block-p: 'paragraph';
+
+.#{$block-p} {
+    @include abstracts.font(abstracts.$body);
+
+    color: var(--text-color);
+    margin-top: abstracts.$baseline;
+
+    @include abstracts.e('base') {
+        &.blurry-loader__loading-text {
+            color: abstracts.get-color(abstracts.$c-light, light);
+        }
+    }
+}

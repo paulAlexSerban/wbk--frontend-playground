@@ -1,0 +1,21 @@
+{
+    "hide": false,
+    "group": "system",
+    "category": "templates",
+    "component": "free-code-camp",
+    "name": "Free Code Camp Base Page Template",
+    "version": "1.0.0",
+    "description": "Free Code Camp Base Page Template",
+    "author": {
+        "name": "Paul Serban",
+        "email": "paul.alex.serban@gmail.com"
+    },
+    "keywords": ["page", "template", "base"],
+    "variations": [
+        {
+            "slug": "free-code-camp",
+            "name": "Free Code Camp Base Page Template",
+            "description": "Free Code Camp Base Page Template"
+        }
+    ]
+}

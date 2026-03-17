@@ -1,0 +1,15 @@
+.grid {
+    /* ↓ Set the minimum column width */
+    --grid-col-min-width: 20ch;
+    /*  Establish a grid context */
+    display: grid;
+    /*  Set a gap between grid items  */
+    grid-gap: 1rem;
+}
+@supports (width: min(var(--grid-col-min-width), 100%)) {
+    .grid {
+        /* ↓ Enhance with the min() function
+    into multiple columns */
+        grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-col-min-width), 100%), 1fr));
+    }
+}

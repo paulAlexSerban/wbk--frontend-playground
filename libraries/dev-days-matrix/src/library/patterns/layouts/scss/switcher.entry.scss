@@ -1,0 +1,22 @@
+.switcher {
+    /* ↓ The width at which the layout “breaks” */
+    --switcher--threshold: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* ↓ The default value is the first point on the modular scale */
+    gap: var(--gutter, var(--ss1));
+
+    & > * {
+        /* ↓ Allow children to grow */
+        flex-grow: 1;
+        /* ↓ Switch the layout at the --switcher--threshold */
+        flex-basis: calc((var(--switcher--threshold) - 100%) * 999);
+    }
+
+    &,
+    & > :nth-last-child(n + 5),
+    & > :nth-last-child(n + 5) ~ * {
+        /* ↓ Switch to a vertical configuration if there are more than 4 child elements */
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,9 @@
+@use './get-color' as *;
+@use '../../_03_foundations/colors' as *;
+/* ------------------------------------ *\
+  BOX SHADOW
+\* ------------------------------------ */
+
+@function box-shadow($top: 0, $left: 1px, $blur: 1px, $color: get-color($c-dark, dark), $inset: 'inset') {
+    @return $top $left $blur $color #{$inset};
+}
