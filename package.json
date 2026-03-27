@@ -32,22 +32,15 @@
         "install:libraries": "yarn install:lib:dev-days-matrix && yarn install:lib:frontend-mentor",
         "install:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn",
         "install:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn || echo '⚠️  Frontend Mentor Library not initialized'",
-
         "///// UNIVERSAL BUILD SCRIPTS /////": "",
         "build:all": "yarn && yarn build:libraries && yarn build:dashboard",
-        "build:dashboard": "node dashboard/core/universal-dashboard.js",
+        "build:dashboard": "node dashboard",
         "build:libraries": "yarn build:lib:dev-days-matrix && yarn build:lib:frontend-mentor",
-        "build:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn",
-        "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn",
-
-        "///// DEVELOPMENT SCRIPTS /////": "",
-        "dev:handlebars": "cd frameworks/custom/handlebars && yarn dev || node generate.js",
-        "dev:html-templates": "cd frameworks/custom/html-templates && yarn dev || node build.js",
-
+        "build:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn build || echo '⚠️  Dev Days Matrix Library not built'",
+        "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn build || echo '⚠️  Frontend Mentor Library not built'",
         "///// CODE QUALITY SCRIPTS /////": "",
-        "format": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
-        "format:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
-        
+        "formats:write": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
+        "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
         "commit": "git-cz",
         "precommit": "lint-staged"
@@ -60,6 +53,7 @@
         "commander": "^11.0.0",
         "cross-spawn": "^7.0.3",
         "cz-conventional-changelog": "^3.3.0",
+        "dotenv": "^17.3.1",
         "fs-extra": "^11.0.0",
         "glob": "^10.0.0",
         "husky": "^9.1.7",

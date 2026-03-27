@@ -24,6 +24,6 @@ const buildHtmlDocument = ({ head, sidebar, topNavbar, cards, modal, footer }) =
 </html>
 `;
 
-module.exports = {
+export {
     buildHtmlDocument,
 };

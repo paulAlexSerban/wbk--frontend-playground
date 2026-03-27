@@ -1,7 +1,7 @@
 // libraryTemplate.js
 // Generates HTML for a library and its groups
-const { generateGroupHTML } = require('./groupTemplate');
-const utils = require('../../utils');
+import { generateGroupHTML } from './groupTemplate.js';
+import utils from '../../utils/index.js';
 
 /**
  * Generate HTML for a library and its groups.
@@ -39,6 +39,6 @@ function generateLibraryHTML(library, baseUrl) {
         .join('');
 }
 
-module.exports = {
+export {
     generateLibraryHTML,
 };

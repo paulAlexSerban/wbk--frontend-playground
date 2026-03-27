@@ -1,7 +1,7 @@
 // categoryTemplate.js
 // Generates HTML for a category and its components
-const { generateComponentHTML } = require('./componentTemplate');
-const utils = require('../../utils');
+import { generateComponentHTML } from './componentTemplate.js';
+import utils from '../../utils/index.js';
 
 /**
  * Generate HTML for a category and its components.
@@ -28,6 +28,6 @@ function generateCategoryHTML(baseUrl, dir, groupName, categoryContent) {
         .join('');
 }
 
-module.exports = {
+export {
     generateCategoryHTML,
 };

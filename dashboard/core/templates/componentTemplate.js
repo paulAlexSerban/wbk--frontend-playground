@@ -193,6 +193,6 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
         .join('');
 }
 
-module.exports = {
+export {
     generateComponentHTML,
 };

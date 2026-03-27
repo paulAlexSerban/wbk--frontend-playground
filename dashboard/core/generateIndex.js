@@ -1,17 +1,21 @@
 // Main entry for generating dashboard index.html and index.json
-const fs = require('fs');
-const path = require('path');
-const dotenv = require('dotenv');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
-const { buildHtmlDocument } = require('./htmlBuilder');
-const { loadComponentData } = require('./dataLoader');
+import { buildHtmlDocument } from './htmlBuilder.js';
+import { loadComponentData } from './dataLoader.js';
 
-const { generateLibraryHTML } = require('./templates/libraryTemplate');
-const { generateSidebarHTML } = require('./templates/sidebarTemplate');
-const { generateModalHTML } = require('./templates/modalTemplate');
-const { headHTML, headerHTML, footerHTML, topNavbarHTML } = require('./htmlPartials');
+import { generateLibraryHTML } from './templates/libraryTemplate.js';
+import { generateSidebarHTML } from './templates/sidebarTemplate.js';
+import { generateModalHTML } from './templates/modalTemplate.js';
+import { headHTML, headerHTML, footerHTML, topNavbarHTML } from './htmlPartials.js';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 
@@ -19,12 +23,20 @@ const source = path.join(__dirname, '..', '..', 'package', 'libraries');
 const destination = path.join(__dirname, '..', '..', 'package', 'libraries');
 
 async function generateIndex() {
+    console.log('Generating dashboard index...');
     try {
+        await fs.promises.mkdir(destination, { recursive: true });
         const transformedComponentLists = await loadComponentData(source);
+        if (transformedComponentLists.length === 0) {
+            throw new Error(
+                'No component data found. Build libraries first or ensure componentList.json exists in package/libraries or libraries/*/dist.'
+            );
+        }
         await fs.promises.writeFile(
             path.join(destination, 'index.json'),
             JSON.stringify(transformedComponentLists, null, 2)
         );
+        console.log('index.json has been generated!');
         const libraryHTML = transformedComponentLists.map((library) => generateLibraryHTML(library, BASE_URL)).join('');
         const htmlContent = buildHtmlDocument({
             head: headHTML,
@@ -42,4 +54,4 @@ async function generateIndex() {
     }
 }
 
-module.exports = generateIndex;
+export default generateIndex;

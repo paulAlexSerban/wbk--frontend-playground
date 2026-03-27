@@ -1,7 +1,7 @@
 // groupTemplate.js
 // Generates HTML for a group and its categories
-const { generateCategoryHTML } = require('./categoryTemplate');
-const utils = require('../../utils');
+import { generateCategoryHTML } from './categoryTemplate.js';
+import utils from '../../utils/index.js';
 
 /**
  * Generate HTML for a group and its categories.
@@ -20,6 +20,6 @@ function generateGroupHTML(baseUrl, dir, groupContent) {
         .join('');
 }
 
-module.exports = {
+export {
     generateGroupHTML,
 };

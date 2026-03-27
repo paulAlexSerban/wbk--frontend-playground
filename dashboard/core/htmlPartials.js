@@ -1,4 +1,9 @@
-const fs = require('fs');
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const date = new Date();
 
@@ -98,7 +103,7 @@ const headerHTML = `
 `;
 
 const embededScripts = () => {
-    const scripts = fs.readFileSync('../dashboard/scripts/index.js', 'utf-8');
+    const scripts = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'index.js'), 'utf-8');
     return `<script>${scripts}</script>`;
 };
 
@@ -120,7 +125,7 @@ const footerHTML = `
         </footer>
 `;
 
-module.exports = {
+export {
     headHTML,
     headerHTML,
     topNavbarHTML,

@@ -18,4 +18,4 @@ const generateModalHTML = `
 </div>
 `;
 
-module.exports = { generateModalHTML };
+export { generateModalHTML };

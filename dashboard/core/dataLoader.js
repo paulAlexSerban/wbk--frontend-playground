@@ -1,8 +1,8 @@
 // dataLoader.js
 // Handles loading and transforming component data for the dashboard
 
-const utils = require('../utils');
-const path = require('path');
+import utils from '../utils/index.js';
+import path from 'path';
 
 /**
  * Loads and transforms all component data from the source directory.
@@ -16,6 +16,6 @@ async function loadComponentData(sourceDir) {
     }));
 }
 
-module.exports = {
+export {
     loadComponentData,
 };

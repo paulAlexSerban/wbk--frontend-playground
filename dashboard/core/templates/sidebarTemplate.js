@@ -15,6 +15,6 @@ const generateSidebarHTML = () => {
 </nav>`;
 };
 
-module.exports = {
+export {
     generateSidebarHTML,
 };
