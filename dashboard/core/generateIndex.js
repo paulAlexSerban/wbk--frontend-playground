@@ -19,8 +19,8 @@ const __dirname = path.dirname(__filename);
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 
-const source = path.join(__dirname, '..', '..', 'package', 'libraries');
-const destination = path.join(__dirname, '..', '..', 'package', 'libraries');
+const source = path.join(__dirname, '..', '..', 'package', 'wbk--frontend-playground', 'libraries');
+const destination = path.join(__dirname, '..', '..', 'package', 'wbk--frontend-playground', 'libraries');
 
 async function generateIndex() {
     console.log('Generating dashboard index...');

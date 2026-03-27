@@ -26,6 +26,7 @@
         "yarn": ">=1.22.0"
     },
     "scripts": {
+        "start:package": "npx serve package",
         "///// INSTALLATION SCRIPTS /////": "",
         "install:all": "yarn && yarn install:libraries && yarn install:dashboard",
         "install:dashboard": "cd dashboard && yarn || echo '⚠️  Dashboard not initialized'",
@@ -33,11 +34,13 @@
         "install:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn",
         "install:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn || echo '⚠️  Frontend Mentor Library not initialized'",
         "///// UNIVERSAL BUILD SCRIPTS /////": "",
-        "build:all": "yarn && yarn build:libraries && yarn build:dashboard",
+        "build:all": "yarn && yarn build:libraries && yarn package:libraries && yarn build:dashboard",
         "build:dashboard": "node dashboard",
         "build:libraries": "yarn build:lib:dev-days-matrix && yarn build:lib:frontend-mentor",
         "build:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn build || echo '⚠️  Dev Days Matrix Library not built'",
         "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn build || echo '⚠️  Frontend Mentor Library not built'",
+        "///// PACKAGE SCRIPTS /////": "",
+        "package:libraries":"bash scripts/package-libraries.bash",
         "///// CODE QUALITY SCRIPTS /////": "",
         "formats:write": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
@@ -78,10 +81,7 @@
             "prettier --write"
         ]
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/paulAlexSerban/wbk--frontend-playground.git"
-    },
+    "repository": "https://github.com/paulAlexSerban/wbk--frontend-playground.git",
     "bugs": {
         "url": "https://github.com/paulAlexSerban/wbk--frontend-playground/issues"
     },
@@ -90,5 +90,6 @@
         "> 1%",
         "last 2 versions",
         "not dead"
-    ]
+    ],
+    "main": "index.js"
 }
