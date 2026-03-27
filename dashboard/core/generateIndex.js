@@ -6,10 +6,10 @@ import dotenv from 'dotenv';
 
 import { buildHtmlDocument } from './htmlBuilder.js';
 import { loadComponentData } from './dataLoader.js';
+import { formatIntegrityErrors, verifyGeneratedArtifacts } from '../quality/integrity.js';
 
 import { generateLibraryHTML } from './templates/libraryTemplate.js';
 import { generateSidebarHTML } from './templates/sidebarTemplate.js';
-import { generateModalHTML } from './templates/modalTemplate.js';
 import { headHTML, headerHTML, footerHTML, topNavbarHTML } from './htmlPartials.js';
 
 dotenv.config();
@@ -44,13 +44,28 @@ async function generateIndex() {
             header: headerHTML,
             sidebar: generateSidebarHTML(),
             cards: libraryHTML,
-            modal: generateModalHTML,
             footer: footerHTML,
         });
         await fs.promises.writeFile(path.join(destination, 'index.html'), htmlContent);
-        // console.log('index.html has been generated!');
+
+        const integrityResult = await verifyGeneratedArtifacts({
+            catalog: transformedComponentLists,
+            htmlContent,
+            baseUrl: BASE_URL,
+            destinationDir: destination,
+        });
+
+        if (integrityResult.errors.length > 0) {
+            throw new Error(`Dashboard integrity checks failed:\n${formatIntegrityErrors(integrityResult.errors)}`);
+        }
+
+        console.log('index.html has been generated!');
+        console.log(
+            `Dashboard integrity checks passed: ${integrityResult.summary.visibleEntries} visible entries, ${integrityResult.summary.checkedPreviewTargets} preview targets.`
+        );
     } catch (err) {
         console.error('Error:', err);
+        process.exitCode = 1;
     }
 }
 

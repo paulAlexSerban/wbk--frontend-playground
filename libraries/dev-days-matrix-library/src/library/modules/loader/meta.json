@@ -12,7 +12,7 @@
     "keywords": ["library", "modules", "loader", "relaxer"],
     "variations": [
         {
-            "slug": "Relaxer",
+            "slug": "relaxer",
             "name": "relaxer",
             "description": "A relaxing breathing app with a visual director to tell you when to breathe in, hold and breathe out",
             "specs": [

@@ -1,7 +1,36 @@
 // libraryTemplate.js
 // Generates HTML for a library and its groups
 import { generateGroupHTML } from './groupTemplate.js';
-import utils from '../../utils/index.js';
+
+function filterVisibleComponents(categories) {
+    return Object.entries(categories).reduce((acc, [categoryName, components]) => {
+        const visibleComponents = components.filter((component) => !component.hide);
+        if (visibleComponents.length > 0) {
+            acc[categoryName] = visibleComponents;
+        }
+        return acc;
+    }, {});
+}
+
+function filterVisibleGroups(groups) {
+    return Object.entries(groups).reduce((acc, [groupName, categories]) => {
+        const visibleCategories = filterVisibleComponents(categories);
+        if (Object.keys(visibleCategories).length > 0) {
+            acc[groupName] = visibleCategories;
+        }
+        return acc;
+    }, {});
+}
+
+function filterVisibleLibrary(library) {
+    return Object.entries(library).reduce((acc, [dir, groups]) => {
+        const visibleGroups = filterVisibleGroups(groups);
+        if (Object.keys(visibleGroups).length > 0) {
+            acc[dir] = visibleGroups;
+        }
+        return acc;
+    }, {});
+}
 
 /**
  * Generate HTML for a library and its groups.
@@ -10,32 +39,10 @@ import utils from '../../utils/index.js';
  * @returns {string}
  */
 function generateLibraryHTML(library, baseUrl) {
-    // filter library content but maintain object format
-    const filteredLibrary = Object.entries(library).reduce((acc, [dir, groups]) => {
-        const filteredGroups = Object.entries(groups).reduce((acc, [groupName, categories]) => {
-            const filteredCategories = Object.entries(categories).reduce((acc, [categoryName, components]) => {
-                const filteredComponents = components.filter((component) => !component.hide);
-                if (filteredComponents.length) {
-                    acc[categoryName] = filteredComponents;
-                }
-                return acc;
-            }, {});
-            if (Object.keys(filteredCategories).length) {
-                acc[groupName] = filteredCategories;
-            }
-            return acc;
-        }, {});
-        if (Object.keys(filteredGroups).length) {
-            acc[dir] = filteredGroups;
-        }
-        return acc;
-    }, {});
+    const filteredLibrary = filterVisibleLibrary(library);
+
     return Object.entries(filteredLibrary)
-        .map(
-            ([dir, groups]) => `
-                ${generateGroupHTML(baseUrl, dir, groups)}
-            `
-        )
+        .map(([dir, groups]) => generateGroupHTML(baseUrl, dir, groups))
         .join('');
 }
 

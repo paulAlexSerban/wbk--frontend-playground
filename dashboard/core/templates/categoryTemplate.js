@@ -1,7 +1,6 @@
 // categoryTemplate.js
 // Generates HTML for a category and its components
 import { generateComponentHTML } from './componentTemplate.js';
-import utils from '../../utils/index.js';
 
 /**
  * Generate HTML for a category and its components.
@@ -13,17 +12,11 @@ import utils from '../../utils/index.js';
  */
 function generateCategoryHTML(baseUrl, dir, groupName, categoryContent) {
     return Object.entries(categoryContent)
-        .map(
-            ([categoryName, components]) => `
-                ${components
-                    .map((component) => {
-                        if (!component.hide) {
-                            return generateComponentHTML(baseUrl, dir, groupName, categoryName, component);
-                        }
-                        return '';
-                    })
-                    .join('')}
-            `
+        .map(([categoryName, components]) =>
+            components
+                .filter((component) => !component.hide)
+                .map((component) => generateComponentHTML(baseUrl, dir, groupName, categoryName, component))
+                .join('')
         )
         .join('');
 }

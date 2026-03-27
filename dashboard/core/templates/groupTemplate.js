@@ -1,7 +1,6 @@
 // groupTemplate.js
 // Generates HTML for a group and its categories
 import { generateCategoryHTML } from './categoryTemplate.js';
-import utils from '../../utils/index.js';
 
 /**
  * Generate HTML for a group and its categories.
@@ -12,11 +11,7 @@ import utils from '../../utils/index.js';
  */
 function generateGroupHTML(baseUrl, dir, groupContent) {
     return Object.entries(groupContent)
-        .map(
-            ([groupName, categories]) => `
-                ${generateCategoryHTML(baseUrl, dir, groupName, categories)}
-            `
-        )
+        .map(([groupName, categories]) => generateCategoryHTML(baseUrl, dir, groupName, categories))
         .join('');
 }
 

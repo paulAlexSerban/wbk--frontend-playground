@@ -106,7 +106,7 @@ dist
 **/public/*/*
 .DS_Store
 package
-frameworks/*/*/assets/*
+libraries/*/assets/*
 .venv
 __pycache__
 output
