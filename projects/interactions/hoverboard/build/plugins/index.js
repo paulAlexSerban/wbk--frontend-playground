@@ -3,8 +3,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const fs = require('fs');
+const path = require('path');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const manifestPath = path.resolve(process.cwd(), 'manifest.json');
+
+const getManifestData = () => {
+    try {
+        return JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (error) {
+        console.warn(`Could not load manifest.json from ${manifestPath}: ${error.message}`);
+        return {};
+    }
+};
 
 class RemoveStyleJsAssetPlugin {
     apply(compiler) {
@@ -38,6 +50,16 @@ const plugins = [
         template: 'src/index.hbs',
         filename: 'index.html',
         inject: false,
+        templateParameters: (compilation, assets, assetTags, options) => ({
+            compilation,
+            webpackConfig: compilation.options,
+            htmlWebpackPlugin: {
+                tags: assetTags,
+                files: assets,
+                options,
+            },
+            manifest: getManifestData(),
+        }),
     }),
     new CopyWebpackPlugin({
         patterns: [
