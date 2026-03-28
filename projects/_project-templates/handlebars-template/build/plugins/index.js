@@ -1,5 +1,6 @@
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -32,6 +33,11 @@ const plugins = [
         },
     }),
     new webpack.ProgressPlugin(),
+    new HtmlWebpackPlugin({
+        template: 'src/index.hbs',
+        filename: 'index.html',
+        inject: false,
+    }),
 ];
 
 if (NODE_ENV !== 'production') {
