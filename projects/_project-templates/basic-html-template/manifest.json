@@ -1,10 +1,20 @@
 {
     "name": "Basic HTML Template",
     "source": "Frontend Forge",
+    "sourceUrl": "http://localhost:3000",
     "description": "A basic HTML template for new projects.",
-    "concepts": ["html", "css", "javascript", "template"],
+    "concepts": [
+        "html",
+        "css",
+        "javascript",
+        "template"
+    ],
     "category": "project-templates",
-    "tags": ["boilerplate", "starter", "frontend"],
+    "tags": [
+        "boilerplate",
+        "starter",
+        "frontend"
+    ],
     "status": "complete",
-    "dificulty": "beginner"
+    "difficulty": "beginner"
 }
