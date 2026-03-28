@@ -42,6 +42,4 @@ function validateCatalogStructure(componentLists) {
     return { errors };
 }
 
-export {
-    validateCatalogStructure,
-};
+export { validateCatalogStructure };

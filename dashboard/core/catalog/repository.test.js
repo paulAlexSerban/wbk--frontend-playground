@@ -18,12 +18,16 @@ test('repository returns packaged source when available', async () => {
         packaged: {
             name: 'packaged',
             label: 'packaged',
-            read: async () => ({ libA: [{ group: 'library', category: 'components', component: 'x', variations: [] }] }),
+            read: async () => ({
+                libA: [{ group: 'library', category: 'components', component: 'x', variations: [] }],
+            }),
         },
         distFallback: {
             name: 'distFallback',
             label: 'dist',
-            read: async () => ({ libB: [{ group: 'library', category: 'components', component: 'y', variations: [] }] }),
+            read: async () => ({
+                libB: [{ group: 'library', category: 'components', component: 'y', variations: [] }],
+            }),
         },
     };
 
@@ -44,7 +48,9 @@ test('repository falls back when packaged source is empty', async () => {
         distFallback: {
             name: 'distFallback',
             label: 'dist',
-            read: async () => ({ libB: [{ group: 'library', category: 'components', component: 'y', variations: [] }] }),
+            read: async () => ({
+                libB: [{ group: 'library', category: 'components', component: 'y', variations: [] }],
+            }),
         },
     };
 

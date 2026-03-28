@@ -64,6 +64,4 @@ const SOURCE_STRATEGIES = {
     },
 };
 
-export {
-    SOURCE_STRATEGIES,
-};
+export { SOURCE_STRATEGIES };

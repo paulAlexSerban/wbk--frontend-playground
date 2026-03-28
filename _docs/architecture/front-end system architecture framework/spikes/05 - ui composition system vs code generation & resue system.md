@@ -63,9 +63,9 @@ Add a rule:
 
 You already noticed the mess:
 
-* Atoms vs Components
-* Molecules vs Patterns
-* Organisms vs Modules
+- Atoms vs Components
+- Molecules vs Patterns
+- Organisms vs Modules
 
 Your workbook should enforce:
 
@@ -106,10 +106,10 @@ Clarify each brutally:
 
 Add the **hard truth section** (this is important for credibility):
 
-* Boilerplate = technical debt starter pack
-* Scaffolding = real scalability
-* Templates = local reuse only
-* Archetypes = where architecture lives
+- Boilerplate = technical debt starter pack
+- Scaffolding = real scalability
+- Templates = local reuse only
+- Archetypes = where architecture lives
 
 ---
 
@@ -165,19 +165,18 @@ Archetype → SaaS platform starter
 
 ## Part IV — Hands-On Sections (Workbook Exercises)
 
-This is where it becomes a *workbook*, not theory.
+This is where it becomes a _workbook_, not theory.
 
 ### Exercise 1 — Decomposition
 
 Take a real app (e.g., your MERN slot game or dashboard):
 
-* Break it into:
-
-  * Tokens
-  * Components
-  * Patterns
-  * Modules
-  * Templates
+- Break it into:
+    - Tokens
+    - Components
+    - Patterns
+    - Modules
+    - Templates
 
 ---
 
@@ -185,7 +184,7 @@ Take a real app (e.g., your MERN slot game or dashboard):
 
 For each:
 
-* Extract reusable templates:
+- Extract reusable templates:
 
 Example:
 
@@ -214,15 +213,16 @@ This is where your engineering brain kicks in.
 ### Exercise 4 — Archetype Definition
 
 Design your own:
+
 > “Frontend Platform Archetype”
 
 Define:
 
-* Folder structure
-* Tech stack (React, Vite, etc.)
-* State management
-* Testing strategy
-* CI/CD hooks
+- Folder structure
+- Tech stack (React, Vite, etc.)
+- State management
+- Testing strategy
+- CI/CD hooks
 
 ---
 
@@ -277,18 +277,18 @@ Add these or it’ll stay mid-level:
 
 ### 1. Anti-Patterns
 
-* Over-componentization
-* Template explosion
-* Boilerplate decay
-* Design token inconsistency
+- Over-componentization
+- Template explosion
+- Boilerplate decay
+- Design token inconsistency
 
 ---
 
 ### 2. Trade-offs
 
-* Flexibility vs standardization
-* Speed vs maintainability
-* Scaffolding vs manual control
+- Flexibility vs standardization
+- Speed vs maintainability
+- Scaffolding vs manual control
 
 ---
 
@@ -312,9 +312,9 @@ You’re building:
 
 Potential names:
 
-* “Composable Frontend Architecture”
-* “UI Systems & Code Generation Framework”
-* “Atomic Systems Engineering”
+- “Composable Frontend Architecture”
+- “UI Systems & Code Generation Framework”
+- “Atomic Systems Engineering”
 
 ---
 
@@ -322,9 +322,9 @@ Potential names:
 
 Right now, your content is:
 
-* rich
-* insightful
-* but fragmented
+- rich
+- insightful
+- but fragmented
 
 Without structure:
 
@@ -338,6 +338,6 @@ With this structure:
 
 If you want next step, I can help you:
 
-* turn this into a **Notion / Obsidian structure**
-* or define a **CLI scaffolding system that enforces this model**
-* or shape it into a **blog series / personal brand asset**
+- turn this into a **Notion / Obsidian structure**
+- or define a **CLI scaffolding system that enforces this model**
+- or shape it into a **blog series / personal brand asset**

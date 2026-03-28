@@ -49,7 +49,4 @@ function createCatalogRepository({ sourceDir, sourcePolicy = 'preferPackaged', s
     };
 }
 
-export {
-    resolveSourceOrder,
-    createCatalogRepository,
-};
+export { resolveSourceOrder, createCatalogRepository };

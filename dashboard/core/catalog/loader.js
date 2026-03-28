@@ -2,7 +2,11 @@ import { createCatalogRepository } from './repository.js';
 import { validateCatalogStructure } from './validator.js';
 import { normalizeCatalog, groupByCategory } from './normalizer.js';
 
-async function loadCatalog({ sourceDir, sourcePolicy = 'preferPackaged', repositoryFactory = createCatalogRepository }) {
+async function loadCatalog({
+    sourceDir,
+    sourcePolicy = 'preferPackaged',
+    repositoryFactory = createCatalogRepository,
+}) {
     const repository = repositoryFactory({ sourceDir, sourcePolicy });
     const { componentLists, sourceUsed, diagnostics } = await repository.getComponentLists();
 
@@ -27,6 +31,4 @@ async function loadCatalog({ sourceDir, sourcePolicy = 'preferPackaged', reposit
     };
 }
 
-export {
-    loadCatalog,
-};
+export { loadCatalog };

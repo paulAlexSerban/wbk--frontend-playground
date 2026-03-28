@@ -1,9 +1,9 @@
 You’re naming something that sits at the intersection of:
 
-* design systems (Atomic Design evolved)
-* frontend architecture
-* code generation systems (scaffolding, archetypes)
-* composability
+- design systems (Atomic Design evolved)
+- frontend architecture
+- code generation systems (scaffolding, archetypes)
+- composability
 
 So the name needs to signal **system + structure + scale**, not just UI.
 
@@ -12,18 +12,20 @@ Let’s break this down properly.
 ---
 
 # 1. Naming Directions (with intent)
+
 ## A. Architecture-first (serious, senior-level)
 
 These sound like something you'd present in an engineering org or conference.
 
-* **Composable Frontend Architecture (CFA)**
-* **Frontend Systems Architecture (FSA)**
-* **Unified Frontend Architecture (UFA)**
-* **Frontend Composition Architecture (FCA)**
+- **Composable Frontend Architecture (CFA)**
+- **Frontend Systems Architecture (FSA)**
+- **Unified Frontend Architecture (UFA)**
+- **Frontend Composition Architecture (FCA)**
 
 Blunt take:
+
 > These are the safest and most credible.
-If your goal is authority + blog + internal adoption → start here.
+> If your goal is authority + blog + internal adoption → start here.
 
 ---
 
@@ -31,10 +33,10 @@ If your goal is authority + blog + internal adoption → start here.
 
 These emphasize that it's more than just structure.
 
-* **Frontend Systems Framework**
-* **Composable UI Systems Framework**
-* **Frontend Composition Framework**
-* **UI Systems Engineering Framework**
+- **Frontend Systems Framework**
+- **Composable UI Systems Framework**
+- **Frontend Composition Framework**
+- **UI Systems Engineering Framework**
 
 These are slightly broader and easier to brand.
 
@@ -44,10 +46,10 @@ These are slightly broader and easier to brand.
 
 These lean into your strongest concept: **composition + generation**
 
-* **Composable Systems Model (CSM)**
-* **UI Composition & Generation Model (UCGM)**
-* **Composable Frontend System (CFS)**
-* **Composition-Driven Frontend Architecture (CDFA)**
+- **Composable Systems Model (CSM)**
+- **UI Composition & Generation Model (UCGM)**
+- **Composable Frontend System (CFS)**
+- **Composition-Driven Frontend Architecture (CDFA)**
 
 These are more unique—but slightly heavier.
 
@@ -55,10 +57,10 @@ These are more unique—but slightly heavier.
 
 ## D. Atomic Design evolution (if you want to position it as “next step”)
 
-* **Atomic Systems Architecture**
-* **Extended Atomic Architecture**
-* **Atomic Composition System**
-* **Post-Atomic Frontend Architecture**
+- **Atomic Systems Architecture**
+- **Extended Atomic Architecture**
+- **Atomic Composition System**
+- **Post-Atomic Frontend Architecture**
 
 Blunt truth:
 
@@ -70,17 +72,17 @@ Blunt truth:
 
 These are less descriptive, more memorable:
 
-* **Strata UI** (layers)
-* **Forge Frontend** (generation + structure)
-* **Layered Systems**
-* **UI Fabric**
-* **Systemic UI**
+- **Strata UI** (layers)
+- **Forge Frontend** (generation + structure)
+- **Layered Systems**
+- **UI Fabric**
+- **Systemic UI**
 
 These work better if you plan to:
 
-* build tools
-* open-source something
-* create a “movement”
+- build tools
+- open-source something
+- create a “movement”
 
 ---
 
@@ -116,8 +118,8 @@ It’s about:
 
 Most names people would pick:
 
-* over-focus on UI
-* ignore the engineering system
+- over-focus on UI
+- ignore the engineering system
 
 Don’t make that mistake.
 
@@ -125,9 +127,9 @@ Don’t make that mistake.
 
 # 4. What to avoid
 
-* Anything with just “UI Kit”
-* Anything with just “Design System”
-* Anything too cute or abstract (e.g., “Nebula UI”)
+- Anything with just “UI Kit”
+- Anything with just “Design System”
+- Anything too cute or abstract (e.g., “Nebula UI”)
 
 Those downgrade what you're building.
 
@@ -141,15 +143,15 @@ If I had to lock it in for your profile:
 
 It’s:
 
-* accurate
-* scalable
-* blog-friendly
-* enterprise-friendly
-* future-proof
+- accurate
+- scalable
+- blog-friendly
+- enterprise-friendly
+- future-proof
 
 ---
 
 If you want, next we can:
 
-* define a **tagline + one-sentence definition** (this matters a lot for positioning), or
-* test how the name holds up in a **blog series structure / personal brand**.
+- define a **tagline + one-sentence definition** (this matters a lot for positioning), or
+- test how the name holds up in a **blog series structure / personal brand**.

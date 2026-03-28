@@ -151,7 +151,14 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
             const cardId = buildCardId(dir, groupName, categoryName, component.component, index);
             const carouselId = `carousel-${cardId}`;
             const modalId = `galleryModal-${cardId}`;
-            const previewUrl = buildPreviewUrl(baseUrl, dir, groupName, categoryName, component.component, variation.slug);
+            const previewUrl = buildPreviewUrl(
+                baseUrl,
+                dir,
+                groupName,
+                categoryName,
+                component.component,
+                variation.slug
+            );
 
             // Generate image gallery if images exist, otherwise use default image
             const hasImages = variation.images && variation.images.length > 0;
@@ -221,6 +228,4 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
         .join('');
 }
 
-export {
-    generateComponentHTML,
-};
+export { generateComponentHTML };

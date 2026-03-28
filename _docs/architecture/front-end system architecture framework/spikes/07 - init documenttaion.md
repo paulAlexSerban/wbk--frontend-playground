@@ -9,15 +9,15 @@ Next step, we should deepen this into something that reflects your senior/archit
    → make this executable, not just conceptual
 
 3. **Design a CLI scaffolding system**
-   → this is where your framework becomes *real engineering leverage*
+   → this is where your framework becomes _real engineering leverage_
 
 4. **Add decision records (ADRs)**
    → align with your architecture mindset and blog direction
 
 If you want, I can take the next step and:
 
-* turn this into a **production-grade folder architecture + naming conventions**, or
-* design a **scaffolding CLI spec (commands, generators, structure)** that enforces this framework.
+- turn this into a **production-grade folder architecture + naming conventions**, or
+- design a **scaffolding CLI spec (commands, generators, structure)** that enforces this framework.
 
 ---
 
@@ -27,43 +27,46 @@ If you want, I can take the next step and:
 
 This framework defines a unified model for building, scaling, and maintaining frontend systems by combining two traditionally separate concerns:
 
-* UI Composition (Design Systems)
-* Code Generation & Reuse (Engineering Systems)
+- UI Composition (Design Systems)
+- Code Generation & Reuse (Engineering Systems)
 
 The goal is to create a consistent, opinionated approach to:
 
-* Structuring UI
-* Generating code
-* Scaling features
-* Maintaining long-term system integrity
+- Structuring UI
+- Generating code
+- Scaling features
+- Maintaining long-term system integrity
 
 ---
 
 ## 2. Core Principles
+
 ### 2.1 Separation of Concerns
 
 The system is divided into two independent but connected axes:
-* Axis A: UI Composition
-* Axis B: Code Generation & Reuse
+
+- Axis A: UI Composition
+- Axis B: Code Generation & Reuse
 
 Each axis can evolve independently but gains maximum value when aligned.
 
 ### 2.2 Progressive Complexity
+
 Each layer in the system introduces new res# Frontend System Architecture Framework
 
 ## 1. Overview
 
 This framework defines a unified model for building, scaling, and maintaining frontend systems by combining two traditionally separate concerns:
 
-* UI Composition (Design Systems)
-* Code Generation & Reuse (Engineering Systems)
+- UI Composition (Design Systems)
+- Code Generation & Reuse (Engineering Systems)
 
 The goal is to create a consistent, opinionated approach to:
 
-* Structuring UI
-* Generating code
-* Scaling features
-* Maintaining long-term system integrity
+- Structuring UI
+- Generating code
+- Scaling features
+- Maintaining long-term system integrity
 
 ---
 
@@ -73,8 +76,8 @@ The goal is to create a consistent, opinionated approach to:
 
 The system is divided into two independent but connected axes:
 
-* Axis A: UI Composition
-* Axis B: Code Generation & Reuse
+- Axis A: UI Composition
+- Axis B: Code Generation & Reuse
 
 Each axis can evolve independently but gains maximum value when aligned.
 
@@ -108,21 +111,21 @@ Primitive visual properties that define the design language.
 
 #### Examples
 
-* Colors
-* Spacing
-* Typography
-* Border radius
-* States (hover, active, disabled)
+- Colors
+- Spacing
+- Typography
+- Border radius
+- States (hover, active, disabled)
 
 #### Responsibility
 
-* Ensure visual consistency
-* Enable theming and scalability
+- Ensure visual consistency
+- Enable theming and scalability
 
 #### Anti-Patterns
 
-* Hardcoding values inside components
-* Duplicating token definitions
+- Hardcoding values inside components
+- Duplicating token definitions
 
 ---
 
@@ -134,20 +137,20 @@ The smallest functional UI units.
 
 #### Examples
 
-* Button
-* Input
-* Label
-* Icon
+- Button
+- Input
+- Label
+- Icon
 
 #### Responsibility
 
-* Encapsulate a single responsibility
-* Be reusable and composable
+- Encapsulate a single responsibility
+- Be reusable and composable
 
 #### Anti-Patterns
 
-* Overloading with multiple responsibilities
-* Tight coupling to business logic
+- Overloading with multiple responsibilities
+- Tight coupling to business logic
 
 ---
 
@@ -159,19 +162,19 @@ Combinations of components that achieve a single user-facing function.
 
 #### Examples
 
-* Form
-* Pagination
-* Search bar
+- Form
+- Pagination
+- Search bar
 
 #### Responsibility
 
-* Coordinate components
-* Represent interaction patterns
+- Coordinate components
+- Represent interaction patterns
 
 #### Anti-Patterns
 
-* Reinventing patterns across the app
-* Embedding layout-specific logic
+- Reinventing patterns across the app
+- Embedding layout-specific logic
 
 ---
 
@@ -183,19 +186,19 @@ Feature-level UI compositions combining multiple patterns and components.
 
 #### Examples
 
-* Navbar
-* Card grid
-* Dashboard widget
+- Navbar
+- Card grid
+- Dashboard widget
 
 #### Responsibility
 
-* Represent business features
-* Encapsulate domain-level UI behavior
+- Represent business features
+- Encapsulate domain-level UI behavior
 
 #### Anti-Patterns
 
-* Mixing unrelated features
-* Becoming a dumping ground for logic
+- Mixing unrelated features
+- Becoming a dumping ground for logic
 
 ---
 
@@ -207,17 +210,17 @@ Page-level structures defining layout and composition of modules.
 
 #### Examples
 
-* Dashboard layout
-* Product page layout
+- Dashboard layout
+- Product page layout
 
 #### Responsibility
 
-* Define structure without hardcoding content
+- Define structure without hardcoding content
 
 #### Anti-Patterns
 
-* Embedding business logic
-* Over-specialization
+- Embedding business logic
+- Over-specialization
 
 ---
 
@@ -229,12 +232,12 @@ Complete applications composed of multiple templates and flows.
 
 #### Examples
 
-* SaaS platform
-* E-commerce app
+- SaaS platform
+- E-commerce app
 
 #### Responsibility
 
-* Deliver end-to-end user experience
+- Deliver end-to-end user experience
 
 ---
 
@@ -254,13 +257,13 @@ An opinionated project blueprint encoding architecture, tooling, and conventions
 
 #### Responsibility
 
-* Define system-wide standards
-* Enforce architectural decisions
+- Define system-wide standards
+- Enforce architectural decisions
 
 #### Anti-Patterns
 
-* Over-engineering
-* Locking teams into inflexible decisions
+- Over-engineering
+- Locking teams into inflexible decisions
 
 ---
 
@@ -272,13 +275,13 @@ A code generation mechanism that produces tailored structures dynamically.
 
 #### Responsibility
 
-* Automate repetitive setup
-* Ensure consistency
+- Automate repetitive setup
+- Ensure consistency
 
 #### Anti-Patterns
 
-* Generating unused or bloated code
-* Lack of customization
+- Generating unused or bloated code
+- Lack of customization
 
 ---
 
@@ -290,12 +293,12 @@ A static starting codebase.
 
 #### Responsibility
 
-* Provide quick initialization
+- Provide quick initialization
 
 #### Anti-Patterns
 
-* Becoming outdated
-* Encouraging copy-paste culture
+- Becoming outdated
+- Encouraging copy-paste culture
 
 ---
 
@@ -307,17 +310,17 @@ Reusable code structures with placeholders.
 
 #### Examples
 
-* Component template
-* Page template
+- Component template
+- Page template
 
 #### Responsibility
 
-* Enable consistent reuse
+- Enable consistent reuse
 
 #### Anti-Patterns
 
-* Template sprawl
-* Lack of standardization
+- Template sprawl
+- Lack of standardization
 
 ---
 
@@ -329,11 +332,11 @@ Minimal structural representation of a system or component.
 
 #### Responsibility
 
-* Provide a baseline structure
+- Provide a baseline structure
 
 #### Anti-Patterns
 
-* Being too abstract to be useful
+- Being too abstract to be useful
 
 ---
 
@@ -377,11 +380,11 @@ Products
 
 ## 7. Anti-Patterns Across the System
 
-* Over-componentization
-* Template explosion
-* Boilerplate decay
-* Inconsistent design tokens
-* Lack of clear boundaries between layers
+- Over-componentization
+- Template explosion
+- Boilerplate decay
+- Inconsistent design tokens
+- Lack of clear boundaries between layers
 
 ---
 
@@ -395,19 +398,22 @@ Skeleton → Template → Pattern → Module → Archetype
 
 ## 9. Next Steps
 
-* Define a real-world example implementation
-* Build a CLI scaffolding tool
-* Create a design token system
-* Apply the framework to an existing project
-ponsibilities, not just increased size.
+- Define a real-world example implementation
+- Build a CLI scaffolding tool
+- Create a design token system
+- Apply the framework to an existing project
+  ponsibilities, not just increased size.
 
 ### 2.3 Reusability Over Duplication
+
 All structures should be designed for reuse via templates, scaffolds, or tokens.
 
 ### 2.4 Opinionated Architecture
+
 The system favors consistency and convention over flexibility where it improves scalability.
 
 ## 3. Axis A — UI Composition System
+
 ### 3.1 Hierarchy
 
 Design Tokens → Components → Patterns → Modules → Templates → Products
@@ -420,21 +426,21 @@ Primitive visual properties that define the design language.
 
 #### Examples
 
-* Colors
-* Spacing
-* Typography
-* Border radius
-* States (hover, active, disabled)
+- Colors
+- Spacing
+- Typography
+- Border radius
+- States (hover, active, disabled)
 
 #### Responsibility
 
-* Ensure visual consistency
-* Enable theming and scalability
+- Ensure visual consistency
+- Enable theming and scalability
 
 #### Anti-Patterns
 
-* Hardcoding values inside components
-* Duplicating token definitions
+- Hardcoding values inside components
+- Duplicating token definitions
 
 ---
 
@@ -446,20 +452,20 @@ The smallest functional UI units.
 
 #### Examples
 
-* Button
-* Input
-* Label
-* Icon
+- Button
+- Input
+- Label
+- Icon
 
 #### Responsibility
 
-* Encapsulate a single responsibility
-* Be reusable and composable
+- Encapsulate a single responsibility
+- Be reusable and composable
 
 #### Anti-Patterns
 
-* Overloading with multiple responsibilities
-* Tight coupling to business logic
+- Overloading with multiple responsibilities
+- Tight coupling to business logic
 
 ---
 
@@ -471,19 +477,19 @@ Combinations of components that achieve a single user-facing function.
 
 #### Examples
 
-* Form
-* Pagination
-* Search bar
+- Form
+- Pagination
+- Search bar
 
 #### Responsibility
 
-* Coordinate components
-* Represent interaction patterns
+- Coordinate components
+- Represent interaction patterns
 
 #### Anti-Patterns
 
-* Reinventing patterns across the app
-* Embedding layout-specific logic
+- Reinventing patterns across the app
+- Embedding layout-specific logic
 
 ---
 
@@ -495,19 +501,19 @@ Feature-level UI compositions combining multiple patterns and components.
 
 #### Examples
 
-* Navbar
-* Card grid
-* Dashboard widget
+- Navbar
+- Card grid
+- Dashboard widget
 
 #### Responsibility
 
-* Represent business features
-* Encapsulate domain-level UI behavior
+- Represent business features
+- Encapsulate domain-level UI behavior
 
 #### Anti-Patterns
 
-* Mixing unrelated features
-* Becoming a dumping ground for logic
+- Mixing unrelated features
+- Becoming a dumping ground for logic
 
 ---
 
@@ -519,17 +525,17 @@ Page-level structures defining layout and composition of modules.
 
 #### Examples
 
-* Dashboard layout
-* Product page layout
+- Dashboard layout
+- Product page layout
 
 #### Responsibility
 
-* Define structure without hardcoding content
+- Define structure without hardcoding content
 
 #### Anti-Patterns
 
-* Embedding business logic
-* Over-specialization
+- Embedding business logic
+- Over-specialization
 
 ---
 
@@ -541,12 +547,12 @@ Complete applications composed of multiple templates and flows.
 
 #### Examples
 
-* SaaS platform
-* E-commerce app
+- SaaS platform
+- E-commerce app
 
 #### Responsibility
 
-* Deliver end-to-end user experience
+- Deliver end-to-end user experience
 
 ---
 
@@ -566,13 +572,13 @@ An opinionated project blueprint encoding architecture, tooling, and conventions
 
 #### Responsibility
 
-* Define system-wide standards
-* Enforce architectural decisions
+- Define system-wide standards
+- Enforce architectural decisions
 
 #### Anti-Patterns
 
-* Over-engineering
-* Locking teams into inflexible decisions
+- Over-engineering
+- Locking teams into inflexible decisions
 
 ---
 
@@ -584,15 +590,15 @@ An opinionated project blueprint encoding architecture, tooling, and conventions
 
 This framework defines a unified model for building, scaling, and maintaining frontend systems by combining two traditionally separate concerns:
 
-* UI Composition (Design Systems)
-* Code Generation & Reuse (Engineering Systems)
+- UI Composition (Design Systems)
+- Code Generation & Reuse (Engineering Systems)
 
 The goal is to create a consistent, opinionated approach to:
 
-* Structuring UI
-* Generating code
-* Scaling features
-* Maintaining long-term system integrity
+- Structuring UI
+- Generating code
+- Scaling features
+- Maintaining long-term system integrity
 
 ---
 
@@ -602,8 +608,8 @@ The goal is to create a consistent, opinionated approach to:
 
 The system is divided into two independent but connected axes:
 
-* Axis A: UI Composition
-* Axis B: Code Generation & Reuse
+- Axis A: UI Composition
+- Axis B: Code Generation & Reuse
 
 Each axis can evolve independently but gains maximum value when aligned.
 
@@ -637,21 +643,21 @@ Primitive visual properties that define the design language.
 
 #### Examples
 
-* Colors
-* Spacing
-* Typography
-* Border radius
-* States (hover, active, disabled)
+- Colors
+- Spacing
+- Typography
+- Border radius
+- States (hover, active, disabled)
 
 #### Responsibility
 
-* Ensure visual consistency
-* Enable theming and scalability
+- Ensure visual consistency
+- Enable theming and scalability
 
 #### Anti-Patterns
 
-* Hardcoding values inside components
-* Duplicating token definitions
+- Hardcoding values inside components
+- Duplicating token definitions
 
 ---
 
@@ -663,20 +669,20 @@ The smallest functional UI units.
 
 #### Examples
 
-* Button
-* Input
-* Label
-* Icon
+- Button
+- Input
+- Label
+- Icon
 
 #### Responsibility
 
-* Encapsulate a single responsibility
-* Be reusable and composable
+- Encapsulate a single responsibility
+- Be reusable and composable
 
 #### Anti-Patterns
 
-* Overloading with multiple responsibilities
-* Tight coupling to business logic
+- Overloading with multiple responsibilities
+- Tight coupling to business logic
 
 ---
 
@@ -688,19 +694,19 @@ Combinations of components that achieve a single user-facing function.
 
 #### Examples
 
-* Form
-* Pagination
-* Search bar
+- Form
+- Pagination
+- Search bar
 
 #### Responsibility
 
-* Coordinate components
-* Represent interaction patterns
+- Coordinate components
+- Represent interaction patterns
 
 #### Anti-Patterns
 
-* Reinventing patterns across the app
-* Embedding layout-specific logic
+- Reinventing patterns across the app
+- Embedding layout-specific logic
 
 ---
 
@@ -712,19 +718,19 @@ Feature-level UI compositions combining multiple patterns and components.
 
 #### Examples
 
-* Navbar
-* Card grid
-* Dashboard widget
+- Navbar
+- Card grid
+- Dashboard widget
 
 #### Responsibility
 
-* Represent business features
-* Encapsulate domain-level UI behavior
+- Represent business features
+- Encapsulate domain-level UI behavior
 
 #### Anti-Patterns
 
-* Mixing unrelated features
-* Becoming a dumping ground for logic
+- Mixing unrelated features
+- Becoming a dumping ground for logic
 
 ---
 
@@ -736,17 +742,17 @@ Page-level structures defining layout and composition of modules.
 
 #### Examples
 
-* Dashboard layout
-* Product page layout
+- Dashboard layout
+- Product page layout
 
 #### Responsibility
 
-* Define structure without hardcoding content
+- Define structure without hardcoding content
 
 #### Anti-Patterns
 
-* Embedding business logic
-* Over-specialization
+- Embedding business logic
+- Over-specialization
 
 ---
 
@@ -758,12 +764,12 @@ Complete applications composed of multiple templates and flows.
 
 #### Examples
 
-* SaaS platform
-* E-commerce app
+- SaaS platform
+- E-commerce app
 
 #### Responsibility
 
-* Deliver end-to-end user experience
+- Deliver end-to-end user experience
 
 ---
 
@@ -783,13 +789,13 @@ An opinionated project blueprint encoding architecture, tooling, and conventions
 
 #### Responsibility
 
-* Define system-wide standards
-* Enforce architectural decisions
+- Define system-wide standards
+- Enforce architectural decisions
 
 #### Anti-Patterns
 
-* Over-engineering
-* Locking teams into inflexible decisions
+- Over-engineering
+- Locking teams into inflexible decisions
 
 ---
 
@@ -801,13 +807,13 @@ A code generation mechanism that produces tailored structures dynamically.
 
 #### Responsibility
 
-* Automate repetitive setup
-* Ensure consistency
+- Automate repetitive setup
+- Ensure consistency
 
 #### Anti-Patterns
 
-* Generating unused or bloated code
-* Lack of customization
+- Generating unused or bloated code
+- Lack of customization
 
 ---
 
@@ -819,12 +825,12 @@ A static starting codebase.
 
 #### Responsibility
 
-* Provide quick initialization
+- Provide quick initialization
 
 #### Anti-Patterns
 
-* Becoming outdated
-* Encouraging copy-paste culture
+- Becoming outdated
+- Encouraging copy-paste culture
 
 ---
 
@@ -836,17 +842,17 @@ Reusable code structures with placeholders.
 
 #### Examples
 
-* Component template
-* Page template
+- Component template
+- Page template
 
 #### Responsibility
 
-* Enable consistent reuse
+- Enable consistent reuse
 
 #### Anti-Patterns
 
-* Template sprawl
-* Lack of standardization
+- Template sprawl
+- Lack of standardization
 
 ---
 
@@ -858,11 +864,11 @@ Minimal structural representation of a system or component.
 
 #### Responsibility
 
-* Provide a baseline structure
+- Provide a baseline structure
 
 #### Anti-Patterns
 
-* Being too abstract to be useful
+- Being too abstract to be useful
 
 ---
 
@@ -906,11 +912,11 @@ Products
 
 ## 7. Anti-Patterns Across the System
 
-* Over-componentization
-* Template explosion
-* Boilerplate decay
-* Inconsistent design tokens
-* Lack of clear boundaries between layers
+- Over-componentization
+- Template explosion
+- Boilerplate decay
+- Inconsistent design tokens
+- Lack of clear boundaries between layers
 
 ---
 
@@ -924,23 +930,22 @@ Skeleton → Template → Pattern → Module → Archetype
 
 ## 9. Next Steps
 
-* Define a real-world example implementation
-* Build a CLI scaffolding tool
-* Create a design token system
-* Apply the framework to an existing project
-
+- Define a real-world example implementation
+- Build a CLI scaffolding tool
+- Create a design token system
+- Apply the framework to an existing project
 
 A code generation mechanism that produces tailored structures dynamically.
 
 #### Responsibility
 
-* Automate repetitive setup
-* Ensure consistency
+- Automate repetitive setup
+- Ensure consistency
 
 #### Anti-Patterns
 
-* Generating unused or bloated code
-* Lack of customization
+- Generating unused or bloated code
+- Lack of customization
 
 ---
 
@@ -952,12 +957,12 @@ A static starting codebase.
 
 #### Responsibility
 
-* Provide quick initialization
+- Provide quick initialization
 
 #### Anti-Patterns
 
-* Becoming outdated
-* Encouraging copy-paste culture
+- Becoming outdated
+- Encouraging copy-paste culture
 
 ---
 
@@ -969,17 +974,17 @@ Reusable code structures with placeholders.
 
 #### Examples
 
-* Component template
-* Page template
+- Component template
+- Page template
 
 #### Responsibility
 
-* Enable consistent reuse
+- Enable consistent reuse
 
 #### Anti-Patterns
 
-* Template sprawl
-* Lack of standardization
+- Template sprawl
+- Lack of standardization
 
 ---
 
@@ -991,11 +996,11 @@ Minimal structural representation of a system or component.
 
 #### Responsibility
 
-* Provide a baseline structure
+- Provide a baseline structure
 
 #### Anti-Patterns
 
-* Being too abstract to be useful
+- Being too abstract to be useful
 
 ---
 
@@ -1039,11 +1044,11 @@ Products
 
 ## 7. Anti-Patterns Across the System
 
-* Over-componentization
-* Template explosion
-* Boilerplate decay
-* Inconsistent design tokens
-* Lack of clear boundaries between layers
+- Over-componentization
+- Template explosion
+- Boilerplate decay
+- Inconsistent design tokens
+- Lack of clear boundaries between layers
 
 ---
 
@@ -1057,7 +1062,7 @@ Skeleton → Template → Pattern → Module → Archetype
 
 ## 9. Next Steps
 
-* Define a real-world example implementation
-* Build a CLI scaffolding tool
-* Create a design token system
-* Apply the framework to an existing project
+- Define a real-world example implementation
+- Build a CLI scaffolding tool
+- Create a design token system
+- Apply the framework to an existing project

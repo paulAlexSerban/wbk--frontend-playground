@@ -34,6 +34,4 @@ const buildHtmlDocument = ({ head, sidebar, topNavbar, cards, footer }) => `
 </html>
 `;
 
-export {
-    buildHtmlDocument,
-};
+export { buildHtmlDocument };

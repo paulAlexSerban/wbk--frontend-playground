@@ -23,7 +23,10 @@ async function loadComponentData(sourceDir) {
     }
 
     if (warnings.length > 0) {
-        const warningPreview = warnings.slice(0, 10).map((warning) => `- ${warning}`).join('\n');
+        const warningPreview = warnings
+            .slice(0, 10)
+            .map((warning) => `- ${warning}`)
+            .join('\n');
         const overflow = warnings.length > 10 ? `\n- ...and ${warnings.length - 10} more warning(s)` : '';
         console.warn(`Metadata warnings (${warnings.length}):\n${warningPreview}${overflow}`);
     }
@@ -33,6 +36,4 @@ async function loadComponentData(sourceDir) {
     return groupedLibraries;
 }
 
-export {
-    loadComponentData,
-};
+export { loadComponentData };

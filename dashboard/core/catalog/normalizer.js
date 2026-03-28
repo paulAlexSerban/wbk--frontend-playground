@@ -116,7 +116,4 @@ function groupByCategory(components) {
     }, {});
 }
 
-export {
-    normalizeCatalog,
-    groupByCategory,
-};
+export { normalizeCatalog, groupByCategory };

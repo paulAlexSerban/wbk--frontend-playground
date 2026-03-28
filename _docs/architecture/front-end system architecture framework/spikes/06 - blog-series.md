@@ -1,17 +1,17 @@
-Good move. This content has real depth, but if you dump it into one article, nobody will read it—and worse, nobody will *understand it*.
+Good move. This content has real depth, but if you dump it into one article, nobody will read it—and worse, nobody will _understand it_.
 
 You want a **progressive reveal**, where each post unlocks the next layer.
 
-Here’s how to turn this into a **high-impact blog series** that positions you as someone thinking at *system level*, not just frontend tactics.
+Here’s how to turn this into a **high-impact blog series** that positions you as someone thinking at _system level_, not just frontend tactics.
 
 ---
 
 # Series Title (pick something sharp)
 
-* **“Frontend Architecture Beyond Components”**
-* **“From Design Systems to Code Systems”**
-* **“The Missing Layer in Frontend Architecture”** ← strongest
-* **“Atomic Design Wasn’t Enough”** ← controversial, high click potential
+- **“Frontend Architecture Beyond Components”**
+- **“From Design Systems to Code Systems”**
+- **“The Missing Layer in Frontend Architecture”** ← strongest
+- **“Atomic Design Wasn’t Enough”** ← controversial, high click potential
 
 ---
 
@@ -29,18 +29,17 @@ Break assumptions. Create tension.
 
 ### Core Points
 
-* Most teams think:
+- Most teams think:
+    - components = architecture
 
-  * components = architecture
-* Reality:
+- Reality:
+    - they lack **system thinking**
 
-  * they lack **system thinking**
-* Symptoms:
-
-  * duplicated components
-  * inconsistent UI
-  * messy folder structures
-  * “design system” that isn’t a system
+- Symptoms:
+    - duplicated components
+    - inconsistent UI
+    - messy folder structures
+    - “design system” that isn’t a system
 
 ### Punchline
 
@@ -58,15 +57,14 @@ Reference: Brad Frost
 
 ### Core Points
 
-* Atomic Design gave us:
+- Atomic Design gave us:
+    - structure
+    - vocabulary
 
-  * structure
-  * vocabulary
-* But it breaks at scale:
-
-  * no concept of **flows**
-  * no connection to **code generation**
-  * naming confusion (atoms vs components)
+- But it breaks at scale:
+    - no concept of **flows**
+    - no connection to **code generation**
+    - naming confusion (atoms vs components)
 
 ### Introduce your cleaned model:
 
@@ -76,7 +74,7 @@ Tokens → Components → Patterns → Modules → Templates → Products
 
 ### Punchline
 
-> Atomic Design explains *what UI is made of*, not *how systems scale*.
+> Atomic Design explains _what UI is made of_, not _how systems scale_.
 
 ---
 
@@ -88,17 +86,17 @@ Introduce your extension (this is your first “original contribution”).
 
 ### Core Ideas
 
-* Templates = **structure + layout**
-* Products = **multi-page systems**
+- Templates = **structure + layout**
+- Products = **multi-page systems**
 
 Explain:
 
-* why components alone don’t build apps
-* why flows matter more than pieces
+- why components alone don’t build apps
+- why flows matter more than pieces
 
 ### Example
 
-* Login flow vs login form
+- Login flow vs login form
 
 ### Punchline
 
@@ -120,15 +118,15 @@ Archetype → Scaffold → Boilerplate → Template → Skeleton
 
 ### Core Points
 
-* Most devs confuse these terms
-* Most teams misuse boilerplates
-* Modern systems rely on scaffolding
+- Most devs confuse these terms
+- Most teams misuse boilerplates
+- Modern systems rely on scaffolding
 
 ### Add your blunt take:
 
-* Boilerplate = decays fast
-* Scaffolding = enforces consistency
-* Archetypes = encode architecture
+- Boilerplate = decays fast
+- Scaffolding = enforces consistency
+- Archetypes = encode architecture
 
 ### Punchline
 
@@ -169,9 +167,9 @@ Make it real.
 
 Use a concrete example:
 
-* Dashboard
-* SaaS app
-* or your **slot game project** (this would be strong and unique)
+- Dashboard
+- SaaS app
+- or your **slot game project** (this would be strong and unique)
 
 ### Walkthrough:
 
@@ -184,8 +182,8 @@ Use a concrete example:
 
 ### Show:
 
-* folder structure
-* generation commands (even pseudo CLI)
+- folder structure
+- generation commands (even pseudo CLI)
 
 ### Punchline
 
@@ -215,9 +213,9 @@ Atomic Design
 
 ### Add:
 
-* trade-offs
-* anti-patterns
-* evolution strategy
+- trade-offs
+- anti-patterns
+- evolution strategy
 
 ### Strong close:
 
@@ -229,19 +227,19 @@ Atomic Design
 
 Given your tone preference, lean into:
 
-* direct
-* slightly confrontational
-* no fluff
+- direct
+- slightly confrontational
+- no fluff
 
 Avoid:
 
-* generic tutorial tone
-* over-explaining basics
+- generic tutorial tone
+- over-explaining basics
 
 Use:
 
-* strong claims
-* then back them up
+- strong claims
+- then back them up
 
 ---
 
@@ -253,12 +251,11 @@ If you just publish quietly, it dies.
 
 1. Write article
 2. Extract:
+    - 3–5 sharp statements
 
-   * 3–5 sharp statements
 3. Post on:
-
-   * LinkedIn
-   * optionally X
+    - LinkedIn
+    - optionally X
 
 Example:
 
@@ -274,8 +271,8 @@ That gets attention.
 
 Turn your models into visuals:
 
-* layered pyramids
-* flow diagrams
+- layered pyramids
+- flow diagrams
 
 ---
 
@@ -283,8 +280,8 @@ Turn your models into visuals:
 
 Include:
 
-* example structure
-* simple scaffold scripts
+- example structure
+- simple scaffold scripts
 
 ---
 
@@ -296,9 +293,9 @@ Name it.
 
 Examples:
 
-* “Composable Frontend System”
-* “Layered UI Architecture”
-* “Atomic Systems Model”
+- “Composable Frontend System”
+- “Layered UI Architecture”
+- “Atomic Systems Model”
 
 ---
 
@@ -306,8 +303,8 @@ Examples:
 
 This series can position you as:
 
-* not just a senior engineer
-* but someone thinking like a **software architect for frontend systems**
+- not just a senior engineer
+- but someone thinking like a **software architect for frontend systems**
 
 That’s rare.
 
@@ -315,5 +312,5 @@ That’s rare.
 
 If you want, next step I’d push you toward:
 
-* writing **Post #1 together (high-impact, hook-heavy)**
-* or designing **visual diagrams that make this instantly understandable**
+- writing **Post #1 together (high-impact, hook-heavy)**
+- or designing **visual diagrams that make this instantly understandable**

@@ -217,8 +217,4 @@ function formatIntegrityErrors(errors) {
     return errors.map((error) => `- ${error}`).join('\n');
 }
 
-export {
-    collectVisibleEntries,
-    verifyGeneratedArtifacts,
-    formatIntegrityErrors,
-};
+export { collectVisibleEntries, verifyGeneratedArtifacts, formatIntegrityErrors };

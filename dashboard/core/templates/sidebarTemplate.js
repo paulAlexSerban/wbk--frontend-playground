@@ -13,6 +13,4 @@ const generateSidebarHTML = () => {
 </nav>`;
 };
 
-export {
-    generateSidebarHTML,
-};
+export { generateSidebarHTML };

@@ -1,0 +1,10 @@
+{
+    "name": "Basic HTML Template",
+    "source": "Frontend Forge",
+    "description": "A basic HTML template for new projects.",
+    "concepts": ["html", "css", "javascript", "template"],
+    "category": "project-templates",
+    "tags": ["boilerplate", "starter", "frontend"],
+    "status": "complete",
+    "dificulty": "beginner"
+}

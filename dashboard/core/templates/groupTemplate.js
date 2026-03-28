@@ -15,6 +15,4 @@ function generateGroupHTML(baseUrl, dir, groupContent) {
         .join('');
 }
 
-export {
-    generateGroupHTML,
-};
+export { generateGroupHTML };

@@ -1,29 +1,14 @@
 {
-    "name": "wbk--frontend-playground",
+    "name": "@wbk-frontend-forge/core",
     "version": "2.0.0",
     "type": "module",
-    "description": "Ultimate Frontend Playground: Multi-SSG Framework Showcase - The most comprehensive Static Site Generator comparison platform ever built",
     "author": "Paul Serban <paul.alex.serban@gmail.com>",
     "license": "MIT",
     "private": true,
-    "keywords": [
-        "ssg",
-        "static-site-generator",
-        "frontend",
-        "multi-framework",
-        "comparison",
-        "nextjs",
-        "nuxtjs",
-        "sveltekit",
-        "astro",
-        "hugo",
-        "jekyll",
-        "pelican"
-    ],
     "engines": {
-        "node": ">=22.0.0",
-        "npm": ">=10.9.0",
-        "yarn": ">=1.22.0"
+        "node": ">=24.14.0",
+        "npm": ">=11.9.0",
+        "yarn": ">=1.22.22"
     },
     "scripts": {
         "start:package": "npx serve package",
@@ -40,7 +25,7 @@
         "build:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn build || echo '⚠️  Dev Days Matrix Library not built'",
         "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn build || echo '⚠️  Frontend Mentor Library not built'",
         "///// PACKAGE SCRIPTS /////": "",
-        "package:libraries":"bash scripts/package-libraries.bash",
+        "package:libraries": "bash scripts/package-libraries.bash",
         "///// CODE QUALITY SCRIPTS /////": "",
         "test:dashboard:catalog": "node --test dashboard/core/catalog/*.test.js",
         "test:dashboard:rendering": "node --test dashboard/core/rendering/*.test.js",
@@ -55,7 +40,9 @@
         "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
         "commit": "git-cz",
-        "precommit": "lint-staged"
+        "precommit": "lint-staged",
+        "/// V3 ///": "",
+        "build": "lerna run build"
     },
     "dependencies": {
         "@commitlint/cli": "^20.1.0",
@@ -70,11 +57,20 @@
         "glob": "^10.0.0",
         "husky": "^9.1.7",
         "inquirer": "^8.2.0",
+        "lerna": "^9.0.7",
         "lint-staged": "^16.2.3",
         "ora": "^5.4.1",
         "prettier": "^3.6.2",
         "semver": "^7.5.0",
         "typescript": "^5.9.3"
+    },
+    "workspaces": {
+        "packages": [
+            "projects/*/*"
+        ],
+        "nohoist": [
+            "**/normalize-scss"
+        ]
     },
     "config": {
         "commitizen": {
@@ -90,15 +86,9 @@
             "prettier --write"
         ]
     },
-    "repository": "https://github.com/paulAlexSerban/wbk--frontend-playground.git",
-    "bugs": {
-        "url": "https://github.com/paulAlexSerban/wbk--frontend-playground/issues"
-    },
-    "homepage": "https://paulalexserban.github.io/wbk--frontend-playground/",
     "browserslist": [
         "> 1%",
         "last 2 versions",
         "not dead"
-    ],
-    "main": "index.js"
+    ]
 }

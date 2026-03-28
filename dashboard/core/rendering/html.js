@@ -22,9 +22,4 @@ function createInlineScriptTag(scriptContent) {
     return `<script>${escapeInlineScriptContent(scriptContent)}</script>`;
 }
 
-export {
-    escapeHtml,
-    escapeAttribute,
-    escapeInlineScriptContent,
-    createInlineScriptTag,
-};
+export { escapeHtml, escapeAttribute, escapeInlineScriptContent, createInlineScriptTag };

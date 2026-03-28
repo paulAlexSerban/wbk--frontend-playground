@@ -31,13 +31,7 @@ function buildImageUrl(baseUrl, filename, size) {
 }
 
 function buildCardId(dir, groupName, categoryName, componentSlug, index) {
-    return [dir, groupName, categoryName, componentSlug, index]
-        .map((value) => sanitizeIdSegment(value))
-        .join('-');
+    return [dir, groupName, categoryName, componentSlug, index].map((value) => sanitizeIdSegment(value)).join('-');
 }
 
-export {
-    buildPreviewUrl,
-    buildImageUrl,
-    buildCardId,
-};
+export { buildPreviewUrl, buildImageUrl, buildCardId };

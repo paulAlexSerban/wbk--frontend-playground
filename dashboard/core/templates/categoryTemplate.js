@@ -21,6 +21,4 @@ function generateCategoryHTML(baseUrl, dir, groupName, categoryContent) {
         .join('');
 }
 
-export {
-    generateCategoryHTML,
-};
+export { generateCategoryHTML };

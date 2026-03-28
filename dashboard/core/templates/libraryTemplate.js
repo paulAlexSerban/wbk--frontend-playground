@@ -46,6 +46,4 @@ function generateLibraryHTML(library, baseUrl) {
         .join('');
 }
 
-export {
-    generateLibraryHTML,
-};
+export { generateLibraryHTML };
