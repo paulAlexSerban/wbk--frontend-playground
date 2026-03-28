@@ -26,7 +26,7 @@
         "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn build || echo '⚠️  Frontend Mentor Library not built'",
         "///// PACKAGE SCRIPTS /////": "",
         "package:libraries": "bash scripts/package-libraries.bash",
-        "///// CODE QUALITY SCRIPTS /////": "",
+
         "test:dashboard:catalog": "node --test dashboard/core/catalog/*.test.js",
         "test:dashboard:rendering": "node --test dashboard/core/rendering/*.test.js",
         "test:dashboard:templates": "node --test dashboard/core/templates/*.test.js",
@@ -36,13 +36,16 @@
         "lint:dashboard": "node dashboard/quality/lintDashboard.js",
         "verify:dashboard": "node dashboard/quality/runIntegrityChecks.js",
         "check:dashboard": "yarn test:dashboard && yarn lint:dashboard && yarn build:dashboard",
+
+
+        "/////////////////////// V3 /////////////////////////////////": "",
+        "build": "lerna run build",
+        "/// CODE QUALITY SCRIPTS ///": "",
         "formats:write": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
-        "///// GIT HOOKS & COMMIT SCRIPTS /////": "",
+        "/// GIT HOOKS & COMMIT SCRIPTS ///": "",
         "commit": "git-cz",
-        "precommit": "lint-staged",
-        "/// V3 ///": "",
-        "build": "lerna run build"
+        "precommit": "lint-staged"
     },
     "dependencies": {
         "@commitlint/cli": "^20.1.0",
