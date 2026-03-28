@@ -12,7 +12,6 @@ Let’s break this down properly.
 ---
 
 # 1. Naming Directions (with intent)
-
 ## A. Architecture-first (serious, senior-level)
 
 These sound like something you'd present in an engineering org or conference.
@@ -23,9 +22,7 @@ These sound like something you'd present in an engineering org or conference.
 * **Frontend Composition Architecture (FCA)**
 
 Blunt take:
-
 > These are the safest and most credible.
-
 If your goal is authority + blog + internal adoption → start here.
 
 ---

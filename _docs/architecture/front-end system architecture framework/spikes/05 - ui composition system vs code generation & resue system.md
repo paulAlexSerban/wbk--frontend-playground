@@ -214,7 +214,6 @@ This is where your engineering brain kicks in.
 ### Exercise 4 — Archetype Definition
 
 Design your own:
-
 > “Frontend Platform Archetype”
 
 Define:
