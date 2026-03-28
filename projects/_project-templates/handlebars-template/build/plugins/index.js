@@ -1,6 +1,7 @@
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -37,6 +38,13 @@ const plugins = [
         template: 'src/index.hbs',
         filename: 'index.html',
         inject: false,
+    }),
+    new CopyWebpackPlugin({
+        patterns: [
+            { from: 'assets', to: 'assets', noErrorOnMissing: true },
+            { from: 'favicon.ico', to: 'favicon.ico', noErrorOnMissing: true },
+            { from: 'manifest.json', to: 'manifest.json', noErrorOnMissing: true }
+        ],
     }),
 ];
 
