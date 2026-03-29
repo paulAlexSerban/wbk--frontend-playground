@@ -50,6 +50,9 @@ When I want to find that thing I built with that used the Observer pattern, I ca
         /weather-app
         /local-storage-todo
 
+    /reverse-engineering <- copied external codebases analyzed to understand structure, implementation choices, and tradeoffs
+        /fcc-personal-portfolio-webpage
+
     /shared <- reusable code across projects (utilities, styles, and assets used across projects, etc.)
         /css
         /utils
@@ -117,6 +120,7 @@ When I want to find that thing I built with that used the Observer pattern, I ca
     - architectures means you are exploring design patterns and system design, so the focus is on how the code is organized and structured, not on the UI or interactions
     - layouts means the focus is on CSS layout techniques and patterns, so the projects should demonstrate different ways to structure and arrange content on a page using CSS
     - integrations means the focus is on working with APIs, browser features, and external data sources, so the projects should demonstrate how to fetch data, interact with browser APIs, and manage external resources in a frontend context
+    - reverse-engineering means copied third-party codebases used for teardown and analysis, not original builds; keep provenance explicit (original source/course/link) and avoid mixing these with first-principles practice projects
     - shared means reusable code that can be used across multiple projects, such as utility functions, common styles, and test helpers, so the focus is on creating modular and reusable code that can be easily integrated into different projects
     - project-templates means boilerplate code for common project types, so the focus is on providing a starting point for new projects with pre-configured structures, styles, and utilities that can be easily customized and extended for specific use cases
 - placement rule for design systems
