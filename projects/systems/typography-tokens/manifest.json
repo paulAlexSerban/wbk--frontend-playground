@@ -1,0 +1,23 @@
+{
+    "name": "Typography Tokens",
+    "source": "Frontend Forge",
+    "sourceUrl": "http://localhost:3000",
+    "description": "A set of typography tokens for consistent text styling across projects.",
+    "concepts": [
+        "html",
+        "css",
+        "design tokens",
+        "typography",
+        "responsive design"
+    ],
+    "category": "project-templates",
+    "tags": [
+        "typography",
+        "tokens",
+        "design system",
+        "responsive typography",
+        "web development"
+    ],
+    "status": "complete",
+    "difficulty": "beginner"
+}

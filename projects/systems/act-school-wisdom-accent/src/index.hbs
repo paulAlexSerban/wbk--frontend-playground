@@ -5,43 +5,13 @@
   <meta charset="UTF-8">
   <title>Art School - Design System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{{feLibs 'css'}}}
+  {{{feLibs 'all'}}}
 
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Open+Sans:400,600&display=swap"
     rel="stylesheet">
 </head>
 <script>
-  (function () {
-    function getBody() {
-      return document.body;
-    }
 
-    function setTheme(theme) {
-      const body = getBody();
-      if (!body) return;
-      body.className = theme || 'wisdom-accent';
-    }
-
-    function setDarkLightTheme(theme) {
-      const body = getBody();
-      if (!body) return;
-      body.dataset.theme = theme === 'dark' ? 'dark' : 'light';
-    }
-
-    window.setTheme = setTheme;
-    window.setDarkLightTheme = setDarkLightTheme;
-
-    function initializeTheme() {
-      setTheme('wisdom-accent');
-      setDarkLightTheme('light');
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initializeTheme);
-    } else {
-      initializeTheme();
-    }
-  })();
 </script>
 
 <body>

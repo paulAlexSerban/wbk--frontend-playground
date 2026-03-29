@@ -1,0 +1,108 @@
+@use 'sass:map';
+/* ------------------------------------ *\
+  * # GRID SIZES
+\* ------------------------------------ */
+
+/// Project's design system sizes
+/// @type Number
+/// @param {Size} $baseline - horizontal base spacing value
+/// @param {Size} $gutter - vertical base spacing value
+$baseline: 8px;
+$gutter: 16px;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1440px;
+
+/// Gutter size
+/// @type Number
+$grid-gutter: 32px;
+
+/// Condensed gutter size
+/// @type Number
+$grid-gutter--condensed: 1px;
+
+/* ------------------------------------ *\
+ * BREAKPOINTS
+ *
+ * Viewport breakpoints
+ * Values should be expressed in px.
+ *
+\* ------------------------------------ */
+$mobile-xxs: 1px !default;
+$mobile-xs: 320px !default;
+$mobile: 480px !default;
+$tablet-sm: 600px !default;
+$tablet-md: 840px !default;
+$tablet: 960px !default;
+$desktop: 1280px !default;
+$desktop-xl: 1439px !default;
+$desktop-xxl: 1600px !default;
+$ultra-wide: 1920px !default;
+
+/* ------------------------------------ *\
+  #16-COLUMN-GRID
+\* ------------------------------------ */
+
+/// Initial map of our breakpoints and their values
+/// @type Map
+/// @access public
+$column-grid-16: (
+    smartphone: (
+        columns: 4,
+        margin: 0,
+        width: $mobile,
+        touch: true,
+    ),
+    tablet: (
+        columns: 16,
+        margin: 16px,
+        width: $tablet,
+        touch: true,
+    ),
+    desktop: (
+        columns: 16,
+        margin: 16px,
+        width: $desktop,
+        touch: false,
+    ),
+    ultra-wide: (
+        columns: 16,
+        margin: 16px,
+        width: $ultra-wide,
+        touch: false,
+    ),
+);
+
+/* ------------------------------------ *\
+  #12-COLUMN-GRID
+\* ------------------------------------ */
+
+/// Overrides `$breakpoints` to use a 12 column grid instead of the default 16
+/// @type Map
+/// @access public
+$column-grid-12: map.merge(
+    $column-grid-16,
+    (
+        tablet: map.merge(
+                map.get($column-grid-16, tablet),
+                (
+                    columns: 12,
+                )
+            ),
+        desktop: map.merge(
+                map.get($column-grid-16, desktop),
+                (
+                    columns: 12,
+                )
+            ),
+        ultra-wide: map.merge(
+                map.get($column-grid-16, ultra-wide),
+                (
+                    columns: 12,
+                )
+            ),
+    )
+);
+
+$breakpoints: $column-grid-12;
