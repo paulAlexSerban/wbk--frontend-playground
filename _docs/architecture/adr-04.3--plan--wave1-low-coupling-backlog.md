@@ -14,8 +14,7 @@ Draft
 
 ## Strict Wave 1 Candidates (Start Here)
 
-1. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
-2. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
+1. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
 3. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
 5. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
 6. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
