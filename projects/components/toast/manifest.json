@@ -1,0 +1,23 @@
+{
+  "name": "Toast",
+  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+  "description": "Toast notification system displaying messages in the bottom-right corner, auto-dismissing after 3 seconds.",
+  "concepts": [
+    "dom-creation",
+    "dynamic-element-insertion",
+    "self-dismissing-timeout",
+    "random-message-selection",
+    "notification-types"
+  ],
+  "category": "components",
+  "tags": [
+    "toast",
+    "notification",
+    "dom-manipulation",
+    "interactive",
+    "transient-ui"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

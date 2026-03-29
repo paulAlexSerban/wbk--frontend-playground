@@ -13,6 +13,7 @@ In progress
 3. libraries/dev-days-matrix-library/src/library/components/keyboard-keys -> projects/components/keyboard-keys
 4. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
 5. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
+6. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
 
 ## Evidence
 
@@ -21,18 +22,21 @@ In progress
 - Migration checklist: _docs/architecture/migration-items/keyboard-keys.md
 - Migration checklist: _docs/architecture/migration-items/paint.md
 - Migration checklist: _docs/architecture/migration-items/timer.md
+- Migration checklist: _docs/architecture/migration-items/toast.md
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
 - Project path: projects/components/paint
 - Project path: projects/components/timer
+- Project path: projects/components/toast
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
 - Build validation: yarn --cwd projects/components/paint build
 - Build validation: yarn --cwd projects/components/timer build
-- Guardrail validation: yarn check:migration:wave0 (15 manifests)
+- Build validation: yarn --cwd projects/components/toast build
+- Guardrail validation: yarn check:migration:wave0 (16 manifests)
 
 ## Next candidate
 
-- libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
+- libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
