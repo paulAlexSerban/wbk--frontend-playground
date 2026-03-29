@@ -83,7 +83,8 @@
     },
     "workspaces": {
         "packages": [
-            "projects/*/*"
+            "projects/*/*",
+            "projects/*/*/*"
         ],
         "nohoist": [
             "**/normalize-scss"
