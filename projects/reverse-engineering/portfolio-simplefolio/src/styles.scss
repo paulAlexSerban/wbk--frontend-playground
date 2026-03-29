@@ -1,0 +1,38 @@
+// @use "./styles/vendors/bootstrap.scss";
+
+@use './styles/abstracts/mixins';
+@use './styles/abstracts/variables';
+@use './styles/abstracts/helpers';
+
+@use './styles/base/base';
+@use './styles/base/typography';
+
+@use './styles/components/buttons';
+
+@use './styles/layout/footer';
+@use './styles/layout/sections';
+
+@use './styles/sections/about';
+@use './styles/sections/contact';
+@use './styles/sections/hero';
+@use './styles/sections/projects';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    line-height: 18px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
