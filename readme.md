@@ -24,6 +24,11 @@ When I want to find that thing I built with that used the Observer pattern, I ca
         /expanding-cards
         /progress-steps
 
+    /systems <- design systems, UI kits, token systems, theming, component families, documentation sandboxes, etc.
+        /design-tokens-foundations
+        /component-library-primitives
+        /theme-variation-playground
+
     /interactions <- JS driven behavior (drag and drop, scroll, sliders, gestures, etc.)
         /drag-and-drop-kanban
         /scroll-animation
@@ -106,6 +111,7 @@ When I want to find that thing I built with that used the Observer pattern, I ca
 - the categories are comlpexity/purpose gradient, not atomic design
     - foundations means you are practicing RAW HTML/CSS/JS, no frameworks, no libraries, no build tools, just the basics
     - components means a single isolated UI element, but it can be built with any tools or frameworks you want, as long as it's self-contained and demonstrates a specific UI pattern
+    - systems means the focus is on reusable UI foundations across many screens, such as design tokens, spacing/type scales, theming, component families, naming conventions, documentation playgrounds, and how the pieces fit into a coherent design language
     - intaractions means the focus is on JS behavior
     - compositoins means you are combining multiple concerns into a small app
     - architectures means you are exploring design patterns and system design, so the focus is on how the code is organized and structured, not on the UI or interactions
@@ -113,5 +119,8 @@ When I want to find that thing I built with that used the Observer pattern, I ca
     - integrations means the focus is on working with APIs, browser features, and external data sources, so the projects should demonstrate how to fetch data, interact with browser APIs, and manage external resources in a frontend context
     - shared means reusable code that can be used across multiple projects, such as utility functions, common styles, and test helpers, so the focus is on creating modular and reusable code that can be easily integrated into different projects
     - project-templates means boilerplate code for common project types, so the focus is on providing a starting point for new projects with pre-configured structures, styles, and utilities that can be easily customized and extended for specific use cases
+- placement rule for design systems
+    - if it is an exploratory or learning project that demonstrates a design system idea end-to-end, place it in `/projects/systems`
+    - if it becomes reusable package code consumed by multiple projects, promote it into `/libraries/<design-system-name>` and keep only demos or experiments in `/projects/systems`
 - the manifest.json is what ties everything to the dashboard
     - the dasboard can recursively scan `/projects` for manifest.json files and use the metadata to organize and display the projects in a user-friendly way, allowing for easy navigation and discovery of projects based on concepts, categories, tags, and other attributes.
