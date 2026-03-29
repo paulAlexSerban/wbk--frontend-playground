@@ -12,21 +12,10 @@
     "keywords": ["page", "product", "design system"],
     "variations": [
         {
-            "slug": "harmonic-sizes",
-            "name": "Harmonic Sizes",
-            "description": "Harmonic size examples for spacing, font sizes, etc.",
-            "hide": true
-        },
-        {
             "slug": "typography",
             "name": "Typography",
             "description": "Typography examples for headings, body text, etc.",
             "hide": true
-        },
-        {
-            "slug": "act-school-wisdom-accent",
-            "name": "ACT School Wisdom Accent",
-            "description": "ACT School Wisdom Accent Design System"
         }
     ]
 }
