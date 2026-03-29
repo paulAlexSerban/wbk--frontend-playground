@@ -14,22 +14,20 @@ Draft
 
 ## Strict Wave 1 Candidates (Start Here)
 
-1. libraries/dev-days-matrix-library/src/library/components/browser-detect -> projects/components/browser-detect
-2. libraries/dev-days-matrix-library/src/library/components/keyboard-keys -> projects/components/keyboard-keys
-3. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
-4. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
-5. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
-6. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
-7. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
-8. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
-9. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
-10. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
-11. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
-12. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
-13. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
-14. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
-15. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
-16. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
+1. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
+2. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
+3. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
+4. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
+5. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
+6. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+7. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
+8. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
+9. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
+10. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
+11. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
+12. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
+13. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
+14. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
 
 ## Stretch Wave 1 Candidates (No Deps, Multi-Entry)
 
