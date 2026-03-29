@@ -1,0 +1,24 @@
+{
+  "name": "Like",
+  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+  "description": "Double-click an image to create animated floating heart icons with a counter.",
+  "concepts": [
+    "double-click-detection",
+    "dynamic-font-awesome-icons",
+    "animation-sequences",
+    "event-coordinate-tracking",
+    "incremental-counter"
+  ],
+  "category": "components",
+  "tags": [
+    "like",
+    "heart",
+    "animation",
+    "interactive",
+    "font-awesome",
+    "double-click"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
