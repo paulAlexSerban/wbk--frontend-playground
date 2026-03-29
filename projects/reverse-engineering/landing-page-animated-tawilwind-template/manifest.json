@@ -1,0 +1,25 @@
+{
+  "name": "Landing Page Animated Tawilwind Template",
+  "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+  "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+  "description": "Landing page built with Tailwind CSS",
+  "concepts": [
+    "html",
+    "css",
+    "javascript",
+    "handlebars",
+    "template",
+    "webpack",
+    "babel",
+    "scss",
+    "live-server"
+  ],
+  "category": "reverse-engineering",
+  "tags": [
+    "boilerplate",
+    "starter",
+    "frontend"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
