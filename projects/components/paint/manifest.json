@@ -1,0 +1,23 @@
+{
+  "name": "Paint",
+  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+  "description": "A canvas-based freehand drawing app with adjustable brush size, colour picker, and clear button.",
+  "concepts": [
+    "canvas-api",
+    "mouse-events",
+    "freehand-drawing",
+    "dom-manipulation",
+    "stateful-ui"
+  ],
+  "category": "components",
+  "tags": [
+    "canvas",
+    "drawing",
+    "paint",
+    "interactive",
+    "color-picker"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
