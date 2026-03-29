@@ -10,19 +10,6 @@
         "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js"
     },
     "dependencies": {
-        "@babel/core": "^7.29.0",
-        "@babel/preset-env": "^7.29.2",
-        "babel-loader": "^10.1.1",
-        "copy-webpack-plugin": "^14.0.0",
-        "css-loader": "^7.1.4",
-        "handlebars-loader": "^1.7.3",
-        "html-webpack-plugin": "^5.6.6",
-        "mini-css-extract-plugin": "^2.10.2",
-        "sass": "^1.98.0",
-        "sass-loader": "^16.0.7",
-        "terser-webpack-plugin": "^5.4.0",
-        "webpack": "^5.105.4",
-        "webpack-cli": "^7.0.2",
-        "webpack-merge": "^6.0.1"
+        "@wbk-frontend-forge/_shared__build-helpers": "^1.0.0"
     }
 }

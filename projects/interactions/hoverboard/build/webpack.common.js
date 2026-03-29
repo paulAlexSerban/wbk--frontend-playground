@@ -1,69 +1,30 @@
-const dotenv = require('dotenv');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 
-const loaders = require('./loaders');
-const plugins = require('./plugins');
+const { createHandlebarsWebpackCommonConfig } = require('@wbk-frontend-forge/_shared__build-helpers');
 
-dotenv.config();
-const cwd = process.cwd();
+const manifestPath = path.resolve(process.cwd(), 'manifest.json');
 
-const publicPath = process.env.PUBLIC_PATH || '/';
-
-const scriptsFile = path.join(cwd, 'src', 'scripts.js');
-const stylesFile = path.join(cwd, 'src', 'styles.scss');
-
-const getEntryPoints = () => {
-    if (!fs.existsSync(scriptsFile)) {
-        console.warn('Warning: src/scripts.js file not found. Skipping scripts entry point.');
+function getManifestData() {
+    try {
+        return JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (error) {
+        console.warn(`Could not load manifest.json from ${manifestPath}: ${error.message}`);
+        return {};
     }
-
-    if (!fs.existsSync(stylesFile)) {
-        console.warn('Warning: src/styles.scss file not found. Skipping styles entry point.');
-    }
-    const entryPoints = {};
-    if (fs.existsSync(scriptsFile)) {
-        entryPoints.scripts = scriptsFile;
-    }
-    if (fs.existsSync(stylesFile)) {
-        entryPoints.styles = stylesFile;
-    }
-    return entryPoints;
 }
 
-
-module.exports = {
-    entry: getEntryPoints(),
-    resolve: {
-        modules: [path.join(__dirname, '../node_modules')],
+module.exports = createHandlebarsWebpackCommonConfig({
+    html: {
+        templateParameters: (compilation, assets, assetTags, options) => ({
+            compilation,
+            webpackConfig: compilation.options,
+            htmlWebpackPlugin: {
+                tags: assetTags,
+                files: assets,
+                options,
+            },
+            manifest: getManifestData(),
+        }),
     },
-    stats: {
-        children: false,
-        modules: false,
-        chunks: false,
-        chunkModules: false,
-        chunkOrigins: false,
-        entrypoints: false,
-        assets: true,
-        errors: true,
-        warnings: true,
-        colors: true,
-        performance: false,
-        timings: true,
-        builtAt: true,
-        hash: false,
-        version: false,
-    },
-    output: {
-        filename: ({ chunk }) => {
-            return `${chunk.name}.js`;
-        },
-        path: path.join(cwd, 'dist'),
-        publicPath,
-        clean: true,
-    },
-    module: {
-        rules: loaders,
-    },
-    plugins,
-};
+});
