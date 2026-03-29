@@ -14,8 +14,7 @@ Draft
 
 ## Strict Wave 1 Candidates (Start Here)
 
-1. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
-2. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+1. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
 3. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
 5. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
 6. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix

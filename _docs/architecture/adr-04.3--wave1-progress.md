@@ -15,6 +15,7 @@ In progress
 5. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
 6. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
 7. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
+8. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
 
 ## Evidence
 
@@ -25,6 +26,7 @@ In progress
 - Migration checklist: _docs/architecture/migration-items/timer.md
 - Migration checklist: _docs/architecture/migration-items/toast.md
 - Migration checklist: _docs/architecture/migration-items/like.md
+- Migration checklist: _docs/architecture/migration-items/theme-switch.md
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
@@ -32,6 +34,7 @@ In progress
 - Project path: projects/components/timer
 - Project path: projects/components/toast
 - Project path: projects/components/like
+- Project path: projects/components/theme-switch
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
@@ -39,8 +42,9 @@ In progress
 - Build validation: yarn --cwd projects/components/timer build
 - Build validation: yarn --cwd projects/components/toast build
 - Build validation: yarn --cwd projects/components/like build
-- Guardrail validation: yarn check:migration:wave0 (17 manifests)
+- Build validation: yarn --cwd projects/components/theme-switch build
+- Guardrail validation: yarn check:migration:wave0 (18 manifests)
 
 ## Next candidate
 
-- libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
+- libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group

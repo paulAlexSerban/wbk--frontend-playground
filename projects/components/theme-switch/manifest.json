@@ -1,0 +1,25 @@
+{
+  "name": "Theme Switch",
+  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+  "description": "Analog clock with real-time updates and dark/light theme toggle.",
+  "concepts": [
+    "analog-clock",
+    "date-time-api",
+    "transform-rotate",
+    "css-variables",
+    "interval-timer",
+    "theme-toggling"
+  ],
+  "category": "components",
+  "tags": [
+    "clock",
+    "theme",
+    "dark-mode",
+    "time",
+    "animation",
+    "interactive"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
