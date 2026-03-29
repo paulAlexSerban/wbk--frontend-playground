@@ -44,6 +44,8 @@
         "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "/// PACKAGE SCRIPTS ///": "",
         "new:project": "node scripts/new-project.js",
+        "validate:project-manifest-categories": "node scripts/validate-project-manifest-categories.js",
+        "check:migration:wave0": "yarn validate:project-manifest-categories",
         "package:projects": "bash scripts/package-projects.bash",
         "/// GIT HOOKS & COMMIT SCRIPTS ///": "",
         "precommit": "lint-staged"
