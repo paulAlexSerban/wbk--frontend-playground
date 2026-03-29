@@ -43,6 +43,7 @@
         "formats:write": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "/// PACKAGE SCRIPTS ///": "",
+        "new:project": "node scripts/new-project.js",
         "package:projects": "bash scripts/package-projects.bash",
         "/// GIT HOOKS & COMMIT SCRIPTS ///": "",
         "precommit": "lint-staged"
