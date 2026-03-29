@@ -8,7 +8,7 @@ Repositoy used as a forge for frontend development skills, where I build various
 
 When I want to find that thing I built with that used the Observer pattern, I can just search for “observer pattern” and find the project that demonstrates it. When I want to find a good example of a drag-and-drop interaction, I can just search for “drag and drop” and find the project that implements it. This way, I can easily reference my own work and see how different concepts are applied across various projects.
 
-## Folder structure example:
+## Folder structure example to be iterated on:
 
 ```
 /dashboard
@@ -124,3 +124,9 @@ When I want to find that thing I built with that used the Observer pattern, I ca
     - if it becomes reusable package code consumed by multiple projects, promote it into `/libraries/<design-system-name>` and keep only demos or experiments in `/projects/systems`
 - the manifest.json is what ties everything to the dashboard
     - the dasboard can recursively scan `/projects` for manifest.json files and use the metadata to organize and display the projects in a user-friendly way, allowing for easy navigation and discovery of projects based on concepts, categories, tags, and other attributes.
+
+## Migration plan from ./libraries to ./projects
+- move one project at a time, starting with the simplest ones, and update their structure to match the new format ad philosophy
+- for each project, create a README.md that explains the project, the concepts it demonstrates, and any relevant details, and make sure it has a manifest.json with the appropriate metadata
+- once all projects are moved and updated, remove the old ./libraries folder and any references to it in the dashboard or other parts of the codebase
+- update the dashboard to scan for manifest.json files in the new ./projects structure and organize the projects accordingly, ensuring that all metadata is correctly displayed and linked in the dashboard.
