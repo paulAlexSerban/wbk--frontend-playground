@@ -16,6 +16,8 @@ In progress
 6. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
 7. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
 8. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
+9. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+10. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
 
 ## Evidence
 
@@ -35,6 +37,8 @@ In progress
 - Project path: projects/components/toast
 - Project path: projects/components/like
 - Project path: projects/components/theme-switch
+- Project path: projects/components/toggle-group
+- Project path: projects/systems/big-frontend-dev
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
@@ -43,8 +47,15 @@ In progress
 - Build validation: yarn --cwd projects/components/toast build
 - Build validation: yarn --cwd projects/components/like build
 - Build validation: yarn --cwd projects/components/theme-switch build
-- Guardrail validation: yarn check:migration:wave0 (18 manifests)
+- Build validation: yarn --cwd projects/components/toggle-group build
+- Build validation: yarn --cwd projects/systems/big-frontend-dev build
+- Guardrail validation: yarn check:migration:wave0 (20 manifests)
+
+## Migration Lessons
+
+- System templates may include additional CSS via `feLibs ... css` in source partials; this dependency must be copied into local project styles under `src/styles/` during migration.
+- Imported dependency styles should be reduced to only code used by the target template, then wired through `src/styles.scss` and validated with a standalone project build.
 
 ## Next candidate
 
-- libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+- libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges

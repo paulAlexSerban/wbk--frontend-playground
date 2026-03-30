@@ -1,0 +1,23 @@
+{
+  "name": "Toggle Group",
+  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+  "description": "Three-way tradeoff toggle where selecting all three automatically disables one based on the most recent click.",
+  "concepts": [
+    "mutually-constrained-toggles",
+    "checkbox-state-management",
+    "event-driven-ui",
+    "conditional-logic",
+    "micro-interactions"
+  ],
+  "category": "components",
+  "tags": [
+    "toggle",
+    "checkbox",
+    "ui-constraints",
+    "interactive",
+    "animation"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

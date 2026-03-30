@@ -14,15 +14,13 @@ Draft
 
 ## Strict Wave 1 Candidates (Start Here)
 
-1. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
-3. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
-5. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
-6. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
-7. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
-8. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
-12. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
-13. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
-14. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
+1. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
+2. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
+3. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
+4. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
+5. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
+6. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
+7. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
 
 ## Stretch Wave 1 Candidates (No Deps, Multi-Entry)
 
@@ -34,3 +32,6 @@ Draft
 - Use scripts/new-project.js for every scaffold action.
 - For each candidate, create a completed copy of migration-item-checklist-template.md.
 - Run yarn check:migration:wave0 after each migration batch.
+- For system template migrations, audit all `feLibs ... css` helper usages in source partials and copy each referenced dependency stylesheet into the target project's local `src/styles/` directory.
+- Copy only the dependency code actually used by the migrated template; avoid broad cross-project style imports and avoid keeping unused mixins/functions.
+- Wire local dependency files through the project's `src/styles.scss`, then validate with a project build before continuing to the next migration.
