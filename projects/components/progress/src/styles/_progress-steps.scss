@@ -1,0 +1,91 @@
+@use 'sass:math';
+@use './abstracts' as *;
+
+// Source: library/patterns/progress/scss/progress-steps.entry.scss
+// ~ScssAbstracts resolved via local ./_abstracts.scss
+// Note: Source elements __progress-wrapper, __button-container, __progress-bar
+// are renamed __track, __buttons, __bar to match standalone demo HTML.
+// __pill and __button elements are standalone-specific additions.
+
+$block: 'progress-steps';
+
+.#{$block} {
+    &__container {
+        @include flex($direction: column);
+
+        text-align: center;
+    }
+
+    &__track {
+        // Source: &__progress-wrapper
+        @include flex($main: space-between);
+        @include relative();
+
+        margin-bottom: $baseline * 3;
+        min-width: convert-rem(350px);
+        z-index: 1;
+
+        &::before {
+            @include absolute($top: 50%, $left: 0);
+
+            content: '';
+            background-color: get-color($c-light, gainsboro-white);
+            transform: translateY(-50%);
+            height: calc(#{$baseline} / 2);
+            width: 100%;
+            z-index: 1;
+        }
+    }
+
+    &__buttons {
+        // Source: &__button-container
+        @include flex();
+    }
+
+    &__bar {
+        // Source: &__progress-bar
+        @include absolute($top: 50%, $left: 0);
+
+        background-color: get-color($c-blue, carolina-blue);
+        transform: translateY(-50%);
+        height: calc(#{$baseline} / 2);
+        width: 0%;
+        transition: width 0.4s ease;
+        z-index: 1;
+    }
+
+    // Standalone-specific (not in source)
+    &__pill {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: $c-white;
+        border: 2px solid get-color($c-light, gainsboro-white);
+        z-index: 3;
+        font-weight: 700;
+
+        &.is-active {
+            border-color: get-color($c-blue, carolina-blue);
+        }
+    }
+
+    // Standalone-specific (not in source)
+    &__button {
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.65rem 1rem;
+        background-color: get-color($c-blue, french-blue);
+        color: get-color($c-light, light);
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: get-color($c-light, gainsboro-white);
+            color: get-color($c-dark, jet);
+        }
+    }
+}
