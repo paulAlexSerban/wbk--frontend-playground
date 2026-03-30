@@ -1,12 +1,78 @@
-.navigation-tabs-css__base { display: flex; flex-direction: column; }
-.navigation-tabs-css__tabs-list { display: flex; gap: 0.4rem; padding: 0; margin: 0; list-style: none; }
-.navigation-tabs-css__tab { padding: 0.7rem 1rem; border-radius: 0.45rem 0.45rem 0 0; background: #0f172a; color: #f8fafc; cursor: pointer; display: inline-block; }
-.navigation-tabs-css__panels-list { border: 1px solid #0f172a; border-radius: 0 0.45rem 0.45rem 0.45rem; padding: 1rem; }
-.navigation-tabs-css__panel { display: none; }
-.navigation-tabs-css__radio { display: none; }
-.navigation-tabs-css__radio--one:checked ~ .navigation-tabs-css__panels-list .navigation-tabs-css__panel--one,
-.navigation-tabs-css__radio--two:checked ~ .navigation-tabs-css__panels-list .navigation-tabs-css__panel--two,
-.navigation-tabs-css__radio--three:checked ~ .navigation-tabs-css__panels-list .navigation-tabs-css__panel--three { display: block; }
-.navigation-tabs-css__radio--one:checked ~ .navigation-tabs-css__tabs-list .navigation-tabs-css__tab--one,
-.navigation-tabs-css__radio--two:checked ~ .navigation-tabs-css__tabs-list .navigation-tabs-css__tab--two,
-.navigation-tabs-css__radio--three:checked ~ .navigation-tabs-css__tabs-list .navigation-tabs-css__tab--three { background: #f8fafc; color: #0f172a; border: 1px solid #0f172a; border-bottom: 0; }
+@use 'sass:math';
+@use './abstracts' as *;
+
+// Source: library/patterns/tabs/scss/navigation-tabs-css.entry.scss
+// ~ScssAbstracts resolved via local ./_abstracts.scss
+
+$block: 'navigation-tabs-css';
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.#{$block} {
+    @include e('base') {
+        @include flex($direction: column);
+    }
+
+    @include e('tabs-list') {
+        @include flex();
+
+        column-gap: math.div($gutter, 2);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            list-style: none;
+        }
+    }
+
+    @include e('tab') {
+        padding: 16px;
+        margin-bottom: 8px;
+        display: inline-block;
+        background: get-color($c-dark, eerie-black);
+        color: get-color($c-light, cultured);
+        cursor: pointer;
+        border-radius: 3px 3px 0 0;
+    }
+
+    @include e('panels-list') {
+        padding: 32px;
+        min-height: 200px;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    @include e('panel') {
+        display: none;
+        animation: fadein 0.8s;
+    }
+
+    @include e('radio') {
+        display: none;
+
+        &--one:checked ~ .#{$block}__panels-list .#{$block}__panel--one,
+        &--two:checked ~ .#{$block}__panels-list .#{$block}__panel--two,
+        &--three:checked ~ .#{$block}__panels-list .#{$block}__panel--three {
+            display: block;
+        }
+
+        &--one:checked ~ .#{$block}__tabs-list .#{$block}__tab--one,
+        &--two:checked ~ .#{$block}__tabs-list .#{$block}__tab--two,
+        &--three:checked ~ .#{$block}__tabs-list .#{$block}__tab--three {
+            background: get-color($c-light, cultured);
+            color: get-color($c-dark, eerie-black);
+            border-top: 3px solid get-color($c-dark, eerie-black);
+            border-bottom: 1px solid get-color($c-dark, eerie-black);
+        }
+    }
+}
