@@ -90,3 +90,9 @@ h2 {
 .demo-card--dark .demo-label {
     color: rgba(241, 245, 249, 0.9);
 }
+
+.button-stage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
