@@ -1,50 +1,78 @@
-.accordion-css__base {
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.6rem;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(2, 6, 23, 0.18);
-}
+@use 'sass:color';
+@use './abstracts' as abstracts;
 
-.accordion-css__item {
-    color: #e2e8f0;
-    background: #334155;
-}
+// Source: library/patterns/accordion/scss/accordion-css.entry.scss
+// ~ScssAbstracts resolved via local ./_abstracts.scss
 
-.accordion-css__input-toggle {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-}
+$block: 'accordion-css';
 
-.accordion-css__item-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.9rem 1rem;
-    cursor: pointer;
-    font-weight: 700;
-}
+.#{$block} {
+    &__base {
+        @include abstracts.flex($direction: column, $cross: stretch);
 
-.accordion-css__item-label::after {
-    content: '❯';
-    transition: transform 0.35s;
-}
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+    }
 
-.accordion-css__content {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1rem;
-    color: #0f172a;
-    background: #f1f5f9;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-}
+    &__item {
+        color: abstracts.get-color(abstracts.$c-light, cultured);
+        width: 100%;
+        overflow: hidden;
+        max-inline-size: 100%;
+    }
 
-.accordion-css__input-toggle:checked + .accordion-css__item-label::after {
-    transform: rotate(90deg);
-}
+    &__input-toggle {
+        @include abstracts.absolute();
 
-.accordion-css__input-toggle:checked ~ .accordion-css__content {
-    max-height: 8rem;
-    padding: 1rem;
+        opacity: 0;
+        z-index: -1;
+
+        &:checked {
+            + .#{$block}__item-label {
+                background: color.adjust(abstracts.get-color(abstracts.$c-blue, charcoal), $lightness: -10%);
+
+                &::after {
+                    transform: rotate(90deg);
+                }
+            }
+
+            ~ .#{$block}__content {
+                max-height: 100vh;
+                padding: 1em;
+            }
+        }
+    }
+
+    &__item-label {
+        @include abstracts.flex($main: space-between);
+        @include abstracts.font(abstracts.$label);
+
+        width: 100%;
+        padding: abstracts.$baseline abstracts.$gutter;
+        background: abstracts.get-color(abstracts.$c-blue, charcoal);
+        cursor: pointer;
+
+        &::after {
+            content: '\276F';
+            width: 1em;
+            height: 1em;
+            text-align: center;
+            transition: all 0.35s;
+        }
+
+        &:hover {
+            background: color.adjust(abstracts.get-color(abstracts.$c-blue, charcoal), $lightness: -10%);
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        width: 100%;
+        padding: 0 1em;
+        color: abstracts.get-color(abstracts.$c-blue, charcoal);
+        background: abstracts.get-color(abstracts.$c-light, cultured);
+        transition: all 0.35s ease-in-out;
+    }
 }
