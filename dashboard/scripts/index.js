@@ -127,7 +127,7 @@ function applyFilters() {
         const chips = [];
         if (dashboardState.query) chips.push(`Search: ${dashboardState.query}`);
         if (dashboardState.category !== 'all') chips.push(`Category: ${dashboardState.category}`);
-        if (dashboardState.library !== 'all') chips.push(`Library: ${dashboardState.library}`);
+        if (dashboardState.library !== 'all') chips.push(`Project: ${dashboardState.library}`);
         if (dashboardState.sort !== 'title-asc') chips.push(`Sort: ${dashboardState.sort}`);
 
         activeFilters.innerHTML = '';

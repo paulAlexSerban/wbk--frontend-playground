@@ -203,7 +203,7 @@ function generateComponentHTML(baseUrl, dir, groupName, categoryName, component)
                                     }
                                 </div>
                                 <small class="text-muted">
-                                    <i class="bi bi-collection me-1"></i>Library: ${escapeHtml(dir)}
+                                    <i class="bi bi-collection me-1"></i>Project: ${escapeHtml(dir)}
                                 </small>
                             </div>
                         </div>

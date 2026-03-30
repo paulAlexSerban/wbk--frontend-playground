@@ -3,6 +3,10 @@ import path from 'path';
 
 import { buildCardId, buildPreviewUrl } from '../core/rendering/paths.js';
 
+function getCatalogSegment() {
+    return process.env.DASHBOARD_CATALOG_SEGMENT || 'projects';
+}
+
 function collectVisibleEntries(catalog, baseUrl) {
     const entries = [];
 
@@ -93,6 +97,7 @@ function toPathname(value) {
 
 function normalizeRelativeAssetPath(assetPath, entry) {
     const normalized = toPathname(assetPath);
+    const catalogSegment = getCatalogSegment();
 
     if (!normalized || normalized.startsWith('//')) {
         return null;
@@ -103,21 +108,30 @@ function normalizeRelativeAssetPath(assetPath, entry) {
     }
 
     if (normalized.startsWith('/')) {
-        const libraryPrefix = `/libraries/${entry.dir}/`;
-        const libraryPrefixIndex = normalized.indexOf(libraryPrefix);
-        if (libraryPrefixIndex >= 0) {
-            return normalized.slice(libraryPrefixIndex + libraryPrefix.length);
+        if (catalogSegment === 'libraries') {
+            const libraryPrefix = `/libraries/${entry.dir}/`;
+            const libraryPrefixIndex = normalized.indexOf(libraryPrefix);
+            if (libraryPrefixIndex >= 0) {
+                return normalized.slice(libraryPrefixIndex + libraryPrefix.length);
+            }
+            return null;
+        }
+
+        const projectPrefix = `/${catalogSegment}/${entry.categoryName}/${entry.componentSlug}/`;
+        const projectPrefixIndex = normalized.indexOf(projectPrefix);
+        if (projectPrefixIndex >= 0) {
+            return normalized.slice(projectPrefixIndex + projectPrefix.length);
         }
 
         return null;
     }
 
-    const previewRoot = buildPreviewRootPrefix();
-    if (normalized.startsWith(previewRoot)) {
-        return normalized.slice(previewRoot.length);
+    if (!normalized.startsWith('../')) {
+        return normalized;
     }
 
-    return null;
+    const previewRoot = buildPreviewRootPrefix();
+    return normalized.startsWith(previewRoot) ? normalized.slice(previewRoot.length) : normalized;
 }
 
 function collectAssetReferences(previewHtml) {
@@ -128,10 +142,21 @@ function collectAssetReferences(previewHtml) {
 }
 
 function buildPreviewFilePath(destinationDir, entry) {
+    const catalogSegment = getCatalogSegment();
+
+    if (catalogSegment === 'libraries') {
+        return path.join(
+            destinationDir,
+            entry.dir,
+            entry.groupName,
+            entry.categoryName,
+            entry.componentSlug,
+            `${entry.variationSlug}.html`
+        );
+    }
+
     return path.join(
         destinationDir,
-        entry.dir,
-        entry.groupName,
         entry.categoryName,
         entry.componentSlug,
         `${entry.variationSlug}.html`
@@ -191,7 +216,7 @@ async function verifyGeneratedArtifacts({ catalog, htmlContent, baseUrl, destina
                     continue;
                 }
 
-                const resolvedAssetPath = path.join(destinationDir, entry.dir, relativeAssetPath);
+                const resolvedAssetPath = path.resolve(path.dirname(previewPath), relativeAssetPath);
                 try {
                     await fs.promises.access(resolvedAssetPath, fs.constants.F_OK);
                 } catch {
