@@ -14,13 +14,12 @@ Draft
 
 ## Strict Wave 1 Candidates (Start Here)
 
-1. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
-2. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
-3. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
-4. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
-5. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
-6. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
-7. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
+1. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
+2. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
+3. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
+4. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
+5. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
+6. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
 
 ## Stretch Wave 1 Candidates (No Deps, Multi-Entry)
 

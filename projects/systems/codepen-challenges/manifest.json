@@ -1,0 +1,23 @@
+{
+  "name": "Codepen Challenges",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/codepen-challenges",
+  "description": "Base page template for CodePen challenge implementations with shared 12-column grid layout styles localized into the project.",
+  "concepts": [
+    "page-template",
+    "handlebars-layout",
+    "shared-grid-layout",
+    "system-foundation",
+    "html-shell"
+  ],
+  "category": "systems",
+  "tags": [
+    "system",
+    "template",
+    "codepen",
+    "layout",
+    "foundation"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
