@@ -1,0 +1,30 @@
+:root {
+    --landing-bg: #f8fafc;
+    --landing-surface: #ffffff;
+    --landing-border: rgba(15, 23, 42, 0.12);
+    --landing-text: #0f172a;
+    --landing-muted: #475569;
+    --landing-accent: #2563eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.landing-page {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--landing-text);
+    background:
+        radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.12), transparent 32%),
+        linear-gradient(180deg, #fff, var(--landing-bg));
+}
+
+h1,
+h2,
+p,
+blockquote,
+ul {
+    margin: 0;
+}

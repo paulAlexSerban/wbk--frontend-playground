@@ -32,6 +32,7 @@ Completed continuation items:
 - libraries/dev-days-matrix-library/src/library/patterns/alert -> projects/components/alert
 - libraries/dev-days-matrix-library/src/library/patterns/popup -> projects/components/popup
 - libraries/dev-days-matrix-library/src/library/patterns/progress -> projects/components/progress
+- libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
 
 Execution rules remain unchanged:
 - Keep split architecture for all new migrations: per-variation `src/styles/_*.scss`, `src/scripts/_*.js`, and `src/_partials/_*.hbs` with entry orchestrators.
@@ -45,3 +46,4 @@ Execution rules remain unchanged:
 - For system template migrations, audit all `feLibs ... css` helper usages in source partials and copy each referenced dependency stylesheet into the target project's local `src/styles/` directory.
 - Copy only the dependency code actually used by the migrated template; avoid broad cross-project style imports and avoid keeping unused mixins/functions.
 - Wire local dependency files through the project's `src/styles.scss`, then validate with a project build before continuing to the next migration.
+- When source SCSS imports `~ScssAbstracts`, create a local `src/styles/_abstracts.scss` in the target project and keep mixin/function calls in migrated partials (`@include ...`, `get-color(...)`, `convert-rem(...)`) rather than flattening to compiled CSS output.
