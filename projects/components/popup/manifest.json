@@ -1,0 +1,23 @@
+{
+  "name": "Popup",
+  "source": "Coding Artist",
+  "sourceUrl": "https://codingartistweb.com/2021/07/popup-modal-using-html-css-and-javascript/",
+  "description": "Popup pattern with modal overlay, close controls, and backdrop interaction.",
+  "concepts": [
+    "popup",
+    "modal",
+    "overlay",
+    "dismiss",
+    "interaction"
+  ],
+  "category": "components",
+  "tags": [
+    "popup",
+    "modal",
+    "overlay",
+    "accessibility",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
