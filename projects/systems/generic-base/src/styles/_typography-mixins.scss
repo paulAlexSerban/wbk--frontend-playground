@@ -1,0 +1,16 @@
+h1,
+h2,
+h3 {
+    span {
+        display: block;
+    }
+
+    span + span {
+        margin-top: 0.35rem;
+        color: var(--muted-color);
+        font-size: 0.42em;
+        font-weight: 500;
+        line-height: 1.35;
+        letter-spacing: 0;
+    }
+}

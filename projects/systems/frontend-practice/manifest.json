@@ -1,0 +1,23 @@
+{
+  "name": "FrontendPractice.com Base Page Template",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/frontend-practice",
+  "description": "Base page template for Frontend Practice challenge implementations with localized grid styles.",
+  "concepts": [
+    "page-template",
+    "handlebars-layout",
+    "shared-grid-layout",
+    "challenge-shell",
+    "portable-style-dependencies"
+  ],
+  "category": "systems",
+  "tags": [
+    "system",
+    "template",
+    "frontend-practice",
+    "layout",
+    "foundation"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

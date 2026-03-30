@@ -1,0 +1,23 @@
+{
+  "name": "Generic Base Page Template",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/generic-base",
+  "description": "Generic base page template for demos and system explorations with localized reset, theme, typography, and grid styles.",
+  "concepts": [
+    "page-template",
+    "design-system-demo",
+    "typography-showcase",
+    "shared-grid-layout",
+    "portable-style-dependencies"
+  ],
+  "category": "systems",
+  "tags": [
+    "system",
+    "template",
+    "generic-base",
+    "demo",
+    "foundation"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

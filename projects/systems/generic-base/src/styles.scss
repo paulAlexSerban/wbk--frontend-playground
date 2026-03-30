@@ -1,0 +1,86 @@
+@use './styles/grid-system' as grid;
+@use './styles/reset';
+@use './styles/theme';
+@use './styles/elements';
+@use './styles/typography-mixins';
+
+$breakpoints: grid.$column-grid-12;
+
+@include grid.generate-grid();
+@include grid.make-grid-columns($breakpoints, grid.$grid-gutter);
+@include grid.no-gutter();
+@include grid.hang(grid.$grid-gutter);
+@include grid.grid-aspect-ratio();
+
+body.grid {
+    min-height: 100vh;
+    padding-top: var(--rs-2);
+    padding-bottom: var(--rs-3);
+}
+
+.stack > * + * {
+    margin-top: 1rem;
+}
+
+.page-header,
+.content-grid {
+    gap: 1rem 0;
+}
+
+.eyebrow {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.intro-block > p:last-child {
+    max-width: 58ch;
+}
+
+.panel {
+    height: 100%;
+    padding: 1.5rem;
+    border: 1px solid var(--panel-border);
+    border-radius: 1.25rem;
+    background: var(--panel-background);
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+}
+
+.panel-title {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.resource-list {
+    padding-left: 1.25rem;
+}
+
+.resource-list li + li {
+    margin-top: 0.45rem;
+}
+
+.demo-grid {
+    gap: 0;
+}
+
+.demo-card {
+    display: flex;
+    min-height: 96px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(43, 108, 176, 0.18), rgba(125, 211, 252, 0.35));
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.demo-card--wide {
+    background: linear-gradient(135deg, rgba(20, 83, 45, 0.18), rgba(134, 239, 172, 0.35));
+}
+
+.demo-card--accent {
+    background: linear-gradient(135deg, rgba(124, 45, 18, 0.18), rgba(251, 191, 36, 0.35));
+}

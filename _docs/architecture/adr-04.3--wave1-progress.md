@@ -22,6 +22,9 @@ In progress
 12. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
 13. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
 14. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
+15. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
+16. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
+17. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
 
 ## Evidence
 
@@ -47,6 +50,9 @@ In progress
 - Project path: projects/systems/dev-days-matrix
 - Project path: projects/systems/free-code-camp
 - Project path: projects/systems/frontend-mentor
+- Project path: projects/systems/frontend-practice
+- Project path: projects/systems/generic-base
+- Project path: projects/systems/great-frontend
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
@@ -61,13 +67,17 @@ In progress
 - Build validation: yarn --cwd projects/systems/dev-days-matrix build
 - Build validation: yarn --cwd projects/systems/free-code-camp build
 - Build validation: yarn --cwd projects/systems/frontend-mentor build
-- Guardrail validation: yarn check:migration:wave0 (24 manifests)
+- Build validation: yarn --cwd projects/systems/frontend-practice build
+- Build validation: yarn --cwd projects/systems/generic-base build
+- Build validation: yarn --cwd projects/systems/great-frontend build
+- Guardrail validation: yarn check:migration:wave0 (27 manifests)
 
 ## Migration Lessons
 
 - System templates may include additional CSS via `feLibs ... css` in source partials; this dependency must be copied into local project styles under `src/styles/` during migration.
 - Imported dependency styles should be reduced to only code used by the target template, then wired through `src/styles.scss` and validated with a standalone project build.
+- Hidden shared theme stacks can usually be collapsed into smaller project-local modules when the migrated template only needs the rendered outcome, not the full original abstraction chain.
 
 ## Next candidate
 
-- libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
+- libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader

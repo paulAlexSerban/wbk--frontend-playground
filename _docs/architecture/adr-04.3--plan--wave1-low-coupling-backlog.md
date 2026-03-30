@@ -14,9 +14,7 @@ Draft
 
 ## Strict Wave 1 Candidates (Start Here)
 
-1. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
-2. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
-3. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
+Strict Wave 1 complete.
 
 ## Stretch Wave 1 Candidates (No Deps, Multi-Entry)
 

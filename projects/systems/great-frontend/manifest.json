@@ -1,0 +1,23 @@
+{
+  "name": "Great Frontend Base Page Template",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/great-frontend",
+  "description": "Base page template for Great Frontend exercises with localized grid styles.",
+  "concepts": [
+    "page-template",
+    "handlebars-layout",
+    "shared-grid-layout",
+    "exercise-shell",
+    "portable-style-dependencies"
+  ],
+  "category": "systems",
+  "tags": [
+    "system",
+    "template",
+    "great-frontend",
+    "layout",
+    "foundation"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

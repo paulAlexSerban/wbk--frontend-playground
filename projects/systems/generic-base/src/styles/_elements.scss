@@ -1,0 +1,74 @@
+html {
+    background: linear-gradient(180deg, #fcfaf6 0%, var(--surface-color) 100%);
+}
+
+body {
+    color: var(--text-color);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.05;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: clamp(2.75rem, 8vw, var(--font-size-2xl));
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, var(--font-size-xl));
+}
+
+h3 {
+    font-size: clamp(1.35rem, 3vw, var(--font-size-lg));
+}
+
+p,
+li,
+code {
+    font-size: var(--font-size-base);
+}
+
+mark {
+    padding: 0 0.2em;
+    background: #fef08a;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+code,
+pre {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 1rem;
+    background: #111827;
+    color: #f8fafc;
+}
