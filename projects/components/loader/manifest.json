@@ -1,0 +1,23 @@
+{
+  "name": "Loader",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/loader",
+  "description": "Consolidated loader playground containing kinetic loader and auto-text variations.",
+  "concepts": [
+    "css-animation",
+    "typewriter-effect",
+    "range-input-control",
+    "multi-variation-demo",
+    "micro-interactions"
+  ],
+  "category": "components",
+  "tags": [
+    "loader",
+    "animation",
+    "text",
+    "component",
+    "playground"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
