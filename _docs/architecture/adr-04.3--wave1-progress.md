@@ -1,7 +1,7 @@
 # ADR-04.3 Wave 1 Progress
 
 ## Status
-In progress
+Complete
 
 ## Date
 2026-03-30
@@ -25,6 +25,9 @@ In progress
 15. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
 16. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
 17. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
+18. libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
+19. libraries/dev-days-matrix-library/src/library/patterns/navigation -> projects/components/navigation
+20. libraries/dev-days-matrix-library/src/library/patterns/slider -> projects/components/slider
 
 ## Evidence
 
@@ -45,6 +48,9 @@ In progress
 - Project path: projects/components/like
 - Project path: projects/components/theme-switch
 - Project path: projects/components/toggle-group
+- Project path: projects/components/loader
+- Project path: projects/components/navigation
+- Project path: projects/components/slider
 - Project path: projects/systems/big-frontend-dev
 - Project path: projects/systems/codepen-challenges
 - Project path: projects/systems/dev-days-matrix
@@ -62,6 +68,9 @@ In progress
 - Build validation: yarn --cwd projects/components/like build
 - Build validation: yarn --cwd projects/components/theme-switch build
 - Build validation: yarn --cwd projects/components/toggle-group build
+- Build validation: yarn --cwd projects/components/loader build
+- Build validation: yarn --cwd projects/components/navigation build
+- Build validation: yarn --cwd projects/components/slider build
 - Build validation: yarn --cwd projects/systems/big-frontend-dev build
 - Build validation: yarn --cwd projects/systems/codepen-challenges build
 - Build validation: yarn --cwd projects/systems/dev-days-matrix build
@@ -70,14 +79,15 @@ In progress
 - Build validation: yarn --cwd projects/systems/frontend-practice build
 - Build validation: yarn --cwd projects/systems/generic-base build
 - Build validation: yarn --cwd projects/systems/great-frontend build
-- Guardrail validation: yarn check:migration:wave0 (27 manifests)
+- Guardrail validation: yarn check:migration:wave0 (30 manifests)
 
 ## Migration Lessons
 
 - System templates may include additional CSS via `feLibs ... css` in source partials; this dependency must be copied into local project styles under `src/styles/` during migration.
 - Imported dependency styles should be reduced to only code used by the target template, then wired through `src/styles.scss` and validated with a standalone project build.
 - Hidden shared theme stacks can usually be collapsed into smaller project-local modules when the migrated template only needs the rendered outcome, not the full original abstraction chain.
+- Multi-entry legacy items can be migrated as a single component playground when the variations are independent; scope each variation's markup, styles, and runtime instead of preserving separate build entries.
 
 ## Next candidate
 
-- libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
+- Wave 1 complete.

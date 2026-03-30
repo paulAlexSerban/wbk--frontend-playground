@@ -1,0 +1,50 @@
+.button-stage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.button-base {
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.85rem 1.05rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.button-base:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+}
+
+.button-base:active {
+    transform: scale(0.98);
+}
+
+.button-base--primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.button-base--secondary {
+    background: #fff;
+    color: #0f172a;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.25);
+}
+
+.button-base--success {
+    background: #16a34a;
+    color: #fff;
+}
+
+.button-base--danger {
+    background: #dc2626;
+    color: #fff;
+}
+
+.button-base--warning {
+    background: #f59e0b;
+    color: #0f172a;
+}

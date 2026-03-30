@@ -18,9 +18,7 @@ Strict Wave 1 complete.
 
 ## Stretch Wave 1 Candidates (No Deps, Multi-Entry)
 
-1. libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
-2. libraries/dev-days-matrix-library/src/library/patterns/navigation -> projects/components/navigation
-3. libraries/dev-days-matrix-library/src/library/patterns/slider -> projects/components/slider
+Stretch Wave 1 complete.
 
 ## Execution Notes
 - Use scripts/new-project.js for every scaffold action.

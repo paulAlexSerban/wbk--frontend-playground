@@ -4,6 +4,16 @@ Consolidated loader playground containing kinetic loader and auto-text variation
 
 Source: `libraries/dev-days-matrix-library/src/library/components/loader`
 
+## Architecture
+
+Follow the modular split pattern for future updates:
+
+- `src/styles/_*.scss` per variation plus shared layout styles in `_shared.scss`
+- `src/scripts/_*.js` per interactive variation plus an `index.js` initializer entry
+- `src/_partials/_*.hbs` per variation; keep `body.hbs` as composition-only includes
+
+Reference implementation notes: `projects/components/slider/ARCHITECTURE.md`
+
 ## Concepts
 
 - `css-animation` - triangle borders rotate to create the kinetic loader effect

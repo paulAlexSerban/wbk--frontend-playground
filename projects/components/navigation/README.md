@@ -4,6 +4,16 @@ Consolidated navigation playground containing side-nav buttons, a mobile footer 
 
 Source: `libraries/dev-days-matrix-library/src/library/patterns/navigation`
 
+## Architecture
+
+Follow the modular split pattern for future updates:
+
+- `src/styles/_*.scss` per variation plus shared layout styles in `_shared.scss`
+- `src/scripts/_*.js` per interactive variation plus an `index.js` initializer entry
+- `src/_partials/_*.hbs` per variation; keep `body.hbs` as composition-only includes
+
+Reference implementation notes: `projects/components/slider/ARCHITECTURE.md`
+
 ## Concepts
 
 - `interactive-navigation` - demonstrates hover and click-driven navigation states
