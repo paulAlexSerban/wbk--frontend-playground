@@ -1,7 +1,7 @@
 # ADR-04.3 Wave 1 Progress
 
 ## Status
-Complete
+Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 
 ## Date
 2026-03-30
@@ -28,6 +28,13 @@ Complete
 18. libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
 19. libraries/dev-days-matrix-library/src/library/patterns/navigation -> projects/components/navigation
 20. libraries/dev-days-matrix-library/src/library/patterns/slider -> projects/components/slider
+21. libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
+22. libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
+23. libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
+24. libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs
+25. libraries/dev-days-matrix-library/src/library/patterns/alert -> projects/components/alert
+26. libraries/dev-days-matrix-library/src/library/patterns/popup -> projects/components/popup
+27. libraries/dev-days-matrix-library/src/library/patterns/progress -> projects/components/progress
 
 ## Evidence
 
@@ -39,6 +46,13 @@ Complete
 - Migration checklist: _docs/architecture/migration-items/toast.md
 - Migration checklist: _docs/architecture/migration-items/like.md
 - Migration checklist: _docs/architecture/migration-items/theme-switch.md
+- Migration checklist: _docs/architecture/migration-items/button.md
+- Migration checklist: _docs/architecture/migration-items/accordion.md
+- Migration checklist: _docs/architecture/migration-items/modal.md
+- Migration checklist: _docs/architecture/migration-items/tabs.md
+- Migration checklist: _docs/architecture/migration-items/alert.md
+- Migration checklist: _docs/architecture/migration-items/popup.md
+- Migration checklist: _docs/architecture/migration-items/progress.md
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
@@ -51,6 +65,13 @@ Complete
 - Project path: projects/components/loader
 - Project path: projects/components/navigation
 - Project path: projects/components/slider
+- Project path: projects/components/button
+- Project path: projects/components/accordion
+- Project path: projects/components/modal
+- Project path: projects/components/tabs
+- Project path: projects/components/alert
+- Project path: projects/components/popup
+- Project path: projects/components/progress
 - Project path: projects/systems/big-frontend-dev
 - Project path: projects/systems/codepen-challenges
 - Project path: projects/systems/dev-days-matrix
@@ -71,6 +92,13 @@ Complete
 - Build validation: yarn --cwd projects/components/loader build
 - Build validation: yarn --cwd projects/components/navigation build
 - Build validation: yarn --cwd projects/components/slider build
+- Build validation: yarn --cwd projects/components/button build
+- Build validation: yarn --cwd projects/components/accordion build
+- Build validation: yarn --cwd projects/components/modal build
+- Build validation: yarn --cwd projects/components/tabs build
+- Build validation: yarn --cwd projects/components/alert build
+- Build validation: yarn --cwd projects/components/popup build
+- Build validation: yarn --cwd projects/components/progress build
 - Build validation: yarn --cwd projects/systems/big-frontend-dev build
 - Build validation: yarn --cwd projects/systems/codepen-challenges build
 - Build validation: yarn --cwd projects/systems/dev-days-matrix build
@@ -79,7 +107,68 @@ Complete
 - Build validation: yarn --cwd projects/systems/frontend-practice build
 - Build validation: yarn --cwd projects/systems/generic-base build
 - Build validation: yarn --cwd projects/systems/great-frontend build
-- Guardrail validation: yarn check:migration:wave0 (30 manifests)
+- Guardrail validation: yarn check:migration:wave0 (37 manifests)
+
+---
+
+## SCSS Migration Notes
+
+### The Problem
+
+During initial migrations of items that used `~ScssAbstracts`, the SCSS files were written as flat compiled CSS output rather than proper SCSS with nesting and constructs. Affected items: button, accordion, modal, tabs, alert, popup, progress.
+
+### Root Cause
+
+The `~ScssAbstracts` webpack alias (resolves to `libraries/dev-days-matrix-library/src/_abstracts/scss/`) is not available in standalone migrated projects. When helpers couldn't be imported verbatim, the output CSS was written instead of adapting to SCSS with local helpers.
+
+### Correct Migration Approach
+
+When migrating a library item whose SCSS uses `~ScssAbstracts`:
+
+1. **Keep Sass built-in `@use` statements** — `@use 'sass:color'` and `@use 'sass:math'` are standard Sass modules available in all projects. Keep them if the source used them.
+
+2. **Keep SCSS nesting with `&` BEM syntax** — Source uses `$block` variable + `&__element` and `&--modifier` nesting. Reproduce this exactly.
+
+3. **Resolve color values inline** — Replace `get-color($c-blue, carolina-blue)` with the literal hex from `_abstracts/scss/_03_foundations/_colors.scss`. Add a comment with the original call. Key resolved values:
+   - `$baseline = 8px`, `$gutter = 16px`
+   - `get-color($c-blue, charcoal) = #2c3e50`
+   - `get-color($c-blue, carolina-blue) = #3498db`
+   - `get-color($c-blue, colombia-blue) = #c6e6ff`
+   - `get-color($c-blue, french-blue) = #1d73b2`
+   - `get-color($c-light, light) = #fff`
+   - `get-color($c-light, cultured) = #eee`
+   - `get-color($c-light, gainsboro-white) = #e0e0e0`
+   - `get-color($c-dark, eerie-black) = #1f1f1f`
+   - `get-color($c-dark, jet) = #333`
+   - `get-color($c-gray, spanish-gray) = #999`
+   - `get-color($c-brown, misty-rose) = #fcdfdf`
+   - `get-color($c-yellow, wheat) = #e6d5a5`
+   - `get-color($c-green, honeydew) = #d9efe0`
+   - `get-color($c-traffic-lights, success) = #198754`
+   - `get-color($c-traffic-lights, danger) = #dc3545`
+   - `get-color($c-traffic-lights, warning) = #ffca2c`
+
+4. **Resolve mixin calls inline** — Replace library mixins with their CSS property equivalents inside the nesting:
+   - `@include flex($direction: column)` → `display: flex; flex-direction: column; justify-content: center; align-items: center;`
+   - `@include flex($main: space-between)` → `display: flex; flex-direction: row; justify-content: space-between; align-items: center;`
+   - `@include absolute($top: X, $left: Y)` → `position: absolute; top: X; left: Y;`
+   - `@include relative()` → `position: relative;`
+   - `@include transition($transition-property: P, $transition-time: T)` → `transition: P T;`
+   - `@include e('name')` → `&__name { ... }` (BEM element nesting)
+   - `@include m('name')` → `&--name { ... }` (BEM modifier nesting)
+   - `@include font($typography-var)` → expand to `font-size`, `line-height`, `font-weight` inline (or use key visual properties only)
+
+5. **Keep `@each` loops with local Sass maps** — If source uses a color/pattern map + `@each` loop, reproduce the map with resolved values and keep the loop structure. Do NOT flatten to individual selectors.
+
+6. **Add a migration comment** — At the top of each SCSS partial that resolves `~ScssAbstracts`, add:
+   ```scss
+   // NOTE: ~ScssAbstracts alias not available in standalone projects.
+   // Helpers resolved inline. Original source: library/path/to/file.entry.scss
+   ```
+
+### Fixed in Quality Pass (2026-03-30)
+
+All items corrected in a quality pass: button, accordion, modal, tabs (css+js), alert, popup, progress. All builds pass. Guardrail: 37 manifests validated.
 
 ## Migration Lessons
 
@@ -90,4 +179,4 @@ Complete
 
 ## Next candidate
 
-- Wave 1 complete.
+- Continue post-Wave 1 migration batches with same split architecture and checklist requirements.

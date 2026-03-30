@@ -1,50 +1,80 @@
-.button-stage {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
+@use 'sass:map';
+@use './abstracts' as abstracts;
 
-.button-base {
-    border: 0;
-    border-radius: 0.5rem;
-    padding: 0.85rem 1.05rem;
-    font: inherit;
-    font-weight: 600;
+// Source: library/components/button/scss/button.entry.scss
+// ~ScssAbstracts resolved via local ./_abstracts.scss
+// Note: Source uses .button > __base element nesting (@include element('base')).
+// Standalone project uses .button-base as the block directly to avoid
+// the extra wrapper class, matching the demo HTML structure.
+
+$block: 'button-base';
+
+$color-patterns: (
+    'primary': (
+        'background-color': abstracts.get-color(abstracts.$c-blue, carolina-blue),
+        'text-color': abstracts.get-color(abstracts.$c-light, light),
+    ),
+    'secondary': (
+        'background-color': abstracts.get-color(abstracts.$c-light, light),
+        'text-color': abstracts.get-color(abstracts.$c-dark, jet),
+    ),
+    'success': (
+        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, success),
+        'text-color': abstracts.get-color(abstracts.$c-light, light),
+    ),
+    'danger': (
+        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, danger),
+        'text-color': abstracts.get-color(abstracts.$c-light, light),
+    ),
+    'warning': (
+        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, warning),
+        'text-color': abstracts.get-color(abstracts.$c-dark, jet),
+    ),
+);
+
+.#{$block} {
+    @include abstracts.font(abstracts.$button);
+
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
+    display: inline-block;
+    border: none;
+    padding: 16px;
 
-.button-base:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.02);
-}
+    &:disabled {
+        cursor: not-allowed;
+        background-color: abstracts.get-color(abstracts.$c-light, gainsboro-white);
+    }
 
-.button-base:active {
-    transform: scale(0.98);
-}
+    @each $name, $color in $color-patterns {
+        @include abstracts.m($name) {
+            background-color: map.get($color, 'background-color');
+            color: map.get($color, 'text-color');
+        }
+    }
 
-.button-base--primary {
-    background: #2563eb;
-    color: #fff;
-}
+    @include abstracts.m('isAnimated') {
+        @include abstracts.transition($transition-property: transform, $transition-time: 0.3s);
 
-.button-base--secondary {
-    background: #fff;
-    color: #0f172a;
-    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.25);
-}
+        &:hover:not(:disabled) {
+            transform: scale(1.05);
+        }
 
-.button-base--success {
-    background: #16a34a;
-    color: #fff;
-}
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 
-.button-base--danger {
-    background: #dc2626;
-    color: #fff;
-}
+    @include abstracts.m('success') {
+        &:active {
+            box-shadow: 0 0 0 abstracts.convert-rem(3px) rgba(abstracts.get-color(abstracts.$c-green, green-cyan), 0.5);
+        }
+    }
 
-.button-base--warning {
-    background: #f59e0b;
-    color: #0f172a;
+    @include abstracts.m('secondary') {
+        box-shadow: abstracts.get-color(abstracts.$c-dark, dark-15) 0 0 0 abstracts.convert-rem(1px) inset;
+    }
+
+    @include abstracts.m('rounded') {
+        border-radius: 6px;
+    }
 }

@@ -1,0 +1,23 @@
+{
+  "name": "Progress Steps",
+  "source": "Coding Artist",
+  "sourceUrl": "https://codingartistweb.com/2021/12/progress-steps-bar-using-html-css-and-javascript/",
+  "description": "Step-based progress indicator with previous and next controls.",
+  "concepts": [
+    "progress",
+    "steps",
+    "status",
+    "interaction",
+    "ui-pattern"
+  ],
+  "category": "components",
+  "tags": [
+    "progress",
+    "steps",
+    "navigation",
+    "state",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
