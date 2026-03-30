@@ -29,6 +29,9 @@ Completed continuation items:
 - libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
 - libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
 - libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs
+- libraries/dev-days-matrix-library/src/library/patterns/alert -> projects/components/alert
+- libraries/dev-days-matrix-library/src/library/patterns/popup -> projects/components/popup
+- libraries/dev-days-matrix-library/src/library/patterns/progress -> projects/components/progress
 
 Execution rules remain unchanged:
 - Keep split architecture for all new migrations: per-variation `src/styles/_*.scss`, `src/scripts/_*.js`, and `src/_partials/_*.hbs` with entry orchestrators.
