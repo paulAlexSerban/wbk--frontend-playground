@@ -1,0 +1,21 @@
+{
+  "name": "Modal",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/modal",
+  "description": "Consolidated modal playground containing modal window interaction pattern.",
+  "concepts": [
+    "dialog-overlay",
+    "keyboard-dismiss",
+    "focus-surface",
+    "single-variation-demo"
+  ],
+  "category": "components",
+  "tags": [
+    "modal",
+    "dialog",
+    "component",
+    "playground"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
