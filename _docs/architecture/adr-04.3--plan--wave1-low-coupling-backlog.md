@@ -26,6 +26,7 @@ Status: in progress (2026-03-30)
 
 Completed continuation items:
 - libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
+- libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
 - libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
 - libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
 - libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs

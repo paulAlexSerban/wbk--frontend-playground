@@ -36,6 +36,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 26. libraries/dev-days-matrix-library/src/library/patterns/popup -> projects/components/popup
 27. libraries/dev-days-matrix-library/src/library/patterns/progress -> projects/components/progress
 28. libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
+29. libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
 
 ## Evidence
 
@@ -55,6 +56,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Migration checklist: _docs/architecture/migration-items/popup.md
 - Migration checklist: _docs/architecture/migration-items/progress.md
 - Migration checklist: _docs/architecture/migration-items/landing.md
+- Migration checklist: _docs/architecture/migration-items/pill.md
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
@@ -74,6 +76,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Project path: projects/components/alert
 - Project path: projects/components/popup
 - Project path: projects/components/progress
+- Project path: projects/components/pill
 - Project path: projects/systems/big-frontend-dev
 - Project path: projects/systems/codepen-challenges
 - Project path: projects/systems/dev-days-matrix
@@ -102,6 +105,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Build validation: yarn --cwd projects/components/alert build
 - Build validation: yarn --cwd projects/components/popup build
 - Build validation: yarn --cwd projects/components/progress build
+- Build validation: yarn --cwd projects/components/pill build
 - Build validation: yarn --cwd projects/systems/landing build
 - Build validation: yarn --cwd projects/systems/big-frontend-dev build
 - Build validation: yarn --cwd projects/systems/codepen-challenges build
@@ -111,7 +115,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Build validation: yarn --cwd projects/systems/frontend-practice build
 - Build validation: yarn --cwd projects/systems/generic-base build
 - Build validation: yarn --cwd projects/systems/great-frontend build
-- Guardrail validation: yarn check:migration:wave0 (38 manifests)
+- Guardrail validation: yarn check:migration:wave0 (39 manifests)
 
 ---
 
