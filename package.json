@@ -20,7 +20,7 @@
         "install:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn || echo '⚠️  Frontend Mentor Library not initialized'",
         "///// UNIVERSAL BUILD SCRIPTS /////": "",
         "build:all": "yarn build:libraries && yarn package:libraries && yarn build:dashboard",
-        "build:dashboard": "node dashboard",
+        "build:dashboard": "bash scripts/package-projects.bash && node dashboard",
         "build:libraries": "yarn build:lib:dev-days-matrix && yarn build:lib:frontend-mentor",
         "build:lib:dev-days-matrix": "cd libraries/dev-days-matrix-library && pwd && yarn build || echo '⚠️  Dev Days Matrix Library not built'",
         "build:lib:frontend-mentor": "cd libraries/frontend-mentor-library && pwd && yarn build || echo '⚠️  Frontend Mentor Library not built'",
@@ -39,6 +39,7 @@
 
         "/////////////////////// V3 /////////////////////////////////": "",
         "build": "lerna run build",
+        "build:prod": "NODE_ENV=production lerna run build:prod",
         "/// CODE QUALITY SCRIPTS ///": "",
         "formats:write": "prettier --write '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",
         "formats:check": "prettier --check '**/*.{js,ts,vue,svelte,md,json,yaml,yml}'",

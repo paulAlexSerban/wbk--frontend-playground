@@ -10,7 +10,7 @@ function createCatalog() {
     return [
         {
             'demo-library': {
-                library: {
+                projects: {
                     components: [
                         {
                             component: 'button',
@@ -33,26 +33,26 @@ test('collectVisibleEntries flattens visible variations into preview records', (
     const entries = collectVisibleEntries(createCatalog(), 'http://localhost:3000');
 
     assert.equal(entries.length, 1);
-    assert.equal(entries[0].cardId, 'demo-library-library-components-button-0');
-    assert.match(entries[0].previewUrl, /demo-library\/library\/components\/button\/primary\.html$/);
+    assert.equal(entries[0].cardId, 'demo-library-projects-components-button-0');
+    assert.match(entries[0].previewUrl, /projects\/components\/button\/primary\.html$/);
 });
 
 test('verifyGeneratedArtifacts passes for matching html, preview files, and catalog', async () => {
     const destinationDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'dashboard-quality-'));
 
-    await fs.promises.mkdir(path.join(destinationDir, 'demo-library', 'library', 'components', 'button'), {
+    await fs.promises.mkdir(path.join(destinationDir, 'components', 'button'), {
         recursive: true,
     });
-    await fs.promises.mkdir(path.join(destinationDir, 'demo-library', 'commons', 'base', 'reset'), {
+    await fs.promises.mkdir(path.join(destinationDir, 'components', 'button'), {
         recursive: true,
     });
     await fs.promises.writeFile(
-        path.join(destinationDir, 'demo-library', 'commons', 'base', 'reset', 'reset.css'),
+        path.join(destinationDir, 'components', 'button', 'styles.css'),
         'body {}'
     );
     await fs.promises.writeFile(
-        path.join(destinationDir, 'demo-library', 'library', 'components', 'button', 'primary.html'),
-        '<html><head><link rel="stylesheet" href="../../../commons/base/reset/reset.css"></head></html>'
+        path.join(destinationDir, 'components', 'button', 'primary.html'),
+        '<html><head><link rel="stylesheet" href="styles.css"></head></html>'
     );
 
     const htmlContent = `
@@ -62,8 +62,8 @@ test('verifyGeneratedArtifacts passes for matching html, preview files, and cata
         <div id="cardContainer">
             <div class="item-card"></div>
         </div>
-        <div id="carousel-demo-library-library-components-button-0"></div>
-        <a href="http://localhost:3000/wbk--frontend-playground/libraries/demo-library/library/components/button/primary.html">Preview</a>
+        <div id="carousel-demo-library-projects-components-button-0"></div>
+        <a href="http://localhost:3000/wbk-frontend-forge/projects/components/button/primary.html">Preview</a>
     `;
 
     const result = await verifyGeneratedArtifacts({
@@ -105,12 +105,12 @@ test('verifyGeneratedArtifacts reports missing preview targets and duplicate ids
 test('verifyGeneratedArtifacts reports missing preview asset references', async () => {
     const destinationDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'dashboard-quality-'));
 
-    await fs.promises.mkdir(path.join(destinationDir, 'demo-library', 'library', 'components', 'button'), {
+    await fs.promises.mkdir(path.join(destinationDir, 'components', 'button'), {
         recursive: true,
     });
     await fs.promises.writeFile(
-        path.join(destinationDir, 'demo-library', 'library', 'components', 'button', 'primary.html'),
-        '<html><head><link rel="stylesheet" href="../../../commons/base/reset/reset.css"></head></html>'
+        path.join(destinationDir, 'components', 'button', 'primary.html'),
+        '<html><head><link rel="stylesheet" href="styles.css"></head></html>'
     );
 
     const htmlContent = `
@@ -120,7 +120,7 @@ test('verifyGeneratedArtifacts reports missing preview asset references', async 
         <div id="cardContainer">
             <div class="item-card"></div>
         </div>
-        <a href="http://localhost:3000/wbk--frontend-playground/libraries/demo-library/library/components/button/primary.html">Preview</a>
+        <a href="http://localhost:3000/wbk-frontend-forge/projects/components/button/primary.html">Preview</a>
     `;
 
     const result = await verifyGeneratedArtifacts({

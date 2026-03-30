@@ -12,17 +12,30 @@ function joinUrl(baseUrl, ...segments) {
     return `${normalizedBase}/${pathPart}`;
 }
 
+function getUrlSegments() {
+    return {
+        repositorySegment: process.env.DASHBOARD_REPOSITORY_SEGMENT || 'wbk-frontend-forge',
+        catalogSegment: process.env.DASHBOARD_CATALOG_SEGMENT || 'projects',
+    };
+}
+
 function buildPreviewUrl(baseUrl, dir, groupName, categoryName, componentSlug, variationSlug) {
-    return `${joinUrl(
-        baseUrl,
-        'wbk--frontend-playground',
-        'libraries',
-        dir,
-        groupName,
-        categoryName,
-        componentSlug,
-        variationSlug
-    )}.html`;
+    const { repositorySegment, catalogSegment } = getUrlSegments();
+
+    if (catalogSegment === 'libraries') {
+        return `${joinUrl(
+            baseUrl,
+            repositorySegment,
+            catalogSegment,
+            dir,
+            groupName,
+            categoryName,
+            componentSlug,
+            variationSlug
+        )}.html`;
+    }
+
+    return `${joinUrl(baseUrl, repositorySegment, catalogSegment, categoryName, componentSlug, variationSlug)}.html`;
 }
 
 function buildImageUrl(baseUrl, filename, size) {

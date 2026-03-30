@@ -4,8 +4,8 @@
 import { loadCatalog } from './catalog/loader.js';
 
 /**
- * Loads and transforms all component data from the source directory.
- * @param {string} sourceDir - Absolute path to the libraries directory
+ * Loads and transforms all project metadata from the source directory.
+ * @param {string} sourceDir - Absolute path to the packaged projects directory
  * @returns {Promise<Array<Object>>} Array of transformed component lists by directory
  */
 async function loadComponentData(sourceDir) {
@@ -17,7 +17,7 @@ async function loadComponentData(sourceDir) {
     if (sourceUsed?.name === 'packaged') {
         console.log(`Dashboard data source: ${sourceUsed.label}`);
     } else if (sourceUsed?.name === 'distFallback') {
-        console.warn(`Dashboard data source fallback in use: ${sourceUsed.label} (packaged source missing).`);
+        console.warn(`Dashboard data source fallback in use: ${sourceUsed.label} (packaged projects source missing).`);
     } else {
         diagnostics.forEach((entry) => console.warn(entry));
     }
@@ -31,7 +31,7 @@ async function loadComponentData(sourceDir) {
         console.warn(`Metadata warnings (${warnings.length}):\n${warningPreview}${overflow}`);
     }
 
-    console.log(`Metadata summary: ${stats.libraryCount} libraries, ${stats.componentCount} components`);
+    console.log(`Metadata summary: ${stats.libraryCount} project bundles, ${stats.componentCount} components`);
 
     return groupedLibraries;
 }

@@ -16,7 +16,7 @@ test('buildPreviewUrl encodes path segments', () => {
     const url = buildPreviewUrl('http://localhost:3000/', 'dev lib', 'library', 'ui parts', 'button', 'primary state');
     assert.equal(
         url,
-        'http://localhost:3000/wbk--frontend-playground/libraries/dev%20lib/library/ui%20parts/button/primary%20state.html'
+        'http://localhost:3000/wbk-frontend-forge/projects/ui%20parts/button/primary%20state.html'
     );
 });
 

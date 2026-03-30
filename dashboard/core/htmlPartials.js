@@ -148,14 +148,14 @@ function buildTopNavbarHTML() {
     <a class="navbar-brand" href="#"><h1>Front-end Playground Workbook</h1></a>
     <div class="ms-auto d-flex gap-2 align-items-center flex-wrap justify-content-end">
         <input id="searchInput" class="form-control" type="search" placeholder="Search components..." aria-label="Search">
-        <select id="libraryFilter" class="form-select" aria-label="Filter by library">
-            <option value="all">All Libraries</option>
+        <select id="libraryFilter" class="form-select" aria-label="Filter by project">
+            <option value="all">All Projects</option>
         </select>
         <select id="sortSelect" class="form-select" aria-label="Sort components">
             <option value="title-asc">Title A-Z</option>
             <option value="title-desc">Title Z-A</option>
-            <option value="library-asc">Library A-Z</option>
-            <option value="library-desc">Library Z-A</option>
+            <option value="library-asc">Project A-Z</option>
+            <option value="library-desc">Project Z-A</option>
         </select>
         <button id="resetFilters" type="button" class="btn btn-outline-light">Reset</button>
     </div>

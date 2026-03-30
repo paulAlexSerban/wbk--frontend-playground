@@ -6,7 +6,7 @@ function validateCatalogStructure(componentLists) {
     const errors = [];
 
     if (!componentLists || typeof componentLists !== 'object' || Array.isArray(componentLists)) {
-        errors.push('Component list source must be an object keyed by library directory.');
+        errors.push('Component list source must be an object keyed by project directory.');
         return { errors };
     }
 
