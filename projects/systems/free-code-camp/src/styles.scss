@@ -1,0 +1,9 @@
+@use './styles/grid-system' as grid;
+
+$breakpoints: grid.$column-grid-12;
+
+@include grid.generate-grid();
+@include grid.make-grid-columns($breakpoints, grid.$grid-gutter);
+@include grid.no-gutter();
+@include grid.hang(grid.$grid-gutter);
+@include grid.grid-aspect-ratio();

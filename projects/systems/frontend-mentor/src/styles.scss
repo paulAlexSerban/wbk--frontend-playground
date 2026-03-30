@@ -1,0 +1,27 @@
+@use './styles/grid-system' as grid;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$breakpoints: grid.$column-grid-12;
+
+@include grid.generate-grid();
+@include grid.make-grid-columns($breakpoints, grid.$grid-gutter);
+@include grid.no-gutter();
+@include grid.hang(grid.$grid-gutter);
+@include grid.grid-aspect-ratio();
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    line-height: 18px;
+    position: absolute;
+    bottom: 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

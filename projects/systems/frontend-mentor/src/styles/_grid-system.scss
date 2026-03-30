@@ -1,0 +1,402 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:math';
+
+/* ------------------------------------ *\
+  * GRID SIZES (copied dependency subset)
+\* ------------------------------------ */
+$mobile: 480px !default;
+$tablet: 960px !default;
+$desktop: 1280px !default;
+$ultra-wide: 1920px !default;
+
+$grid-gutter: 32px;
+$grid-gutter--condensed: 1px;
+
+$column-grid-16: (
+    smartphone: (
+        columns: 4,
+        margin: 0,
+        width: $mobile,
+        touch: true,
+    ),
+    tablet: (
+        columns: 16,
+        margin: 16px,
+        width: $tablet,
+        touch: true,
+    ),
+    desktop: (
+        columns: 16,
+        margin: 16px,
+        width: $desktop,
+        touch: false,
+    ),
+    ultra-wide: (
+        columns: 16,
+        margin: 16px,
+        width: $ultra-wide,
+        touch: false,
+    ),
+);
+
+$column-grid-12: map.merge(
+    $column-grid-16,
+    (
+        tablet: map.merge(map.get($column-grid-16, tablet), (columns: 12)),
+        desktop: map.merge(map.get($column-grid-16, desktop), (columns: 12)),
+        ultra-wide: map.merge(map.get($column-grid-16, ultra-wide), (columns: 12)),
+    )
+);
+
+$breakpoints: $column-grid-12;
+
+@function key-by-index($input-map, $index) {
+    $keys: map.keys($input-map);
+    @return list.nth($keys, $index);
+}
+
+@function last-map-item($input-map) {
+    $total-length: list.length($input-map);
+    @return map.get($input-map, key-by-index($input-map, $total-length));
+}
+
+@function breakpoint-infix($name) {
+    @return '-#{$name}';
+}
+
+@function breakpoint-prev($name, $bp-map: $breakpoints, $breakpoint-names: map.keys($breakpoints)) {
+    $n: list.index($breakpoint-names, $name);
+    @if $n != null and $n > 1 {
+        @return list.nth($breakpoint-names, $n - 1);
+    }
+    @return null;
+}
+
+@function is-smallest-breakpoint($name, $bp-map: $breakpoints) {
+    @return list.index(map.keys($bp-map), $name) == 1;
+}
+
+@function largest-breakpoint-name($bp-map: $breakpoints) {
+    $total-breakpoints: list.length($bp-map);
+    @return key-by-index($bp-map, $total-breakpoints);
+}
+
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+@mixin m($modifiers...) {
+    @each $modifier in $modifiers {
+        @include modifier($modifier) {
+            @content;
+        }
+    }
+}
+
+@mixin flex($main: center, $cross: center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $main;
+    align-items: $cross;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute($args...) {
+    @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+    @include position(relative, $args...);
+}
+
+@mixin breakpoint($name, $bp-map: $breakpoints) {
+    @include breakpoint-up($name, $bp-map) {
+        @content;
+    }
+}
+
+@mixin largest-breakpoint($bp-map: $breakpoints) {
+    @include breakpoint(largest-breakpoint-name($bp-map), $bp-map) {
+        @content;
+    }
+}
+
+@mixin breakpoint-up($name, $bp-map: $breakpoints) {
+    @if meta.type-of($name) == 'number' {
+        @media only screen and (min-width: $name) {
+            @content;
+        }
+    } @else if map.has-key($bp-map, $name) {
+        $entry: map.get($bp-map, $name);
+        $width: map.get($entry, width);
+
+        @if is-smallest-breakpoint($name, $bp-map) {
+            @content;
+        } @else {
+            @media only screen and (min-width: $width) {
+                @content;
+            }
+        }
+    } @else {
+        @error "Unable to find a breakpoint with name `#{$name}`.";
+    }
+}
+
+@mixin no-gutter() {
+    .no-gutter,
+    .row.no-gutter [class*='col'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .no-gutter--start,
+    .row.no-gutter--start [class*='col'] {
+        padding-left: 0;
+    }
+
+    .no-gutter--end,
+    .row.no-gutter--end [class*='col'] {
+        padding-right: 0;
+    }
+}
+
+@mixin make-col-offset($span, $columns) {
+        @if meta.function-exists('div', 'math') {
+            $offset: math.div($span, $columns);
+            @if $offset == 0 {
+                margin-left: 0;
+            } @else {
+                margin-left: math.percentage($offset);
+            }
+        } @else {
+            $offset: $span / $columns;
+            @if $offset == 0 {
+                margin-left: 0;
+            } @else {
+                margin-left: percentage($offset);
+            }
+        }
+}
+
+@mixin make-col($span, $columns) {
+    @if $span == 0 {
+        display: none;
+    } @else {
+        display: block;
+        @if meta.function-exists('div', 'math') {
+            max-width: math.percentage(math.div($span, $columns));
+            flex: 0 0 math.percentage(math.div($span, $columns));
+        } @else {
+            max-width: math.percentage(($span / $columns));
+            flex: 0 0 math.percentage(($span / $columns));
+        }
+    }
+}
+
+@mixin make-col-ready($gutter: $grid-gutter, $condensed-gutter: $grid-gutter--condensed) {
+    width: 100%;
+    padding-right: $gutter * 0.5;
+    padding-left: $gutter * 0.5;
+
+    .row--condensed &,
+    .grid--condensed & {
+        padding-right: $condensed-gutter * 0.5;
+        padding-left: $condensed-gutter * 0.5;
+    }
+
+    .row--narrow &,
+    .grid--narrow & {
+        padding-right: $gutter * 0.5;
+        padding-left: 0;
+    }
+}
+
+@mixin make-grid-columns($bp-map: $breakpoints, $gutter: $grid-gutter) {
+    .col {
+        @include make-col-ready($gutter);
+    }
+
+    @each $bp in map.keys($bp-map) {
+        $infix: breakpoint-infix($bp);
+        $columns: map.get(map.get($bp-map, $bp), columns);
+
+        @for $i from 0 through $columns {
+            .col#{$infix}-#{$i} {
+                @include make-col-ready($gutter);
+            }
+        }
+
+        .col#{$infix},
+        .col#{$infix}--auto {
+            @include make-col-ready($gutter);
+        }
+
+        @include breakpoint($bp, $bp-map) {
+            .col,
+            .col#{$infix} {
+                max-width: 100%;
+                flex-basis: 0;
+                flex-grow: 1;
+            }
+
+            .col--auto,
+            .col#{$infix}--auto {
+                width: auto;
+                max-width: 100%;
+                flex: 1 0 0%;
+            }
+
+            @for $i from 0 through $columns {
+                .col#{$infix}-#{$i} {
+                    @include make-col($i, $columns);
+                }
+            }
+
+            @for $i from 0 through ($columns - 1) {
+                @if not($infix == '') {
+                    .offset#{$infix}-#{$i} {
+                        @include make-col-offset($i, $columns);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin make-row($gutter: $grid-gutter) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1 * $gutter * 0.5;
+    margin-left: -1 * $gutter * 0.5;
+}
+
+@mixin set-max-width-by-largest-breakpoint($bp-map: $breakpoints) {
+    $largest-breakpoint: last-map-item($bp-map);
+    max-width: map.get($largest-breakpoint, 'width');
+}
+
+@mixin make-container($bp-map: $breakpoints) {
+    margin: 0 auto;
+    @include set-max-width-by-largest-breakpoint($bp-map);
+
+    @each $name, $value in $bp-map {
+        $prev-breakpoint: map.get($bp-map, breakpoint-prev($name, $bp-map));
+        $margin: map.get($value, margin);
+
+        @if $prev-breakpoint {
+            $prev-margin: map.get($prev-breakpoint, margin);
+            @if $prev-margin != $margin {
+                @include breakpoint($name, $bp-map) {
+                    padding-right: ($grid-gutter * 0.5) + $margin;
+                    padding-left: ($grid-gutter * 0.5) + $margin;
+                }
+            }
+        } @else {
+            @include breakpoint($name, $bp-map) {
+                padding-right: #{($grid-gutter * 0.5) + $margin};
+                padding-left: #{($grid-gutter * 0.5) + $margin};
+            }
+        }
+    }
+}
+
+@mixin generate-grid($bp-map: $breakpoints, $gutter: $grid-gutter, $condensed-gutter: $grid-gutter--condensed) {
+    .grid {
+        @include flex($direction: column);
+        @include make-container($bp-map);
+
+        @include largest-breakpoint($bp-map) {
+            @include m('full-width') {
+                max-width: 100%;
+            }
+        }
+
+        @include m('condensed') {
+            [class*='col'] {
+                padding-top: $condensed-gutter * 0.5;
+                padding-bottom: $condensed-gutter * 0.5;
+            }
+        }
+    }
+
+    .row {
+        @include make-row();
+    }
+
+    .row-padding [class*='col'],
+    .col-padding {
+        padding-top: $gutter * 0.5;
+        padding-bottom: $gutter * 0.5;
+    }
+}
+
+@mixin hang($gutter: $grid-gutter) {
+    .hang--start {
+        padding-left: $gutter * 0.5;
+    }
+
+    .hang--end {
+        padding-right: $gutter * 0.5;
+    }
+
+    .hang--left {
+        padding-left: $gutter * 0.5;
+    }
+
+    .hang--right {
+        padding-right: $gutter * 0.5;
+    }
+}
+
+$aspect-ratios: ((16, 9), (9, 16), (2, 1), (1, 2), (4, 3), (3, 4), (3, 2), (2, 3), (1, 1));
+
+@mixin grid-aspect-ratio($ratios: $aspect-ratios) {
+    .aspect-ratio {
+        @include relative();
+
+        &::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+
+        &::before {
+            float: left;
+            width: 1px;
+            height: 0;
+            margin-left: -1px;
+            content: '';
+        }
+    }
+
+    @each $ratio in $ratios {
+        $width: list.nth($ratio, 1);
+        $height: list.nth($ratio, 2);
+
+        .aspect-ratio--#{$width}x#{$height}::before {
+            @if meta.function-exists('div', 'math') {
+                padding-top: math.percentage(math.div($height, $width));
+            } @else {
+                padding-top: math.percentage(($height / $width));
+            }
+        }
+    }
+
+    .aspect-ratio--object {
+        @include absolute($top: 0, $left: 0);
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 2 / 1;
+    }
+}

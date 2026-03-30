@@ -1,0 +1,1 @@
+// Intentionally empty: this system template does not require runtime JS.

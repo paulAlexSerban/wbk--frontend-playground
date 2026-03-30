@@ -1,0 +1,23 @@
+{
+  "name": "Free Code Camp",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/free-code-camp",
+  "description": "Base page template for freeCodeCamp challenge implementations with shared 12-column grid layout localized into the project.",
+  "concepts": [
+    "page-template",
+    "handlebars-layout",
+    "shared-grid-layout",
+    "system-foundation",
+    "html-shell"
+  ],
+  "category": "systems",
+  "tags": [
+    "system",
+    "template",
+    "free-code-camp",
+    "layout",
+    "foundation"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

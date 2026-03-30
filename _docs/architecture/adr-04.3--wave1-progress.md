@@ -19,6 +19,9 @@ In progress
 9. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
 10. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
 11. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
+12. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
+13. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
+14. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
 
 ## Evidence
 
@@ -41,6 +44,9 @@ In progress
 - Project path: projects/components/toggle-group
 - Project path: projects/systems/big-frontend-dev
 - Project path: projects/systems/codepen-challenges
+- Project path: projects/systems/dev-days-matrix
+- Project path: projects/systems/free-code-camp
+- Project path: projects/systems/frontend-mentor
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
@@ -52,7 +58,10 @@ In progress
 - Build validation: yarn --cwd projects/components/toggle-group build
 - Build validation: yarn --cwd projects/systems/big-frontend-dev build
 - Build validation: yarn --cwd projects/systems/codepen-challenges build
-- Guardrail validation: yarn check:migration:wave0 (21 manifests)
+- Build validation: yarn --cwd projects/systems/dev-days-matrix build
+- Build validation: yarn --cwd projects/systems/free-code-camp build
+- Build validation: yarn --cwd projects/systems/frontend-mentor build
+- Guardrail validation: yarn check:migration:wave0 (24 manifests)
 
 ## Migration Lessons
 
@@ -61,4 +70,4 @@ In progress
 
 ## Next candidate
 
-- libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
+- libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
