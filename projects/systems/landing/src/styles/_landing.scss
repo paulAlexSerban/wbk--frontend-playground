@@ -1,0 +1,78 @@
+@use './abstracts' as *;
+
+// Source: library/system/templates/landing/scss/landing.entry.scss
+// ~ScssAbstracts resolved via local ./_abstracts.scss
+
+$block: 'landing';
+
+.#{$block} {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: $gutter * 3 $gutter * 2;
+
+    &__hero,
+    &__section {
+        background: var(--landing-surface);
+        border: 1px solid var(--landing-border);
+        border-radius: 12px;
+        padding: $gutter * 2;
+    }
+
+    &__hero {
+        margin-bottom: $gutter;
+    }
+
+    &__eyebrow {
+        @include font($label);
+
+        text-transform: uppercase;
+        color: get-color($c-blue, french-blue);
+        margin-bottom: $baseline;
+    }
+
+    &__title {
+        margin-bottom: $baseline;
+    }
+
+    &__subtitle {
+        @include font($body);
+
+        color: var(--landing-muted);
+        margin-bottom: $gutter;
+    }
+
+    &__cta {
+        @include font($button);
+
+        display: inline-block;
+        text-decoration: none;
+        color: $c-white;
+        background: get-color($c-blue, french-blue);
+        border-radius: 8px;
+        padding: $baseline $gutter;
+    }
+
+    &__section {
+        margin-bottom: $gutter;
+    }
+
+    &__feature-list {
+        margin-top: $baseline * 2;
+        margin-left: $gutter;
+    }
+
+    &__feature-item + &__feature-item {
+        margin-top: $baseline;
+    }
+
+    &__quote {
+        margin-top: $baseline * 2;
+        color: var(--landing-muted);
+    }
+
+    &__footer {
+        text-align: center;
+        color: var(--landing-muted);
+        padding: 0 $gutter $gutter * 2;
+    }
+}

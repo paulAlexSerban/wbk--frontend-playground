@@ -35,6 +35,8 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 25. libraries/dev-days-matrix-library/src/library/patterns/alert -> projects/components/alert
 26. libraries/dev-days-matrix-library/src/library/patterns/popup -> projects/components/popup
 27. libraries/dev-days-matrix-library/src/library/patterns/progress -> projects/components/progress
+28. libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
+29. libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
 
 ## Evidence
 
@@ -53,6 +55,8 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Migration checklist: _docs/architecture/migration-items/alert.md
 - Migration checklist: _docs/architecture/migration-items/popup.md
 - Migration checklist: _docs/architecture/migration-items/progress.md
+- Migration checklist: _docs/architecture/migration-items/landing.md
+- Migration checklist: _docs/architecture/migration-items/pill.md
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
@@ -72,6 +76,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Project path: projects/components/alert
 - Project path: projects/components/popup
 - Project path: projects/components/progress
+- Project path: projects/components/pill
 - Project path: projects/systems/big-frontend-dev
 - Project path: projects/systems/codepen-challenges
 - Project path: projects/systems/dev-days-matrix
@@ -80,6 +85,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Project path: projects/systems/frontend-practice
 - Project path: projects/systems/generic-base
 - Project path: projects/systems/great-frontend
+- Project path: projects/systems/landing
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
@@ -99,6 +105,8 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Build validation: yarn --cwd projects/components/alert build
 - Build validation: yarn --cwd projects/components/popup build
 - Build validation: yarn --cwd projects/components/progress build
+- Build validation: yarn --cwd projects/components/pill build
+- Build validation: yarn --cwd projects/systems/landing build
 - Build validation: yarn --cwd projects/systems/big-frontend-dev build
 - Build validation: yarn --cwd projects/systems/codepen-challenges build
 - Build validation: yarn --cwd projects/systems/dev-days-matrix build
@@ -107,7 +115,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Build validation: yarn --cwd projects/systems/frontend-practice build
 - Build validation: yarn --cwd projects/systems/generic-base build
 - Build validation: yarn --cwd projects/systems/great-frontend build
-- Guardrail validation: yarn check:migration:wave0 (37 manifests)
+- Guardrail validation: yarn check:migration:wave0 (39 manifests)
 
 ---
 
@@ -129,41 +137,19 @@ When migrating a library item whose SCSS uses `~ScssAbstracts`:
 
 2. **Keep SCSS nesting with `&` BEM syntax** — Source uses `$block` variable + `&__element` and `&--modifier` nesting. Reproduce this exactly.
 
-3. **Resolve color values inline** — Replace `get-color($c-blue, carolina-blue)` with the literal hex from `_abstracts/scss/_03_foundations/_colors.scss`. Add a comment with the original call. Key resolved values:
-   - `$baseline = 8px`, `$gutter = 16px`
-   - `get-color($c-blue, charcoal) = #2c3e50`
-   - `get-color($c-blue, carolina-blue) = #3498db`
-   - `get-color($c-blue, colombia-blue) = #c6e6ff`
-   - `get-color($c-blue, french-blue) = #1d73b2`
-   - `get-color($c-light, light) = #fff`
-   - `get-color($c-light, cultured) = #eee`
-   - `get-color($c-light, gainsboro-white) = #e0e0e0`
-   - `get-color($c-dark, eerie-black) = #1f1f1f`
-   - `get-color($c-dark, jet) = #333`
-   - `get-color($c-gray, spanish-gray) = #999`
-   - `get-color($c-brown, misty-rose) = #fcdfdf`
-   - `get-color($c-yellow, wheat) = #e6d5a5`
-   - `get-color($c-green, honeydew) = #d9efe0`
-   - `get-color($c-traffic-lights, success) = #198754`
-   - `get-color($c-traffic-lights, danger) = #dc3545`
-   - `get-color($c-traffic-lights, warning) = #ffca2c`
+3. **Migrate SCSS helpers as local abstracts (preferred)** — If source uses `~ScssAbstracts`, add a local `src/styles/_abstracts.scss` in the target project by porting the required maps/functions/mixins from the source abstracts package.
 
-4. **Resolve mixin calls inline** — Replace library mixins with their CSS property equivalents inside the nesting:
-   - `@include flex($direction: column)` → `display: flex; flex-direction: column; justify-content: center; align-items: center;`
-   - `@include flex($main: space-between)` → `display: flex; flex-direction: row; justify-content: space-between; align-items: center;`
-   - `@include absolute($top: X, $left: Y)` → `position: absolute; top: X; left: Y;`
-   - `@include relative()` → `position: relative;`
-   - `@include transition($transition-property: P, $transition-time: T)` → `transition: P T;`
-   - `@include e('name')` → `&__name { ... }` (BEM element nesting)
-   - `@include m('name')` → `&--name { ... }` (BEM modifier nesting)
-   - `@include font($typography-var)` → expand to `font-size`, `line-height`, `font-weight` inline (or use key visual properties only)
+4. **Keep helper calls in migrated partials** — Preserve authored SCSS structure and calls rather than flattening to compiled CSS output:
+   - Keep `get-color(...)`, `convert-rem(...)`, `@include flex(...)`, `@include absolute(...)`, `@include transition(...)`
+   - Keep BEM helper usage (`@include e(...)`, `@include m(...)`) when used by source
+   - Keep `@each` loops with Sass maps instead of expanding all selector variants manually
 
-5. **Keep `@each` loops with local Sass maps** — If source uses a color/pattern map + `@each` loop, reproduce the map with resolved values and keep the loop structure. Do NOT flatten to individual selectors.
+5. **Namespace and import convention** — In component/style partials, replace `@use '~ScssAbstracts' ...` with `@use './abstracts' as *;` or `@use './abstracts' as abstracts;` to mirror source namespace style.
 
 6. **Add a migration comment** — At the top of each SCSS partial that resolves `~ScssAbstracts`, add:
    ```scss
    // NOTE: ~ScssAbstracts alias not available in standalone projects.
-   // Helpers resolved inline. Original source: library/path/to/file.entry.scss
+   // Helpers resolved via local ./_abstracts.scss. Original source: library/path/to/file.entry.scss
    ```
 
 ### Fixed in Quality Pass (2026-03-30)

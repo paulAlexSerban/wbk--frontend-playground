@@ -16,6 +16,8 @@ Use this template for each legacy item migrated from libraries to projects.
 - SCSS dependencies identified from ADR-04.2:
 - JS dependency migration strategy (copy/localize/shared):
 - SCSS dependency migration strategy (copy/localize/shared):
+- If SCSS uses `~ScssAbstracts`, local `src/styles/_abstracts.scss` created:
+- SCSS helper calls preserved (`@include`, `get-color`, `convert-rem`) instead of flattened CSS output:
 - `feLibs ... css` helper usages audited in source markup/partials:
 - Referenced shared styles copied into local `src/styles/` dependency files:
 - Copied style dependency code reduced to only what the target template uses:
