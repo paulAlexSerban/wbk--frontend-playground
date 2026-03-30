@@ -20,6 +20,21 @@ Strict Wave 1 complete.
 
 Stretch Wave 1 complete.
 
+## Post-Wave 1 Continuation (Same Migration Recipe)
+
+Status: in progress (2026-03-30)
+
+Completed continuation items:
+- libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
+- libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
+- libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
+- libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs
+
+Execution rules remain unchanged:
+- Keep split architecture for all new migrations: per-variation `src/styles/_*.scss`, `src/scripts/_*.js`, and `src/_partials/_*.hbs` with entry orchestrators.
+- Keep one migration checklist file per migrated legacy item under `_docs/architecture/migration-items/`.
+- Run per-project build and `yarn check:migration:wave0` after each continuation batch.
+
 ## Execution Notes
 - Use scripts/new-project.js for every scaffold action.
 - For each candidate, create a completed copy of migration-item-checklist-template.md.

@@ -1,7 +1,7 @@
 # ADR-04.3 Wave 1 Progress
 
 ## Status
-Complete
+Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 
 ## Date
 2026-03-30
@@ -28,6 +28,10 @@ Complete
 18. libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
 19. libraries/dev-days-matrix-library/src/library/patterns/navigation -> projects/components/navigation
 20. libraries/dev-days-matrix-library/src/library/patterns/slider -> projects/components/slider
+21. libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
+22. libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
+23. libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
+24. libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs
 
 ## Evidence
 
@@ -39,6 +43,10 @@ Complete
 - Migration checklist: _docs/architecture/migration-items/toast.md
 - Migration checklist: _docs/architecture/migration-items/like.md
 - Migration checklist: _docs/architecture/migration-items/theme-switch.md
+- Migration checklist: _docs/architecture/migration-items/button.md
+- Migration checklist: _docs/architecture/migration-items/accordion.md
+- Migration checklist: _docs/architecture/migration-items/modal.md
+- Migration checklist: _docs/architecture/migration-items/tabs.md
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
@@ -51,6 +59,10 @@ Complete
 - Project path: projects/components/loader
 - Project path: projects/components/navigation
 - Project path: projects/components/slider
+- Project path: projects/components/button
+- Project path: projects/components/accordion
+- Project path: projects/components/modal
+- Project path: projects/components/tabs
 - Project path: projects/systems/big-frontend-dev
 - Project path: projects/systems/codepen-challenges
 - Project path: projects/systems/dev-days-matrix
@@ -71,6 +83,10 @@ Complete
 - Build validation: yarn --cwd projects/components/loader build
 - Build validation: yarn --cwd projects/components/navigation build
 - Build validation: yarn --cwd projects/components/slider build
+- Build validation: yarn --cwd projects/components/button build
+- Build validation: yarn --cwd projects/components/accordion build
+- Build validation: yarn --cwd projects/components/modal build
+- Build validation: yarn --cwd projects/components/tabs build
 - Build validation: yarn --cwd projects/systems/big-frontend-dev build
 - Build validation: yarn --cwd projects/systems/codepen-challenges build
 - Build validation: yarn --cwd projects/systems/dev-days-matrix build
@@ -79,7 +95,7 @@ Complete
 - Build validation: yarn --cwd projects/systems/frontend-practice build
 - Build validation: yarn --cwd projects/systems/generic-base build
 - Build validation: yarn --cwd projects/systems/great-frontend build
-- Guardrail validation: yarn check:migration:wave0 (30 manifests)
+- Guardrail validation: yarn check:migration:wave0 (34 manifests)
 
 ## Migration Lessons
 
@@ -90,4 +106,4 @@ Complete
 
 ## Next candidate
 
-- Wave 1 complete.
+- Continue post-Wave 1 migration batches with same split architecture and checklist requirements.
