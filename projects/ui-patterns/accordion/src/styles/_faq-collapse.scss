@@ -1,4 +1,6 @@
-.faq-container { max-width: 680px; }
+.faq-container {
+    max-width: 680px;
+}
 
 .faq {
     background: transparent;
@@ -8,16 +10,32 @@
     padding: 1rem 1rem 1rem 1.1rem;
     position: relative;
     transition: 0.25s ease;
+
+    &.active {
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+
+        .faq-text {
+            display: block;
+
+            .faq-toggle {
+                background: #94a3b8;
+                color: #fff;
+            }
+        }
+    }
+
 }
 
-.faq.active {
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+.faq-title {
+    margin-right: 2.2rem;
 }
 
-.faq-title { margin-right: 2.2rem; }
-.faq-text { display: none; margin-top: 0.8rem; color: #334155; }
-.faq.active .faq-text { display: block; }
+.faq-text {
+    display: none;
+    margin-top: 0.8rem;
+    color: #334155;
+}
 
 .faq-toggle {
     position: absolute;
@@ -31,9 +49,17 @@
     cursor: pointer;
     display: grid;
     place-items: center;
+
+    span:last-child {
+        display: none;
+    }
 }
 
-.faq-toggle span:last-child { display: none; }
-.faq.active .faq-toggle { background: #94a3b8; color: #fff; }
-.faq.active .faq-toggle span:first-child { display: none; }
-.faq.active .faq-toggle span:last-child { display: inline; }
+
+.faq.active .faq.active .faq-toggle span:first-child {
+    display: none;
+}
+
+.faq.active .faq-toggle span:last-child {
+    display: inline;
+}

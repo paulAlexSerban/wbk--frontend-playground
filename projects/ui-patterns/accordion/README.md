@@ -2,18 +2,6 @@
 
 Consolidated accordion playground containing CSS accordion and FAQ collapse variations.
 
-Source: `libraries/dev-days-matrix-library/src/library/patterns/accordion`
-
-## Architecture
-
-Follow the modular split pattern for future updates:
-
-- `src/styles/_*.scss` per variation plus shared layout styles in `_shared.scss`
-- `src/scripts/_*.js` per interactive variation plus an `index.js` initializer entry
-- `src/_partials/_*.hbs` per variation; keep `body.hbs` as composition-only includes
-
-Reference implementation notes: `projects/components/slider/ARCHITECTURE.md`
-
 ## Concepts
 
 - `accordion-disclosure` - collapsible content sections using labels and content panels
@@ -21,9 +9,8 @@ Reference implementation notes: `projects/components/slider/ARCHITECTURE.md`
 - `faq-toggle` - click to open or close individual FAQ items
 - `multi-variation-demo` - combines CSS and JS-driven accordion patterns
 
-## Commands
+## Improvements and expansions to consider:
+- add keyboard and screen-reader interaction checks (`aria-expanded`, `aria-controls`)
+- add optional single-open mode for FAQ groups
+- add transition timing tokens for consistent expansion animation
 
-```bash
-yarn --cwd projects/components/accordion dev
-yarn --cwd projects/components/accordion build
-```
