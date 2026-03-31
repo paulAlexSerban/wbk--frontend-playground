@@ -1,22 +1,2 @@
-.browser-detect-page {
-    margin: 2rem auto;
-    max-width: 960px;
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    padding: 0 1rem;
-}
-
-.browser-map-table {
-    border-collapse: collapse;
-    margin-top: 1rem;
-    width: 100%;
-}
-
-.browser-map-table td {
-    border: 1px solid #ddd;
-    padding: 0.5rem 0.75rem;
-}
-
-.browser-map-table tr:nth-child(even) {
-    background-color: #f8f8f8;
-}
+@use './styles/shared';
+@use './styles/browser-detect';
