@@ -1,0 +1,21 @@
+{
+  "name": "Button",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/button",
+  "description": "Consolidated button playground containing base button styles and a ripple interaction variation.",
+  "concepts": [
+    "button-variants",
+    "micro-interactions",
+    "ripple-effect",
+    "multi-variation-demo"
+  ],
+  "category": "ui-components",
+  "tags": [
+    "button",
+    "interaction",
+    "component",
+    "playground"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

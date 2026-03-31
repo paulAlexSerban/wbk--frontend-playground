@@ -1,0 +1,22 @@
+{
+  "name": "Image",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/image",
+  "description": "Image component patterns and responsive image demos.",
+  "concepts": [
+    "image-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
+  ],
+  "category": "ui-components",
+  "tags": [
+    "image",
+    "component",
+    "pattern",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
