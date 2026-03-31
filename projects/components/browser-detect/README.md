@@ -2,18 +2,21 @@
 
 Small component demo that parses user-agent strings and renders a browser/OS map in a table.
 
-## Source
-
-- Migrated from: `libraries/dev-days-matrix-library/src/library/components/browser-detect`
-
 ## Concepts
 
 - user-agent parsing
 - regular expressions
 - DOM table rendering
 
-## Commands
-
-- `yarn develop`
-- `yarn build`
-- `yarn build:prod`
+## Improvements and expansions to consider:
+- add browser map grouping (browser family, version, platform) for easier scanning
+- add row virtualization/pagination if sample UA list grows significantly
+- add test fixtures to validate parser output deterministically
+- detect current browser and OS and highlight in the table
+- add more browsers and OSes to the detection list
+- support mobile browsers and platforms
+- provide a fallback for unsupported browsers
+- optimize regex patterns for better performance
+- add unit tests for the parsing logic
+- make the component responsive for different screen sizes
+- allow custom user-agent input for testing different scenarios
