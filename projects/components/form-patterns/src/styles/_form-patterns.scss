@@ -1,0 +1,177 @@
+@use './abstracts' as *;
+
+// ----- Variation 1: Smiley Feedback -----
+
+.panel-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 4px;
+    font-size: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    max-width: 400px;
+
+    strong {
+        line-height: 20px;
+    }
+}
+
+.ratings-container {
+    display: flex;
+    margin: 20px 0;
+}
+
+.rating {
+    flex: 1;
+    cursor: pointer;
+    padding: 20px;
+    margin: 10px 5px;
+
+    &:hover,
+    &.active {
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    }
+
+    img {
+        width: 40px;
+    }
+
+    small {
+        color: #555;
+        display: inline-block;
+        margin: 10px 0 0;
+    }
+
+    &:hover small,
+    &.active small {
+        color: #111;
+    }
+}
+
+.fp-btn {
+    background-color: #302d2b;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 30px;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+// ----- Variation 2: Verify Account Input -----
+
+.verify-container {
+    text-align: center;
+}
+
+.code-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+    }
+}
+
+.code {
+    caret-color: transparent;
+    border-radius: 5px;
+    font-size: 75px;
+    height: 120px;
+    width: 100px;
+    border: 1px solid #eee;
+    margin: 1%;
+    text-align: center;
+    font-weight: 300;
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &:valid {
+        border-color: #3498db;
+        box-shadow: 0 10px 10px -5px rgb(0 0 0 / 25%);
+    }
+
+    @media (max-width: 600px) {
+        font-size: 60px;
+        height: 80px;
+        max-width: 70px;
+    }
+}
+
+.info {
+    background-color: #eaeaea;
+    display: inline-block;
+    padding: 10px;
+    line-height: 20px;
+    max-width: 400px;
+    color: #777;
+    border-radius: 5px;
+}
+
+// ----- Variation 3: Text Field -----
+
+$block: 'fieldset';
+
+.#{$block} {
+    @include e('base') {
+        margin-top: 32px;
+        width: 100%;
+
+        @include relative();
+    }
+
+    @include e('message') {
+        @include absolute($left: 0, $bottom: 0);
+        @include font($body);
+
+        transform: translateY(50%);
+        color: get-color($c-traffic-lights, danger);
+        visibility: hidden;
+
+        .error & {
+            visibility: visible;
+        }
+    }
+}
+
+$input-block: 'input';
+
+.#{$input-block} {
+    @include e('input') {
+        padding: 16px;
+        border-radius: 3px;
+        margin-bottom: 16px;
+        width: 100%;
+        border: 1px solid get-color($c-gray, sonic-silver);
+
+        &:focus {
+            border-color: get-color($c-blue, rhythm);
+            outline: 0;
+            box-shadow: 0 convert-rem(2px) convert-rem(10px) get-color($c-dark, dark-30);
+        }
+    }
+
+    @include e('label') {
+        @include font($label);
+
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+}
