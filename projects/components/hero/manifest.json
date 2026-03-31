@@ -1,0 +1,22 @@
+{
+  "name": "Hero",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/hero",
+  "description": "Hero layout patterns including split-screen interaction.",
+  "concepts": [
+    "hero-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
+  ],
+  "category": "components",
+  "tags": [
+    "hero",
+    "component",
+    "pattern",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
