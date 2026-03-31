@@ -1,22 +1,21 @@
 {
   "name": "Toggle Group",
-  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
-  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
-  "description": "Three-way tradeoff toggle where selecting all three automatically disables one based on the most recent click.",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/toggle-group",
+  "description": "Toggle group pattern for segmented controls and stateful options.",
   "concepts": [
-    "mutually-constrained-toggles",
-    "checkbox-state-management",
-    "event-driven-ui",
-    "conditional-logic",
-    "micro-interactions"
+    "toggle-group-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
   ],
   "category": "components",
   "tags": [
-    "toggle",
-    "checkbox",
-    "ui-constraints",
-    "interactive",
-    "animation"
+    "toggle-group",
+    "component",
+    "pattern",
+    "migration-wave"
   ],
   "status": "complete",
   "difficulty": "beginner"

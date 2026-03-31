@@ -1,15 +1,14 @@
 # Toggle Group
 
-Three-way tradeoff toggle where selecting all three automatically disables one based on the most recent click.
+Toggle group pattern for segmented controls and stateful options.
 
-Source: [50 Projects In 50 Days - HTML, CSS & JavaScript](https://www.udemy.com/course/50-projects-50-days/)
+Source: `libraries/dev-days-matrix-library/src/library/patterns/toggle-group`
 
-## Concepts
+## Architecture
 
-- `mutually-constrained-toggles` - allows at most two active toggles via conflict logic
-- `checkbox-state-management` - reads and updates `checked` state directly
-- `event-driven-ui` - listens for `change` events on each toggle
-- `micro-interactions` - animated slider ball transitions on toggle change
+- `src/styles/_*.scss` split modules with local `_abstracts.scss`
+- `src/scripts/_*.js` split modules with `index.js` entry
+- `src/_partials/_*.hbs` variation partials composed in `body.hbs`
 
 ## Commands
 
