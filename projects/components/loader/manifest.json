@@ -1,22 +1,21 @@
 {
   "name": "Loader",
   "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/loader",
-  "description": "Consolidated loader playground containing kinetic loader and auto-text variations.",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/loader",
+  "description": "Loader pattern set including CSS animated loading indicators.",
   "concepts": [
-    "css-animation",
-    "typewriter-effect",
-    "range-input-control",
-    "multi-variation-demo",
-    "micro-interactions"
+    "loader-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
   ],
   "category": "components",
   "tags": [
     "loader",
-    "animation",
-    "text",
     "component",
-    "playground"
+    "pattern",
+    "migration-wave"
   ],
   "status": "complete",
   "difficulty": "beginner"
