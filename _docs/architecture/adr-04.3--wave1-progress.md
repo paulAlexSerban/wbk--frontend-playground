@@ -13,11 +13,17 @@ Current source-to-target filesystem reconciliation:
 - library/components: 12/13 migrated
 - library/patterns: 20/20 migrated
 - library/system/templates: 9/9 migrated
-- total: 41/42 migrated
+- total raw: 41/42 migrated
+
+Scope decision:
+
+- libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography is intentionally excluded from components scope.
+- Typography coverage is owned by projects/systems/typography-tokens.
+- Effective in-scope completion: 41/41.
 
 Outstanding missing target:
 
-- libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography (missing target directory)
+- none (within effective in-scope migration set)
 
 Project-only systems (not from library/system/templates):
 

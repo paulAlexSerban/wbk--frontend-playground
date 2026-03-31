@@ -41,7 +41,7 @@ Completed continuation items:
 - libraries/dev-days-matrix-library/src/library/patterns/card-list -> projects/components/card-list
 - libraries/dev-days-matrix-library/src/library/patterns/card -> projects/components/card
 - libraries/dev-days-matrix-library/src/library/patterns/audio -> projects/components/audio
-- libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography (target currently missing; requires re-scaffold/recovery)
+- libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography (excluded from components scope; covered by projects/systems/typography-tokens)
 - libraries/dev-days-matrix-library/src/library/components/list -> projects/components/list
 - libraries/dev-days-matrix-library/src/library/components/form-components -> projects/components/form-components
 - libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
@@ -71,4 +71,4 @@ Execution rules remain unchanged:
 ## Reconciliation Note (2026-03-31)
 
 - A full libraries-vs-projects slug inventory and migration mapping is tracked in _docs/migration-inventory-libraries-vs-projects.md.
-- Current gap identified in this pass: libraries/dev-days-matrix-library/src/library/components/typography target directory is missing at projects/components/typography.
+- Scope decision: libraries/dev-days-matrix-library/src/library/components/typography is intentionally excluded from components migration, because typography is represented in projects/systems/typography-tokens.

@@ -16,6 +16,11 @@ Snapshot
   - projects/systems
   - category counts under projects/* (excluding _project-templates and _shared)
 
+## Scope Decision
+- Typography component from library/components is intentionally excluded from projects/components migration scope.
+- Reason: typography is covered as a systems concern in projects/systems/typography-tokens.
+- Effective migration scope for completion tracking is 41 items.
+
 ## Source Inventory
 
 ### library/components (13)
@@ -156,9 +161,9 @@ Snapshot
 - pill -> projects/components/pill (migrated)
 - timer -> projects/components/timer (migrated)
 - toast -> projects/components/toast (migrated)
-- typography -> projects/components/typography (missing target project)
+- typography -> projects/components/typography (excluded by scope decision; covered by projects/systems/typography-tokens)
 
-Summary: 12 of 13 migrated, 1 missing.
+Summary: 12 of 13 migrated, 1 excluded.
 
 ### Patterns Mapping (library/patterns -> projects/components)
 - accordion -> projects/components/accordion (migrated)
@@ -209,8 +214,9 @@ Summary: 9 of 9 migrated.
 
 ## Progress Totals
 - Source items total: 42 (13 components + 20 patterns + 9 system templates)
-- Migrated items total: 41
-- Missing items total: 1 (typography component target)
+- Effective in-scope total: 41 (42 minus excluded typography component target)
+- Migrated in-scope items total: 41
+- Missing in-scope items total: 0
 
 ## Notes
 - This inventory is based on current directory existence and slug matching.
