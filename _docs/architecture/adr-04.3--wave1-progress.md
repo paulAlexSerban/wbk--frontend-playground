@@ -38,8 +38,60 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 28. libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
 29. libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
 
+30. libraries/dev-days-matrix-library/src/library/components/form-components -> projects/components/form-components
+
+31. libraries/dev-days-matrix-library/src/library/components/list -> projects/components/list
+
+32. libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography
+
+33. libraries/dev-days-matrix-library/src/library/patterns/audio -> projects/components/audio
+
+34. libraries/dev-days-matrix-library/src/library/patterns/card -> projects/components/card
+
+35. libraries/dev-days-matrix-library/src/library/patterns/card-list -> projects/components/card-list
+
+36. libraries/dev-days-matrix-library/src/library/patterns/digital-clock -> projects/components/digital-clock
+
+37. libraries/dev-days-matrix-library/src/library/patterns/form-patterns -> projects/components/form-patterns
+
+38. libraries/dev-days-matrix-library/src/library/patterns/hero -> projects/components/hero
+
+39. libraries/dev-days-matrix-library/src/library/patterns/scrollspy -> projects/components/scrollspy
+
+40. libraries/dev-days-matrix-library/src/library/components/image -> projects/components/image
+
+41. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
+
+42. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
+
+43. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
+
+44. libraries/dev-days-matrix-library/src/library/patterns/layouts -> projects/components/layouts
+
+45. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
+
+46. libraries/dev-days-matrix-library/src/library/patterns/loader -> projects/components/loader
+
+47. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
+
+48. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+
 ## Evidence
 
+- Migration checklist: _docs/architecture/migration-items/toggle-group.md
+- Migration checklist: _docs/architecture/migration-items/loader.md
+- Migration checklist: _docs/architecture/migration-items/layouts.md
+- Migration checklist: _docs/architecture/migration-items/image.md
+- Migration checklist: _docs/architecture/migration-items/scrollspy.md
+- Migration checklist: _docs/architecture/migration-items/hero.md
+- Migration checklist: _docs/architecture/migration-items/form-patterns.md
+- Migration checklist: _docs/architecture/migration-items/digital-clock.md
+- Migration checklist: _docs/architecture/migration-items/card-list.md
+- Migration checklist: _docs/architecture/migration-items/card.md
+- Migration checklist: _docs/architecture/migration-items/audio.md
+- Migration checklist: _docs/architecture/migration-items/typography.md
+- Migration checklist: _docs/architecture/migration-items/list.md
+- Migration checklist: _docs/architecture/migration-items/form-components.md
 - Migration checklist: _docs/architecture/migration-items/browser-detect.md
 - Migration checklist: _docs/architecture/migration-items/drag-n-drop.md
 - Migration checklist: _docs/architecture/migration-items/keyboard-keys.md
@@ -57,6 +109,18 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Migration checklist: _docs/architecture/migration-items/progress.md
 - Migration checklist: _docs/architecture/migration-items/landing.md
 - Migration checklist: _docs/architecture/migration-items/pill.md
+- Project path: projects/components/form-components
+- Project path: projects/components/list
+- Project path: projects/components/typography
+- Project path: projects/components/audio
+- Project path: projects/components/card
+- Project path: projects/components/card-list
+- Project path: projects/components/digital-clock
+- Project path: projects/components/form-patterns
+- Project path: projects/components/hero
+- Project path: projects/components/scrollspy
+- Project path: projects/components/image
+- Project path: projects/components/layouts
 - Project path: projects/components/browser-detect
 - Project path: projects/components/drag-n-drop
 - Project path: projects/components/keyboard-keys
@@ -86,6 +150,18 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Project path: projects/systems/generic-base
 - Project path: projects/systems/great-frontend
 - Project path: projects/systems/landing
+- Build validation: yarn --cwd projects/components/form-components build
+- Build validation: yarn --cwd projects/components/list build
+- Build validation: yarn --cwd projects/components/typography build
+- Build validation: yarn --cwd projects/components/audio build
+- Build validation: yarn --cwd projects/components/card build
+- Build validation: yarn --cwd projects/components/card-list build
+- Build validation: yarn --cwd projects/components/digital-clock build
+- Build validation: yarn --cwd projects/components/form-patterns build
+- Build validation: yarn --cwd projects/components/hero build
+- Build validation: yarn --cwd projects/components/scrollspy build
+- Build validation: yarn --cwd projects/components/image build
+- Build validation: yarn --cwd projects/components/layouts build
 - Build validation: yarn --cwd projects/components/browser-detect build
 - Build validation: yarn --cwd projects/components/drag-n-drop build
 - Build validation: yarn --cwd projects/components/keyboard-keys build
@@ -115,7 +191,7 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Build validation: yarn --cwd projects/systems/frontend-practice build
 - Build validation: yarn --cwd projects/systems/generic-base build
 - Build validation: yarn --cwd projects/systems/great-frontend build
-- Guardrail validation: yarn check:migration:wave0 (39 manifests)
+- Guardrail validation: yarn check:migration:wave0 (58 manifests)
 
 ---
 

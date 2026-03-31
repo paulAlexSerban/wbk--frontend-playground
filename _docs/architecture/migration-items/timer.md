@@ -3,39 +3,41 @@
 ## Item Identification
 
 - **Source**: libraries/dev-days-matrix-library/src/library/components/timer
+- **Legacy meta**: libraries/dev-days-matrix-library/src/library/components/timer/meta.json
 - **Target**: projects/components/timer
-- **Category**: components (confirmed — interactive animated countdown widget)
-- **Source attribution**: 50 Projects In 50 Days - HTML, CSS & JavaScript (Udemy)
+- **Category**: components (confirmed — isolated UI/pattern migration)
+- **Source attribution**: Dev Days Matrix Library
 
 ## Dependency Review
 
-- JS deps: none
-- SCSS deps: none
-- Entry files: 1 JS (animated-countdown.entry.js), 1 SCSS (animated-countdown.entry.scss), 1 HBS (animated-countdown.entry.hbs)
-- Wave 1 tier: Strict
+- JS deps: none (external package deps)
+- SCSS deps: ~ScssAbstracts (resolved via local _abstracts.scss)
+- Entry files: migrated into split variation modules
+- Wave tier: Post-Wave 1 continuation
 
 ## Project Scaffold
 
-- [x] `yarn new:project --name "Timer" --category components --template handlebars-template --slug timer`
-- [x] Target directory created: projects/components/timer
+- [x] Target directory created with scripts/new-project.js
+- [x] Template used: handlebars-template
 
 ## Files Ported
 
-- [x] `src/_partials/body.hbs` — `.counter` div with `.nums` containing 4 spans (3-2-1-0); `.final` div with GO and replay button
-- [x] `src/scripts.js` — `runAnimation()` orchestrates countdown via `animationend` listeners; `resetDOM()` resets for replay; state machine toggles (in → out) sequence the flow
-- [x] `src/styles.scss` — `.counter` and `.final` centered via fixed + transform; `@keyframes goIn/goOut` with rotation (120° ↔ 0°) and spin effects; `hide/show` scale animations; button hover animation (padding-right + arrow)
+- [x] src/_partials/body.hbs — composition-only include
+- [x] src/_partials/_timer.hbs — variation partial
+- [x] src/styles.scss + split modules in src/styles/
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/_timer.js
+- [x] src/styles/_abstracts.scss — local port replacing ~ScssAbstracts alias
 
 ## Manifest and README
 
-- [x] `manifest.json` — source/sourceUrl updated; concepts: css-animations, animation-events, dom-manipulation, timing-state-machine, keyframe-transforms; tags: timer, countdown, animation, interactive, replay
-- [x] `README.md` — source link, concepts, dev/build commands
+- [x] manifest.json — source/sourceUrl updated; concepts/tags set
+- [x] README.md — provenance and split architecture notes
 
 ## Verification
 
-- [x] `yarn --cwd projects/components/timer build` → webpack compiled successfully in 751 ms
-- [x] `yarn check:migration:wave0` → Project manifest category validation passed. Checked 15 manifests.
+- [x] yarn --cwd projects/components/timer build -> webpack compiled successfully
+- [x] yarn check:migration:wave0 -> Project manifest category validation passed. Checked 58 manifests.
 
 ## Notes
 
-- Complex animation state machine: relies on animationend events to sequence through 3 → 2 → 1 → 0 → GO
-- No external timers or intervals; purely CSS-driven timeline via keyframes
+- Migrated as standalone component playground preserving split architecture and local abstracts recipe.

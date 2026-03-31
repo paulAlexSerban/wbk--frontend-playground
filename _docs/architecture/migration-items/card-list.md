@@ -1,10 +1,10 @@
-# Migration Checklist: like
+# Migration Checklist: card-list
 
 ## Item Identification
 
-- **Source**: libraries/dev-days-matrix-library/src/library/patterns/like
-- **Legacy meta**: libraries/dev-days-matrix-library/src/library/patterns/like/meta.json
-- **Target**: projects/components/like
+- **Source**: libraries/dev-days-matrix-library/src/library/patterns/card-list
+- **Legacy meta**: libraries/dev-days-matrix-library/src/library/patterns/card-list/meta.json
+- **Target**: projects/components/card-list
 - **Category**: components (confirmed — isolated UI/pattern migration)
 - **Source attribution**: Dev Days Matrix Library
 
@@ -23,9 +23,9 @@
 ## Files Ported
 
 - [x] src/_partials/body.hbs — composition-only include
-- [x] src/_partials/_like.hbs — variation partial
+- [x] src/_partials/_card-list.hbs — variation partial
 - [x] src/styles.scss + split modules in src/styles/
-- [x] src/scripts.js + src/scripts/index.js + src/scripts/_like.js
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/_card-list.js
 - [x] src/styles/_abstracts.scss — local port replacing ~ScssAbstracts alias
 
 ## Manifest and README
@@ -35,8 +35,8 @@
 
 ## Verification
 
-- [x] yarn --cwd projects/components/like build -> webpack compiled successfully
-- [x] yarn check:migration:wave0 -> Project manifest category validation passed. Checked 58 manifests.
+- [x] yarn --cwd projects/components/card-list build -> webpack compiled successfully
+- [x] yarn check:migration:wave0 -> Project manifest category validation passed. Checked 49 manifests.
 
 ## Notes
 

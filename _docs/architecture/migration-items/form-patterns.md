@@ -1,10 +1,10 @@
-# Migration Checklist: like
+# Migration Checklist: form-patterns
 
 ## Item Identification
 
-- **Source**: libraries/dev-days-matrix-library/src/library/patterns/like
-- **Legacy meta**: libraries/dev-days-matrix-library/src/library/patterns/like/meta.json
-- **Target**: projects/components/like
+- **Source**: libraries/dev-days-matrix-library/src/library/patterns/form-patterns
+- **Legacy meta**: libraries/dev-days-matrix-library/src/library/patterns/form-patterns/meta.json
+- **Target**: projects/components/form-patterns
 - **Category**: components (confirmed — isolated UI/pattern migration)
 - **Source attribution**: Dev Days Matrix Library
 
@@ -23,9 +23,9 @@
 ## Files Ported
 
 - [x] src/_partials/body.hbs — composition-only include
-- [x] src/_partials/_like.hbs — variation partial
+- [x] src/_partials/_form-patterns.hbs — variation partial
 - [x] src/styles.scss + split modules in src/styles/
-- [x] src/scripts.js + src/scripts/index.js + src/scripts/_like.js
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/_form-patterns.js
 - [x] src/styles/_abstracts.scss — local port replacing ~ScssAbstracts alias
 
 ## Manifest and README
@@ -35,8 +35,8 @@
 
 ## Verification
 
-- [x] yarn --cwd projects/components/like build -> webpack compiled successfully
-- [x] yarn check:migration:wave0 -> Project manifest category validation passed. Checked 58 manifests.
+- [x] yarn --cwd projects/components/form-patterns build -> webpack compiled successfully
+- [x] yarn check:migration:wave0 -> Project manifest category validation passed. Checked 49 manifests.
 
 ## Notes
 

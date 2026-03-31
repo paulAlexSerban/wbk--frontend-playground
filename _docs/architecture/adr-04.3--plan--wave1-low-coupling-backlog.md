@@ -25,6 +25,25 @@ Stretch Wave 1 complete.
 Status: in progress (2026-03-30)
 
 Completed continuation items:
+- libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+- libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
+- libraries/dev-days-matrix-library/src/library/patterns/loader -> projects/components/loader
+- libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
+- libraries/dev-days-matrix-library/src/library/patterns/layouts -> projects/components/layouts
+- libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
+- libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
+- libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
+- libraries/dev-days-matrix-library/src/library/components/image -> projects/components/image
+- libraries/dev-days-matrix-library/src/library/patterns/scrollspy -> projects/components/scrollspy
+- libraries/dev-days-matrix-library/src/library/patterns/hero -> projects/components/hero
+- libraries/dev-days-matrix-library/src/library/patterns/form-patterns -> projects/components/form-patterns
+- libraries/dev-days-matrix-library/src/library/patterns/digital-clock -> projects/components/digital-clock
+- libraries/dev-days-matrix-library/src/library/patterns/card-list -> projects/components/card-list
+- libraries/dev-days-matrix-library/src/library/patterns/card -> projects/components/card
+- libraries/dev-days-matrix-library/src/library/patterns/audio -> projects/components/audio
+- libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography
+- libraries/dev-days-matrix-library/src/library/components/list -> projects/components/list
+- libraries/dev-days-matrix-library/src/library/components/form-components -> projects/components/form-components
 - libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
 - libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
 - libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
