@@ -1,24 +1,18 @@
 # Theme Switch
 
-Analog clock with real-time updates and dark/light theme toggle.
+Theme switch pattern for toggling visual palettes and UI state.
 
-**Source:** [50 Projects In 50 Days - HTML, CSS & JavaScript](https://www.udemy.com/course/50-projects-50-days/)
+Source: `libraries/dev-days-matrix-library/src/library/patterns/theme-switch`
 
-## Concepts
+## Architecture
 
-- `analog-clock` — 3 rotating needles (hour, minute, second) scaled to 360° rotations
-- `date-time-api` — `new Date()` with `.getHours()`, `.getMinutes()`, `.getSeconds()` updates
-- `transform-rotate` — CSS transforms position and rotate clock hands smoothly
-- `css-variables` — `--primary-color` and `--secondary-color` swap on theme toggle
-- `interval-timer` — `setInterval(setTime, 1000)` refreshes clock every second
-- `theme-toggling` — adding/removing `.dark` class on `<html>` element for theme switching
+- `src/styles/_*.scss` split modules with local `_abstracts.scss`
+- `src/scripts/_*.js` split modules with `index.js` entry
+- `src/_partials/_*.hbs` variation partials composed in `body.hbs`
 
 ## Commands
 
 ```bash
-# Development
 yarn --cwd projects/components/theme-switch dev
-
-# Production build
 yarn --cwd projects/components/theme-switch build
 ```

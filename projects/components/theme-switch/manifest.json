@@ -1,24 +1,21 @@
 {
   "name": "Theme Switch",
-  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
-  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
-  "description": "Analog clock with real-time updates and dark/light theme toggle.",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/theme-switch",
+  "description": "Theme switch pattern for toggling visual palettes and UI state.",
   "concepts": [
-    "analog-clock",
-    "date-time-api",
-    "transform-rotate",
-    "css-variables",
-    "interval-timer",
-    "theme-toggling"
+    "theme-switch-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
   ],
   "category": "components",
   "tags": [
-    "clock",
-    "theme",
-    "dark-mode",
-    "time",
-    "animation",
-    "interactive"
+    "theme-switch",
+    "component",
+    "pattern",
+    "migration-wave"
   ],
   "status": "complete",
   "difficulty": "beginner"
