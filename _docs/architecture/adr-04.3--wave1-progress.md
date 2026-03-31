@@ -6,75 +6,72 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 ## Date
 2026-03-30
 
+## Reconciled Snapshot (2026-03-31)
+
+Current source-to-target filesystem reconciliation:
+
+- library/components: 12/13 migrated
+- library/patterns: 20/20 migrated
+- library/system/templates: 9/9 migrated
+- total: 41/42 migrated
+
+Outstanding missing target:
+
+- libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography (missing target directory)
+
+Project-only systems (not from library/system/templates):
+
+- projects/systems/act-school-wisdom-accent
+- projects/systems/harmonic-sizes
+- projects/systems/typography-tokens
+
+Canonical inventory list:
+
+- _docs/migration-inventory-libraries-vs-projects.md
+
 ## Completed
 
 1. libraries/dev-days-matrix-library/src/library/components/browser-detect -> projects/components/browser-detect
-2. libraries/dev-days-matrix-library/src/library/components/drag-n-drop -> projects/components/drag-n-drop
-3. libraries/dev-days-matrix-library/src/library/components/keyboard-keys -> projects/components/keyboard-keys
-4. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
-5. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
-6. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
-7. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
-8. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
-9. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
-10. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
-11. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
-12. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
-13. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
-14. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
-15. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
-16. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
-17. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
-18. libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
-19. libraries/dev-days-matrix-library/src/library/patterns/navigation -> projects/components/navigation
-20. libraries/dev-days-matrix-library/src/library/patterns/slider -> projects/components/slider
-21. libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
-22. libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
-23. libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
-24. libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs
-25. libraries/dev-days-matrix-library/src/library/patterns/alert -> projects/components/alert
+2. libraries/dev-days-matrix-library/src/library/components/button -> projects/components/button
+3. libraries/dev-days-matrix-library/src/library/components/drag-n-drop -> projects/components/drag-n-drop
+4. libraries/dev-days-matrix-library/src/library/components/form-components -> projects/components/form-components
+5. libraries/dev-days-matrix-library/src/library/components/image -> projects/components/image
+6. libraries/dev-days-matrix-library/src/library/components/keyboard-keys -> projects/components/keyboard-keys
+7. libraries/dev-days-matrix-library/src/library/components/list -> projects/components/list
+8. libraries/dev-days-matrix-library/src/library/components/loader -> projects/components/loader
+9. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
+10. libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
+11. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
+12. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
+13. libraries/dev-days-matrix-library/src/library/patterns/accordion -> projects/components/accordion
+14. libraries/dev-days-matrix-library/src/library/patterns/alert -> projects/components/alert
+15. libraries/dev-days-matrix-library/src/library/patterns/audio -> projects/components/audio
+16. libraries/dev-days-matrix-library/src/library/patterns/card -> projects/components/card
+17. libraries/dev-days-matrix-library/src/library/patterns/card-list -> projects/components/card-list
+18. libraries/dev-days-matrix-library/src/library/patterns/digital-clock -> projects/components/digital-clock
+19. libraries/dev-days-matrix-library/src/library/patterns/form-patterns -> projects/components/form-patterns
+20. libraries/dev-days-matrix-library/src/library/patterns/hero -> projects/components/hero
+21. libraries/dev-days-matrix-library/src/library/patterns/layouts -> projects/components/layouts
+22. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
+23. libraries/dev-days-matrix-library/src/library/patterns/loader -> projects/components/loader
+24. libraries/dev-days-matrix-library/src/library/patterns/modal -> projects/components/modal
+25. libraries/dev-days-matrix-library/src/library/patterns/navigation -> projects/components/navigation
 26. libraries/dev-days-matrix-library/src/library/patterns/popup -> projects/components/popup
 27. libraries/dev-days-matrix-library/src/library/patterns/progress -> projects/components/progress
-28. libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
-29. libraries/dev-days-matrix-library/src/library/components/pill -> projects/components/pill
-
-30. libraries/dev-days-matrix-library/src/library/components/form-components -> projects/components/form-components
-
-31. libraries/dev-days-matrix-library/src/library/components/list -> projects/components/list
-
-32. libraries/dev-days-matrix-library/src/library/components/typography -> projects/components/typography
-
-33. libraries/dev-days-matrix-library/src/library/patterns/audio -> projects/components/audio
-
-34. libraries/dev-days-matrix-library/src/library/patterns/card -> projects/components/card
-
-35. libraries/dev-days-matrix-library/src/library/patterns/card-list -> projects/components/card-list
-
-36. libraries/dev-days-matrix-library/src/library/patterns/digital-clock -> projects/components/digital-clock
-
-37. libraries/dev-days-matrix-library/src/library/patterns/form-patterns -> projects/components/form-patterns
-
-38. libraries/dev-days-matrix-library/src/library/patterns/hero -> projects/components/hero
-
-39. libraries/dev-days-matrix-library/src/library/patterns/scrollspy -> projects/components/scrollspy
-
-40. libraries/dev-days-matrix-library/src/library/components/image -> projects/components/image
-
-41. libraries/dev-days-matrix-library/src/library/components/paint -> projects/components/paint
-
-42. libraries/dev-days-matrix-library/src/library/components/timer -> projects/components/timer
-
-43. libraries/dev-days-matrix-library/src/library/components/toast -> projects/components/toast
-
-44. libraries/dev-days-matrix-library/src/library/patterns/layouts -> projects/components/layouts
-
-45. libraries/dev-days-matrix-library/src/library/patterns/like -> projects/components/like
-
-46. libraries/dev-days-matrix-library/src/library/patterns/loader -> projects/components/loader
-
-47. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
-
-48. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+28. libraries/dev-days-matrix-library/src/library/patterns/scrollspy -> projects/components/scrollspy
+29. libraries/dev-days-matrix-library/src/library/patterns/slider -> projects/components/slider
+30. libraries/dev-days-matrix-library/src/library/patterns/tabs -> projects/components/tabs
+31. libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
+32. libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
+33. libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev -> projects/systems/big-frontend-dev
+34. libraries/dev-days-matrix-library/src/system/templates/codepen-challenges -> projects/systems/codepen-challenges
+35. libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix -> projects/systems/dev-days-matrix
+36. libraries/dev-days-matrix-library/src/system/templates/free-code-camp -> projects/systems/free-code-camp
+37. libraries/dev-days-matrix-library/src/system/templates/frontend-mentor -> projects/systems/frontend-mentor
+38. libraries/dev-days-matrix-library/src/system/templates/frontend-practice -> projects/systems/frontend-practice
+39. libraries/dev-days-matrix-library/src/system/templates/generic-base -> projects/systems/generic-base
+40. libraries/dev-days-matrix-library/src/system/templates/great-frontend -> projects/systems/great-frontend
+41. libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
 
 ## Evidence
 
@@ -89,7 +86,6 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Migration checklist: _docs/architecture/migration-items/card-list.md
 - Migration checklist: _docs/architecture/migration-items/card.md
 - Migration checklist: _docs/architecture/migration-items/audio.md
-- Migration checklist: _docs/architecture/migration-items/typography.md
 - Migration checklist: _docs/architecture/migration-items/list.md
 - Migration checklist: _docs/architecture/migration-items/form-components.md
 - Migration checklist: _docs/architecture/migration-items/browser-detect.md
@@ -111,7 +107,6 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Migration checklist: _docs/architecture/migration-items/pill.md
 - Project path: projects/components/form-components
 - Project path: projects/components/list
-- Project path: projects/components/typography
 - Project path: projects/components/audio
 - Project path: projects/components/card
 - Project path: projects/components/card-list
@@ -152,7 +147,6 @@ Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 - Project path: projects/systems/landing
 - Build validation: yarn --cwd projects/components/form-components build
 - Build validation: yarn --cwd projects/components/list build
-- Build validation: yarn --cwd projects/components/typography build
 - Build validation: yarn --cwd projects/components/audio build
 - Build validation: yarn --cwd projects/components/card build
 - Build validation: yarn --cwd projects/components/card-list build
