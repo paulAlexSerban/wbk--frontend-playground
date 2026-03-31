@@ -1,0 +1,22 @@
+{
+  "name": "Form Components",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/form-components",
+  "description": "Collection of form-focused UI patterns and controls.",
+  "concepts": [
+    "form-components-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
+  ],
+  "category": "components",
+  "tags": [
+    "form-components",
+    "component",
+    "pattern",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
