@@ -12,8 +12,8 @@
 
 - JS dependencies identified from ADR-04.2: (none detected)
 - SCSS dependencies identified from ADR-04.2: (none detected)
-- JS dependency migration strategy (copy/localize/shared): direct local copy into src/scripts.js
-- SCSS dependency migration strategy (copy/localize/shared): local style definition in src/styles.scss
+- JS dependency migration strategy (copy/localize/shared): localized split modules (`src/scripts/index.js`, `src/scripts/_browser-detect.js`)
+- SCSS dependency migration strategy (copy/localize/shared): localized split modules (`src/styles/_shared.scss`, `src/styles/_browser-detect.scss`)
 - Cross-folder import removal verified: yes
 
 ## Project Scaffold
@@ -24,9 +24,9 @@
 
 ## Files Ported
 
-- Markup ported: yes (table container moved into src/_partials/body.hbs)
-- Script entry ported: yes (src/scripts.js)
-- Style entry ported: yes (src/styles.scss)
+- Markup ported: yes (`src/_partials/body.hbs` + variation partial `src/_partials/_browser-detect.hbs`)
+- Script entry ported: yes (`src/scripts.js` imports `src/scripts/index.js`; behavior in `src/scripts/_browser-detect.js`)
+- Style entry ported: yes (`src/styles.scss` imports `src/styles/_shared.scss` and `src/styles/_browser-detect.scss`)
 - Assets ported: n/a
 
 ## Manifest And README
@@ -47,4 +47,14 @@
 ## Notes
 
 - Open issues: none
-- Follow-up actions: continue with next strict Wave 1 candidate
+- Suggested improvements:
+	- add browser map grouping (browser family, version, platform) for easier scanning
+	- add row virtualization/pagination if sample UA list grows significantly
+	- add test fixtures to validate parser output deterministically
+
+## Phase 1 Validation (2026-03-31)
+
+- [x] HBS structure split and variation partial introduced
+- [x] JS moved to split architecture with scoped root selector
+- [x] SCSS moved to split architecture with shared + component modules
+- [ ] Runtime parity smoke-check in browser (manual)

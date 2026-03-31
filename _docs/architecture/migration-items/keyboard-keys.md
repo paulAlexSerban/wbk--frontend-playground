@@ -21,9 +21,9 @@
 
 ## Files Ported
 
-- [x] `src/_partials/body.hbs` — `#insert` div with initial `.key` prompt text
-- [x] `src/scripts.js` — `keydown` listener on `window`; renders three `.key` boxes for `event.key`, `event.keyCode`, `event.code`
-- [x] `src/styles.scss` — Muli font, `#e1e1e1` body, centered flex layout, `.key` bordered boxes with elevated `<small>` labels, responsive stack at 768px
+- [x] `src/_partials/body.hbs` + `src/_partials/_keyboard-keys.hbs` — variation partial composed into page shell
+- [x] `src/scripts.js` -> `src/scripts/index.js` + `src/scripts/_keyboard-keys.js` — keydown listener retained and scoped to component root
+- [x] `src/styles.scss` -> `src/styles/_shared.scss` + `src/styles/_keyboard-keys.scss` — split style architecture with original key-card behavior preserved
 
 ## Manifest and README
 
@@ -39,3 +39,14 @@
 
 - `event.keyCode` is deprecated in the Web standard but retained as-is to faithfully represent the source material
 - No shared SCSS or JS dependencies; fully self-contained
+- Suggested improvements:
+	- add optional toggle to hide deprecated `event.keyCode`
+	- add key history list with capped length for repeated keypress debugging
+	- add escape hatch to disable `preventDefault` for non-demo contexts
+
+## Phase 1 Validation (2026-03-31)
+
+- [x] HBS structure split and variation partial introduced
+- [x] JS moved to split architecture with scoped root selector
+- [x] SCSS moved to split architecture with shared + component modules
+- [ ] Runtime parity smoke-check in browser (manual)

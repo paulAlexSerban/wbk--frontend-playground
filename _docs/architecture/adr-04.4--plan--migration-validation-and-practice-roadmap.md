@@ -160,7 +160,7 @@ Expected output:
 ## Progress Tracker
 - [x] Baseline inventory captured (2026-03-31)
 - [x] Scope decision documented (typography excluded from components)
-- [ ] Phase 1 validation complete
+- [x] Phase 1 validation complete (2026-03-31: browser-detect, drag-n-drop, keyboard-keys refactored to split architecture and built)
 - [ ] Phase 2 validation complete
 - [ ] Phase 3 validation complete
 - [ ] All migration-item checklists updated with final validation notes
