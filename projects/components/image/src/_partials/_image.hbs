@@ -1,0 +1,44 @@
+<article class="demo-card">
+    <div>
+        <p class="demo-label">Variation 1</p>
+        <h2>Image</h2>
+        <p class="demo-copy">Basic responsive media block derived from the legacy image component.</p>
+    </div>
+
+    <figure class="image-showcase">
+        <img
+            class="image__base"
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+            alt="Person working at a laptop"
+        />
+        <figcaption class="image-showcase__caption">Default image component</figcaption>
+    </figure>
+</article>
+
+<article class="demo-card">
+    <div>
+        <p class="demo-label">Variation 2</p>
+        <h2>Responsive Image</h2>
+        <p class="demo-copy">The responsive-image variant keeps the original intent: scale the asset to the available width while preserving cover framing.</p>
+    </div>
+
+    <figure class="image-showcase image-showcase--wide">
+        <img
+            class="responsive-image__base"
+            loading="lazy"
+            srcset="
+                https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=480&q=80 480w,
+                https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=960&q=80 960w,
+                https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1280&q=80 1280w,
+                https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80 1920w
+            "
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 80vw, 960px"
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1280&q=80"
+            alt="Responsive worker image"
+            width="1280"
+            height="853"
+        />
+        <figcaption class="image-showcase__caption">Responsive image component</figcaption>
+    </figure>
+</article>
