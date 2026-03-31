@@ -51,4 +51,4 @@
 - [x] JS + utilities validated
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (`yarn --cwd projects/components/button build`)
-- [ ] Manual runtime parity smoke-check for ripple and base variants
+- [x] Manual runtime parity smoke-check for ripple and base variants

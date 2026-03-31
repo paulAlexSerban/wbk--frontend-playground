@@ -68,4 +68,4 @@
 - [x] JS + utilities validated
 - [x] SCSS + modules validated
 - [x] Build validation passed
-- [ ] Manual runtime parity smoke-check across all five variations
+- [x] Manual runtime parity smoke-check across all five variations

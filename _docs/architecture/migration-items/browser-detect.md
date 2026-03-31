@@ -57,4 +57,4 @@
 - [x] HBS structure split and variation partial introduced
 - [x] JS moved to split architecture with scoped root selector
 - [x] SCSS moved to split architecture with shared + component modules
-- [ ] Runtime parity smoke-check in browser (manual)
+- [x] Runtime parity smoke-check in browser (manual)
