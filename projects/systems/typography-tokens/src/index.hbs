@@ -10,106 +10,105 @@
 </head>
 
 <body>
-  <header>
-    <h1>Heading: {{title}}</h1>
-  </header>
-  <main>
-    <section>
-      <article>
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
+  <main class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow">System</p>
+      <h1>{{title}}</h1>
+      <p class="page-copy">Token-driven typography showcase improved with the component typography demo structure.</p>
+    </header>
+
+    <section class="demo-grid">
+      <article class="demo-card">
+        <div>
+          <p class="demo-label">Variation 1</p>
+          <h2>Headings</h2>
+          <p class="demo-copy">Hierarchy and subheading composition using systems token sizing.</p>
+        </div>
+
+        <div class="typography-stack">
+          <h1 class="heading-demo heading-demo--100">Level 1 Heading</h1>
+          <h2 class="heading-demo heading-demo--200">Level 2 Heading</h2>
+          <h3 class="heading-demo heading-demo--300">Level 3 Heading</h3>
+          <h4 class="heading-demo heading-demo--400">Level 4 Heading</h4>
+
+          <h2 class="heading-demo heading-demo--200">
+            <span class="heading-demo__main">Level 2 Heading</span>
+            <span class="heading-demo__subheading">With Subheading</span>
+          </h2>
+        </div>
       </article>
 
-      <article>
-        <h1>
-          <span>Heading 1 Main</span>
-          <span>Heading 1 Subheading</span>
-        </h1>
-        <h2>
-          <span>Heading 2 Main</span>
-          <span>Heading 2 Subheading</span>
-        </h2>
-        <h3>
-          <span>Heading 3 Main</span>
-          <span>Heading 3 Subheading</span>
-        </h3>
+      <article class="demo-card">
+        <div>
+          <p class="demo-label">Variation 2</p>
+          <h2>Paragraph</h2>
+        </div>
+
+        <p class="paragraph-demo">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nesciunt quia ut delectus aliquam tenetur repudiandae, doloremque itaque inventore magni autem voluptate hic dignissimos perspiciatis placeat.
+        </p>
       </article>
 
-      <article>
-        <h2>Paragraph</h2>
-        <p>Paragraph: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus nulla ab consectetur odio
-          omnis esse veniam facilis repellat voluptate vero? Impedit earum sunt a labore beatae voluptatibus saepe
-          quam fuga!</p>
-        <h2>Inline Text Elements</h2>
-        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
-        <p><del>This line of text is meant to be treated as deleted text.</del></p>
-        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-        <p><u>This line of text will render as underlined.</u></p>
-        <p><small>This line of text is meant to be treated as fine print.</small></p>
-        <p><strong>This line rendered as bold text.</strong></p>
-        <p><em>This line rendered as italicized text.</em></p>
+      <article class="demo-card">
+        <div>
+          <p class="demo-label">Variation 3</p>
+          <h2>Time Text</h2>
+        </div>
+
+        <time class="time-demo" datetime="2026-03-31T13:13:52">Sun 13:13:52</time>
       </article>
 
-      <article>
-        <ul>
-          <li>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, dolorem labore sunt maiores dicta
-              voluptate nemo et laboriosam. Quam quidem sunt eos optio aspernatur repellendus eius atque provident
-              aliquid quos.</p>
-          </li>
-          <li>
-            <p>Facere necessitatibus dolore rem accusamus accusantium quam nobis perspiciatis alias, tempore quaerat
-              explicabo officia ipsam iusto laboriosam ipsum nam natus illo! Modi ipsum eos voluptatum, laboriosam
-              maxime consequatur doloremque nisi?</p>
-          </li>
-          <li>
-            <p>Odit voluptatem, libero ut praesentium laboriosam iusto cumque voluptas esse quod corporis temporibus
-              iste laborum delectus incidunt pariatur officia distinctio, cum ipsum hic modi similique dolorum tempore
-              reiciendis provident. Dolor.</p>
-          </li>
-          <li>
-            <p>Unde et neque quod nostrum ad officia voluptatibus quidem quos illo ex veniam placeat voluptatem,
-              pariatur praesentium, quae eius eveniet sed dicta itaque voluptatum vero sint atque deleniti odio!
-              Tempora!</p>
-          </li>
-          <li>
-            <p>Modi deleniti exercitationem nihil labore fuga reiciendis maiores, molestias quasi at molestiae
-              doloribus magni vitae expedita mollitia accusantium necessitatibus temporibus aperiam animi, ad sit sed
-              provident! Obcaecati, dolore odio. Iusto?</p>
-          </li>
-        </ul>
+      <article class="demo-card">
+        <div>
+          <p class="demo-label">Variation 4</p>
+          <h2>Inline Text Elements</h2>
+        </div>
+
+        <div class="inline-sample">
+          <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+          <p><del>This line of text is meant to be treated as deleted text.</del></p>
+          <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+          <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+          <p><u>This line of text will render as underlined.</u></p>
+          <p><small>This line of text is meant to be treated as fine print.</small></p>
+          <p><strong>This line rendered as bold text.</strong></p>
+          <p><em>This line rendered as italicized text.</em></p>
+        </div>
       </article>
 
-      <article>
-        <h2>Link</h2>
-        <p>Paragraph with Inline Link: Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href='#'>Deleniti
-            commodi aliquam amet enim nulla quibusdam ducimus</a> sed debitis est iure omnis maiores pariatur et illum
-          beatae asperiores adipisci, cupiditate numquam!</p>
-        <ul>
+      <article class="demo-card">
+        <div>
+          <p class="demo-label">Variation 5</p>
+          <h2>Links</h2>
+        </div>
+
+        <p>
+          Paragraph with inline link: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <a href="#">Deleniti commodi aliquam amet enim nulla quibusdam ducimus</a>
+          sed debitis est iure omnis maiores pariatur et illum beatae asperiores adipisci, cupiditate numquam!
+        </p>
+
+        <ul class="link-list">
           <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
           <li><a href="#">Facere numquam veritatis laudantium ut.</a></li>
           <li><a href="#">Laborum, perferendis voluptas. Cupiditate, dolore.</a></li>
-          <li><a href="#">Tempore neque animi vero possimus!</a></li>
+          <li><a href="#">Tempore neque animi vero possimus.</a></li>
           <li><a href="#">Sapiente reprehenderit neque quas in.</a></li>
         </ul>
       </article>
-    </section>
 
-    <article>
-      <code>
+      <article class="demo-card">
+        <div>
+          <p class="demo-label">Variation 6</p>
+          <h2>Code</h2>
+        </div>
+
+        <code class="code-sample">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsam vero expedita nulla, harum sunt maiores ea ducimus autem, sapiente dolor ratione nam quas! Cum hic necessitatibus soluta fuga deleniti!
         </code>
-    </article>
+      </article>
+    </section>
   </main>
-
-
-
-
 
 </body>
 
