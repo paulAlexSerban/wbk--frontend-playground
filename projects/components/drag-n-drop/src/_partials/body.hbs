@@ -1,15 +1,13 @@
-<body>
-    <main class="drag-demo" aria-label="Drag and Drop demo">
-        <h1>Drag N Drop</h1>
-        <p>Drag the tile and drop it in any target box.</p>
-        <div class="dropzone-row">
-            <div class="empty">
-                <div class="fill" draggable="true" aria-label="Draggable tile"></div>
-            </div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-        </div>
+<body class="drag-n-drop-page">
+    <main class="page-shell">
+        <header class="page-header">
+            <p class="eyebrow">Component</p>
+            <h1>Drag N Drop</h1>
+            <p class="page-copy">Drag the tile and drop it in any target box.</p>
+        </header>
+
+        <section class="demo-grid">
+            {{> _drag-n-drop}}
+        </section>
     </main>
 </body>
