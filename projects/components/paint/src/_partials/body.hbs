@@ -1,10 +1,13 @@
-<body>
-    <canvas id="canvas" width="800" height="700"></canvas>
-    <div class="toolbox">
-        <button id="decrease">-</button>
-        <span id="size">10</span>
-        <button id="increase">+</button>
-        <input type="color" id="color">
-        <button id="clear">X</button>
-    </div>
+<body class="paint-page">
+    <main class="page-shell">
+        <header class="page-header">
+            <p class="eyebrow">Component</p>
+            <h1>Paint</h1>
+            <p class="page-copy">Paint interaction component with canvas controls and color tools.</p>
+        </header>
+
+        <section class="demo-grid">
+            {{> _paint}}
+        </section>
+    </main>
 </body>

@@ -1,22 +1,21 @@
 {
   "name": "Paint",
-  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
-  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
-  "description": "A canvas-based freehand drawing app with adjustable brush size, colour picker, and clear button.",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/paint",
+  "description": "Paint interaction component with canvas controls and color tools.",
   "concepts": [
-    "canvas-api",
-    "mouse-events",
-    "freehand-drawing",
-    "dom-manipulation",
-    "stateful-ui"
+    "paint-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
   ],
   "category": "components",
   "tags": [
-    "canvas",
-    "drawing",
     "paint",
-    "interactive",
-    "color-picker"
+    "component",
+    "pattern",
+    "migration-wave"
   ],
   "status": "complete",
   "difficulty": "beginner"
