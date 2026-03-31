@@ -1,0 +1,22 @@
+{
+  "name": "Theme Switch",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/theme-switch",
+  "description": "Theme switch pattern for toggling visual palettes and UI state.",
+  "concepts": [
+    "theme-switch-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
+  ],
+  "category": "ui-patterns",
+  "tags": [
+    "theme-switch",
+    "component",
+    "pattern",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

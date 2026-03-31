@@ -1,0 +1,51 @@
+@use './abstracts' as *;
+
+// Source: libraries/dev-days-matrix-library/src/library/patterns/digital-clock
+// ~ScssAbstracts resolved via local ./_abstracts.scss
+
+/* ------------------------------------ *\
+ * DIGITAL-CLOCK
+\* ------------------------------------ */
+
+.digital-clock {
+    &__base {
+        width: 100%;
+        @include flex();
+        padding: $gutter;
+        border-radius: 12px;
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+    }
+
+    &__time {
+        font-family: 'Courier New', monospace;
+        font-size: clamp(1.2rem, 2vw, 2rem);
+        font-weight: 700;
+        color: #0f172a;
+        letter-spacing: 0.06em;
+    }
+}
+
+/* ------------------------------------ *\
+ * DIGITAL-CLOCK-V2
+\* ------------------------------------ */
+
+.digital-clock-v2 {
+    &__base {
+        @include flex();
+        background: #333;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        text-align: center;
+        color: #ff0;
+        border-radius: 10px;
+        padding: 12px;
+
+        span {
+            padding: 12px 16px;
+            background: #444;
+            border-radius: 6px;
+            min-width: 70px;
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.demo-card--phone {
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.18), rgba(255, 255, 255, 0.88));
+}
+
+.phone {
+    position: relative;
+    overflow: hidden;
+    width: min(340px, 100%);
+    height: 600px;
+    margin: 0 auto;
+    border: 3px solid #eef2ff;
+    border-radius: 1.25rem;
+    background: #fff;
+}
+
+.phone__screen {
+    position: absolute;
+    inset: 0 0 60px;
+    display: grid;
+    align-content: end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.phone__screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.14), rgba(15, 23, 42, 0.72));
+}
+
+.phone__screen > * {
+    position: relative;
+    z-index: 1;
+}
+
+.phone__screen--show {
+    opacity: 1;
+}
+
+.phone__screen:nth-of-type(1) {
+    background-image: linear-gradient(135deg, #38bdf8, #0f172a);
+}
+
+.phone__screen:nth-of-type(2) {
+    background-image: linear-gradient(135deg, #fb7185, #7c3aed);
+}
+
+.phone__screen:nth-of-type(3) {
+    background-image: linear-gradient(135deg, #34d399, #065f46);
+}
+
+.phone__screen:nth-of-type(4) {
+    background-image: linear-gradient(135deg, #f59e0b, #7c2d12);
+}
+
+.phone__eyebrow {
+    display: inline-block;
+    margin-bottom: 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.phone__screen p {
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.phone-nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: 60px;
+    background: #fff;
+}
+
+.phone-nav__item {
+    display: grid;
+    place-items: center;
+    gap: 0.15rem;
+    border: 0;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    font: inherit;
+}
+
+.phone-nav__item.is-active,
+.phone-nav__item:hover {
+    color: #8b5cf6;
+}
+
+.phone-nav__icon {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.phone-nav__item span:last-child {
+    font-size: 0.73rem;
+}

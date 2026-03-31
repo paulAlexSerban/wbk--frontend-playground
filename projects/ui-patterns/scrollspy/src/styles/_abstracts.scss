@@ -1,0 +1,288 @@
+@use 'sass:math';
+@use 'sass:map';
+
+// ============================================================
+// LOCAL SCSS ABSTRACTS
+// Migrated from: libraries/dev-days-matrix-library/src/_abstracts/
+//
+// The '~ScssAbstracts' webpack alias is not available in
+// standalone projects built outside the monorepo context.
+//
+// Provides the variables, functions, and mixins originally
+// supplied by the shared library, with the following notes:
+//   - @mixin font() applies default breakpoint properties only
+//   - CSS custom properties (var(--text-font-family-*)) omitted
+//     (dependent on the library theme system)
+//   - @mixin absolute() / relative() omit z-index management
+//     (dependent on the library's layer-index() function)
+// ============================================================
+
+// -----------------------------------------------------------
+// SPACING
+// Source: _abstracts/scss/_01_sizes/_grid-sizes.scss
+// -----------------------------------------------------------
+
+$baseline: 8px;
+$gutter: 16px;
+
+// -----------------------------------------------------------
+// COLOR MAPS
+// Source: _abstracts/scss/_03_foundations/_colors.scss
+// -----------------------------------------------------------
+
+$c-black: #000;
+$c-white: #fff;
+
+$c-light: (
+    light: #fff,
+    light-10: rgba(#fff, 0.1),
+    light-15: rgba(#fff, 0.15),
+    light-40: rgba(white, 0.4),
+    cultured: #eee,
+    gainsboro-white: #e0e0e0,
+);
+
+$c-gray: (
+    battleship-grey: #888,
+    ebony: #525c52,
+    dim-grey: #696969,
+    sonic-silver: #777,
+    davys-grey: #494949,
+    spanish-gray: #999,
+);
+
+$c-dark: (
+    eerie-black: #1f1f1f,
+    jet: #333,
+    rich-black-forga-29: #101d2c,
+    dark: #000,
+    dark-10: rgba(#000, 0.1),
+    dark-15: rgba(#000, 0.15),
+    dark-30: rgba(#000, 0.3),
+    dark-50: rgba(#000, 0.5),
+);
+
+$c-yellow: (
+    wheat: #e6d5a5,
+    lemon-meringue: #faf0ca,
+    orange-yellow-crayola: #f4d35e,
+    naples-yellow: #ffe066,
+    sunglow: #ffca2c,
+    sandy-brown: #ee964b,
+);
+
+$c-red: (
+    orange-soda: #f95738,
+    cinnabar: #e74c3c,
+    rusty-red: #dc3545,
+    sinopia: #d30,
+    ua-red: #e50050,
+    fuzzy-wuzzy: #c95e67,
+);
+
+$c-brown: (
+    misty-rose: #fcdfdf,
+    rosy-brown: #bc8882,
+    rose-taupe: #925757,
+    rose-taupe-70: rgba(#925757, 0.7),
+);
+
+$c-green: (
+    honeydew: #d9efe0,
+    emerald: #2ecc71,
+    green-cyan: #3c996e,
+    sea-green: #198754,
+    polished-pine: #3d9b93,
+    charleston-green: #11282e,
+);
+
+$c-blue: (
+    alice-blue: #e1f1ff,
+    colombia-blue: #c6e6ff,
+    baby-blue-eyes: #9dd1ff,
+    vivid-sky-blue: #0dcaf0,
+    french-sky-blue: #60a9ff,
+    carolina-blue: #3498db,
+    blue-jeans: #48aaff,
+    maximum-blue: #65bad8,
+    dodger-blue: #348efe,
+    french-blue: #1d73b2,
+    blue-crayola: #016ff9,
+    indigo-blue: #0d3b66,
+    dark-liver: #444451,
+    rhythm: #7c7b9c,
+    charcoal: #2c3e50,
+);
+
+$c-traffic-lights: (
+    danger: #dc3545,
+    warning: #ffca2c,
+    success: #198754,
+);
+
+// -----------------------------------------------------------
+// TYPOGRAPHY DEFINITIONS
+// Source: _abstracts/scss/_03_foundations/typography/_font-definitions.scss
+//
+// Simplified: flat maps with default breakpoint properties only.
+// The full library definitions include responsive breakpoints via
+// breakpoint() mixin and font-family CSS custom properties — omitted.
+// -----------------------------------------------------------
+
+$body: (
+    font-size: 1.0625rem,        // convert-rem(17px)
+    line-height: 1.4375rem,      // convert-rem(23px)
+    font-weight: 400,
+    letter-spacing: 0.03125rem,  // convert-rem(0.5px)
+);
+
+$button: (
+    font-size: 1.0625rem,        // convert-rem(17px)
+    line-height: 1.125rem,       // convert-rem(18px)
+    font-weight: 400,
+    letter-spacing: 0.078125rem, // convert-rem(1.25px)
+);
+
+$button-large: (
+    font-size: 1.25rem,          // convert-rem(20px)
+    line-height: 1.3125rem,      // convert-rem(21px)
+    font-weight: 400,
+    letter-spacing: 0.078125rem, // convert-rem(1.25px)
+);
+
+$link: (
+    font-size: 1rem,             // convert-rem(16px)
+    line-height: 1.125rem,       // convert-rem(18px)
+    font-weight: 400,
+    letter-spacing: 0.03125rem,  // convert-rem(0.5px)
+    text-decoration: none,
+);
+
+$label: (
+    font-size: 0.9375rem,        // convert-rem(15px)
+    line-height: 1.25rem,        // convert-rem(20px)
+    font-weight: 400,
+    letter-spacing: 0.03125rem,  // convert-rem(0.5px)
+);
+
+$alert-title: (
+    font-size: 1.375rem,         // convert-rem(22px)
+    line-height: 2rem,           // convert-rem(32px)
+    letter-spacing: 0,
+);
+
+// -----------------------------------------------------------
+// FUNCTIONS
+// Source: _abstracts/scss/_02_utils/functions/_get-color.scss
+//         _abstracts/scss/_02_utils/functions/_convert-units.scss
+// -----------------------------------------------------------
+
+/// Access a value from a Sass color map.
+/// @param {Map}    $color-map - One of the $c-* maps defined above
+/// @param {String} $shade     - The key to look up
+@function get-color($color-map, $shade) {
+    @return map.get($color-map, $shade);
+}
+
+/// Convert a px value to rem using a 16px base.
+/// @param {Number} $px   - Value in px
+/// @param {Number} $base - Base font size (default 16px)
+@function convert-rem($px, $base: 16px) {
+    @return math.div($px, $base) * 1rem;
+}
+
+// -----------------------------------------------------------
+// MIXINS — TYPOGRAPHY
+// Source: _abstracts/scss/_02_utils/mixins/_get-font.scss
+//
+// Simplified: iterates the flat $font-definition map and outputs
+// each property directly. The original version supports responsive
+// breakpoints via an inner breakpoint() call — omitted here.
+// -----------------------------------------------------------
+
+@mixin font($font-definition) {
+    @each $prop, $value in $font-definition {
+        #{$prop}: $value;
+    }
+}
+
+// -----------------------------------------------------------
+// MIXINS — BEM
+// Source: _abstracts/scss/_02_utils/mixins/_bem.scss
+// -----------------------------------------------------------
+
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+/// Shorthand alias for element() — supports multiple element names.
+@mixin e($elements...) {
+    @each $element in $elements {
+        @include element($element) {
+            @content;
+        }
+    }
+}
+
+/// Shorthand alias for modifier() — supports multiple modifier names.
+@mixin m($modifiers...) {
+    @each $modifier in $modifiers {
+        @include modifier($modifier) {
+            @content;
+        }
+    }
+}
+
+// -----------------------------------------------------------
+// MIXINS — LAYOUT
+// Source: _abstracts/scss/_02_utils/mixins/_flex.scss
+//         _abstracts/scss/_02_utils/mixins/_position.scss
+//
+// Note: The original position() mixin also manages z-index via a
+// layer-index() lookup function. z-index management is omitted.
+// null property values are not emitted by Sass.
+// -----------------------------------------------------------
+
+/// Shorthand flexbox mixin.
+/// @param {String} $main      - justify-content (default: center)
+/// @param {String} $cross     - align-items (default: center)
+/// @param {String} $direction - flex-direction (default: row)
+@mixin flex($main: center, $cross: center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $main;
+    align-items: $cross;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+    @include position(absolute, $top, $right, $bottom, $left);
+}
+
+@mixin relative($top: null, $right: null, $bottom: null, $left: null) {
+    @include position(relative, $top, $right, $bottom, $left);
+}
+
+// -----------------------------------------------------------
+// MIXINS — ANIMATION
+// Source: _abstracts/scss/_02_utils/mixins/_animations.scss
+// -----------------------------------------------------------
+
+@mixin transition($transition-property: all, $transition-time: 0.3s, $transition-easing: ease) {
+    transition: $transition-property $transition-time $transition-easing;
+}

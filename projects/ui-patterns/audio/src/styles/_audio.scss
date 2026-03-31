@@ -1,0 +1,42 @@
+@use './abstracts' as *;
+
+// Source: libraries/dev-days-matrix-library/src/library/patterns/audio/sound-board
+// ~ScssAbstracts resolved via local ./_abstracts.scss
+
+.sound-board {
+    &__base {
+        background-color: rgb(161, 100, 223);
+        font-family: Poppins, sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        overflow: hidden;
+        margin: 0;
+        min-height: 300px;
+        border-radius: 12px;
+
+        .btn {
+            background-color: #639;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            margin: 1rem;
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+    }
+}

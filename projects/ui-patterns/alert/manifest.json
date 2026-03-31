@@ -1,0 +1,21 @@
+{
+  "name": "Alert",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/alert",
+  "description": "Consolidated alert playground containing dismissible alert pattern.",
+  "concepts": [
+    "dismissible-alert",
+    "inline-actions",
+    "dom-removal",
+    "single-variation-demo"
+  ],
+  "category": "ui-patterns",
+  "tags": [
+    "alert",
+    "notification",
+    "component",
+    "playground"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}

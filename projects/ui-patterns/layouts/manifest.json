@@ -1,0 +1,22 @@
+{
+  "name": "Layouts",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/layouts",
+  "description": "Layouts pattern collection with cards and dashboard sections.",
+  "concepts": [
+    "layouts-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
+  ],
+  "category": "ui-patterns",
+  "tags": [
+    "layouts",
+    "component",
+    "pattern",
+    "migration-wave"
+  ],
+  "status": "complete",
+  "difficulty": "beginner"
+}
