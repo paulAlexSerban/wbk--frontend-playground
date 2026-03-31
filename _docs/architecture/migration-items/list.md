@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add explicit ul/ol/dl semantic variant examples
+- add spacing density variants (compact/cozy/comfortable)
+- add mixed-content list-item stress tests
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/list build)
+- [ ] Manual runtime parity smoke-check

@@ -40,3 +40,16 @@
 ## Notes
 
 - Popup supports open, close icon, close action, and backdrop dismiss with variation-scoped handlers.
+
+## Suggested Improvements
+- add viewport collision-aware positioning strategy
+- add open/close state-machine and dismissal tests
+- add focus-return behavior on close
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/popup build)
+- [ ] Manual runtime parity smoke-check

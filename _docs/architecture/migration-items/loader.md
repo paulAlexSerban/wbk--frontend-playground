@@ -41,3 +41,15 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+- Suggested improvements:
+	- add reduced-motion fallback for blur and text fade transitions
+	- add deterministic timer mode to simplify automated visual testing
+	- add optional restart controls for each variation to aid manual QA
+
+## Phase 2 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (`yarn --cwd projects/components/loader build`)
+- [ ] Manual runtime parity smoke-check for all loader variations

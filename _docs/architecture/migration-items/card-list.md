@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add large-list rendering strategy notes (virtualization/pagination)
+- add keyboard navigation between active cards
+- add reduced-motion fallback for transition-heavy variants
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/card-list build)
+- [ ] Manual runtime parity smoke-check

@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add responsive density/card-size variants
+- define content-slot conventions for richer compositions
+- verify hover/focus parity for interactive cards
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/card build)
+- [ ] Manual runtime parity smoke-check

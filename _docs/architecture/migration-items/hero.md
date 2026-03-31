@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add responsive stress cases for long headlines and copy
+- add image strategy notes (crop/focal-point/srcset)
+- verify CTA focus order and contrast requirements
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/hero build)
+- [ ] Manual runtime parity smoke-check

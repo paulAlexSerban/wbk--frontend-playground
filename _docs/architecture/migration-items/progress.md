@@ -40,3 +40,16 @@
 ## Notes
 
 - Progress step state updates are fully scoped to each demo root and keep button disabled states in sync.
+
+## Suggested Improvements
+- add percent/step synchronization assertions
+- add boundary-condition checks for min/max steps
+- add reduced-motion animation options
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/progress build)
+- [ ] Manual runtime parity smoke-check

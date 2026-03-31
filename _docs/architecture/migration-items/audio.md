@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add preload/error fallback handling for missing sounds
+- add keyboard and screen-reader labels for sound controls
+- add shared stop-all utility to prevent overlapping playback
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/audio build)
+- [ ] Manual runtime parity smoke-check

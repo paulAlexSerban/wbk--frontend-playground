@@ -40,3 +40,15 @@
 ## Notes
 
 - Ripple click coordinate logic updated to use `getBoundingClientRect()` for reliable effect placement.
+- Suggested improvements:
+	- add keyboard-triggered ripple behavior parity (Enter/Space)
+	- add explicit button state matrix (`:hover`, `:focus-visible`, `:disabled`)
+	- centralize color/spacing token usage for easier theme scaling
+
+## Phase 2 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (`yarn --cwd projects/components/button build`)
+- [ ] Manual runtime parity smoke-check for ripple and base variants

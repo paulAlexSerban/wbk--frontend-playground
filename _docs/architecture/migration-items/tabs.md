@@ -40,3 +40,15 @@
 ## Notes
 
 - JS tabs use data-id mapping between tab buttons and panels to keep handlers variation-scoped.
+- Suggested improvements:
+	- add arrow-key and Home/End keyboard navigation support
+	- add aria-controls and aria-selected assertions in test coverage
+	- share tab activation logic between JS and CSS variation docs/examples
+
+## Phase 2 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (`yarn --cwd projects/components/tabs build`)
+- [ ] Manual runtime parity smoke-check for CSS and JS tab variants

@@ -39,3 +39,16 @@
 ## Notes
 
 - Escape key handling is scoped to close only when modal is open.
+
+## Suggested Improvements
+- add focus trap and escape-key regression tests
+- add scroll-lock and background inert-state validation
+- add stacked-modal conflict handling notes
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/modal build)
+- [ ] Manual runtime parity smoke-check

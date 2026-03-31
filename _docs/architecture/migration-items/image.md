@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add srcset/sizes parity checks for responsive variants
+- add lazy-loading and decoding strategy notes
+- add fallback placeholders for failed image loads
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/image build)
+- [ ] Manual runtime parity smoke-check

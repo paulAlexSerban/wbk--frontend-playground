@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add persisted theme preference and restore logic
+- align bootstrap behavior with prefers-color-scheme
+- add clock accuracy checks around minute/hour transitions
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/theme-switch build)
+- [ ] Manual runtime parity smoke-check

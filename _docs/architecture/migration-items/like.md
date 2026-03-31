@@ -41,3 +41,16 @@
 ## Notes
 
 - Migrated as standalone component playground preserving split architecture and local abstracts recipe.
+
+## Suggested Improvements
+- add mobile tap and double-tap behavior parity tests
+- add animation throttling safeguards for rapid input
+- add optional persistent like-counter mode
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/like build)
+- [ ] Manual runtime parity smoke-check

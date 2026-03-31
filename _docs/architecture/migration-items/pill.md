@@ -43,3 +43,16 @@
 ## Notes
 
 - Source behavior is style-only; scripts module kept as no-op initializer for split architecture consistency.
+
+## Suggested Improvements
+- add selected/disabled/loading state variants
+- add contrast and accessibility verification across themes
+- add keyboard navigation behavior for pill groups
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/pill build)
+- [ ] Manual runtime parity smoke-check

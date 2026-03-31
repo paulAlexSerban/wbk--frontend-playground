@@ -40,3 +40,16 @@
 ## Notes
 
 - Alert closes through all local close triggers and removes only the scoped demo alert node.
+
+## Suggested Improvements
+- add semantic role="alert" coverage and dismiss timing tests
+- add variant tokens for info/success/warning/error states
+- add optional auto-dismiss with pause-on-hover behavior
+
+## Phase 3 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (yarn --cwd projects/components/alert build)
+- [ ] Manual runtime parity smoke-check

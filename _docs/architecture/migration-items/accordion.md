@@ -40,3 +40,15 @@
 ## Notes
 
 - FAQ variation kept independent from CSS-only variation to preserve per-variation script scope.
+- Suggested improvements:
+	- add keyboard and screen-reader interaction checks (`aria-expanded`, `aria-controls`)
+	- add optional single-open mode for FAQ groups
+	- add transition timing tokens for consistent expansion animation
+
+## Phase 2 Validation (2026-03-31)
+
+- [x] HBS + helpers validated
+- [x] JS + utilities validated
+- [x] SCSS + mixin/function coverage validated
+- [x] Build validation passed (`yarn --cwd projects/components/accordion build`)
+- [ ] Manual runtime parity smoke-check for FAQ and CSS accordion variants

@@ -161,11 +161,12 @@ Expected output:
 - [x] Baseline inventory captured (2026-03-31)
 - [x] Scope decision documented (typography excluded from components)
 - [x] Phase 1 validation complete (2026-03-31: browser-detect, drag-n-drop, keyboard-keys refactored to split architecture and built)
-- [ ] Phase 2 validation complete
-- [ ] Phase 3 validation complete
-- [ ] All migration-item checklists updated with final validation notes
+- [x] Phase 2 validation complete (2026-03-31: slider, loader, navigation, button, tabs, accordion validated and built)
+- [x] Phase 3 build validation complete (2026-03-31: 22 remaining components built successfully; see ADR-04.5)
+- [x] All migration-item checklists updated with Phase 3 validation baseline and runtime smoke-check placeholders
 
 ## Notes For Handoff
 - Always reconcile findings against _docs/migration-inventory-libraries-vs-projects.md before changing status totals.
 - Keep architecture ADRs as status summaries; keep deep per-item details in migration-items files.
 - When fixing a component during validation, run project build immediately and record evidence in the corresponding migration-item file.
+- Phase 3 build validation and enhancement backlog are documented in _docs/architecture/adr-04.5--phase3-validation-report.md.
