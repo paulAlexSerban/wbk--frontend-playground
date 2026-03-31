@@ -1,18 +1,13 @@
-<body>
-    <div class="counter">
-        <div class="nums">
-            <span class="in">3</span>
-            <span>2</span>
-            <span>1</span>
-            <span>0</span>
-        </div>
-        <h4>Get Ready</h4>
-    </div>
+<body class="timer-page">
+    <main class="page-shell">
+        <header class="page-header">
+            <p class="eyebrow">Component</p>
+            <h1>Timer</h1>
+            <p class="page-copy">Timer component variants with countdown and elapsed-time behavior.</p>
+        </header>
 
-    <div class="final">
-        <h1>GO</h1>
-        <button id="replay">
-            <span>Replay</span>
-        </button>
-    </div>
+        <section class="demo-grid">
+            {{> _timer}}
+        </section>
+    </main>
 </body>

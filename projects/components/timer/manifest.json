@@ -1,22 +1,21 @@
 {
   "name": "Timer",
-  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
-  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
-  "description": "Animated countdown timer (3-2-1-0) with a GO reveal and replay button.",
+  "source": "Dev Days Matrix Library",
+  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/timer",
+  "description": "Timer component variants with countdown and elapsed-time behavior.",
   "concepts": [
-    "css-animations",
-    "animation-events",
-    "dom-manipulation",
-    "timing-state-machine",
-    "keyframe-transforms"
+    "timer-pattern",
+    "component-variation",
+    "standalone-migration",
+    "scss-abstracts-local",
+    "frontend-playground"
   ],
   "category": "components",
   "tags": [
     "timer",
-    "countdown",
-    "animation",
-    "interactive",
-    "replay"
+    "component",
+    "pattern",
+    "migration-wave"
   ],
   "status": "complete",
   "difficulty": "beginner"
