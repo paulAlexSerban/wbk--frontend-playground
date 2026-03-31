@@ -10,28 +10,22 @@
 $block: 'alert-box';
 
 $alert-colors: (
-    'grey': (
-        'background': get-color($c-gray, spanish-gray),
+    'grey': ('background': get-color($c-gray, spanish-gray),
         'link': get-color($c-blue, french-blue),
     ),
-    'white': (
-        'background': get-color($c-light, light),
+    'white': ('background': get-color($c-light, light),
         'link': get-color($c-blue, french-blue),
     ),
-    'blue': (
-        'background': get-color($c-blue, colombia-blue),
+    'blue': ('background': get-color($c-blue, colombia-blue),
         'link': get-color($c-blue, french-blue),
     ),
-    'coral': (
-        'background': get-color($c-brown, misty-rose),
+    'coral': ('background': get-color($c-brown, misty-rose),
         'link': color.adjust(get-color($c-brown, misty-rose), $lightness: -25%),
     ),
-    'gold': (
-        'background': get-color($c-yellow, wheat),
+    'gold': ('background': get-color($c-yellow, wheat),
         'link': color.adjust(get-color($c-yellow, wheat), $lightness: -25%),
     ),
-    'green': (
-        'background': get-color($c-green, honeydew),
+    'green': ('background': get-color($c-green, honeydew),
         'link': color.adjust(get-color($c-green, honeydew), $lightness: -25%),
     ),
 );

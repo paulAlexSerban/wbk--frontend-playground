@@ -130,44 +130,61 @@ $c-traffic-lights: (
 // -----------------------------------------------------------
 
 $body: (
-    font-size: 1.0625rem,        // convert-rem(17px)
-    line-height: 1.4375rem,      // convert-rem(23px)
+    font-size: 1.0625rem,
+    // convert-rem(17px)
+    line-height: 1.4375rem,
+    // convert-rem(23px)
     font-weight: 400,
-    letter-spacing: 0.03125rem,  // convert-rem(0.5px)
+    letter-spacing: 0.03125rem,
+    // convert-rem(0.5px)
 );
 
 $button: (
-    font-size: 1.0625rem,        // convert-rem(17px)
-    line-height: 1.125rem,       // convert-rem(18px)
+    font-size: 1.0625rem,
+    // convert-rem(17px)
+    line-height: 1.125rem,
+    // convert-rem(18px)
     font-weight: 400,
-    letter-spacing: 0.078125rem, // convert-rem(1.25px)
+    letter-spacing: 0.078125rem,
+    // convert-rem(1.25px)
 );
 
 $button-large: (
-    font-size: 1.25rem,          // convert-rem(20px)
-    line-height: 1.3125rem,      // convert-rem(21px)
+    font-size: 1.25rem,
+    // convert-rem(20px)
+    line-height: 1.3125rem,
+    // convert-rem(21px)
     font-weight: 400,
-    letter-spacing: 0.078125rem, // convert-rem(1.25px)
+    letter-spacing: 0.078125rem,
+    // convert-rem(1.25px)
 );
 
 $link: (
-    font-size: 1rem,             // convert-rem(16px)
-    line-height: 1.125rem,       // convert-rem(18px)
+    font-size: 1rem,
+    // convert-rem(16px)
+    line-height: 1.125rem,
+    // convert-rem(18px)
     font-weight: 400,
-    letter-spacing: 0.03125rem,  // convert-rem(0.5px)
+    letter-spacing: 0.03125rem,
+    // convert-rem(0.5px)
     text-decoration: none,
 );
 
 $label: (
-    font-size: 0.9375rem,        // convert-rem(15px)
-    line-height: 1.25rem,        // convert-rem(20px)
+    font-size: 0.9375rem,
+    // convert-rem(15px)
+    line-height: 1.25rem,
+    // convert-rem(20px)
     font-weight: 400,
-    letter-spacing: 0.03125rem,  // convert-rem(0.5px)
+    letter-spacing: 0.03125rem,
+    // convert-rem(0.5px)
 );
 
 $alert-title: (
-    font-size: 1.375rem,         // convert-rem(22px)
-    line-height: 2rem,           // convert-rem(32px)
+    font-size: 1.375rem,
+    // convert-rem(22px)
+    line-height: 2rem,
+    // convert-rem(32px)
     letter-spacing: 0,
 );
 
