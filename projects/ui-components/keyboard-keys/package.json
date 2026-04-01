@@ -1,5 +1,5 @@
 {
-  "name": "@wbk-frontend-forge/components__keyboard-keys",
+  "name": "@wbk-frontend-forge/ui-components__keyboard-keys",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",

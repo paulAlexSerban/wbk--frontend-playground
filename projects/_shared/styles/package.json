@@ -1,0 +1,14 @@
+{
+  "name": "@wbk-frontend-forge/_shared__styles",
+  "version": "1.0.0",
+  "main": "index.js",
+    "files": [
+    "src"
+  ],
+  "license": "MIT",
+    "scripts": {
+    "develop": "echo 'No local develop command for build helpers'",
+    "build": "echo 'No compile step required for build helpers'",
+    "build:prod": "echo 'No production build step required for build helpers'"
+  }
+}

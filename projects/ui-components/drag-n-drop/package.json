@@ -1,5 +1,5 @@
 {
-  "name": "@wbk-frontend-forge/components__drag-n-drop",
+  "name": "@wbk-frontend-forge/ui-components__drag-n-drop",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",

@@ -1,5 +1,5 @@
 {
-  "name": "@wbk-frontend-forge/components__browser-detect",
+  "name": "@wbk-frontend-forge/ui-components__browser-detect",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
