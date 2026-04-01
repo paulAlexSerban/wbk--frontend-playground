@@ -1,30 +1,48 @@
 @use './abstracts' as *;
 
+/**
+* BOX PRIMITIVE
+*/
+
 .box {
-    --box-color-light: #f8fafc;
-    --box-color-dark: #0f172a;
-    --box-padding: 1rem;
+    /* NOT NEEDED because style is inherited */
+    // font-family: sans-serif;
+
+    --box-color-light: #eee;
+    --box-color-dark: #222;
+    --box-padding: var(--ss1);
     --box-border: 2px solid var(--box-color-dark);
 
+    /* padding set to the first point on the modular scale */
     padding: var(--box-padding);
+
     border: var(--box-border);
     color: var(--box-color-dark);
     background-color: var(--box-color-light);
+
+    /* always apply the transparent outline for, for high contrast mode */
     outline: 0.125rem solid transparent;
     outline-offset: -0.125rem;
 
     * {
+        /* forces colors to inherit from parent and honor inversion */
         color: inherit;
     }
 
     &.invert {
+        /* dark becomes light and light becomes dark */
         --box-border: 2px solid var(--box-color-light);
+
         color: var(--box-color-light);
         background-color: var(--box-color-dark);
     }
 }
 
-[class^='stack'] > * {
+/**
+* STACK PRIMITIVE
+*/
+
+[class^='stack']>* {
     margin-block: 0;
 }
 
@@ -35,11 +53,11 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    &--successive > * + * {
+    &--successive>*+* {
         margin-block-start: var(--stack-mt);
     }
 
-    &--recursive * + * {
+    &--recursive *+* {
         margin-block-start: var(--stack-mt);
     }
 
@@ -57,28 +75,36 @@
     flex-wrap: wrap;
     gap: var(--sidebar-space);
 
-    & > * {
+    &>* {
         flex-grow: 1;
         flex-basis: var(--sidebar-width);
     }
 
-    &--left > :last-child,
-    &--right > :first-child {
+    &--left> :last-child,
+    &--right> :first-child {
         flex-basis: 0;
         flex-grow: 999;
         min-inline-size: var(--sidebar-content-min);
     }
 }
 
-.grid {
-    --grid-col-min-width: 20ch;
+/**
+* GRID PRIMITIVE
+*/
 
+.grid {
+    /* ↓ Set the minimum column width */
+    --grid-col-min-width: 20ch;
+    /*  Establish a grid context */
     display: grid;
-    gap: 1rem;
+    /*  Set a gap between grid items  */
+    grid-gap: 1rem;
 }
 
 @supports (width: min(var(--grid-col-min-width), 100%)) {
     .grid {
+        /* ↓ Enhance with the min() function
+    into multiple columns */
         grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-col-min-width), 100%), 1fr));
     }
 }
@@ -90,4 +116,245 @@
 .layout-links {
     margin: 0;
     padding-left: 20px;
+}
+
+/**
+* CENTER PRIMITIVE
+*/
+
+.center {
+    /* remove padding from the width calculation */
+    box-sizing: content-box;
+    /* the maximum width is maximum measure */
+    max-inline-size: var(--measure);
+    /* only affect horizontal margins */
+    margin-inline: auto;
+    /* apply the minimum horizontal spacing */
+    padding-inline-start: var(--ss1);
+    padding-inline-end: var(--ss1);
+}
+
+/**
+* CLUSTER PRIMITIVE
+*/
+
+.cluster {
+    /* ↓ Set the Flexbox context */
+    display: flex;
+    /* ↓ Enable wrapping */
+    flex-wrap: wrap;
+    /* ↓ Set the space/gap */
+    gap: var(--ss0, 1rem);
+    /* ↓ Choose your justification (flex-start is default) */
+    justify-content: center;
+    /* ↓ Choose your alignment (flex-start is default) */
+    align-items: center;
+}
+
+/**
+* COVER PRIMITIVE
+*/
+.cover {
+    --space: var(--ss1);
+    /* ↓ Establish a columnal flex context */
+    display: flex;
+    flex-direction: column;
+    /* ↓ Set a minimum height to match the viewport height
+  (any minimum would be fine) */
+    min-block-size: 100vh;
+    /* Set a padding value */
+    padding: var(--space);
+
+    &>* {
+        /* ↓ Give each child a top and bottom margin */
+        margin-block: var(--ss1);
+    }
+
+    &> :first-child:not(main) {
+        /* ↓ Remove the top margin from the first-child
+  if it _doesn't_ match the centered element */
+        margin-block-start: 0;
+    }
+
+    &> :last-child:not(main) {
+        /* ↓ Remove the bottom margin from the last-child
+if it _doesn't_ match the centered element */
+        margin-block-end: 0;
+    }
+
+    &>main {
+        /* ↓ Center the centered element (h1 here)
+in the available vertical space */
+        margin-block: auto;
+    }
+}
+
+/**
+* FRAME PRIMITIVE
+*/
+.frame {
+    --n: 16;
+    /* numerator */
+    --d: 9;
+    /* denominator */
+    aspect-ratio: var(--n) / var(--d);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>img,
+    &>video {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+    }
+}
+
+/**
+* ICON PRIMITIVE
+*/
+.icon {
+    height: 0.75em;
+    /* ↓ Override the em value with `1cap` where `cap` is supported */
+    height: 1cap;
+    width: 0.75em;
+    width: 1cap;
+}
+
+.with-icon {
+    /* ↓ Set the `inline-flex` context, which eliminates the word space */
+    display: inline-flex;
+    align-items: baseline;
+
+    .icon {
+        /* ↓ Use the logical margin property and a --space variable with a fallback */
+        /* direction: ltr; => margin is on the right
+           direction: rtl; => margin is on the left
+        */
+        margin-inline-end: var(--space, 0.5em);
+    }
+}
+
+/**
+* HOLY GRAIL LAYOUT
+*/
+
+$layout: 'holy-grail';
+
+.#{$layout} {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+
+    &__header {
+        padding: 2rem;
+        grid-column: 1 / 4;
+    }
+
+    &__left-side {
+        grid-column: 1 / 2;
+    }
+
+    &__main {
+        grid-column: 2 / 3;
+    }
+
+    &__right-side {
+        grid-column: 3 / 4;
+    }
+}
+
+/**
+* IMPOSTER
+*/
+
+.imposter {
+    /* ↓ Choose the positioning element */
+    position: var(--positioning, absolute);
+    /* ↓ Position the top left corner in the center */
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    /* ↓ Reposition so the center of the element is the center of the container */
+    transform: translate(-50%, -50%);
+
+    &.contain {
+        /* ↓ Include a unit, or the calc function will be invalid */
+        --margin: 0px;
+        /* ↓ Provide scrollbars so content is not obscured */
+        overflow: auto;
+        /* ↓ Restrict the height and width, including optional spacing/margin between the element and positioning container */
+        max-inline-size: calc(100% - (var(--margin) * 2));
+        max-block-size: calc(100% - (var(--margin) * 2));
+    }
+}
+
+/**
+* REEL
+*/
+
+.reel {
+    /* ↓ Custom properties for ease of adjustment */
+    --space: 1rem;
+    --color-light: #fff;
+    --color-dark: #000;
+    --reel-height: auto;
+    --item-width: 50ch;
+    display: flex;
+    block-size: var(--reel-height);
+    /* ↓ Overflow */
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* ↓ For Firefox */
+    scrollbar-color: var(--color-light) var(--color-dark);
+
+    & > * {
+        /*
+    ↓ Just a `width` wouldn’t work because
+    `flex-shrink: 1` (default) still applies
+     */
+        flex: 0 0 var(--item-width);
+
+        & + * {
+            margin-inline-start: var(--space);
+        }
+    }
+
+    &.overflowing:not(.no-bar) {
+        /* ↓ Only apply if there is a scrollbar (see the JavaScript) */
+        padding-block-end: var(--space);
+    }
+    /* ↓ Hide scrollbar with `no-bar` class */
+    &.no-bar {
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+
+/**
+* SWITCHER
+*/
+.switcher {
+    /* ↓ The width at which the layout “breaks” */
+    --switcher--threshold: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* ↓ The default value is the first point on the modular scale */
+    gap: var(--gutter, var(--ss1));
+
+    & > * {
+        /* ↓ Allow children to grow */
+        flex-grow: 1;
+        /* ↓ Switch the layout at the --switcher--threshold */
+        flex-basis: calc((var(--switcher--threshold) - 100%) * 999);
+    }
+
+    &,
+    & > :nth-last-child(n + 5),
+    & > :nth-last-child(n + 5) ~ * {
+        /* ↓ Switch to a vertical configuration if there are more than 4 child elements */
+        flex-basis: 100%;
+    }
 }

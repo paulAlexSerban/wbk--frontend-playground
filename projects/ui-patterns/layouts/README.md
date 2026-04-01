@@ -2,17 +2,16 @@
 
 Layouts pattern collection with cards and dashboard sections.
 
-Source: `libraries/dev-days-matrix-library/src/library/patterns/layouts`
+## Note on stacks
 
-## Architecture
+### The Problem
+We style elements or classes of elements directly, this way we make style declarations belong to elements -
+the issue comes with <code>margin</code> which is a property relationship between 2 proximate elements
+### The Solution
+Style the context, not the individual elements.
+<b>Stack</b> as a layout primitive injects margin between elements via their common parent.</p>
 
-- `src/styles/_*.scss` split modules with local `_abstracts.scss`
-- `src/scripts/_*.js` split modules with `index.js` entry
-- `src/_partials/_*.hbs` variation partials composed in `body.hbs`
-
-## Commands
-
-```bash
-yarn --cwd projects/components/layouts dev
-yarn --cwd projects/components/layouts build
-```
+## Suggested Improvements
+- add container-query variants for layout primitives
+- add spacing-token examples for each layout mode
+- add min/max content stress tests

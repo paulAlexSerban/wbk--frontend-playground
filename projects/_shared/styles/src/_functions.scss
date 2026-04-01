@@ -1,0 +1,105 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:math';
+
+@use './sizes' as sizes;
+
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} Desired value
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map.get($map, $key);
+    }
+    @return $map;
+}
+
+/// Provide a map and index, and get back the relevant key value
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Integer} $index - Key chain
+/// @return {String} Desired value
+@function key-by-index($map, $index) {
+    $keys: map.keys($map);
+    @return list.nth($keys, $index);
+}
+
+/// Pass in a map, and get the last one in the list back
+/// @access public
+/// @param {Map} $map - Map
+/// @return {*} Desired value
+@function last-map-item($map) {
+    $total-length: list.length($map);
+    @return map.get($map, key-by-index($map, $total-length));
+}
+
+/* ------------------------------------ *\
+  * GRID FUNCTIONS
+\* ------------------------------------ */
+
+/// Get the infix for a given breakpoint in a list of breakpoints. Useful for generating the size part in a selector, for example: `.prefix--col-sm-2`.
+/// @param {String} $name - The name of the breakpoint
+/// @return {String}
+/// @access public
+
+@function breakpoint-infix($name) {
+    @return '-#{$name}';
+}
+
+/// Get the value of the next breakpoint, or null for the last breakpoint
+/// @param {String} $name - The name of the breakpoint
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
+/// @param {List} $breakpoint-names [map.keys($breakpoints)] - A list of names from the `$breakpoints` map
+/// @return {String}
+/// @access public
+
+@function breakpoint-next($name, $breakpoints: sizes.$breakpoints, $breakpoint-names: map.keys(sizes.$breakpoints)) {
+    $n: list.index($breakpoint-names, $name);
+    @if $n != null and $n < list.length($breakpoint-names) {
+        @return list.nth($breakpoint-names, $n + 1);
+    }
+    @return null;
+}
+
+/// Get the value of the previous breakpoint, or null for the first breakpoint
+/// @param {String} $name - The name of the breakpoint
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
+/// @param {List} $breakpoint-names [map.keys($breakpoints)] - A list of names from the `$breakpoints` map
+/// @return {String}
+/// @access public
+@function breakpoint-prev($name, $breakpoints: sizes.$breakpoints, $breakpoint-names: map.keys(sizes.$breakpoints)) {
+    $n: list.index($breakpoint-names, $name);
+    @if $n != null and $n > 1 {
+        @return list.nth($breakpoint-names, $n - 1);
+    }
+    @return null;
+}
+
+/// Check to see if the given breakpoint name
+/// @param {String} $name - The name of the breakpoint
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint
+/// @return {Bool}
+/// @access public
+@function is-smallest-breakpoint($name, $breakpoints: sizes.$breakpoints) {
+    @return list.index(map.keys($breakpoints), $name) == 1;
+}
+
+/// Returns the largest breakpoint name
+/// @param {Map} $breakpoints [$breakpoints] - A map of breakpoints where the key is the name
+/// @return {String}
+/// @access public
+
+@function largest-breakpoint-name($breakpoints: sizes.$breakpoints) {
+    $total-breakpoints: list.length($breakpoints);
+    @return mapFn.key-by-index($breakpoints, $total-breakpoints);
+}
+
+/// Convert a px value to rem using a 16px base.
+/// @param {Number} $px   - Value in px
+/// @param {Number} $base - Base font size (default 16px)
+@function convert-rem($px, $base: 16px) {
+    @return math.div($px, $base) * 1rem;
+}

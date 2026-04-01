@@ -1,6 +1,6 @@
 @use './styles/grid-system' as grid;
-@use './styles/reset';
-@use './styles/theme';
+@use '@wbk-frontend-forge/_shared__styles/src/reset';
+@use '@wbk-frontend-forge/_shared__styles/src/theme';
 @use './styles/elements';
 @use './styles/typography-mixins';
 
