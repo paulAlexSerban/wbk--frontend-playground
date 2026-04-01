@@ -2,17 +2,13 @@
 
 Interactive form patterns and validation-oriented demos.
 
-Source: `libraries/dev-days-matrix-library/src/library/patterns/form-patterns`
-
-## Architecture
-
-- `src/styles/_*.scss` split modules with local `_abstracts.scss`
-- `src/scripts/_*.js` split modules with `index.js` entry
-- `src/_partials/_*.hbs` variation partials composed in `body.hbs`
-
-## Commands
-
-```bash
-yarn --cwd projects/components/form-patterns dev
-yarn --cwd projects/components/form-patterns build
-```
+## Improvements and expansions to consider:
+- add focus-management tests across pattern flows
+- add keyboard-only completion path validation
+- add reusable field-state helper patterns
+- add ARIA roles/states for form controls and validation feedback
+- add support for custom validation messages and internationalization
+- add examples of form usage in different contexts (e.g. login forms, multi-step forms
+- add notes on form performance considerations (e.g. debouncing validation, optimizing re-renders)
+- add support for accessible error handling and focus management on validation failure
+- add support for dynamic form fields and conditional logic patterns
