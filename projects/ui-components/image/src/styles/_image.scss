@@ -1,4 +1,4 @@
-@use './abstracts' as *;
+@use '@wbk-frontend-forge/_shared__styles/src/abstracts/index' as *;
 
 $block: 'image';
 
@@ -39,6 +39,6 @@ $block: 'image';
         @include font($body);
 
         margin-top: 12px;
-        color: get-color($c-gray, dim-gray);
+        color: get-color($c-gray, dim-grey);
     }
 }
