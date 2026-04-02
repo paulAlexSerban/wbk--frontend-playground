@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:list';
 @use './map-functions.scss' as mapFn;
-@use '../../_01_sizes/sizes.scss' as sizes; 
+@use '../../_01_sizes/index.scss' as sizes; 
 /* ------------------------------------ *\
   * GRID FUNCTIONS
 \* ------------------------------------ */

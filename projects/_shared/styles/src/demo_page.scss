@@ -1,8 +1,9 @@
 :root {
+    color-scheme: light;
     --page-background: #f8fafc;
     --page-text: #0f172a;
     --page-muted: #475569;
-    --surface: rgba(255, 255, 255, 0.9);
+    --surface: rgba(255, 255, 255, 0.82);
     --surface-border: rgba(15, 23, 42, 0.08);
 }
 
@@ -11,14 +12,15 @@
 }
 
 body.browser-detect-page,
-body.card-list-page {
-    margin: 0;
+body.card-list-page,
+body.button-page {
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--page-text);
+    margin: 0;
     background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
-        linear-gradient(180deg, #fff, var(--page-background));
+        radial-gradient(circle at top left, rgba(16, 185, 129, 0.16), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, var(--page-background) 100%);
+    color: var(--page-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page-shell {
@@ -28,14 +30,14 @@ body.card-list-page {
 }
 
 .page-header {
-    max-width: 56rem;
+    max-width: 58rem;
     margin-bottom: 2rem;
 }
 
 .eyebrow,
 .demo-label {
     margin: 0 0 0.6rem;
-    color: #1d4ed8;
+    color: #0f766e;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -44,17 +46,18 @@ body.card-list-page {
 
 h1,
 h2,
-p span {
+p,
+span {
     margin: 0;
 }
 
 h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 0.95;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
 }
 
 .page-copy,
@@ -71,10 +74,27 @@ h2 {
 
 .demo-card {
     display: grid;
-    gap: 1.2rem;
+    gap: 1.4rem;
     padding: 1.5rem;
     border: 1px solid var(--surface-border);
-    border-radius: 1.25rem;
+    border-radius: 1.5rem;
     background: var(--surface);
-    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 24px 40px rgba(15, 23, 42, 0.08);
+}
+
+.demo-card--dark {
+    background: linear-gradient(180deg, #111827, #0f172a);
+    color: #fff;
+}
+
+.demo-card--dark .demo-copy,
+.demo-card--dark .demo-label {
+    color: rgba(241, 245, 249, 0.9);
+}
+
+.button-stage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }

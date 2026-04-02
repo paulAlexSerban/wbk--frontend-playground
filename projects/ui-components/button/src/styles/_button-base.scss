@@ -1,5 +1,5 @@
+@use "@wbk-frontend-forge/_shared__styles/src/abstracts/index" as abstracts;
 @use 'sass:map';
-@use './abstracts' as abstracts;
 
 // Source: library/components/button/scss/button.entry.scss
 // ~ScssAbstracts resolved via local ./_abstracts.scss
@@ -10,24 +10,19 @@
 $block: 'button-base';
 
 $color-patterns: (
-    'primary': (
-        'background-color': abstracts.get-color(abstracts.$c-blue, carolina-blue),
+    'primary': ('background-color': abstracts.get-color(abstracts.$c-blue, carolina-blue),
         'text-color': abstracts.get-color(abstracts.$c-light, light),
     ),
-    'secondary': (
-        'background-color': abstracts.get-color(abstracts.$c-light, light),
+    'secondary': ('background-color': abstracts.get-color(abstracts.$c-light, light),
         'text-color': abstracts.get-color(abstracts.$c-dark, jet),
     ),
-    'success': (
-        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, success),
+    'success': ('background-color': abstracts.get-color(abstracts.$c-traffic-lights, success),
         'text-color': abstracts.get-color(abstracts.$c-light, light),
     ),
-    'danger': (
-        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, danger),
+    'danger': ('background-color': abstracts.get-color(abstracts.$c-traffic-lights, danger),
         'text-color': abstracts.get-color(abstracts.$c-light, light),
     ),
-    'warning': (
-        'background-color': abstracts.get-color(abstracts.$c-traffic-lights, warning),
+    'warning': ('background-color': abstracts.get-color(abstracts.$c-traffic-lights, warning),
         'text-color': abstracts.get-color(abstracts.$c-dark, jet),
     ),
 );
