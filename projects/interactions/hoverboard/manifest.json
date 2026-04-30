@@ -3,18 +3,9 @@
     "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
     "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
     "description": "",
-    "concepts": [
-        "animation",
-        "transform",
-        "keyframes"
-    ],
+    "concepts": ["animation", "transform", "keyframes"],
     "category": "interactions",
-    "tags": [
-        "hoverboard",
-        "animation",
-        "transform",
-        "keyframes"
-    ],
+    "tags": ["hoverboard", "animation", "transform", "keyframes"],
     "status": "complete",
     "difficulty": "beginner"
 }

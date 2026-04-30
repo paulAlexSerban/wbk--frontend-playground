@@ -1,9 +1,11 @@
 # ADR-05: Dashboard Catalog Source Migrates From Libraries To Projects
 
 ## Status
+
 Accepted
 
 ## Date
+
 2026-03-30
 
 ## Context
@@ -11,11 +13,13 @@ Accepted
 The repository is migrating from legacy `libraries/*` units to category-first self-contained projects under `projects/<category>/<slug>` with `manifest.json` as the primary metadata contract.
 
 Current dashboard implementation and prior ADRs still assumed a libraries-oriented pipeline:
+
 - metadata source: `componentList.json` per packaged library
 - optional fallback: `libraries/*/dist/componentList.json`
 - generated artifacts and preview links rooted in `/libraries/...`
 
 This no longer matches the target architecture described in:
+
 - `readme.md` (manifest-first discovery under `projects`)
 - `adr-04--libraries-to-projects-migration-taxonomy.md` (taxonomy migration accepted)
 
@@ -26,6 +30,7 @@ Dashboard catalog generation is migrated to a projects-first contract.
 ### 1. Source of truth
 
 Dashboard data is loaded from packaged project manifests:
+
 - primary: `package/<repo>/projects/**/manifest.json`
 - fallback: `projects/**/manifest.json`
 
@@ -34,10 +39,12 @@ Manifest files are transformed into the existing dashboard component shape so re
 ### 2. Path and URL contract
 
 Generated dashboard artifacts are written to:
+
 - `package/<repo>/projects/index.json`
 - `package/<repo>/projects/index.html`
 
 Preview links resolve under:
+
 - `/<repo>/projects/<category>/<slug>/<variation>.html`
 
 For manifest-based projects, the default variation is `index`.
@@ -47,6 +54,7 @@ For manifest-based projects, the default variation is `index`.
 Dashboard build resolves the packaged repository directory dynamically from `package/*`.
 
 Overrides are supported for CI/deployment:
+
 - `DASHBOARD_PACKAGE_REPOSITORY_DIR`
 - `DASHBOARD_REPOSITORY_SEGMENT`
 - `DASHBOARD_CATALOG_SEGMENT`
@@ -58,11 +66,13 @@ Integrity and preview path code keeps support for `libraries` mode through `DASH
 ## Consequences
 
 Positive:
+
 - aligns dashboard discovery with the new project taxonomy and migration flow
 - removes dependency on legacy `componentList.json`
 - allows dashboard generation even when only project manifests are available
 
 Trade-offs:
+
 - manifest transformation currently creates one visible variation per project (`index`)
 - metadata richness is initially lower than library `componentList.json`-based catalogs
 

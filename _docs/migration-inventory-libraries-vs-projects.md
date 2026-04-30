@@ -1,22 +1,26 @@
 # Migration Inventory: Libraries vs Projects
 
 ## Status
+
 Snapshot
 
 ## Date
+
 2026-03-31
 
 ## Scope
+
 - Source libraries scanned:
-  - libraries/dev-days-matrix-library/src/library/components
-  - libraries/dev-days-matrix-library/src/library/patterns
-  - libraries/dev-days-matrix-library/src/system/templates
+    - libraries/dev-days-matrix-library/src/library/components
+    - libraries/dev-days-matrix-library/src/library/patterns
+    - libraries/dev-days-matrix-library/src/system/templates
 - Target projects scanned:
-  - projects/components
-  - projects/systems
-  - category counts under projects/* (excluding _project-templates and _shared)
+    - projects/components
+    - projects/systems
+    - category counts under projects/\* (excluding \_project-templates and \_shared)
 
 ## Scope Decision
+
 - Typography component from library/components is intentionally excluded from projects/components migration scope.
 - Reason: typography is covered as a systems concern in projects/systems/typography-tokens.
 - Effective migration scope for completion tracking is 41 items.
@@ -24,6 +28,7 @@ Snapshot
 ## Source Inventory
 
 ### library/components (13)
+
 - browser-detect
 - button
 - drag-n-drop
@@ -39,6 +44,7 @@ Snapshot
 - typography
 
 ### library/patterns (20)
+
 - accordion
 - alert
 - audio
@@ -61,6 +67,7 @@ Snapshot
 - toggle-group
 
 ### system/templates (9)
+
 - big-frontend-dev
 - codepen-challenges
 - dev-days-matrix
@@ -74,6 +81,7 @@ Snapshot
 ## Target Inventory
 
 ### projects/components (31)
+
 - accordion
 - alert
 - audio
@@ -107,6 +115,7 @@ Snapshot
 - toggle-group
 
 ### projects/systems (12)
+
 - act-school-wisdom-accent
 - big-frontend-dev
 - codepen-challenges
@@ -121,6 +130,7 @@ Snapshot
 - typography-tokens
 
 ### Projects Category Counts
+
 - architectures: 0
 - components: 31
 - compositions: 0
@@ -133,9 +143,11 @@ Snapshot
 - systems: 12
 
 ### projects/interactions (1)
+
 - hoverboard
 
 ### projects/reverse-engineering (6)
+
 - fcc-rwd-example-personal-portfolio-webpage
 - landing-page-animated-tawilwind-template
 - landing-page-menu-slide
@@ -144,11 +156,13 @@ Snapshot
 - portfolio-simplefolio
 
 ### projects/multi-page-projects (0)
+
 - none
 
 ## Migration Mapping
 
 ### Components Mapping (library/components -> projects/components)
+
 - browser-detect -> projects/components/browser-detect (migrated)
 - button -> projects/components/button (migrated)
 - drag-n-drop -> projects/components/drag-n-drop (migrated)
@@ -166,6 +180,7 @@ Snapshot
 Summary: 12 of 13 migrated, 1 excluded.
 
 ### Patterns Mapping (library/patterns -> projects/components)
+
 - accordion -> projects/components/accordion (migrated)
 - alert -> projects/components/alert (migrated)
 - audio -> projects/components/audio (migrated)
@@ -190,6 +205,7 @@ Summary: 12 of 13 migrated, 1 excluded.
 Summary: 20 of 20 migrated.
 
 ### System Templates Mapping (library/system/templates -> projects/systems)
+
 - big-frontend-dev -> projects/systems/big-frontend-dev (migrated)
 - codepen-challenges -> projects/systems/codepen-challenges (migrated)
 - dev-days-matrix -> projects/systems/dev-days-matrix (migrated)
@@ -205,19 +221,23 @@ Summary: 9 of 9 migrated.
 ## Project-Only Items
 
 ### projects/components not present in library/components or library/patterns
+
 - none
 
 ### projects/systems not present in library/system/templates
+
 - act-school-wisdom-accent
 - harmonic-sizes
 - typography-tokens
 
 ## Progress Totals
+
 - Source items total: 42 (13 components + 20 patterns + 9 system templates)
 - Effective in-scope total: 41 (42 minus excluded typography component target)
 - Migrated in-scope items total: 41
 - Missing in-scope items total: 0
 
 ## Notes
+
 - This inventory is based on current directory existence and slug matching.
-- Detailed migration-item checklists remain under _docs/architecture/migration-items/.
+- Detailed migration-item checklists remain under \_docs/architecture/migration-items/.

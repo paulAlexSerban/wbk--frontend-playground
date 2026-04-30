@@ -1,5 +1,4 @@
-@use './sizes' as sizes;
-@use './abstracts.scss' as abstracts;
+@use './abstracts/index.scss' as abstracts;
 
 @mixin modular-harmonic-spacing-generator(
     $base: 16px,
@@ -7,25 +6,28 @@
     $minStep: -5,
     $maxStep: 5,
     $propertyName: 'static-'
+
 ) {
     $current: $base;
+
     @for $i from $minStep through $maxStep {
-        @if $i == 0 {
+        @if $i ==0 {
             --#{$propertyName}#{$i}: #{abstracts.convert-rem($current)};
         }
+
         @if $i < 0 {
             --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i + 1}) / #{$ratio});
         }
 
-        @if $i > 0 {
+        @if $i >0 {
             --#{$propertyName}#{$i}: calc(var(--#{$propertyName}#{$i - 1}) * #{$ratio});
         }
     }
 }
 
 :root {
-    --baseline: #{sizes.$baseline};
-    --gutter: #{sizes.$gutter};
+    --baseline: #{abstracts.convert-rem(abstracts.$baseline)};
+    --gutter: #{abstracts.convert-rem(abstracts.$gutter)};
     --measure: 60ch;
     --font-size-xs: #{abstracts.convert-rem(14px)};
     --font-size-base: #{abstracts.convert-rem(18px)};
@@ -36,11 +38,11 @@
     @include modular-harmonic-spacing-generator($propertyName: 'ss');
     @include modular-harmonic-spacing-generator($propertyName: 'rs');
 
-    @include abstracts.breakpoint(sizes.$mobile) {
+    @include abstracts.breakpoint(abstracts.$mobile) {
         @include modular-harmonic-spacing-generator($propertyName: 'rs', $ratio: 1.65);
     }
 
-    @include abstracts.breakpoint(sizes.$tablet) {
+    @include abstracts.breakpoint(abstracts.$tablet) {
         @include modular-harmonic-spacing-generator($propertyName: 'rs', $ratio: 1.75);
     }
 }
@@ -48,13 +50,21 @@
 
 
 :root {
-    --text-color: #111827;
+    --text-color: #{abstracts.get-color(abstracts.$c-dark, eerie-black)};
+    --text-selection-color: #{abstracts.get-color(abstracts.$c-light, cultured)};
+    --text-selection-background-color: #{abstracts.get-color(abstracts.$c-dark, eerie-black)};
     --muted-color: #4b5563;
     --accent-color: #a16207;
     --surface-color: #f5efe3;
     --surface-elevated: #fffdfa;
     --panel-background: rgba(255, 253, 250, 0.88);
     --panel-border: rgba(17, 24, 39, 0.1);
+        --text-link-color: #{abstracts.get-color(abstracts.$c-gray, davys-grey)};
+            --text-link-color-hover: #{abstracts.get-color(abstracts.$c-blue, dark-liver)};
+
+    --brand-color: #{abstracts.get-color(abstracts.$c-red, ua-red)};
+
+    --background-color-generic: #{abstracts.get-color(abstracts.$c-light, light)};
     --link-color: #1d4ed8;
     --link-hover-color: #0f172a;
     --selection-color: #f8fafc;
@@ -64,9 +74,31 @@
     --font-size-lg: 1.5rem;
     --font-size-xl: 2rem;
     --font-size-2xl: 3.25rem;
+    --text-font-family-regular: #{abstracts.$font-family-openSans};
+    --text-font-family-code: #{abstracts.$font-family-courierPrime};
 }
 
 ::selection {
     color: var(--selection-color);
     background: var(--selection-background);
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+}
+
+h4 {
+    font-size: var(--font-size-base);
+}
+
+h5 {
+    font-size: var(--font-size-xs);
 }

@@ -41,9 +41,9 @@
 
 - Ripple click coordinate logic updated to use `getBoundingClientRect()` for reliable effect placement.
 - Suggested improvements:
-	- add keyboard-triggered ripple behavior parity (Enter/Space)
-	- add explicit button state matrix (`:hover`, `:focus-visible`, `:disabled`)
-	- centralize color/spacing token usage for easier theme scaling
+    - add keyboard-triggered ripple behavior parity (Enter/Space)
+    - add explicit button state matrix (`:hover`, `:focus-visible`, `:disabled`)
+    - centralize color/spacing token usage for easier theme scaling
 
 ## Phase 2 Validation (2026-03-31)
 
@@ -52,3 +52,11 @@
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (`yarn --cwd projects/components/button build`)
 - [x] Manual runtime parity smoke-check for ripple and base variants
+
+## Phase 3 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

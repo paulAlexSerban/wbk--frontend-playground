@@ -3,14 +3,9 @@
     "source": "Frontend Forge",
     "sourceUrl": "http://localhost:3000",
     "description": "A design system for Act School, a fictional educational platform. The design system includes a set of reusable components, styles, and guidelines to ensure consistency across the platform.",
-    "concepts": [
-        "design system",
-        "front-end architecture"
-    ],
+    "concepts": ["design system", "front-end architecture"],
     "category": "systems",
-    "tags": [
-        "design system"
-    ],
+    "tags": ["design system"],
     "status": "complete",
     "difficulty": "beginner"
 }

@@ -27,20 +27,24 @@ Implement ADR-04 by migrating all 69 legacy meta-defined items from libraries/de
 
 1. Keep scripts/new-project.js as the only project creation entrypoint.
 2. Add migration checklist template used for each item:
+
 - selected destination category and reason
 - JS dependencies copied/replaced
 - SCSS dependencies copied/replaced
 - manifest fields completed
 - README provenance and concepts completed
+
 3. Add a lightweight validation script to fail if any project manifest points to a missing category.
 
 ### Wave 1: Low-coupling items first
 
 1. Migrate items with no detected JS deps and no SCSS deps first.
 2. Prioritize single-entry items from:
+
 - src/library/components
 - src/library/patterns
 - src/system/templates
+
 3. Validate each migrated item by running package build and preview.
 
 Expected outcome: fast migration throughput and validation of process with minimal refactoring risk.
@@ -48,12 +52,16 @@ Expected outcome: fast migration throughput and validation of process with minim
 ### Wave 2: Shared-abstract dependency items
 
 1. Migrate items depending on legacy internal abstractions such as:
-- _abstracts/js/dom/manipulation
-- _abstracts/js/dom/traversing
+
+- \_abstracts/js/dom/manipulation
+- \_abstracts/js/dom/traversing
 - ~ScssAbstracts
+
 2. For each dependency type choose one strategy:
+
 - copy local utility into project scope when usage is unique
-- extract to projects/_shared when reused by multiple migrated items
+- extract to projects/\_shared when reused by multiple migrated items
+
 3. Remove references to libraries paths from migrated units.
 
 Expected outcome: dependency decoupling from old library tree.
@@ -61,10 +69,12 @@ Expected outcome: dependency decoupling from old library tree.
 ### Wave 3: High-complexity module bundles
 
 1. Decompose large bundles into project granularity where needed, especially:
+
 - src/library/modules/mini-games
 - src/library/modules/form-modules
 - src/library/modules/quiz
 - src/system/products/resume
+
 2. Ensure one manifest per runnable project output.
 3. If one legacy folder represents multiple independent demos, split into multiple projects by entry.
 
@@ -74,6 +84,7 @@ Expected outcome: taxonomy consistency and manageable project boundaries.
 
 1. Migrate src/system/templates and src/system/products to projects/systems.
 2. Distinguish reusable system assets from demo projects:
+
 - demo/exploration stays in projects/systems
 - reusable package code promoted to libraries only if intentionally shared as package output
 
@@ -93,11 +104,13 @@ Expected outcome: systems category becomes the canonical home for design-system 
 3. Port markup/scripts/styles and assets.
 4. Resolve JS imports and SCSS imports/use/forward dependencies.
 5. Fill manifest metadata:
+
 - name
 - category
 - concepts
 - tags
 - source and sourceUrl when relevant
+
 6. Write/update README with intent and provenance.
 7. Build and verify output.
 8. Record completion in migration tracker.

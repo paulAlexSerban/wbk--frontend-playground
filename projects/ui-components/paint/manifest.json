@@ -1,22 +1,17 @@
 {
-  "name": "Paint",
-  "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/paint",
-  "description": "Paint interaction component with canvas controls and color tools.",
-  "concepts": [
-    "paint-pattern",
-    "component-variation",
-    "standalone-migration",
-    "scss-abstracts-local",
-    "frontend-playground"
-  ],
-  "category": "ui-components",
-  "tags": [
-    "paint",
-    "component",
-    "pattern",
-    "migration-wave"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Paint",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/paint",
+    "description": "Paint interaction component with canvas controls and color tools.",
+    "concepts": [
+        "paint-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-components",
+    "tags": ["paint", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

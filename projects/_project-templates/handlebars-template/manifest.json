@@ -3,23 +3,9 @@
     "source": "Frontend Forge",
     "sourceUrl": "http://localhost:3000",
     "description": "A Handlebars template for new projects with webpack, Babel, scss, and live server setup.",
-    "concepts": [
-        "html",
-        "css",
-        "javascript",
-        "handlebars",
-        "template",
-        "webpack",
-        "babel",
-        "scss",
-        "live-server"
-    ],
+    "concepts": ["html", "css", "javascript", "handlebars", "template", "webpack", "babel", "scss", "live-server"],
     "category": "project-templates",
-    "tags": [
-        "boilerplate",
-        "starter",
-        "frontend"
-    ],
+    "tags": ["boilerplate", "starter", "frontend"],
     "status": "complete",
     "difficulty": "beginner"
 }

@@ -22,10 +22,10 @@
 
 ## Files Ported
 
-- [x] src/_partials/body.hbs — composition-only include
-- [x] src/_partials/_popup.hbs — popup variation
+- [x] src/\_partials/body.hbs — composition-only include
+- [x] src/\_partials/\_popup.hbs — popup variation
 - [x] src/styles.scss + split modules in src/styles/
-- [x] src/scripts.js + src/scripts/index.js + src/scripts/_popup.js
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/\_popup.js
 
 ## Manifest and README
 
@@ -42,6 +42,7 @@
 - Popup supports open, close icon, close action, and backdrop dismiss with variation-scoped handlers.
 
 ## Suggested Improvements
+
 - add viewport collision-aware positioning strategy
 - add open/close state-machine and dismissal tests
 - add focus-return behavior on close
@@ -53,3 +54,11 @@
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (yarn --cwd projects/components/popup build)
 - [ ] Manual runtime parity smoke-check
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

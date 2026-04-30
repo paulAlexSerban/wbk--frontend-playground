@@ -41,9 +41,9 @@
 
 - FAQ variation kept independent from CSS-only variation to preserve per-variation script scope.
 - Suggested improvements:
-	- add keyboard and screen-reader interaction checks (`aria-expanded`, `aria-controls`)
-	- add optional single-open mode for FAQ groups
-	- add transition timing tokens for consistent expansion animation
+    - add keyboard and screen-reader interaction checks (`aria-expanded`, `aria-controls`)
+    - add optional single-open mode for FAQ groups
+    - add transition timing tokens for consistent expansion animation
 
 ## Phase 2 Validation (2026-03-31)
 
@@ -51,4 +51,11 @@
 - [x] JS + utilities validated
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (`yarn --cwd projects/components/accordion build`)
-- [ ] Manual runtime parity smoke-check for FAQ and CSS accordion variants
+- [x] Manual runtime parity smoke-check for FAQ and CSS accordion variants
+
+## Phase 3 Use Shared Dependences
+
+- [x] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [x] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [x] Validate no visual regressions introduced by shared abstracts integration
+- [x] Update styles to use shared demo page styles where applicable (layout, typography, spacing)

@@ -1,6 +1,5 @@
 export const initPattern = () => {
-    const scale = (num, inMin, inMax, outMin, outMax) =>
-        ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+    const scale = (num, inMin, inMax, outMin, outMax) => ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 
     document.querySelectorAll('[data-js-cmp="BlurryLoader"]').forEach((root) => {
         const loadText = root.querySelector('.js-blurry-loader-loading-text');

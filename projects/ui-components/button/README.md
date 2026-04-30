@@ -10,6 +10,7 @@ Consolidated button playground containing base button styles and a ripple intera
 - `multi-variation-demo` - combines legacy base and ripple entries in one page
 
 ## Improvements and expansions to consider:
+
 - add keyboard-triggered ripple behavior parity (Enter/Space)
 - add explicit button state matrix (`:hover`, `:focus-visible`, `:disabled`)
 - centralize color/spacing token usage for easier theme scaling

@@ -3,20 +3,9 @@
     "source": "Frontend Forge",
     "sourceUrl": "http://localhost:3000",
     "description": "A token system for managing harmonic sizes in design systems.",
-    "concepts": [
-        "design tokens",
-        "scaling systems",
-        "modular design",
-        "responsive design"
-    ],
+    "concepts": ["design tokens", "scaling systems", "modular design", "responsive design"],
     "category": "systems",
-    "tags": [
-        "token-system",
-        "design-tokens",
-        "scaling",
-        "modularity",
-        "responsive-design"
-    ],
+    "tags": ["token-system", "design-tokens", "scaling", "modularity", "responsive-design"],
     "status": "complete",
     "difficulty": "beginner"
 }

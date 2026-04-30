@@ -155,12 +155,7 @@ function buildPreviewFilePath(destinationDir, entry) {
         );
     }
 
-    return path.join(
-        destinationDir,
-        entry.categoryName,
-        entry.componentSlug,
-        `${entry.variationSlug}.html`
-    );
+    return path.join(destinationDir, entry.categoryName, entry.componentSlug, `${entry.variationSlug}.html`);
 }
 
 async function verifyGeneratedArtifacts({ catalog, htmlContent, baseUrl, destinationDir }) {

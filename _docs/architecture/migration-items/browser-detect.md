@@ -28,6 +28,7 @@
 - Script entry ported: yes (`src/scripts.js` imports `src/scripts/index.js`; behavior in `src/scripts/_browser-detect.js`)
 - Style entry ported: yes (`src/styles.scss` imports `src/styles/_shared.scss` and `src/styles/_browser-detect.scss`)
 - Assets ported: n/a
+-
 
 ## Manifest And README
 
@@ -48,9 +49,9 @@
 
 - Open issues: none
 - Suggested improvements:
-	- add browser map grouping (browser family, version, platform) for easier scanning
-	- add row virtualization/pagination if sample UA list grows significantly
-	- add test fixtures to validate parser output deterministically
+    - add browser map grouping (browser family, version, platform) for easier scanning
+    - add row virtualization/pagination if sample UA list grows significantly
+    - add test fixtures to validate parser output deterministically
 
 ## Phase 1 Validation (2026-03-31)
 
@@ -58,3 +59,11 @@
 - [x] JS moved to split architecture with scoped root selector
 - [x] SCSS moved to split architecture with shared + component modules
 - [x] Runtime parity smoke-check in browser (manual)
+
+## Phase 2 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

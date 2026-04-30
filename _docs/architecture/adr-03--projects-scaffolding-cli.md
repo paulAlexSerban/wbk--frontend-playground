@@ -38,25 +38,31 @@ The CLI will:
 3. copy from `projects/_project-templates/<template>` into `projects/<category>/<slug>`
 4. exclude `dist/`, `node_modules/`, and `.git` during copy
 5. patch generated metadata:
+
 - `package.json.name` -> `@wbk-frontend-forge/<category>__<slug>`
 - `manifest.json.name` -> `--name`
 - `manifest.json.category` -> `--category`
 - `manifest.json.source` and `manifest.json.sourceUrl` via CLI defaults/overrides
+
 6. fail fast when template/category is invalid or target exists
 7. support `--dry-run` for safe preview
 
 ## Why this is better
 
 1. Removes repetitive manual setup steps
+
 - New projects start from one deterministic command.
 
 2. Preserves taxonomy integrity
+
 - Category is explicit and validated at creation time.
 
 3. Avoids junk in generated projects
+
 - Build artifacts and local dependency directories are not copied.
 
 4. Keeps implementation lightweight
+
 - A plain Node script fits current repo conventions with no new external service/tooling.
 
 ## Consequences
@@ -77,12 +83,15 @@ These trade-offs are acceptable for the current repository scale and governance 
 ## Alternatives considered
 
 1. Continue manual copy + edits
+
 - Rejected: high error rate and repeated toil.
 
 2. Add a larger scaffolding framework
+
 - Rejected: unnecessary complexity for current needs.
 
 3. Store template artifacts and copy them as-is
+
 - Rejected: creates noisy generated projects and install/build confusion.
 
 ## Scope boundary

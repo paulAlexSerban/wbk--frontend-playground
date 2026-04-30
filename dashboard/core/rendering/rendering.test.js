@@ -14,10 +14,7 @@ test('escapeHtml and escapeAttribute encode unsafe characters', () => {
 
 test('buildPreviewUrl encodes path segments', () => {
     const url = buildPreviewUrl('http://localhost:3000/', 'dev lib', 'library', 'ui parts', 'button', 'primary state');
-    assert.equal(
-        url,
-        'http://localhost:3000/wbk-frontend-forge/projects/ui%20parts/button/primary%20state.html'
-    );
+    assert.equal(url, 'http://localhost:3000/wbk-frontend-forge/projects/ui%20parts/button/primary%20state.html');
 });
 
 test('buildImageUrl and buildCardId are deterministic', () => {

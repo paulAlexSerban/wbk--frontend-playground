@@ -3,6 +3,7 @@
 Image component patterns and responsive image demos.
 
 ## Improvements and expansions to consider:
+
 - add srcset/sizes parity checks for responsive variants
 - add lazy-loading and decoding strategy notes
 - add fallback placeholders for failed image loads

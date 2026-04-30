@@ -3,6 +3,7 @@
 Audio interaction patterns including a sound board demo.
 
 ## Improvements and expansions to consider:
+
 - add preload/error fallback handling for missing sounds
 - add keyboard and screen-reader labels for sound controls
 - add shared stop-all utility to prevent overlapping playback

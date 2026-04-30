@@ -1,22 +1,17 @@
 {
-  "name": "Form Patterns",
-  "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/form-patterns",
-  "description": "Interactive form patterns and validation-oriented demos.",
-  "concepts": [
-    "form-patterns-pattern",
-    "component-variation",
-    "standalone-migration",
-    "scss-abstracts-local",
-    "frontend-playground"
-  ],
-  "category": "ui-patterns",
-  "tags": [
-    "form-patterns",
-    "component",
-    "pattern",
-    "migration-wave"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Form Patterns",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/form-patterns",
+    "description": "Interactive form patterns and validation-oriented demos.",
+    "concepts": [
+        "form-patterns-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-patterns",
+    "tags": ["form-patterns", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

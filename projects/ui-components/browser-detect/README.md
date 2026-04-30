@@ -9,6 +9,7 @@ Small component demo that parses user-agent strings and renders a browser/OS map
 - DOM table rendering
 
 ## Improvements and expansions to consider:
+
 - add browser map grouping (browser family, version, platform) for easier scanning
 - add row virtualization/pagination if sample UA list grows significantly
 - add test fixtures to validate parser output deterministically

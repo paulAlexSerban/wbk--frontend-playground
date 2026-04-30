@@ -40,22 +40,27 @@ The monorepo root (`package.json`) becomes the single source of truth for those 
 ## Why this is better
 
 1. Single toolchain version across consumers
+
 - Prevents subtle incompatibilities from multiple webpack/plugin versions in different projects.
 - Keeps all handlebars-template-based projects on one verified build stack.
 
 2. Correct ownership model
+
 - `build-helpers` is an adapter over the host build environment, not an isolated runtime library.
 - Peer dependencies express exactly that contract: "consumer provides toolchain".
 
 3. Less duplication in project packages
+
 - Each project only depends on `@wbk-frontend-forge/_shared__build-helpers` for build setup reuse.
 - Reduces dependency noise and maintenance churn across many project `package.json` files.
 
 4. Clear upgrade path
+
 - Toolchain upgrades are coordinated once at root, tested once across all consumers.
 - Avoids piecemeal upgrades that silently diverge project behavior.
 
 5. Better long-term fit for multiple setup families
+
 - As additional shared build setups are added in this package, peer-based ownership scales better than embedding full toolchains per setup.
 
 ## Consequences
@@ -77,13 +82,16 @@ These trade-offs are acceptable because this repository is a monorepo with centr
 ## Alternatives considered
 
 1. Keep toolchain in each project `dependencies`
+
 - Rejected: duplicates config and versions, guarantees drift over time.
 
 2. Keep toolchain inside `build-helpers` regular `dependencies`
+
 - Rejected: can produce parallel webpack/plugin copies and blurry ownership boundaries.
 - Rejected: hides compatibility problems until runtime/build-time conflicts appear.
 
 3. Keep everything duplicated (no shared package)
+
 - Rejected: highest maintenance cost, already shown to drift.
 
 ## Implementation notes

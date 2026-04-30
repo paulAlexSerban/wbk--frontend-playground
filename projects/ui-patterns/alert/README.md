@@ -10,6 +10,7 @@ Consolidated alert playground containing dismissible alert pattern.
 - `single-variation-demo` - focused migration of one alert pattern
 
 ## Improvements and expansions to consider:
+
 - add keyboard-triggered close behavior (Enter/Space)
 - add explicit alert role and ARIA attributes for accessibility
 - add unit tests for interaction states and accessibility

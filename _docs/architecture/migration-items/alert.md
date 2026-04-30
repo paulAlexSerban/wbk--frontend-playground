@@ -22,10 +22,10 @@
 
 ## Files Ported
 
-- [x] src/_partials/body.hbs — composition-only include
-- [x] src/_partials/_alert.hbs — dismissible alert variation
+- [x] src/\_partials/body.hbs — composition-only include
+- [x] src/\_partials/\_alert.hbs — dismissible alert variation
 - [x] src/styles.scss + split modules in src/styles/
-- [x] src/scripts.js + src/scripts/index.js + src/scripts/_alert.js
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/\_alert.js
 
 ## Manifest and README
 
@@ -42,6 +42,7 @@
 - Alert closes through all local close triggers and removes only the scoped demo alert node.
 
 ## Suggested Improvements
+
 - add semantic role="alert" coverage and dismiss timing tests
 - add variant tokens for info/success/warning/error states
 - add optional auto-dismiss with pause-on-hover behavior
@@ -52,4 +53,12 @@
 - [x] JS + utilities validated
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (yarn --cwd projects/components/alert build)
-- [ ] Manual runtime parity smoke-check
+- [x] Manual runtime parity smoke-check
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

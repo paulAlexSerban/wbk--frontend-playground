@@ -3,6 +3,7 @@
 Collection of form-focused UI patterns and controls.
 
 ## Improvements and expansions to consider:
+
 - add validation state matrix (default/focus/error/success/disabled)
 - add helper-text + error-message accessibility checks
 - add shared input utility for consistent event wiring

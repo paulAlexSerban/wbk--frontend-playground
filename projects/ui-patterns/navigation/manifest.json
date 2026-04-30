@@ -1,24 +1,18 @@
 {
-  "name": "Navigation",
-  "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/navigation",
-  "description": "Consolidated navigation playground containing side-nav buttons, a mobile footer navigation demo, and a segmented workspace navigation demo.",
-  "concepts": [
-    "interactive-navigation",
-    "hover-reveal-links",
-    "tabbed-mobile-navigation",
-    "segmented-workspace-navigation",
-    "stateful-ui",
-    "multi-variation-demo"
-  ],
-  "category": "ui-patterns",
-  "tags": [
-    "navigation",
-    "tabs",
-    "menu",
-    "component",
-    "playground"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Navigation",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/navigation",
+    "description": "Consolidated navigation playground containing side-nav buttons, a mobile footer navigation demo, and a segmented workspace navigation demo.",
+    "concepts": [
+        "interactive-navigation",
+        "hover-reveal-links",
+        "tabbed-mobile-navigation",
+        "segmented-workspace-navigation",
+        "stateful-ui",
+        "multi-variation-demo"
+    ],
+    "category": "ui-patterns",
+    "tags": ["navigation", "tabs", "menu", "component", "playground"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

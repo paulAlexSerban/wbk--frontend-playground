@@ -1,19 +1,11 @@
 {
-  "name": "Landing Page Splash Clone",
-  "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
-  "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
-  "description": "Landing page - Splash Clone",
-  "concepts": [
-    "html",
-    "css",
-    "javascript",
-    "handlebars"
-  ],
-  "category": "reverse-engineering",
-  "tags": [
-    "boilerplate",
-    "frontend"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Landing Page Splash Clone",
+    "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+    "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+    "description": "Landing page - Splash Clone",
+    "concepts": ["html", "css", "javascript", "handlebars"],
+    "category": "reverse-engineering",
+    "tags": ["boilerplate", "frontend"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

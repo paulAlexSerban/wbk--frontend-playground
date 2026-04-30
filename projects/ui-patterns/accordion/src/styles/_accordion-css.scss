@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use './abstracts' as abstracts;
+@use '@wbk-frontend-forge/_shared__styles/src/abstracts/index' as abstracts;
 
 // Source: library/patterns/accordion/scss/accordion-css.entry.scss
 // ~ScssAbstracts resolved via local ./_abstracts.scss
@@ -28,9 +28,10 @@ $block: 'accordion-css';
 
         opacity: 0;
         z-index: -1;
+        max-inline-size: none;
 
         &:checked {
-            + .#{$block}__item-label {
+            +.#{$block}__item-label {
                 background: color.adjust(abstracts.get-color(abstracts.$c-blue, charcoal), $lightness: -10%);
 
                 &::after {
@@ -38,7 +39,7 @@ $block: 'accordion-css';
                 }
             }
 
-            ~ .#{$block}__content {
+            ~.#{$block}__content {
                 max-height: 100vh;
                 padding: 1em;
             }
@@ -52,6 +53,8 @@ $block: 'accordion-css';
         width: 100%;
         padding: abstracts.$baseline abstracts.$gutter;
         background: abstracts.get-color(abstracts.$c-blue, charcoal);
+        max-inline-size: none;
+
         cursor: pointer;
 
         &::after {

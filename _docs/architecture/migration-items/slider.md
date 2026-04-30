@@ -23,25 +23,25 @@
 
 - [x] `src/_partials/body.hbs` — composition-only include
 - [x] Variation partials migrated:
-  - `src/_partials/_background-image-slider.hbs`
-  - `src/_partials/_double-vertical-slider.hbs`
-  - `src/_partials/_image-carousel.hbs`
-  - `src/_partials/_css-carousel.hbs`
-  - `src/_partials/_gallery-grid.hbs`
+    - `src/_partials/_background-image-slider.hbs`
+    - `src/_partials/_double-vertical-slider.hbs`
+    - `src/_partials/_image-carousel.hbs`
+    - `src/_partials/_css-carousel.hbs`
+    - `src/_partials/_gallery-grid.hbs`
 - [x] Script orchestrator and variation modules:
-  - `src/scripts/index.js`
-  - `src/scripts/_background-image-slider.js`
-  - `src/scripts/_double-vertical-slider.js`
-  - `src/scripts/_image-carousel.js`
-  - `src/scripts/_gallery-grid.js`
+    - `src/scripts/index.js`
+    - `src/scripts/_background-image-slider.js`
+    - `src/scripts/_double-vertical-slider.js`
+    - `src/scripts/_image-carousel.js`
+    - `src/scripts/_gallery-grid.js`
 - [x] Style entry and variation modules:
-  - `src/styles.scss`
-  - `src/styles/_shared.scss`
-  - `src/styles/_background-image-slider.scss`
-  - `src/styles/_double-vertical-slider.scss`
-  - `src/styles/_image-carousel.scss`
-  - `src/styles/_css-carousel.scss`
-  - `src/styles/_gallery-grid.scss`
+    - `src/styles.scss`
+    - `src/styles/_shared.scss`
+    - `src/styles/_background-image-slider.scss`
+    - `src/styles/_double-vertical-slider.scss`
+    - `src/styles/_image-carousel.scss`
+    - `src/styles/_css-carousel.scss`
+    - `src/styles/_gallery-grid.scss`
 
 ## Manifest and README
 
@@ -69,3 +69,11 @@
 - [x] SCSS + modules validated
 - [x] Build validation passed
 - [x] Manual runtime parity smoke-check across all five variations
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

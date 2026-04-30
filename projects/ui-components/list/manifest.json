@@ -1,22 +1,17 @@
 {
-  "name": "List",
-  "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/list",
-  "description": "List component variants for definition and unordered content.",
-  "concepts": [
-    "list-pattern",
-    "component-variation",
-    "standalone-migration",
-    "scss-abstracts-local",
-    "frontend-playground"
-  ],
-  "category": "ui-components",
-  "tags": [
-    "list",
-    "component",
-    "pattern",
-    "migration-wave"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "List",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/list",
+    "description": "List component variants for definition and unordered content.",
+    "concepts": [
+        "list-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-components",
+    "tags": ["list", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

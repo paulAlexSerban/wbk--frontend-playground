@@ -130,6 +130,7 @@ When I want to find that thing I built with that used the Observer pattern, I ca
     - the dasboard can recursively scan `/projects` for manifest.json files and use the metadata to organize and display the projects in a user-friendly way, allowing for easy navigation and discovery of projects based on concepts, categories, tags, and other attributes.
 
 ## Migration plan from ./libraries to ./projects
+
 - move one project at a time, starting with the simplest ones, and update their structure to match the new format ad philosophy
 - for each project, create a README.md that explains the project, the concepts it demonstrates, and any relevant details, and make sure it has a manifest.json with the appropriate metadata
 - once all projects are moved and updated, remove the old ./libraries folder and any references to it in the dashboard or other parts of the codebase

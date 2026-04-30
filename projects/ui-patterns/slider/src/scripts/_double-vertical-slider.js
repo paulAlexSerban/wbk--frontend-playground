@@ -5,7 +5,9 @@ export const initDoubleVerticalSlider = () => {
         const rightColumn = demo.querySelector('[data-vertical-right]');
         const upButton = demo.querySelector('[data-vertical-up]');
         const downButton = demo.querySelector('[data-vertical-down]');
-        const totalSlides = rightColumn ? rightColumn.querySelectorAll('.vertical-photo').length : leftColumn.querySelectorAll('.vertical-panel').length;
+        const totalSlides = rightColumn
+            ? rightColumn.querySelectorAll('.vertical-photo').length
+            : leftColumn.querySelectorAll('.vertical-panel').length;
         let activeSlide = 0;
 
         if (!slider || !leftColumn || !upButton || !downButton || !totalSlides) {

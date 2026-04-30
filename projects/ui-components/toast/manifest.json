@@ -1,22 +1,17 @@
 {
-  "name": "Toast",
-  "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/toast",
-  "description": "Toast notification patterns for transient status messaging.",
-  "concepts": [
-    "toast-pattern",
-    "component-variation",
-    "standalone-migration",
-    "scss-abstracts-local",
-    "frontend-playground"
-  ],
-  "category": "ui-components",
-  "tags": [
-    "toast",
-    "component",
-    "pattern",
-    "migration-wave"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Toast",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/toast",
+    "description": "Toast notification patterns for transient status messaging.",
+    "concepts": [
+        "toast-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-components",
+    "tags": ["toast", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

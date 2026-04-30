@@ -46,10 +46,7 @@ test('verifyGeneratedArtifacts passes for matching html, preview files, and cata
     await fs.promises.mkdir(path.join(destinationDir, 'components', 'button'), {
         recursive: true,
     });
-    await fs.promises.writeFile(
-        path.join(destinationDir, 'components', 'button', 'styles.css'),
-        'body {}'
-    );
+    await fs.promises.writeFile(path.join(destinationDir, 'components', 'button', 'styles.css'), 'body {}');
     await fs.promises.writeFile(
         path.join(destinationDir, 'components', 'button', 'primary.html'),
         '<html><head><link rel="stylesheet" href="styles.css"></head></html>'

@@ -1,5 +1,3 @@
-
-
 module.exports = function (type) {
     const feLibs = {
         css: `<link rel="stylesheet" href="styles.css">`,
@@ -9,7 +7,7 @@ module.exports = function (type) {
     };
 
     console.log('\n');
-    feLibs[type].split('\n').forEach(line => {
+    feLibs[type].split('\n').forEach((line) => {
         console.log('[ handlebars - INFO ]: injecting FE library:', line.trim());
     });
     return feLibs[type];

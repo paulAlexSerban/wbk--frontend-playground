@@ -9,6 +9,7 @@ Interactive drag-and-drop component demo with one draggable tile and multiple dr
 - dynamic class state updates
 
 ## Improvements and expansions to consider:
+
 - add support for multiple draggable items and corresponding drop targets
 - implement visual feedback for valid/invalid drop targets during dragging
 - add keyboard accessibility for drag-and-drop interactions

@@ -22,10 +22,10 @@
 
 ## Files Ported
 
-- [x] src/_partials/body.hbs — landing template structure (hero/features/testimonial/footer)
+- [x] src/\_partials/body.hbs — landing template structure (hero/features/testimonial/footer)
 - [x] src/styles.scss + split modules in src/styles/
-- [x] src/scripts.js + src/scripts/index.js + src/scripts/_landing.js
-- [x] src/styles/_abstracts.scss — local port replacing `~ScssAbstracts` alias usage
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/\_landing.js
+- [x] src/styles/\_abstracts.scss — local port replacing `~ScssAbstracts` alias usage
 
 ## Manifest and README
 
@@ -40,3 +40,13 @@
 ## Notes
 
 - Legacy source includes only JS/SCSS/meta entries; migrated body partial provides a reusable baseline layout while preserving source intent.
+
+- [x] DONE
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

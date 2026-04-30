@@ -1,12 +1,15 @@
 # ADR-04.3 Plan: Wave 1 Low-Coupling Backlog
 
 ## Status
+
 Draft
 
 ## Date
+
 2026-03-29
 
 ## Selection Rules
+
 - Source constrained to: src/library/components, src/library/patterns, src/system/templates
 - Strict Wave 1 set: JS deps none, SCSS deps none, JS entry files <= 1, SCSS entry files <= 1
 - Stretch set: deps none but multi-entry, migrate after strict set
@@ -25,6 +28,7 @@ Stretch Wave 1 complete.
 Status: in progress (2026-03-30)
 
 Completed continuation items:
+
 - libraries/dev-days-matrix-library/src/library/patterns/toggle-group -> projects/components/toggle-group
 - libraries/dev-days-matrix-library/src/library/patterns/theme-switch -> projects/components/theme-switch
 - libraries/dev-days-matrix-library/src/library/patterns/loader -> projects/components/loader
@@ -55,11 +59,13 @@ Completed continuation items:
 - libraries/dev-days-matrix-library/src/system/templates/landing -> projects/systems/landing
 
 Execution rules remain unchanged:
+
 - Keep split architecture for all new migrations: per-variation `src/styles/_*.scss`, `src/scripts/_*.js`, and `src/_partials/_*.hbs` with entry orchestrators.
 - Keep one migration checklist file per migrated legacy item under `_docs/architecture/migration-items/`.
 - Run per-project build and `yarn check:migration:wave0` after each continuation batch.
 
 ## Execution Notes
+
 - Use scripts/new-project.js for every scaffold action.
 - For each candidate, create a completed copy of migration-item-checklist-template.md.
 - Run yarn check:migration:wave0 after each migration batch.
@@ -70,5 +76,5 @@ Execution rules remain unchanged:
 
 ## Reconciliation Note (2026-03-31)
 
-- A full libraries-vs-projects slug inventory and migration mapping is tracked in _docs/migration-inventory-libraries-vs-projects.md.
+- A full libraries-vs-projects slug inventory and migration mapping is tracked in \_docs/migration-inventory-libraries-vs-projects.md.
 - Scope decision: libraries/dev-days-matrix-library/src/library/components/typography is intentionally excluded from components migration, because typography is represented in projects/systems/typography-tokens.

@@ -41,6 +41,7 @@
 - Escape key handling is scoped to close only when modal is open.
 
 ## Suggested Improvements
+
 - add focus trap and escape-key regression tests
 - add scroll-lock and background inert-state validation
 - add stacked-modal conflict handling notes
@@ -52,3 +53,11 @@
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (yarn --cwd projects/components/modal build)
 - [ ] Manual runtime parity smoke-check
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

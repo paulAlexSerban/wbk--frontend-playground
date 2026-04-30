@@ -1,12 +1,15 @@
 # ADR-04.2: Library Items JS and SCSS Dependency Audit
 
 ## Status
+
 Accepted
 
 ## Date
+
 2026-03-29
 
 ## Scope
+
 - Library: libraries/dev-days-matrix-library
 - Items discovered from meta.json: 69
 
@@ -143,7 +146,7 @@ Accepted
 - SCSS entry files: 1
 - JS files total: 5
 - SCSS files total: 1
-- JS deps: ./BookList/Book, ./BookList/Store, ./BookList/UI, ./UI, ./_BookList
+- JS deps: ./BookList/Book, ./BookList/Store, ./BookList/UI, ./UI, ./\_BookList
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/calculator
@@ -170,7 +173,7 @@ Accepted
 - SCSS entry files: 3
 - JS files total: 3
 - SCSS files total: 3
-- JS deps: ../../../../_abstracts/js/functions/stopBubbling
+- JS deps: ../../../../\_abstracts/js/functions/stopBubbling
 - SCSS deps: use:sass:math, use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/dashboard
@@ -197,8 +200,8 @@ Accepted
 - SCSS entry files: 7
 - JS files total: 7
 - SCSS files total: 7
-- JS deps: ../../../../_abstracts/js/constants/patterns, ../../../../_abstracts/js/dom/manipulation, ../../../../_abstracts/js/dom/traversing
-- SCSS deps: import:../../_01_components/typography/link/link.scss, import:../fieldset/fieldset.pat.scss, use:~ScssAbstracts
+- JS deps: ../../../../\_abstracts/js/constants/patterns, ../../../../\_abstracts/js/dom/manipulation, ../../../../\_abstracts/js/dom/traversing
+- SCSS deps: import:../../\_01_components/typography/link/link.scss, import:../fieldset/fieldset.pat.scss, use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/gallery
 
@@ -215,7 +218,7 @@ Accepted
 - SCSS entry files: 1
 - JS files total: 1
 - SCSS files total: 1
-- JS deps: ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: (none detected)
 
 ### libraries/dev-days-matrix-library/src/library/modules/list-keeper
@@ -242,7 +245,7 @@ Accepted
 - SCSS entry files: 16
 - JS files total: 18
 - SCSS files total: 35
-- JS deps: ./common/_confetti.js, jquery
+- JS deps: ./common/\_confetti.js, jquery
 - SCSS deps: forward:breakpoints, forward:colors, use:../variables/variables.scss, use:./cops-and-robbers/article, use:./cops-and-robbers/basepage, use:./cops-and-robbers/boardElements, use:./cops-and-robbers/button, use:./cops-and-robbers/gameGrid, use:./cops-and-robbers/header, use:./cops-and-robbers/main, use:./cops-and-robbers/modal, use:./cops-and-robbers/normalize, use:./cops-and-robbers/player, use:./cops-and-robbers/playground, use:./cops-and-robbers/scoreboard, use:./cops-and-robbers/section, use:./cops-and-robbers/switch, use:./cops-and-robbers/weapons, use:./mixins/mixins.scss, use:./variables/variables.scss, use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/movie-seat-booking
@@ -251,7 +254,7 @@ Accepted
 - SCSS entry files: 2
 - JS files total: 2
 - SCSS files total: 2
-- JS deps: ../../../../_abstracts/js/dom/manipulation, ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/manipulation, ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/navigation
@@ -260,8 +263,8 @@ Accepted
 - SCSS entry files: 5
 - JS files total: 5
 - SCSS files total: 5
-- JS deps: ../../../../_abstracts/js/dom/manipulation, ../../../../_abstracts/js/dom/traversing
-- SCSS deps: import:../../_01_components/typography/link/link.scss, import:../../_01_components/typography/list-unordered/list-unordered.scss, import:../link-list/link-list.pat.scss, use:~ScssAbstracts
+- JS deps: ../../../../\_abstracts/js/dom/manipulation, ../../../../\_abstracts/js/dom/traversing
+- SCSS deps: import:../../\_01_components/typography/link/link.scss, import:../../\_01_components/typography/list-unordered/list-unordered.scss, import:../link-list/link-list.pat.scss, use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/note-manager
 
@@ -269,7 +272,7 @@ Accepted
 - SCSS entry files: 1
 - JS files total: 1
 - SCSS files total: 1
-- JS deps: ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/notes
@@ -296,7 +299,7 @@ Accepted
 - SCSS entry files: 5
 - JS files total: 9
 - SCSS files total: 5
-- JS deps: ../../../../../_abstracts/js/dom/traversing, ./Quiz/Controller, ./Quiz/QuizController, ./Quiz/UIController
+- JS deps: ../../../../../\_abstracts/js/dom/traversing, ./Quiz/Controller, ./Quiz/QuizController, ./Quiz/UIController
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/search
@@ -359,7 +362,7 @@ Accepted
 - SCSS entry files: 4
 - JS files total: 4
 - SCSS files total: 4
-- JS deps: ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/modules/weather-app
@@ -368,7 +371,7 @@ Accepted
 - SCSS entry files: 1
 - JS files total: 1
 - SCSS files total: 1
-- JS deps: ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/patterns/accordion
@@ -404,7 +407,7 @@ Accepted
 - SCSS entry files: 3
 - JS files total: 1
 - SCSS files total: 3
-- JS deps: ../../../../_abstracts/js/dom/manipulation, ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/manipulation, ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/patterns/card
@@ -467,7 +470,7 @@ Accepted
 - SCSS entry files: 1
 - JS files total: 1
 - SCSS files total: 1
-- JS deps: ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/patterns/modal
@@ -503,7 +506,7 @@ Accepted
 - SCSS entry files: 1
 - JS files total: 1
 - SCSS files total: 1
-- JS deps: ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:sass:math, use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/patterns/scrollspy
@@ -530,7 +533,7 @@ Accepted
 - SCSS entry files: 2
 - JS files total: 1
 - SCSS files total: 2
-- JS deps: ../../../../_abstracts/js/dom/manipulation, ../../../../_abstracts/js/dom/traversing
+- JS deps: ../../../../\_abstracts/js/dom/manipulation, ../../../../\_abstracts/js/dom/traversing
 - SCSS deps: use:sass:math, use:~ScssAbstracts
 
 ### libraries/dev-days-matrix-library/src/library/patterns/theme-switch

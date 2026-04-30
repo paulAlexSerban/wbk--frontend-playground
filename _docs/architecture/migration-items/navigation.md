@@ -23,19 +23,19 @@
 
 - [x] `src/_partials/body.hbs` — composition-only include
 - [x] Variation partials migrated:
-  - `src/_partials/_side-nav-buttons.hbs`
-  - `src/_partials/_mobile-footer-nav.hbs`
-  - `src/_partials/_segmented-workspace-nav.hbs`
+    - `src/_partials/_side-nav-buttons.hbs`
+    - `src/_partials/_mobile-footer-nav.hbs`
+    - `src/_partials/_segmented-workspace-nav.hbs`
 - [x] Script orchestrator and variation modules:
-  - `src/scripts/index.js`
-  - `src/scripts/_mobile-footer-nav.js`
-  - `src/scripts/_segmented-workspace-nav.js`
+    - `src/scripts/index.js`
+    - `src/scripts/_mobile-footer-nav.js`
+    - `src/scripts/_segmented-workspace-nav.js`
 - [x] Style entry and variation modules:
-  - `src/styles.scss`
-  - `src/styles/_shared.scss`
-  - `src/styles/_side-nav-buttons.scss`
-  - `src/styles/_mobile-footer-nav.scss`
-  - `src/styles/_segmented-workspace-nav.scss`
+    - `src/styles.scss`
+    - `src/styles/_shared.scss`
+    - `src/styles/_side-nav-buttons.scss`
+    - `src/styles/_mobile-footer-nav.scss`
+    - `src/styles/_segmented-workspace-nav.scss`
 
 ## Manifest and README
 
@@ -63,3 +63,11 @@
 - [x] SCSS + modules validated
 - [x] Build validation passed
 - [ ] Manual runtime parity smoke-check for all three variations
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

@@ -3,6 +3,7 @@
 Interactive form patterns and validation-oriented demos.
 
 ## Improvements and expansions to consider:
+
 - add focus-management tests across pattern flows
 - add keyboard-only completion path validation
 - add reusable field-state helper patterns

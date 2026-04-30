@@ -13,7 +13,10 @@ class RemoveStyleJsAssetPlugin {
                 },
                 (assets) => {
                     Object.keys(assets).forEach((assetName) => {
-                        if (assetName === 'styles.js' || (assetName.startsWith('styles.') && assetName.endsWith('.js'))) {
+                        if (
+                            assetName === 'styles.js' ||
+                            (assetName.startsWith('styles.') && assetName.endsWith('.js'))
+                        ) {
                             compilation.deleteAsset(assetName);
                         }
                     });

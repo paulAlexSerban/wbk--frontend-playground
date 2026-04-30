@@ -12,6 +12,7 @@ Consolidated slider playground containing background, vertical, carousel, CSS-on
 - `multi-variation-demo` - combines five legacy entry points into one project page
 
 ## Improvements and expansions to consider:
+
 - Add keyboard navigation support for all interactive slider variations.
 - Add reduced-motion fallback behavior for timed/animated transitions.
 - Add shared slide index utility to avoid duplicated next/prev logic across modules.

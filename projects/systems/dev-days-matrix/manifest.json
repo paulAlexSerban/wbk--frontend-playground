@@ -1,23 +1,11 @@
 {
-  "name": "Dev Days Matrix",
-  "source": "Dev Days Matrix Library",
-  "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix",
-  "description": "Base page template for Dev Days Matrix projects with attribution footer and optional background image variables.",
-  "concepts": [
-    "page-template",
-    "handlebars-layout",
-    "attribution-footer",
-    "background-css-variables",
-    "html-shell"
-  ],
-  "category": "systems",
-  "tags": [
-    "system",
-    "template",
-    "dev-days-matrix",
-    "attribution",
-    "foundation"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Dev Days Matrix",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix",
+    "description": "Base page template for Dev Days Matrix projects with attribution footer and optional background image variables.",
+    "concepts": ["page-template", "handlebars-layout", "attribution-footer", "background-css-variables", "html-shell"],
+    "category": "systems",
+    "tags": ["system", "template", "dev-days-matrix", "attribution", "foundation"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

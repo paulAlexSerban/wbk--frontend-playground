@@ -18,11 +18,13 @@ function createHandlebarsLoader(options = {}) {
     const cwd = options.cwd || process.cwd();
     const handlebarsOptions = options.handlebars || {};
 
-    const helperDirs = asArray(handlebarsOptions.helperDirs || ['build/helpers/handlebars'])
-        .map((dirPath) => resolveFromCwd(cwd, dirPath));
+    const helperDirs = asArray(handlebarsOptions.helperDirs || ['build/helpers/handlebars']).map((dirPath) =>
+        resolveFromCwd(cwd, dirPath)
+    );
 
-    const partialDirs = asArray(handlebarsOptions.partialDirs || ['src/library', 'src/system'])
-        .map((dirPath) => resolveFromCwd(cwd, dirPath));
+    const partialDirs = asArray(handlebarsOptions.partialDirs || ['src/library', 'src/system']).map((dirPath) =>
+        resolveFromCwd(cwd, dirPath)
+    );
 
     return {
         test: /\.hbs$/,
@@ -68,12 +70,7 @@ function createAssetsLoader() {
 }
 
 function createHandlebarsWebpackLoaders(options = {}) {
-    return [
-        createBabelLoader(),
-        createHandlebarsLoader(options),
-        createScssLoader(),
-        createAssetsLoader(),
-    ];
+    return [createBabelLoader(), createHandlebarsLoader(options), createScssLoader(), createAssetsLoader()];
 }
 
 module.exports = {

@@ -40,13 +40,21 @@
 - `event.keyCode` is deprecated in the Web standard but retained as-is to faithfully represent the source material
 - No shared SCSS or JS dependencies; fully self-contained
 - Suggested improvements:
-	- add optional toggle to hide deprecated `event.keyCode`
-	- add key history list with capped length for repeated keypress debugging
-	- add escape hatch to disable `preventDefault` for non-demo contexts
+    - add optional toggle to hide deprecated `event.keyCode`
+    - add key history list with capped length for repeated keypress debugging
+    - add escape hatch to disable `preventDefault` for non-demo contexts
 
 ## Phase 1 Validation (2026-03-31)
 
 - [x] HBS structure split and variation partial introduced
 - [x] JS moved to split architecture with scoped root selector
 - [x] SCSS moved to split architecture with shared + component modules
-- [ ] Runtime parity smoke-check in browser (manual)
+- [x] Runtime parity smoke-check in browser (manual)
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

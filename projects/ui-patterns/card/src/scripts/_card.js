@@ -13,7 +13,8 @@ export const initContentPlaceholderCard = () => {
     const animatedBgTexts = document.querySelectorAll('.animated-bg-text');
 
     setTimeout(() => {
-        header.innerHTML = '<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="" />';
+        header.innerHTML =
+            '<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="" />';
         title.innerHTML = 'Lorem ipsum dolor sit amet';
         excerpt.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis';
         profileImg.innerHTML = '<img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" />';

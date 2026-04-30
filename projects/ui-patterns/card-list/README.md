@@ -3,6 +3,7 @@
 Card list pattern collection including expanding and pricing variants.
 
 ## Improvements and expansions to consider:
+
 - add large-list rendering strategy notes (virtualization/pagination)
 - add keyboard navigation between active cards
 - add reduced-motion fallback for transition-heavy variants

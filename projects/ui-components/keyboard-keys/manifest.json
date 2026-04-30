@@ -1,22 +1,11 @@
 {
-  "name": "Keyboard Keys",
-  "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
-  "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
-  "description": "Displays the key name, keyCode, and code values when any keyboard key is pressed.",
-  "concepts": [
-    "keyboard-events",
-    "event-keycode",
-    "event-key",
-    "event-code",
-    "dom-manipulation"
-  ],
-  "category": "ui-components",
-  "tags": [
-    "keyboard",
-    "keydown",
-    "event-listener",
-    "interactive"
-  ],
-  "status": "complete",
-  "difficulty": "beginner"
+    "name": "Keyboard Keys",
+    "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+    "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+    "description": "Displays the key name, keyCode, and code values when any keyboard key is pressed.",
+    "concepts": ["keyboard-events", "event-keycode", "event-key", "event-code", "dom-manipulation"],
+    "category": "ui-components",
+    "tags": ["keyboard", "keydown", "event-listener", "interactive"],
+    "status": "complete",
+    "difficulty": "beginner"
 }

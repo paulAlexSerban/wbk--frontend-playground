@@ -8,9 +8,7 @@ const handlebars = {
             options: {
                 knownHelpersOnly: false,
                 helperDirs: path.resolve(__dirname, '../helpers/handlebars'),
-                partialDirs: [
-                    path.resolve(__dirname, '../../src/_partials')
-                ],
+                partialDirs: [path.resolve(__dirname, '../../src/_partials')],
             },
         },
     ],

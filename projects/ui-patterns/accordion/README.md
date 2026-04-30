@@ -10,6 +10,7 @@ Consolidated accordion playground containing CSS accordion and FAQ collapse vari
 - `multi-variation-demo` - combines CSS and JS-driven accordion patterns
 
 ## Improvements and expansions to consider:
+
 - add keyboard and screen-reader interaction checks (`aria-expanded`, `aria-controls`)
 - add optional single-open mode for FAQ groups
 - add transition timing tokens for consistent expansion animation
@@ -22,4 +23,3 @@ Consolidated accordion playground containing CSS accordion and FAQ collapse vari
 - add support for nested accordions with proper state management
 - implement a "collapse all" button for FAQ groups with multiple items
 - explore different visual styles for expanded vs. collapsed states, such as icons or color changes
-

@@ -3,6 +3,7 @@
 Hero layout patterns including split-screen interaction.
 
 ## Improvements and expansions to consider:
+
 - add responsive stress cases for long headlines and copy
 - add image strategy notes (crop/focal-point/srcset)
 - verify CTA focus order and contrast requirements

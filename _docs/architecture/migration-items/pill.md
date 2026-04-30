@@ -22,13 +22,13 @@
 
 ## Files Ported
 
-- [x] src/_partials/body.hbs — composition-only include
-- [x] src/_partials/_pill.hbs — shared pill partial
-- [x] src/_partials/_pill-round.hbs — round variation
-- [x] src/_partials/_pill-round-active.hbs — active variation
+- [x] src/\_partials/body.hbs — composition-only include
+- [x] src/\_partials/\_pill.hbs — shared pill partial
+- [x] src/\_partials/\_pill-round.hbs — round variation
+- [x] src/\_partials/\_pill-round-active.hbs — active variation
 - [x] src/styles.scss + split modules in src/styles/
-- [x] src/scripts.js + src/scripts/index.js + src/scripts/_pill.js
-- [x] src/styles/_abstracts.scss — local port replacing `~ScssAbstracts` alias usage
+- [x] src/scripts.js + src/scripts/index.js + src/scripts/\_pill.js
+- [x] src/styles/\_abstracts.scss — local port replacing `~ScssAbstracts` alias usage
 
 ## Manifest and README
 
@@ -45,6 +45,7 @@
 - Source behavior is style-only; scripts module kept as no-op initializer for split architecture consistency.
 
 ## Suggested Improvements
+
 - add selected/disabled/loading state variants
 - add contrast and accessibility verification across themes
 - add keyboard navigation behavior for pill groups
@@ -56,3 +57,11 @@
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (yarn --cwd projects/components/pill build)
 - [ ] Manual runtime parity smoke-check
+
+## Phase 4 Use Shared Dependences
+
+- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [ ] Validate no visual regressions introduced by shared abstracts integration
+- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`

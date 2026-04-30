@@ -2,8 +2,7 @@ export const initPattern = () => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    const scale = (num, inMin, inMax, outMin, outMax) =>
-        ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+    const scale = (num, inMin, inMax, outMin, outMax) => ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 
     document.querySelectorAll('[data-js-theme-switch]').forEach((root) => {
         const hourEl = root.querySelector('.js-hour');

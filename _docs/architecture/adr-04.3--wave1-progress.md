@@ -1,9 +1,11 @@
 # ADR-04.3 Wave 1 Progress
 
 ## Status
+
 Complete (Wave 1) / In Progress (Post-Wave 1 continuation)
 
 ## Date
+
 2026-03-30
 
 ## Reconciled Snapshot (2026-03-31)
@@ -33,7 +35,7 @@ Project-only systems (not from library/system/templates):
 
 Canonical inventory list:
 
-- _docs/migration-inventory-libraries-vs-projects.md
+- \_docs/migration-inventory-libraries-vs-projects.md
 
 ## Completed
 
@@ -81,36 +83,36 @@ Canonical inventory list:
 
 ## Evidence
 
-- Migration checklist: _docs/architecture/migration-items/toggle-group.md
-- Migration checklist: _docs/architecture/migration-items/loader.md
-- Migration checklist: _docs/architecture/migration-items/layouts.md
-- Migration checklist: _docs/architecture/migration-items/image.md
-- Migration checklist: _docs/architecture/migration-items/scrollspy.md
-- Migration checklist: _docs/architecture/migration-items/hero.md
-- Migration checklist: _docs/architecture/migration-items/form-patterns.md
-- Migration checklist: _docs/architecture/migration-items/digital-clock.md
-- Migration checklist: _docs/architecture/migration-items/card-list.md
-- Migration checklist: _docs/architecture/migration-items/card.md
-- Migration checklist: _docs/architecture/migration-items/audio.md
-- Migration checklist: _docs/architecture/migration-items/list.md
-- Migration checklist: _docs/architecture/migration-items/form-components.md
-- Migration checklist: _docs/architecture/migration-items/browser-detect.md
-- Migration checklist: _docs/architecture/migration-items/drag-n-drop.md
-- Migration checklist: _docs/architecture/migration-items/keyboard-keys.md
-- Migration checklist: _docs/architecture/migration-items/paint.md
-- Migration checklist: _docs/architecture/migration-items/timer.md
-- Migration checklist: _docs/architecture/migration-items/toast.md
-- Migration checklist: _docs/architecture/migration-items/like.md
-- Migration checklist: _docs/architecture/migration-items/theme-switch.md
-- Migration checklist: _docs/architecture/migration-items/button.md
-- Migration checklist: _docs/architecture/migration-items/accordion.md
-- Migration checklist: _docs/architecture/migration-items/modal.md
-- Migration checklist: _docs/architecture/migration-items/tabs.md
-- Migration checklist: _docs/architecture/migration-items/alert.md
-- Migration checklist: _docs/architecture/migration-items/popup.md
-- Migration checklist: _docs/architecture/migration-items/progress.md
-- Migration checklist: _docs/architecture/migration-items/landing.md
-- Migration checklist: _docs/architecture/migration-items/pill.md
+- Migration checklist: \_docs/architecture/migration-items/toggle-group.md
+- Migration checklist: \_docs/architecture/migration-items/loader.md
+- Migration checklist: \_docs/architecture/migration-items/layouts.md
+- Migration checklist: \_docs/architecture/migration-items/image.md
+- Migration checklist: \_docs/architecture/migration-items/scrollspy.md
+- Migration checklist: \_docs/architecture/migration-items/hero.md
+- Migration checklist: \_docs/architecture/migration-items/form-patterns.md
+- Migration checklist: \_docs/architecture/migration-items/digital-clock.md
+- Migration checklist: \_docs/architecture/migration-items/card-list.md
+- Migration checklist: \_docs/architecture/migration-items/card.md
+- Migration checklist: \_docs/architecture/migration-items/audio.md
+- Migration checklist: \_docs/architecture/migration-items/list.md
+- Migration checklist: \_docs/architecture/migration-items/form-components.md
+- Migration checklist: \_docs/architecture/migration-items/browser-detect.md
+- Migration checklist: \_docs/architecture/migration-items/drag-n-drop.md
+- Migration checklist: \_docs/architecture/migration-items/keyboard-keys.md
+- Migration checklist: \_docs/architecture/migration-items/paint.md
+- Migration checklist: \_docs/architecture/migration-items/timer.md
+- Migration checklist: \_docs/architecture/migration-items/toast.md
+- Migration checklist: \_docs/architecture/migration-items/like.md
+- Migration checklist: \_docs/architecture/migration-items/theme-switch.md
+- Migration checklist: \_docs/architecture/migration-items/button.md
+- Migration checklist: \_docs/architecture/migration-items/accordion.md
+- Migration checklist: \_docs/architecture/migration-items/modal.md
+- Migration checklist: \_docs/architecture/migration-items/tabs.md
+- Migration checklist: \_docs/architecture/migration-items/alert.md
+- Migration checklist: \_docs/architecture/migration-items/popup.md
+- Migration checklist: \_docs/architecture/migration-items/progress.md
+- Migration checklist: \_docs/architecture/migration-items/landing.md
+- Migration checklist: \_docs/architecture/migration-items/pill.md
 - Project path: projects/components/form-components
 - Project path: projects/components/list
 - Project path: projects/components/audio
@@ -216,17 +218,17 @@ When migrating a library item whose SCSS uses `~ScssAbstracts`:
 3. **Migrate SCSS helpers as local abstracts (preferred)** — If source uses `~ScssAbstracts`, add a local `src/styles/_abstracts.scss` in the target project by porting the required maps/functions/mixins from the source abstracts package.
 
 4. **Keep helper calls in migrated partials** — Preserve authored SCSS structure and calls rather than flattening to compiled CSS output:
-   - Keep `get-color(...)`, `convert-rem(...)`, `@include flex(...)`, `@include absolute(...)`, `@include transition(...)`
-   - Keep BEM helper usage (`@include e(...)`, `@include m(...)`) when used by source
-   - Keep `@each` loops with Sass maps instead of expanding all selector variants manually
+    - Keep `get-color(...)`, `convert-rem(...)`, `@include flex(...)`, `@include absolute(...)`, `@include transition(...)`
+    - Keep BEM helper usage (`@include e(...)`, `@include m(...)`) when used by source
+    - Keep `@each` loops with Sass maps instead of expanding all selector variants manually
 
 5. **Namespace and import convention** — In component/style partials, replace `@use '~ScssAbstracts' ...` with `@use './abstracts' as *;` or `@use './abstracts' as abstracts;` to mirror source namespace style.
 
 6. **Add a migration comment** — At the top of each SCSS partial that resolves `~ScssAbstracts`, add:
-   ```scss
-   // NOTE: ~ScssAbstracts alias not available in standalone projects.
-   // Helpers resolved via local ./_abstracts.scss. Original source: library/path/to/file.entry.scss
-   ```
+    ```scss
+    // NOTE: ~ScssAbstracts alias not available in standalone projects.
+    // Helpers resolved via local ./_abstracts.scss. Original source: library/path/to/file.entry.scss
+    ```
 
 ### Fixed in Quality Pass (2026-03-30)
 

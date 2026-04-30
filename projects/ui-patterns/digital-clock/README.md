@@ -3,6 +3,7 @@
 Digital clock patterns with multiple visual and JS variations.
 
 ## Improvements and expansions to consider:
+
 - add timezone selector and locale-format options
 - add drift-correction strategy for long-running intervals
 - add reduced-motion fallback for animated transitions

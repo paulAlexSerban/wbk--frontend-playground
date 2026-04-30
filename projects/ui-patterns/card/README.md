@@ -3,6 +3,7 @@
 Card pattern collection including placeholder and QR card demos.
 
 ## Improvements and expansions to consider:
+
 - add responsive density/card-size variants
 - define content-slot conventions for richer compositions
 - verify hover/focus parity for interactive cards
