@@ -1,12 +1,13 @@
 # Browser Detect
 
-Small component demo that parses user-agent strings and renders a browser/OS map in a table.
+Small component demo that parses user-agent strings, renders a browser/OS map in a table, and shows rich details about the current browser at runtime.
 
 ## Concepts
 
 - user-agent parsing
 - regular expressions
 - DOM table rendering
+- runtime browser capability and metadata inspection
 
 ## Improvements and expansions to consider:
 
