@@ -1,4 +1,6 @@
-@use './styles/shared';
+@use '@wbk-frontend-forge/_shared__styles/src/reset';
+@use '@wbk-frontend-forge/_shared__styles/src/theme';
+@use '@wbk-frontend-forge/_shared__styles/src/demo_page';
 @use './styles/auto-text';
 @use './styles/kinetic-loader';
 @use './styles/loader';
