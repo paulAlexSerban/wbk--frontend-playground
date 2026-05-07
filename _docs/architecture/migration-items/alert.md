@@ -57,8 +57,8 @@
 
 ## Phase 4 Use Shared Dependences
 
-- [ ] Update styles to use shared abstracts where applicable (mixins, functions, variables)
-- [ ] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
-- [ ] Validate no visual regressions introduced by shared abstracts integration
-- [ ] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
-- [ ] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`
+- [x] Update styles to use shared abstracts where applicable (mixins, functions, variables)
+- [x] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [x] Validate no visual regressions introduced by shared abstracts integration
+- [x] Update styles to use shared demo page styles where applicable (layout, typography, spacing)
+- [x] Ensure project name in package is updated correctly such as `ui-components`, `ui-patterns`, or `ui-modules`
