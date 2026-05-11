@@ -3,9 +3,21 @@
     "source": "Dev Days Matrix Library",
     "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/pill",
     "description": "Pill component with round and active states for compact status or step indicators.",
-    "concepts": ["status-pill", "active-state", "round-badge", "compact-indicator", "component-variation"],
+    "concepts": [
+        "status-pill",
+        "active-state",
+        "round-badge",
+        "compact-indicator",
+        "component-variation"
+    ],
     "category": "ui-components",
-    "tags": ["pill", "badge", "state", "indicator", "component"],
+    "tags": [
+        "pill",
+        "badge",
+        "state",
+        "indicator",
+        "component"
+    ],
     "status": "complete",
     "difficulty": "beginner"
 }
