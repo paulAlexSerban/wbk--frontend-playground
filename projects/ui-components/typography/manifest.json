@@ -1,0 +1,13 @@
+{
+    "name": "Typography",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/typography",
+    "description": "Typography components for consistent text styling.",
+    "concepts": [
+        "typography"
+    ],
+    "category": "ui-components",
+    "tags": ["typography", "component"],
+    "status": "complete",
+    "difficulty": "beginner"
+}
