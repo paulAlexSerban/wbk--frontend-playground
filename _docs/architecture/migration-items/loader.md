@@ -52,7 +52,7 @@
 - [x] JS + utilities validated
 - [x] SCSS + mixin/function coverage validated
 - [x] Build validation passed (`yarn --cwd projects/components/loader build`)
-- [ ] Manual runtime parity smoke-check for all loader variations
+- [x] Manual runtime parity smoke-check for all loader variations
 
 ## Phase 4 Use Shared Dependences
 

@@ -4,14 +4,10 @@
     "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/loader",
     "description": "Loader pattern set including CSS animated loading indicators.",
     "concepts": [
-        "loader-pattern",
-        "component-variation",
-        "standalone-migration",
-        "scss-abstracts-local",
-        "frontend-playground"
+        "loader-pattern"
     ],
     "category": "ui-patterns",
-    "tags": ["loader", "component", "pattern", "migration-wave"],
+    "tags": ["loader"],
     "status": "complete",
     "difficulty": "beginner"
 }
