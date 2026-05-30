@@ -38,7 +38,7 @@ jobs:
               run: yarn run build:dashboard
 
             - name: 'Upload apps artifact'
-              uses: actions/upload-artifact@v6
+              uses: actions/upload-artifact@v7
               with:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
                   path: './package/${{ env.REPO_NAME }}/projects'
@@ -50,7 +50,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: 'Download apps artifact'
-              uses: actions/download-artifact@v7
+              uses: actions/download-artifact@v8
               with:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
                   path: ./package
