@@ -7,7 +7,7 @@ on:
 
 env:
     NODE_VERSION: 24.15.0
-    REPO_NAME: wbk--reactjs-forge
+    REPO_NAME: wbk--frontend-forge
 
 permissions:
     contents: write
