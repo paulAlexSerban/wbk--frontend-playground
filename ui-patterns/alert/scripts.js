@@ -1,0 +1,1 @@
+!function(){"use strict";document.querySelectorAll("[data-alert-item]").forEach(e=>{e.querySelectorAll("[data-alert-close]").forEach(t=>{t.addEventListener("click",t=>{t.preventDefault(),e.remove()})})})}();

@@ -1,0 +1,2048 @@
+[
+  {
+    "components__audio": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "audio",
+            "name": "Audio",
+            "version": "1.0.0",
+            "description": "Audio interaction patterns including a sound board demo.",
+            "hide": false,
+            "tags": [
+              "audio",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "audio-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/audio",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Audio",
+                "description": "Audio interaction patterns including a sound board demo.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__card": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "card",
+            "name": "Card",
+            "version": "1.0.0",
+            "description": "Card pattern collection including placeholder and QR card demos.",
+            "hide": false,
+            "tags": [
+              "card",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "card-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/card",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Card",
+                "description": "Card pattern collection including placeholder and QR card demos.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__card-list": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "card-list",
+            "name": "Card List",
+            "version": "1.0.0",
+            "description": "Card list pattern collection including expanding and pricing variants.",
+            "hide": false,
+            "tags": [
+              "card-list",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "card-list-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/card-list",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Card List",
+                "description": "Card list pattern collection including expanding and pricing variants.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__digital-clock": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "digital-clock",
+            "name": "Digital Clock",
+            "version": "1.0.0",
+            "description": "Digital clock patterns with multiple visual and JS variations.",
+            "hide": false,
+            "tags": [
+              "digital-clock",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "digital-clock-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/digital-clock",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Digital Clock",
+                "description": "Digital clock patterns with multiple visual and JS variations.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__form-patterns": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "form-patterns",
+            "name": "Form Patterns",
+            "version": "1.0.0",
+            "description": "Interactive form patterns and validation-oriented demos.",
+            "hide": false,
+            "tags": [
+              "form-patterns",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "form-patterns-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/form-patterns",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Form Patterns",
+                "description": "Interactive form patterns and validation-oriented demos.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__hero": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "hero",
+            "name": "Hero",
+            "version": "1.0.0",
+            "description": "Hero layout patterns including split-screen interaction.",
+            "hide": false,
+            "tags": [
+              "hero",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "hero-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/hero",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Hero",
+                "description": "Hero layout patterns including split-screen interaction.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__modal": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "modal",
+            "name": "Modal",
+            "version": "1.0.0",
+            "description": "Consolidated modal playground containing modal window interaction pattern.",
+            "hide": false,
+            "tags": [
+              "modal",
+              "dialog",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "dialog-overlay",
+              "keyboard-dismiss",
+              "focus-surface",
+              "single-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/modal",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Modal",
+                "description": "Consolidated modal playground containing modal window interaction pattern.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__navigation": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "navigation",
+            "name": "Navigation",
+            "version": "1.0.0",
+            "description": "Consolidated navigation playground containing side-nav buttons, a mobile footer navigation demo, and a segmented workspace navigation demo.",
+            "hide": false,
+            "tags": [
+              "navigation",
+              "tabs",
+              "menu",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "interactive-navigation",
+              "hover-reveal-links",
+              "tabbed-mobile-navigation",
+              "segmented-workspace-navigation",
+              "stateful-ui",
+              "multi-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/navigation",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Navigation",
+                "description": "Consolidated navigation playground containing side-nav buttons, a mobile footer navigation demo, and a segmented workspace navigation demo.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__popup": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "popup",
+            "name": "Popup",
+            "version": "1.0.0",
+            "description": "Popup pattern with modal overlay, close controls, and backdrop interaction.",
+            "hide": false,
+            "tags": [
+              "popup",
+              "modal",
+              "overlay",
+              "accessibility",
+              "migration-wave"
+            ],
+            "concepts": [
+              "popup",
+              "modal",
+              "overlay",
+              "dismiss",
+              "interaction"
+            ],
+            "source": "Coding Artist",
+            "sourceUrl": "https://codingartistweb.com/2021/07/popup-modal-using-html-css-and-javascript/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Popup",
+                "description": "Popup pattern with modal overlay, close controls, and backdrop interaction.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__progress": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "progress",
+            "name": "Progress Steps",
+            "version": "1.0.0",
+            "description": "Step-based progress indicator with previous and next controls.",
+            "hide": false,
+            "tags": [
+              "progress",
+              "steps",
+              "navigation",
+              "state",
+              "migration-wave"
+            ],
+            "concepts": [
+              "progress",
+              "steps",
+              "status",
+              "interaction",
+              "ui-pattern"
+            ],
+            "source": "Coding Artist",
+            "sourceUrl": "https://codingartistweb.com/2021/12/progress-steps-bar-using-html-css-and-javascript/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Progress Steps",
+                "description": "Step-based progress indicator with previous and next controls.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__scrollspy": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "scrollspy",
+            "name": "Scrollspy",
+            "version": "1.0.0",
+            "description": "Scrollspy interaction pattern with viewport-triggered reveal behavior.",
+            "hide": false,
+            "tags": [
+              "scrollspy",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "scrollspy-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/scrollspy",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Scrollspy",
+                "description": "Scrollspy interaction pattern with viewport-triggered reveal behavior.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__slider": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "slider",
+            "name": "Slider",
+            "version": "1.0.0",
+            "description": "Consolidated slider playground containing background, vertical, carousel, CSS-only carousel, and gallery grid pagination variations.",
+            "hide": false,
+            "tags": [
+              "slider",
+              "carousel",
+              "motion",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "stateful-slider-ui",
+              "carousel-controls",
+              "css-scroll-snap",
+              "timed-rotation",
+              "grid-pagination",
+              "multi-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/slider",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Slider",
+                "description": "Consolidated slider playground containing background, vertical, carousel, CSS-only carousel, and gallery grid pagination variations.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__tabs": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "tabs",
+            "name": "Tabs",
+            "version": "1.0.0",
+            "description": "Consolidated tabs playground containing CSS-only and JavaScript-powered navigation tabs.",
+            "hide": false,
+            "tags": [
+              "tabs",
+              "navigation",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "tabbed-navigation",
+              "css-state-tabs",
+              "js-state-tabs",
+              "multi-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/tabs",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Tabs",
+                "description": "Consolidated tabs playground containing CSS-only and JavaScript-powered navigation tabs.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__theme-switch": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "theme-switch",
+            "name": "Theme Switch",
+            "version": "1.0.0",
+            "description": "Theme switch pattern for toggling visual palettes and UI state.",
+            "hide": false,
+            "tags": [
+              "theme-switch",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "theme-switch-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/theme-switch",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Theme Switch",
+                "description": "Theme switch pattern for toggling visual palettes and UI state.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "components__toggle-group": {
+      "projects": {
+        "components": [
+          {
+            "group": "projects",
+            "category": "components",
+            "component": "toggle-group",
+            "name": "Toggle Group",
+            "version": "1.0.0",
+            "description": "Toggle group pattern for segmented controls and stateful options.",
+            "hide": false,
+            "tags": [
+              "toggle-group",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "toggle-group-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/toggle-group",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Toggle Group",
+                "description": "Toggle group pattern for segmented controls and stateful options.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "interactions__hoverboard": {
+      "projects": {
+        "interactions": [
+          {
+            "group": "projects",
+            "category": "interactions",
+            "component": "hoverboard",
+            "name": "Hoverboard",
+            "version": "1.0.0",
+            "description": "No description available",
+            "hide": false,
+            "tags": [
+              "hoverboard",
+              "animation",
+              "transform",
+              "keyframes"
+            ],
+            "concepts": [
+              "animation",
+              "transform",
+              "keyframes"
+            ],
+            "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+            "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Hoverboard",
+                "description": "No description available",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "reverse-engineering__fcc-rwd-example-personal-portfolio-webpage": {
+      "projects": {
+        "reverse-engineering": [
+          {
+            "group": "projects",
+            "category": "reverse-engineering",
+            "component": "fcc-rwd-example-personal-portfolio-webpage",
+            "name": "FCC RWD Example Personal Portfolio Webpage",
+            "version": "1.0.0",
+            "description": "A personal portfolio webpage built using HTML, CSS, and JavaScript, following the FreeCodeCamp curriculum for responsive web design. This project serves as a template for creating a personal portfolio website that showcases projects, skills, and contact information.",
+            "hide": false,
+            "tags": [
+              "personal portfolio",
+              "web design",
+              "freecodecamp",
+              "responsive web design"
+            ],
+            "concepts": [
+              "html",
+              "css",
+              "javascript",
+              "responsive design",
+              "web development",
+              "frontend development"
+            ],
+            "source": "FreeCodeCamp example project for the Personal Portfolio Webpage challenge",
+            "sourceUrl": "https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "FCC RWD Example Personal Portfolio Webpage",
+                "description": "A personal portfolio webpage built using HTML, CSS, and JavaScript, following the FreeCodeCamp curriculum for responsive web design. This project serves as a template for creating a personal portfolio website that showcases projects, skills, and contact information.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "reverse-engineering__landing-page-animated-tawilwind-template": {
+      "projects": {
+        "reverse-engineering": [
+          {
+            "group": "projects",
+            "category": "reverse-engineering",
+            "component": "landing-page-animated-tawilwind-template",
+            "name": "Landing Page Animated Tawilwind Template",
+            "version": "1.0.0",
+            "description": "Landing page built with Tailwind CSS",
+            "hide": false,
+            "tags": [
+              "boilerplate",
+              "starter",
+              "frontend"
+            ],
+            "concepts": [
+              "html",
+              "css",
+              "javascript",
+              "handlebars",
+              "template",
+              "webpack",
+              "babel",
+              "scss",
+              "live-server"
+            ],
+            "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+            "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Landing Page Animated Tawilwind Template",
+                "description": "Landing page built with Tailwind CSS",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "reverse-engineering__landing-page-menu-slide": {
+      "projects": {
+        "reverse-engineering": [
+          {
+            "group": "projects",
+            "category": "reverse-engineering",
+            "component": "landing-page-menu-slide",
+            "name": "Landing Page Menu Slide",
+            "version": "1.0.0",
+            "description": "Landing page with a menu that slides in from the left. The menu is hidden by default and can be toggled by clicking on the menu icon.",
+            "hide": false,
+            "tags": [
+              "boilerplate",
+              "starter",
+              "frontend"
+            ],
+            "concepts": [
+              "html",
+              "css",
+              "javascript",
+              "handlebars",
+              "template",
+              "webpack",
+              "babel",
+              "scss",
+              "live-server"
+            ],
+            "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+            "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Landing Page Menu Slide",
+                "description": "Landing page with a menu that slides in from the left. The menu is hidden by default and can be toggled by clicking on the menu icon.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "reverse-engineering__landing-page-splash-clone": {
+      "projects": {
+        "reverse-engineering": [
+          {
+            "group": "projects",
+            "category": "reverse-engineering",
+            "component": "landing-page-splash-clone",
+            "name": "Landing Page Splash Clone",
+            "version": "1.0.0",
+            "description": "Landing page - Splash Clone",
+            "hide": false,
+            "tags": [
+              "boilerplate",
+              "frontend"
+            ],
+            "concepts": [
+              "html",
+              "css",
+              "javascript",
+              "handlebars"
+            ],
+            "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+            "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Landing Page Splash Clone",
+                "description": "Landing page - Splash Clone",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "reverse-engineering__portfolio-light-and-dark-mode": {
+      "projects": {
+        "reverse-engineering": [
+          {
+            "group": "projects",
+            "category": "reverse-engineering",
+            "component": "portfolio-light-and-dark-mode",
+            "name": "Portfolio Light and Dark Mode",
+            "version": "1.0.0",
+            "description": "Portfolio Light and Dark Mode is a project that demonstrates how to implement a light and dark mode toggle feature on a portfolio website. The project is built using HTML, CSS, JavaScript, and Handlebars for templating. It allows users to switch between light and dark themes, enhancing the user experience and accessibility of the portfolio site.",
+            "hide": false,
+            "tags": [
+              "boilerplate",
+              "frontend",
+              "portfolio",
+              "light and dark mode",
+              "theming",
+              "user experience",
+              "accessibility"
+            ],
+            "concepts": [
+              "html",
+              "css",
+              "javascript",
+              "handlebars",
+              "light and dark mode",
+              "theming",
+              "user experience",
+              "accessibility"
+            ],
+            "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+            "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Portfolio Light and Dark Mode",
+                "description": "Portfolio Light and Dark Mode is a project that demonstrates how to implement a light and dark mode toggle feature on a portfolio website. The project is built using HTML, CSS, JavaScript, and Handlebars for templating. It allows users to switch between light and dark themes, enhancing the user experience and accessibility of the portfolio site.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "reverse-engineering__portfolio-simplefolio": {
+      "projects": {
+        "reverse-engineering": [
+          {
+            "group": "projects",
+            "category": "reverse-engineering",
+            "component": "portfolio-simplefolio",
+            "name": "Portfolio Simplefolio",
+            "version": "1.0.0",
+            "description": "Portfolio Simplefolio is a project that demonstrates how to implement a light and dark mode toggle feature on a portfolio website. The project is built using HTML, CSS, JavaScript, and Handlebars for templating. It allows users to switch between light and dark themes, enhancing the user experience and accessibility of the portfolio site.",
+            "hide": false,
+            "tags": [
+              "boilerplate",
+              "starter",
+              "frontend"
+            ],
+            "concepts": [
+              "html",
+              "css",
+              "javascript",
+              "handlebars",
+              "template",
+              "webpack",
+              "babel",
+              "scss",
+              "live-server"
+            ],
+            "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+            "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Portfolio Simplefolio",
+                "description": "Portfolio Simplefolio is a project that demonstrates how to implement a light and dark mode toggle feature on a portfolio website. The project is built using HTML, CSS, JavaScript, and Handlebars for templating. It allows users to switch between light and dark themes, enhancing the user experience and accessibility of the portfolio site.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__act-school-wisdom-accent": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "act-school-wisdom-accent",
+            "name": "Act School Wisdom Accent",
+            "version": "1.0.0",
+            "description": "A design system for Act School, a fictional educational platform. The design system includes a set of reusable components, styles, and guidelines to ensure consistency across the platform.",
+            "hide": false,
+            "tags": [
+              "design system"
+            ],
+            "concepts": [
+              "design system",
+              "front-end architecture"
+            ],
+            "source": "Frontend Forge",
+            "sourceUrl": "http://localhost:3000",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Act School Wisdom Accent",
+                "description": "A design system for Act School, a fictional educational platform. The design system includes a set of reusable components, styles, and guidelines to ensure consistency across the platform.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__big-frontend-dev": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "big-frontend-dev",
+            "name": "Big Frontend Dev",
+            "version": "1.0.0",
+            "description": "Base page template for BigFrontend.dev challenges with shared grid layout and favicon wiring.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "bigfrontend",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "shared-grid-layout",
+              "system-foundation",
+              "html-shell"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/big-frontend-dev",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Big Frontend Dev",
+                "description": "Base page template for BigFrontend.dev challenges with shared grid layout and favicon wiring.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__codepen-challenges": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "codepen-challenges",
+            "name": "Codepen Challenges",
+            "version": "1.0.0",
+            "description": "Base page template for CodePen challenge implementations with shared 12-column grid layout styles localized into the project.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "codepen",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "shared-grid-layout",
+              "system-foundation",
+              "html-shell"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/codepen-challenges",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Codepen Challenges",
+                "description": "Base page template for CodePen challenge implementations with shared 12-column grid layout styles localized into the project.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__dev-days-matrix": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "dev-days-matrix",
+            "name": "Dev Days Matrix",
+            "version": "1.0.0",
+            "description": "Base page template for Dev Days Matrix projects with attribution footer and optional background image variables.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "dev-days-matrix",
+              "attribution",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "attribution-footer",
+              "background-css-variables",
+              "html-shell"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/dev-days-matrix",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Dev Days Matrix",
+                "description": "Base page template for Dev Days Matrix projects with attribution footer and optional background image variables.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__free-code-camp": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "free-code-camp",
+            "name": "Free Code Camp",
+            "version": "1.0.0",
+            "description": "Base page template for freeCodeCamp challenge implementations with shared 12-column grid layout localized into the project.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "free-code-camp",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "shared-grid-layout",
+              "system-foundation",
+              "html-shell"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/free-code-camp",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Free Code Camp",
+                "description": "Base page template for freeCodeCamp challenge implementations with shared 12-column grid layout localized into the project.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__frontend-mentor": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "frontend-mentor",
+            "name": "Frontend Mentor",
+            "version": "1.0.0",
+            "description": "Base page template for Frontend Mentor challenge implementations with localized grid styles and attribution footer.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "frontend-mentor",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "shared-grid-layout",
+              "attribution-footer",
+              "html-shell"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/frontend-mentor",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Frontend Mentor",
+                "description": "Base page template for Frontend Mentor challenge implementations with localized grid styles and attribution footer.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__frontend-practice": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "frontend-practice",
+            "name": "FrontendPractice.com Base Page Template",
+            "version": "1.0.0",
+            "description": "Base page template for Frontend Practice challenge implementations with localized grid styles.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "frontend-practice",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "shared-grid-layout",
+              "challenge-shell",
+              "portable-style-dependencies"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/frontend-practice",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "FrontendPractice.com Base Page Template",
+                "description": "Base page template for Frontend Practice challenge implementations with localized grid styles.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__generic-base": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "generic-base",
+            "name": "Generic Base Page Template",
+            "version": "1.0.0",
+            "description": "Generic base page template for demos and system explorations with localized reset, theme, typography, and grid styles.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "generic-base",
+              "demo",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "design-system-demo",
+              "typography-showcase",
+              "shared-grid-layout",
+              "portable-style-dependencies"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/generic-base",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Generic Base Page Template",
+                "description": "Generic base page template for demos and system explorations with localized reset, theme, typography, and grid styles.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__great-frontend": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "great-frontend",
+            "name": "Great Frontend Base Page Template",
+            "version": "1.0.0",
+            "description": "Base page template for Great Frontend exercises with localized grid styles.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "great-frontend",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "handlebars-layout",
+              "shared-grid-layout",
+              "exercise-shell",
+              "portable-style-dependencies"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/great-frontend",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Great Frontend Base Page Template",
+                "description": "Base page template for Great Frontend exercises with localized grid styles.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__harmonic-sizes": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "harmonic-sizes",
+            "name": "Harmonic Sizes",
+            "version": "1.0.0",
+            "description": "A token system for managing harmonic sizes in design systems.",
+            "hide": false,
+            "tags": [
+              "token-system",
+              "design-tokens",
+              "scaling",
+              "modularity",
+              "responsive-design"
+            ],
+            "concepts": [
+              "design tokens",
+              "scaling systems",
+              "modular design",
+              "responsive design"
+            ],
+            "source": "Frontend Forge",
+            "sourceUrl": "http://localhost:3000",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Harmonic Sizes",
+                "description": "A token system for managing harmonic sizes in design systems.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "systems__landing": {
+      "projects": {
+        "systems": [
+          {
+            "group": "projects",
+            "category": "systems",
+            "component": "landing",
+            "name": "Landing",
+            "version": "1.0.0",
+            "description": "Landing page template baseline with hero, features, testimonial, and footer sections.",
+            "hide": false,
+            "tags": [
+              "system",
+              "template",
+              "landing",
+              "layout",
+              "foundation"
+            ],
+            "concepts": [
+              "page-template",
+              "hero-section",
+              "feature-list",
+              "testimonial-block",
+              "system-foundation"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/landing",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Landing",
+                "description": "Landing page template baseline with hero, features, testimonial, and footer sections.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__browser-detect": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "browser-detect",
+            "name": "Browser Detect",
+            "version": "1.0.0",
+            "description": "Parses user-agent strings and renders detected browser and OS combinations in a table.",
+            "hide": false,
+            "tags": [
+              "components",
+              "javascript",
+              "browser",
+              "table-rendering"
+            ],
+            "concepts": [
+              "user-agent",
+              "browser-detection",
+              "regex",
+              "dom-manipulation"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Browser Detect",
+                "description": "Parses user-agent strings and renders detected browser and OS combinations in a table.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__button": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "button",
+            "name": "Button",
+            "version": "1.0.0",
+            "description": "Consolidated button playground containing base button styles and a ripple interaction variation.",
+            "hide": false,
+            "tags": [
+              "button",
+              "interaction",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "button-variants",
+              "micro-interactions",
+              "ripple-effect",
+              "multi-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/button",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Button",
+                "description": "Consolidated button playground containing base button styles and a ripple interaction variation.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__drag-n-drop": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "drag-n-drop",
+            "name": "Drag N Drop",
+            "version": "1.0.0",
+            "description": "HTML Drag and Drop demo that lets a draggable tile move between drop zones.",
+            "hide": false,
+            "tags": [
+              "components",
+              "interaction",
+              "javascript",
+              "dropzone"
+            ],
+            "concepts": [
+              "drag-and-drop",
+              "dom-events",
+              "html5-dnd",
+              "stateful-ui"
+            ],
+            "source": "50 Projects In 50 Days",
+            "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Drag N Drop",
+                "description": "HTML Drag and Drop demo that lets a draggable tile move between drop zones.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__form-components": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "form-components",
+            "name": "Form Components",
+            "version": "1.0.0",
+            "description": "Collection of form-focused UI patterns and controls.",
+            "hide": false,
+            "tags": [
+              "form-components",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "form-components-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/form-components",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Form Components",
+                "description": "Collection of form-focused UI patterns and controls.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__image": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "image",
+            "name": "Image",
+            "version": "1.0.0",
+            "description": "Image component patterns and responsive image demos.",
+            "hide": false,
+            "tags": [
+              "image",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "image-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/image",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Image",
+                "description": "Image component patterns and responsive image demos.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__keyboard-keys": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "keyboard-keys",
+            "name": "Keyboard Keys",
+            "version": "1.0.0",
+            "description": "Displays the key name, keyCode, and code values when any keyboard key is pressed.",
+            "hide": false,
+            "tags": [
+              "keyboard",
+              "keydown",
+              "event-listener",
+              "interactive"
+            ],
+            "concepts": [
+              "keyboard-events",
+              "event-keycode",
+              "event-key",
+              "event-code",
+              "dom-manipulation"
+            ],
+            "source": "50 Projects In 50 Days - HTML, CSS & JavaScript",
+            "sourceUrl": "https://www.udemy.com/course/50-projects-50-days/",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Keyboard Keys",
+                "description": "Displays the key name, keyCode, and code values when any keyboard key is pressed.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__list": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "list",
+            "name": "List",
+            "version": "1.0.0",
+            "description": "List component variants for definition and unordered content.",
+            "hide": false,
+            "tags": [
+              "list",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "list-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/list",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "List",
+                "description": "List component variants for definition and unordered content.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__pill": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "pill",
+            "name": "Pill",
+            "version": "1.0.0",
+            "description": "Pill component with round and active states for compact status or step indicators.",
+            "hide": false,
+            "tags": [
+              "pill",
+              "badge",
+              "state",
+              "indicator",
+              "component"
+            ],
+            "concepts": [
+              "status-pill",
+              "active-state",
+              "round-badge",
+              "compact-indicator",
+              "component-variation"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/pill",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Pill",
+                "description": "Pill component with round and active states for compact status or step indicators.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__timer": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "timer",
+            "name": "Timer",
+            "version": "1.0.0",
+            "description": "Timer component variants with countdown and elapsed-time behavior.",
+            "hide": false,
+            "tags": [
+              "timer",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "timer-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/timer",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Timer",
+                "description": "Timer component variants with countdown and elapsed-time behavior.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__toast": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "toast",
+            "name": "Toast",
+            "version": "1.0.0",
+            "description": "Toast notification patterns for transient status messaging.",
+            "hide": false,
+            "tags": [
+              "toast",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "toast-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/toast",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Toast",
+                "description": "Toast notification patterns for transient status messaging.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-components__typography": {
+      "projects": {
+        "ui-components": [
+          {
+            "group": "projects",
+            "category": "ui-components",
+            "component": "typography",
+            "name": "Typography",
+            "version": "1.0.0",
+            "description": "Typography components for consistent text styling.",
+            "hide": false,
+            "tags": [
+              "typography",
+              "component"
+            ],
+            "concepts": [
+              "typography"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/typography",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Typography",
+                "description": "Typography components for consistent text styling.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-modules__paint": {
+      "projects": {
+        "ui-modules": [
+          {
+            "group": "projects",
+            "category": "ui-modules",
+            "component": "paint",
+            "name": "Paint",
+            "version": "1.0.0",
+            "description": "Paint interaction component with canvas controls and color tools.",
+            "hide": false,
+            "tags": [
+              "paint",
+              "module"
+            ],
+            "concepts": [
+              "paint",
+              "canvas"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/paint",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Paint",
+                "description": "Paint interaction component with canvas controls and color tools.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-patterns__accordion": {
+      "projects": {
+        "ui-patterns": [
+          {
+            "group": "projects",
+            "category": "ui-patterns",
+            "component": "accordion",
+            "name": "Accordion",
+            "version": "1.0.0",
+            "description": "Consolidated accordion playground containing CSS accordion and FAQ collapse variations.",
+            "hide": false,
+            "tags": [
+              "accordion",
+              "faq",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "accordion-disclosure",
+              "css-only-interaction",
+              "faq-toggle",
+              "multi-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/accordion",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Accordion",
+                "description": "Consolidated accordion playground containing CSS accordion and FAQ collapse variations.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-patterns__alert": {
+      "projects": {
+        "ui-patterns": [
+          {
+            "group": "projects",
+            "category": "ui-patterns",
+            "component": "alert",
+            "name": "Alert",
+            "version": "1.0.0",
+            "description": "Consolidated alert playground containing dismissible alert pattern.",
+            "hide": false,
+            "tags": [
+              "alert",
+              "notification",
+              "component",
+              "playground"
+            ],
+            "concepts": [
+              "dismissible-alert",
+              "inline-actions",
+              "dom-removal",
+              "single-variation-demo"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/alert",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Alert",
+                "description": "Consolidated alert playground containing dismissible alert pattern.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-patterns__layouts": {
+      "projects": {
+        "ui-patterns": [
+          {
+            "group": "projects",
+            "category": "ui-patterns",
+            "component": "layouts",
+            "name": "Layouts",
+            "version": "1.0.0",
+            "description": "Layouts pattern collection with cards and dashboard sections.",
+            "hide": false,
+            "tags": [
+              "layouts",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "layouts-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/layouts",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Layouts",
+                "description": "Layouts pattern collection with cards and dashboard sections.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-patterns__like": {
+      "projects": {
+        "ui-patterns": [
+          {
+            "group": "projects",
+            "category": "ui-patterns",
+            "component": "like",
+            "name": "Like",
+            "version": "1.0.0",
+            "description": "Like interaction pattern with animated feedback and state toggles.",
+            "hide": false,
+            "tags": [
+              "like",
+              "component",
+              "pattern",
+              "migration-wave"
+            ],
+            "concepts": [
+              "like-pattern",
+              "component-variation",
+              "standalone-migration",
+              "scss-abstracts-local",
+              "frontend-playground"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/like",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Like",
+                "description": "Like interaction pattern with animated feedback and state toggles.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "ui-patterns__loader": {
+      "projects": {
+        "ui-patterns": [
+          {
+            "group": "projects",
+            "category": "ui-patterns",
+            "component": "loader",
+            "name": "Loader",
+            "version": "1.0.0",
+            "description": "Loader pattern set including CSS animated loading indicators.",
+            "hide": false,
+            "tags": [
+              "loader"
+            ],
+            "concepts": [
+              "loader-pattern"
+            ],
+            "source": "Dev Days Matrix Library",
+            "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/loader",
+            "variations": [
+              {
+                "slug": "index",
+                "name": "Loader",
+                "description": "Loader pattern set including CSS animated loading indicators.",
+                "hide": false,
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

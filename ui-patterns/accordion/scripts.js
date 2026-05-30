@@ -1,0 +1,1 @@
+!function(){"use strict";document.querySelectorAll("[data-faq-collapse]").forEach(e=>{e.querySelectorAll(".faq-toggle").forEach(e=>{e.addEventListener("click",()=>{e.closest(".faq").classList.toggle("active")})})})}();

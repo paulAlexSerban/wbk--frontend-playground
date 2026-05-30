@@ -1,0 +1,2735 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Front-end Playground Workbook</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .component-card {
+                transition: all 0.3s ease;
+                border-radius: 12px !important;
+                overflow: hidden;
+            }
+            .component-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+            }
+            .component-card .card-header {
+                border-radius: 12px 12px 0 0 !important;
+                background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%) !important;
+            }
+            .component-card .card-body {
+                padding: 1.5rem;
+            }
+            .component-card .btn-group .btn {
+                border-radius: 6px;
+            }
+            .component-card .badge {
+                font-size: 0.7em;
+            }
+            .dashboard-summary {
+                border-bottom: 1px solid #dee2e6;
+                padding-bottom: 0.75rem;
+            }
+            .filter-chip {
+                display: inline-flex;
+                align-items: center;
+                border: 1px solid #0d6efd;
+                border-radius: 999px;
+                padding: 0.2rem 0.65rem;
+                font-size: 0.8rem;
+                color: #0d6efd;
+                background: #eef5ff;
+            }
+            .sidebar {
+                position: sticky;
+                top: 1rem;
+                align-self: flex-start;
+                height: calc(100vh - 2rem);
+                width: auto;
+                max-width: 100%;
+                background: #fff;
+                overflow-y: auto;
+                z-index: 1020;
+                transition: transform 0.3s ease;
+            }
+            .sidebar .nav-link {
+                color: #adb5bd;
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid #343a40;
+                transition: all 0.2s;
+            }
+            .sidebar .nav-link:hover {
+                color: #fff;
+                background-color: #495057;
+            }
+            .sidebar .nav-link.active {
+                color: #0d6efd;
+                background-color: rgba(13, 110, 253, 0.1);
+                border-left: 3px solid #0d6efd;
+            }
+            .sidebar-backdrop {
+                display: none;
+            }
+            .main-content {
+                margin-left: 250px;
+                padding: 2rem;
+                min-height: calc(100vh - 56px);
+            }
+            @media (max-width: 768px) {
+                .sidebar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: min(85vw, 320px);
+                    height: 100vh;
+                    transform: translateX(-100%);
+                    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+                    border-right: 1px solid #dee2e6;
+                    z-index: 1050;
+                }
+                .sidebar.show {
+                    transform: translateX(0);
+                }
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(33, 37, 41, 0.4);
+                    z-index: 1040;
+                }
+                .sidebar-backdrop.show {
+                    display: block;
+                }
+                .main-content {
+                    margin-left: 0;
+                }
+                #searchInput,
+                #libraryFilter,
+                #sortSelect {
+                    min-width: 140px;
+                    width: 100%;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation: none !important;
+                    transition: none !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+            summary {
+                display: flex;
+            }
+            .navbar-toggler {
+                border: none;
+            }
+        </style>
+    </head>
+
+    <body class="bg-light">
+        
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <button id="sidebarToggle" class="btn btn-outline-light me-2 d-md-none" type="button" aria-controls="categorySidebar" aria-expanded="false" aria-label="Toggle filters">
+        Filters
+    </button>
+    <a class="navbar-brand" href="#"><h1>Front-end Playground Workbook</h1></a>
+    <div class="ms-auto d-flex gap-2 align-items-center flex-wrap justify-content-end">
+        <input id="searchInput" class="form-control" type="search" placeholder="Search components..." aria-label="Search">
+        <select id="libraryFilter" class="form-select" aria-label="Filter by project">
+            <option value="all">All Projects</option>
+        </select>
+        <select id="sortSelect" class="form-select" aria-label="Sort components">
+            <option value="title-asc">Title A-Z</option>
+            <option value="title-desc">Title Z-A</option>
+            <option value="library-asc">Project A-Z</option>
+            <option value="library-desc">Project Z-A</option>
+        </select>
+        <button id="resetFilters" type="button" class="btn btn-outline-light">Reset</button>
+    </div>
+</nav>
+        <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+        <div class="container-fluid">
+            <div class="row">
+                
+<nav id="categorySidebar" class="col-md-2 bg-white border-end h-auto sidebar" role="navigation" aria-label="Category filters" tabindex="-1">
+    <div class="pt-3">
+        <div class="px-3 d-flex justify-content-between align-items-center">
+            <h6 class="mb-0">Categories</h6>
+            <button id="sidebarClose" class="btn btn-sm btn-outline-secondary d-md-none" type="button" aria-label="Close filters">Close</button>
+        </div>
+        <ul id="categoryFilterList" class="nav flex-column">
+            <li class="nav-item"><a class="nav-link active" href="#" data-filter-category="all">All</a></li>
+        </ul>
+    </div>
+</nav>
+                <main class="col-md-10 ms-sm-auto px-4 py-4">
+                    <section class="dashboard-summary mb-3" aria-live="polite">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                            <p id="resultsSummary" class="mb-0 fw-semibold">Showing 0 results</p>
+                            <div id="activeFilters" class="d-flex flex-wrap gap-2" aria-label="Active filters"></div>
+                        </div>
+                    </section>
+                    <div class="row" id="cardContainer">
+                        
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__audio">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__audio-projects-components-audio-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Audio</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Audio interaction patterns including a sound board demo.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/audio/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__audio
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__card">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__card-projects-components-card-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Card</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Card pattern collection including placeholder and QR card demos.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/card/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__card
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__card-list">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__card-list-projects-components-card-list-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Card List</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Card list pattern collection including expanding and pricing variants.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/card-list/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__card-list
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__digital-clock">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__digital-clock-projects-components-digital-clock-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Digital Clock</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Digital clock patterns with multiple visual and JS variations.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/digital-clock/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__digital-clock
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__form-patterns">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__form-patterns-projects-components-form-patterns-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Form Patterns</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Interactive form patterns and validation-oriented demos.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/form-patterns/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__form-patterns
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__hero">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__hero-projects-components-hero-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Hero</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Hero layout patterns including split-screen interaction.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/hero/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__hero
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__modal">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__modal-projects-components-modal-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Modal</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated modal playground containing modal window interaction pattern.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/modal/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__modal
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__navigation">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__navigation-projects-components-navigation-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Navigation</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated navigation playground containing side-nav buttons, a mobile footer navigation demo, and a segmented workspace navigation demo.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/navigation/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__navigation
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__popup">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__popup-projects-components-popup-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Popup</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Popup pattern with modal overlay, close controls, and backdrop interaction.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/popup/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__popup
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__progress">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__progress-projects-components-progress-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Progress Steps</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Step-based progress indicator with previous and next controls.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/progress/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__progress
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__scrollspy">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__scrollspy-projects-components-scrollspy-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Scrollspy</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Scrollspy interaction pattern with viewport-triggered reveal behavior.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/scrollspy/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__scrollspy
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__slider">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__slider-projects-components-slider-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Slider</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated slider playground containing background, vertical, carousel, CSS-only carousel, and gallery grid pagination variations.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/slider/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__slider
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__tabs">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__tabs-projects-components-tabs-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Tabs</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated tabs playground containing CSS-only and JavaScript-powered navigation tabs.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/tabs/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__tabs
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__theme-switch">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__theme-switch-projects-components-theme-switch-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Theme Switch</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Theme switch pattern for toggling visual palettes and UI state.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/theme-switch/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__theme-switch
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="components" data-library="components__toggle-group">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-components__toggle-group-projects-components-toggle-group-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Toggle Group</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Toggle group pattern for segmented controls and stateful options.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/components/toggle-group/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: components__toggle-group
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="interactions" data-library="interactions__hoverboard">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-interactions__hoverboard-projects-interactions-hoverboard-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">interactions</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Hoverboard</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">No description available</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/interactions/hoverboard/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: interactions__hoverboard
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="reverse-engineering" data-library="reverse-engineering__fcc-rwd-example-personal-portfolio-webpage">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-reverse-engineering__fcc-rwd-example-personal-portfolio-webpage-projects-reverse-engineering-fcc-rwd-example-personal-portfolio-webpage-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">reverse-engineering</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">FCC RWD Example Personal Portfolio Webpage</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">A personal portfolio webpage built using HTML, CSS, and JavaScript, following the FreeCodeCamp curriculum for responsive web design. This project serves as a template for creating a personal portfolio website that showcases projects, skills, and contact information.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/reverse-engineering/fcc-rwd-example-personal-portfolio-webpage/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: reverse-engineering__fcc-rwd-example-personal-portfolio-webpage
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="reverse-engineering" data-library="reverse-engineering__landing-page-animated-tawilwind-template">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-reverse-engineering__landing-page-animated-tawilwind-template-projects-reverse-engineering-landing-page-animated-tawilwind-template-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">reverse-engineering</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Landing Page Animated Tawilwind Template</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Landing page built with Tailwind CSS</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/reverse-engineering/landing-page-animated-tawilwind-template/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: reverse-engineering__landing-page-animated-tawilwind-template
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="reverse-engineering" data-library="reverse-engineering__landing-page-menu-slide">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-reverse-engineering__landing-page-menu-slide-projects-reverse-engineering-landing-page-menu-slide-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">reverse-engineering</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Landing Page Menu Slide</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Landing page with a menu that slides in from the left. The menu is hidden by default and can be toggled by clicking on the menu icon.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/reverse-engineering/landing-page-menu-slide/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: reverse-engineering__landing-page-menu-slide
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="reverse-engineering" data-library="reverse-engineering__landing-page-splash-clone">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-reverse-engineering__landing-page-splash-clone-projects-reverse-engineering-landing-page-splash-clone-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">reverse-engineering</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Landing Page Splash Clone</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Landing page - Splash Clone</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/reverse-engineering/landing-page-splash-clone/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: reverse-engineering__landing-page-splash-clone
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="reverse-engineering" data-library="reverse-engineering__portfolio-light-and-dark-mode">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-reverse-engineering__portfolio-light-and-dark-mode-projects-reverse-engineering-portfolio-light-and-dark-mode-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">reverse-engineering</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Portfolio Light and Dark Mode</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Portfolio Light and Dark Mode is a project that demonstrates how to implement a light and dark mode toggle feature on a portfolio website. The project is built using HTML, CSS, JavaScript, and Handlebars for templating. It allows users to switch between light and dark themes, enhancing the user experience and accessibility of the portfolio site.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/reverse-engineering/portfolio-light-and-dark-mode/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: reverse-engineering__portfolio-light-and-dark-mode
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="reverse-engineering" data-library="reverse-engineering__portfolio-simplefolio">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-reverse-engineering__portfolio-simplefolio-projects-reverse-engineering-portfolio-simplefolio-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">reverse-engineering</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Portfolio Simplefolio</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Portfolio Simplefolio is a project that demonstrates how to implement a light and dark mode toggle feature on a portfolio website. The project is built using HTML, CSS, JavaScript, and Handlebars for templating. It allows users to switch between light and dark themes, enhancing the user experience and accessibility of the portfolio site.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/reverse-engineering/portfolio-simplefolio/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: reverse-engineering__portfolio-simplefolio
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__act-school-wisdom-accent">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__act-school-wisdom-accent-projects-systems-act-school-wisdom-accent-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Act School Wisdom Accent</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">A design system for Act School, a fictional educational platform. The design system includes a set of reusable components, styles, and guidelines to ensure consistency across the platform.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/act-school-wisdom-accent/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__act-school-wisdom-accent
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__big-frontend-dev">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__big-frontend-dev-projects-systems-big-frontend-dev-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Big Frontend Dev</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for BigFrontend.dev challenges with shared grid layout and favicon wiring.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/big-frontend-dev/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__big-frontend-dev
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__codepen-challenges">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__codepen-challenges-projects-systems-codepen-challenges-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Codepen Challenges</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for CodePen challenge implementations with shared 12-column grid layout styles localized into the project.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/codepen-challenges/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__codepen-challenges
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__dev-days-matrix">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__dev-days-matrix-projects-systems-dev-days-matrix-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Dev Days Matrix</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for Dev Days Matrix projects with attribution footer and optional background image variables.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/dev-days-matrix/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__dev-days-matrix
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__free-code-camp">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__free-code-camp-projects-systems-free-code-camp-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Free Code Camp</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for freeCodeCamp challenge implementations with shared 12-column grid layout localized into the project.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/free-code-camp/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__free-code-camp
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__frontend-mentor">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__frontend-mentor-projects-systems-frontend-mentor-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Frontend Mentor</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for Frontend Mentor challenge implementations with localized grid styles and attribution footer.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/frontend-mentor/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__frontend-mentor
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__frontend-practice">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__frontend-practice-projects-systems-frontend-practice-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">FrontendPractice.com Base Page Template</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for Frontend Practice challenge implementations with localized grid styles.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/frontend-practice/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__frontend-practice
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__generic-base">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__generic-base-projects-systems-generic-base-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Generic Base Page Template</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Generic base page template for demos and system explorations with localized reset, theme, typography, and grid styles.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/generic-base/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__generic-base
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__great-frontend">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__great-frontend-projects-systems-great-frontend-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Great Frontend Base Page Template</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Base page template for Great Frontend exercises with localized grid styles.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/great-frontend/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__great-frontend
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__harmonic-sizes">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__harmonic-sizes-projects-systems-harmonic-sizes-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Harmonic Sizes</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">A token system for managing harmonic sizes in design systems.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/harmonic-sizes/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__harmonic-sizes
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="systems" data-library="systems__landing">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-systems__landing-projects-systems-landing-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">systems</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Landing</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Landing page template baseline with hero, features, testimonial, and footer sections.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/systems/landing/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: systems__landing
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__browser-detect">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__browser-detect-projects-ui-components-browser-detect-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Browser Detect</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Parses user-agent strings and renders detected browser and OS combinations in a table.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/browser-detect/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__browser-detect
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__button">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__button-projects-ui-components-button-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Button</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated button playground containing base button styles and a ripple interaction variation.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/button/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__button
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__drag-n-drop">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__drag-n-drop-projects-ui-components-drag-n-drop-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Drag N Drop</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">HTML Drag and Drop demo that lets a draggable tile move between drop zones.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/drag-n-drop/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__drag-n-drop
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__form-components">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__form-components-projects-ui-components-form-components-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Form Components</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Collection of form-focused UI patterns and controls.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/form-components/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__form-components
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__image">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__image-projects-ui-components-image-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Image</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Image component patterns and responsive image demos.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/image/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__image
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__keyboard-keys">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__keyboard-keys-projects-ui-components-keyboard-keys-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Keyboard Keys</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Displays the key name, keyCode, and code values when any keyboard key is pressed.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/keyboard-keys/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__keyboard-keys
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__list">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__list-projects-ui-components-list-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">List</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">List component variants for definition and unordered content.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/list/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__list
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__pill">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__pill-projects-ui-components-pill-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Pill</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Pill component with round and active states for compact status or step indicators.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/pill/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__pill
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__timer">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__timer-projects-ui-components-timer-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Timer</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Timer component variants with countdown and elapsed-time behavior.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/timer/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__timer
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__toast">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__toast-projects-ui-components-toast-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Toast</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Toast notification patterns for transient status messaging.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/toast/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__toast
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-components" data-library="ui-components__typography">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-components__typography-projects-ui-components-typography-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-components</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Typography</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Typography components for consistent text styling.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-components/typography/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-components__typography
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-modules" data-library="ui-modules__paint">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-modules__paint-projects-ui-modules-paint-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-modules</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Paint</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Paint interaction component with canvas controls and color tools.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-modules/paint/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-modules__paint
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-patterns" data-library="ui-patterns__accordion">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-patterns__accordion-projects-ui-patterns-accordion-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-patterns</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Accordion</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated accordion playground containing CSS accordion and FAQ collapse variations.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-patterns/accordion/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-patterns__accordion
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-patterns" data-library="ui-patterns__alert">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-patterns__alert-projects-ui-patterns-alert-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-patterns</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Alert</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Consolidated alert playground containing dismissible alert pattern.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-patterns/alert/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-patterns__alert
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-patterns" data-library="ui-patterns__layouts">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-patterns__layouts-projects-ui-patterns-layouts-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-patterns</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Layouts</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Layouts pattern collection with cards and dashboard sections.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-patterns/layouts/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-patterns__layouts
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-patterns" data-library="ui-patterns__like">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-patterns__like-projects-ui-patterns-like-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-patterns</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Like</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Like interaction pattern with animated feedback and state toggles.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-patterns/like/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-patterns__like
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4 item-card" data-category="ui-patterns" data-library="ui-patterns__loader">
+                    <div class="card h-100 shadow-sm border-0 component-card" >
+                        
+        <div id="carousel-ui-patterns__loader-projects-ui-patterns-loader-0" class="carousel slide card-img-top" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                            <div class="carousel-item active">
+                                <img src="http://localhost:3000/assets/images/default-background-960_720.webp" class="d-block w-100" alt="Default component image" style="height: 200px; object-fit: cover;" loading="lazy" decoding="async">
+                                
+                            </div>
+                        
+            </div>
+            
+        </div>
+    
+                        <div class="card-header bg-gradient bg-primary text-white border-0 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-puzzle-fill me-2"></i>
+                                <small class="fw-bold text-uppercase">ui-patterns</small>
+                            </div>
+                            <div class="badge bg-light text-primary">v1.0.0</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-dark mb-2">Loader</h5>
+                            <p class="card-text text-muted flex-grow-1 mb-3">Loader pattern set including CSS animated loading indicators.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a type="button" class="btn btn-outline-primary btn-sm" href="http://localhost:3000/wbk--frontend-forge/projects/ui-patterns/loader/index.html" target="_blank">
+                                        <i class="bi bi-eye me-1"></i>Preview
+                                    </a>
+                                    
+                                </div>
+                                <small class="text-muted">
+                                    <i class="bi bi-collection me-1"></i>Project: ui-patterns__loader
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
+                    </div>
+                    <section id="emptyState" class="alert alert-light border mt-3 d-none" role="status" aria-live="polite">
+                        <h2 class="h5 mb-2">No Components Found</h2>
+                        <p class="mb-0 text-muted">Try clearing filters or broadening your search terms.</p>
+                    </section>
+                </main>
+            </div>
+        </div>
+        
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="https://www.linkedin.com/in/paulalexs/" class="nav-link px-2 text-body-secondary">LinkedIn</a></li>
+                <li class="nav-item"><a href="https://github.com/paulAlexSerban" class="nav-link px-2 text-body-secondary">Github</a></li>
+                <li class="nav-item"><a href="https://paulserban.eu/" class="nav-link px-2 text-body-secondary">Site</a></li>
+                <li class="nav-item"><a href="https://paulserban.eu/portfolio/" class="nav-link px-2 text-body-secondary">Portfolio</a></li>
+                <li class="nav-item"><a href="https://paulserban.eu/blog/" class="nav-link px-2 text-body-secondary">Blog</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2026 paulserban.eu | Generated on 5/30/2026, 1:13:28 PM</p>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+            crossorigin="anonymous"
+            async defer></script>
+            <script>const dashboardState = {
+    query: '',
+    category: 'all',
+    library: 'all',
+    sort: 'title-asc',
+};
+
+let lastSidebarTrigger = null;
+
+function isMobileViewport() {
+    return window.matchMedia('(max-width: 768px)').matches;
+}
+
+function getAllCards() {
+    return Array.from(document.querySelectorAll('.item-card'));
+}
+
+function getAvailableCategories() {
+    return Array.from(
+        new Set(
+            getAllCards()
+                .map((card) => normalizeText(card.dataset.category))
+                .filter((value) => value.length > 0)
+        )
+    ).sort((a, b) => a.localeCompare(b));
+}
+
+function isValidSort(sortValue) {
+    return ['title-asc', 'title-desc', 'library-asc', 'library-desc'].includes(sortValue);
+}
+
+function applyStateFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+
+    const query = normalizeText(params.get('q')).trim();
+    const category = normalizeText(params.get('category') || 'all');
+    const library = normalizeText(params.get('library') || 'all');
+    const sort = normalizeText(params.get('sort') || 'title-asc');
+
+    dashboardState.query = query;
+    dashboardState.category = category || 'all';
+    dashboardState.library = library || 'all';
+    dashboardState.sort = isValidSort(sort) ? sort : 'title-asc';
+}
+
+function syncUrlFromState() {
+    const params = new URLSearchParams();
+
+    if (dashboardState.query) params.set('q', dashboardState.query);
+    if (dashboardState.category !== 'all') params.set('category', dashboardState.category);
+    if (dashboardState.library !== 'all') params.set('library', dashboardState.library);
+    if (dashboardState.sort !== 'title-asc') params.set('sort', dashboardState.sort);
+
+    const queryString = params.toString();
+    const nextUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+    window.history.replaceState(null, '', nextUrl);
+}
+
+function normalizeText(value) {
+    return String(value || '').toLowerCase();
+}
+
+function applyFilters() {
+    const cardContainer = document.getElementById('cardContainer');
+    const resultsSummary = document.getElementById('resultsSummary');
+    const activeFilters = document.getElementById('activeFilters');
+    const emptyState = document.getElementById('emptyState');
+    const cards = Array.from(document.querySelectorAll('.item-card'));
+
+    if (!cardContainer) {
+        return;
+    }
+
+    const compareByTitle = (a, b) => {
+        const titleA = normalizeText(a.querySelector('.card-title')?.innerText);
+        const titleB = normalizeText(b.querySelector('.card-title')?.innerText);
+        return titleA.localeCompare(titleB);
+    };
+
+    const compareByLibrary = (a, b) => {
+        const libA = normalizeText(a.dataset.library);
+        const libB = normalizeText(b.dataset.library);
+        return libA.localeCompare(libB);
+    };
+
+    const sortMap = {
+        'title-asc': compareByTitle,
+        'title-desc': (a, b) => compareByTitle(b, a),
+        'library-asc': compareByLibrary,
+        'library-desc': (a, b) => compareByLibrary(b, a),
+    };
+
+    const sortComparator = sortMap[dashboardState.sort] || sortMap['title-asc'];
+    cards.sort(sortComparator);
+
+    cards.forEach((card) => cardContainer.appendChild(card));
+
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+        const cardTitle = normalizeText(card.querySelector('.card-title')?.innerText);
+        const cardCategory = normalizeText(card.dataset.category);
+        const cardLibrary = normalizeText(card.dataset.library);
+
+        const matchesQuery = dashboardState.query.length === 0 || cardTitle.includes(dashboardState.query);
+        const matchesCategory = dashboardState.category === 'all' || cardCategory === dashboardState.category;
+        const matchesLibrary = dashboardState.library === 'all' || cardLibrary === dashboardState.library;
+
+        const isVisible = matchesQuery && matchesCategory && matchesLibrary;
+        card.style.display = isVisible ? '' : 'none';
+
+        if (isVisible) {
+            visibleCount += 1;
+        }
+    });
+
+    if (resultsSummary) {
+        const noun = visibleCount === 1 ? 'result' : 'results';
+        resultsSummary.innerText = `Showing ${visibleCount} ${noun}`;
+    }
+
+    if (emptyState) {
+        emptyState.classList.toggle('d-none', visibleCount > 0);
+    }
+
+    if (activeFilters) {
+        const chips = [];
+        if (dashboardState.query) chips.push(`Search: ${dashboardState.query}`);
+        if (dashboardState.category !== 'all') chips.push(`Category: ${dashboardState.category}`);
+        if (dashboardState.library !== 'all') chips.push(`Project: ${dashboardState.library}`);
+        if (dashboardState.sort !== 'title-asc') chips.push(`Sort: ${dashboardState.sort}`);
+
+        activeFilters.innerHTML = '';
+        chips.forEach((chip) => {
+            const chipElement = document.createElement('span');
+            chipElement.className = 'filter-chip';
+            chipElement.textContent = chip;
+            activeFilters.appendChild(chipElement);
+        });
+    }
+
+    syncUrlFromState();
+}
+
+function setActiveCategoryLink(category) {
+    const links = document.querySelectorAll('[data-filter-category]');
+    links.forEach((link) => {
+        const isActive = normalizeText(link.dataset.filterCategory) === category;
+        link.classList.toggle('active', isActive);
+    });
+}
+
+function initializeSearch() {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) {
+        return;
+    }
+
+    searchInput.value = dashboardState.query;
+
+    searchInput.addEventListener('input', (event) => {
+        dashboardState.query = normalizeText(event.target.value).trim();
+        applyFilters();
+    });
+}
+
+function renderCategoryLinks() {
+    const categoryFilterList = document.getElementById('categoryFilterList');
+    if (!categoryFilterList) {
+        return;
+    }
+
+    const categories = getAvailableCategories();
+    const links = [
+        { value: 'all', label: 'All' },
+        ...categories.map((category) => ({
+            value: category,
+            label: category.charAt(0).toUpperCase() + category.slice(1),
+        })),
+    ];
+
+    categoryFilterList.innerHTML = links
+        .map(
+            (entry) =>
+                `<li class="nav-item"><a class="nav-link ${entry.value === 'all' ? 'active' : ''}" href="#" data-filter-category="${entry.value}">${entry.label}</a></li>`
+        )
+        .join('');
+}
+
+function initializeLibraryFilter() {
+    const libraryFilter = document.getElementById('libraryFilter');
+    if (!libraryFilter) {
+        return;
+    }
+
+    const libraries = getAllCards()
+        .map((card) => normalizeText(card.dataset.library))
+        .filter((library) => library.length > 0);
+
+    const uniqueLibraries = Array.from(new Set(libraries)).sort((a, b) => a.localeCompare(b));
+
+    uniqueLibraries.forEach((library) => {
+        const option = document.createElement('option');
+        option.value = library;
+        option.textContent = library;
+        libraryFilter.appendChild(option);
+    });
+
+    const isKnownLibrary = dashboardState.library === 'all' || uniqueLibraries.includes(dashboardState.library);
+    dashboardState.library = isKnownLibrary ? dashboardState.library : 'all';
+    libraryFilter.value = dashboardState.library;
+
+    libraryFilter.addEventListener('change', (event) => {
+        dashboardState.library = normalizeText(event.target.value || 'all');
+        applyFilters();
+    });
+}
+
+function initializeSortControl() {
+    const sortSelect = document.getElementById('sortSelect');
+    if (!sortSelect) {
+        return;
+    }
+
+    sortSelect.value = dashboardState.sort;
+
+    sortSelect.addEventListener('change', (event) => {
+        dashboardState.sort = normalizeText(event.target.value || 'title-asc');
+        applyFilters();
+    });
+}
+
+function initializeResetControl() {
+    const resetButton = document.getElementById('resetFilters');
+    const searchInput = document.getElementById('searchInput');
+    const libraryFilter = document.getElementById('libraryFilter');
+    const sortSelect = document.getElementById('sortSelect');
+
+    if (!resetButton) {
+        return;
+    }
+
+    resetButton.addEventListener('click', () => {
+        dashboardState.query = '';
+        dashboardState.category = 'all';
+        dashboardState.library = 'all';
+        dashboardState.sort = 'title-asc';
+
+        if (searchInput) searchInput.value = '';
+        if (libraryFilter) libraryFilter.value = 'all';
+        if (sortSelect) sortSelect.value = 'title-asc';
+
+        setActiveCategoryLink('all');
+        applyFilters();
+    });
+}
+
+function initializeCategoryFilter() {
+    const sidebar = document.getElementById('categorySidebar');
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-filter-category]');
+        if (!trigger) {
+            return;
+        }
+
+        event.preventDefault();
+
+        dashboardState.category = normalizeText(trigger.dataset.filterCategory || 'all');
+        setActiveCategoryLink(dashboardState.category);
+        applyFilters();
+
+        if (isMobileViewport()) {
+            closeSidebar();
+        }
+    });
+}
+
+function closeSidebar() {
+    const sidebar = document.getElementById('categorySidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const toggle = document.getElementById('sidebarToggle');
+
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.classList.remove('show');
+    if (backdrop) {
+        backdrop.classList.remove('show');
+    }
+    if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (isMobileViewport() && lastSidebarTrigger && typeof lastSidebarTrigger.focus === 'function') {
+        lastSidebarTrigger.focus();
+    }
+}
+
+function openSidebar() {
+    const sidebar = document.getElementById('categorySidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const toggle = document.getElementById('sidebarToggle');
+
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.classList.add('show');
+    if (backdrop) {
+        backdrop.classList.add('show');
+    }
+    if (toggle) {
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    const firstFocusable = sidebar.querySelector('[data-filter-category], #sidebarClose');
+    if (firstFocusable && typeof firstFocusable.focus === 'function') {
+        firstFocusable.focus();
+    }
+}
+
+function initializeSidebarToggle() {
+    const sidebar = document.getElementById('categorySidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const toggle = document.getElementById('sidebarToggle');
+    const closeButton = document.getElementById('sidebarClose');
+
+    if (!sidebar || !toggle) {
+        return;
+    }
+
+    toggle.addEventListener('click', () => {
+        lastSidebarTrigger = toggle;
+        if (sidebar.classList.contains('show')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeSidebar);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeSidebar);
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeSidebar();
+        }
+    });
+}
+
+function initializeDashboardFilters() {
+    applyStateFromUrl();
+    renderCategoryLinks();
+
+    initializeSearch();
+    initializeCategoryFilter();
+    initializeLibraryFilter();
+    initializeSortControl();
+    initializeResetControl();
+    initializeSidebarToggle();
+
+    // Apply defaults once DOM is ready so initial state is deterministic.
+    setActiveCategoryLink(dashboardState.category);
+    applyFilters();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeDashboardFilters);
+} else {
+    initializeDashboardFilters();
+}
+</script>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "name": "Tabs",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/tabs",
+    "description": "Consolidated tabs playground containing CSS-only and JavaScript-powered navigation tabs.",
+    "concepts": ["tabbed-navigation", "css-state-tabs", "js-state-tabs", "multi-variation-demo"],
+    "category": "ui-patterns",
+    "tags": ["tabs", "navigation", "component", "playground"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

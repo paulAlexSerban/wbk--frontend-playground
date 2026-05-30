@@ -1,0 +1,17 @@
+{
+    "name": "Digital Clock",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/digital-clock",
+    "description": "Digital clock patterns with multiple visual and JS variations.",
+    "concepts": [
+        "digital-clock-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-patterns",
+    "tags": ["digital-clock", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

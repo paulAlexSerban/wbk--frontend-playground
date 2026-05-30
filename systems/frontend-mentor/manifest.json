@@ -1,0 +1,11 @@
+{
+    "name": "Frontend Mentor",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/frontend-mentor",
+    "description": "Base page template for Frontend Mentor challenge implementations with localized grid styles and attribution footer.",
+    "concepts": ["page-template", "handlebars-layout", "shared-grid-layout", "attribution-footer", "html-shell"],
+    "category": "systems",
+    "tags": ["system", "template", "frontend-mentor", "layout", "foundation"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

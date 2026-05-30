@@ -1,0 +1,1 @@
+(()=>{function t(){return document.body}function e(e){const n=t();n&&(n.className=e||"wisdom-accent")}function n(e){const n=t();n&&(n.dataset.theme="dark"===e?"dark":"light")}function d(){e("wisdom-accent"),n("light")}window.setTheme=e,window.setDarkLightTheme=n,"loading"===document.readyState?document.addEventListener("DOMContentLoaded",d):d()})();

@@ -1,0 +1,11 @@
+{
+    "name": "FCC RWD Example Personal Portfolio Webpage",
+    "source": "FreeCodeCamp example project for the Personal Portfolio Webpage challenge",
+    "sourceUrl": "https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage",
+    "description": "A personal portfolio webpage built using HTML, CSS, and JavaScript, following the FreeCodeCamp curriculum for responsive web design. This project serves as a template for creating a personal portfolio website that showcases projects, skills, and contact information.",
+    "concepts": ["html", "css", "javascript", "responsive design", "web development", "frontend development"],
+    "category": "reverse-engineering",
+    "tags": ["personal portfolio", "web design", "freecodecamp", "responsive web design"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Audio",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/audio",
+    "description": "Audio interaction patterns including a sound board demo.",
+    "concepts": [
+        "audio-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-patterns",
+    "tags": ["audio", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Landing",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/system/templates/landing",
+    "description": "Landing page template baseline with hero, features, testimonial, and footer sections.",
+    "concepts": ["page-template", "hero-section", "feature-list", "testimonial-block", "system-foundation"],
+    "category": "systems",
+    "tags": ["system", "template", "landing", "layout", "foundation"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Paint",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/components/paint",
+    "description": "Paint interaction component with canvas controls and color tools.",
+    "concepts": [
+        "paint","canvas"
+    ],
+    "category": "ui-modules",
+    "tags": ["paint", "module"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

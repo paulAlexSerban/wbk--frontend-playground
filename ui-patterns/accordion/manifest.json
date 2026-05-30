@@ -1,0 +1,11 @@
+{
+    "name": "Accordion",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/accordion",
+    "description": "Consolidated accordion playground containing CSS accordion and FAQ collapse variations.",
+    "concepts": ["accordion-disclosure", "css-only-interaction", "faq-toggle", "multi-variation-demo"],
+    "category": "ui-patterns",
+    "tags": ["accordion", "faq", "component", "playground"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Loader",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/loader",
+    "description": "Loader pattern set including CSS animated loading indicators.",
+    "concepts": [
+        "loader-pattern"
+    ],
+    "category": "ui-patterns",
+    "tags": ["loader"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

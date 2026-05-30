@@ -1,0 +1,11 @@
+{
+    "name": "Landing Page Menu Slide",
+    "source": "JavaScript Web Projects: 20 Projects to Build Your Portfolio",
+    "sourceUrl": "https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/",
+    "description": "Landing page with a menu that slides in from the left. The menu is hidden by default and can be toggled by clicking on the menu icon.",
+    "concepts": ["html", "css", "javascript", "handlebars", "template", "webpack", "babel", "scss", "live-server"],
+    "category": "reverse-engineering",
+    "tags": ["boilerplate", "starter", "frontend"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

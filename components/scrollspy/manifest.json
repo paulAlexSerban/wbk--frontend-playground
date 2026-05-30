@@ -1,0 +1,17 @@
+{
+    "name": "Scrollspy",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/scrollspy",
+    "description": "Scrollspy interaction pattern with viewport-triggered reveal behavior.",
+    "concepts": [
+        "scrollspy-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-patterns",
+    "tags": ["scrollspy", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

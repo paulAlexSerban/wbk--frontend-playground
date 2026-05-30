@@ -1,0 +1,1 @@
+!function(){"use strict";const e=()=>{document.querySelectorAll('[data-js-pat="ExpandingCards"]').forEach(e=>{const t=e.querySelectorAll(".js-expanding-cards-panel");t.forEach(e=>{e.addEventListener("click",()=>{t.forEach(e=>e.classList.remove("active")),e.classList.add("active")})})})};document.addEventListener("DOMContentLoaded",()=>{e()})}();

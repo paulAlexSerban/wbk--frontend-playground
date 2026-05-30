@@ -1,0 +1,17 @@
+{
+    "name": "Toggle Group",
+    "source": "Dev Days Matrix Library",
+    "sourceUrl": "libraries/dev-days-matrix-library/src/library/patterns/toggle-group",
+    "description": "Toggle group pattern for segmented controls and stateful options.",
+    "concepts": [
+        "toggle-group-pattern",
+        "component-variation",
+        "standalone-migration",
+        "scss-abstracts-local",
+        "frontend-playground"
+    ],
+    "category": "ui-patterns",
+    "tags": ["toggle-group", "component", "pattern", "migration-wave"],
+    "status": "complete",
+    "difficulty": "beginner"
+}

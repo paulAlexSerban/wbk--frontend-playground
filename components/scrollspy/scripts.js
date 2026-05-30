@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll('[data-js-pat="Scrollspy"]').forEach(e=>{const t=e.querySelectorAll(".js-box"),o=()=>{const e=window.innerHeight/5*4;t.forEach(t=>{t.getBoundingClientRect().top<e?t.classList.add("show"):t.classList.remove("show")})};window.addEventListener("scroll",o),o()})})}();
