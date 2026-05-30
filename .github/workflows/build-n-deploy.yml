@@ -8,7 +8,7 @@ on:
 env:
     NODE_VERSION: 24.15.0
     REPO_NAME: wbk--frontend-forge
-    BASE_URL: https://paulalexserban.github.io/wbk--frontend-forge
+    BASE_URL: https://paulalexserban.github.io
 
 permissions:
     contents: write
