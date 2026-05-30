@@ -51,7 +51,7 @@ The monorepo root (`package.json`) becomes the single source of truth for those 
 
 3. Less duplication in project packages
 
-- Each project only depends on `@wbk-frontend-forge/_shared__build-helpers` for build setup reuse.
+- Each project only depends on `@wbk--frontend-forge/_shared__build-helpers` for build setup reuse.
 - Reduces dependency noise and maintenance churn across many project `package.json` files.
 
 4. Clear upgrade path

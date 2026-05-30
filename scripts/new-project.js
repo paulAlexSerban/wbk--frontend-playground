@@ -165,7 +165,7 @@ async function patchPackageJson(projectDir, category, slug, dryRun) {
 
     const raw = await fs.readFile(packageJsonPath, 'utf8');
     const data = JSON.parse(raw);
-    data.name = `@wbk-frontend-forge/${category}__${slug}`;
+    data.name = `@wbk--frontend-forge/${category}__${slug}`;
 
     if (!dryRun) {
         await fs.writeFile(packageJsonPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');

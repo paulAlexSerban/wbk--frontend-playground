@@ -56,6 +56,6 @@
 ## Phase 3 Use Shared Dependences
 
 - [x] Update styles to use shared abstracts where applicable (mixins, functions, variables)
-- [x] Update build config to resolve shared abstracts from `@wbk-frontend-forge/_shared__styles/src/abstracts`
+- [x] Update build config to resolve shared abstracts from `@wbk--frontend-forge/_shared__styles/src/abstracts`
 - [x] Validate no visual regressions introduced by shared abstracts integration
 - [x] Update styles to use shared demo page styles where applicable (layout, typography, spacing)

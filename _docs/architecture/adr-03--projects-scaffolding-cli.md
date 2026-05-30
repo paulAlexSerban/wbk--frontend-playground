@@ -39,7 +39,7 @@ The CLI will:
 4. exclude `dist/`, `node_modules/`, and `.git` during copy
 5. patch generated metadata:
 
-- `package.json.name` -> `@wbk-frontend-forge/<category>__<slug>`
+- `package.json.name` -> `@wbk--frontend-forge/<category>__<slug>`
 - `manifest.json.name` -> `--name`
 - `manifest.json.category` -> `--category`
 - `manifest.json.source` and `manifest.json.sourceUrl` via CLI defaults/overrides

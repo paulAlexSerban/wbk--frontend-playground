@@ -79,7 +79,7 @@ Wrappers import shared factories and pass project-specific options (if any).
 Example direction:
 
 ```js
-const { createCommonConfig } = require('@wbk-frontend-forge/_shared__build-helpers');
+const { createCommonConfig } = require('@wbk--frontend-forge/_shared__build-helpers');
 
 module.exports = createCommonConfig({
     entry: {
@@ -124,7 +124,7 @@ This avoids painting the package into a corner when more build setups are introd
 
 Keep existing workspace package name for compatibility:
 
-- `@wbk-frontend-forge/_shared__build-helpers`
+- `@wbk--frontend-forge/_shared__build-helpers`
 
 ### dependencies strategy
 
@@ -190,7 +190,7 @@ Migrate all current handlebars-based projects:
 
 For each project:
 
-1. Add dependency on `@wbk-frontend-forge/_shared__build-helpers`.
+1. Add dependency on `@wbk--frontend-forge/_shared__build-helpers`.
 2. Replace webpack config internals with wrappers importing handlebars-specific shared factories.
 3. Remove duplicated local `build/loaders` and `build/plugins` directories.
 4. Keep/retain project `build/helpers/handlebars/*` only when needed by the project.

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { createHandlebarsWebpackCommonConfig } = require('@wbk-frontend-forge/_shared__build-helpers');
+const { createHandlebarsWebpackCommonConfig } = require('@wbk--frontend-forge/_shared__build-helpers');
 
 const manifestPath = path.resolve(process.cwd(), 'manifest.json');
 

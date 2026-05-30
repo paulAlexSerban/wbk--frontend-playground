@@ -25,7 +25,7 @@ Implement ADR-03 with a minimal, reliable CLI to scaffold projects from `project
 
 4. Patch generated metadata
 
-- Update `package.json.name` to `@wbk-frontend-forge/<category>__<slug>` when present.
+- Update `package.json.name` to `@wbk--frontend-forge/<category>__<slug>` when present.
 - Update `manifest.json` values for `name`, `category`, `source`, `sourceUrl`, and optional `description`.
 - Ensure non-empty tags by defaulting to `[slug]` if missing.
 

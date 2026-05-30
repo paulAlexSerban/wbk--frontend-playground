@@ -1,5 +1,5 @@
 {
-    "name": "@wbk-frontend-forge/reverse-engineering__fcc-rwd-example-personal-portfolio-webpage",
+    "name": "@wbk--frontend-forge/reverse-engineering__fcc-rwd-example-personal-portfolio-webpage",
     "version": "0.0.0",
     "main": "index.js",
     "license": "MIT",
@@ -10,6 +10,6 @@
         "build:prod": "export NODE_ENV=production && webpack --config build/webpack.prod.js"
     },
     "dependencies": {
-        "@wbk-frontend-forge/_shared__build-helpers": "^1.0.0"
+        "@wbk--frontend-forge/_shared__build-helpers": "^1.0.0"
     }
 }

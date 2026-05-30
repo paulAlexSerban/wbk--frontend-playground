@@ -14,7 +14,7 @@ function joinUrl(baseUrl, ...segments) {
 
 function getUrlSegments() {
     return {
-        repositorySegment: process.env.DASHBOARD_REPOSITORY_SEGMENT || 'wbk-frontend-forge',
+        repositorySegment: process.env.DASHBOARD_REPOSITORY_SEGMENT || 'wbk--frontend-forge',
         catalogSegment: process.env.DASHBOARD_CATALOG_SEGMENT || 'projects',
     };
 }

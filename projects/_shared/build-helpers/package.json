@@ -1,5 +1,5 @@
 {
-    "name": "@wbk-frontend-forge/_shared__build-helpers",
+    "name": "@wbk--frontend-forge/_shared__build-helpers",
     "version": "1.0.0",
     "main": "index.js",
     "files": [
