@@ -42,7 +42,7 @@ jobs:
               uses: actions/upload-artifact@v7
               with:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
-                  path: './package/${{ env.REPO_NAME }}'
+                  path: './package/${{ env.REPO_NAME }}/projects'
                   retention-days: 30
 
     deploy:

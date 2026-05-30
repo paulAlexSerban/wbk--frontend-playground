@@ -16,7 +16,7 @@ for PROJECT_PATH in ../projects/*/*; do
     PROJECT_NAME=$(node -p "require('$PROJECT_PATH/package.json').name.split('/')[1].split('__')[1]")
     
     echo "📦  Package $PROJECT_NAME"
-    mkdir -p ../package/$REPOSITORY_NAME/projects/$PROJECT_CATEGORY/$PROJECT_NAME
-    cp -rfv "$PROJECT_PATH/dist/"* ../package/$REPOSITORY_NAME/projects/$PROJECT_CATEGORY/$PROJECT_NAME
+    mkdir -p ../package/$REPOSITORY_NAME/$PROJECT_CATEGORY/$PROJECT_NAME
+    cp -rfv "$PROJECT_PATH/dist/"* ../package/$REPOSITORY_NAME/$PROJECT_CATEGORY/$PROJECT_NAME
   fi
 done

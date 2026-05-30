@@ -15,7 +15,7 @@ function joinUrl(baseUrl, ...segments) {
 function getUrlSegments() {
     return {
         repositorySegment: process.env.DASHBOARD_REPOSITORY_SEGMENT || 'wbk--frontend-forge',
-        catalogSegment: process.env.DASHBOARD_CATALOG_SEGMENT || 'projects',
+        catalogSegment: process.env.DASHBOARD_CATALOG_SEGMENT || '',
     };
 }
 
@@ -35,7 +35,7 @@ function buildPreviewUrl(baseUrl, dir, groupName, categoryName, componentSlug, v
         )}.html`;
     }
 
-    return `${joinUrl(baseUrl, repositorySegment, catalogSegment, categoryName, componentSlug, variationSlug)}.html`;
+    return `${joinUrl(baseUrl, repositorySegment, categoryName, componentSlug, variationSlug)}.html`;
 }
 
 function buildImageUrl(baseUrl, filename, size) {

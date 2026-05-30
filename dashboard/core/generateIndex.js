@@ -23,19 +23,17 @@ const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 async function generateIndex() {
     console.log('Generating dashboard index...');
     try {
-        const { sourceDir, destinationDir, repositorySegment, catalogSegment } = await resolveDashboardCatalogPaths({
+        const { sourceDir, destinationDir, repositorySegment } = await resolveDashboardCatalogPaths({
             projectRoot,
-            catalogSegment: 'projects',
         });
 
         process.env.DASHBOARD_REPOSITORY_SEGMENT = repositorySegment;
-        process.env.DASHBOARD_CATALOG_SEGMENT = catalogSegment;
 
         await fs.promises.mkdir(destinationDir, { recursive: true });
         const transformedComponentLists = await loadComponentData(sourceDir);
         if (transformedComponentLists.length === 0) {
             throw new Error(
-                'No project data found. Run package:projects first or ensure manifest.json exists in package/<repo>/projects or projects/*/*.'
+                'No project data found. Run package:projects first or ensure manifest.json exists in package/<repo> or projects/*/*.'
             );
         }
         await fs.promises.writeFile(

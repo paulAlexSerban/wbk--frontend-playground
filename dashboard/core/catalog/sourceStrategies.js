@@ -103,7 +103,7 @@ async function readPackagedProjects(sourceDir) {
 }
 
 async function readWorkspaceProjectsFallback(sourceDir) {
-    const projectRoot = path.resolve(sourceDir, '..', '..', '..');
+    const projectRoot = path.resolve(sourceDir, '..', '..');
     const workspaceProjectsDir = path.join(projectRoot, 'projects');
 
     return buildManifestCatalog(workspaceProjectsDir);
@@ -112,7 +112,7 @@ async function readWorkspaceProjectsFallback(sourceDir) {
 const SOURCE_STRATEGIES = {
     packaged: {
         name: 'packaged',
-        label: 'package/<repo>/projects/**/manifest.json',
+        label: 'package/<repo>/**/manifest.json',
         read: readPackagedProjects,
     },
     distFallback: {

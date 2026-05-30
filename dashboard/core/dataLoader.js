@@ -5,7 +5,7 @@ import { loadCatalog } from './catalog/loader.js';
 
 /**
  * Loads and transforms all project metadata from the source directory.
- * @param {string} sourceDir - Absolute path to the packaged projects directory
+ * @param {string} sourceDir - Absolute path to the packaged repository directory
  * @returns {Promise<Array<Object>>} Array of transformed component lists by directory
  */
 async function loadComponentData(sourceDir) {
