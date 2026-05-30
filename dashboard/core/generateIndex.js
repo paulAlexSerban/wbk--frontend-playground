@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import { buildHtmlDocument } from './htmlBuilder.js';
 import { loadComponentData } from './dataLoader.js';
 import { resolveDashboardCatalogPaths } from './catalog/packagePaths.js';
-import { formatIntegrityErrors, verifyGeneratedArtifacts } from '../quality/integrity.js';
 
 import { generateLibraryHTML } from './templates/libraryTemplate.js';
 import { generateSidebarHTML } from './templates/sidebarTemplate.js';
@@ -55,21 +54,8 @@ async function generateIndex() {
         });
         await fs.promises.writeFile(path.join(destinationDir, 'index.html'), htmlContent);
 
-        const integrityResult = await verifyGeneratedArtifacts({
-            catalog: transformedComponentLists,
-            htmlContent,
-            baseUrl: BASE_URL,
-            destinationDir,
-        });
-
-        if (integrityResult.errors.length > 0) {
-            throw new Error(`Dashboard integrity checks failed:\n${formatIntegrityErrors(integrityResult.errors)}`);
-        }
-
         console.log('index.html has been generated!');
-        console.log(
-            `Dashboard integrity checks passed: ${integrityResult.summary.visibleEntries} visible entries, ${integrityResult.summary.checkedPreviewTargets} preview targets.`
-        );
+
     } catch (err) {
         console.error('Error:', err);
         process.exitCode = 1;

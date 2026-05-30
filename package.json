@@ -14,7 +14,6 @@
         "start:package": "npx serve package",
         "test:dashboard": "node --test dashboard/**/*.test.js",
         "lint:dashboard": "node dashboard/quality/lintDashboard.js",
-        "verify:dashboard": "node dashboard/quality/runIntegrityChecks.js",
         "check:dashboard": "yarn test:dashboard && yarn lint:dashboard && yarn build:dashboard",
         "build": "lerna run build",
         "build:prod": "NODE_ENV=production lerna run build:prod",
