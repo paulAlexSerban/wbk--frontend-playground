@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Handlebars Template</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><link rel="stylesheet" href="styles.css"><script src="scripts.js" defer="defer"></script></head><div class="container mx-auto p-4"><h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Coding exercise prompt builder — configure parameters and generate a reusable LLM prompt.</h2><div class="py-4 font-sans"><div class="mb-6"><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Programming language(s)</p><div class="flex flex-wrap gap-2" id="langs"><button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="TypeScript">TypeScript</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="JavaScript">JavaScript</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Python">Python</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Go">Go</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Rust">Rust</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Java">Java</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="C#">C#</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="C++">C++</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="SQL">SQL</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Bash">Bash</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Lua">Lua</button></div><input id="lang-custom" placeholder="Other language (e.g. Kotlin, Swift)…" class="mt-2 w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg bg-white text-zinc-800 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-300"/></div><div class="mb-6"><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Difficulty</p><div class="flex flex-wrap gap-2" id="difficulties"><button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Beginner">Beginner</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Intermediate">Intermediate</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Advanced">Advanced</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Expert">Expert</button></div></div><div class="mb-6"><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Topic / concept</p><div class="flex flex-wrap gap-2" id="topics"><button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Data structures">Data structures</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Algorithms">Algorithms</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Async / concurrency">Async / concurrency</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Design patterns">Design patterns</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Testing">Testing</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="API design">API design</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Type system">Type system</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Functional programming">Functional programming</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Memory management">Memory management</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Error handling">Error handling</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Performance optimization">Performance optimization</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="Security">Security</button></div><input id="topic-custom" placeholder="Custom topic (e.g. event sourcing, monads)…" class="mt-2 w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg bg-white text-zinc-800 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-300"/></div><div class="grid grid-cols-2 gap-3 mb-6"><div><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Number of exercises</p><input id="count" type="number" min="1" max="20" value="3" class="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg bg-white text-zinc-800 focus:outline-none focus:ring-2 focus:ring-violet-300"/></div><div><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Output format</p><select id="format" class="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg bg-white text-zinc-800 focus:outline-none focus:ring-2 focus:ring-violet-300"><option value="MDX">MDX (with metadata)</option><option value="Markdown">Plain Markdown</option><option value="JSON">JSON</option><option value="plain text">Plain text</option></select></div></div><div class="mb-6"><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Include in each exercise</p><div class="flex flex-wrap gap-2" id="includes"><button class="chip selected px-3 py-1 rounded-full border text-sm transition-colors bg-violet-50 border-violet-300 text-violet-800" data-v="problem statement">Problem statement</button> <button class="chip selected px-3 py-1 rounded-full border text-sm transition-colors bg-violet-50 border-violet-300 text-violet-800" data-v="starter code / skeleton">Starter code</button> <button class="chip selected px-3 py-1 rounded-full border text-sm transition-colors bg-violet-50 border-violet-300 text-violet-800" data-v="expected output / test cases">Test cases</button> <button class="chip selected px-3 py-1 rounded-full border text-sm transition-colors bg-violet-50 border-violet-300 text-violet-800" data-v="hints">Hints</button> <button class="chip selected px-3 py-1 rounded-full border text-sm transition-colors bg-violet-50 border-violet-300 text-violet-800" data-v="reference solution">Reference solution</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="time and space complexity analysis">Complexity analysis</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="real-world context note">Real-world context</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="common mistakes to avoid">Common mistakes</button> <button class="chip px-3 py-1 rounded-full border border-zinc-200 text-sm transition-colors" data-v="follow-up challenge">Follow-up challenge</button></div></div><div class="mb-6"><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Additional constraints / notes</p><textarea id="notes" rows="3" placeholder="e.g. no external libraries, use only stdlib, target senior engineers…" class="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg bg-white text-zinc-800 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-300 resize-y"></textarea></div><div class="border-t border-zinc-100 pt-5 mb-6"></div><div class="mb-2"><p class="text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Generated prompt</p><div id="output" class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 text-xs font-mono whitespace-pre-wrap leading-relaxed min-h-16 max-h-80 overflow-y-auto">Configure parameters above, then click Generate.</div></div><div class="flex items-center gap-2 mt-3"><button onclick="generate()" class="px-4 py-2 rounded-lg bg-violet-600 text-white text-sm font-medium hover:bg-violet-700 active:scale-95 transition-all">Generate prompt</button> <button onclick="copyPrompt()" class="px-4 py-2 rounded-lg border border-zinc-200 text-sm active:scale-95 transition-all"><i class="ti ti-copy" aria-hidden="true"></i> Copy</button> <button onclick="sendToChat()" class="px-4 py-2 rounded-lg border border-zinc-200 text-sm active:scale-95 transition-all">Ask Claude ↗</button> <span id="copied-msg" class="text-xs text-emerald-600 opacity-0 transition-opacity ml-1">Copied!</span></div></div><script>function getSelected(groupId) {
+      return [...document.querySelectorAll(`#${groupId} .chip.selected`)].map(c => c.dataset.v);
+    }
+  
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const sel = chip.classList.contains('selected');
+        if (sel) {
+          chip.classList.remove('selected', 'bg-violet-50', 'border-violet-300', 'text-violet-800');
+          chip.classList.add('border-zinc-200', ', ');
+        } else {
+          chip.classList.add('selected', 'bg-violet-50', 'border-violet-300', 'text-violet-800');
+          chip.classList.remove('border-zinc-200', ', ');
+        }
+      });
+    });
+  
+    let lastPrompt = '';
+  
+    function generate() {
+      const langs = getSelected('langs');
+      const langCustom = document.getElementById('lang-custom').value.trim();
+      if (langCustom) langs.push(...langCustom.split(',').map(s => s.trim()).filter(Boolean));
+  
+      const diffs = getSelected('difficulties');
+      const topics = getSelected('topics');
+      const topicCustom = document.getElementById('topic-custom').value.trim();
+      if (topicCustom) topics.push(...topicCustom.split(',').map(s => s.trim()).filter(Boolean));
+  
+      const count = parseInt(document.getElementById('count').value) || 3;
+      const format = document.getElementById('format').value;
+      const includes = getSelected('includes');
+      const notes = document.getElementById('notes').value.trim();
+  
+      if (!langs.length || !diffs.length || !topics.length) {
+        document.getElementById('output').textContent = 'Please select at least one language, one difficulty, and one topic.';
+        return;
+      }
+  
+      const langStr = langs.join(', ');
+      const diffStr = diffs.join(', ');
+      const topicStr = topics.join(', ');
+      const includesStr = includes.map((v, i) => `  ${i + 1}. ${v}`).join('\n');
+  
+      lastPrompt = `You are an expert software engineering educator. Your task is to generate high-quality, self-contained coding exercises for practising developers.
+  
+  <parameters>
+    <languages>${langStr}</languages>
+    <difficulty>${diffStr}</difficulty>
+    <topics>${topicStr}</topics>
+    <count>${count}</count>
+    <output_format>${format}</output_format>
+  </parameters>
+  
+  <instructions>
+    Generate exactly ${count} coding exercise${count > 1 ? 's' : ''}.
+  
+    ${count > 1 && diffs.length > 1 ? `Distribute the exercises across the specified difficulty levels: ${diffStr}. Do not cluster all exercises at the same level.` : `All exercises should be at ${diffStr} level.`}
+  
+    ${langs.length > 1 ? `Distribute exercises across the specified languages: ${langStr}. Each exercise must clearly state which language it targets.` : `All exercises must be written in ${langStr}.`}
+  
+    ${topics.length > 1 ? `Cover the following topics — you may mix topics or dedicate one exercise per topic: ${topicStr}.` : `All exercises must address the topic: ${topicStr}.`}
+  
+    Each exercise must include all of the following sections:
+  ${includesStr}
+  
+    Additional constraints:
+    - Every exercise must be fully self-contained: no implicit context, no references to previous exercises (unless explicitly instructed below).
+    - Code examples must be syntactically correct and runnable as-is.
+    - The problem statement must be clear, unambiguous, and specify all edge cases the solution must handle.
+    - Starter code must compile/run and include TODO markers where the learner should write their implementation.
+    - Test cases must cover: the happy path, at least one edge case, and at least one failure/error case.
+    - Hints must be progressive (hint 1 = conceptual nudge, hint 2 = more direct, hint 3 = near-solution guidance).
+    - The reference solution must be idiomatic for the target language and include inline comments explaining non-obvious decisions.
+    - Do not add filler prose. Every sentence must serve the learner.
+  ${notes ? `\n  User-specified constraints:\n  ${notes}` : ''}
+  </instructions>
+  
+  <output_format_rules>
+  ${format === 'MDX' ? `  Output each exercise as a valid MDX file with frontmatter:
+    ---
+    title: "<exercise title>"
+    language: "<language>"
+    difficulty: "<difficulty>"
+    topic: "<topic>"
+    slug: "<kebab-case-slug>"
+    ---
+    Use MDX headings (##) for each section. Code blocks must include the language identifier.` : ''}
+  ${format === 'Markdown' ? `  Output each exercise as a Markdown block. Use ## headings for each section. Separate exercises with a horizontal rule (---). Code blocks must include the language identifier.` : ''}
+  ${format === 'JSON' ? `  Output a valid JSON array. Each element is an object with keys matching the required sections (snake_case). Code values must be strings with escaped newlines. The entire output must be parseable by JSON.parse() with no extra text before or after.` : ''}
+  ${format === 'plain text' ? `  Output plain text. Use ALL-CAPS section headers (e.g. PROBLEM STATEMENT, STARTER CODE). Separate exercises with a line of dashes (---).` : ''}
+    Do not include any preamble, explanation, or closing remarks outside the exercise blocks.
+  </output_format_rules>
+  
+  <quality_checklist>
+    Before outputting, verify each exercise against this checklist:
+    - [ ] Language and difficulty are correctly labelled
+    - [ ] Starter code compiles and contains TODO markers
+    - [ ] Test cases cover happy path + edge case + error case
+    - [ ] Hints are progressive and do not give away the solution prematurely
+    - [ ] Reference solution is idiomatic and commented
+    - [ ] No placeholders or TODO markers remain in the reference solution
+    - [ ] Output format matches the specified format exactly
+  </quality_checklist>`;
+  
+      document.getElementById('output').textContent = lastPrompt;
+    }
+  
+    function copyPrompt() {
+      if (!lastPrompt) { generate(); }
+      navigator.clipboard.writeText(lastPrompt).then(() => {
+        const msg = document.getElementById('copied-msg');
+        msg.style.opacity = '1';
+        setTimeout(() => msg.style.opacity = '0', 2000);
+      });
+    }
+  
+    function sendToChat() {
+      if (!lastPrompt) { generate(); }
+      sendPrompt(lastPrompt);
+    }</script></div></html>
