@@ -1,0 +1,11 @@
+{
+    "name": "Prompt Generator - Mini coding Challenges",
+    "source": "Frontend Forge",
+    "sourceUrl": "http://localhost:3000",
+    "description": "A prompt generator app useful to generate coding challanges for programmers.",
+    "concepts": ["prompt engineering", "meta prompting"],
+    "category": "tools",
+    "tags": ["prompt generation", "coding challenges", "programming"],
+    "status": "complete",
+    "difficulty": "beginner"
+}
